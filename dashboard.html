@@ -2,8 +2,6 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Личный кабинет — CheckTheWorld</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,6 +49,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--black);he
 .content{flex:1;overflow-y:auto;background:var(--bg)}
 .page{display:none;padding:20px 24px}
 .page.active{display:block}
+.page-inner{max-width:1000px;margin:0 auto}
 .ph{margin-bottom:14px}
 .pt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--black)}
 .ps{font-size:13px;color:var(--g300);margin-top:2px}
@@ -269,12 +268,12 @@ input[type=range]{width:100%;accent-color:var(--green)}
   <div class="content">
 
     <!-- OVERVIEW -->
-    <div class="page active" id="page-overview">
+    <div class="page active" id="page-overview"><div class="page-inner">
       <div class="ph"><div class="pt" id="ov-title">Добро пожаловать</div><div class="ps">Твоя карта мира и путешествий</div></div>
       <div class="stats-row">
         <div class="stat"><div class="stat-l">В избранном</div><div class="stat-v" id="s-fav">0</div><div class="stat-s">стран</div></div>
         <div class="stat"><div class="stat-l">Посещено</div><div class="stat-v" id="s-vis">0</div><div class="stat-s">стран</div></div>
-        <div class="stat"><div class="stat-l">Активных виз</div><div class="stat-v" id="s-vz">0</div><div class="stat-s">истекают скоро</div></div>
+        <div class="stat"><div class="stat-l">Активных виз</div><div class="stat-v" id="s-vz">0</div><div class="stat-s" id="s-vz-sub">нет активных</div></div>
         <div class="stat"><div class="stat-l">Маршруты</div><div class="stat-v">—</div><div class="stat-s">скоро</div></div>
       </div>
       <div class="g2">
@@ -294,13 +293,19 @@ input[type=range]{width:100%;accent-color:var(--green)}
     </div>
 
     <!-- FAVORITES -->
-    <div class="page" id="page-favorites">
+</div>
+    </div>
+
+    <div class="page" id="page-favorites"><div class="page-inner">
       <div class="ph"><div class="pt">Избранные страны</div><div class="ps" id="fav-sub">...</div></div>
       <div class="fav-grid" id="fav-grid"></div>
     </div>
 
     <!-- VISAS -->
-    <div class="page" id="page-visas">
+</div>
+    </div>
+
+    <div class="page" id="page-visas"><div class="page-inner">
       <div class="ph"><div class="pt">Визовый трекер</div><div class="ps">Следи за сроками своих виз</div></div>
       <div class="visa-list" id="visa-list"></div>
       <button class="add-btn" onclick="toggleAddVisa()">
@@ -324,7 +329,10 @@ input[type=range]{width:100%;accent-color:var(--green)}
     </div>
 
     <!-- BUDGET -->
-    <div class="page" id="page-budget">
+</div>
+    </div>
+
+    <div class="page" id="page-budget"><div class="page-inner">
       <div class="ph"><div class="pt">Калькулятор бюджета</div><div class="ps">Посчитай сколько нужно на поездку</div></div>
       <div class="budget-wrap">
         <div class="bc">
@@ -358,7 +366,10 @@ input[type=range]{width:100%;accent-color:var(--green)}
     </div>
 
     <!-- PROFILE -->
-    <div class="page" id="page-profile">
+</div>
+    </div>
+
+    <div class="page" id="page-profile"><div class="page-inner">
       <div class="ph"><div class="pt">Профиль</div><div class="ps">Настройки аккаунта</div></div>
       <div class="profile-wrap">
         <div class="phero">
@@ -459,6 +470,17 @@ function renderAll(){
   ['s-fav','ps-fav'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=D.favorites.length;});
   ['s-vis','ps-vis'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=D.visited.length;});
   ['s-vz','ps-vz'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=actVz;});
+
+  // Динамическая подпись статуса виз
+  const vzSub=document.getElementById('s-vz-sub');
+  if(vzSub){
+    const danger=(D.visas||[]).filter(v=>dl(v)>0&&dl(v)<=7).length;
+    const warn=(D.visas||[]).filter(v=>dl(v)>7&&dl(v)<=21).length;
+    if(!actVz){vzSub.textContent='нет активных';vzSub.style.color='var(--g300)';}
+    else if(danger){vzSub.textContent='⚠ истекает через неделю';vzSub.style.color='var(--red)';}
+    else if(warn){vzSub.textContent='скоро истекают';vzSub.style.color='var(--amber)';}
+    else{vzSub.textContent='всё в порядке ✓';vzSub.style.color='var(--green)';}
+  }
 
   const vis=D.visited.length;
   document.getElementById('mt').textContent=vis+' стран отмечено';
