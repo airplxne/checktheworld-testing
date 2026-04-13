@@ -49,7 +49,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--black);he
 .content{flex:1;overflow-y:auto;background:var(--bg)}
 .page{display:none;padding:20px 24px}
 .page.active{display:block}
-.page-inner{}
+
 .ph{margin-bottom:14px}
 .pt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--black)}
 .ps{font-size:13px;color:var(--g300);margin-top:2px}
@@ -268,7 +268,7 @@ input[type=range]{width:100%;accent-color:var(--green)}
   <div class="content">
 
     <!-- OVERVIEW -->
-    <div class="page active" id="page-overview"><div class="page-inner">
+    <div class="page active" id="page-overview">
       <div class="ph"><div class="pt" id="ov-title">Добро пожаловать</div><div class="ps">Твоя карта мира и путешествий</div></div>
       <div class="stats-row">
         <div class="stat"><div class="stat-l">В избранном</div><div class="stat-v" id="s-fav">0</div><div class="stat-s">стран</div></div>
@@ -293,19 +293,17 @@ input[type=range]{width:100%;accent-color:var(--green)}
     </div>
 
     <!-- FAVORITES -->
-</div>
     </div>
 
-    <div class="page" id="page-favorites"><div class="page-inner">
+    <div class="page" id="page-favorites">
       <div class="ph"><div class="pt">Избранные страны</div><div class="ps" id="fav-sub">...</div></div>
       <div class="fav-grid" id="fav-grid"></div>
     </div>
 
     <!-- VISAS -->
-</div>
     </div>
 
-    <div class="page" id="page-visas"><div class="page-inner">
+    <div class="page" id="page-visas">
       <div class="ph"><div class="pt">Визовый трекер</div><div class="ps">Следи за сроками своих виз</div></div>
       <div class="visa-list" id="visa-list"></div>
       <button class="add-btn" onclick="toggleAddVisa()">
@@ -329,10 +327,9 @@ input[type=range]{width:100%;accent-color:var(--green)}
     </div>
 
     <!-- BUDGET -->
-</div>
     </div>
 
-    <div class="page" id="page-budget"><div class="page-inner">
+    <div class="page" id="page-budget">
       <div class="ph"><div class="pt">Калькулятор бюджета</div><div class="ps">Посчитай сколько нужно на поездку</div></div>
       <div class="budget-wrap">
         <div class="bc">
@@ -366,10 +363,9 @@ input[type=range]{width:100%;accent-color:var(--green)}
     </div>
 
     <!-- PROFILE -->
-</div>
     </div>
 
-    <div class="page" id="page-profile"><div class="page-inner">
+    <div class="page" id="page-profile">
       <div class="ph"><div class="pt">Профиль</div><div class="ps">Настройки аккаунта</div></div>
       <div class="profile-wrap">
         <div class="phero">
