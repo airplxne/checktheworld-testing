@@ -8,23 +8,51 @@
 ## Технический стек
 - **Фронтенд:** Чистый HTML/CSS/JS, без фреймворков
 - **Хостинг:** Cloudflare Pages (бесплатно), домен **checktheworld.ru** — куплен на рег.ру, подключён через Cloudflare (DNS управляется в Cloudflare, домен проксируется через Cloudflare CDN).
+- **Auth & DB:** Firebase (Spark plan) — Authentication (Email/Password + Google), Firestore. Проект: `checktheworld-a631d`
 - **Email:** EmailJS — Public key: `EWJ_3i5lkBRcBkjMg`, Service: `service_yj0l9dd`, шаблоны: `template_3sirk17` (пользователю), `template_sa9p4su` (владельцу)
 - **Партнёрки:** Travelpayouts Drive скрипт `<script nowprocket src='https://tp-em.com/NTE1NTI2.js?t=515526'>` — вставлен в `<head>` всех страниц. Аккаунт: nikromashin07@gmail.com
 - **Шрифты:** Playfair Display + Manrope (Google Fonts)
 
 ---
 
+## Firebase конфиг
+```js
+const firebaseConfig = {
+  apiKey: "AIzaSyC_erJyfCASKgjMaMXTF4ovqfwfC4-5GmU",
+  authDomain: "checktheworld-a631d.firebaseapp.com",
+  projectId: "checktheworld-a631d",
+  storageBucket: "checktheworld-a631d.firebasestorage.app",
+  messagingSenderId: "1006756841439",
+  appId: "1:1006756841439:web:ab81d8f3f469ea3d07666a"
+};
+```
+Firebase SDK подключается через CDN: `https://cdn.jsdelivr.net/npm/firebase@9.23.0/`
+
+### Структура Firestore (коллекция `users`)
+```
+users/{uid}:
+  name: string
+  email: string
+  createdAt: timestamp
+  favorites: string[]   // ключи стран: ['thailand', 'georgia', ...]
+  visited: string[]     // посещённые страны
+  visas: array          // [{country, entry, allowed}]
+  currency: string      // 'rub' | 'usd' | 'eur'
+  status: string        // 'planning' | 'moving' | 'living' | 'traveling' | 'returned'
+```
+
+---
+
 ## Деплой на Cloudflare Pages
 1. Зайти на [pages.cloudflare.com](https://pages.cloudflare.com)
-2. Создать новый проект → Connect to Git (GitHub/GitLab) или загрузить файлы напрямую через **Direct Upload**
-3. В настройках проекта добавить кастомный домен `checktheworld.ru`
-4. В DNS Cloudflare домен автоматически настроится через CNAME на `*.pages.dev`
-5. SSL/HTTPS включается автоматически — дополнительной настройки не нужно
+2. Создать новый проект → Connect to Git или Direct Upload
+3. Добавить кастомный домен `checktheworld.ru`
+4. SSL/HTTPS включается автоматически
 
-### Конфигурационные файлы (вместо netlify.toml)
-- **`_redirects`** — редиректы HTTP→HTTPS и www→без www
-- **`_headers`** — заголовки безопасности (X-Frame-Options, CSP и др.)
-Оба файла должны лежать в корне проекта рядом с index.html.
+### Конфигурационные файлы
+- **`_redirects`** — HTTP→HTTPS редиректы
+- **`_headers`** — заголовки безопасности
+Оба файла лежат в корне проекта рядом с index.html.
 
 ---
 
@@ -48,46 +76,56 @@
 
 ---
 
-## Файлы проекта (все в /mnt/user-data/outputs/)
+## Файлы проекта
 
 ### Лендинг
 - **checktheworld_v9.html** — главный лендинг с формой раннего доступа
+
+### Авторизация и личный кабинет
+- **login.html** — страница входа/регистрации:
+  - Вход по Email/Password и через Google
+  - Подтверждение пароля при регистрации
+  - Индикатор сложности пароля (слабый/средний/надёжный)
+  - Блокировка кириллицы с предупреждением
+  - Восстановление пароля через Firebase (`sendPasswordResetEmail`)
+  - Русские тексты всех ошибок Firebase
+- **dashboard.html** — личный кабинет (layout: сайдбар слева + контент справа, `position:fixed`):
+  - **Обзор** — 4 статы (избранное, посещено, визы, маршруты), мини-блоки избранного/виз/карты/калькулятора/достижений
+  - **Избранное** — карточки стран с бюджетом и визовым режимом, удаление
+  - **Визовый трекер** — добавление стран с датой въезда и сроком, прогресс-бар, цветовые статусы
+  - **Калькулятор бюджета** — страна, дни (слайдер), кол-во людей, жильё, питание
+  - **Профиль** — статус переезда (5 вариантов), настройки имени и валюты, выход
+  - Динамическая подпись виз: "нет активных" / "всё в порядке ✓" / "скоро истекают" / "⚠ истекает через неделю"
 
 ### Каталог
 - **index.html** — каталог стран с поиском и фильтрами (безвиз / бюджет / климат)
 
 ### Страницы стран (9 штук)
-- **thailand.html** — эталонный шаблон, самый проработанный
-- **serbia.html** — Сербия
-- **turkey.html** — Турция
-- **armenia.html** — Армения
-- **vietnam.html** — Вьетнам
-- **china.html** — Китай
-- **georgia.html** — Грузия
-- **belarus.html** — Беларусь
-- **kazakhstan.html** — Казахстан
+- **thailand.html** — эталонный шаблон
+- **serbia.html**, **turkey.html**, **armenia.html**, **vietnam.html**, **china.html**, **georgia.html**, **belarus.html**, **kazakhstan.html**
 
-### Конфигурация Cloudflare Pages
-- **`_redirects`** — HTTP→HTTPS редиректы
-- **`_headers`** — заголовки безопасности
+### Вспомогательные файлы
+- **auth-snippet.html** — сниппет Firebase Auth для навигации всех страниц
+- **_redirects**, **_headers** — конфигурация Cloudflare Pages
+- **sitemap.xml** ✅
 
-### Скрипт генерации
-- **/home/claude/build_final.py** — Python-скрипт который собирает страницы стран из шаблона Тайланда. Запускать: `python3 /home/claude/build_final.py`
+### Скрипты
+- **/home/claude/inject_auth.py** — вставляет auth-snippet во все HTML файлы автоматически
+- **/home/claude/build_final.py** — генерирует страницы стран из шаблона Тайланда
 
 ---
 
 ## Структура страницы страны (шаблон thailand.html)
 
-Каждая страница содержит:
-1. **Hero** — флаг, название, регион/валюта/TZ, бейдж визы, 4 стата (бюджет/день, аренда/мес, климат, интернет), липкая quick-карточка справа
-2. **Визовый режим** — 4 кликабельные карточки → попап с подробностями (VISAS JS object)
-3. **Стоимость жизни** — 9 карточек + переключатель валют (₽/$€/местная)
+1. **Hero** — флаг, название, регион/валюта/TZ, бейдж визы, 4 стата, липкая quick-карточка справа
+2. **Визовый режим** — 4 кликабельные карточки → попап
+3. **Стоимость жизни** — 9 карточек + переключатель валют
 4. **Авиабилеты** — виджет Aviasales (Travelpayouts)
 5. **Жильё** — кнопка → Booking.com
-6. **Города и курорты** — горизонтальный слайдер, 4 города, кликабельные → попап
-7. **Полезные советы** — 5-6 пунктов с длинными текстами
-8. **SIM-карта и страховка** — Yesim (eSIM) + Cherehapa (страховка)
-9. **Навигация** между странами (пред/след)
+6. **Города и курорты** — горизонтальный слайдер, попапы
+7. **Полезные советы** — 5-6 пунктов
+8. **SIM-карта и страховка** — Yesim + Cherehapa
+9. **Навигация** между странами
 
 ---
 
@@ -110,9 +148,7 @@
 ## Travelpayouts партнёрки
 Подключены: Aviasales, Суточно.ру, Яндекс Путешествия, Островок, Cherehapa, Yesim, Airalo.
 
-Виджет Aviasales в thailand.html: календарь цен МСК→BKK, цвет `#1c7a54`.
-
-Партнёрские ссылки используемые в страницах:
+Партнёрские ссылки:
 - Yesim eSIM: `https://yesim.app`
 - Cherehapa страховка: `https://cherehapa.ru`
 - Booking.com: `https://www.booking.com/country/[код].ru.html`
@@ -122,57 +158,39 @@
 ## Что реализовано ✅
 - Лендинг v9 с анимациями, лентой стран, попапами, EmailJS, Travelpayouts
 - index.html с поиском и фильтрами
-- thailand.html с полным функционалом:
-  - Кликабельные визовые карточки с детальными попапами
-  - Слайдер городов с галереей фото (попапы с местами и фактами)
-  - Переключатель валют ₽/$€/Баты
-  - Виджет Aviasales
-- 8 страниц стран по шаблону Тайланда с полными данными:
-  - Детальные VISAS JS (4 типа визы с пошаговыми инструкциями)
-  - Детальные CITIES JS (4 города с достопримечательностями и фактами)
-  - Переключатель местной валюты
-  - 5-6 развёрнутых полезных советов
-- Домен checktheworld.ru куплен и подключён через Cloudflare Pages
+- 9 страниц стран с полным функционалом (визы, города, валюты, Aviasales)
+- Домен checktheworld.ru подключён через Cloudflare Pages ✅
+- sitemap.xml создан ✅
+- Кнопка "Войти" / имя пользователя во всех страницах навигации ✅
+- **Личный кабинет (Firebase)** ✅:
+  - login.html — вход/регистрация с полной валидацией
+  - dashboard.html — профиль, статус переезда, избранное, визовый трекер, калькулятор бюджета
 
 ---
 
-## Известные проблемы / Pending задачи
+## Pending задачи
+
+### Кнопка «В избранное» на страницах стран
+Добавить кнопку на каждую страницу страны — сохраняет в `users/{uid}/favorites` в Firestore. Незалогиненным — редирект на login.html.
 
 ### Фото городов
-Фото в слайдере городов (thailand.html) ссылаются на Unsplash — не загружаются из-за блокировки без реферера. Пользователь должен **скачать фото вручную** и положить в папку `img/`:
-- bangkok1.jpg, bangkok2.jpg, bangkok3.jpg
-- phuket1.jpg, phuket2.jpg, phuket3.jpg
-- chiangmai1.jpg, chiangmai2.jpg, chiangmai3.jpg
-- и т.д. для каждого города
-
-После этого обновить src в HTML на `img/bangkok1.jpg` и т.д.
-
-### Страницы стран ещё не выложены на Cloudflare Pages
-Нужно загрузить все файлы: thailand.html, serbia.html, turkey.html, armenia.html, vietnam.html, china.html, georgia.html, belarus.html, kazakhstan.html + index.html + _redirects + _headers
+Фото в слайдере городов ссылаются на Unsplash — не загружаются без реферера. Скачать вручную в папку `img/` и обновить src в HTML.
 
 ### Детальные визовые попапы для 8 стран
-В build_final.py VISAS JS для 8 стран упрощён (только `main` ключ). Детальные данные были написаны и применены отдельным патч-скриптом — но при пересборке через build_final.py они перезапишутся. Нужно интегрировать FULL_VISAS в build_final.py.
+VISAS JS упрощён. Нужно интегрировать FULL_VISAS в build_final.py.
 
 ### Авиабилеты для стран (кроме Тайланда)
-Виджет Aviasales в страницах стран использует тайландский код (BKK). Нужно обновить destination для каждой страны:
-- Сербия: BEG (Белград)
-- Турция: IST (Стамбул)
-- Армения: EVN (Ереван)
-- Вьетнам: HAN (Ханой)
-- Китай: PEK (Пекин)
-- Грузия: TBS (Тбилиси)
-- Беларусь: MSQ (Минск)
-- Казахстан: ALA (Алматы)
+Обновить destination в виджете Aviasales:
+- Сербия: BEG · Турция: IST · Армения: EVN · Вьетнам: HAN
+- Китай: PEK · Грузия: TBS · Беларусь: MSQ · Казахстан: ALA
 
 ### SEO
-Нужно добавить:
 - Open Graph мета-теги для каждой страницы
 - Schema.org FAQPage разметку
-- sitemap.xml
-- Зарегистрировать в Google Search Console после привязки домена
+- Зарегистрировать в Google Search Console
 
 ### Ещё не сделанные страницы стран
-Из лендинга в очереди: Португалия, ОАЭ, Индонезия, Черногория, Германия, Кипр
+Португалия, ОАЭ, Индонезия, Черногория, Германия, Кипр
 
 ---
 
@@ -189,6 +207,6 @@
 ```bash
 python3 /home/claude/build_final.py
 ```
-Скрипт берёт шаблон из `/mnt/user-data/uploads/thailand__9__ПОКА__КРАЙНЯЯ.html` и генерирует 8 файлов в `/mnt/user-data/outputs/`.
+Скрипт берёт шаблон из `/mnt/user-data/uploads/thailand__9__ПОКА__КРАЙНЯЯ.html` и генерирует 8 файлов.
 
-**Важно:** после пересборки нужно отдельно применить патч с полными данными VISAS и CITIES (детальные попапы). Патч-скрипт был запущен инлайн в диалоге — его нужно сохранить отдельно если планируется пересборка.
+**Важно:** после пересборки нужно заново применить патч VISAS/CITIES и вставить auth-snippet через inject_auth.py.
