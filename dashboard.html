@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Личный кабинет — CheckTheWorld</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf8f2;--white:#fff;--black:#1a1a18;
+  --g500:#484842;--g300:#848480;--g100:#e6e2d8;--g50:#f0ece2;
+  --green:#1c7a54;--green-mid:#30b278;--green-light:#d8f2e6;--green-pale:#edf8f3;
+  --amber:#e08c2a;--amber-light:#fef3e2;
+  --red:#e24b4a;--red-light:#fef2f2;
+}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--black);height:100vh;overflow:hidden;display:flex;flex-direction:column}
+
+.loading{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:999;flex-direction:column;gap:12px}
+.loading-logo{font-family:'Playfair Display',serif;font-size:28px}
+.loading-logo span{color:var(--green)}.loading-logo .dot{color:var(--amber)}
+.spinner{width:22px;height:22px;border:2.5px solid var(--g100);border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.app{display:flex;flex:1;overflow:hidden}
+
+/* SIDEBAR */
+.sidebar{width:200px;flex-shrink:0;background:var(--white);border-right:1px solid var(--g100);display:flex;flex-direction:column}
+.sb-logo{padding:14px 16px 12px;border-bottom:1px solid var(--g100)}
+.sb-logo a{font-family:'Playfair Display',serif;font-size:17px;color:var(--black);text-decoration:none}
+.sb-logo a span{color:var(--green)}.sb-logo a .dot{color:var(--amber)}
+.sb-nav{padding:8px 6px;flex:1}
+.sb-item{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:8px;font-size:13px;font-weight:500;color:var(--g500);cursor:pointer;transition:all .15s;border:none;background:none;width:100%;text-align:left;font-family:'Manrope',sans-serif}
+.sb-item:hover{background:var(--g50);color:var(--black)}
+.sb-item.active{background:var(--green-pale);color:var(--green);font-weight:600}
+.sb-item svg{width:14px;height:14px;flex-shrink:0;opacity:.7}
+.sb-item.active svg{opacity:1}
+.sb-divider{height:1px;background:var(--g100);margin:5px 6px}
+.sb-bottom{padding:12px;border-top:1px solid var(--g100)}
+.sb-user{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.sb-avatar{width:30px;height:30px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--green);flex-shrink:0}
+.sb-uname{font-size:12px;font-weight:600;color:var(--black)}
+.sb-uemail{font-size:10px;color:var(--g300)}
+.sb-logout{width:100%;padding:6px;background:none;border:1px solid var(--g100);border-radius:7px;font-size:11px;font-weight:600;color:var(--g300);cursor:pointer;font-family:'Manrope',sans-serif;transition:all .15s}
+.sb-logout:hover{border-color:var(--red);color:var(--red)}
+
+/* CONTENT */
+.content{flex:1;overflow-y:auto;background:var(--bg)}
+.page{display:none;padding:20px 24px}
+.page.active{display:block}
+.ph{margin-bottom:14px}
+.pt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--black)}
+.ps{font-size:13px;color:var(--g300);margin-top:2px}
+
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.stat{background:var(--white);border:1px solid var(--g100);border-radius:10px;padding:12px 14px}
+.stat-l{font-size:10px;font-weight:600;color:var(--g300);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.stat-v{font-size:22px;font-weight:700;color:var(--black);line-height:1}
+.stat-s{font-size:11px;color:var(--g300);margin-top:1px}
+
+/* GRID */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+
+/* CARD */
+.card{background:var(--white);border:1px solid var(--g100);border-radius:12px;padding:14px}
+.ct{font-size:13px;font-weight:700;color:var(--black);margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
+.ct a{font-size:11px;font-weight:500;color:var(--green);text-decoration:none;cursor:pointer}
+
+/* FAV MINI */
+.fmi{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--g50)}
+.fmi:last-child{border-bottom:none}
+.fmi-flag{font-size:18px}
+.fmi-name{font-size:12px;font-weight:600;color:var(--black)}
+.fmi-meta{font-size:11px;color:var(--g300)}
+.fmi-badge{margin-left:auto;font-size:10px;padding:2px 7px;border-radius:20px;background:var(--green-light);color:var(--green);font-weight:600;white-space:nowrap;flex-shrink:0}
+.fmi-badge.w{background:var(--amber-light);color:var(--amber)}
+
+/* VISA MINI */
+.vmi{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--g50)}
+.vmi:last-child{border-bottom:none}
+.vdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dok{background:var(--green)}.dwarn{background:var(--amber)}.ddanger{background:var(--red)}
+.vmi-name{font-size:12px;font-weight:600;color:var(--black);flex:1}
+.vmi-days{font-size:11px;color:var(--g300)}
+.vmi-badge{font-size:10px;padding:2px 7px;border-radius:20px;font-weight:600}
+.bwarn{background:var(--amber-light);color:var(--amber)}
+.bdanger{background:var(--red-light);color:var(--red)}
+
+/* MAP */
+.map-stub{background:var(--g50);border-radius:8px;height:80px;position:relative;overflow:hidden;margin-bottom:6px;display:flex;align-items:center;justify-content:center}
+.map-txt{font-size:12px;color:var(--g300);font-weight:500}
+.mdot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--green);border:2px solid white}
+.map-bar{height:3px;border-radius:2px;background:var(--g100);overflow:hidden;margin-bottom:4px}
+.map-fill{height:100%;border-radius:2px;background:var(--green)}
+.map-lbl{font-size:11px;color:var(--g300)}
+
+/* CALC MINI */
+.cmr{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--g50);font-size:12px}
+.cmr:last-child{border-bottom:none;font-weight:700;color:var(--green);padding-top:8px;margin-top:1px;border-top:1px solid var(--g100)}
+.cml{color:var(--g500)}.cmv{font-weight:600;color:var(--black)}
+
+/* ACHIEVEMENTS */
+.badges{display:flex;flex-wrap:wrap;gap:5px}
+.badge{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:var(--g50);color:var(--g300);border:1px solid var(--g100)}
+.badge.on{background:var(--green-light);color:var(--green);border-color:rgba(28,122,84,.2)}
+
+/* FULL FAVORITES */
+.fav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.fav-card{background:var(--white);border:1px solid var(--g100);border-radius:14px;padding:18px;position:relative;transition:all .2s}
+.fav-card:hover{border-color:var(--green-mid);transform:translateY(-2px);box-shadow:0 4px 20px rgba(28,122,84,.1)}
+.fc-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.fc-flag{font-size:28px}
+.fc-name{font-size:15px;font-weight:700;color:var(--black)}
+.fc-region{font-size:12px;color:var(--g300)}
+.fc-vbadge{position:absolute;top:14px;right:14px;font-size:10px;padding:3px 9px;border-radius:20px;background:var(--green-light);color:var(--green);font-weight:600}
+.fc-vbadge.w{background:var(--amber-light);color:var(--amber)}
+.fc-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fc-stat{background:var(--g50);border-radius:8px;padding:8px 10px}
+.fc-sl{font-size:10px;color:var(--g300);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
+.fc-sv{font-size:13px;font-weight:600;color:var(--black)}
+.fc-del{position:absolute;bottom:14px;right:14px;width:24px;height:24px;border-radius:50%;background:var(--g50);border:none;cursor:pointer;font-size:12px;opacity:0;transition:all .15s;display:flex;align-items:center;justify-content:center}
+.fav-card:hover .fc-del{opacity:1}
+.fc-del:hover{background:var(--red-light);color:var(--red)}
+
+/* FULL VISAS */
+.visa-list{display:flex;flex-direction:column;gap:10px}
+.vc{background:var(--white);border:1px solid var(--g100);border-radius:14px;padding:16px;display:flex;align-items:center;gap:14px}
+.vc-flag{font-size:26px;flex-shrink:0}
+.vc-info{flex:1}
+.vc-name{font-size:14px;font-weight:700;color:var(--black)}
+.vc-meta{font-size:12px;color:var(--g300);margin-top:2px}
+.vc-bar{height:4px;border-radius:2px;background:var(--g100);overflow:hidden;margin-top:8px}
+.vc-fill{height:100%;border-radius:2px}
+.bok{background:var(--green)}.bwarn{background:var(--amber)}.bdanger2{background:var(--red)}
+.vc-right{text-align:right;flex-shrink:0}
+.vc-days{font-size:22px;font-weight:700}
+.dok2{color:var(--green)}.dwarn2{color:var(--amber)}.ddanger2{color:var(--red)}
+.vc-sub{font-size:11px;color:var(--g300);margin-top:1px}
+.vc-del{font-size:11px;color:var(--g300);cursor:pointer;margin-top:4px;background:none;border:none;font-family:'Manrope',sans-serif;transition:color .15s}
+.vc-del:hover{color:var(--red)}
+.add-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border:1.5px dashed var(--g100);border-radius:14px;font-size:13px;font-weight:600;color:var(--g300);cursor:pointer;transition:all .15s;background:none;width:100%;font-family:'Manrope',sans-serif;margin-top:10px}
+.add-btn:hover{border-color:var(--green);color:var(--green);background:var(--green-pale)}
+.add-form{background:var(--white);border:1px solid var(--g100);border-radius:14px;padding:18px;margin-top:10px;display:none}
+.add-form.show{display:block}
+.add-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;align-items:end}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fl{font-size:12px;font-weight:600;color:var(--g500)}
+.fi{padding:9px 12px;border:1.5px solid var(--g100);border-radius:9px;font-size:13px;font-family:'Manrope',sans-serif;background:var(--white);color:var(--black);outline:none;transition:border-color .15s}
+.fi:focus{border-color:var(--green)}
+.btn-ok{padding:9px 16px;background:var(--green);color:#fff;border:none;border-radius:9px;font-size:13px;font-weight:600;font-family:'Manrope',sans-serif;cursor:pointer}
+.btn-ok:hover{background:#165f41}
+
+/* BUDGET */
+.budget-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.bc{background:var(--white);border:1px solid var(--g100);border-radius:14px;padding:20px}
+.br-inner{background:var(--green-pale);border:1px solid rgba(28,122,84,.15);border-radius:10px;padding:16px}
+.form-g{margin-bottom:14px}
+.form-l{font-size:12px;font-weight:600;color:var(--g500);display:block;margin-bottom:5px}
+.form-i{width:100%;padding:9px 12px;border:1.5px solid var(--g100);border-radius:9px;font-size:13px;font-family:'Manrope',sans-serif;background:var(--white);color:var(--black);outline:none;transition:border-color .15s}
+.form-i:focus{border-color:var(--green)}
+.rrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.rl{font-size:12px;font-weight:600;color:var(--g500)}
+.rv{font-size:13px;font-weight:700;color:var(--green)}
+input[type=range]{width:100%;accent-color:var(--green)}
+.res-l{font-size:11px;font-weight:600;color:var(--g500);text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+.rr{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(28,122,84,.1);font-size:13px}
+.rr:last-child{border-bottom:none;font-weight:700;font-size:15px;color:var(--green);padding-top:12px;margin-top:4px;border-top:1.5px solid rgba(28,122,84,.2)}
+.rk{color:var(--g500)}.rv2{font-weight:600;color:var(--black)}
+
+/* PROFILE */
+.profile-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.phero{background:var(--white);border:1px solid var(--g100);border-radius:14px;padding:22px;grid-column:1/-1}
+.ptop{display:flex;align-items:flex-start;gap:18px;margin-bottom:20px}
+.pav{width:64px;height:64px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:var(--green);flex-shrink:0}
+.pname{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--black);margin-bottom:3px}
+.pemail{font-size:13px;color:var(--g300);margin-bottom:12px}
+.slbl{font-size:11px;font-weight:600;color:var(--g300);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.sbtns{display:flex;flex-wrap:wrap;gap:7px}
+.sbtn{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid var(--g100);background:none;color:var(--g500);font-family:'Manrope',sans-serif;transition:all .15s}
+.sbtn:hover{border-color:var(--green);color:var(--green)}
+.sbtn.active{background:var(--green);color:#fff;border-color:var(--green)}
+.pstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pstat{background:var(--g50);border-radius:10px;padding:12px;text-align:center}
+.psv{font-size:22px;font-weight:700;color:var(--black)}
+.psl{font-size:11px;color:var(--g300);font-weight:500}
+.scard{background:var(--white);border:1px solid var(--g100);border-radius:14px;padding:20px}
+.stitle{font-size:12px;font-weight:700;color:var(--black);margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em}
+.cur-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.cur-btn{padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid var(--g100);background:none;color:var(--g500);font-family:'Manrope',sans-serif;transition:all .15s}
+.cur-btn:hover{border-color:var(--green);color:var(--green)}
+.cur-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+.btn-save{margin-top:14px;padding:9px 22px;background:var(--green);color:#fff;border:none;border-radius:9px;font-size:13px;font-weight:600;font-family:'Manrope',sans-serif;cursor:pointer}
+.btn-save:hover{background:#165f41}
+.btn-danger{margin-top:8px;padding:9px 22px;background:none;color:var(--red);border:1.5px solid var(--red);border-radius:9px;font-size:13px;font-weight:600;font-family:'Manrope',sans-serif;cursor:pointer;width:100%}
+.btn-danger:hover{background:var(--red-light)}
+
+/* EMPTY */
+.empty{text-align:center;padding:36px 20px;color:var(--g300)}
+.ei{font-size:38px;margin-bottom:10px}
+.et{font-size:15px;font-weight:600;color:var(--g500);margin-bottom:4px}
+.es{font-size:13px;margin-bottom:14px}
+.btn-g{display:inline-block;padding:9px 22px;background:var(--green);color:#fff;border-radius:9px;font-size:13px;font-weight:600;text-decoration:none}
+
+/* TOAST */
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--black);color:#fff;padding:11px 20px;border-radius:10px;font-size:13px;font-weight:500;z-index:999;transition:transform .25s;pointer-events:none;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+@media(max-width:900px){
+  .sidebar{width:56px}
+  .sb-logo,.sb-uname,.sb-uemail,.sb-item span,.sb-logout{display:none}
+  .sb-item{justify-content:center;padding:10px}
+  .stats-row,.g2,.g3,.budget-wrap,.profile-wrap{grid-template-columns:1fr 1fr}
+  .phero{grid-column:auto}
+  .page{padding:20px 16px}
+}
+@media(max-width:600px){
+  .stats-row,.g2,.g3,.budget-wrap,.profile-wrap{grid-template-columns:1fr}
+  .add-row{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="loading" id="loading">
+  <div class="loading-logo">Check<span>The</span>World<span class="dot">.</span></div>
+  <div class="spinner"></div>
+</div>
+
+<div class="app">
+  <div class="sidebar">
+    <div class="sb-logo"><a href="index.html">Check<span>The</span>World<span class="dot">.</span></a></div>
+    <nav class="sb-nav">
+      <button class="sb-item active" onclick="go('overview')" id="sb-overview">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+        <span>Обзор</span>
+      </button>
+      <button class="sb-item" onclick="go('favorites')" id="sb-favorites">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 13L3 8.5C2 7.5 2 5.8 3.5 5c1-.5 2.2-.2 3 .8L8 7l1.5-1.2c.8-1 2-.8 3-.3C14 6.3 14 8 13 9L8 13z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        <span>Избранное</span>
+      </button>
+      <button class="sb-item" onclick="go('visas')" id="sb-visas">
+        <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3l2 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span>Визовый трекер</span>
+      </button>
+      <button class="sb-item" onclick="go('budget')" id="sb-budget">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span>Калькулятор</span>
+      </button>
+      <div class="sb-divider"></div>
+      <button class="sb-item" onclick="go('profile')" id="sb-profile">
+        <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M3 13.5c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span>Профиль</span>
+      </button>
+    </nav>
+    <div class="sb-bottom">
+      <div class="sb-user">
+        <div class="sb-avatar" id="sav">?</div>
+        <div><div class="sb-uname" id="snm">...</div><div class="sb-uemail" id="sem">...</div></div>
+      </div>
+      <button class="sb-logout" onclick="logout()">Выйти</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- OVERVIEW -->
+    <div class="page active" id="page-overview">
+      <div class="ph"><div class="pt" id="ov-title">Добро пожаловать</div><div class="ps">Твоя карта мира и путешествий</div></div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-l">В избранном</div><div class="stat-v" id="s-fav">0</div><div class="stat-s">стран</div></div>
+        <div class="stat"><div class="stat-l">Посещено</div><div class="stat-v" id="s-vis">0</div><div class="stat-s">стран</div></div>
+        <div class="stat"><div class="stat-l">Активных виз</div><div class="stat-v" id="s-vz">0</div><div class="stat-s">истекают скоро</div></div>
+        <div class="stat"><div class="stat-l">Маршруты</div><div class="stat-v">—</div><div class="stat-s">скоро</div></div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ct">Избранные страны <a onclick="go('favorites')">Все →</a></div><div id="ov-fav"></div></div>
+        <div class="card"><div class="ct">Визовый трекер <a onclick="go('visas')">Все →</a></div><div id="ov-vz"></div></div>
+      </div>
+      <div class="g3">
+        <div class="card">
+          <div class="ct">Карта посещений</div>
+          <div class="map-stub"><span class="map-txt" id="mt">0 стран</span><div class="mdot" style="top:42%;left:58%"></div><div class="mdot" style="top:36%;left:54%;background:var(--amber)"></div></div>
+          <div class="map-bar"><div class="map-fill" id="mf" style="width:0%"></div></div>
+          <div class="map-lbl" id="ml">0 из 180+ стран</div>
+        </div>
+        <div class="card"><div class="ct">Калькулятор <a onclick="go('budget')">Открыть →</a></div><div id="ov-calc"></div></div>
+        <div class="card"><div class="ct">Достижения</div><div class="badges" id="ov-bdg"></div></div>
+      </div>
+    </div>
+
+    <!-- FAVORITES -->
+    <div class="page" id="page-favorites">
+      <div class="ph"><div class="pt">Избранные страны</div><div class="ps" id="fav-sub">...</div></div>
+      <div class="fav-grid" id="fav-grid"></div>
+    </div>
+
+    <!-- VISAS -->
+    <div class="page" id="page-visas">
+      <div class="ph"><div class="pt">Визовый трекер</div><div class="ps">Следи за сроками своих виз</div></div>
+      <div class="visa-list" id="visa-list"></div>
+      <button class="add-btn" onclick="toggleAddVisa()">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Добавить страну
+      </button>
+      <div class="add-form" id="add-form">
+        <div class="add-row">
+          <div class="fg"><label class="fl">Страна</label>
+            <select class="fi" id="v-country">
+              <option value="">Выбери страну</option>
+              <option>🇹🇭 Таиланд</option><option>🇬🇪 Грузия</option><option>🇷🇸 Сербия</option>
+              <option>🇹🇷 Турция</option><option>🇦🇲 Армения</option><option>🇻🇳 Вьетнам</option>
+              <option>🇨🇳 Китай</option><option>🇧🇾 Беларусь</option><option>🇰🇿 Казахстан</option>
+            </select></div>
+          <div class="fg"><label class="fl">Дата въезда</label><input class="fi" type="date" id="v-entry"></div>
+          <div class="fg"><label class="fl">Дней разрешено</label><input class="fi" type="number" id="v-allowed" placeholder="90" min="1" max="365"></div>
+          <button class="btn-ok" onclick="addVisa()">Добавить</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUDGET -->
+    <div class="page" id="page-budget">
+      <div class="ph"><div class="pt">Калькулятор бюджета</div><div class="ps">Посчитай сколько нужно на поездку</div></div>
+      <div class="budget-wrap">
+        <div class="bc">
+          <div class="form-g"><label class="form-l">Страна</label>
+            <select class="form-i" id="c-country" onchange="calcBudget()">
+              <option value="georgia">🇬🇪 Грузия</option><option value="thailand">🇹🇭 Таиланд</option>
+              <option value="serbia">🇷🇸 Сербия</option><option value="turkey">🇹🇷 Турция</option>
+              <option value="armenia">🇦🇲 Армения</option><option value="vietnam">🇻🇳 Вьетнам</option>
+              <option value="china">🇨🇳 Китай</option><option value="belarus">🇧🇾 Беларусь</option>
+              <option value="kazakhstan">🇰🇿 Казахстан</option>
+            </select></div>
+          <div class="form-g">
+            <div class="rrow"><span class="rl">Количество дней</span><span class="rv" id="c-dv">30</span></div>
+            <input type="range" min="3" max="365" value="30" step="1" id="c-days" oninput="document.getElementById('c-dv').textContent=this.value;calcBudget()">
+          </div>
+          <div class="form-g"><label class="form-l">Количество человек</label>
+            <select class="form-i" id="c-people" onchange="calcBudget()">
+              <option value="1">1 человек</option><option value="2">2 человека</option><option value="3">3 человека</option><option value="4">4 человека</option>
+            </select></div>
+          <div class="form-g"><label class="form-l">Жильё</label>
+            <select class="form-i" id="c-housing" onchange="calcBudget()">
+              <option value="hostel">Хостел</option><option value="apartment" selected>Квартира/апартаменты</option><option value="hotel">Отель 3★</option>
+            </select></div>
+          <div class="form-g"><label class="form-l">Питание</label>
+            <select class="form-i" id="c-food" onchange="calcBudget()">
+              <option value="budget">Бюджетно (уличная еда)</option><option value="mid" selected>Средне (кафе)</option><option value="comfort">Комфортно (рестораны)</option>
+            </select></div>
+        </div>
+        <div class="bc"><div class="br-inner"><div class="res-l">Примерный бюджет</div><div id="c-result"></div></div></div>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <div class="page" id="page-profile">
+      <div class="ph"><div class="pt">Профиль</div><div class="ps">Настройки аккаунта</div></div>
+      <div class="profile-wrap">
+        <div class="phero">
+          <div class="ptop">
+            <div class="pav" id="p-av">?</div>
+            <div>
+              <div class="pname" id="p-nm">...</div>
+              <div class="pemail" id="p-em">...</div>
+              <div class="slbl">Статус переезда</div>
+              <div class="sbtns">
+                <button class="sbtn" data-s="planning" onclick="setStatus(this)">🗺 Планирую</button>
+                <button class="sbtn" data-s="moving" onclick="setStatus(this)">📦 Переезжаю</button>
+                <button class="sbtn" data-s="living" onclick="setStatus(this)">🏠 Уже живу</button>
+                <button class="sbtn" data-s="traveling" onclick="setStatus(this)">✈️ Путешествую</button>
+                <button class="sbtn" data-s="returned" onclick="setStatus(this)">🔄 Вернулся</button>
+              </div>
+            </div>
+          </div>
+          <div class="pstats">
+            <div class="pstat"><div class="psv" id="ps-fav">0</div><div class="psl">В избранном</div></div>
+            <div class="pstat"><div class="psv" id="ps-vis">0</div><div class="psl">Посещено</div></div>
+            <div class="pstat"><div class="psv" id="ps-vz">0</div><div class="psl">Активных виз</div></div>
+          </div>
+        </div>
+        <div class="scard">
+          <div class="stitle">Настройки</div>
+          <div class="form-g"><label class="form-l">Отображаемое имя</label><input class="form-i" type="text" id="inp-name" placeholder="Твоё имя"></div>
+          <div class="form-g"><label class="form-l">Валюта по умолчанию</label>
+            <div class="cur-row">
+              <button class="cur-btn active" data-cur="rub" onclick="setCur(this)">₽ Рубли</button>
+              <button class="cur-btn" data-cur="usd" onclick="setCur(this)">$ Доллары</button>
+              <button class="cur-btn" data-cur="eur" onclick="setCur(this)">€ Евро</button>
+            </div>
+          </div>
+          <button class="btn-save" onclick="saveProfile()">Сохранить изменения</button>
+        </div>
+        <div class="scard">
+          <div class="stitle" style="color:var(--red)">Опасная зона</div>
+          <p style="font-size:13px;color:var(--g300);margin-bottom:12px">Выход из аккаунта на этом устройстве.</p>
+          <button class="btn-danger" onclick="logout()">Выйти из аккаунта</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-app-compat.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-auth-compat.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-firestore-compat.min.js"></script>
+<script>
+firebase.initializeApp({apiKey:"AIzaSyC_erJyfCASKgjMaMXTF4ovqfwfC4-5GmU",authDomain:"checktheworld-a631d.firebaseapp.com",projectId:"checktheworld-a631d",storageBucket:"checktheworld-a631d.firebasestorage.app",messagingSenderId:"1006756841439",appId:"1:1006756841439:web:ab81d8f3f469ea3d07666a"});
+const auth=firebase.auth(), db=firebase.firestore();
+let U=null, D={};
+
+auth.onAuthStateChanged(async u=>{
+  if(!u){window.location.href='login.html';return;}
+  U=u;
+  const s=await db.collection('users').doc(u.uid).get();
+  D=s.exists?s.data():{};
+  D.favorites=D.favorites||[]; D.visited=D.visited||[]; D.visas=D.visas||[];
+  D.currency=D.currency||'rub'; D.status=D.status||'';
+  D.name=D.name||u.displayName||u.email.split('@')[0];
+  renderAll();
+  document.getElementById('loading').style.display='none';
+});
+
+const save=()=>db.collection('users').doc(U.uid).set(D,{merge:true});
+
+const C={
+  thailand:{f:'🇹🇭',n:'Таиланд',r:'Юго-Восточная Азия',d:'~3 200 ₽',a:'~41 000 ₽',v:'Безвиз 60 дней'},
+  georgia:{f:'🇬🇪',n:'Грузия',r:'Кавказ',d:'~1 800 ₽',a:'~28 000 ₽',v:'Безвиз 365 дней'},
+  serbia:{f:'🇷🇸',n:'Сербия',r:'Балканы',d:'~2 000 ₽',a:'~35 000 ₽',v:'Безвиз 30 дней'},
+  turkey:{f:'🇹🇷',n:'Турция',r:'Передняя Азия',d:'~2 400 ₽',a:'~38 000 ₽',v:'Безвиз 60 дней'},
+  armenia:{f:'🇦🇲',n:'Армения',r:'Кавказ',d:'~1 600 ₽',a:'~22 000 ₽',v:'Безвиз 180 дней'},
+  vietnam:{f:'🇻🇳',n:'Вьетнам',r:'Юго-Восточная Азия',d:'~1 900 ₽',a:'~25 000 ₽',v:'Безвиз 45 дней'},
+  china:{f:'🇨🇳',n:'Китай',r:'Восточная Азия',d:'~3 500 ₽',a:'~45 000 ₽',v:'Виза'},
+  belarus:{f:'🇧🇾',n:'Беларусь',r:'Восточная Европа',d:'~2 500 ₽',a:'~40 000 ₽',v:'Внутр. паспорт'},
+  kazakhstan:{f:'🇰🇿',n:'Казахстан',r:'Центральная Азия',d:'~2 200 ₽',a:'~32 000 ₽',v:'Внутр. паспорт'},
+};
+
+function init(id){const e=name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2)||'?';return e;}
+
+function renderAll(){
+  const name=D.name||'';
+  const ini=name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2)||'?';
+  const actVz=(D.visas||[]).filter(v=>dl(v)>0).length;
+
+  ['sav','p-av'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=ini;});
+  ['snm','p-nm'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=name;});
+  document.getElementById('sem').textContent=U.email;
+  document.getElementById('p-em').textContent=U.email;
+  document.getElementById('inp-name').value=name;
+  document.getElementById('ov-title').textContent='Добро пожаловать, '+name.split(' ')[0];
+
+  ['s-fav','ps-fav'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=D.favorites.length;});
+  ['s-vis','ps-vis'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=D.visited.length;});
+  ['s-vz','ps-vz'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=actVz;});
+
+  const vis=D.visited.length;
+  document.getElementById('mt').textContent=vis+' стран отмечено';
+  document.getElementById('ml').textContent=vis+' из 180+ стран';
+  document.getElementById('mf').style.width=Math.min(100,vis/1.8)+'%';
+
+  document.querySelectorAll('.sbtn').forEach(b=>b.classList.toggle('active',b.dataset.s===D.status));
+  document.querySelectorAll('.cur-btn').forEach(b=>b.classList.toggle('active',b.dataset.cur===D.currency));
+
+  renderOvFav(); renderOvVisa(); renderOvCalc(); renderAch();
+  renderFavFull(); renderVisaFull(); calcBudget();
+}
+
+function renderOvFav(){
+  const el=document.getElementById('ov-fav');
+  const favs=D.favorites.slice(0,4);
+  if(!favs.length){el.innerHTML='<div class="empty"><div class="es">Нет избранных стран</div></div>';return;}
+  el.innerHTML=favs.map(k=>{const c=C[k];if(!c)return'';const w=c.v.includes('Виза');
+    return`<div class="fmi"><span class="fmi-flag">${c.f}</span><div><div class="fmi-name">${c.n}</div><div class="fmi-meta">${c.d} · ${c.r}</div></div><span class="fmi-badge ${w?'w':''}">${c.v}</span></div>`;
+  }).join('');
+}
+
+function renderOvVisa(){
+  const el=document.getElementById('ov-vz');
+  const visas=D.visas.slice(0,4);
+  if(!visas.length){el.innerHTML='<div class="empty"><div class="es">Нет отслеживаемых виз</div></div>';return;}
+  el.innerHTML=visas.map(v=>{
+    const left=dl(v);
+    const dc=left<=7?'ddanger':'left<=21?\'dwarn\':\'dok\'';
+    const dotCls=left<=7?'ddanger':left<=21?'dwarn':'dok';
+    const badge=left<=7?'<span class="vmi-badge bdanger">срочно</span>':left<=21?'<span class="vmi-badge bwarn">скоро</span>':'';
+    const parts=v.country.split(' ');
+    return`<div class="vmi"><span class="vdot ${dotCls}"></span><span class="vmi-name">${parts.slice(1).join(' ')}</span><span class="vmi-days">осталось ${left} дн.</span>${badge}</div>`;
+  }).join('');
+}
+
+function renderOvCalc(){
+  const b={day:1800,flight:18000};const days=30;
+  const total=b.day*days+b.flight;
+  document.getElementById('ov-calc').innerHTML=`
+    <div class="cmr"><span class="cml">🇬🇪 Грузия · 30 дней</span><span class="cmv">${(b.day*days).toLocaleString('ru')} ₽</span></div>
+    <div class="cmr"><span class="cml">Авиабилеты</span><span class="cmv">${b.flight.toLocaleString('ru')} ₽</span></div>
+    <div class="cmr"><span class="cml">Итого</span><span class="cmv">${total.toLocaleString('ru')} ₽</span></div>`;
+}
+
+function renderAch(){
+  const fav=D.favorites.length,vis=D.visited.length;
+  const all=[
+    {l:'первая поездка',e:vis>=1},{l:'безвизовый мастер',e:fav>=3},
+    {l:'10 стран',e:vis>=10},{l:'25 стран',e:vis>=25},
+    {l:'все регионы',e:false},{l:'год в дороге',e:false}
+  ];
+  document.getElementById('ov-bdg').innerHTML=all.map(a=>`<span class="badge ${a.e?'on':''}">${a.l}</span>`).join('');
+}
+
+function renderFavFull(){
+  const grid=document.getElementById('fav-grid');
+  const sub=document.getElementById('fav-sub');
+  const favs=D.favorites;
+  const n=favs.length;
+  sub.textContent=n?`${n} ${n===1?'страна':n<5?'страны':'стран'} в избранном`:'Пока пусто';
+  if(!n){grid.innerHTML=`<div class="empty" style="grid-column:1/-1"><div class="ei">🗺</div><div class="et">Нет избранных стран</div><div class="es">Добавляй страны на их страницах</div><a class="btn-g" href="index.html">Смотреть страны</a></div>`;return;}
+  grid.innerHTML=favs.map(k=>{const c=C[k];if(!c)return'';const w=c.v.includes('Виза');
+    return`<div class="fav-card"><div class="fc-top"><span class="fc-flag">${c.f}</span><div><div class="fc-name">${c.n}</div><div class="fc-region">${c.r}</div></div></div><span class="fc-vbadge ${w?'w':''}">${c.v}</span><div class="fc-stats"><div class="fc-stat"><div class="fc-sl">Бюджет/день</div><div class="fc-sv">${c.d}</div></div><div class="fc-stat"><div class="fc-sl">Аренда/мес</div><div class="fc-sv">${c.a}</div></div></div><button class="fc-del" onclick="delFav('${k}',event)">✕</button></div>`;
+  }).join('');
+}
+
+async function delFav(k,e){e.stopPropagation();D.favorites=D.favorites.filter(x=>x!==k);await save();renderAll();toast('Удалено из избранного');}
+
+function dl(v){return Math.ceil((new Date(v.entry).getTime()+v.allowed*86400000-Date.now())/86400000);}
+
+function renderVisaFull(){
+  const list=document.getElementById('visa-list');
+  const visas=D.visas;
+  if(!visas.length){list.innerHTML=`<div class="empty"><div class="ei">🛂</div><div class="et">Нет виз</div><div class="es">Добавь страну ниже</div></div>`;return;}
+  list.innerHTML=visas.map((v,i)=>{
+    const left=dl(v);const pct=Math.max(0,Math.min(100,(left/v.allowed)*100));
+    const dc=left<=7?'ddanger2':left<=21?'dwarn2':'dok2';
+    const bc=left<=7?'bdanger2':left<=21?'bwarn':'bok';
+    const parts=v.country.split(' ');
+    return`<div class="vc"><span class="vc-flag">${parts[0]}</span><div class="vc-info"><div class="vc-name">${parts.slice(1).join(' ')}</div><div class="vc-meta">Въезд: ${new Date(v.entry).toLocaleDateString('ru')} · Разрешено: ${v.allowed} дн.</div><div class="vc-bar"><div class="vc-fill ${bc}" style="width:${pct}%"></div></div></div><div class="vc-right"><div class="vc-days ${dc}">${Math.max(0,left)}</div><div class="vc-sub">${left<=0?'истекла':'осталось дн.'}</div><button class="vc-del" onclick="delVisa(${i})">удалить</button></div></div>`;
+  }).join('');
+}
+
+function toggleAddVisa(){const f=document.getElementById('add-form');f.classList.toggle('show');if(f.classList.contains('show'))document.getElementById('v-entry').value=new Date().toISOString().split('T')[0];}
+
+async function addVisa(){
+  const c=document.getElementById('v-country').value;
+  const e=document.getElementById('v-entry').value;
+  const a=parseInt(document.getElementById('v-allowed').value);
+  if(!c||!e||!a){toast('Заполни все поля');return;}
+  D.visas.push({country:c,entry:e,allowed:a});
+  await save();renderAll();document.getElementById('add-form').classList.remove('show');toast('Виза добавлена ✓');
+}
+
+async function delVisa(i){D.visas.splice(i,1);await save();renderAll();toast('Удалено');}
+
+const BUDGETS={thailand:{day:3200,flight:34500},georgia:{day:1800,flight:18000},serbia:{day:2000,flight:22000},turkey:{day:2400,flight:16000},armenia:{day:1600,flight:14000},vietnam:{day:1900,flight:42000},china:{day:3500,flight:28000},belarus:{day:2500,flight:8000},kazakhstan:{day:2200,flight:12000}};
+
+function calcBudget(){
+  const country=document.getElementById('c-country')?.value||'georgia';
+  const days=parseInt(document.getElementById('c-days')?.value||30);
+  const people=parseInt(document.getElementById('c-people')?.value||1);
+  const housing=document.getElementById('c-housing')?.value||'apartment';
+  const food=document.getElementById('c-food')?.value||'mid';
+  const b=BUDGETS[country];if(!b)return;
+  const hk={hostel:.4,apartment:1,hotel:1.6}[housing];
+  const fk={budget:.6,mid:1,comfort:1.6}[food];
+  const hd=Math.round(b.day*people*.45*hk);
+  const fd=Math.round(b.day*people*.35*fk);
+  const od=Math.round(b.day*people*.2);
+  const total=((hd+fd+od)*days)+b.flight*people;
+  const fmt=n=>n.toLocaleString('ru')+' ₽';
+  document.getElementById('c-result').innerHTML=`
+    <div class="rr"><span class="rk">✈️ Авиабилеты (×${people})</span><span class="rv2">${fmt(b.flight*people)}</span></div>
+    <div class="rr"><span class="rk">🏠 Жильё (${days} дн.)</span><span class="rv2">${fmt(hd*days)}</span></div>
+    <div class="rr"><span class="rk">🍽 Питание (${days} дн.)</span><span class="rv2">${fmt(fd*days)}</span></div>
+    <div class="rr"><span class="rk">🎒 Прочее (${days} дн.)</span><span class="rv2">${fmt(od*days)}</span></div>
+    <div class="rr"><span class="rk">Итого</span><span class="rv2">${fmt(total)}</span></div>`;
+}
+
+function setStatus(btn){document.querySelectorAll('.sbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');D.status=btn.dataset.s;save();toast('Статус обновлён');}
+function setCur(btn){document.querySelectorAll('.cur-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');D.currency=btn.dataset.cur;}
+
+async function saveProfile(){
+  const n=document.getElementById('inp-name').value.trim();
+  if(!n){toast('Введи имя');return;}
+  D.name=n;await save();await U.updateProfile({displayName:n});renderAll();toast('Профиль сохранён ✓');
+}
+
+function go(p){
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(x=>x.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  document.getElementById('sb-'+p).classList.add('active');
+  document.querySelector('.content').scrollTop=0;
+}
+
+function logout(){auth.signOut().then(()=>window.location.href='login.html');}
+
+let tt;
+function toast(m){const e=document.getElementById('toast');e.textContent=m;e.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('show'),2500);}
+</script>
+</body>
+</html>

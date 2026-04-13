@@ -1,0 +1,5 @@
+# HTTP → HTTPS редиректы (Cloudflare обычно делает это автоматически,
+# но на всякий случай оставляем явно)
+http://checktheworld.ru/* https://checktheworld.ru/:splat 301
+http://www.checktheworld.ru/* https://checktheworld.ru/:splat 301
+https://www.checktheworld.ru/* https://checktheworld.ru/:splat 301
