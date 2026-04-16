@@ -340,36 +340,42 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
 
 /* SIDEBAR NAV */
 .sidenav{
-  position:fixed;right:18px;top:50%;transform:translateY(-50%);
-  z-index:300;display:flex;flex-direction:column;gap:6px;
-  opacity:0;pointer-events:none;transition:opacity .3s
+  position:fixed;right:0;top:50%;transform:translateY(-50%);
+  z-index:300;display:flex;flex-direction:column;align-items:flex-end;
+  gap:0;opacity:0;pointer-events:none;transition:opacity .25s;
+  padding-right:14px;
 }
 .sidenav.visible{opacity:1;pointer-events:auto}
 .sidenav-item{
-  display:flex;align-items:center;gap:8px;cursor:pointer;
+  display:flex;align-items:center;gap:7px;
+  cursor:pointer;padding:4px 0;
   justify-content:flex-end;
 }
 .sidenav-dot{
-  width:8px;height:8px;border-radius:50%;
+  width:6px;height:6px;border-radius:50%;flex-shrink:0;
   background:var(--g100);border:1.5px solid var(--g300);
-  transition:all .2s;flex-shrink:0
+  transition:background .2s,border-color .2s,transform .2s;
+}
+.sidenav-item:hover .sidenav-dot{
+  border-color:var(--green-mid);
+}
+.sidenav-item.active .sidenav-dot{
+  background:var(--green);border-color:var(--green);
+  transform:scale(1.4);
 }
 .sidenav-label{
   font-size:11px;font-weight:600;color:var(--g300);
-  background:var(--white);border:1px solid var(--g100);
-  padding:3px 8px;border-radius:6px;
-  opacity:0;transform:translateX(4px);
-  transition:all .2s;white-space:nowrap;
-  pointer-events:none;
-  box-shadow:0 2px 8px rgba(0,0,0,.08)
+  white-space:nowrap;max-width:0;overflow:hidden;
+  transition:max-width .2s,opacity .2s,color .2s;
+  opacity:0;
 }
-.sidenav-item:hover .sidenav-label{opacity:1;transform:none}
-.sidenav-item.active .sidenav-dot{
-  background:var(--green);border-color:var(--green);
-  width:10px;height:10px
+.sidenav-item:hover .sidenav-label,
+.sidenav-item.active .sidenav-label{
+  max-width:160px;opacity:1;
 }
-.sidenav-item.active .sidenav-label{color:var(--green)}
-@media(max-width:1200px){.sidenav{display:none}}
+.sidenav-item.active .sidenav-label{ color:var(--green); }
+.sidenav-item:hover:not(.active) .sidenav-label{ color:var(--g500); }
+@media(max-width:900px){.sidenav{display:none}}
 
 .back-to-top{position:fixed;bottom:24px;right:18px;z-index:500;
   width:40px;height:40px;border-radius:50%;background:var(--green);
@@ -447,18 +453,18 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
 <div class="mobile-tabs">
   <div class="mob-tab" onclick="scrollToSection('visas',this)">🛂 Визы</div>
   <div class="mob-tab" onclick="scrollToSection('prices',this)">💰 Цены</div>
-  <div class="mob-tab" onclick="scrollToSection('budget',this)">🧮 Бюджет</div>
   <div class="mob-tab" onclick="scrollToSection('flights',this)">✈️ Билеты</div>
   <div class="mob-tab" onclick="scrollToSection('cities',this)">🏙 Города</div>
+  <div class="mob-tab" onclick="scrollToSection('tips',this)">💡 Советы</div>
+  <div class="mob-tab" onclick="scrollToSection('budget',this)">🧮 Бюджет</div>
+  <div class="mob-tab" onclick="scrollToSection('money',this)">💳 Деньги</div>
+  <div class="mob-tab" onclick="scrollToSection('taxes',this)">📊 Налоги</div>
+  <div class="mob-tab" onclick="scrollToSection('transport',this)">🚇 Транспорт</div>
+  <div class="mob-tab" onclick="scrollToSection('internet',this)">📶 Связь</div>
+  <div class="mob-tab" onclick="scrollToSection('medicine',this)">🏥 Медицина</div>
   <div class="mob-tab" onclick="scrollToSection('rental',this)">🏠 Жильё</div>
   <div class="mob-tab" onclick="scrollToSection('visarun',this)">🚌 Визаран</div>
   <div class="mob-tab" onclick="scrollToSection('climate',this)">🌤 Климат</div>
-  <div class="mob-tab" onclick="scrollToSection('transport',this)">🚌 Транспорт</div>
-  <div class="mob-tab" onclick="scrollToSection('internet',this)">📶 Связь</div>
-  <div class="mob-tab" onclick="scrollToSection('medicine',this)">🏥 Медицина</div>
-  <div class="mob-tab" onclick="scrollToSection('money',this)">💳 Деньги</div>
-  <div class="mob-tab" onclick="scrollToSection('taxes',this)">📊 Налоги</div>
-  <div class="mob-tab" onclick="scrollToSection('tips',this)">💡 Советы</div>
 </div>
 
 <!-- HERO -->
@@ -1542,45 +1548,8 @@ window.addEventListener('scroll',function(){
   if(window.pageYOffset>300){btt.classList.add('visible')}else{btt.classList.remove('visible')}
 });
 
-// Sidebar nav
-(function(){
-  var sidenavEl = document.getElementById('sidenav');
-  if(!sidenavEl) return;
-  var items = sidenavEl.querySelectorAll('.sidenav-item');
-
-  // Click handler
-  items.forEach(function(item){
-    item.addEventListener('click', function(){
-      var target = document.getElementById(item.dataset.target);
-      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-    });
-  });
-
-  // Show/hide and highlight on scroll
-  window.addEventListener('scroll', function(){
-    var scrollY = window.pageYOffset;
-
-    // Show after hero
-    if(scrollY > 300){
-      sidenavEl.classList.add('visible');
-    } else {
-      sidenavEl.classList.remove('visible');
-    }
-
-    // Highlight active
-    var active = null;
-    items.forEach(function(item){
-      var el = document.getElementById(item.dataset.target);
-      if(!el) return;
-      var top = el.getBoundingClientRect().top;
-      if(top < 160) active = item;
-    });
-    items.forEach(function(item){ item.classList.remove('active'); });
-    if(active) active.classList.add('active');
-  });
-})();
 // Highlight active tab on scroll
-var sections=['visas','prices','budget','flights','cities','rental','visarun','climate','transport','internet','medicine','money','taxes','tips'];
+var sections=['visas','prices','flights','cities','tips','budget','money','taxes','transport','internet','medicine','rental','visarun','climate'];
 window.addEventListener('scroll',function(){
   var offset=130;
   sections.forEach(function(id){
@@ -1668,19 +1637,57 @@ window.addEventListener('scroll',function(){
 <nav class="sidenav" id="sidenav">
   <div class="sidenav-item" data-target="visas"><span class="sidenav-label">🛂 Визы</span><div class="sidenav-dot"></div></div>
   <div class="sidenav-item" data-target="prices"><span class="sidenav-label">💰 Цены</span><div class="sidenav-dot"></div></div>
-  <div class="sidenav-item" data-target="budget"><span class="sidenav-label">🧮 Бюджет</span><div class="sidenav-dot"></div></div>
   <div class="sidenav-item" data-target="flights"><span class="sidenav-label">✈️ Билеты</span><div class="sidenav-dot"></div></div>
   <div class="sidenav-item" data-target="cities"><span class="sidenav-label">🏙 Города</span><div class="sidenav-dot"></div></div>
-  <div class="sidenav-item" data-target="rental"><span class="sidenav-label">🏠 Жильё</span><div class="sidenav-dot"></div></div>
-  <div class="sidenav-item" data-target="visarun"><span class="sidenav-label">🚌 Визаран</span><div class="sidenav-dot"></div></div>
-  <div class="sidenav-item" data-target="climate"><span class="sidenav-label">🌤 Климат</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="tips"><span class="sidenav-label">💡 Советы</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="budget"><span class="sidenav-label">🧮 Бюджет</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="money"><span class="sidenav-label">💳 Деньги</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="taxes"><span class="sidenav-label">📊 Налоги</span><div class="sidenav-dot"></div></div>
   <div class="sidenav-item" data-target="transport"><span class="sidenav-label">🚇 Транспорт</span><div class="sidenav-dot"></div></div>
   <div class="sidenav-item" data-target="internet"><span class="sidenav-label">📶 Связь</span><div class="sidenav-dot"></div></div>
   <div class="sidenav-item" data-target="medicine"><span class="sidenav-label">🏥 Медицина</span><div class="sidenav-dot"></div></div>
-  <div class="sidenav-item" data-target="money"><span class="sidenav-label">💳 Деньги</span><div class="sidenav-dot"></div></div>
-  <div class="sidenav-item" data-target="taxes"><span class="sidenav-label">📊 Налоги</span><div class="sidenav-dot"></div></div>
-  <div class="sidenav-item" data-target="tips"><span class="sidenav-label">💡 Советы</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="rental"><span class="sidenav-label">🏠 Жильё</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="visarun"><span class="sidenav-label">🚌 Визаран</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="climate"><span class="sidenav-label">🌤 Климат</span><div class="sidenav-dot"></div></div>
 </nav>
+<script>
+(function(){
+  var nav = document.getElementById('sidenav');
+  if(!nav) return;
+  var items = Array.prototype.slice.call(nav.querySelectorAll('.sidenav-item'));
+  var sectionEls = items.map(function(item){
+    return document.getElementById(item.dataset.target);
+  });
+
+  items.forEach(function(item, i){
+    item.addEventListener('click', function(){
+      var el = sectionEls[i];
+      if(el){
+        var top = el.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({top:top, behavior:'smooth'});
+      }
+    });
+  });
+
+  function update(){
+    var scrollY = window.pageYOffset;
+    if(scrollY > 200){ nav.classList.add('visible'); }
+    else { nav.classList.remove('visible'); return; }
+
+    var activeIdx = -1;
+    sectionEls.forEach(function(el, i){
+      if(el && el.getBoundingClientRect().top < 140) activeIdx = i;
+    });
+
+    items.forEach(function(item, i){
+      item.classList.toggle('active', i === activeIdx);
+    });
+  }
+
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
 
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script type="module">
