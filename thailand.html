@@ -201,6 +201,9 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
   footer{padding:20px;justify-content:center;text-align:center}
   .flinks{flex-wrap:wrap;justify-content:center}
 }
+@media(max-width:900px){
+  .budget-cols{grid-template-columns:1fr !important}
+}
 @media(max-width:480px){
   .prices-grid{grid-template-columns:1fr}
   .hero-stats{grid-template-columns:1fr 1fr}
@@ -335,7 +338,39 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
   .mob-tab:hover,.mob-tab.active{background:var(--green);color:var(--white);border-color:var(--green)}
 }
 
-/* BACK TO TOP */
+/* SIDEBAR NAV */
+.sidenav{
+  position:fixed;right:18px;top:50%;transform:translateY(-50%);
+  z-index:300;display:flex;flex-direction:column;gap:6px;
+  opacity:0;pointer-events:none;transition:opacity .3s
+}
+.sidenav.visible{opacity:1;pointer-events:auto}
+.sidenav-item{
+  display:flex;align-items:center;gap:8px;cursor:pointer;
+  justify-content:flex-end;
+}
+.sidenav-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--g100);border:1.5px solid var(--g300);
+  transition:all .2s;flex-shrink:0
+}
+.sidenav-label{
+  font-size:11px;font-weight:600;color:var(--g300);
+  background:var(--white);border:1px solid var(--g100);
+  padding:3px 8px;border-radius:6px;
+  opacity:0;transform:translateX(4px);
+  transition:all .2s;white-space:nowrap;
+  pointer-events:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.08)
+}
+.sidenav-item:hover .sidenav-label{opacity:1;transform:none}
+.sidenav-item.active .sidenav-dot{
+  background:var(--green);border-color:var(--green);
+  width:10px;height:10px
+}
+.sidenav-item.active .sidenav-label{color:var(--green)}
+@media(max-width:1200px){.sidenav{display:none}}
+
 .back-to-top{position:fixed;bottom:24px;right:18px;z-index:500;
   width:40px;height:40px;border-radius:50%;background:var(--green);
   color:#fff;border:none;font-size:18px;cursor:pointer;
@@ -412,8 +447,17 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
 <div class="mobile-tabs">
   <div class="mob-tab" onclick="scrollToSection('visas',this)">🛂 Визы</div>
   <div class="mob-tab" onclick="scrollToSection('prices',this)">💰 Цены</div>
+  <div class="mob-tab" onclick="scrollToSection('budget',this)">🧮 Бюджет</div>
   <div class="mob-tab" onclick="scrollToSection('flights',this)">✈️ Билеты</div>
   <div class="mob-tab" onclick="scrollToSection('cities',this)">🏙 Города</div>
+  <div class="mob-tab" onclick="scrollToSection('rental',this)">🏠 Жильё</div>
+  <div class="mob-tab" onclick="scrollToSection('visarun',this)">🚌 Визаран</div>
+  <div class="mob-tab" onclick="scrollToSection('climate',this)">🌤 Климат</div>
+  <div class="mob-tab" onclick="scrollToSection('transport',this)">🚌 Транспорт</div>
+  <div class="mob-tab" onclick="scrollToSection('internet',this)">📶 Связь</div>
+  <div class="mob-tab" onclick="scrollToSection('medicine',this)">🏥 Медицина</div>
+  <div class="mob-tab" onclick="scrollToSection('money',this)">💳 Деньги</div>
+  <div class="mob-tab" onclick="scrollToSection('taxes',this)">📊 Налоги</div>
   <div class="mob-tab" onclick="scrollToSection('tips',this)">💡 Советы</div>
 </div>
 
@@ -556,19 +600,6 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
     </div>
   </div>
 
-  <!-- HOUSING -->
-  <div class="section reveal" id="housing">
-    <div class="section-title"><span class="section-emoji">🏠</span> Жильё</div>
-    <div class="partner-block">
-      <div class="pb-header">
-        <div class="pb-title">Отели и апартаменты в Тайланде</div>
-        <div class="pb-badge">Островок</div>
-      </div>
-      <div class="pb-desc">Более 2,9 млн вариантов размещения по всему миру — отели, хостелы и апартаменты.</div>
-      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%231c7a54&color_button=%231c7a54&color_icons=%231c7a54&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
-    </div>
-  </div>
-
   <!-- CITIES -->
   <div class="section reveal" id="cities">
     <div class="section-title"><span class="section-emoji">🏙</span> Города и курорты</div>
@@ -643,41 +674,266 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
     <div class="section-title"><span class="section-emoji">💡</span> Полезные советы</div>
     <div class="tips-list">
       <div class="tip-item">
-        <span class="tip-icon">💊</span>
-        <div class="tip-text"><strong>Страховка обязательна</strong> — медицина в Тайланде платная. Хорошая страховка стоит $30–50 на месяц и покрывает всё включая скорую помощь.</div>
+        <span class="tip-icon">📋</span>
+        <div class="tip-text"><strong>TDAC — заполнить за 3 дня до вылета</strong> — с 1 мая 2025 года обязательная электронная карта прибытия для всех въезжающих. Сайт: tdac.immigration.go.th. Занимает 5 минут, бесплатно. Бумажные карточки TM6 больше не выдают. Без TDAC могут не посадить на самолёт.</div>
       </div>
       <div class="tip-item">
-        <span class="tip-icon">📱</span>
-        <div class="tip-text"><strong>SIM-карта в аэропорту</strong> — прямо при выходе из зоны получения багажа. AIS, DTAC или True Move. Безлимитный интернет на 30 дней — около 400 бат (~1 100 ₽).</div>
+        <span class="tip-icon">💊</span>
+        <div class="tip-text"><strong>Страховка с лимитом от $50 000</strong> — медицина платная и дорогая. Обычный лимит $30 000 заканчивается за неделю при серьёзной травме. Посольство РФ рекомендует $100 000. Проверьте что страховка покрывает мотоцикл — большинство дешёвых полисов это исключают.</div>
       </div>
       <div class="tip-item">
         <span class="tip-icon">💵</span>
-        <div class="tip-text"><strong>Наличные</strong> — многие места принимают только кэш. Снимайте в банкоматах Bangkok Bank или Kasikorn — комиссия ниже. Обменники в торговых центрах выгоднее аэропортовых.</div>
-      </div>
-      <div class="tip-item">
-        <span class="tip-icon">🛵</span>
-        <div class="tip-text"><strong>Байк вместо такси</strong> — на острове или в небольшом городе аренда мотобайка $5–10 в день экономит огромные деньги. Нужны права категории А.</div>
+        <div class="tip-text"><strong>Везите доллары, не рубли</strong> — рубли меняют с потерей до 25%. Доллары и евро — везде по нормальному курсу. Лучшие обменники: SuperRich (зелёный, не оранжевый), Vasu Exchange в торговых центрах. Снимайте в банкоматах крупными суммами — комиссия 220 бат за операцию.</div>
       </div>
       <div class="tip-item">
         <span class="tip-icon">🌡</span>
-        <div class="tip-text"><strong>Сезоны важны</strong> — лучшее время: ноябрь–апрель (сухой сезон). Май–октябрь — сезон дождей, отели дешевле на 30–50%, но бывают ливни.</div>
+        <div class="tip-text"><strong>Сезоны важны и различаются по регионам</strong> — Пхукет (запад): лучшее время ноябрь–апрель, дожди май–октябрь. Паттайя и Самуи (восток): сухой сезон наоборот — апрель–октябрь. В сезон дождей отели дешевле на 30–50%, но бывают ливни.</div>
       </div>
       <div class="tip-item">
-        <span class="tip-icon">📋</span>
-        <div class="tip-text"><strong>TDAC — электронная карта прибытия</strong> — с 1 мая 2025 года обязательна для всех въезжающих. Заполняется онлайн на <a href="https://tdac.immigration.go.th" target="_blank" style="color:var(--green)">tdac.immigration.go.th</a> не ранее чем за 3 дня до вылета. Бумажные карточки TM6 больше не выдают.</div>
+        <span class="tip-icon">🛵</span>
+        <div class="tip-text"><strong>Байк — только с правами и в шлеме</strong> — без прав категории А вы не застрахованы при ДТП. Полиция периодически проводит рейды особенно на Пхукете. Штраф — 500 бат, но при ДТП без прав все расходы на лечение ложатся на вас лично.</div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">🏛</span>
+        <div class="tip-text"><strong>Дресс-код в храмах</strong> — закрытые плечи и колени обязательны в любом буддийском храме. У входа в крупные храмы (Большой Дворец, Ват Пхо) всегда есть прокат саронгов. В шортах или майке не пустят.</div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">📱</span>
+        <div class="tip-text"><strong>Приложения которые нужны</strong> — Grab (такси, еда), Bolt (альтернатива Grab), Google Maps (работает хорошо), Bangkok MRT/BTS (расписание метро), XE Currency (курс валют), Airbnb/Booking (жильё). В Grab российскую карту не привяжешь — платите наличными.</div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">⚖️</span>
+        <div class="tip-text"><strong>Не превышайте 179 дней если не хотите быть налоговым резидентом</strong> — 180+ дней в году = налоговое резидентство Тайланда + обязанность декларировать иностранные доходы. Для зимовщиков оптимально: приехать в ноябре, уехать до конца апреля — это ~180 дней, можно чуть сократить.</div>
       </div>
     </div>
   </div>
 
-  <!-- SIM AND INSURANCE -->
-  <div class="section reveal">
-    <div class="section-title"><span class="section-emoji">📱</span> SIM-карта и страховка</div>
+  <!-- BUDGET BREAKDOWN -->
+  <div class="section reveal" id="budget">
+    <div class="section-title"><span class="section-emoji">🧮</span> Реальный бюджет на месяц</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px" class="budget-cols">
+      <!-- Эконом -->
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px">
+        <div style="font-size:11px;font-weight:700;color:var(--g300);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Эконом</div>
+        <div style="font-size:22px;font-weight:700;margin-bottom:4px">~50 000 ₽</div>
+        <div style="font-size:12px;color:var(--g300);margin-bottom:14px">~600 $ / ~16 000 ฿</div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Жильё (комната/хостел)</span><span style="font-weight:600">8 000–12 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Еда (рынки, стрит-фуд)</span><span style="font-weight:600">5 000–7 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Транспорт (авт./байк)</span><span style="font-weight:600">2 000–3 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Связь (SIM)</span><span style="font-weight:600">300–500 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Развлечения</span><span style="font-weight:600">1 000–2 000 ฿</span></div>
+        </div>
+        <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--g100);font-size:12px;color:var(--g300)">Чиангмай, без алкоголя, своя готовка</div>
+      </div>
+      <!-- Средний -->
+      <div style="background:var(--green-pale);border:1.5px solid var(--green);border-radius:16px;padding:20px">
+        <div style="font-size:11px;font-weight:700;color:var(--green);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Комфорт ★</div>
+        <div style="font-size:22px;font-weight:700;margin-bottom:4px">~100 000 ₽</div>
+        <div style="font-size:12px;color:var(--g300);margin-bottom:14px">~1 100 $ / ~33 000 ฿</div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Жильё (студия/апарт)</span><span style="font-weight:600">15 000–22 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Еда (кафе + готовка)</span><span style="font-weight:600">8 000–12 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Транспорт (Grab + байк)</span><span style="font-weight:600">3 000–5 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Коворкинг</span><span style="font-weight:600">2 500–4 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Развлечения + misc</span><span style="font-weight:600">3 000–5 000 ฿</span></div>
+        </div>
+        <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(28,122,84,.2);font-size:12px;color:var(--g300)">Бангкок или Чиангмай, средний образ жизни</div>
+      </div>
+      <!-- Комфорт+ -->
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px">
+        <div style="font-size:11px;font-weight:700;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Комфорт+</div>
+        <div style="font-size:22px;font-weight:700;margin-bottom:4px">~180 000 ₽</div>
+        <div style="font-size:12px;color:var(--g300);margin-bottom:14px">~2 000 $ / ~60 000 ฿</div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Жильё (1 комн. у моря)</span><span style="font-weight:600">25 000–50 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Еда (рестораны)</span><span style="font-weight:600">12 000–18 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Транспорт (авто/Grab)</span><span style="font-weight:600">5 000–10 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Спорт, здоровье, спа</span><span style="font-weight:600">3 000–6 000 ฿</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Экскурсии, поездки</span><span style="font-weight:600">5 000–10 000 ฿</span></div>
+        </div>
+        <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--g100);font-size:12px;color:var(--g300)">Пхукет или Самуи, активный образ жизни</div>
+      </div>
+    </div>
+    <div style="background:var(--amber-light);border-radius:12px;padding:13px 15px;font-size:13px;color:var(--amber);line-height:1.6">
+      <strong style="color:#c06010">Актуальный курс (апрель 2026):</strong> 1 бат ≈ 2.43 ₽. Обменники в торговых центрах дают курс лучше аэропортового на 15–20%. Рубли меняют по невыгодному курсу — лучше везти доллары или евро.
+    </div>
+  </div>
+
+  <!-- MONEY AND BANKS -->
+  <div class="section reveal" id="money">
+    <div class="section-title"><span class="section-emoji">💳</span> Деньги, карты и банки</div>
+
+    <!-- Как расплачиваться -->
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="font-size:16px;font-weight:700;margin-bottom:14px">Как платить в Тайланде россиянам</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:12px;padding:12px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-light)">
+          <span style="font-size:18px">✅</span>
+          <div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:3px">UnionPay (лучший вариант)</div>
+            <div style="font-size:13px;color:var(--g500);line-height:1.5">Карты UnionPay от российских банков (Газпромбанк, Россельхозбанк, МКБ) работают в большинстве банкоматов — SCB, Bangkok Bank, Kasikorn, LH Bank. Снятие: комиссия банкомата 220 бат (~540 ₽) за операцию — снимайте сразу крупную сумму.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;padding:12px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-light)">
+          <span style="font-size:18px">✅</span>
+          <div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:3px">Наличные доллары / евро</div>
+            <div style="font-size:13px;color:var(--g500);line-height:1.5">Самый надёжный способ. Меняйте в обменниках торговых центров (SuperRich, Vasu, Max Money) — курс лучше аэропортового на 10–20%. Никогда не меняйте в аэропорту — это самый невыгодный курс.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;padding:12px;background:var(--amber-light);border-radius:10px">
+          <span style="font-size:18px">⚠️</span>
+          <div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:3px">Рубли — не везите</div>
+            <div style="font-size:13px;color:var(--g500);line-height:1.5">Обменять рубли на баты можно, но теряешь до 25% на курсе. Везите доллары или евро — это стандартная валюта для обмена.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;padding:12px;background:var(--bg);border-radius:10px">
+          <span style="font-size:18px">💡</span>
+          <div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:3px">Переводы из России</div>
+            <div style="font-size:13px;color:var(--g500);line-height:1.5">SWIFT через нейтральные банки (армянские, казахские, грузинские), криптовалюта (USDT → обменник), Western Union через Казахстан. Прямые SWIFT из РФ в Тайланд работают только через незаблокированные банки.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Открытие счёта -->
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="font-size:16px;font-weight:700;margin-bottom:6px">Открытие банковского счёта</div>
+      <div style="font-size:13px;color:var(--g500);margin-bottom:14px;line-height:1.6">Нужен для долгосрочного проживания — платить аренду, коммуналку, получать переводы. Открыть счёт с безвизовым штампом сложно, большинство банков требует долгосрочную визу или ВНЖ.</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">Bangkok Bank 🟡</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Самый лояльный к иностранцам. Единственный банк, который <strong>иногда</strong> открывает счёт без долгосрочной визы — зависит от конкретного отделения и сотрудника. Выдаёт Savings Book (сберкнижка). Минимальный депозит — 500 бат. Комиссия за карту — 200–300 бат/год.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">Kasikorn Bank (KBank) 🟢</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Требует долгосрочную визу + депозит ~$400 (возвращают). Зато удобное мобильное приложение и хорошая поддержка. Подходит для тех кто планирует жить дольше 3 месяцев.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">Krungthai Bank</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Считается лояльным к иностранцам. Государственный банк, разветвлённая сеть банкоматов. Требует паспорт, иногда адрес в Тайланде.</div>
+        </div>
+      </div>
+      <div style="margin-top:12px;background:var(--amber-light);border-radius:10px;padding:11px 13px;font-size:13px;color:var(--amber);line-height:1.55">
+        <strong style="color:#c06010">Совет:</strong> если в одном отделении отказали — идите в другое. Политика разных отделений одного банка может сильно отличаться. Возьмите с собой: загранпаспорт, деньги на депозит, тайскую SIM-карту и, если есть, контракт аренды жилья.
+      </div>
+    </div>
+  </div>
+
+  <!-- TAX RESIDENCY -->
+  <div class="section reveal" id="taxes">
+    <div class="section-title"><span class="section-emoji">📊</span> Налоговое резидентство</div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:16px">Это одна из самых важных тем для тех кто планирует жить в Тайланде долгосрочно. С 2024 года правила изменились — теперь они касаются практически всех кто проводит в стране больше полугода.</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:14px;background:var(--amber-light);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;color:#c06010;margin-bottom:6px">⚠️ 180 дней = налоговый резидент</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Если ты провёл в Тайланде 180+ дней в календарном году (1 янв — 31 дек) — ты налоговый резидент. Счётчик обнуляется 1 января каждого года. Нерезиденты платят налог только с дохода внутри Тайланда.</div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Что изменилось с 2024 года</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">До 2024: иностранный доход облагался налогом только если переводился в тот же год. После 2024: любой иностранный доход, переведённый в Тайланд (в любой год), потенциально облагается налогом для резидентов. Правительство объявило льготный период на 2 года для доходов 2024–2025.</div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Ставки подоходного налога (PIT)</div>
+          <div style="display:flex;flex-direction:column;gap:5px;margin-top:6px">
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--g100)"><span style="color:var(--g500)">до 150 000 ฿/год</span><span style="font-weight:600">0%</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--g100)"><span style="color:var(--g500)">150 001 — 300 000 ฿</span><span style="font-weight:600">5%</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--g100)"><span style="color:var(--g500)">300 001 — 500 000 ฿</span><span style="font-weight:600">10%</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--g100)"><span style="color:var(--g500)">500 001 — 750 000 ฿</span><span style="font-weight:600">15%</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:5px 0"><span style="color:var(--g500)">свыше 5 000 000 ฿</span><span style="font-weight:600">35%</span></div>
+          </div>
+        </div>
+        <div style="padding:14px;background:var(--green-pale);border-radius:12px;border:1px solid var(--green-light)">
+          <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px">✅ Если ты нерезидент</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Проводишь в Тайланде меньше 180 дней — тайские налоги тебя не касаются. Твои доходы из РФ или других стран, которые не переводятся в Тайланд — вне тайской налоговой зоны. Оптимальная стратегия для зимовщиков — не превышать 179 дней.</div>
+        </div>
+      </div>
+      <div style="margin-top:14px;font-size:12px;color:var(--g300);line-height:1.6;font-style:italic">Налоговое законодательство меняется. Перед принятием решений о длительном проживании проконсультируйтесь с налоговым консультантом в Тайланде.</div>
+    </div>
+  </div>
+
+  <!-- TRANSPORT -->
+  <div class="section reveal" id="transport">
+    <div class="section-title"><span class="section-emoji">🚌</span> Транспорт</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
+
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:14px;padding:16px">
+        <div style="font-size:14px;font-weight:700;margin-bottom:8px">🚇 Метро в Бангкоке — BTS Skytrain + MRT</div>
+        <div style="font-size:13px;color:var(--g500);line-height:1.6;margin-bottom:8px">Самый быстрый способ передвижения по столице. BTS (надземное) + MRT (подземное) вместе покрывают большинство туристических и деловых районов. Стоимость: <strong>15–60 бат</strong> в зависимости от расстояния. Дневной проездной BTS — 140 бат.</div>
+        <div style="font-size:12px;color:var(--g300)">Работает 06:00–00:00. Пробки в Бангкоке жуткие — в часы пик метро экономит 30–60 минут.</div>
+      </div>
+
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:14px;padding:16px">
+        <div style="font-size:14px;font-weight:700;margin-bottom:8px">📱 Grab — главное приложение такси</div>
+        <div style="font-size:13px;color:var(--g500);line-height:1.6;margin-bottom:8px">Аналог Яндекс.Такси для ЮВА. Фиксированная цена до посадки. GrabCar по центру Бангкока — <strong>80–120 бат</strong>, из аэропорта Суварнабхуми в центр — <strong>350–450 бат</strong>. GrabBike (мотоцикл) — <strong>40–70 бат</strong> по городу.</div>
+        <div style="background:var(--amber-light);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--amber)">⚠️ Привязать российскую карту к Grab нельзя — даже UnionPay. Платите наличными или попросите водителя принять перевод.</div>
+      </div>
+
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:14px;padding:16px">
+        <div style="font-size:14px;font-weight:700;margin-bottom:8px">🛵 Аренда байка — главный транспорт на островах</div>
+        <div style="font-size:13px;color:var(--g500);line-height:1.6;margin-bottom:8px">На Пхукете, Самуи, Краби и в Паттайе байк — основной транспорт. Аренда: <strong>250–350 бат в день</strong>, 5 000–8 000 бат в месяц. Нужны права категории А. Без прав — технически незаконно и не покрывается страховкой при ДТП.</div>
+        <div style="font-size:12px;color:var(--g300)">Лёгкое падение с байка обходится в $3 000–7 000 без страховки. Всегда надевайте шлем.</div>
+      </div>
+
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:14px;padding:16px">
+        <div style="font-size:14px;font-weight:700;margin-bottom:8px">✈️ Перелёты внутри страны</div>
+        <div style="font-size:13px;color:var(--g500);line-height:1.6">AirAsia и Nok Air — основные лоукостеры. Бангкок→Пхукет: <strong>от 800–2 000 бат</strong> при заблаговременной покупке. Бангкок→Чиангмай: от 700 бат. Паром Сурат Тани→Самуи: ~300 бат + автобус из Бангкока ~500 бат. Часто паром + автобус дешевле прямого рейса на Самуи (Bangkok Airways там монополист и цены высокие).</div>
+      </div>
+
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:14px;padding:16px">
+        <div style="font-size:14px;font-weight:700;margin-bottom:8px">🚍 Автобусы и поезда между городами</div>
+        <div style="font-size:13px;color:var(--g500);line-height:1.6">Бангкок→Паттайя: автобус от Восточного автовокзала, <strong>~130 бат</strong>, 2–3 часа. Бангкок→Чиангмай: поезд 2-й класс с кондиционером — <strong>331–531 бат</strong>, ночной вагон со спальными местами. Ночной поезд удобен — экономит на отеле и ночной перелёт не нужен.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERNET AND SIM -->
+  <div class="section reveal" id="internet">
+    <div class="section-title"><span class="section-emoji">📶</span> Интернет и связь</div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="font-size:13px;color:var(--g500);line-height:1.6;margin-bottom:16px">Интернет в Тайланде хороший — в городах 4G/5G стабильный. Три способа оставаться на связи:</div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:14px;background:var(--green-pale);border-radius:12px;border:1px solid var(--green-light)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div style="font-size:14px;font-weight:700">eSIM — лучший вариант</div>
+            <span style="font-size:11px;font-weight:700;background:var(--green-light);color:var(--green);padding:3px 9px;border-radius:100px">Рекомендуем</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Покупаешь онлайн до вылета (Yesim, Airalo), активируешь по QR-коду — интернет работает с момента приземления. Yesim принимает карту МИР. Цена: ~$7–15 на 30 дней безлимит.</div>
+        </div>
+
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Местная SIM-карта</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6;margin-bottom:8px">Покупается в аэропорту или 7-Eleven. Нужен паспорт. Основные операторы:</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 10px;background:var(--white);border-radius:8px;font-size:13px">
+              <span><strong>AIS</strong> — лучшее покрытие 4G/5G</span>
+              <span style="color:var(--g300)">от 299 ฿/30 дней</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 10px;background:var(--white);border-radius:8px;font-size:13px">
+              <span><strong>True-dtac</strong> — AIS + DTAC объединились</span>
+              <span style="color:var(--g300)">от 199 ฿/30 дней</span>
+            </div>
+          </div>
+          <div style="margin-top:8px;font-size:12px;color:var(--amber)">⚠️ True-dtac SIM через 60–90 дней может отключиться — нужно продлевать через приложение.</div>
+        </div>
+
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Домашний интернет (для долгосрочных)</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Проводной интернет FTTB от 580 бат/мес (~1 400 ₽). Коворкинги в Чиангмае: 80–150 бат/день, скорость 100–200 Мбит/с. Бангкок: крупные коворкинги типа WeWork — от 400 бат/день.</div>
+        </div>
+      </div>
+    </div>
     <div class="partner-block">
       <div class="pb-header">
         <div class="pb-title">eSIM для Тайланда</div>
         <div class="pb-badge">Yesim · Airalo</div>
       </div>
-      <div class="pb-desc">Купи eSIM заранее — интернет заработает сразу после приземления. Не нужно искать SIM-карту в аэропорту.</div>
+      <div class="pb-desc">Купи до вылета — интернет заработает сразу после приземления. Yesim принимает карту МИР.</div>
       <div class="esim-tabs" style="margin-top:16px">
         <button class="esim-tab active" onclick="switchEsim('thailand','yesim',this)">Yesim — 18% кэшбэк</button>
         <button class="esim-tab" onclick="switchEsim('thailand','airalo',this)">Airalo</button>
@@ -689,13 +945,320 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
         <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&color_button=%231c7a54&color_focused=%231c7a54&secondary=%23FAF8F2&dark=%2311100f&light=%23FFFFFFff&special=%231c7a54&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
       </div>
     </div>
+  </div>
+
+  <!-- MEDICINE -->
+  <div class="section reveal" id="medicine">
+    <div class="section-title"><span class="section-emoji">🏥</span> Медицина</div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:16px">Медицина в Тайланде для иностранцев — платная и одна из самых дорогих в ЮВА. Качество в частных госпиталях высокое — часто лучше, чем в России. Без страховки одна госпитализация может стоить сотни тысяч рублей.</div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:14px;background:var(--amber-light);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;color:#c06010;margin-bottom:6px">Реальные цены без страховки</div>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid rgba(224,140,42,.2)"><span style="color:var(--g500)">Приём врача (частная клиника)</span><span style="font-weight:600">800–2 000 ฿</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid rgba(224,140,42,.2)"><span style="color:var(--g500)">Сутки в палате госпиталя</span><span style="font-weight:600">3 000–8 000 ฿</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid rgba(224,140,42,.2)"><span style="color:var(--g500)">Сутки в реанимации</span><span style="font-weight:600">от $2 000–3 000</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:4px 0"><span style="color:var(--g500)">Лёгкое ДТП на байке</span><span style="font-weight:600">$3 000–7 000</span></div>
+          </div>
+        </div>
+
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Лучшие частные госпитали</div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <div style="font-size:13px;color:var(--g500);line-height:1.5"><strong style="color:var(--black)">Bumrungrad (Бангкок)</strong> — международный уровень, русскоязычные врачи, принимают российские страховки. Топовый выбор для сложных случаев.</div>
+            <div style="font-size:13px;color:var(--g500);line-height:1.5"><strong style="color:var(--black)">Bangkok Hospital (сеть по всей стране)</strong> — разветвлённая сеть на Пхукете, Самуи, Паттайе, Чиангмае. Надёжно везде.</div>
+            <div style="font-size:13px;color:var(--g500);line-height:1.5"><strong style="color:var(--black)">Samitivej</strong> — сильная педиатрия, популярен у семей с детьми.</div>
+          </div>
+        </div>
+
+        <div style="padding:14px;background:var(--green-pale);border-radius:12px;border:1px solid var(--green-light)">
+          <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px">Что нужно знать про страховку</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Посольство РФ рекомендует минимум $100 000 покрытия. Стандартный лимит $30 000 может закончиться за неделю при серьёзной травме. Cherehapa позволяет сравнить 15+ компаний и выбрать с покрытием $50 000–100 000 за разумные деньги (~$40–80/месяц). Важно: страховка должна покрывать занятия на мотоцикле — многие дешёвые полисы это исключают.</div>
+        </div>
+      </div>
+    </div>
     <div class="partner-block">
       <div class="pb-header">
-        <div class="pb-title">Туристическая страховка</div>
-        <div class="pb-badge">Cherehapa</div>
+        <div class="pb-title">Подобрать страховку в Тайланд</div>
+        <div class="pb-badge">Cherehapa · 15+ компаний</div>
       </div>
-      <div class="pb-desc">Сравни страховки от 15+ компаний и выбери лучшую. Оформление за 5 минут онлайн.</div>
-      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&countryGroups=all-world&medicine=30000&powered_by=true&promo_id=2458&campaign_id=24" charset="utf-8" async></script></div>
+      <div class="pb-desc">Сравни предложения от 15+ страховых компаний. Выбери лимит от $50 000 и убедись что покрывает мотоцикл. Оформление за 5 минут.</div>
+      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&countryGroups=all-world&medicine=30000&powered_by=true&promo_id=2458&campaign_id=24" charset="utf-8"></script></div>
+    </div>
+  </div>
+
+  <!-- HOUSING RENTAL GUIDE -->
+  <div class="section reveal" id="rental">
+    <div class="section-title"><span class="section-emoji">🏠</span> Аренда жилья — пошагово</div>
+    <div style="font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:16px">Самый больной вопрос для всех кто едет надолго. Здесь — не реклама агентств, а реальный алгоритм как снять квартиру без переплаты и не потерять депозит.</div>
+
+    <!-- Где искать -->
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Где искать жильё</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="padding:12px 14px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-light)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div style="font-size:14px;font-weight:700">DDproperty.com</div>
+            <span style="font-size:11px;font-weight:700;background:var(--green-light);color:var(--green);padding:2px 8px;border-radius:100px">Лучший</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Главный сайт аренды в Тайланде. Большая база, фото, карта, цены без посредников. Есть фильтр по районам, бюджету, типу жилья. Много объявлений от собственников напрямую.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">FazWaz.ru / FazWaz.com</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Русскоязычный интерфейс. Большая база по всем регионам Тайланда. Есть агентская поддержка на русском языке — полезно если не хочешь разбираться самостоятельно.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">Facebook-группы</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Ищи в Facebook: «Аренда Пхукет русские», «Bangkok expats housing», «Chiang Mai rentals». Там часто сдают сами хозяева без комиссии агентства. Можно найти жильё на 20–30% дешевле чем на сайтах.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">Telegram-чаты русскоязычных</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">В каждом крупном городе есть чаты типа «Русские на Пхукете», «Бангкок наши». Там регулярно пишут «сдам/ищу жильё». Часто самые живые предложения именно там.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">Airbnb / Booking — для первых 2–4 недель</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Дороже чем долгосрочная аренда, но удобно на старте пока ищешь постоянное жильё. Краткосрочная аренда на Airbnb стоит в 2–3 раза дороже долгосрочного контракта за то же место.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Виды жилья -->
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Кондо vs апартаменты — в чём разница</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px" class="budget-cols">
+        <div style="padding:12px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-light)">
+          <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:6px">Кондоминиум (кондо)</div>
+          <div style="font-size:12px;color:var(--g500);line-height:1.6">Жилой комплекс с бассейном, фитнесом, охраной. Каждая квартира — отдельный собственник. Лучше отделка, выше цена. Стандарт для экспатов.</div>
+        </div>
+        <div style="padding:12px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:6px">Апартаменты</div>
+          <div style="font-size:12px;color:var(--g500);line-height:1.6">Один владелец — весь дом. Проще, дешевле, меньше инфраструктуры. Подходит для бюджетного варианта. Часто без бассейна.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Пошаговый алгоритм -->
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Алгоритм аренды — шаг за шагом</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">1</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Первые 2 недели живи в отеле/Airbnb</strong> — не торопись снимать долгосрочно до приезда. Посмотри район вживую, почувствуй расстояния.</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">2</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Найди 5–10 вариантов</strong> на DDproperty или через Facebook-группы. Запроси цену за 3, 6 и 12 месяцев — долгосрочный контракт обычно на 20–30% дешевле.</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">3</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Осмотри лично</strong> — не бронируй по фотографиям без просмотра. Проверь: работает ли кондиционер, давление воды, скорость интернета (попроси включить Wi-Fi).</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">4</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Уточни что включено в цену</strong> — электричество, вода, интернет, уборка. Электричество в Тайланде дорогое (5–6 бат/кВт·ч), кондиционер добавляет 1 500–3 000 бат/мес к счёту.</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">5</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Подпиши договор на английском</strong> — стандарт: депозит 1–2 месяца + первый месяц вперёд. В договоре должно быть: условия возврата депозита, кто платит за ремонт, условия досрочного расторжения.</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">6</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Сфотографируй всё при заезде</strong> — каждую царапину, каждый дефект. Отправь фото арендодателю в мессенджер — это твоя защита при выезде когда будут говорить «это ты сломал».</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Предупреждения -->
+    <div style="background:var(--amber-light);border-radius:12px;padding:14px 16px;font-size:13px;color:var(--g500);line-height:1.65">
+      <div style="font-weight:700;color:#c06010;margin-bottom:8px">⚠️ Типичные ошибки которые стоят денег</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div>🚫 <strong>Платить без договора</strong> — самый прямой путь к потере депозита. Даже если «договорились устно».</div>
+        <div>🚫 <strong>Не проверять тариф на электричество</strong> — некоторые арендодатели выставляют 8–10 бат/кВт·ч вместо государственных 5–6 бат. Это легально, но нужно знать заранее.</div>
+        <div>🚫 <strong>Снимать на Пхукете в сезон дождей долгосрочно</strong> — если уедешь раньше срока, депозит не вернут. Сначала попробуй на 1–2 месяца.</div>
+        <div>🚫 <strong>Переводить предоплату незнакомым людям без договора</strong> — мошенничество с арендой существует, особенно в туристических районах.</div>
+      </div>
+    </div>
+    <div class="partner-block" style="margin-top:12px">
+      <div class="pb-header">
+        <div class="pb-title">Найти жильё на Островок</div>
+        <div class="pb-badge">2.9 млн вариантов</div>
+      </div>
+      <div class="pb-desc">Отели, хостелы и апартаменты в Тайланде — для первых недель пока ищешь долгосрочную аренду.</div>
+      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%231c7a54&color_button=%231c7a54&color_icons=%231c7a54&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
+    </div>
+  </div>
+
+  <!-- VISA RUN -->
+  <div class="section reveal" id="visarun">
+    <div class="section-title"><span class="section-emoji">🚌</span> Визаран и бордерран — актуальные правила 2026</div>
+    <div style="background:var(--amber-light);border-radius:12px;padding:13px 16px;font-size:13px;color:var(--amber);line-height:1.6;margin-bottom:16px">
+      <strong style="color:#c06010">Важно:</strong> правила ужесточились с ноября 2025 года. Тайская иммиграция всерьёз взялась за тех кто живёт годами по штампам. Читай внимательно.
+    </div>
+
+    <!-- Разница -->
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Бордерран vs Визаран — в чём разница</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px" class="budget-cols">
+        <div style="padding:12px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:6px">Бордерран (border run)</div>
+          <div style="font-size:12px;color:var(--g500);line-height:1.6">Выехал из Таиланда → побыл 5 минут в соседней стране → вернулся. Получаешь новый 60-дневный штамп. Виза не нужна. Занимает 1 день.</div>
+        </div>
+        <div style="padding:12px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:6px">Визаран (visa run)</div>
+          <div style="font-size:12px;color:var(--g500);line-height:1.6">Едешь в соседнюю страну чтобы подать заявку на тайскую Tourist Visa (TR) в консульстве. Занимает 2–3 дня. Нужен при третьем въезде за год.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Новые правила -->
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Новые ограничения с ноября 2025</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="padding:12px 14px;background:var(--amber-light);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:#c06010;margin-bottom:4px">Лимит 2 бордеррана в год через наземную границу</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Через наземные КПП (Малайзия, Мьянма, Лаос, Камбоджа) разрешено не более 2 безвизовых въездов в календарный год. После двух — иммиграция может отказать во въезде.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--amber-light);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:#c06010;margin-bottom:4px">Штамп с наземной границы — без продления</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Штамп полученный через наземный КПП нельзя продлить в иммиграционном офисе на 30 дней. Сколько дали на границе — столько и живёшь.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px">Авиаперелёт — без ограничений</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Въезд через аэропорт не ограничен по количеству раз. Штамп при въезде через аэропорт можно продлить на 30 дней за 1 900 бат.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px">Усиленные проверки при частых въездах</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Пограничники изучают историю въездов. Если много штампов подряд — могут задать вопросы, попросить обратный билет, подтверждение жилья и 20 000 бат наличными на человека.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Маршруты -->
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Популярные маршруты бордеррана</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div style="font-size:13px;font-weight:700">С Пхукета → Малайзия (Сатун/Хат Яй)</div>
+            <span style="font-size:11px;color:var(--g300);font-weight:600">6–8 ч</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Самый популярный маршрут с юга. Организованные туры от 1 500–2 500 бат. Малайзия лояльна к транзитным визитам. Граница Садао–Паданг Бесар считается надёжнее.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div style="font-size:13px;font-weight:700">Из Паттайи → Камбоджа (Пойпет)</div>
+            <span style="font-size:11px;color:var(--g300);font-weight:600">3–4 ч</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">КПП Аранья Пратхет – Пойпет. Близко к Паттайе и Бангкоку. Минус: Камбоджа берёт визовый сбор $30 за въезд. Очереди бывают большие.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div style="font-size:13px;font-weight:700">С Пхукета → Мьянма (Ранонг)</div>
+            <span style="font-size:11px;color:var(--g300);font-weight:600">3–4 ч</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Граница через пролив на лодке. Быстро и дёшево, но с 2025 года всё чаще отказывают при повторных въездах. Считается менее надёжным чем малайзийское направление.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--green-pale);border-radius:12px;padding:13px 16px;font-size:13px;color:var(--g500);line-height:1.65;border:1px solid var(--green-light)">
+      <strong style="color:var(--green)">Альтернатива бордеррану:</strong> если планируешь жить дольше 3–4 месяцев — оформи Tourist Visa (TR) в консульстве соседней страны или Non-Immigrant Visa. Это легальнее, надёжнее и избавляет от постоянных поездок к границе. Стоимость TR — около $40, действует 60 дней + продление 30 дней.
+    </div>
+  </div>
+
+  <!-- CLIMATE CALENDAR -->
+  <div class="section reveal" id="climate">
+    <div class="section-title"><span class="section-emoji">🌤</span> Климат и сезоны — когда ехать</div>
+    <div style="font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:16px">Главное что нужно знать: <strong>западное и восточное побережья живут в разных сезонах.</strong> Когда на Пхукете дожди — на Самуи и Паттайе солнце, и наоборот.</div>
+
+    <!-- Region cards -->
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px" class="budget-cols">
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:18px">
+        <div style="font-size:14px;font-weight:700;margin-bottom:4px">🌊 Пхукет, Краби, Ко Пхи-Пхи</div>
+        <div style="font-size:11px;color:var(--g300);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Андаманское море (запад)</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--g100)">
+            <span style="color:var(--g500)">Сухой сезон ✅</span>
+            <span style="font-weight:600">Ноябрь — апрель</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--g100)">
+            <span style="color:var(--g500)">Дожди ⛈</span>
+            <span style="font-weight:600">Май — октябрь</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0">
+            <span style="color:var(--g500)">Пик сезона 💰</span>
+            <span style="font-weight:600">Декабрь — январь</span>
+          </div>
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:var(--amber)">⚠️ В сезон дождей морские экскурсии часто отменяют, острова Симилан закрыты</div>
+      </div>
+
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:18px">
+        <div style="font-size:14px;font-weight:700;margin-bottom:4px">🏝 Самуи, Ко Панган, Ко Тао</div>
+        <div style="font-size:11px;color:var(--g300);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Сиамский залив (восток)</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--g100)">
+            <span style="color:var(--g500)">Сухой сезон ✅</span>
+            <span style="font-weight:600">Январь — сентябрь</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--g100)">
+            <span style="color:var(--g500)">Дожди ⛈</span>
+            <span style="font-weight:600">Октябрь — декабрь</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0">
+            <span style="color:var(--g500)">Full Moon Party</span>
+            <span style="font-weight:600">Раз в месяц</span>
+          </div>
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:var(--g300)">Когда на Пхукете дожди (июнь-октябрь) — здесь солнечно</div>
+      </div>
+
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:18px">
+        <div style="font-size:14px;font-weight:700;margin-bottom:4px">🌆 Паттайя, Бангкок</div>
+        <div style="font-size:11px;color:var(--g300);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Центр и восточное побережье</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--g100)">
+            <span style="color:var(--g500)">Сухой сезон ✅</span>
+            <span style="font-weight:600">Ноябрь — апрель</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--g100)">
+            <span style="color:var(--g500)">Дожди ⛈</span>
+            <span style="font-weight:600">Май — октябрь</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0">
+            <span style="color:var(--g500)">Самый мягкий дождливый</span>
+            <span style="font-weight:600">Паттайя</span>
+          </div>
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:var(--g300)">Паттайя — самый комфортный вариант летом: дожди короткие, не затяжные</div>
+      </div>
+
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:18px">
+        <div style="font-size:14px;font-weight:700;margin-bottom:4px">🏔 Чиангмай и север</div>
+        <div style="font-size:11px;color:var(--g300);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Горный регион</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--g100)">
+            <span style="color:var(--g500)">Лучшее время ✅</span>
+            <span style="font-weight:600">Декабрь — февраль</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--g100)">
+            <span style="color:var(--g500)">Дожди ⛈</span>
+            <span style="font-weight:600">Июнь — октябрь</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:4px 0">
+            <span style="color:var(--g500)">Дымный сезон ⚠️</span>
+            <span style="font-weight:600">Март — апрель</span>
+          </div>
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:var(--amber)">⚠️ В марте-апреле горят леса — дым, смог, плохой воздух. Избегать.</div>
+      </div>
+    </div>
+
+    <!-- Quick tip -->
+    <div style="background:var(--green-pale);border-radius:12px;padding:13px 16px;font-size:13px;color:var(--g500);line-height:1.65;border:1px solid var(--green-light)">
+      <strong style="color:var(--green)">Лайфхак для зимовщиков:</strong> ноябрь–апрель — универсальное время когда хорошая погода одновременно на Пхукете и Паттайе. Декабрь–январь — пик сезона, цены на 30–50% выше чем в марте. Самый бюджетный месяц при хорошей погоде — март.
     </div>
   </div>
 
@@ -763,6 +1326,7 @@ const VISAS = {
     sections: [
       {title:'Кому подходит', text:'Гражданам РФ для туристических поездок до 60 дней. Ничего не нужно оформлять заранее кроме TDAC-карты.'},
       {title:'Что такое TDAC', text:'С 1 мая 2025 года все въезжающие в Тайланд заполняют электронную карту прибытия (Thailand Digital Arrival Card) на сайте tdac.immigration.go.th. Заполняется за 3 дня до вылета, бесплатно, занимает 5 минут.'},
+      {title:'Важное ограничение 2026', text:'С 15 июля 2024 года безвизовый въезд — не более 2 раз в полугодие (по одному разу в каждые 6 месяцев). Если планируешь третью поездку в Тайланд за год — нужна Tourist Visa. Это правило касается тех кто делает визаран (выезжает и въезжает заново).'},
       {title:'Порядок действий', steps:['Заполни TDAC на tdac.immigration.go.th за 3 дня до вылета','Возьми загранпаспорт с минимум 6 месяцами действия','На паспортном контроле получи штамп — разрешение на 60 дней','При необходимости продли на 30 дней в иммиграционном офисе за 1900 бат']}
     ],
     warn: '<strong>Важно:</strong> при въезде могут попросить обратный билет и подтверждение проживания. Иметь при себе 20 000 бат (~55 000 ₽) на человека.',
@@ -977,8 +1541,46 @@ window.addEventListener('scroll',function(){
   if(!btt)return;
   if(window.pageYOffset>300){btt.classList.add('visible')}else{btt.classList.remove('visible')}
 });
+
+// Sidebar nav
+(function(){
+  var sidenavEl = document.getElementById('sidenav');
+  if(!sidenavEl) return;
+  var items = sidenavEl.querySelectorAll('.sidenav-item');
+
+  // Click handler
+  items.forEach(function(item){
+    item.addEventListener('click', function(){
+      var target = document.getElementById(item.dataset.target);
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // Show/hide and highlight on scroll
+  window.addEventListener('scroll', function(){
+    var scrollY = window.pageYOffset;
+
+    // Show after hero
+    if(scrollY > 300){
+      sidenavEl.classList.add('visible');
+    } else {
+      sidenavEl.classList.remove('visible');
+    }
+
+    // Highlight active
+    var active = null;
+    items.forEach(function(item){
+      var el = document.getElementById(item.dataset.target);
+      if(!el) return;
+      var top = el.getBoundingClientRect().top;
+      if(top < 160) active = item;
+    });
+    items.forEach(function(item){ item.classList.remove('active'); });
+    if(active) active.classList.add('active');
+  });
+})();
 // Highlight active tab on scroll
-var sections=['visas','prices','flights','cities','tips'];
+var sections=['visas','prices','budget','flights','cities','rental','visarun','climate','transport','internet','medicine','money','taxes','tips'];
 window.addEventListener('scroll',function(){
   var offset=130;
   sections.forEach(function(id){
@@ -1062,6 +1664,23 @@ window.addEventListener('scroll',function(){
   </div>
 </div>
 
+
+<nav class="sidenav" id="sidenav">
+  <div class="sidenav-item" data-target="visas"><span class="sidenav-label">🛂 Визы</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="prices"><span class="sidenav-label">💰 Цены</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="budget"><span class="sidenav-label">🧮 Бюджет</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="flights"><span class="sidenav-label">✈️ Билеты</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="cities"><span class="sidenav-label">🏙 Города</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="rental"><span class="sidenav-label">🏠 Жильё</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="visarun"><span class="sidenav-label">🚌 Визаран</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="climate"><span class="sidenav-label">🌤 Климат</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="transport"><span class="sidenav-label">🚇 Транспорт</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="internet"><span class="sidenav-label">📶 Связь</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="medicine"><span class="sidenav-label">🏥 Медицина</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="money"><span class="sidenav-label">💳 Деньги</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="taxes"><span class="sidenav-label">📊 Налоги</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="tips"><span class="sidenav-label">💡 Советы</span><div class="sidenav-dot"></div></div>
+</nav>
 
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script type="module">
