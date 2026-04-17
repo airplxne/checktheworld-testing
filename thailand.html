@@ -427,6 +427,10 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
   .esim-tab{padding:8px 18px;border-radius:10px;border:1.5px solid var(--g100);background:var(--white);font-size:13px;font-weight:600;color:var(--g300);cursor:pointer;transition:all .15s}
   .esim-tab.active{border-color:var(--green);background:var(--green-light);color:var(--green)}
   .esim-pane{display:none}.esim-pane.active{display:block}
+  .flights-tabs{display:flex;gap:8px;margin-bottom:0}
+  .flights-tab{padding:8px 18px;border-radius:10px;border:1.5px solid var(--g100);background:var(--white);font-size:13px;font-weight:600;color:var(--g300);cursor:pointer;transition:all .15s}
+  .flights-tab.active{border-color:var(--green);background:var(--green-light);color:var(--green)}
+  .flights-pane{display:none}.flights-pane.active{display:block}
 </style>
 </head>
 <body>
@@ -599,10 +603,27 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
     <div class="partner-block">
       <div class="pb-header">
         <div class="pb-title">Найти рейсы в Тайланд</div>
-        <div class="pb-badge">Реальные цены · Aviasales</div>
+        <div class="pb-badge">Aviasales · Kiwi.com</div>
       </div>
       <div class="pb-desc">Актуальные цены на билеты из вашего города — обновляются в реальном времени.</div>
-      <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=BKK&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%231c7a54&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%231c7a54&promo_id=4041&campaign_id=100" charset="utf-8"></script>
+      <div class="flights-tabs" style="margin-top:16px">
+        <button class="flights-tab active" onclick="switchFlights('thailand','avia',this)">Aviasales</button>
+        <button class="flights-tab" onclick="switchFlights('thailand','kiwi',this)">Kiwi.com</button>
+      </div>
+      <div id="fl-avia-thailand" class="flights-pane active">
+        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=BKK&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%231c7a54&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%231c7a54&promo_id=4041&campaign_id=100" charset="utf-8"></script>
+      </div>
+      <div id="fl-kiwi-thailand" class="flights-pane">
+        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&locale=ru&stops=any&show_hotels=true&powered_by=true&border_radius=15&plain=true&color_button=%231c7a54&color_button_text=%23ffffff&promo_id=3414&campaign_id=111" charset="utf-8"></script>
+      </div>
+    </div>
+    <div class="partner-block" style="margin-top:12px">
+      <div class="pb-header">
+        <div class="pb-title">Рейс задержали или отменили?</div>
+        <div class="pb-badge" style="background:var(--amber-light);color:var(--amber)">AirHelp — до €600</div>
+      </div>
+      <div class="pb-desc">Авиакомпания обязана выплатить компенсацию за задержку от 3 часов или отмену рейса. AirHelp берёт на себя всю переписку — платишь только если выиграли.</div>
+      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&lang=ru&powered_by=true&campaign_id=120&promo_id=8679" charset="utf-8"></script></div>
     </div>
   </div>
 
@@ -1731,6 +1752,12 @@ function switchEsim(slug, tab, btn) {
   document.querySelectorAll('#esim-yesim-' + slug + ', #esim-airalo-' + slug).forEach(p => p.classList.remove('active'));
   btn.closest('.esim-tabs').querySelectorAll('.esim-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('esim-' + tab + '-' + slug).classList.add('active');
+  btn.classList.add('active');
+}
+function switchFlights(slug, tab, btn) {
+  document.querySelectorAll('#fl-avia-' + slug + ', #fl-kiwi-' + slug).forEach(p => p.classList.remove('active'));
+  btn.closest('.flights-tabs').querySelectorAll('.flights-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('fl-' + tab + '-' + slug).classList.add('active');
   btn.classList.add('active');
 }
 </script>
