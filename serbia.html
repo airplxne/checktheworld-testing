@@ -345,6 +345,37 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
   .esim-tab{padding:8px 18px;border-radius:10px;border:1.5px solid var(--g100);background:var(--white);font-size:13px;font-weight:600;color:var(--g300);cursor:pointer;transition:all .15s}
   .esim-tab.active{border-color:var(--green);background:var(--green-light);color:var(--green)}
   .esim-pane{display:none}.esim-pane.active{display:block}
+/* FLIGHTS TABS */
+.flights-tabs{display:flex;gap:8px;margin-bottom:14px}
+.flights-tab{padding:8px 18px;border-radius:10px;border:1.5px solid var(--g100);background:var(--white);font-size:13px;font-weight:600;color:var(--g300);cursor:pointer;transition:all .15s;font-family:'Manrope',sans-serif}
+.flights-tab.active{border-color:var(--green);background:var(--green-light);color:var(--green)}
+.flights-pane{display:none}.flights-pane.active{display:block}
+/* SIDENAV */
+.sidenav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:300;display:flex;flex-direction:column;gap:6px;opacity:0;pointer-events:none;transition:opacity .3s}
+.sidenav.visible{opacity:1;pointer-events:auto}
+.sidenav-item{display:flex;align-items:center;gap:8px;cursor:pointer;justify-content:flex-end}
+.sidenav-label{font-size:11px;font-weight:600;color:var(--g500);background:var(--white);border:1.5px solid var(--g100);border-radius:100px;padding:4px 10px;opacity:0;transform:translateX(6px);transition:all .2s;white-space:nowrap}
+.sidenav-item:hover .sidenav-label{opacity:1;transform:none}
+.sidenav-item.active .sidenav-label{opacity:1;transform:none;color:var(--green)}
+.sidenav-dot{width:8px;height:8px;border-radius:50%;background:var(--g100);flex-shrink:0;transition:all .2s}
+.sidenav-item.active .sidenav-dot{background:var(--green);box-shadow:0 0 0 3px var(--green-light)}
+@media(max-width:1300px){.sidenav{display:none}}
+/* BUDGET COLS */
+@media(max-width:900px){.budget-cols{grid-template-columns:1fr !important}}
+/* CITY MODAL */
+.city-modal-tag{font-size:12px;font-weight:700;color:var(--g300);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.city-modal-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+.city-modal-name{font-family:'Playfair Display',serif;font-size:22px}
+.city-modal-budget{font-size:13px;font-weight:700;color:var(--green)}
+.city-modal-desc{font-size:14px;color:var(--g500);line-height:1.65;margin-bottom:16px}
+.city-modal-section{font-size:13px;font-weight:700;color:var(--black);margin:14px 0 8px}
+.place-item{display:flex;gap:10px;padding:9px 12px;background:var(--bg);border-radius:10px;margin-bottom:6px}
+.place-pin{font-size:14px;flex-shrink:0;margin-top:1px}
+.place-name{font-size:13px;font-weight:700;color:var(--black);margin-bottom:2px}
+.place-desc{font-size:12px;color:var(--g500);line-height:1.5}
+.fact-item{display:flex;gap:10px;padding:9px 12px;background:var(--bg);border-radius:10px;margin-bottom:6px}
+.fact-icon{font-size:14px;flex-shrink:0;margin-top:1px}
+.fact-text{font-size:13px;color:var(--g500);line-height:1.5}
 </style>
 </head>
 <body>
@@ -374,6 +405,15 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
   <div class="mob-tab" onclick="scrollToSection('flights',this)">✈️ Билеты</div>
   <div class="mob-tab" onclick="scrollToSection('cities',this)">🏙 Города</div>
   <div class="mob-tab" onclick="scrollToSection('tips',this)">💡 Советы</div>
+  <div class="mob-tab" onclick="scrollToSection('budget',this)">🧮 Бюджет</div>
+  <div class="mob-tab" onclick="scrollToSection('money',this)">💳 Деньги</div>
+  <div class="mob-tab" onclick="scrollToSection('taxes',this)">📊 Налоги</div>
+  <div class="mob-tab" onclick="scrollToSection('transport',this)">🚇 Транспорт</div>
+  <div class="mob-tab" onclick="scrollToSection('internet',this)">📶 Связь</div>
+  <div class="mob-tab" onclick="scrollToSection('medicine',this)">🏥 Медицина</div>
+  <div class="mob-tab" onclick="scrollToSection('rental',this)">🏠 Жильё</div>
+  <div class="mob-tab" onclick="scrollToSection('visarun',this)">🚌 Визаран</div>
+  <div class="mob-tab" onclick="scrollToSection('climate',this)">🌤 Климат</div>
 </div>
 
 <!-- HERO -->
@@ -424,7 +464,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
       </div>
       <div class="qc-divider"></div>
       <button class="qc-btn" onclick="document.getElementById('flights').scrollIntoView({behavior:'smooth'})">✈️ Найти авиабилеты</button>
-      <button class="qc-btn-secondary" onclick="document.getElementById('housing').scrollIntoView({behavior:'smooth'})">🏠 Найти жильё</button>
+      <button class="qc-btn-secondary" onclick="document.getElementById('rental').scrollIntoView({behavior:'smooth'})">🏠 Найти жильё</button>
     </div>
   </div>
 </section>
@@ -511,20 +551,24 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
         <div class="pb-badge">Реальные цены · Aviasales</div>
       </div>
       <div class="pb-desc">Актуальные цены на билеты из вашего города — обновляются в реальном времени.</div>
-      <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=BKK&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%231c7a54&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%231c7a54&promo_id=4041&campaign_id=100" charset="utf-8"></script>
-    </div>
-  </div>
-
-  <!-- HOUSING -->
-  <div class="section reveal" id="housing">
-    <div class="section-title"><span class="section-emoji">🏠</span> Жильё</div>
-    <div class="partner-block">
-      <div class="pb-header">
-        <div class="pb-title">Отели и апартаменты в Сербии</div>
-        <div class="pb-badge">Островок</div>
+      <div class="flights-tabs" style="margin-top:16px">
+        <button class="flights-tab active" onclick="switchFlights('serbia','avia',this)">Aviasales</button>
+        <button class="flights-tab" onclick="switchFlights('serbia','kiwi',this)">Kiwi.com</button>
       </div>
-      <div class="pb-desc">Более 2,9 млн вариантов размещения по всему миру — отели, хостелы и апартаменты.</div>
-      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%231c7a54&color_button=%231c7a54&color_icons=%231c7a54&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
+      <div id="fl-avia-serbia" class="flights-pane active">
+        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=BEG&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%231c7a54&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%231c7a54&promo_id=4041&campaign_id=100" charset="utf-8"></script>
+      </div>
+      <div id="fl-kiwi-serbia" class="flights-pane">
+        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&locale=ru&stops=any&show_hotels=true&powered_by=true&border_radius=15&plain=true&color_button=%231c7a54&color_button_text=%23ffffff&promo_id=3414&campaign_id=111" charset="utf-8"></script>
+      </div>
+    </div>
+    <div class="partner-block" style="margin-top:12px">
+      <div class="pb-header">
+        <div class="pb-title">Рейс задержали или отменили?</div>
+        <div class="pb-badge" style="background:var(--amber-light);color:var(--amber)">AirHelp — до €600</div>
+      </div>
+      <div class="pb-desc">Авиакомпания обязана выплатить компенсацию за задержку от 3 часов или отмену рейса. AirHelp берёт на себя всю переписку — платишь только если выиграли.</div>
+      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&lang=ru&powered_by=true&campaign_id=120&promo_id=8679" charset="utf-8"></script></div>
     </div>
   </div>
 
@@ -604,15 +648,206 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
     </div>
   </div>
 
-  <!-- SIM AND INSURANCE -->
-  <div class="section reveal">
-    <div class="section-title"><span class="section-emoji">📱</span> SIM-карта и страховка</div>
+  <!-- BUDGET BREAKDOWN -->
+  <div class="section reveal" id="budget">
+    <div class="section-title"><span class="section-emoji">🧮</span> Реальный бюджет на месяц</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px" class="budget-cols">
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px">
+        <div style="font-size:11px;font-weight:700;color:var(--g300);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Эконом</div>
+        <div style="font-size:22px;font-weight:700;margin-bottom:4px">~35 000 ₽</div>
+        <div style="font-size:12px;color:var(--g300);margin-bottom:14px">~385 € / ~45 000 дин.</div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Жильё (комната/хостел)</span><span style="font-weight:600">12 000–18 000 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Еда (рынки, пекары)</span><span style="font-weight:600">8 000–12 000 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Транспорт (автобус)</span><span style="font-weight:600">бесплатно</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Связь (SIM)</span><span style="font-weight:600">800–1 200 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Развлечения</span><span style="font-weight:600">3 000–5 000 дин.</span></div>
+        </div>
+        <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--g100);font-size:12px;color:var(--g300)">Ниш или спальный район Белграда</div>
+      </div>
+      <div style="background:var(--green-pale);border:1.5px solid var(--green);border-radius:16px;padding:20px">
+        <div style="font-size:11px;font-weight:700;color:var(--green);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Комфорт ★</div>
+        <div style="font-size:22px;font-weight:700;margin-bottom:4px">~70 000 ₽</div>
+        <div style="font-size:12px;color:var(--g300);margin-bottom:14px">~770 € / ~90 000 дин.</div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Жильё (студия)</span><span style="font-weight:600">35 000–50 000 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Еда (кафе + рынок)</span><span style="font-weight:600">15 000–22 000 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Транспорт (Bolt)</span><span style="font-weight:600">4 000–7 000 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Коворкинг / интернет</span><span style="font-weight:600">5 000–10 000 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Развлечения + misc</span><span style="font-weight:600">8 000–12 000 дин.</span></div>
+        </div>
+        <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(28,122,84,.2);font-size:12px;color:var(--g300)">Центр Белграда или Нови-Сад</div>
+      </div>
+      <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px">
+        <div style="font-size:11px;font-weight:700;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Комфорт+</div>
+        <div style="font-size:22px;font-weight:700;margin-bottom:4px">~130 000 ₽</div>
+        <div style="font-size:12px;color:var(--g300);margin-bottom:14px">~1 430 € / ~167 000 дин.</div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Жильё (1 комн., центр)</span><span style="font-weight:600">60 000–90 000 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Рестораны</span><span style="font-weight:600">25 000–40 000 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Транспорт (авто/Bolt)</span><span style="font-weight:600">10 000–20 000 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Фитнес, здоровье</span><span style="font-weight:600">5 000–8 000 дин.</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--g500)">Путешествия + misc</span><span style="font-weight:600">15 000–25 000 дин.</span></div>
+        </div>
+        <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--g100);font-size:12px;color:var(--g300)">Центр Белграда, европейский уровень</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONEY -->
+  <div class="section reveal" id="money">
+    <div class="section-title"><span class="section-emoji">💳</span> Деньги и банки</div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:16px">Сербия не вводила санкции против России — банки открывают счета россиянам. 1 евро ≈ 117 динаров, 1 динар ≈ 0.77 ₽. Карта МИР частично работает в ряде банкоматов.</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:14px;background:var(--green-pale);border-radius:12px;border:1px solid var(--green-light)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div style="font-size:14px;font-weight:700">Poštanska Štedionica — лучший старт</div>
+            <span style="font-size:11px;font-weight:700;background:var(--green-light);color:var(--green);padding:3px 9px;border-radius:100px">Гарантированно</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Государственный почтовый банк. Гарантированно открывает счёт нерезидентам РФ по загранпаспорту. Сеть по всей Сербии через почтовые отделения. Visa/Mastercard. Без ВНЖ. Самый надёжный вариант для только приехавших.</div>
+        </div>
+        <div style="padding:14px;background:var(--green-pale);border-radius:12px;border:1px solid var(--green-light)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div style="font-size:14px;font-weight:700">Alta Banka</div>
+            <span style="font-size:11px;font-weight:700;background:var(--green-light);color:var(--green);padding:3px 9px;border-radius:100px">Дружественный</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Один из самых лояльных банков к россиянам. Есть специальный зал для клиентов из РФ в головном офисе. Русскоязычные сотрудники. Visa/Mastercard без ВНЖ. Хорошее мобильное приложение.</div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Raiffeisen Bank</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Лучший мобильный банкинг в Сербии и самая широкая сеть банкоматов. Но открывает личный счёт россиянам только если работодатель в Сербии имеет зарплатный пакет в этом банке. Бизнес-счёт для граждан РФ не открывает из-за комплаенса.</div>
+        </div>
+        <div style="padding:14px;background:var(--amber-light);border-radius:12px">
+          <div style="font-size:13px;font-weight:700;color:#c06010;margin-bottom:4px">⚠️ Карта МИР и наличные</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Карты МИР работают в банкоматах Intesa, Raiffeisen и ряде других — но ситуация нестабильна, проверяй перед поездкой. Динары — привези евро или доллары, меняй в официальных менячницах (не в аэропорту). Лучший курс в центре Белграда.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAXES -->
+  <div class="section reveal" id="taxes">
+    <div class="section-title"><span class="section-emoji">📊</span> Налоги и ИП (Паушал)</div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:16px">Паушальный режим — основной вариант для фрилансеров и IT-специалистов. Фиксированный ежемесячный платёж, не зависящий от оборота. Ставка подоходного налога: 10%. Корпоративный: 15%.</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="padding:12px 14px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-light)">
+          <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:6px">Паушал — фиксированный налог для ИП</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Самый популярный режим. Налоговая сама рассчитывает сумму исходя из вида деятельности, города и года регистрации. Для IT в Белграде — обычно €250–400/мес включая пенсионные и медицинские взносы. Не нужен бухгалтер, нет отчётности, раз в квартал плати по QR-коду из ePorezi.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:6px">Ограничения паушала</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Лимит оборота — 6 млн динаров/год (~51 000 €). При превышении переходишь на обычный учёт. Нельзя применять при торговле ценными бумагами, страховых услугах. Тест на самостоятельность: нельзя иметь только одного клиента — налоговая может признать отношения трудовыми.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:6px">Подоходный налог (физлица): 10%</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Единая плоская ставка для всех доходов. Дополнительно 10-15% социальные взносы. Дивиденды — 15%. НДС — 20% (стандартный), 10% (пониженный). Налоговое резидентство наступает при 183+ днях в году.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--amber-light);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:#c06010;margin-bottom:4px">⚠️ Важно: эко-налог и КПО</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Все паушальные ИП обязаны вести книгу КПО — журнал выставленных счётов. Также ежегодно платится небольшой экологический налог (~500–2 000 дин.). За просрочку налогов — штраф 50 000 дин., два нарушения — принудительное закрытие ИП.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Открытие ИП — пошагово</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">1</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Выбрать юридический адрес</strong> — можно использовать адрес квартиры (с согласия владельца) или купить юр. адрес у специализированных компаний (~30–50 €/мес).</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">2</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Регистрация в APR.rs</strong> — Агентство коммерческих реестров. Онлайн или лично. Госпошлина ~1 900 дин. (~16 €). Свидетельство за 1–3 дня.</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">3</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Выбрать паушальный режим</strong> — при регистрации или в течение 15 дней через ePorezi.purs.gov.rs. Пропустишь — платишь стандартный налог до конца года.</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">4</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Открыть бизнес-счёт</strong> — в Poštanska Štedionica или Alta Banka. С ИП проще — больше документов для банка, выше доверие.</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">5</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">ВНЖ на основании ИП</strong> — после регистрации ИП можно подавать на ВНЖ. Документы: загранпаспорт, выписка из APR, договор аренды, медстраховка, 2 фото.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRANSPORT -->
+  <div class="section reveal" id="transport">
+    <div class="section-title"><span class="section-emoji">🚇</span> Транспорт</div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:14px;background:var(--green-pale);border-radius:12px;border:1px solid var(--green-light)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div style="font-size:14px;font-weight:700">Автобусы, трамваи и троллейбусы — бесплатно</div>
+            <span style="font-size:11px;font-weight:700;background:var(--green-light);color:var(--green);padding:3px 9px;border-radius:100px">С янв. 2025</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">С 1 января 2025 года весь городской транспорт Белграда стал полностью бесплатным — автобусы, трамваи, троллейбусы. В Нише — с июля 2025. Это одна из самых выгодных вещей для экспата в Сербии. Метро в Белграде нет (строительство первой линии начато в 2025 году).</div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Такси: Bolt, CarGo, Taxi Pink</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Bolt — самый популярный среди экспатов, прозрачные цены, работает через приложение. CarGo — сербский аналог Uber, часто дешевле. Taxi Pink — официальное такси с фиксированными тарифами. Поездка по центру Белграда — 200–350 динаров (~150–270 ₽). Из аэропорта до центра — 1 500–2 500 дин. через приложение.</div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Автобусы между городами</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Белград–Нови-Сад: ~700 дин. (~540 ₽), 1.5 часа. Белград–Ниш: ~1 200 дин. (~920 ₽), 3 часа. Белград–Копаоник: ~1 500 дин. (~1 150 ₽), 4.5 часа. Билеты на busticket4.me или на автовокзале BAS в центре Белграда.</div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Аренда авто и жд</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Аренда авто от €20/день. По Сербии действуют российские права. Поезда есть, но медленные и нечасто. Бензин — около 190 динаров (~145 ₽) за литр. Для путешествий по стране машина удобнее.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERNET -->
+  <div class="section reveal" id="internet">
+    <div class="section-title"><span class="section-emoji">📶</span> Связь и интернет</div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:16px">Интернет в Белграде и крупных городах быстрый и стабильный. 4G везде, 5G в центрах городов. Три способа оставаться на связи:</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:14px;background:var(--green-pale);border-radius:12px;border:1px solid var(--green-light)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div style="font-size:14px;font-weight:700">eSIM — лучший вариант</div>
+            <span style="font-size:11px;font-weight:700;background:var(--green-light);color:var(--green);padding:3px 9px;border-radius:100px">Рекомендуем</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Покупаешь онлайн до вылета (Yesim, Airalo), активируешь по QR-коду — интернет работает с момента приземления. Yesim принимает карту МИР. Цена: ~$7–15 на 30 дней безлимит.</div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Местная SIM-карта</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6;margin-bottom:8px">Покупается в магазинах операторов или киосках. Нужен загранпаспорт. Три основных оператора:</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 10px;background:var(--white);border-radius:8px;font-size:13px">
+              <span><strong>Yettel</strong> — лучшее 4G/5G покрытие</span>
+              <span style="color:var(--g300)">от 800 дин./мес</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 10px;background:var(--white);border-radius:8px;font-size:13px">
+              <span><strong>A1 Serbia</strong> — широкая сеть, хороший 4G</span>
+              <span style="color:var(--g300)">от 900 дин./мес</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 10px;background:var(--white);border-radius:8px;font-size:13px">
+              <span><strong>MTS Serbia</strong> — госоператор, дешевле</span>
+              <span style="color:var(--g300)">от 700 дин./мес</span>
+            </div>
+          </div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Домашний интернет (для долгосрочных)</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">Оптика от SBB или Yettel — от 1 500–2 500 дин./мес (~1 150–1 900 ₽), скорость 100–500 Мбит/с. Коворкинги в Белграде: StartIt, Connet Hub, Startap Srbija — от €5–15/день. Скорость Wi-Fi в кафе стабильная — в большинстве мест 30–80 Мбит/с.</div>
+        </div>
+      </div>
+    </div>
     <div class="partner-block">
       <div class="pb-header">
         <div class="pb-title">eSIM для Сербии</div>
         <div class="pb-badge">Yesim · Airalo</div>
       </div>
-      <div class="pb-desc">Купи eSIM заранее — интернет заработает сразу после приземления. Не нужно искать SIM-карту в аэропорту.</div>
+      <div class="pb-desc">Купи до вылета — интернет заработает сразу после приземления. Yesim принимает карту МИР.</div>
       <div class="esim-tabs" style="margin-top:16px">
         <button class="esim-tab active" onclick="switchEsim('serbia','yesim',this)">Yesim — 18% кэшбэк</button>
         <button class="esim-tab" onclick="switchEsim('serbia','airalo',this)">Airalo</button>
@@ -624,13 +859,218 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
         <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&color_button=%231c7a54&color_focused=%231c7a54&secondary=%23FAF8F2&dark=%2311100f&light=%23FFFFFFff&special=%231c7a54&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
       </div>
     </div>
+  </div>
+
+  <!-- MEDICINE -->
+  <div class="section reveal" id="medicine">
+    <div class="section-title"><span class="section-emoji">🏥</span> Медицина</div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:16px">Медицина в Сербии платная для иностранцев без ВНЖ. При наличии ВНЖ + ДМС (страховой взнос ~€25–40/мес) — доступ к государственной медицине. Качество в частных клиниках хорошее, цены намного ниже европейских.</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Реальные цены (без страховки)</div>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid var(--g100)"><span style="color:var(--g500)">Приём врача (частная клиника)</span><span style="font-weight:600">2 000–5 000 дин.</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid var(--g100)"><span style="color:var(--g500)">Анализ крови (общий)</span><span style="font-weight:600">1 500–3 000 дин.</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid var(--g100)"><span style="color:var(--g500)">УЗИ</span><span style="font-weight:600">3 000–6 000 дин.</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:4px 0"><span style="color:var(--g500)">Скорая помощь (вызов)</span><span style="font-weight:600">бесплатно</span></div>
+          </div>
+        </div>
+        <div style="padding:14px;background:var(--green-pale);border-radius:12px;border:1px solid var(--green-light)">
+          <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px">ДМС при ВНЖ — здравствена книжица</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6">После оформления ВНЖ можно получить полис медицинского страхования (ДМС) в РФЗО. Стоимость ~€25–40/мес. Даёт право на государственную медицину почти бесплатно. Обязателен для подачи на ВНЖ. Оформляется онлайн через РФЗО или у нотариуса.</div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:6px">Лучшие частные клиники Белграда</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.6"><strong style="color:var(--black)">Euromedic</strong> — международный уровень, английский язык. <strong style="color:var(--black)">Bel Medic</strong> — широкий спектр услуг, принимают страховки. <strong style="color:var(--black)">MediGroup</strong> — сеть по всей стране, доступные цены. <strong style="color:var(--black)">Stomatolog Dent</strong> — стоматология значительно дешевле чем в России.</div>
+        </div>
+      </div>
+    </div>
     <div class="partner-block">
       <div class="pb-header">
-        <div class="pb-title">Туристическая страховка</div>
-        <div class="pb-badge">Cherehapa</div>
+        <div class="pb-title">Подобрать страховку в Сербию</div>
+        <div class="pb-badge">Cherehapa · 15+ компаний</div>
       </div>
-      <div class="pb-desc">Сравни страховки от 15+ компаний и выбери лучшую. Оформление за 5 минут онлайн.</div>
-      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&countryGroups=all-world&medicine=30000&powered_by=true&promo_id=2458&campaign_id=24" charset="utf-8" async></script></div>
+      <div class="pb-desc">Страховка нужна для ВНЖ и просто для спокойного пребывания. Сравни 15+ компаний, оформи за 5 минут.</div>
+      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&countryGroups=all-world&medicine=30000&powered_by=true&promo_id=2458&campaign_id=24" charset="utf-8"></script></div>
+    </div>
+  </div>
+
+  <!-- HOUSING RENTAL GUIDE -->
+  <div class="section reveal" id="rental">
+    <div class="section-title"><span class="section-emoji">🏠</span> Аренда жилья — пошагово</div>
+    <div style="font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:16px">Рынок аренды в Белграде сильно вырос после 2022 года из-за притока эмигрантов из России. Цены в центре сопоставимы с Москвой. Но в спальных районах и других городах — значительно дешевле.</div>
+
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Где искать жильё</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="padding:12px 14px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-light)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div style="font-size:14px;font-weight:700">halooglasi.com</div>
+            <span style="font-size:11px;font-weight:700;background:var(--green-light);color:var(--green);padding:2px 8px;border-radius:100px">Лучший</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Главный сербский сайт объявлений. Большая база с фото и фильтрами. Много объявлений напрямую от владельцев. Используй Google Translate — сайт на сербском. Также смотри nekretnine.rs и 4zida.rs.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">Facebook-группы</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">«Квартиры в Белграде», «Аренда Белград русские», «Belgrade expats housing». Самые живые предложения именно там — часто кто-то уезжает и передаёт квартиру напрямую без агентства.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">Telegram-чаты</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">«Русские в Белграде», «Сербия для своих», srb_guide (официальный чат srb.guide). Отличное место для поиска жилья и проверенных агентов.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:14px;font-weight:700;margin-bottom:4px">Airbnb / Booking — для первых 2–3 недель</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Удобно на старте пока ищешь долгосрочное жильё. В 2–3 раза дороже долгосрочной аренды — не задерживайся.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Цены на аренду по районам Белграда</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--amber-light);border-radius:10px">
+          <div><div style="font-size:13px;font-weight:700">Старый город, Врачар, Савамала</div><div style="font-size:12px;color:var(--g500)">Престижный центр, рядом всё</div></div>
+          <div style="font-size:13px;font-weight:700;color:var(--amber)">€500–900/мес</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--bg);border-radius:10px">
+          <div><div style="font-size:13px;font-weight:700">Нови-Бeoград, Земун</div><div style="font-size:12px;color:var(--g500)">Современные районы, метро будет</div></div>
+          <div style="font-size:13px;font-weight:700">€350–650/мес</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--bg);border-radius:10px">
+          <div><div style="font-size:13px;font-weight:700">Чукарица, Раковица</div><div style="font-size:12px;color:var(--g500)">Спальные районы, тихо</div></div>
+          <div style="font-size:13px;font-weight:700">€250–450/мес</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-light)">
+          <div><div style="font-size:13px;font-weight:700;color:var(--green)">Ниш или Нови-Сад</div><div style="font-size:12px;color:var(--g500)">Другие города — значительно дешевле</div></div>
+          <div style="font-size:13px;font-weight:700;color:var(--green)">€200–400/мес</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Алгоритм аренды</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">1</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Первые 2 недели живи в хостеле/апарте</strong> — посмотри районы вживую. Врачар и Дорчол — для тех кто любит центральную Европу. Нови Београд — для тех кто ценит простор и новые дома.</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">2</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Уточни условия регистрации</strong> — арендодатель обязан зарегистрировать тебя в полиции (Бели картон). Без регистрации не будет ВНЖ. Включи это условие в договор.</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">3</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Депозит 1–2 месяца + первый месяц</strong> — стандарт. Договор на сербском — возьми переводчика или переведи через deepl.com. Проверь наличие лифта и отопления.</div>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:22px">4</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55"><strong style="color:var(--black)">Зафиксируй дефекты</strong> — сфотографируй и отправь хозяину в мессенджер при заезде. Защита при возврате депозита.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--amber-light);border-radius:12px;padding:14px 16px;font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:12px">
+      <div style="font-weight:700;color:#c06010;margin-bottom:8px">⚠️ Типичные ошибки</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div>🚫 <strong>Не проверить готовность к регистрации</strong> — некоторые хозяева сдают «в серую», без регистрации. Для ВНЖ это критично.</div>
+        <div>🚫 <strong>Снимать в центре без осмотра</strong> — в Белграде много старого фонда с шумными улицами и без лифта. Смотри вживую.</div>
+        <div>🚫 <strong>Платить без договора</strong> — некоторые хозяева предпочитают устные договорённости. Это риск потери депозита.</div>
+      </div>
+    </div>
+
+    <div class="partner-block">
+      <div class="pb-header">
+        <div class="pb-title">Найти жильё на Островок</div>
+        <div class="pb-badge">2.9 млн вариантов</div>
+      </div>
+      <div class="pb-desc">Отели, хостелы и апартаменты в Сербии — для первых недель пока ищешь долгосрочную аренду.</div>
+      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%231c7a54&color_button=%231c7a54&color_icons=%231c7a54&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
+    </div>
+  </div>
+
+  <!-- VISA RUN -->
+  <div class="section reveal" id="visarun">
+    <div class="section-title"><span class="section-emoji">🚌</span> Визаран</div>
+    <div style="background:var(--amber-light);border-radius:12px;padding:13px 16px;font-size:13px;color:var(--amber);line-height:1.6;margin-bottom:16px">
+      <strong style="color:#c06010">Важно:</strong> россияне могут находиться в Сербии по 30 дней неограниченное количество раз в году. Каждые 30 дней — выезд и обратно. Законодательство 2026 года не ограничивает количество визаранов для граждан РФ.
+    </div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Популярные маршруты визарана</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="padding:12px 14px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-light)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div style="font-size:13px;font-weight:700">Белград → Босния (Биелина или Мали Зворник)</div>
+            <span style="font-size:11px;color:var(--g300);font-weight:600">1.5–2 ч</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Самый быстрый маршрут. Без визы для россиян. Выехал — выпил кофе — вернулся. Организованные туры от €10–20. Граница работает круглосуточно.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div style="font-size:13px;font-weight:700">Белград → Черногория (Подгорица или Бар)</div>
+            <span style="font-size:11px;color:var(--g300);font-weight:600">3–4 ч</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Популярный вариант совместить визаран с отдыхом. Черногория безвизовая до 30 дней. Поезд Белград–Бар (~10 ч, красивейший маршрут) или автобус.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div style="font-size:13px;font-weight:700">Белград → Северная Македония (Скопье)</div>
+            <span style="font-size:11px;color:var(--g300);font-weight:600">4–5 ч</span>
+          </div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Автобус или маршрутка. Северная Македония безвизовая для россиян. Можно провести день в Скопье — симпатичный город с хорошей едой.</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px">Что нужно знать</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="padding:12px 14px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-light)">
+          <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:4px">Организованные визаран-туры</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">В Белграде организуются групповые однодневные визаран-туры с минибасом — €10–25 с человека. Удобно: не нужна машина, не нужно думать о маршруте. Ищи в Telegram-чатах русскоязычного сообщества Сербии.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px">Бели картон при возвращении</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">После каждого возвращения — новая регистрация в течение 24 часов. Если живёшь в квартире — арендодатель регистрирует тебя снова. Это обязательно при каждом въезде.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--amber-light);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;color:#c06010;margin-bottom:4px">⚠️ Долгосрочная перспектива</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Визараном можно жить годами — это легально. Но для открытия банковского счёта, получения медстраховки и стабильности — лучше оформить ВНЖ. ВНЖ на основании ИП — самый популярный путь для фрилансеров.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIMATE -->
+  <div class="section reveal" id="climate">
+    <div class="section-title"><span class="section-emoji">🌤</span> Климат</div>
+    <div style="background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:22px;margin-bottom:12px">
+      <div style="font-size:13px;color:var(--g500);line-height:1.65;margin-bottom:16px">Сербия — умеренно-континентальный климат. Четыре выраженных сезона. Лето жаркое (+35°C в Белграде), зима холодная (снег, до −10°C). Весна и осень — лучшее время для посещения.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px" class="budget-cols">
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:8px">🏰 Белград / низина</div>
+          <div style="font-size:12px;color:var(--g500);line-height:1.8">Янв: −3…+3°C<br>Апр: +8…+20°C<br>Июл: +18…+35°C<br>Окт: +8…+20°C</div>
+          <div style="margin-top:8px;font-size:11px;color:var(--green);font-weight:600">Лучшее время: май–июнь, сент–окт</div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:12px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:8px">⛷ Копаоник / горы</div>
+          <div style="font-size:12px;color:var(--g500);line-height:1.8">Янв: −8…−2°C<br>Апр: 0…+8°C<br>Июл: +10…+20°C<br>Окт: −2…+10°C</div>
+          <div style="margin-top:8px;font-size:11px;color:var(--amber);font-weight:600">Лыжи: декабрь–март</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="padding:12px 14px;background:var(--green-pale);border-radius:10px;border:1px solid var(--green-light)">
+          <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:4px">🌸 Лучший сезон: апрель–июнь и сентябрь–октябрь</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Идеальная погода: +18–25°C в Белграде, зелёные горы, открытые сплавы на Дунае, фестивали. В июле–августе жара до +37°C в Белграде — многие уезжают на море в Черногорию.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px">☃️ Зима в Белграде</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">Снег бывает, но не регулярно. Отопление центральное — в отличие от Грузии, дома тёплые. Январь–февраль до −10°C ночью. Горнолыжный курорт Копаоник — 3.5 часа от Белграда, качество трасс хорошее.</div>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg);border-radius:10px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px">🎪 Летние фестивали</div>
+          <div style="font-size:13px;color:var(--g500);line-height:1.55">EXIT (Нови-Сад, июль) — один из лучших музыкальных фестивалей Европы. Beer Fest (Белград, август) — крупнейший пивной фестиваль региона. Guča (август) — легендарный фестиваль трубачей.</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -762,13 +1202,17 @@ function openVisa(key) {
 function openCity(key) {
   const c = CITIES[key];
   if (!c) return;
-  let html = '<div class="modal-subtitle">'+c.tag+'</div><div class="modal-title">'+c.emoji+' '+c.name+'</div>';
-  html += '<div class="modal-tags"><span class="modal-tag gray">'+c.budget+'</span></div>';
-  html += '<div class="modal-text">'+c.desc+'</div>';
-  html += '<div class="modal-section">Что посмотреть</div>';
-  html += '<div class="modal-steps">'+c.places.map(function(p){return '<div class="modal-step"><span class="modal-step-num">📍</span><span class="modal-step-text"><strong>'+p.n+'</strong> — '+p.d+'</span></div>';}).join('')+'</div>';
-  html += '<div class="modal-section">Полезные факты</div>';
-  html += '<div class="modal-steps">'+c.facts.map(function(f){return '<div class="modal-step"><span class="modal-step-num">💡</span><span class="modal-step-text">'+f+'</span></div>';}).join('')+'</div>';
+  let html = '<div class="city-modal-tag">'+c.tag+'</div>';
+  html += '<div class="city-modal-header"><div class="city-modal-name">'+c.emoji+' '+c.name+'</div><div class="city-modal-budget">'+c.budget+'</div></div>';
+  html += '<div class="city-modal-desc">'+c.desc+'</div>';
+  html += '<div class="city-modal-section">Что посмотреть</div>';
+  html += c.places.map(function(p){
+    return '<div class="place-item"><span class="place-pin">📍</span><div><div class="place-name">'+p.n+'</div><div class="place-desc">'+p.d+'</div></div></div>';
+  }).join('');
+  html += '<div class="city-modal-section" style="margin-top:16px">Полезные факты</div>';
+  html += c.facts.map(function(f){
+    return '<div class="fact-item"><span class="fact-icon">💡</span><div class="fact-text">'+f+'</div></div>';
+  }).join('');
   document.getElementById('cityModalContent').innerHTML = html;
   document.getElementById('cityModal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -816,7 +1260,7 @@ window.addEventListener('scroll',function(){
   if(window.pageYOffset>300){btt.classList.add('visible')}else{btt.classList.remove('visible')}
 });
 // Highlight active tab on scroll
-var sections=['visas','prices','flights','cities','tips'];
+var sections=['visas','prices','flights','cities','tips','budget','money','taxes','transport','internet','medicine','rental','visarun','climate'];
 window.addEventListener('scroll',function(){
   var offset=130;
   sections.forEach(function(id){
@@ -901,6 +1345,45 @@ window.addEventListener('scroll',function(){
 </div>
 
 
+<nav class="sidenav" id="sidenav">
+  <div class="sidenav-item" data-target="visas"><span class="sidenav-label">🛂 Визы</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="prices"><span class="sidenav-label">💰 Цены</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="flights"><span class="sidenav-label">✈️ Билеты</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="cities"><span class="sidenav-label">🏙 Города</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="tips"><span class="sidenav-label">💡 Советы</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="budget"><span class="sidenav-label">🧮 Бюджет</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="money"><span class="sidenav-label">💳 Деньги</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="taxes"><span class="sidenav-label">📊 Налоги</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="transport"><span class="sidenav-label">🚇 Транспорт</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="internet"><span class="sidenav-label">📶 Связь</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="medicine"><span class="sidenav-label">🏥 Медицина</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="rental"><span class="sidenav-label">🏠 Жильё</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="visarun"><span class="sidenav-label">🚌 Визаран</span><div class="sidenav-dot"></div></div>
+  <div class="sidenav-item" data-target="climate"><span class="sidenav-label">🌤 Климат</span><div class="sidenav-dot"></div></div>
+</nav>
+<script>
+(function(){
+  var nav = document.getElementById('sidenav');
+  if(!nav) return;
+  var items = Array.prototype.slice.call(nav.querySelectorAll('.sidenav-item'));
+  var sectionEls = items.map(function(item){ return document.getElementById(item.dataset.target); });
+  items.forEach(function(item, i){
+    item.addEventListener('click', function(){
+      var el = sectionEls[i];
+      if(el){ window.scrollTo({top: el.getBoundingClientRect().top + window.pageYOffset - 100, behavior:'smooth'}); }
+    });
+  });
+  function update(){
+    var scrollY = window.pageYOffset;
+    if(scrollY > 200){ nav.classList.add('visible'); } else { nav.classList.remove('visible'); return; }
+    var activeIdx = -1;
+    sectionEls.forEach(function(el, i){ if(el && el.getBoundingClientRect().top < 140) activeIdx = i; });
+    items.forEach(function(item, i){ item.classList.toggle('active', i === activeIdx); });
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -943,6 +1426,12 @@ function switchEsim(slug, tab, btn) {
   document.querySelectorAll('#esim-yesim-' + slug + ', #esim-airalo-' + slug).forEach(p => p.classList.remove('active'));
   btn.closest('.esim-tabs').querySelectorAll('.esim-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('esim-' + tab + '-' + slug).classList.add('active');
+  btn.classList.add('active');
+}
+function switchFlights(slug, tab, btn) {
+  document.querySelectorAll('#fl-avia-' + slug + ', #fl-kiwi-' + slug).forEach(p => p.classList.remove('active'));
+  btn.closest('.flights-tabs').querySelectorAll('.flights-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('fl-' + tab + '-' + slug).classList.add('active');
   btn.classList.add('active');
 }
 </script>
