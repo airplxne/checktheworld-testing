@@ -1,347 +1,974 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
+<html lang="ru"><head>
 <meta charset="utf-8">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
-<meta name="yandex-verification" content="9460ed94b387303c" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CheckTheWorld — визы, цены и жильё по всему миру</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+
 <meta name="description" content="Всё о переезде и путешествиях в одном месте — визы, стоимость жизни, авиабилеты и карта мест по 180+ странам.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://tp-em.com/NTE1NTI2.js?t=515526';
-      document.head.appendChild(script);
-  })();
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+
+
+
+<script>
+const TWEAKS = /*EDITMODE-BEGIN*/{
+  "blobsOn": true,
+  "darkMode": true,
+  "headlineSize": 75
+}/*EDITMODE-END*/;
 </script>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#faf8f2;--white:#ffffff;--black:#1a1a18;
-  --g500:#484842;--g300:#848480;--g100:#e6e2d8;--g50:#f0ece2;
-  --green:#1c7a54;--green-mid:#30b278;--green-light:#d8f2e6;--green-pale:#edf8f3;
-  --amber:#e08c2a;--amber-light:#fef3e2;
+  --bg:#faf8f2;
+  --bg-2:#f3efe3;
+  --paper:#ffffff;
+  --ink:#1a1a18;
+  --ink-2:#3d3d37;
+  --muted:#6e6e66;
+  --faint:#9a9a90;
+  --line:#e6e2d8;
+  --line-2:#efeadf;
+  --green:#1c7a54;
+  --green-deep:#13563a;
+  --green-light:#d8f2e6;
+  --green-pale:#edf8f3;
+  --amber:#e08c2a;
+  --amber-deep:#b96d15;
+  --amber-light:#fef3e2;
+  --amber-tint:rgba(224,140,42,.09);
+  --red:#c0392b;
+  --red-light:#fce8e8;
+  --shadow-sm:0 1px 2px rgba(20,20,15,.04), 0 2px 8px rgba(20,20,15,.04);
+  --shadow:0 8px 28px rgba(20,20,15,.07), 0 2px 6px rgba(20,20,15,.04);
+  --shadow-lg:0 18px 60px rgba(20,20,15,.1), 0 4px 12px rgba(20,20,15,.05);
+  --radius:18px;
+  --radius-lg:24px;
+  --radius-sm:12px;
 }
-body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden}
+html.dark{
+  --bg:#131310;
+  --bg-2:#1b1b17;
+  --paper:#1f1f1b;
+  --ink:#f4f1e8;
+  --ink-2:#d4d1c6;
+  --muted:#9e9a8f;
+  --faint:#6f6c63;
+  --line:#2c2c26;
+  --line-2:#252521;
+  --green:#3fbb89;
+  --green-deep:#2fa474;
+  --green-light:rgba(63,187,137,.14);
+  --green-pale:rgba(63,187,137,.07);
+  --amber:#f0a54a;
+  --amber-deep:#d8893a;
+  --amber-light:rgba(240,165,74,.14);
+  --amber-tint:rgba(240,165,74,.12);
+  --red:#e47060;
+  --red-light:rgba(228,112,96,.14);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+  --shadow:0 8px 28px rgba(0,0,0,.35);
+  --shadow-lg:0 18px 60px rgba(0,0,0,.5);
+}
+
+html,body{background:var(--bg);color:var(--ink)}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  font-feature-settings:"ss01","cv11";
+  overflow-x:hidden;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  transition:background .25s ease, color .25s ease;
+}
 a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select{font-family:inherit;color:inherit}
 
-/* BLOBS */
+/* ================= BLOBS ================= */
 .blobs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.22}
-.b1{width:600px;height:600px;background:#30b278;top:-150px;right:-80px;animation:bf 13s ease-in-out infinite}
-.b2{width:480px;height:480px;background:#e08c2a;bottom:0;left:-140px;animation:bf 16s ease-in-out infinite reverse}
-.b3{width:350px;height:350px;background:#1c7a54;top:45%;right:5%;animation:bf 19s ease-in-out infinite 4s}
-@keyframes bf{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(24px,-16px) scale(1.05)}66%{transform:translate(-16px,24px) scale(.96)}}
+html:not(.blobs-on) .blobs{display:none}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.2;mix-blend-mode:multiply}
+html.dark .blob{opacity:.22;mix-blend-mode:screen;filter:blur(110px)}
+.b1{width:620px;height:620px;background:#30b278;top:-180px;right:-120px;animation:bf 17s ease-in-out infinite}
+.b2{width:520px;height:520px;background:#e08c2a;bottom:-140px;left:-160px;animation:bf 21s ease-in-out infinite reverse}
+.b3{width:380px;height:380px;background:#1c7a54;top:40%;right:8%;animation:bf 25s ease-in-out infinite 4s}
+.b4{width:280px;height:280px;background:#f5b961;top:55%;left:32%;animation:bf 19s ease-in-out infinite 2s;opacity:.14}
+@keyframes bf{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(30px,-20px) scale(1.06)}
+  66%{transform:translate(-20px,30px) scale(.96)}
+}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:200;background:rgba(250,248,242,0.95);
-  backdrop-filter:blur(16px);border-bottom:2px solid var(--amber)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:16px 44px;
-  display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif;font-size:21px;text-decoration:none;
-  color:var(--black);cursor:pointer}
-.logo span{color:var(--green)}.logo .dot{color:var(--amber)}
-.nav-links{display:flex;gap:26px}
-.nav-links a{font-size:14px;color:var(--g500);text-decoration:none;font-weight:500;
-  transition:color .15s;cursor:pointer}
-.nav-links a:hover{color:var(--black)}
-.nav-links a.active{color:var(--green);font-weight:600}
-.nav-btn{background:var(--green);color:var(--white);border:none;border-radius:100px;
-  padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;
-  font-family:'Manrope',sans-serif;transition:background .15s}
-.nav-btn:hover{background:#166644}
+/* ================= NAV ================= */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(18px) saturate(1.1);
+  -webkit-backdrop-filter:blur(18px) saturate(1.1);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1320px;margin:0 auto;padding:14px 44px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.logo{
+  font-family:'Playfair Display',serif;font-size:22px;font-weight:800;
+  letter-spacing:-.5px;display:inline-flex;align-items:baseline;
+}
+.logo em{font-style:italic;font-weight:500;color:var(--green);margin:0 1px}
+.logo .dot{color:var(--amber);margin-left:1px}
+.nav-links{display:flex;gap:2px;align-items:center}
+.nav-links a{
+  font-size:13.5px;color:var(--muted);font-weight:500;
+  padding:8px 14px;border-radius:100px;transition:all .15s;
+  position:relative;
+}
+.nav-links a:hover{color:var(--ink);background:var(--bg-2)}
+.nav-links a.active{color:var(--ink);font-weight:600}
+.nav-links a.active::after{
+  content:'';position:absolute;left:50%;bottom:2px;
+  width:4px;height:4px;border-radius:50%;background:var(--amber);
+  transform:translateX(-50%);
+}
+.nav-right{display:flex;align-items:center;gap:10px}
+.theme-toggle{
+  width:36px;height:36px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);color:var(--muted);
+  transition:all .15s;
+}
+.theme-toggle:hover{border-color:var(--ink);color:var(--ink)}
+.nav-btn{
+  background:var(--ink);color:var(--bg);
+  border-radius:100px;padding:10px 20px;
+  font-size:13px;font-weight:600;transition:all .15s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.nav-btn:hover{background:var(--green);color:#fff}
 
-/* HERO */
-.hero{position:relative;z-index:1;padding:60px 44px 48px;max-width:1200px;margin:0 auto;text-align:center}
-.hero-tag{display:inline-flex;align-items:center;gap:7px;background:var(--white);
-  border:1.5px solid var(--g100);border-radius:100px;padding:6px 16px;
-  margin-bottom:22px;font-size:12px;font-weight:600;color:var(--g500)}
-.hero-tag-dot{width:7px;height:7px;border-radius:50%;background:var(--green-mid);
-  animation:blink 1.8s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,62px);
-  line-height:1.1;letter-spacing:-.5px;margin-bottom:16px}
-h1 em{font-style:italic;color:var(--green)}
-h1 strong{position:relative;display:inline-block}
-h1 strong::after{content:'';position:absolute;left:0;bottom:0;
-  width:100%;height:3px;background:var(--amber);border-radius:2px;opacity:.75}
-.hero-sub{font-size:17px;color:var(--g500);max-width:540px;margin:0 auto 40px;
-  line-height:1.65;font-weight:400}
+/* ================= HERO ================= */
+.hero{
+  position:relative;z-index:1;
+  max-width:1320px;margin:0 auto;
+  padding:68px 44px 40px;
+  text-align:center;
+}
+.hero-overline{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;font-weight:500;letter-spacing:.18em;
+  color:var(--muted);text-transform:uppercase;
+  margin-bottom:22px;
+}
+.hero-overline::before,.hero-overline::after{
+  content:'';display:block;width:28px;height:1px;background:var(--line);
+}
+h1{
+  font-family:'Playfair Display',serif;
+  font-weight:800;
+  font-size:clamp(38px, var(--headline-size,73)*1px, 88px);
+  line-height:.98;
+  letter-spacing:-.025em;
+  margin-bottom:18px;
+  text-wrap:balance;
+}
+h1 em{font-style:italic;font-weight:500;color:var(--green)}
+h1 .u{
+  position:relative;display:inline-block;
+}
+h1 .u::after{
+  content:'';position:absolute;left:-2px;right:-2px;bottom:4px;height:.22em;
+  background:var(--amber);opacity:.32;z-index:-1;border-radius:2px;
+}
+.hero-sub{
+  font-size:17px;color:var(--muted);
+  max-width:560px;margin:0 auto 36px;
+  line-height:1.55;font-weight:400;
+  text-wrap:pretty;
+}
+
+/* Departure-board strip */
+.board-strip{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;font-weight:500;
+  color:var(--muted);
+  margin-bottom:22px;flex-wrap:wrap;
+  max-width:720px;margin-left:auto;margin-right:auto;
+}
+.board-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 10px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:6px;
+  letter-spacing:.06em;
+  transition:all .25s;
+}
+.board-chip.flip{animation:flip .6s ease}
+@keyframes flip{
+  0%{transform:rotateX(0);background:var(--paper)}
+  50%{transform:rotateX(-90deg);background:var(--amber-light)}
+  100%{transform:rotateX(0);background:var(--paper)}
+}
+.board-chip .code{color:var(--ink);font-weight:600}
+.board-sep{color:var(--faint);font-size:9px}
+.board-ok{color:var(--green);font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.board-ok::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
 /* SEARCH */
-.search-wrap{max-width:620px;margin:0 auto 16px;position:relative}
-.search-box{display:flex;align-items:center;background:var(--white);
-  border:2px solid var(--g100);border-radius:16px;padding:6px 6px 6px 20px;
-  transition:border-color .15s;box-shadow:0 4px 24px rgba(0,0,0,.06)}
-.search-box:focus-within{border-color:var(--green)}
-.search-icon{font-size:18px;margin-right:10px;opacity:.4;flex-shrink:0}
-.search-box input{flex:1;border:none;outline:none;font-size:16px;
-  font-family:'Manrope',sans-serif;background:transparent;color:var(--black);font-weight:500}
-.search-box input::placeholder{color:var(--g300)}
-.search-btn{background:var(--green);color:var(--white);border:none;border-radius:12px;
-  padding:12px 24px;font-size:14px;font-weight:600;cursor:pointer;
-  font-family:'Manrope',sans-serif;white-space:nowrap;transition:background .15s}
-.search-btn:hover{background:#166644}
-.search-count{font-size:13px;color:var(--g300);text-align:center}
+.search-wrap{
+  max-width:680px;margin:0 auto 18px;position:relative;
+}
+.search-box{
+  display:flex;align-items:center;
+  background:var(--paper);
+  border:1.5px solid var(--line);
+  border-radius:18px;
+  padding:6px 6px 6px 22px;
+  box-shadow:var(--shadow);
+  transition:all .2s;
+  position:relative;
+}
+.search-box:focus-within{border-color:var(--green);box-shadow:var(--shadow-lg)}
+.search-icon{
+  width:18px;height:18px;flex-shrink:0;color:var(--faint);
+  margin-right:12px;
+}
+.search-input-wrap{flex:1;position:relative;min-height:44px;display:flex;align-items:center}
+.search-box input{
+  width:100%;border:none;outline:none;background:transparent;
+  font-size:16px;font-weight:500;
+  color:var(--ink);
+  position:relative;z-index:2;
+}
+.search-box input::placeholder{color:transparent}
+.fake-placeholder{
+  position:absolute;left:0;top:50%;transform:translateY(-50%);
+  color:var(--faint);font-size:16px;font-weight:500;
+  pointer-events:none;
+  display:flex;align-items:center;
+}
+.fake-placeholder .prefix{color:var(--faint)}
+.fake-placeholder .typed{color:var(--ink-2);margin-left:4px}
+.fake-placeholder .caret{
+  display:inline-block;width:2px;height:1em;
+  background:var(--green);margin-left:2px;
+  animation:caret .9s steps(2) infinite;
+  vertical-align:middle;
+}
+@keyframes caret{0%,50%{opacity:1}51%,100%{opacity:0}}
+.search-box input:not(:placeholder-shown) ~ .fake-placeholder,
+.search-box input:focus ~ .fake-placeholder{display:none}
+.search-btn{
+  background:var(--ink);color:var(--bg);
+  border-radius:13px;padding:12px 22px;
+  font-size:14px;font-weight:600;white-space:nowrap;
+  transition:all .15s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.search-btn:hover{background:var(--green);color:#fff}
 
-/* FILTERS */
-.filters{position:relative;z-index:1;max-width:1200px;margin:0 auto;
-  padding:0 44px 32px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.filter-btn{background:var(--white);border:1.5px solid var(--g100);border-radius:100px;
-  padding:8px 18px;font-size:13px;font-weight:600;color:var(--g500);cursor:pointer;
-  transition:all .15s;font-family:'Manrope',sans-serif;-webkit-tap-highlight-color:transparent}
-.filter-btn:hover{border-color:var(--green);color:var(--green)}
-.filter-btn.active{background:var(--green);border-color:var(--green);color:var(--white)}
+.hero-meta{
+  display:flex;align-items:center;justify-content:center;gap:24px;
+  margin-top:20px;flex-wrap:wrap;
+  font-size:12.5px;color:var(--muted);font-weight:500;
+}
+.hero-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--faint)}
+.hero-meta b{color:var(--ink);font-weight:700}
 
-/* GRID */
-.catalog{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 44px 80px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-.country-card{background:var(--white);border:1.5px solid var(--g100);border-radius:20px;
-  padding:22px;cursor:pointer;transition:all .2s;text-decoration:none;display:block;
-  -webkit-tap-highlight-color:transparent}
-.country-card:hover{border-color:var(--green-mid);transform:translateY(-3px);
-  box-shadow:0 8px 32px rgba(28,122,84,.1)}
-.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.card-flag{font-size:28px;line-height:1}
-.card-visa{font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px}
-.visa-free{background:var(--green-light);color:var(--green)}
-.visa-on-arrival{background:var(--amber-light);color:var(--amber)}
-.visa-required{background:#fce8e8;color:#c0392b}
-.card-name{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:4px}
-.card-region{font-size:12px;color:var(--g300);font-weight:500;margin-bottom:14px}
-.card-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.card-stat{background:var(--bg);border-radius:10px;padding:9px 12px}
-.stat-lbl{font-size:10px;color:var(--g300);font-weight:700;letter-spacing:.04em;margin-bottom:2px}
-.stat-val{font-size:14px;font-weight:700;color:var(--black)}
-.card-divider{height:1px;background:var(--g100);margin:14px 0}
-.card-footer{display:flex;align-items:center;justify-content:space-between}
-.card-price{font-size:13px;color:var(--g500)}
-.card-price strong{color:var(--black);font-weight:700}
-.card-arrow{font-size:16px;color:var(--green);opacity:.6;transition:opacity .15s}
-.country-card:hover .card-arrow{opacity:1}
+/* ================= FILTERS ================= */
+.filters-wrap{
+  position:sticky;top:66px;z-index:50;
+  background:color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.filters{
+  position:relative;z-index:1;
+  max-width:1320px;margin:0 auto;
+  padding:16px 44px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  justify-content:space-between;
+}
+.filter-group{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filter-lbl{
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);font-weight:500;margin-right:4px;
+}
+.filter-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:100px;
+  padding:7px 14px 7px 12px;
+  font-size:13px;font-weight:500;color:var(--ink-2);
+  transition:all .15s;
+  white-space:nowrap;
+}
+.filter-btn .glyph{
+  width:18px;height:18px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;background:var(--bg-2);
+  transition:all .15s;
+}
+.filter-btn:hover{border-color:var(--ink);color:var(--ink)}
+.filter-btn.active{
+  background:var(--ink);border-color:var(--ink);color:var(--bg);
+  font-weight:600;
+}
+.filter-btn.active .glyph{background:rgba(255,255,255,.15);color:var(--bg)}
+.filter-sort{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--muted);
+}
+.filter-sort select{
+  border:1px solid var(--line);border-radius:100px;
+  padding:7px 32px 7px 14px;font-size:13px;font-weight:500;
+  background:var(--paper) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%236e6e66' stroke-width='1.4' fill='none' stroke-linecap='round'/></svg>") no-repeat right 12px center;
+  appearance:none;-webkit-appearance:none;cursor:pointer;
+  transition:border-color .15s;
+}
+.filter-sort select:hover{border-color:var(--ink)}
 
-/* EMPTY STATE */
-.empty{text-align:center;padding:60px 20px;color:var(--g300)}
-.empty-icon{font-size:48px;margin-bottom:12px}
-.empty-text{font-size:16px;font-weight:500}
+/* ================= CATALOG ================= */
+.catalog{
+  position:relative;z-index:1;
+  max-width:1320px;margin:0 auto;
+  padding:32px 44px 80px;
+}
+.catalog-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  margin-bottom:22px;flex-wrap:wrap;gap:12px;
+}
+.catalog-title{
+  font-family:'Playfair Display',serif;
+  font-size:28px;font-weight:700;font-style:italic;
+  letter-spacing:-.01em;
+}
+.catalog-count{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;
+}
+.catalog-count b{color:var(--ink);font-weight:600}
 
-/* FOOTER */
-footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
-  padding:26px 44px;display:flex;justify-content:space-between;
-  align-items:center;flex-wrap:wrap;gap:12px;max-width:100%}
-.flogo{font-family:'Playfair Display',serif;font-size:18px;cursor:pointer}
-.flogo span{color:var(--green)}.flogo .dot{color:var(--amber)}
-.flinks{display:flex;gap:18px}
-.flinks a{font-size:13px;color:var(--g300);text-decoration:none;cursor:pointer;
-  font-weight:500;transition:color .15s}
-.flinks a:hover{color:var(--black)}
-.fcopy{font-size:13px;color:var(--g300)}
+/* Editorial masonry grid — 6 equal columns */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:18px;
+  grid-auto-rows:minmax(0,auto);
+  grid-auto-flow:dense;
+}
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+/* ----- CARD VARIANTS ----- */
+.card{
+  position:relative;display:flex;flex-direction:column;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  box-shadow:var(--shadow-sm);
+  grid-column:span 2;
+  padding:22px 22px 20px;
+  min-height:248px;
+}
+.card::before{
+  content:'';position:absolute;inset:auto 0 0 0;height:50%;
+  background:linear-gradient(to top, var(--amber-tint), transparent 85%);
+  opacity:0;transition:opacity .3s;pointer-events:none;
+}
+.card.warm::before{opacity:1}
+.card:hover{transform:translateY(-3px);border-color:var(--ink-2);box-shadow:var(--shadow-lg)}
+
+/* Featured — 3 cols × 2 rows, with oversized flag + hero feel */
+.card.featured{
+  grid-column:span 3;
+  grid-row:span 2;
+  min-height:520px;
+  padding:28px 28px 26px;
+}
+.card.featured .flag{font-size:104px;line-height:1}
+.card.featured .name{font-size:44px}
+.card.featured .sub{font-size:14px}
+
+/* Poster — full warm card with over-large flag bg, 2 rows tall */
+.card.poster{
+  grid-column:span 3;grid-row:span 2;
+  min-height:520px;
+  background:
+    radial-gradient(circle at 90% 110%, var(--amber-tint) 0%, transparent 55%),
+    linear-gradient(165deg, var(--paper) 0%, var(--bg-2) 100%);
+  padding:28px 28px 26px;
+}
+.card.poster .flag{
+  position:absolute;right:-10px;bottom:-20px;
+  font-size:320px;line-height:1;opacity:.14;
+  filter:saturate(.9);pointer-events:none;z-index:0;
+}
+.card.poster > *{position:relative;z-index:1}
+.card.poster .name{font-size:52px}
+
+/* Wide — 4 cols */
+.card.wide{grid-column:span 4}
+/* Tall — 2 rows */
+.card.tall{grid-column:span 2;grid-row:span 2;min-height:520px}
+.card.tall .flag{font-size:88px}
+.card.tall .name{font-size:34px}
+
+/* Compact — 2 cols, shorter */
+.card.compact{min-height:216px;padding:18px 20px 18px}
+.card.compact .flag{font-size:52px}
+.card.compact .name{font-size:22px}
+.card.compact .region{font-size:11px}
+.card.compact .stats{font-size:11.5px}
+
+/* ----- CARD INTERIOR ----- */
+.card-top{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:12px;margin-bottom:14px;
+}
+.flag{
+  font-size:72px;line-height:1;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.08));
+  transform:translateY(-4px);
+  transition:transform .3s ease;
+}
+.card:hover .flag{transform:translateY(-8px) rotate(-2deg)}
+.visa{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:10.5px;font-weight:500;letter-spacing:.04em;
+  padding:5px 10px;border-radius:100px;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.visa .d{width:5px;height:5px;border-radius:50%}
+.visa.free{background:var(--green-light);color:var(--green-deep)}
+.visa.free .d{background:var(--green)}
+html.dark .visa.free{color:var(--green)}
+.visa.arrival{background:var(--amber-light);color:var(--amber-deep)}
+.visa.arrival .d{background:var(--amber)}
+html.dark .visa.arrival{color:var(--amber)}
+.visa.required{background:var(--red-light);color:var(--red)}
+.visa.required .d{background:var(--red)}
+
+.name{
+  font-family:'Playfair Display',serif;
+  font-weight:700;
+  font-size:30px;line-height:1.02;
+  letter-spacing:-.015em;
+  margin-bottom:4px;
+  text-wrap:balance;
+}
+.name em{font-style:italic;font-weight:500}
+.region{
+  font-size:12px;color:var(--muted);font-weight:500;
+  letter-spacing:.01em;
+  margin-bottom:14px;
+}
+
+/* Inline stats — tiny facts separated by mid-dot */
+.stats{
+  margin-top:auto;
+  font-family:'Manrope',sans-serif;
+  font-size:12.5px;color:var(--ink-2);font-weight:500;
+  line-height:1.55;
+  display:flex;flex-wrap:wrap;align-items:baseline;
+  gap:0 6px;
+}
+.stat{display:inline-flex;align-items:baseline;gap:4px;white-space:nowrap}
+.stat .v{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.stat .l{color:var(--muted);font-size:10.5px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;margin-right:2px}
+.mid{color:var(--faint);font-weight:400;margin:0 2px}
+
+.card-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;margin-top:16px;
+  padding-top:14px;
+  border-top:1px dashed var(--line);
+}
+.flight{
+  font-size:13px;color:var(--muted);font-weight:500;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.flight .plane{color:var(--amber);transform:translateY(1px)}
+.flight b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.card-cta{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .2s, color .2s;
+}
+.card:hover .card-cta{color:var(--green);gap:10px}
+.card-cta .arr{display:inline-block;transition:transform .25s}
+.card:hover .card-cta .arr{transform:translateX(2px)}
+
+/* Poster-specific */
+.card.poster .card-cta{font-size:12px}
+.card.poster .name em{color:var(--green)}
+
+/* Section heading block between rows */
+.row-sep{
+  grid-column:span 6;
+  display:flex;align-items:baseline;gap:16px;
+  margin-top:14px;padding-top:18px;
+  border-top:1px solid var(--line);
+}
+.row-sep .num{
+  font-family:'JetBrains Mono',monospace;font-size:12px;
+  color:var(--faint);letter-spacing:.1em;
+}
+.row-sep .t{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:22px;font-weight:500;color:var(--ink);
+}
+.row-sep .sub{font-size:13px;color:var(--muted);margin-left:auto;font-weight:500}
+
+/* EMPTY */
+.empty{
+  grid-column:1/-1;
+  text-align:center;padding:80px 20px;
+}
+.empty-icon{
+  display:inline-flex;width:64px;height:64px;border-radius:50%;
+  background:var(--bg-2);align-items:center;justify-content:center;
+  margin-bottom:14px;font-size:28px;
+}
+.empty-text{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;margin-bottom:4px}
+.empty-sub{font-size:14px;color:var(--muted)}
+.empty-btn{margin-top:16px;background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:100px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.empty-btn:hover{background:var(--green);color:#fff}
+
+/* ================= FOOTER ================= */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid var(--line);
+  padding:32px 44px;max-width:1320px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:14px;
+}
+.flogo{font-family:'Playfair Display',serif;font-size:18px;font-weight:800}
+.flogo em{font-style:italic;font-weight:500;color:var(--green);margin:0 1px}
+.flogo .dot{color:var(--amber)}
+.flinks{display:flex;gap:22px}
+.flinks a{font-size:13px;color:var(--muted);font-weight:500;transition:color .15s}
+.flinks a:hover{color:var(--ink)}
+.fcopy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:.05em}
+
+/* ================= REVEAL ================= */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease, transform .55s ease}
 .reveal.visible{opacity:1;transform:none}
-.delay-1{transition-delay:.05s}.delay-2{transition-delay:.1s}
-.delay-3{transition-delay:.15s}.delay-4{transition-delay:.2s}
-.delay-5{transition-delay:.25s}.delay-6{transition-delay:.3s}
 
-@media(max-width:768px){
-  .nav-inner{padding:14px 20px}.nav-links{display:none}
-  .hero{padding:44px 20px 36px}
-  .filters{padding:0 20px 24px}
-  .catalog{padding:0 20px 60px}
-  footer{padding:20px;justify-content:center;text-align:center}
-  .flinks{flex-wrap:wrap;justify-content:center}
+/* ================= TWEAKS PANEL ================= */
+.tweaks{
+  position:fixed;right:18px;bottom:18px;z-index:500;
+  width:260px;
+  background:var(--paper);
+  border:1px solid var(--line);border-radius:16px;
+  box-shadow:var(--shadow-lg);
+  padding:14px 16px 16px;
+  font-size:12.5px;
+  display:none;
+}
+.tweaks.open{display:block}
+.tweaks-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line);
+}
+.tweaks-t{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:16px;font-weight:700;
+}
+.tweaks-x{color:var(--faint);font-size:18px;line-height:1}
+.tweaks-row{
+  display:flex;align-items:center;justify-content:space-between;
+  margin:10px 0;gap:10px;
+}
+.tweaks-row label{font-weight:500;color:var(--ink-2);font-size:12.5px}
+.tweaks-row .v{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)}
+.switch{
+  position:relative;width:36px;height:20px;border-radius:100px;
+  background:var(--line);transition:background .2s;cursor:pointer;
+}
+.switch::after{
+  content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;
+  border-radius:50%;background:#fff;transition:transform .2s;
+  box-shadow:0 1px 3px rgba(0,0,0,.2);
+}
+.switch.on{background:var(--green)}
+.switch.on::after{transform:translateX(16px)}
+.slider-wrap{flex:1}
+.slider{
+  -webkit-appearance:none;appearance:none;width:100%;height:3px;
+  background:var(--line);border-radius:100px;outline:none;cursor:pointer;
+}
+.slider::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:14px;height:14px;
+  border-radius:50%;background:var(--green);cursor:pointer;
+  border:2px solid var(--paper);box-shadow:0 1px 3px rgba(0,0,0,.2);
+}
+.slider::-moz-range-thumb{
+  width:14px;height:14px;border-radius:50%;background:var(--green);
+  border:2px solid var(--paper);cursor:pointer;
 }
 
-/* AUTH NAV BUTTONS */
-.auth-login-btn{
-  display:inline-block;padding:9px 20px;
-  background:var(--green);color:#fff !important;
-  border-radius:100px;font-size:14px;font-weight:600;
-  text-decoration:none;transition:background .15s;
-  font-family:'Manrope',sans-serif;
+/* ================= RESPONSIVE ================= */
+@media(max-width:1100px){
+  .grid{grid-template-columns:repeat(4,1fr)}
+  .card{grid-column:span 2}
+  .card.featured,.card.poster,.card.wide{grid-column:span 4}
+  .card.tall{grid-column:span 2}
+  .row-sep{grid-column:span 4}
 }
-.auth-login-btn:hover{background:#155a3e}
-.auth-user-btn{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:8px 18px;
-  background:var(--green-light);color:var(--green) !important;
-  border-radius:100px;font-size:14px;font-weight:600;
-  text-decoration:none;transition:background .15s;
-  border:1px solid rgba(28,122,84,.25);
-  font-family:'Manrope',sans-serif;
+@media(max-width:720px){
+  .nav-inner{padding:12px 20px}
+  .nav-links{display:none}
+  .hero{padding:44px 20px 28px}
+  .filters{padding:14px 20px}
+  .catalog{padding:24px 20px 60px}
+  footer{padding:24px 20px}
+  .grid{grid-template-columns:1fr;gap:14px}
+  .card,.card.featured,.card.poster,.card.wide,.card.tall,.card.compact{
+    grid-column:span 1;grid-row:auto;min-height:0;padding:20px;
+  }
+  .card.featured .name,.card.tall .name{font-size:28px}
+  .card.poster .name{font-size:34px}
+  .card.poster .flag{font-size:220px}
+  .row-sep{grid-column:span 1}
+  h1{font-size:clamp(32px, 10vw, 48px)}
+  .search-btn{padding:10px 14px}
+  .search-btn span{display:none}
+  .filters{flex-direction:column;align-items:flex-start}
+  .filter-sort{align-self:flex-end}
+  .hero-meta{gap:12px;font-size:11.5px}
+  .hero-meta .dot{display:none}
+  .board-strip{font-size:10px;gap:6px}
 }
-.auth-user-btn:hover{background:#c5eadb}
 </style>
 </head>
+
 <body>
 
-<div class="blobs">
+<div class="blobs" aria-hidden="true">
   <div class="blob b1"></div>
   <div class="blob b2"></div>
   <div class="blob b3"></div>
+  <div class="blob b4"></div>
 </div>
 
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="index.html">Check<span>The</span>World<span class="dot">.</span></a>
+    <a class="logo" href="#">Check<em>The</em>World<span class="dot">.</span></a>
     <div class="nav-links">
-      <a class="active" href="index.html">Страны</a>
+      <a class="active" href="#">Страны</a>
       <a href="#">Сравнить</a>
       <a href="#">Визы</a>
+      <a href="#">Журнал</a>
       <a href="#">О проекте</a>
     </div>
-    <div style="display:flex;align-items:center;gap:12px"><div id="nav-auth-btn"></div><button class="nav-btn" onclick="window.location.href='../checktheworld_v9.html'">Ранний доступ</button></div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Тема">
+        <svg class="t-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+      </button>
+      <button class="nav-btn" onclick="window.location.href='checktheworld_v9.html';">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+        Ранний доступ
+      </button>
+    </div>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-tag"><div class="hero-tag-dot"></div>180+ стран в базе</div>
-  <h1>Найди свою<br><em>следующую</em> страну<br>без <strong>лишних поисков</strong></h1>
-  <p class="hero-sub">Визы, стоимость жизни, авиабилеты и карта мест — всё в одном месте и на русском языке.</p>
+  <div class="hero-overline">каталог · 180 стран · русский язык</div>
+  <h1>
+    Открой свою<br>
+    <em>следующую</em> <span class="u">страну</span><br>
+    без лишних поисков
+  </h1>
+  <p class="hero-sub">Визы, стоимость жизни, аренда, авиабилеты и живые заметки путешественников — на одной странице, от Грузии до Португалии.</p>
+
+  <!-- Departure board strip -->
+  <div class="board-strip">
+    <span class="board-chip"><span class="code">BKK</span><span style="color:var(--faint)">·</span> Бангкок</span>
+    <span class="board-sep">—</span>
+    <span class="board-chip"><span class="code">TBS</span><span style="color:var(--faint)">·</span> Тбилиси</span>
+    <span class="board-sep">—</span>
+    <span class="board-chip"><span class="code">LIS</span><span style="color:var(--faint)">·</span> Лиссабон</span>
+    <span class="board-sep">—</span>
+    <span class="board-chip"><span class="code">DXB</span><span style="color:var(--faint)">·</span> Дубай</span>
+    <span class="board-sep">—</span>
+    <span class="board-ok">онлайн</span>
+  </div>
+
+  <!-- Search -->
   <div class="search-wrap">
     <div class="search-box">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="search-input" placeholder="Поиск страны — Тайланд, Грузия, Португалия..." oninput="filterCountries()">
-      <button class="search-btn" onclick="filterCountries()">Найти</button>
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+      <div class="search-input-wrap">
+        <input type="text" id="search-input" placeholder=" " aria-label="Поиск страны">
+        <div class="fake-placeholder" id="placeholder">
+          <span class="prefix">Куда летим —</span><span class="typed" id="typed"></span><span class="caret"></span>
+        </div>
+      </div>
+      <button class="search-btn" onclick="document.getElementById('search-input').focus()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        <span>Найти</span>
+      </button>
     </div>
   </div>
-  <div class="search-count" id="search-count">Показано 12 стран</div>
+
+  <div class="hero-meta">
+    <span><b>12</b> стран на витрине</span>
+    <span class="dot"></span>
+    <span>данные обновлены <b>21 апр</b></span>
+    <span class="dot"></span>
+    <span>курс <b>₽ 90.4</b> / $</span>
+  </div>
 </section>
 
-<div class="filters">
-  <button class="filter-btn active" onclick="setFilter('all', this)">Все страны</button>
-  <button class="filter-btn" onclick="setFilter('visa-free', this)">Без визы</button>
-  <button class="filter-btn" onclick="setFilter('visa-on-arrival', this)">Виза по прилёту</button>
-  <button class="filter-btn" onclick="setFilter('visa-required', this)">Нужна виза</button>
-  <button class="filter-btn" onclick="setFilter('budget', this)">До 3 000 ₽/день</button>
-  <button class="filter-btn" onclick="setFilter('warm', this)">Тёплый климат</button>
-</div>
-
-<div class="catalog">
-  <div class="grid" id="grid"></div>
-  <div class="empty" id="empty" style="display:none">
-    <div class="empty-icon">🌍</div>
-    <div class="empty-text">Ничего не найдено — попробуй другой запрос</div>
+<!-- FILTERS -->
+<div class="filters-wrap">
+  <div class="filters">
+    <div class="filter-group">
+      <span class="filter-lbl">виза</span>
+      <button class="filter-btn active" data-f="all"><span class="glyph">✳</span>Все</button>
+      <button class="filter-btn" data-f="visa-free"><span class="glyph" style="background:var(--green-light);color:var(--green-deep)">✓</span>Без визы</button>
+      <button class="filter-btn" data-f="visa-on-arrival"><span class="glyph" style="background:var(--amber-light);color:var(--amber-deep)">✈</span>По прилёту</button>
+      <button class="filter-btn" data-f="visa-required"><span class="glyph" style="background:var(--red-light);color:var(--red)">!</span>Нужна виза</button>
+    </div>
+    <div class="filter-group">
+      <span class="filter-lbl">бюджет</span>
+      <button class="filter-btn" data-f="budget"><span class="glyph">₽</span>до 3 000 ₽/день</button>
+      <button class="filter-btn" data-f="warm"><span class="glyph" style="background:var(--amber-light);color:var(--amber-deep)">☀</span>+25° и выше</button>
+    </div>
+    <div class="filter-sort">
+      <span class="filter-lbl" style="margin-right:0">сорт.</span>
+      <select id="sort">
+        <option value="curated">редакторский</option>
+        <option value="cheap">дешевле первым</option>
+        <option value="warm">теплее первым</option>
+        <option value="flight">перелёт дешевле</option>
+        <option value="az">по алфавиту</option>
+      </select>
+    </div>
   </div>
 </div>
 
+<!-- CATALOG -->
+<section class="catalog">
+  <div class="catalog-head">
+    <h2 class="catalog-title">Витрина — весна 2026</h2>
+    <div class="catalog-count"><b id="count-num">12</b> · <span id="count-word">стран</span></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <span class="flogo">Check<span>The</span>World<span class="dot">.</span></span>
+  <span class="flogo">Check<em>The</em>World<span class="dot">.</span></span>
   <div class="flinks">
-    <a href="index.html">Страны</a>
+    <a href="#">Страны</a>
     <a href="#">Сравнить</a>
     <a href="#">Визы</a>
+    <a href="#">Журнал</a>
     <a href="#">Контакты</a>
   </div>
-  <div class="fcopy">© 2026 · CheckTheWorld</div>
+  <div class="fcopy">© 2026 · CTW · made with ☕ in transit</div>
 </footer>
 
+<!-- TWEAKS PANEL -->
+<button id="tweaks-fab" style="position:fixed;right:18px;bottom:18px;z-index:499;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);display:none;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);" aria-label="Настройки">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h0a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51h0a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"></path></svg>
+</button>
+<div class="tweaks" id="tweaks">
+  <div class="tweaks-head">
+    <div class="tweaks-t">Tweaks</div>
+    <button class="tweaks-x" id="tweaks-close">×</button>
+  </div>
+  <div class="tweaks-row">
+    <label>Анимированные блобы</label>
+    <div class="switch" id="sw-blobs"></div>
+  </div>
+  <div class="tweaks-row">
+    <label>Тёмная тема</label>
+    <div class="switch" id="sw-dark"></div>
+  </div>
+  <div class="tweaks-row" style="flex-direction:column;align-items:flex-start;gap:6px">
+    <div style="display:flex;width:100%;justify-content:space-between"><label>Размер заголовка</label><span class="v" id="hs-val">73px</span></div>
+    <div class="slider-wrap" style="width:100%">
+      <input type="range" min="48" max="96" step="1" class="slider" id="hs">
+    </div>
+  </div>
+</div>
+
 <script>
+
+const URLS = {'kazakhstan':'kazakhstan.html','turkey':'turkey.html','serbia':'serbia.html','belarus':'belarus.html','thailand':'thailand.html','china':'china.html','armenia':'armenia.html','vietnam':'vietnam.html','georgia':'georgia.html'};
+function getUrl(id){ return URLS[id] || '#'; }
+// ============ DATA ============
 const COUNTRIES = [
-  {id:'thailand',name:'Тайланд',flag:'🇹🇭',region:'Юго-Восточная Азия',
-   visa:'visa-free',visaLabel:'Без визы — 60 дней',
-   day:'~3 200 ₽',rent:'~41 000 ₽',climate:'+32°C',net:'50 Мбит',
-   flight:'от 34 500 ₽',warm:true,budget:true,file:'thailand.html'},
+  {id:'thailand',name:'Таиланд',flag:'🇹🇭',region:'Юго-Восточная Азия',
+   visa:'visa-free',visaLabel:'60 дней · без визы',
+   day:3200,rent:'~41 000 ₽',climate:26,climateStr:'+32°C',net:'50 Мбит',
+   flight:34500,warm:true,budget:false,
+   featured:true, tagline:'пляжи, уличная еда, вечный сезон'},
   {id:'georgia',name:'Грузия',flag:'🇬🇪',region:'Кавказ',
-   visa:'visa-free',visaLabel:'Без визы — 365 дней',
-   day:'~1 800 ₽',rent:'~28 000 ₽',climate:'+24°C',net:'40 Мбит',
-   flight:'от 18 000 ₽',warm:true,budget:true,file:'georgia.html'},
+   visa:'visa-free',visaLabel:'365 дней · без визы',
+   day:1800,rent:'~28 000 ₽',climate:24,climateStr:'+24°C',net:'40 Мбит',
+   flight:18000,warm:true,budget:true,
+   poster:true, tagline:'365 дней без визы, хачапури и горы'},
   {id:'portugal',name:'Португалия',flag:'🇵🇹',region:'Западная Европа',
-   visa:'visa-required',visaLabel:'Шенген — 90 дней',
-   day:'~5 200 ₽',rent:'~90 000 ₽',climate:'+22°C',net:'70 Мбит',
-   flight:'от 42 000 ₽',warm:true,budget:false,file:'portugal.html'},
+   visa:'visa-required',visaLabel:'шенген · 90 дней',
+   day:5200,rent:'~90 000 ₽',climate:22,climateStr:'+22°C',net:'70 Мбит',
+   flight:42000,warm:true,budget:false,
+   tall:true, tagline:'атлантический берег Европы'},
   {id:'uae',name:'ОАЭ',flag:'🇦🇪',region:'Ближний Восток',
-   visa:'visa-free',visaLabel:'Без визы — 60 дней',
-   day:'~6 500 ₽',rent:'~95 000 ₽',climate:'+35°C',net:'100 Мбит',
-   flight:'от 28 000 ₽',warm:true,budget:false,file:'uae.html'},
+   visa:'visa-free',visaLabel:'60 дней · без визы',
+   day:6500,rent:'~95 000 ₽',climate:30,climateStr:'+35°C',net:'100 Мбит',
+   flight:28000,warm:true,budget:false},
   {id:'indonesia',name:'Индонезия',flag:'🇮🇩',region:'Юго-Восточная Азия',
-   visa:'visa-on-arrival',visaLabel:'Виза по прилёту — 30 дней',
-   day:'~2 800 ₽',rent:'~35 000 ₽',climate:'+30°C',net:'25 Мбит',
-   flight:'от 55 000 ₽',warm:true,budget:true,file:'indonesia.html'},
+   visa:'visa-on-arrival',visaLabel:'30 дней · по прилёту',
+   day:2800,rent:'~35 000 ₽',climate:28,climateStr:'+30°C',net:'25 Мбит',
+   flight:55000,warm:true,budget:true},
   {id:'montenegro',name:'Черногория',flag:'🇲🇪',region:'Балканы',
-   visa:'visa-free',visaLabel:'Без визы — 60 дней',
-   day:'~2 200 ₽',rent:'~32 000 ₽',climate:'+26°C',net:'30 Мбит',
-   flight:'от 22 000 ₽',warm:true,budget:true,file:'montenegro.html'},
-  {id:'germany',name:'Германия',flag:'🇩🇪',region:'Западная Европа',
-   visa:'visa-required',visaLabel:'Шенген — 90 дней',
-   day:'~7 000 ₽',rent:'~120 000 ₽',climate:'+18°C',net:'80 Мбит',
-   flight:'от 38 000 ₽',warm:false,budget:false,file:'germany.html'},
+   visa:'visa-free',visaLabel:'60 дней · без визы',
+   day:2200,rent:'~32 000 ₽',climate:24,climateStr:'+26°C',net:'30 Мбит',
+   flight:22000,warm:true,budget:true,compact:true},
   {id:'turkey',name:'Турция',flag:'🇹🇷',region:'Передняя Азия',
-   visa:'visa-free',visaLabel:'Без визы — 60 дней',
-   day:'~2 400 ₽',rent:'~30 000 ₽',climate:'+28°C',net:'35 Мбит',
-   flight:'от 14 000 ₽',warm:true,budget:true,file:'turkey.html'},
+   visa:'visa-free',visaLabel:'60 дней · без визы',
+   day:2400,rent:'~30 000 ₽',climate:26,climateStr:'+28°C',net:'35 Мбит',
+   flight:14000,warm:true,budget:true},
   {id:'serbia',name:'Сербия',flag:'🇷🇸',region:'Балканы',
-   visa:'visa-free',visaLabel:'Без визы — 60 дней',
-   day:'~2 000 ₽',rent:'~25 000 ₽',climate:'+22°C',net:'45 Мбит',
-   flight:'от 16 000 ₽',warm:false,budget:true,file:'serbia.html'},
+   visa:'visa-free',visaLabel:'60 дней · без визы',
+   day:2000,rent:'~25 000 ₽',climate:20,climateStr:'+22°C',net:'45 Мбит',
+   flight:16000,warm:false,budget:true,compact:true},
   {id:'vietnam',name:'Вьетнам',flag:'🇻🇳',region:'Юго-Восточная Азия',
-   visa:'visa-on-arrival',visaLabel:'Виза по прилёту — 30 дней',
-   day:'~1 900 ₽',rent:'~22 000 ₽',climate:'+30°C',net:'30 Мбит',
-   flight:'от 42 000 ₽',warm:true,budget:true,file:'vietnam.html'},
+   visa:'visa-on-arrival',visaLabel:'30 дней · по прилёту',
+   day:1900,rent:'~22 000 ₽',climate:28,climateStr:'+30°C',net:'30 Мбит',
+   flight:42000,warm:true,budget:true},
   {id:'armenia',name:'Армения',flag:'🇦🇲',region:'Кавказ',
-   visa:'visa-free',visaLabel:'Без визы — 180 дней',
-   day:'~1 600 ₽',rent:'~20 000 ₽',climate:'+24°C',net:'50 Мбит',
-   flight:'от 12 000 ₽',warm:true,budget:true,file:'armenia.html'},
+   visa:'visa-free',visaLabel:'180 дней · без визы',
+   day:1600,rent:'~20 000 ₽',climate:22,climateStr:'+24°C',net:'50 Мбит',
+   flight:12000,warm:true,budget:true,compact:true},
+  {id:'germany',name:'Германия',flag:'🇩🇪',region:'Западная Европа',
+   visa:'visa-required',visaLabel:'шенген · 90 дней',
+   day:7000,rent:'~120 000 ₽',climate:16,climateStr:'+18°C',net:'80 Мбит',
+   flight:38000,warm:false,budget:false},
   {id:'cyprus',name:'Кипр',flag:'🇨🇾',region:'Средиземноморье',
-   visa:'visa-required',visaLabel:'Виза категории D',
-   day:'~4 800 ₽',rent:'~75 000 ₽',climate:'+26°C',net:'55 Мбит',
-   flight:'от 28 000 ₽',warm:true,budget:false,file:'cyprus.html'},
+   visa:'visa-required',visaLabel:'виза категории D',
+   day:4800,rent:'~75 000 ₽',climate:24,climateStr:'+26°C',net:'55 Мбит',
+   flight:28000,warm:true,budget:false},
 ];
 
+// ============ STATE ============
 let activeFilter = 'all';
 let searchQuery = '';
+let sortMode = 'curated';
 
+// ============ RENDER ============
 function visaClass(v){
-  return v==='visa-free'?'visa-free':v==='visa-on-arrival'?'visa-on-arrival':'visa-required';
+  return v==='visa-free'?'free':v==='visa-on-arrival'?'arrival':'required';
+}
+function fmtRub(n){return n.toLocaleString('ru-RU')+' ₽'}
+
+function cardClass(c, idx, forceNone){
+  if(forceNone) return '';
+  if(c.featured) return 'featured';
+  if(c.poster) return 'poster';
+  if(c.tall) return 'tall';
+  if(c.compact) return 'compact';
+  return '';
 }
 
-function renderCard(c, delay){
-  return `<a class="country-card reveal delay-${delay}" href="${c.file}">
-    <div class="card-header">
-      <span class="card-flag">${c.flag}</span>
-      <span class="card-visa ${visaClass(c.visa)}">${c.visaLabel}</span>
+function renderCard(c, idx, forceNone){
+  const cls = cardClass(c, idx, forceNone);
+  const warmCls = c.warm ? ' warm' : '';
+  const isPoster = cls === 'poster';
+  const isFeatured = cls === 'featured' || isPoster;
+
+  // Stats: inline, separated by mid-dot
+  const stats = `
+    <div class="stats">
+      <span class="stat"><span class="l">день</span><span class="v">${fmtRub(c.day)}</span></span>
+      <span class="mid">·</span>
+      <span class="stat"><span class="l">аренда</span><span class="v">${c.rent}</span></span>
+      <span class="mid">·</span>
+      <span class="stat"><span class="l">t°</span><span class="v">${c.climateStr}</span></span>
+      <span class="mid">·</span>
+      <span class="stat"><span class="l">net</span><span class="v">${c.net}</span></span>
+    </div>`;
+
+  // For poster: different layout (more editorial)
+  if(isPoster){
+    return `<a class="card poster${warmCls}" href="${getUrl(c.id)}" data-id="${c.id}">
+      <div class="flag">${c.flag}</div>
+      <div class="card-top">
+        <div style="max-width:70%">
+          <div class="region" style="margin-bottom:8px">${c.region}</div>
+          <div class="name">${c.name}</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--muted);margin-top:10px;max-width:320px;line-height:1.4">${c.tagline || ''}</div>
+        </div>
+        <span class="visa ${visaClass(c.visa)}"><span class="d"></span>${c.visaLabel}</span>
+      </div>
+      ${stats}
+      <div class="card-footer">
+        <span class="flight"><svg class="plane" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.2.6-.6.5-1.1z"/></svg>от <b>${fmtRub(c.flight)}</b></span>
+        <span class="card-cta">смотреть страну <span class="arr">→</span></span>
+      </div>
+    </a>`;
+  }
+
+  return `<a class="card ${cls}${warmCls}" href="${getUrl(c.id)}" data-id="${c.id}">
+    <div class="card-top">
+      <div class="flag">${c.flag}</div>
+      <span class="visa ${visaClass(c.visa)}"><span class="d"></span>${c.visaLabel}</span>
     </div>
-    <div class="card-name">${c.name}</div>
-    <div class="card-region">${c.region}</div>
-    <div class="card-stats">
-      <div class="card-stat"><div class="stat-lbl">БЮДЖЕТ / ДЕНЬ</div><div class="stat-val">${c.day}</div></div>
-      <div class="card-stat"><div class="stat-lbl">АРЕНДА / МЕС</div><div class="stat-val">${c.rent}</div></div>
-      <div class="card-stat"><div class="stat-lbl">КЛИМАТ</div><div class="stat-val">${c.climate}</div></div>
-      <div class="card-stat"><div class="stat-lbl">ИНТЕРНЕТ</div><div class="stat-val">${c.net}</div></div>
-    </div>
-    <div class="card-divider"></div>
+    <div class="name">${c.name}</div>
+    <div class="region">${c.region}</div>
+    ${stats}
     <div class="card-footer">
-      <div class="card-price">✈️ <strong>${c.flight}</strong></div>
-      <div class="card-arrow">→</div>
+      <span class="flight"><svg class="plane" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.2.6-.6.5-1.1z"/></svg>от <b>${fmtRub(c.flight)}</b></span>
+      <span class="card-cta"><span>деталь</span> <span class="arr">→</span></span>
     </div>
   </a>`;
 }
 
-function filterCountries(){
-  searchQuery = document.getElementById('search-input').value.toLowerCase();
-  render();
+function sortCountries(arr){
+  const a = [...arr];
+  if(sortMode === 'cheap') a.sort((x,y)=>x.day-y.day);
+  else if(sortMode === 'warm') a.sort((x,y)=>y.climate-x.climate);
+  else if(sortMode === 'flight') a.sort((x,y)=>x.flight-y.flight);
+  else if(sortMode === 'az') a.sort((x,y)=>x.name.localeCompare(y.name,'ru'));
+  return a;
 }
 
-function setFilter(f, btn){
-  activeFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  render();
+function countWord(n){
+  if(n%10===1 && n%100!==11) return 'страна';
+  if(n%10>=2 && n%10<=4 && (n%100<10||n%100>=20)) return 'страны';
+  return 'стран';
 }
 
 function render(){
   const grid = document.getElementById('grid');
-  const empty = document.getElementById('empty');
-  const count = document.getElementById('search-count');
+  const countNum = document.getElementById('count-num');
+  const countWordEl = document.getElementById('count-word');
 
   let filtered = COUNTRIES.filter(c => {
-    const matchSearch = c.name.toLowerCase().includes(searchQuery) ||
-                        c.region.toLowerCase().includes(searchQuery);
+    const q = searchQuery.trim().toLowerCase();
+    const matchSearch = !q || c.name.toLowerCase().includes(q) || c.region.toLowerCase().includes(q);
     const matchFilter =
       activeFilter === 'all' ? true :
       activeFilter === 'visa-free' ? c.visa === 'visa-free' :
@@ -352,65 +979,171 @@ function render(){
     return matchSearch && matchFilter;
   });
 
+  // When sorting by non-curated order, collapse variant sizes so they don't jump around
+  const collapseVariants = sortMode !== 'curated';
+  filtered = sortCountries(filtered);
+
+  countNum.textContent = filtered.length;
+  countWordEl.textContent = countWord(filtered.length);
+
   if(filtered.length === 0){
-    grid.innerHTML = '';
-    empty.style.display = 'block';
-    count.textContent = 'Ничего не найдено';
-  } else {
-    empty.style.display = 'none';
-    grid.innerHTML = filtered.map((c,i) => renderCard(c, Math.min((i%6)+1, 6))).join('');
-    count.textContent = `Показано ${filtered.length} ${filtered.length===1?'страна':filtered.length<5?'страны':'стран'}`;
-    // Trigger reveal
-    setTimeout(() => {
-      document.querySelectorAll('.reveal').forEach(el => {
-        const obs = new IntersectionObserver(entries => {
-          entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
-        }, {threshold:0.05});
-        obs.observe(el);
-      });
-    }, 50);
+    grid.innerHTML = `
+      <div class="empty">
+        <div class="empty-icon">🌍</div>
+        <div class="empty-text">Такой страны пока нет в витрине</div>
+        <div class="empty-sub">Попробуй другой запрос или сбрось фильтры</div>
+        <button class="empty-btn" onclick="resetAll()">Сбросить всё →</button>
+      </div>`;
+    return;
   }
+
+  grid.innerHTML = filtered.map((c,i) => renderCard(c, i, collapseVariants)).join('');
+
+  // reveal
+  const cards = grid.querySelectorAll('.card');
+  cards.forEach((el,i) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (Math.min(i,8) * 0.04) + 's';
+    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('visible')));
+  });
 }
 
-// Initial render
+function resetAll(){
+  activeFilter = 'all';
+  searchQuery = '';
+  document.getElementById('search-input').value = '';
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.f==='all'));
+  render();
+}
+
+// ============ EVENTS ============
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    activeFilter = btn.dataset.f;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render();
+  });
+});
+
+document.getElementById('search-input').addEventListener('input', e => {
+  searchQuery = e.target.value;
+  render();
+});
+
+document.getElementById('sort').addEventListener('change', e => {
+  sortMode = e.target.value;
+  render();
+});
+
+// ============ TYPEWRITER ============
+const CYCLE = ['Таиланд','Грузия','Португалия','Индонезия','Черногория','Армения'];
+let ciw = 0, chw = 0, dir = 1;
+function typer(){
+  const el = document.getElementById('typed');
+  if(!el) return;
+  const word = CYCLE[ciw];
+  chw += dir;
+  if(chw > word.length){ dir = -1; chw = word.length; setTimeout(typer, 1400); return; }
+  if(chw < 0){ dir = 1; chw = 0; ciw = (ciw+1) % CYCLE.length; setTimeout(typer, 240); return; }
+  el.textContent = word.slice(0, chw);
+  setTimeout(typer, dir === 1 ? 85 : 45);
+}
+typer();
+
+// ============ BOARD FLIP ============
+setInterval(() => {
+  const chips = document.querySelectorAll('.board-chip');
+  const pick = chips[Math.floor(Math.random()*chips.length)];
+  if(pick){ pick.classList.add('flip'); setTimeout(()=>pick.classList.remove('flip'), 700); }
+}, 3200);
+
+// ============ THEME ============
+const root = document.documentElement;
+function applyTheme(dark){
+  root.classList.toggle('dark', !!dark);
+}
+function applyBlobs(on){
+  root.classList.toggle('blobs-on', !!on);
+}
+function applyHeadlineSize(px){
+  root.style.setProperty('--headline-size', px);
+  const v = document.getElementById('hs-val');
+  if(v) v.textContent = px + 'px';
+}
+
+// Initial application from TWEAKS
+applyTheme(TWEAKS.darkMode);
+applyBlobs(TWEAKS.blobsOn);
+applyHeadlineSize(TWEAKS.headlineSize);
+
+// Nav theme toggle
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  TWEAKS.darkMode = !root.classList.contains('dark');
+  applyTheme(TWEAKS.darkMode);
+  persist({darkMode: TWEAKS.darkMode});
+  updateTweaksUI();
+});
+
+// ============ TWEAKS PANEL ============
+const tweaksEl = document.getElementById('tweaks');
+const fabEl = document.getElementById('tweaks-fab');
+const swBlobs = document.getElementById('sw-blobs');
+const swDark = document.getElementById('sw-dark');
+const hs = document.getElementById('hs');
+
+function updateTweaksUI(){
+  swBlobs.classList.toggle('on', TWEAKS.blobsOn);
+  swDark.classList.toggle('on', TWEAKS.darkMode);
+  hs.value = TWEAKS.headlineSize;
+  document.getElementById('hs-val').textContent = TWEAKS.headlineSize + 'px';
+}
+updateTweaksUI();
+
+swBlobs.addEventListener('click', () => {
+  TWEAKS.blobsOn = !TWEAKS.blobsOn;
+  applyBlobs(TWEAKS.blobsOn);
+  updateTweaksUI();
+  persist({blobsOn: TWEAKS.blobsOn});
+});
+swDark.addEventListener('click', () => {
+  TWEAKS.darkMode = !TWEAKS.darkMode;
+  applyTheme(TWEAKS.darkMode);
+  updateTweaksUI();
+  persist({darkMode: TWEAKS.darkMode});
+});
+hs.addEventListener('input', () => {
+  TWEAKS.headlineSize = parseInt(hs.value,10);
+  applyHeadlineSize(TWEAKS.headlineSize);
+});
+hs.addEventListener('change', () => {
+  persist({headlineSize: TWEAKS.headlineSize});
+});
+
+function persist(edits){
+  try{ window.parent.postMessage({type:'__edit_mode_set_keys', edits}, '*'); }catch(e){}
+}
+
+fabEl.addEventListener('click', () => tweaksEl.classList.toggle('open'));
+document.getElementById('tweaks-close').addEventListener('click', () => tweaksEl.classList.remove('open'));
+
+// Edit-mode protocol — register listener FIRST, then announce
+window.addEventListener('message', (e) => {
+  const d = e.data || {};
+  if(d.type === '__activate_edit_mode'){
+    fabEl.style.display = 'inline-flex';
+    tweaksEl.classList.add('open');
+  } else if(d.type === '__deactivate_edit_mode'){
+    fabEl.style.display = 'none';
+    tweaksEl.classList.remove('open');
+  }
+});
+try{ window.parent.postMessage({type:'__edit_mode_available'}, '*'); }catch(e){}
+
+// ============ INIT ============
 render();
 </script>
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getAuth, onAuthStateChanged, signOut }
-    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyC_erJyfCASKgjMaMXTF4ovqfwfC4-5GmU",
-    authDomain: "checktheworld-a631d.firebaseapp.com",
-    projectId: "checktheworld-a631d",
-    storageBucket: "checktheworld-a631d.firebasestorage.app",
-    messagingSenderId: "1006756841439",
-    appId: "1:1006756841439:web:ab81d8f3f469ea3d07666a"
-  };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  onAuthStateChanged(auth, user => {
-    const btn = document.getElementById('nav-auth-btn');
-    if (!btn) return;
-    if (user) {
-      const name = user.displayName || user.email.split('@')[0];
-      btn.innerHTML = `<a href="dashboard.html" class="auth-user-btn">
-        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-          <circle cx="8" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M3 13.5c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        ${name}
-      </a>`;
-    } else {
-      btn.innerHTML = `<a href="login.html" class="auth-login-btn">Войти</a>`;
-    }
-  });
-
-  window.ctw_logout = () => signOut(auth).then(() => window.location.href = 'login.html');
-</script>
-</body>
-</html>
+</body></html>

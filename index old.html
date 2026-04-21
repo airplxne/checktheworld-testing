@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta name="yandex-verification" content="9460ed94b387303c" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CheckTheWorld — визы, цены и жильё по всему миру</title>
+<meta name="description" content="Всё о переезде и путешествиях в одном месте — визы, стоимость жизни, авиабилеты и карта мест по 180+ странам.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.src = 'https://tp-em.com/NTE1NTI2.js?t=515526';
+      document.head.appendChild(script);
+  })();
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf8f2;--white:#ffffff;--black:#1a1a18;
+  --g500:#484842;--g300:#848480;--g100:#e6e2d8;--g50:#f0ece2;
+  --green:#1c7a54;--green-mid:#30b278;--green-light:#d8f2e6;--green-pale:#edf8f3;
+  --amber:#e08c2a;--amber-light:#fef3e2;
+}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* BLOBS */
+.blobs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.22}
+.b1{width:600px;height:600px;background:#30b278;top:-150px;right:-80px;animation:bf 13s ease-in-out infinite}
+.b2{width:480px;height:480px;background:#e08c2a;bottom:0;left:-140px;animation:bf 16s ease-in-out infinite reverse}
+.b3{width:350px;height:350px;background:#1c7a54;top:45%;right:5%;animation:bf 19s ease-in-out infinite 4s}
+@keyframes bf{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(24px,-16px) scale(1.05)}66%{transform:translate(-16px,24px) scale(.96)}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(250,248,242,0.95);
+  backdrop-filter:blur(16px);border-bottom:2px solid var(--amber)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:16px 44px;
+  display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:21px;text-decoration:none;
+  color:var(--black);cursor:pointer}
+.logo span{color:var(--green)}.logo .dot{color:var(--amber)}
+.nav-links{display:flex;gap:26px}
+.nav-links a{font-size:14px;color:var(--g500);text-decoration:none;font-weight:500;
+  transition:color .15s;cursor:pointer}
+.nav-links a:hover{color:var(--black)}
+.nav-links a.active{color:var(--green);font-weight:600}
+.nav-btn{background:var(--green);color:var(--white);border:none;border-radius:100px;
+  padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;
+  font-family:'Manrope',sans-serif;transition:background .15s}
+.nav-btn:hover{background:#166644}
+
+/* HERO */
+.hero{position:relative;z-index:1;padding:60px 44px 48px;max-width:1200px;margin:0 auto;text-align:center}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:var(--white);
+  border:1.5px solid var(--g100);border-radius:100px;padding:6px 16px;
+  margin-bottom:22px;font-size:12px;font-weight:600;color:var(--g500)}
+.hero-tag-dot{width:7px;height:7px;border-radius:50%;background:var(--green-mid);
+  animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,62px);
+  line-height:1.1;letter-spacing:-.5px;margin-bottom:16px}
+h1 em{font-style:italic;color:var(--green)}
+h1 strong{position:relative;display:inline-block}
+h1 strong::after{content:'';position:absolute;left:0;bottom:0;
+  width:100%;height:3px;background:var(--amber);border-radius:2px;opacity:.75}
+.hero-sub{font-size:17px;color:var(--g500);max-width:540px;margin:0 auto 40px;
+  line-height:1.65;font-weight:400}
+
+/* SEARCH */
+.search-wrap{max-width:620px;margin:0 auto 16px;position:relative}
+.search-box{display:flex;align-items:center;background:var(--white);
+  border:2px solid var(--g100);border-radius:16px;padding:6px 6px 6px 20px;
+  transition:border-color .15s;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.search-box:focus-within{border-color:var(--green)}
+.search-icon{font-size:18px;margin-right:10px;opacity:.4;flex-shrink:0}
+.search-box input{flex:1;border:none;outline:none;font-size:16px;
+  font-family:'Manrope',sans-serif;background:transparent;color:var(--black);font-weight:500}
+.search-box input::placeholder{color:var(--g300)}
+.search-btn{background:var(--green);color:var(--white);border:none;border-radius:12px;
+  padding:12px 24px;font-size:14px;font-weight:600;cursor:pointer;
+  font-family:'Manrope',sans-serif;white-space:nowrap;transition:background .15s}
+.search-btn:hover{background:#166644}
+.search-count{font-size:13px;color:var(--g300);text-align:center}
+
+/* FILTERS */
+.filters{position:relative;z-index:1;max-width:1200px;margin:0 auto;
+  padding:0 44px 32px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.filter-btn{background:var(--white);border:1.5px solid var(--g100);border-radius:100px;
+  padding:8px 18px;font-size:13px;font-weight:600;color:var(--g500);cursor:pointer;
+  transition:all .15s;font-family:'Manrope',sans-serif;-webkit-tap-highlight-color:transparent}
+.filter-btn:hover{border-color:var(--green);color:var(--green)}
+.filter-btn.active{background:var(--green);border-color:var(--green);color:var(--white)}
+
+/* GRID */
+.catalog{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 44px 80px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.country-card{background:var(--white);border:1.5px solid var(--g100);border-radius:20px;
+  padding:22px;cursor:pointer;transition:all .2s;text-decoration:none;display:block;
+  -webkit-tap-highlight-color:transparent}
+.country-card:hover{border-color:var(--green-mid);transform:translateY(-3px);
+  box-shadow:0 8px 32px rgba(28,122,84,.1)}
+.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.card-flag{font-size:28px;line-height:1}
+.card-visa{font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px}
+.visa-free{background:var(--green-light);color:var(--green)}
+.visa-on-arrival{background:var(--amber-light);color:var(--amber)}
+.visa-required{background:#fce8e8;color:#c0392b}
+.card-name{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:4px}
+.card-region{font-size:12px;color:var(--g300);font-weight:500;margin-bottom:14px}
+.card-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.card-stat{background:var(--bg);border-radius:10px;padding:9px 12px}
+.stat-lbl{font-size:10px;color:var(--g300);font-weight:700;letter-spacing:.04em;margin-bottom:2px}
+.stat-val{font-size:14px;font-weight:700;color:var(--black)}
+.card-divider{height:1px;background:var(--g100);margin:14px 0}
+.card-footer{display:flex;align-items:center;justify-content:space-between}
+.card-price{font-size:13px;color:var(--g500)}
+.card-price strong{color:var(--black);font-weight:700}
+.card-arrow{font-size:16px;color:var(--green);opacity:.6;transition:opacity .15s}
+.country-card:hover .card-arrow{opacity:1}
+
+/* EMPTY STATE */
+.empty{text-align:center;padding:60px 20px;color:var(--g300)}
+.empty-icon{font-size:48px;margin-bottom:12px}
+.empty-text{font-size:16px;font-weight:500}
+
+/* FOOTER */
+footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
+  padding:26px 44px;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;max-width:100%}
+.flogo{font-family:'Playfair Display',serif;font-size:18px;cursor:pointer}
+.flogo span{color:var(--green)}.flogo .dot{color:var(--amber)}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:13px;color:var(--g300);text-decoration:none;cursor:pointer;
+  font-weight:500;transition:color .15s}
+.flinks a:hover{color:var(--black)}
+.fcopy{font-size:13px;color:var(--g300)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.delay-1{transition-delay:.05s}.delay-2{transition-delay:.1s}
+.delay-3{transition-delay:.15s}.delay-4{transition-delay:.2s}
+.delay-5{transition-delay:.25s}.delay-6{transition-delay:.3s}
+
+@media(max-width:768px){
+  .nav-inner{padding:14px 20px}.nav-links{display:none}
+  .hero{padding:44px 20px 36px}
+  .filters{padding:0 20px 24px}
+  .catalog{padding:0 20px 60px}
+  footer{padding:20px;justify-content:center;text-align:center}
+  .flinks{flex-wrap:wrap;justify-content:center}
+}
+
+/* AUTH NAV BUTTONS */
+.auth-login-btn{
+  display:inline-block;padding:9px 20px;
+  background:var(--green);color:#fff !important;
+  border-radius:100px;font-size:14px;font-weight:600;
+  text-decoration:none;transition:background .15s;
+  font-family:'Manrope',sans-serif;
+}
+.auth-login-btn:hover{background:#155a3e}
+.auth-user-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 18px;
+  background:var(--green-light);color:var(--green) !important;
+  border-radius:100px;font-size:14px;font-weight:600;
+  text-decoration:none;transition:background .15s;
+  border:1px solid rgba(28,122,84,.25);
+  font-family:'Manrope',sans-serif;
+}
+.auth-user-btn:hover{background:#c5eadb}
+</style>
+</head>
+<body>
+
+<div class="blobs">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Check<span>The</span>World<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a class="active" href="index.html">Страны</a>
+      <a href="#">Сравнить</a>
+      <a href="#">Визы</a>
+      <a href="#">О проекте</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px"><div id="nav-auth-btn"></div><button class="nav-btn" onclick="window.location.href='../checktheworld_v9.html'">Ранний доступ</button></div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag"><div class="hero-tag-dot"></div>180+ стран в базе</div>
+  <h1>Найди свою<br><em>следующую</em> страну<br>без <strong>лишних поисков</strong></h1>
+  <p class="hero-sub">Визы, стоимость жизни, авиабилеты и карта мест — всё в одном месте и на русском языке.</p>
+  <div class="search-wrap">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="Поиск страны — Тайланд, Грузия, Португалия..." oninput="filterCountries()">
+      <button class="search-btn" onclick="filterCountries()">Найти</button>
+    </div>
+  </div>
+  <div class="search-count" id="search-count">Показано 12 стран</div>
+</section>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="setFilter('all', this)">Все страны</button>
+  <button class="filter-btn" onclick="setFilter('visa-free', this)">Без визы</button>
+  <button class="filter-btn" onclick="setFilter('visa-on-arrival', this)">Виза по прилёту</button>
+  <button class="filter-btn" onclick="setFilter('visa-required', this)">Нужна виза</button>
+  <button class="filter-btn" onclick="setFilter('budget', this)">До 3 000 ₽/день</button>
+  <button class="filter-btn" onclick="setFilter('warm', this)">Тёплый климат</button>
+</div>
+
+<div class="catalog">
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">
+    <div class="empty-icon">🌍</div>
+    <div class="empty-text">Ничего не найдено — попробуй другой запрос</div>
+  </div>
+</div>
+
+<footer>
+  <span class="flogo">Check<span>The</span>World<span class="dot">.</span></span>
+  <div class="flinks">
+    <a href="index.html">Страны</a>
+    <a href="#">Сравнить</a>
+    <a href="#">Визы</a>
+    <a href="#">Контакты</a>
+  </div>
+  <div class="fcopy">© 2026 · CheckTheWorld</div>
+</footer>
+
+<script>
+const COUNTRIES = [
+  {id:'thailand',name:'Тайланд',flag:'🇹🇭',region:'Юго-Восточная Азия',
+   visa:'visa-free',visaLabel:'Без визы — 60 дней',
+   day:'~3 200 ₽',rent:'~41 000 ₽',climate:'+32°C',net:'50 Мбит',
+   flight:'от 34 500 ₽',warm:true,budget:true,file:'thailand.html'},
+  {id:'georgia',name:'Грузия',flag:'🇬🇪',region:'Кавказ',
+   visa:'visa-free',visaLabel:'Без визы — 365 дней',
+   day:'~1 800 ₽',rent:'~28 000 ₽',climate:'+24°C',net:'40 Мбит',
+   flight:'от 18 000 ₽',warm:true,budget:true,file:'georgia.html'},
+  {id:'portugal',name:'Португалия',flag:'🇵🇹',region:'Западная Европа',
+   visa:'visa-required',visaLabel:'Шенген — 90 дней',
+   day:'~5 200 ₽',rent:'~90 000 ₽',climate:'+22°C',net:'70 Мбит',
+   flight:'от 42 000 ₽',warm:true,budget:false,file:'portugal.html'},
+  {id:'uae',name:'ОАЭ',flag:'🇦🇪',region:'Ближний Восток',
+   visa:'visa-free',visaLabel:'Без визы — 60 дней',
+   day:'~6 500 ₽',rent:'~95 000 ₽',climate:'+35°C',net:'100 Мбит',
+   flight:'от 28 000 ₽',warm:true,budget:false,file:'uae.html'},
+  {id:'indonesia',name:'Индонезия',flag:'🇮🇩',region:'Юго-Восточная Азия',
+   visa:'visa-on-arrival',visaLabel:'Виза по прилёту — 30 дней',
+   day:'~2 800 ₽',rent:'~35 000 ₽',climate:'+30°C',net:'25 Мбит',
+   flight:'от 55 000 ₽',warm:true,budget:true,file:'indonesia.html'},
+  {id:'montenegro',name:'Черногория',flag:'🇲🇪',region:'Балканы',
+   visa:'visa-free',visaLabel:'Без визы — 60 дней',
+   day:'~2 200 ₽',rent:'~32 000 ₽',climate:'+26°C',net:'30 Мбит',
+   flight:'от 22 000 ₽',warm:true,budget:true,file:'montenegro.html'},
+  {id:'germany',name:'Германия',flag:'🇩🇪',region:'Западная Европа',
+   visa:'visa-required',visaLabel:'Шенген — 90 дней',
+   day:'~7 000 ₽',rent:'~120 000 ₽',climate:'+18°C',net:'80 Мбит',
+   flight:'от 38 000 ₽',warm:false,budget:false,file:'germany.html'},
+  {id:'turkey',name:'Турция',flag:'🇹🇷',region:'Передняя Азия',
+   visa:'visa-free',visaLabel:'Без визы — 60 дней',
+   day:'~2 400 ₽',rent:'~30 000 ₽',climate:'+28°C',net:'35 Мбит',
+   flight:'от 14 000 ₽',warm:true,budget:true,file:'turkey.html'},
+  {id:'serbia',name:'Сербия',flag:'🇷🇸',region:'Балканы',
+   visa:'visa-free',visaLabel:'Без визы — 60 дней',
+   day:'~2 000 ₽',rent:'~25 000 ₽',climate:'+22°C',net:'45 Мбит',
+   flight:'от 16 000 ₽',warm:false,budget:true,file:'serbia.html'},
+  {id:'vietnam',name:'Вьетнам',flag:'🇻🇳',region:'Юго-Восточная Азия',
+   visa:'visa-on-arrival',visaLabel:'Виза по прилёту — 30 дней',
+   day:'~1 900 ₽',rent:'~22 000 ₽',climate:'+30°C',net:'30 Мбит',
+   flight:'от 42 000 ₽',warm:true,budget:true,file:'vietnam.html'},
+  {id:'armenia',name:'Армения',flag:'🇦🇲',region:'Кавказ',
+   visa:'visa-free',visaLabel:'Без визы — 180 дней',
+   day:'~1 600 ₽',rent:'~20 000 ₽',climate:'+24°C',net:'50 Мбит',
+   flight:'от 12 000 ₽',warm:true,budget:true,file:'armenia.html'},
+  {id:'cyprus',name:'Кипр',flag:'🇨🇾',region:'Средиземноморье',
+   visa:'visa-required',visaLabel:'Виза категории D',
+   day:'~4 800 ₽',rent:'~75 000 ₽',climate:'+26°C',net:'55 Мбит',
+   flight:'от 28 000 ₽',warm:true,budget:false,file:'cyprus.html'},
+];
+
+let activeFilter = 'all';
+let searchQuery = '';
+
+function visaClass(v){
+  return v==='visa-free'?'visa-free':v==='visa-on-arrival'?'visa-on-arrival':'visa-required';
+}
+
+function renderCard(c, delay){
+  return `<a class="country-card reveal delay-${delay}" href="${c.file}">
+    <div class="card-header">
+      <span class="card-flag">${c.flag}</span>
+      <span class="card-visa ${visaClass(c.visa)}">${c.visaLabel}</span>
+    </div>
+    <div class="card-name">${c.name}</div>
+    <div class="card-region">${c.region}</div>
+    <div class="card-stats">
+      <div class="card-stat"><div class="stat-lbl">БЮДЖЕТ / ДЕНЬ</div><div class="stat-val">${c.day}</div></div>
+      <div class="card-stat"><div class="stat-lbl">АРЕНДА / МЕС</div><div class="stat-val">${c.rent}</div></div>
+      <div class="card-stat"><div class="stat-lbl">КЛИМАТ</div><div class="stat-val">${c.climate}</div></div>
+      <div class="card-stat"><div class="stat-lbl">ИНТЕРНЕТ</div><div class="stat-val">${c.net}</div></div>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-footer">
+      <div class="card-price">✈️ <strong>${c.flight}</strong></div>
+      <div class="card-arrow">→</div>
+    </div>
+  </a>`;
+}
+
+function filterCountries(){
+  searchQuery = document.getElementById('search-input').value.toLowerCase();
+  render();
+}
+
+function setFilter(f, btn){
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+function render(){
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  const count = document.getElementById('search-count');
+
+  let filtered = COUNTRIES.filter(c => {
+    const matchSearch = c.name.toLowerCase().includes(searchQuery) ||
+                        c.region.toLowerCase().includes(searchQuery);
+    const matchFilter =
+      activeFilter === 'all' ? true :
+      activeFilter === 'visa-free' ? c.visa === 'visa-free' :
+      activeFilter === 'visa-on-arrival' ? c.visa === 'visa-on-arrival' :
+      activeFilter === 'visa-required' ? c.visa === 'visa-required' :
+      activeFilter === 'budget' ? c.budget :
+      activeFilter === 'warm' ? c.warm : true;
+    return matchSearch && matchFilter;
+  });
+
+  if(filtered.length === 0){
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    count.textContent = 'Ничего не найдено';
+  } else {
+    empty.style.display = 'none';
+    grid.innerHTML = filtered.map((c,i) => renderCard(c, Math.min((i%6)+1, 6))).join('');
+    count.textContent = `Показано ${filtered.length} ${filtered.length===1?'страна':filtered.length<5?'страны':'стран'}`;
+    // Trigger reveal
+    setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+        }, {threshold:0.05});
+        obs.observe(el);
+      });
+    }, 50);
+  }
+}
+
+// Initial render
+render();
+</script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut }
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyC_erJyfCASKgjMaMXTF4ovqfwfC4-5GmU",
+    authDomain: "checktheworld-a631d.firebaseapp.com",
+    projectId: "checktheworld-a631d",
+    storageBucket: "checktheworld-a631d.firebasestorage.app",
+    messagingSenderId: "1006756841439",
+    appId: "1:1006756841439:web:ab81d8f3f469ea3d07666a"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  onAuthStateChanged(auth, user => {
+    const btn = document.getElementById('nav-auth-btn');
+    if (!btn) return;
+    if (user) {
+      const name = user.displayName || user.email.split('@')[0];
+      btn.innerHTML = `<a href="dashboard.html" class="auth-user-btn">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M3 13.5c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        ${name}
+      </a>`;
+    } else {
+      btn.innerHTML = `<a href="login.html" class="auth-login-btn">Войти</a>`;
+    }
+  });
+
+  window.ctw_logout = () => signOut(auth).then(() => window.location.href = 'login.html');
+</script>
+</body>
+</html>
