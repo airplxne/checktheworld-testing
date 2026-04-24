@@ -436,6 +436,10 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
 .flinks a:hover{color:var(--ink)}
 .fcopy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
 
+
+.city-photo{background:#1f1f1b}
+.city-photo.loading{opacity:0;transition:opacity .4s}
+.city-photo.loaded{opacity:1}
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
 .reveal.visible{opacity:1;transform:none}
@@ -532,7 +536,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"><img src="https://images.pexels.com/photos/1031672/pexels-photo-1031672.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="" referrerpolicy="no-referrer" loading="eager"></div>
+  <div class="hero-bg"><img src="" data-query="Bangkok Thailand aerial night skyline" alt="" referrerpolicy="no-referrer" loading="eager"></div>
   <div class="breadcrumb">
     <a href="index.html">Страны</a>
     <span class="breadcrumb-sep">/</span>
@@ -725,31 +729,31 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
       <div class="cities-slider-wrap">
         <div class="cities-slider" id="citySlider">
           <div class="city-slide" onclick="openCity('bangkok')">
-            <img class="city-photo" src="https://images.pexels.com/photos/1031672/pexels-photo-1031672.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Бангкок" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo loaded" src="" data-query="Bangkok Thailand skyline night" alt="Бангкок" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">01 · СТОЛИЦА</div><div class="city-name">Бангкок</div><div class="city-desc">400+ храмов, небоскрёбы, метро BTS и лучшая уличная еда в мире.</div><span class="city-tag">🌆 Столица</span></div>
           </div>
           <div class="city-slide" onclick="openCity('phuket')">
-            <img class="city-photo" src="https://images.pexels.com/photos/2563681/pexels-photo-2563681.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Пхукет" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo loaded" src="" data-query="Phuket Thailand beach longtail boats" alt="Пхукет" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">02 · ОСТРОВ</div><div class="city-name">Пхукет</div><div class="city-desc">Главный курорт с белоснежными пляжами. Патонг — тусовки, Камала — спокойный отдых.</div><span class="city-tag">🌴 Курорт</span></div>
           </div>
           <div class="city-slide" onclick="openCity('chiangmai')">
-            <img class="city-photo" src="https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Чиангмай" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo loaded" src="" data-query="Chiang Mai Thailand Doi Suthep temple" alt="Чиангмай" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">03 · СЕВЕР</div><div class="city-name">Чиангмай</div><div class="city-desc">Культурная столица. Дешевле Бангкока, огромное сообщество цифровых кочевников.</div><span class="city-tag">💻 Для кочевников</span></div>
           </div>
           <div class="city-slide" onclick="openCity('pattaya')">
-            <img class="city-photo" src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Паттайя" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo loaded" src="" data-query="Pattaya Thailand beach" alt="Паттайя" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">04 · ЗАЛИВ</div><div class="city-name">Паттайя</div><div class="city-desc">2 часа от Бангкока. Плавучие рынки, парки развлечений и активная ночная жизнь.</div><span class="city-tag">🎡 Развлечения</span></div>
           </div>
           <div class="city-slide" onclick="openCity('samui')">
-            <img class="city-photo" src="https://images.pexels.com/photos/3586966/pexels-photo-3586966.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Ко Самуи" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo loaded" src="" data-query="Ko Samui Thailand tropical beach" alt="Ко Самуи" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">05 · ОСТРОВ</div><div class="city-name">Ко Самуи</div><div class="city-desc">Роскошный остров в Сиамском заливе. Виллы, яхты и спокойные бухты.</div><span class="city-tag">🏝 Роскошь</span></div>
           </div>
           <div class="city-slide" onclick="openCity('krabi')">
-            <img class="city-photo" src="https://images.pexels.com/photos/3757144/pexels-photo-3757144.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Краби" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo loaded" src="" data-query="Krabi Thailand limestone cliffs sea" alt="Краби" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">06 · ЮГО-ЗАПАД</div><div class="city-name">Краби</div><div class="city-desc">Известняковые скалы, острова Пхи-Пхи и бирюзовое море. Рай для дайверов.</div><span class="city-tag">⛰ Природа</span></div>
           </div>
           <div class="city-slide" onclick="openCity('kophangan')">
-            <img class="city-photo" src="https://images.pexels.com/photos/1031672/pexels-photo-1031672.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Ко Панган" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo loaded" src="" data-query="Ko Phangan Thailand beach sunset" alt="Ко Панган" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">07 · ОСТРОВ</div><div class="city-name">Ко Панган</div><div class="city-desc">Full Moon Party — крупнейшая пляжная вечеринка в мире (10–30 тыс. чел.).</div><span class="city-tag">🌙 Вечеринки</span></div>
           </div>
         </div>
@@ -1401,6 +1405,44 @@ window.addEventListener('scroll',()=>{
   });
   updIcon();
 })();
+
+
+// ── PEXELS PHOTOS ──
+const PEXELS_KEY = 'AFnbGoIHGGCrF5iYPGNQSSpoj3NdowouNwVBnT1ZvmwtcC3dakCuC7nj';
+const CITY_QUERIES = {
+  bangkok:   'Bangkok Thailand skyline night',
+  phuket:    'Phuket Thailand beach',
+  chiangmai: 'Chiang Mai Thailand temple',
+  pattaya:   'Pattaya Thailand beach',
+  samui:     'Ko Samui Thailand island',
+  krabi:     'Krabi Thailand limestone cliffs',
+  kophangan: 'Ko Phangan Thailand beach sunset',
+};
+
+async function loadCityPhoto(imgEl, query) {
+  try {
+    const res = await fetch(
+      `https://pexelsapiworker.nikromashin07.workers.dev?query=${encodeURIComponent(query)}`,
+      {}
+    );
+    const data = await res.json();
+    if (data.photos && data.photos[0]) {
+      const url = data.photos[0].src.large2x || data.photos[0].src.large;
+      imgEl.classList.add('loading');
+      imgEl.onload = () => imgEl.classList.replace('loading','loaded');
+      imgEl.src = url;
+    }
+  } catch(e) { console.warn('Pexels error:', e); }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.city-photo[data-query]').forEach(img => {
+    loadCityPhoto(img, img.dataset.query);
+  });
+  // Hero bg
+  const heroBg = document.querySelector('.hero-bg img');
+  if (heroBg) loadCityPhoto(heroBg, 'Bangkok Thailand skyline aerial');
+});
 
 // ── ESIM SWITCH ──
 function switchEsim(slug, tab, btn){
