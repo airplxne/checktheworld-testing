@@ -462,6 +462,13 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
   .sec-header{flex-wrap:wrap}
   h2.sec-title{font-size:clamp(32px,8vw,48px)}
 }
+
+.esim-tabs{display:flex;gap:8px;margin-bottom:0;flex-wrap:wrap}
+.esim-tab{padding:8px 18px;border-radius:10px;border:1.5px solid var(--line);
+  background:var(--paper);font-size:13px;font-weight:600;color:var(--muted);
+  cursor:pointer;transition:all .15s}
+.esim-tab.active{border-color:var(--green);background:var(--green-l);color:var(--green)}
+.esim-pane{display:none}.esim-pane.active{display:block}
 </style>
 </head>
 <body>
@@ -674,10 +681,10 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
         <button class="cur-btn" onclick="switchFlights('kiwi',this)">Kiwi.com</button>
       </div>
       <div id="fl-avia">
-        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=BKK&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%233fbb89&color_background=%231f1f1b&dark=%23f4f1e8&light=%23f4f1e8&achieve=%233fbb89&promo_id=4041&campaign_id=100" charset="utf-8"></script>
+        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=BKK&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%233fbb89&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%233fbb89&promo_id=4041&campaign_id=100" charset="utf-8"></script>
       </div>
       <div id="fl-kiwi" style="display:none">
-        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&locale=ru&stops=any&show_hotels=true&powered_by=true&border_radius=12&plain=true&color_button=%233fbb89&color_button_text=%23ffffff&promo_id=3414&campaign_id=111" charset="utf-8"></script>
+        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&locale=ru&stops=any&show_hotels=true&powered_by=true&border_radius=15&plain=true&color_button=%233fbb89&color_button_text=%23ffffff&promo_id=3414&campaign_id=111" charset="utf-8"></script>
       </div>
     </div>
     <div class="partner-block reveal">
@@ -883,8 +890,22 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
         <strong>True-dtac</strong> — AIS + DTAC объединились · от 199 ฿/30 дней<br><br>
         ⚠️ True-dtac SIM через 60–90 дней может отключиться — нужно продлевать через приложение.</div></div></div>
       <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">Домашний интернет (для долгосрочных)</div><div class="info-row-text">Проводной интернет FTTB от 580 бат/мес (~1 400 ₽). Коворкинги в Чиангмае: 80–150 бат/день, скорость 100–200 Мбит/с. Бангкок: крупные коворкинги типа WeWork — от 400 бат/день.</div></div></div>
-      <div style="margin-top:14px">
-        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&campaign_id=461&promo_id=7767" charset="utf-8"></script>
+    </div>
+    <div class="partner-block reveal">
+      <div class="pb-header">
+        <div class="pb-title">eSIM для Тайланда</div>
+        <div class="pb-badge">Yesim · Airalo</div>
+      </div>
+      <div class="pb-desc">Купи до вылета — интернет заработает сразу после приземления. Yesim принимает карту МИР.</div>
+      <div class="esim-tabs" style="margin-top:16px">
+        <button class="esim-tab active" onclick="switchEsim('thailand','yesim',this)">Yesim — 18% кэшбэк</button>
+        <button class="esim-tab" onclick="switchEsim('thailand','airalo',this)">Airalo</button>
+      </div>
+      <div id="esim-yesim-thailand" class="esim-pane active" style="margin-top:12px">
+        <button class="pb-btn" onclick="window.open('https://yesim.tpm.li/QvCwa9aD?erid=2Vtzqx3rbkr&sub_id=thailand','_blank')">Купить eSIM на Yesim →</button>
+      </div>
+      <div id="esim-airalo-thailand" class="esim-pane" style="margin-top:12px">
+        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&color_button=%233fbb89&color_focused=%233fbb89&secondary=%23FAF8F2&dark=%2311100f&light=%23FFFFFFff&special=%233fbb89&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
       </div>
     </div>
   </div>
@@ -964,6 +985,14 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
         🚫 Снимать на Пхукете в сезон дождей долгосрочно — если уедешь раньше срока, депозит не вернут.<br>
         🚫 Переводить предоплату незнакомым людям без договора — мошенничество с арендой существует.
       </div>
+    </div>
+    <div class="partner-block reveal" style="margin-top:12px">
+      <div class="pb-header">
+        <div class="pb-title">Найти жильё на Островок</div>
+        <div class="pb-badge">2.9 млн вариантов</div>
+      </div>
+      <div class="pb-desc">Отели, хостелы и апартаменты в Тайланде — для первых недель пока ищешь долгосрочную аренду.</div>
+      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%233fbb89&color_button=%233fbb89&color_icons=%233fbb89&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
     </div>
   </div>
 
@@ -1355,6 +1384,14 @@ window.addEventListener('scroll',()=>{
   });
   updIcon();
 })();
+
+// ── ESIM SWITCH ──
+function switchEsim(slug, tab, btn){
+  document.querySelectorAll('#esim-yesim-' + slug + ', #esim-airalo-' + slug).forEach(p => p.classList.remove('active'));
+  btn.closest('.esim-tabs').querySelectorAll('.esim-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('esim-' + tab + '-' + slug).classList.add('active');
+  btn.classList.add('active');
+}
 </script>
 </body>
 </html>
