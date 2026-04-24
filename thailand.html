@@ -33,11 +33,26 @@ html.light{
   --red:#c0392b;--red-l:#fce8e8;
   --shadow:0 8px 28px rgba(20,20,15,.08);
 }
-html,body{background:var(--bg);color:var(--ink);overflow-x:hidden}
+html{background:var(--bg);color:var(--ink)}
+body{background:var(--bg);color:var(--ink);overflow-x:hidden}
 body{font-family:'Manrope',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
+
+/* HERO BG */
+.hero{position:relative;overflow:hidden}
+.hero-bg{
+  position:absolute;top:-20px;left:-20px;right:-20px;bottom:-20px;
+  z-index:0;
+  filter:blur(8px) brightness(.3) saturate(.6);
+}
+.hero-bg img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 30%;
+  display:block;
+}
+.hero > *:not(.hero-bg){position:relative;z-index:1}
 /* BLOBS */
 .blobs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .blob{position:absolute;border-radius:50%;filter:blur(100px)}
@@ -72,7 +87,7 @@ nav{position:sticky;top:0;z-index:200;
 .back-btn:hover{border-color:var(--green);color:var(--green)}
 
 /* HERO */
-.hero{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:40px 44px 0;overflow:hidden}
+.hero{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:40px 44px 0}
 .breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:28px;
   font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;
   text-transform:uppercase;color:var(--faint)}
@@ -92,6 +107,7 @@ h1.country-title{
   margin-bottom:0;
   word-break:break-word;
   overflow-wrap:break-word;
+  max-width:100%;
 }
 h1.country-title em{font-style:italic;font-weight:500;color:var(--green)}
 .hero-meta-row{display:flex;align-items:center;gap:10px;margin:20px 0 16px;flex-wrap:wrap}
@@ -516,6 +532,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/BKK_Skytrain_Ploenchit.jpg/1280px-BKK_Skytrain_Ploenchit.jpg" alt="" referrerpolicy="no-referrer" loading="eager"></div>
   <div class="breadcrumb">
     <a href="index.html">Страны</a>
     <span class="breadcrumb-sep">/</span>
@@ -524,7 +541,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <span>Тайланд</span>
   </div>
 
-  <div class="hero-overline">Страна #97 · Досье</div>
+  <div class="hero-overline">Юго-Восточная Азия · Досье</div>
 
   <div class="hero-title-wrap">
     <div class="hero-left reveal">
@@ -708,31 +725,31 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
       <div class="cities-slider-wrap">
         <div class="cities-slider" id="citySlider">
           <div class="city-slide" onclick="openCity('bangkok')">
-            <img class="city-photo" src="https://images.unsplash.com/photo-1508009603885?w=700&q=75&auto=format&fit=crop" alt="Бангкок" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/BKK_Skytrain_Ploenchit.jpg/1280px-BKK_Skytrain_Ploenchit.jpg" alt="Бангкок" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">01 · СТОЛИЦА</div><div class="city-name">Бангкок</div><div class="city-desc">400+ храмов, небоскрёбы, метро BTS и лучшая уличная еда в мире.</div><span class="city-tag">🌆 Столица</span></div>
           </div>
           <div class="city-slide" onclick="openCity('phuket')">
-            <img class="city-photo" src="https://images.unsplash.com/photo-1589394815804?w=700&q=75&auto=format&fit=crop" alt="Пхукет" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Patong_beach_Phuket.jpg/1280px-Patong_beach_Phuket.jpg" alt="Пхукет" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">02 · ОСТРОВ</div><div class="city-name">Пхукет</div><div class="city-desc">Главный курорт с белоснежными пляжами. Патонг — тусовки, Камала — спокойный отдых.</div><span class="city-tag">🌴 Курорт</span></div>
           </div>
           <div class="city-slide" onclick="openCity('chiangmai')">
-            <img class="city-photo" src="https://images.unsplash.com/photo-1528181304800?w=700&q=75&auto=format&fit=crop" alt="Чиангмай" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Doi_Suthep_Temple_Chiang_Mai_Thailand.jpg/1280px-Doi_Suthep_Temple_Chiang_Mai_Thailand.jpg" alt="Чиангмай" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">03 · СЕВЕР</div><div class="city-name">Чиангмай</div><div class="city-desc">Культурная столица. Дешевле Бангкока, огромное сообщество цифровых кочевников.</div><span class="city-tag">💻 Для кочевников</span></div>
           </div>
           <div class="city-slide" onclick="openCity('pattaya')">
-            <img class="city-photo" src="https://images.unsplash.com/photo-1552465011?w=700&q=75&auto=format&fit=crop" alt="Паттайя" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Pattaya_Beach_%28HDR%29.jpg/1280px-Pattaya_Beach_%28HDR%29.jpg" alt="Паттайя" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">04 · ЗАЛИВ</div><div class="city-name">Паттайя</div><div class="city-desc">2 часа от Бангкока. Плавучие рынки, парки развлечений и активная ночная жизнь.</div><span class="city-tag">🎡 Развлечения</span></div>
           </div>
           <div class="city-slide" onclick="openCity('samui')">
-            <img class="city-photo" src="https://images.unsplash.com/photo-1537956965359?w=700&q=75&auto=format&fit=crop" alt="Ко Самуи" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Chaweng_Beach_Koh_Samui.jpg/1280px-Chaweng_Beach_Koh_Samui.jpg" alt="Ко Самуи" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">05 · ОСТРОВ</div><div class="city-name">Ко Самуи</div><div class="city-desc">Роскошный остров в Сиамском заливе. Виллы, яхты и спокойные бухты.</div><span class="city-tag">🏝 Роскошь</span></div>
           </div>
           <div class="city-slide" onclick="openCity('krabi')">
-            <img class="city-photo" src="https://images.unsplash.com/photo-1552733407?w=700&q=75&auto=format&fit=crop" alt="Краби" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Railay_Beach%2C_Krabi%2C_Thailand.jpg/1280px-Railay_Beach%2C_Krabi%2C_Thailand.jpg" alt="Краби" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">06 · ЮГО-ЗАПАД</div><div class="city-name">Краби</div><div class="city-desc">Известняковые скалы, острова Пхи-Пхи и бирюзовое море. Рай для дайверов.</div><span class="city-tag">⛰ Природа</span></div>
           </div>
           <div class="city-slide" onclick="openCity('kophangan')">
-            <img class="city-photo" src="https://images.unsplash.com/photo-1583417319070?w=700&q=75&auto=format&fit=crop" alt="Ко Панган" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <img class="city-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Koh_Phangan_beach.jpg/1280px-Koh_Phangan_beach.jpg" alt="Ко Панган" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
             <div class="city-body"><div class="city-num">07 · ОСТРОВ</div><div class="city-name">Ко Панган</div><div class="city-desc">Full Moon Party — крупнейшая пляжная вечеринка в мире (10–30 тыс. чел.).</div><span class="city-tag">🌙 Вечеринки</span></div>
           </div>
         </div>
