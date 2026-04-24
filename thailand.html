@@ -377,21 +377,22 @@ h2.sec-title em{font-style:italic;font-weight:500;color:var(--green)}
 .climate-note{font-size:10px;color:var(--muted)}
 
 /* SIDENAV */
-.sidenav{position:fixed;right:20px;top:50%;transform:translateY(-50%);
-  z-index:150;display:flex;flex-direction:column;gap:2px;
+.sidenav{position:fixed;right:16px;top:50%;transform:translateY(-50%);
+  z-index:9999;display:flex;flex-direction:column;gap:0;
   opacity:0;pointer-events:none;transition:opacity .3s;background:transparent}
 .sidenav.visible{opacity:1;pointer-events:all}
 .sn-item{display:flex;align-items:center;gap:8px;cursor:pointer;
-  justify-content:flex-end;padding:3px 0;transition:all .15s}
-.sn-dot{width:4px;height:4px;border-radius:50%;background:var(--faint);
-  transition:all .2s;flex-shrink:0}
-.sn-label{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.07em;
-  color:var(--faint);white-space:nowrap;text-transform:uppercase;
-  transition:color .2s;font-weight:500}
-.sn-item:hover .sn-label{color:var(--ink2)}
-.sn-item:hover .sn-dot{background:var(--muted)}
-.sn-item.active .sn-dot{background:var(--green);width:6px;height:6px}
-.sn-item.active .sn-label{color:var(--green);font-weight:600}
+  justify-content:flex-end;padding:4px 0;min-width:120px;
+  transition:all .15s;user-select:none}
+.sn-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.25);
+  transition:all .2s;flex-shrink:0;border:1px solid rgba(255,255,255,.15)}
+.sn-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.07em;
+  color:rgba(255,255,255,.35);white-space:nowrap;text-transform:uppercase;
+  transition:all .2s;font-weight:500}
+.sn-item:hover .sn-label{color:rgba(255,255,255,.8)}
+.sn-item:hover .sn-dot{background:rgba(255,255,255,.6);border-color:transparent}
+.sn-item.active .sn-dot{background:var(--green);border-color:var(--green);width:7px;height:7px}
+.sn-item.active .sn-label{color:var(--green);font-weight:700}
 
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;
@@ -404,7 +405,7 @@ h2.sec-title em{font-style:italic;font-weight:500;color:var(--green)}
   position:relative;overflow:hidden;
   transform:scale(.96);transition:transform .2s}
 .modal-overlay.open .modal-box{transform:scale(1)}
-.modal-box-scroll{overflow-y:auto;padding:0 0 28px;flex:1}
+.modal-box-scroll{overflow-y:auto;padding:20px 24px 32px;flex:1}
 .modal-close{position:absolute;right:14px;top:14px;
   width:32px;height:32px;
   border-radius:50%;background:var(--paper2);color:var(--muted);
@@ -413,23 +414,23 @@ h2.sec-title em{font-style:italic;font-weight:500;color:var(--green)}
   border:1.5px solid var(--line)}
 .modal-close:hover{background:var(--line);color:var(--ink)}
 .modal-overline{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--green);margin-bottom:6px;font-weight:600}
+  text-transform:uppercase;color:var(--green);margin-bottom:8px;font-weight:600}
 .modal-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;
-  margin-bottom:14px}
-.modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+  margin-bottom:16px;line-height:1.2}
+.modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .modal-tag{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
   padding:4px 10px;border-radius:100px;background:var(--bg2);color:var(--muted)}
 .modal-tag.green{background:var(--green-l);color:var(--green)}
 .modal-tag.amber{background:var(--amber-l);color:var(--amber)}
-.modal-section{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--faint);margin:16px 0 8px}
-.modal-text{font-size:13.5px;color:var(--muted);line-height:1.65}
-.modal-steps{display:flex;flex-direction:column;gap:8px}
-.modal-step{display:flex;gap:10px;font-size:13.5px;color:var(--muted);line-height:1.5}
+.modal-section{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:20px 0 10px;padding-top:4px;border-top:1px solid var(--line)}
+.modal-text{font-size:13.5px;color:var(--muted);line-height:1.7}
+.modal-steps{display:flex;flex-direction:column;gap:0}
+.modal-step{display:flex;gap:12px;font-size:13.5px;color:var(--muted);line-height:1.6;padding:8px 0;border-bottom:1px solid var(--line2)}
 .modal-step-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;
   color:var(--green);flex-shrink:0;width:18px}
-.modal-warn{background:var(--amber-l);border-radius:10px;padding:11px 14px;
-  font-size:13px;color:var(--amber);line-height:1.55;margin-top:16px}
+.modal-warn{background:var(--amber-l);border-radius:10px;padding:14px 16px;
+  font-size:13px;color:var(--amber);line-height:1.6;margin-top:20px}
 .modal-btn{margin-top:16px;padding:11px 22px;background:var(--green);color:#fff;
   border-radius:100px;font-size:13.5px;font-weight:600}
 
@@ -452,8 +453,6 @@ h2.sec-title em{font-style:italic;font-weight:500;color:var(--green)}
 .cmp-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer}
 .cmp-dot.active{background:#fff}
 
-.city-modal-body{padding:0 24px 0}
-.city-modal-close-pad{height:48px} /* пространство для крестика */
 /* CITY MODAL */
 .city-modal-img{width:100%;height:200px;object-fit:cover;border-radius:12px;
   margin-bottom:14px;display:block}
@@ -581,20 +580,23 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
 <!-- MOBILE TABS -->
 <div class="mob-tabs">
   <div class="mob-tabs-inner">
-    <button class="mob-tab active" onclick="scrollTo('visas',this)">🛂 Визы</button>
-    <button class="mob-tab" onclick="scrollTo('prices',this)">💰 Цены</button>
-    <button class="mob-tab" onclick="scrollTo('flights',this)">✈️ Билеты</button>
-    <button class="mob-tab" onclick="scrollTo('cities',this)">🏙 Города</button>
-    <button class="mob-tab" onclick="scrollTo('tips',this)">💡 Советы</button>
-    <button class="mob-tab" onclick="scrollTo('budget',this)">🧮 Бюджет</button>
-    <button class="mob-tab" onclick="scrollTo('money',this)">💳 Деньги</button>
-    <button class="mob-tab" onclick="scrollTo('taxes',this)">📊 Налоги</button>
-    <button class="mob-tab" onclick="scrollTo('transport',this)">🚇 Транспорт</button>
-    <button class="mob-tab" onclick="scrollTo('internet',this)">📶 Связь</button>
-    <button class="mob-tab" onclick="scrollTo('medicine',this)">🏥 Медицина</button>
-    <button class="mob-tab" onclick="scrollTo('rental',this)">🏠 Аренда</button>
-    <button class="mob-tab" onclick="scrollTo('visarun',this)">🚌 Визаран</button>
-    <button class="mob-tab" onclick="scrollTo('climate',this)">🌤 Климат</button>
+    <button class="mob-tab active" onclick="scrollToSection('visas',this)">🛂 Визы</button>
+    <button class="mob-tab" onclick="scrollToSection('prices',this)">💰 Цены</button>
+    <button class="mob-tab" onclick="scrollToSection('flights',this)">✈️ Билеты</button>
+    <button class="mob-tab" onclick="scrollToSection('cities',this)">🏙 Города</button>
+    <button class="mob-tab" onclick="scrollToSection('tips',this)">💡 Советы</button>
+    <button class="mob-tab" onclick="scrollToSection('budget',this)">🧮 Бюджет</button>
+    <button class="mob-tab" onclick="scrollToSection('money',this)">💳 Деньги</button>
+    <button class="mob-tab" onclick="scrollToSection('taxes',this)">📊 Налоги</button>
+    <button class="mob-tab" onclick="scrollToSection('transport',this)">🚇 Транспорт</button>
+    <button class="mob-tab" onclick="scrollToSection('internet',this)">📶 Связь</button>
+    <button class="mob-tab" onclick="scrollToSection('medicine',this)">🏥 Медицина</button>
+    <button class="mob-tab" onclick="scrollToSection('rental',this)">🏠 Аренда</button>
+    <button class="mob-tab" onclick="scrollToSection('visarun',this)">🚌 Визаран</button>
+    <button class="mob-tab" onclick="scrollToSection('climate',this)">🌤 Климат</button>
+    <button class="mob-tab" onclick="scrollToSection('safety',this)">🛡 Безопасность</button>
+    <button class="mob-tab" onclick="scrollToSection('coworking',this)">💻 Коворкинги</button>
+    <button class="mob-tab" onclick="scrollToSection('checklist',this)">✅ Чеклист</button>
   </div>
 </div>
 
@@ -1167,6 +1169,79 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     </div>
   </div>
 
+
+  <!-- 15 SAFETY -->
+  <div id="safety">
+    <div class="sec-header reveal">
+      <span class="sec-num">15</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Безопас<em>ность</em></h2>
+      <span class="sec-desc">Тайланд безопасен — но туристов разводят по классическим схемам.</span>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Типичные разводы туристов</div>
+      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Temple scam («храм закрыт»)</div><div class="info-row-text">Незнакомец говорит что храм сегодня закрыт и предлагает отвезти на тук-туке в «другой храм» или к «ювелиру». Храм открыт. Просто идите мимо.</div></div></div>
+      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Tuk-tuk scam</div><div class="info-row-text">Водитель предлагает бесплатный или дешёвый тур, везёт по магазинам где получает комиссию. Используйте Grab с фиксированной ценой.</div></div></div>
+      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Карточный развод</div><div class="info-row-text">«Дружелюбный» местный приглашает поиграть в карты. Всегда выигрывает. Потери — от $500.</div></div></div>
+      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Gem scam</div><div class="info-row-text">Продают «ценные» камни по «специальной цене» — в реальности дешёвые стекляшки. Никогда не покупайте украшения у незнакомцев.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Такси в аэропорту</div><div class="info-row-text">Нелегальные таксисты в аэропорту Суварнабхуми предлагают фиксированные цены в 2–3 раза дороже официального такси. Используйте Grab или официальные стойки.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Скимминг банкоматов</div><div class="info-row-text">Случается особенно на туристических островах. Используйте банкоматы в отделениях банков, а не уличные. Проверяйте картоприёмник.</div></div></div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Как вести себя с полицией</div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Всегда вежливо и спокойно</div><div class="info-row-text">Тайская полиция реагирует на агрессию плохо. Улыбка и спокойный тон решают большинство ситуаций.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📋</span><div><div class="info-row-title">Всегда имейте документы</div><div class="info-row-text">Паспорт или копию с собой. При проверке без документов могут задержать до выяснения.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">«Штраф на месте»</div><div class="info-row-text">Полицейский предлагает заплатить штраф наличными на месте — это взятка. Можно вежливо отказаться и попросить официальный протокол. Официальный штраф за нарушение ПДД — 500 бат.</div></div></div>
+      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Наркотики — нулевая толерантность</div><div class="info-row-text">Хранение наркотиков — тюрьма от 1 года. За сбыт — пожизненное или смертная казнь. Марихуана легализована в 2022, но употребление в публичных местах запрещено.</div></div></div>
+    </div>
+  </div>
+
+  <!-- 16 COWORKING -->
+  <div id="coworking">
+    <div class="sec-header reveal">
+      <span class="sec-num">16</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Ковор<em>кинги</em></h2>
+      <span class="sec-desc">Тайланд — мировая столица цифровых кочевников.</span>
+    </div>
+    <div class="tips-grid reveal">
+      <div class="tip-card"><span class="tip-num">🏔</span><div><div class="tip-title">Чиангмай — лучший город для работы</div><div class="tip-text"><strong>CAMP (Maya Mall)</strong> — легендарный коворкинг в торговом центре, работает 24/7. Стоимость: 1 кофе (~100 бат) = целый день. Скорость Wi-Fi: 100+ Мбит/с.<br><br><strong>MANA Fast & Slow Bar</strong> — модное место с отличным кофе. 80 бат/день.<br><strong>Think Park</strong> — на открытом воздухе, от 50 бат/день.<br><strong>Punspace</strong> — профессиональный коворкинг, 250 бат/день, 3 500 бат/мес.</div></div></div>
+      <div class="tip-card"><span class="tip-num">🌆</span><div><div class="tip-title">Бангкок</div><div class="tip-text"><strong>The Hive</strong> — сеть коворкингов в Thonglor и Ekkamai. От 300 бат/день, 3 500 бат/мес. Скорость: 200+ Мбит/с.<br><br><strong>WeWork</strong> — международная сеть, дорого (от 500 бат/день), но надёжно.<br><strong>Hubba-TO</strong> — популярен у стартапов, 250 бат/день.<br><strong>Coffee shops</strong> — True Coffee в любом 7-Eleven, стол + Wi-Fi весь день за цену кофе.</div></div></div>
+      <div class="tip-card"><span class="tip-num">🌴</span><div><div class="tip-title">Пхукет</div><div class="tip-text"><strong>Garage Society</strong> — лучший коворкинг на острове в Чалонге. 350 бат/день.<br><br><strong>Phuket Smart City</strong> — государственный коворкинг с хорошим интернетом. Часто бесплатно или 100 бат/день.<br><strong>Kaffa</strong> — кофейня-коворкинг в Пхукет-тауне, 80 бат/день.<br><br>На Патонге и Камале — сеть кафе Starbucks и True Coffee с рабочими местами.</div></div></div>
+      <div class="tip-card"><span class="tip-num">🏝</span><div><div class="tip-title">Ko Samui / Ko Phangan</div><div class="tip-text"><strong>Samui</strong>: Chaweng имеет несколько кафе-коворкингов. Скорость интернета хуже континента — обычно 30–50 Мбит/с.<br><br><strong>Ko Phangan</strong>: WorknPlay — небольшой коворкинг в Tong Sala. Haad Yao имеет несколько кафе с рабочим интернетом. Если важна работа — выбирай континент, острова для отдыха.</div></div></div>
+    </div>
+    <div class="alert green reveal" style="margin-top:12px">
+      <strong>Лайфхак:</strong> в Чиангмае сформировалось огромное русскоязычное сообщество цифровых кочевников. Telegram-чаты «Чиангмай наши» и «Digital Nomads Chiang Mai» — живые обсуждения жилья, коворкингов и событий.
+    </div>
+  </div>
+
+  <!-- 17 CHECKLIST -->
+  <div id="checklist">
+    <div class="sec-header reveal">
+      <span class="sec-num">17</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Чеклист <em>перед вылетом</em></h2>
+      <span class="sec-desc">Всё что нужно сделать до посадки в самолёт.</span>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">За 2 недели до вылета</div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Проверить срок паспорта</div><div class="info-row-text">Нужно минимум 6 месяцев действия после даты въезда. При меньшем сроке — откажут на границе.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить страховку</div><div class="info-row-text">Минимум $100 000 покрытия. Покрытие мотоцикла — обязательно если планируешь арендовать байк. Cherehapa или Черехапа — сравни цены.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить eSIM или проверить роуминг</div><div class="info-row-text">eSIM через Yesim или Airalo до вылета — интернет заработает сразу после приземления. Или купить SIM в аэропорту.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Снять наличные / конвертировать</div><div class="info-row-text">Везите доллары или евро. Рубли меняют по невыгодному курсу. Возьмите минимум $500–1 000 наличными на первые дни.</div></div></div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">За 3 дня до вылета</div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Заполнить TDAC — обязательно!</div><div class="info-row-text">tdac.immigration.go.th — электронная карта прибытия. Без неё могут не пустить на борт. 5 минут, бесплатно. Заполняется не ранее чем за 3 дня до прилёта.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Установить приложения</div><div class="info-row-text">Grab, Google Maps (скачать карту офлайн), Bangkok MRT/BTS, XE Currency, Booking/Airbnb. В России скачать заранее — могут быть проблемы с App Store в Тайланде.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏠</span><div><div class="info-row-title">Забронировать первые ночи</div><div class="info-row-text">Минимум 2–3 ночи. На паспортном контроле могут попросить подтверждение проживания.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Обратный билет или маршрут выезда</div><div class="info-row-text">На паспортном контроле могут попросить обратный билет или подтверждение что ты покинешь страну. Бронь на автобус до Малайзии тоже считается.</div></div></div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Рекомендуемые маршруты</div>
+      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">1 неделя — Классика</div><div class="info-row-text">Дни 1–3: Бангкок (Большой Дворец, Чатучак, ночные рынки) → Дни 4–7: Пхукет или Краби (пляжи, острова Пхи-Пхи).</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">2 недели — Разнообразие</div><div class="info-row-text">Дни 1–3: Бангкок → Дни 4–6: Чиангмай (храмы, рынки, слоны) → Дни 7–14: Острова юга (Пхукет + Краби или Самуи + Ко Панган).</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Месяц — Зимовка</div><div class="info-row-text">Неделя в Бангкоке (обустройство, банк, SIM) → 2 недели в Чиангмае (работа, жизнь, коворкинги) → Финальные 1–2 недели на островах перед отлётом.</div></div></div>
+    </div>
+  </div>
+
   <!-- COUNTRY NAV -->
   <div class="country-nav reveal">
     <a class="cnav-card" href="georgia.html">
@@ -1190,7 +1265,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
 </footer>
 
 <!-- SIDENAV -->
-<nav class="sidenav" id="sidenav">
+<nav class="sidenav" id="sidenav" style="z-index:9999">
   <div class="sn-item" data-t="visas"><span class="sn-label">Визы</span><div class="sn-dot"></div></div>
   <div class="sn-item" data-t="prices"><span class="sn-label">Цены</span><div class="sn-dot"></div></div>
   <div class="sn-item" data-t="flights"><span class="sn-label">Билеты</span><div class="sn-dot"></div></div>
@@ -1205,6 +1280,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
   <div class="sn-item" data-t="rental"><span class="sn-label">Аренда</span><div class="sn-dot"></div></div>
   <div class="sn-item" data-t="visarun"><span class="sn-label">Визаран</span><div class="sn-dot"></div></div>
   <div class="sn-item" data-t="climate"><span class="sn-label">Климат</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="safety"><span class="sn-label">Безопасность</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="coworking"><span class="sn-label">Коворкинги</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="checklist"><span class="sn-label">Чеклист</span><div class="sn-dot"></div></div>
 </nav>
 
 <!-- BACK TO TOP -->
@@ -1417,7 +1495,7 @@ function slideCity(d){
 })();
 
 // ── MOBILE SCROLL ──
-function scrollTo(id, el){
+function scrollToSection(id, el){
   const t=document.getElementById(id);
   if(!t)return;
   window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-100,behavior:'smooth'});
@@ -1434,7 +1512,10 @@ function scrollTo(id, el){
   items.forEach((item,i)=>{
     item.addEventListener('click',()=>{
       const el=secs[i];
-      if(el) window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-100,behavior:'smooth'});
+      if(el){
+        const top = el.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({top:top,behavior:'smooth'});
+      }
     });
   });
   function upd(){
