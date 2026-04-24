@@ -41,18 +41,30 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 
 /* HERO BG */
-.hero{position:relative;overflow:hidden}
+.hero{position:relative}
+.hero-bg-wrap{
+  position:absolute;inset:0;z-index:0;overflow:hidden;
+}
 .hero-bg{
   position:absolute;top:-20px;left:-20px;right:-20px;bottom:-20px;
-  z-index:0;
-  filter:blur(8px) brightness(.3) saturate(.6);
+  filter:blur(6px) brightness(.28) saturate(.6);
+  transition:opacity 1s ease;
 }
 .hero-bg img{
   width:100%;height:100%;
-  object-fit:cover;object-position:center 30%;
+  object-fit:cover;object-position:center 40%;
   display:block;
+  opacity:0;transition:opacity .8s ease;
 }
-.hero > *:not(.hero-bg){position:relative;z-index:1}
+.hero-bg img.loaded{opacity:1}
+.hero > *:not(.hero-bg-wrap){position:relative;z-index:1}
+/* Плавный переход в основной контент */
+.hero::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:120px;
+  background:linear-gradient(to bottom,transparent,var(--bg));
+  z-index:2;pointer-events:none;
+}
 /* BLOBS */
 .blobs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .blob{position:absolute;border-radius:50%;filter:blur(100px)}
@@ -253,8 +265,8 @@ h2.sec-title em{font-style:italic;font-weight:500;color:var(--green)}
 .cities-slider:active{cursor:grabbing}
 .city-slide{flex:0 0 280px;scroll-snap-align:start;background:var(--paper);
   border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
-  cursor:pointer;transition:all .2s}
-.city-slide:hover{border-color:var(--green);transform:translateY(-3px);box-shadow:var(--shadow)}
+  cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.city-slide:hover{border-color:var(--green);box-shadow:var(--shadow)}
 .city-photo{width:100%;height:160px;object-fit:cover;display:block}
 .city-body{padding:14px 16px 16px}
 .city-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);
@@ -390,6 +402,24 @@ h2.sec-title em{font-style:italic;font-weight:500;color:var(--green)}
 .modal-btn{margin-top:16px;padding:11px 22px;background:var(--green);color:#fff;
   border-radius:100px;font-size:13.5px;font-weight:600}
 
+
+/* CITY PHOTO SLIDER */
+.city-modal-photos{position:relative;margin-bottom:14px;border-radius:12px;overflow:hidden;height:200px}
+.city-modal-photos-track{display:flex;height:100%;transition:transform .35s ease}
+.city-modal-photo{flex:0 0 100%;height:200px;object-fit:cover;display:block}
+.city-modal-photo.loading{opacity:0;transition:opacity .4s}
+.city-modal-photo.loaded{opacity:1}
+.cmp-prev,.cmp-next{position:absolute;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(0,0,0,.5);color:#fff;font-size:16px;z-index:10;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;border:none;transition:background .15s}
+.cmp-prev{left:8px}.cmp-next{right:8px}
+.cmp-prev:hover,.cmp-next:hover{background:rgba(0,0,0,.8)}
+.cmp-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
+  display:flex;gap:5px}
+.cmp-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer}
+.cmp-dot.active{background:#fff}
 /* CITY MODAL */
 .city-modal-img{width:100%;height:200px;object-fit:cover;border-radius:12px;
   margin-bottom:14px;display:block}
@@ -535,8 +565,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"><img src="" data-query="Bangkok Thailand aerial night skyline" alt="" referrerpolicy="no-referrer" loading="eager"></div>
+<section class="hero"><div class="hero-bg-wrap"><div class="hero-bg"><img src="" data-query="Bangkok Thailand aerial night skyline" alt="" referrerpolicy="no-referrer" loading="eager"></div></div>
   <div class="breadcrumb">
     <a href="index.html">Страны</a>
     <span class="breadcrumb-sep">/</span>
@@ -1219,43 +1248,43 @@ const VISAS = {
 };
 
 const CITIES = {
-  bangkok: {
+  bangkok: {name_en:'Bangkok',
     name:'Бангкок', emoji:'🌆', tag:'Столица · 11 млн жителей', budget:'от 2 500 ₽/день',
     desc:'Огромный мегаполис, сочетающий древние традиции и ультрасовременность. В Бангкоке более 400 буддийских храмов и одни из самых футуристичных небоскрёбов Азии.',
     places:[{n:'Большой Дворец',d:'Главная достопримечательность. Вход 500 бат, открыт 08:30–15:30.'},{n:'Ват Арун',d:'88-метровая пагода на берегу Чао Прайя. Особенно красива ночью. Вход 100 бат.'},{n:'Смотровая MahaNakhon',d:'Стеклянный пол на 78 этаже. Билет 880–1080 бат, работает 10:00–19:00.'},{n:'Чайнатаун (Яовarat)',d:'Лучшее место для уличной еды. Приходи после 18:00 когда включается неоновая подсветка.'}],
     facts:['Официальное название Бангкока — самое длинное название города в мире (169 букв)','В метро BTS запрещено есть, пить и жевать жвачку — штраф 2 000 бат','Аэроэкспресс от аэропорта Суварнабхуми до центра — 45 бат (~108 ₽), 30 минут']
   },
-  phuket: {
+  phuket: {name_en:'Phuket Thailand beach',
     name:'Пхукет', emoji:'🌴', tag:'Главный курорт · остров', budget:'от 3 500 ₽/день',
     desc:'Крупнейший остров Тайланда с белоснежными пляжами. Каждый год принимает более 9 млн туристов. Патонг — для тусовок, Камала — для спокойного отдыха.',
     places:[{n:'Пляж Патонг',d:'Самый оживлённый пляж с ночной жизнью на Bangla Road.'},{n:'Большой Будда',d:'45-метровая статуя на холме. Видна с большей части острова. Вход бесплатный.'},{n:'Острова Пхи-Пхи',d:'Дневной тур — один из красивейших архипелагов в мире. ~1 500–2 500 бат.'},{n:'Пляж Лаем Синг',d:'Секретная бухта между Сурином и Камалой, доступна только пешком через джунгли.'}],
     facts:['Пхукет — единственная провинция Тайланда, являющаяся островом','Сезон дождей на Пхукете не совпадает с восточным побережьем — в Паттайе в это время может быть солнечно','Старый город Пхукет-тауна включён в список ЮНЕСКО']
   },
-  chiangmai: {
+  chiangmai: {name_en:'Chiang Mai temple',
     name:'Чиангмай', emoji:'🏔', tag:'Север · культурная столица', budget:'от 1 800 ₽/день',
     desc:'Второй по величине город Тайланда. Окружён горами, полон буддийских храмов и облюбован цифровыми кочевниками за дешевизну и высокую скорость интернета.',
     places:[{n:'Дой Сутхеп',d:'Главный храм на горе с видом на весь Чиангмай. Тук-тук ~100 бат, вход 30 бат.'},{n:'Ночной базар',d:'Огромный рынок с едой и сувенирами. Каждый вечер с 18:00 до полуночи.'},{n:'Фестиваль Йи Пэн',d:'Фестиваль небесных фонариков — один из красивейших в мире. Ноябрь.'},{n:'Слоновий парк',d:'Этичное общение со слонами без катания. ~2 000 бат (~5 000 ₽) на полдня.'}],
     facts:['Чиангмай входит в топ-5 городов мира для цифровых кочевников по версии Nomad List','Интернет в коворкингах — 100–200 Мбит/с за 80–150 бат в день','Зимой ночью температура опускается до +12°C — намного прохладнее чем на юге']
   },
-  pattaya: {
+  pattaya: {name_en:'Pattaya Thailand',
     name:'Паттайя', emoji:'🎡', tag:'2 часа от Бангкока', budget:'от 2 200 ₽/день',
     desc:'Популярный курорт на восточном побережье. Хорош для коротких поездок из столицы и семейного отдыха с развитой инфраструктурой.',
     places:[{n:'Плавучий рынок',d:'Один из крупнейших в Тайланде. Лучшее время — 07:30. Вход 200 бат.'},{n:'Нонг Нуч',d:'Огромный ботанический сад с шоу слонов. ~400–600 бат.'},{n:'Sanctuary of Truth',d:'Деревянный дворец 105 метров полностью покрытый резьбой. Вход 500 бат.'},{n:'Остров Ко Лан',d:'30 минут паромом. Чистые пляжи без шума города. Паром — 30 бат.'}],
     facts:['Паттайя на восточном берегу — её сухой сезон противоположен Пхукету','До Бангкока — автобус за 130 бат или такси за ~1 500 бат','В Паттайе самая большая русскоязычная диаспора среди тайских курортов']
   },
-  samui: {
+  samui: {name_en:'Ko Samui island',
     name:'Ко Самуи', emoji:'🏝', tag:'Остров · Сиамский залив', budget:'от 3 000 ₽/день',
     desc:'Роскошный остров с виллами, яхтами и спа-отелями. Второй по размеру остров Тайланда с прямыми рейсами Bangkok Airways.',
     places:[{n:'Пляж Чавенг',d:'Главный пляж — 6 км белого песка с ресторанами и барами.'},{n:'Бопхут (Fisherman&#39;s Village)',d:'Рыбацкая деревня с отличными морепродуктами по местным ценам.'},{n:'Водопад Нам Муанг',d:'Двухуровневый водопад в джунглях. 30 минут на байке. Вход бесплатный.'},{n:'Ко Тао (дайвинг)',d:'45 минут паромом — один из лучших центров дайвинга в Азии.'}],
     facts:['Прямые рейсы с Самуи дороже — часто выгоднее лететь в Сурат Тани и ехать паромом','В высокий сезон (декабрь–март) цены на отели вырастают на 50–100%','Full Moon Party на соседнем Ко Пангане — легко доехать паромом']
   },
-  krabi: {
+  krabi: {name_en:'Krabi limestone cliffs',
     name:'Краби', emoji:'⛰', tag:'Юго-запад · скалы и море', budget:'от 2 500 ₽/день',
     desc:'Провинция с невероятными известняковыми скалами и более 150 островами. Менее коммерческая альтернатива Пхукету.',
     places:[{n:'Рейлей Бич',d:'Доступен только на лодке — окружён отвесными скалами. Один из красивейших пляжей Тайланда.'},{n:'Острова Пхи-Пхи',d:'Часовая поездка на лодке. Бирюзовые лагуны. Тур ~1 500–2 000 бат.'},{n:'Тигровая пещера',d:'1 237 ступеней вверх — панорама всей провинции. Вход бесплатный.'},{n:'Четыре острова',d:'Классический тур с обедом на борту. ~1 200–1 800 бат.'}],
     facts:['Краби — столица скалолазания в ЮВА, более 700 маршрутов','Лучший сезон: ноябрь–апрель. В мае–октябрь волны и дожди','Паром Краби–Самуи — 3.5 часа, ~400–600 бат']
   },
-  kophangan: {
+  kophangan: {name_en:'Ko Phangan beach',
     name:'Ко Панган', emoji:'🌙', tag:'Остров · вечеринки и природа', budget:'от 2 000 ₽/день',
     desc:'Знаменит Full Moon Party — крупнейшей пляжной вечеринкой в мире (10 000–30 000 человек). Большую часть месяца — тихий тропический остров.',
     places:[{n:'Full Moon Party',d:'Раз в месяц в полнолуние. Вход 150–200 бат. Пик — с 01:00 до 04:00.'},{n:'Пляж Тонг Сай',d:'Тихая бухта на севере вдали от вечеринок. Идеально для йога-ретритов.'},{n:'Водопад Пара',d:'Главный водопад острова. 30 минут пешком от дороги.'},{n:'Ко Тао (дайвинг)',d:'30 минут паромом — лучший дайвинг по доступным ценам.'}],
@@ -1300,11 +1329,12 @@ function openVisa(key){
 }
 
 // ── CITY MODAL ──
-function openCity(key){
+async function openCity(key){
   const c = CITIES[key];
   if(!c) return;
-  let h = '';
-  if(c.photos && c.photos[0]) h += '<img class="city-modal-img" src="'+c.photos[0]+'" alt="'+c.name+'" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">';
+  cmpIdx = 0;
+  // Открываем модал сразу
+  let h = '<div id="cmpSliderPlaceholder" style="height:200px;background:var(--bg2);border-radius:12px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;"><span style=\"color:var(--faint);font-size:13px\">Загрузка фото...</span></div>';
   h += '<div class="city-modal-tag">'+c.tag+'</div>';
   h += '<div class="city-modal-header"><div class="city-modal-name">'+c.emoji+' '+c.name+'</div><div class="city-modal-budget">'+c.budget+'</div></div>';
   h += '<div class="city-modal-desc">'+c.desc+'</div>';
@@ -1315,6 +1345,14 @@ function openCity(key){
   document.getElementById('cityModalContent').innerHTML = h;
   document.getElementById('cityModal').classList.add('open');
   document.body.style.overflow='hidden';
+  // Загружаем фото асинхронно
+  const query = (c.name_en || c.name) + ' Thailand';
+  loadCityModalPhotos(key, query).then(urls => {
+    const placeholder = document.getElementById('cmpSliderPlaceholder');
+    if (placeholder && urls.length) {
+      placeholder.outerHTML = buildPhotoSlider(urls);
+    }
+  });
 }
 
 function closeModal(id){
@@ -1407,41 +1445,70 @@ window.addEventListener('scroll',()=>{
 })();
 
 
+
 // ── PEXELS PHOTOS ──
-const PEXELS_KEY = 'AFnbGoIHGGCrF5iYPGNQSSpoj3NdowouNwVBnT1ZvmwtcC3dakCuC7nj';
-const CITY_QUERIES = {
-  bangkok:   'Bangkok Thailand skyline night',
-  phuket:    'Phuket Thailand beach',
-  chiangmai: 'Chiang Mai Thailand temple',
-  pattaya:   'Pattaya Thailand beach',
-  samui:     'Ko Samui Thailand island',
-  krabi:     'Krabi Thailand limestone cliffs',
-  kophangan: 'Ko Phangan Thailand beach sunset',
-};
+const WORKER = 'https://pexelsapiworker.nikromashin07.workers.dev';
+
+async function fetchPexels(query, count) {
+  try {
+    const url = count
+      ? `${WORKER}?query=${encodeURIComponent(query)}&count=${count}`
+      : `${WORKER}?query=${encodeURIComponent(query)}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    return data.photos || [];
+  } catch(e) { console.warn('Pexels error:', e); return []; }
+}
 
 async function loadCityPhoto(imgEl, query) {
-  try {
-    const res = await fetch(
-      `https://pexelsapiworker.nikromashin07.workers.dev?query=${encodeURIComponent(query)}`,
-      {}
-    );
-    const data = await res.json();
-    if (data.photos && data.photos[0]) {
-      const url = data.photos[0].src.large2x || data.photos[0].src.large;
-      imgEl.classList.add('loading');
-      imgEl.onload = () => imgEl.classList.replace('loading','loaded');
-      imgEl.src = url;
-    }
-  } catch(e) { console.warn('Pexels error:', e); }
+  const photos = await fetchPexels(query);
+  if (photos[0]) {
+    const url = photos[0].src.large2x || photos[0].src.large;
+    imgEl.onload = () => imgEl.classList.add('loaded');
+    imgEl.src = url;
+  }
+}
+
+const cityPhotoCache = {};
+async function loadCityModalPhotos(cityId, query) {
+  if (cityPhotoCache[cityId]) return cityPhotoCache[cityId];
+  const photos = await fetchPexels(query, 4);
+  cityPhotoCache[cityId] = photos.map(p => p.src.large2x || p.src.large);
+  return cityPhotoCache[cityId];
+}
+
+function buildPhotoSlider(urls) {
+  if (!urls.length) return '';
+  const imgs = urls.map(u =>
+    `<img class="city-modal-photo loaded" src="${u}" alt="" loading="lazy">`
+  ).join('');
+  const dots = urls.length > 1 ? '<div class="cmp-dots" id="cmpDots">' +
+    urls.map((_,i) => `<div class="cmp-dot${i===0?' active':''}" onclick="goSlide(${i})"></div>`).join('') +
+    '</div>' : '';
+  const arrows = urls.length > 1 ?
+    '<button class="cmp-prev" onclick="goSlide(-1,true)">&#8249;</button><button class="cmp-next" onclick="goSlide(1,true)">&#8250;</button>' : '';
+  return `<div class="city-modal-photos" id="cmpWrap">
+    <div class="city-modal-photos-track" id="cmpTrack">${imgs}</div>
+    ${arrows}${dots}
+  </div>`;
+}
+
+let cmpIdx = 0;
+function goSlide(n, rel) {
+  const track = document.getElementById('cmpTrack');
+  if (!track) return;
+  const total = track.children.length;
+  cmpIdx = rel ? (cmpIdx + n + total) % total : n;
+  track.style.transform = `translateX(-${cmpIdx*100}%)`;
+  document.querySelectorAll('.cmp-dot').forEach((d,i) => d.classList.toggle('active', i===cmpIdx));
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.city-photo[data-query]').forEach(img => {
     loadCityPhoto(img, img.dataset.query);
   });
-  // Hero bg
   const heroBg = document.querySelector('.hero-bg img');
-  if (heroBg) loadCityPhoto(heroBg, 'Bangkok Thailand skyline aerial');
+  if (heroBg) loadCityPhoto(heroBg, 'Bangkok Thailand skyline night aerial');
 });
 
 // ── ESIM SWITCH ──
