@@ -50,14 +50,24 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   filter:blur(6px) brightness(.28) saturate(.6);
   transition:opacity 1s ease;
 }
-html.light .hero-bg{filter:blur(6px) brightness(.45) saturate(.5)}
+/* Тёмная тема — фото чуть светлее, overlay лёгкий */
+html.dark .hero-bg{filter:blur(6px) brightness(.5) saturate(.7)}
+/* Светлая тема — фото темнее, overlay сильнее */
+html.light .hero-bg{filter:blur(6px) brightness(.35) saturate(.5)}
 .hero-bg-wrap::after{
-  content:'';position:absolute;inset:0;z-index:1;
-  background:linear-gradient(135deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.3) 100%);
-  pointer-events:none;
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+}
+html.dark .hero-bg-wrap::after{
+  background:linear-gradient(to bottom,
+    rgba(19,19,16,.3) 0%,
+    rgba(19,19,16,.1) 50%,
+    rgba(19,19,16,.8) 100%);
 }
 html.light .hero-bg-wrap::after{
-  background:linear-gradient(135deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.45) 100%);
+  background:linear-gradient(to bottom,
+    rgba(0,0,0,.5) 0%,
+    rgba(0,0,0,.3) 50%,
+    rgba(250,248,242,.9) 100%);
 }
 /* Текст в hero всегда светлый поверх фото */
 .hero .hero-overline,.hero .breadcrumb,.hero .breadcrumb a,
