@@ -793,35 +793,43 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="cities-outer reveal">
       <div class="cities-slider-wrap">
         <div class="cities-slider" id="citySlider">
-          <div class="city-slide" onclick="openCity('bangkok')">
-            <img class="city-photo loaded" src="" data-query="Bangkok Thailand skyline night" alt="Бангкок" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">01 · СТОЛИЦА</div><div class="city-name">Бангкок</div><div class="city-desc">400+ храмов, небоскрёбы, метро BTS и лучшая уличная еда в мире.</div><span class="city-tag">🌆 Столица</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('phuket')">
-            <img class="city-photo loaded" src="" data-query="Phuket Thailand beach longtail boats" alt="Пхукет" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">02 · ОСТРОВ</div><div class="city-name">Пхукет</div><div class="city-desc">Главный курорт с белоснежными пляжами. Патонг — тусовки, Камала — спокойный отдых.</div><span class="city-tag">🌴 Курорт</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('chiangmai')">
-            <img class="city-photo loaded" src="" data-query="Chiang Mai Thailand Doi Suthep temple" alt="Чиангмай" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">03 · СЕВЕР</div><div class="city-name">Чиангмай</div><div class="city-desc">Культурная столица. Дешевле Бангкока, огромное сообщество цифровых кочевников.</div><span class="city-tag">💻 Для кочевников</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('pattaya')">
-            <img class="city-photo loaded" src="" data-query="Pattaya Thailand beach" alt="Паттайя" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">04 · ЗАЛИВ</div><div class="city-name">Паттайя</div><div class="city-desc">2 часа от Бангкока. Плавучие рынки, парки развлечений и активная ночная жизнь.</div><span class="city-tag">🎡 Развлечения</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('samui')">
-            <img class="city-photo loaded" src="" data-query="Ko Samui Thailand tropical beach" alt="Ко Самуи" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">05 · ОСТРОВ</div><div class="city-name">Ко Самуи</div><div class="city-desc">Роскошный остров в Сиамском заливе. Виллы, яхты и спокойные бухты.</div><span class="city-tag">🏝 Роскошь</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('krabi')">
-            <img class="city-photo loaded" src="" data-query="Krabi Thailand limestone cliffs sea" alt="Краби" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">06 · ЮГО-ЗАПАД</div><div class="city-name">Краби</div><div class="city-desc">Известняковые скалы, острова Пхи-Пхи и бирюзовое море. Рай для дайверов.</div><span class="city-tag">⛰ Природа</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('kophangan')">
-            <img class="city-photo loaded" src="" data-query="Ko Phangan Thailand beach sunset" alt="Ко Панган" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">07 · ОСТРОВ</div><div class="city-name">Ко Панган</div><div class="city-desc">Full Moon Party — крупнейшая пляжная вечеринка в мире (10–30 тыс. чел.).</div><span class="city-tag">🌙 Вечеринки</span></div>
+        <div class="city-slide" onclick="openCity('bali')" style="cursor:pointer">
+          <img class="city-photo loading" src="" data-query="Bali Indonesia Ubud rice terraces temple" alt="Бали" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+          <div class="city-body">
+            <div class="city-num">01 · ОСТРОВ</div>
+            <div class="city-name">Бали</div>
+            <div class="city-desc">Остров богов. Рисовые террасы, храмы, сёрфинг и спа. Самое популярное направление.</div>
+            <span class="city-tag">🌴 ОСТРОВ</span>
           </div>
         </div>
+        <div class="city-slide" onclick="openCity('jakarta')" style="cursor:pointer">
+          <img class="city-photo loading" src="" data-query="Jakarta Indonesia skyline modern" alt="Джакарта" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+          <div class="city-body">
+            <div class="city-num">02 · МЕГАПОЛИС</div>
+            <div class="city-name">Джакарта</div>
+            <div class="city-desc">10+ млн жителей. Деловой центр, шопинг-моллы, переносится в новую столицу Нусантара.</div>
+            <span class="city-tag">🌆 МЕГАПОЛИС</span>
+          </div>
+        </div>
+        <div class="city-slide" onclick="openCity('yogya')" style="cursor:pointer">
+          <img class="city-photo loading" src="" data-query="Yogyakarta Indonesia Borobudur temple" alt="Йогьякарта" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+          <div class="city-body">
+            <div class="city-num">03 · КУЛЬТУРА</div>
+            <div class="city-name">Йогьякарта</div>
+            <div class="city-desc">Сердце яванской культуры. Боробудур, Прамбанан, батик. Студенческий город.</div>
+            <span class="city-tag">🏛 КУЛЬТУРА</span>
+          </div>
+        </div>
+        <div class="city-slide" onclick="openCity('lombok')" style="cursor:pointer">
+          <img class="city-photo loading" src="" data-query="Lombok Indonesia beach Gili islands" alt="Ломбок" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+          <div class="city-body">
+            <div class="city-num">04 · ПЛЯЖИ</div>
+            <div class="city-name">Ломбок</div>
+            <div class="city-desc">Более спокойная альтернатива Бали. Вулкан Ринджани, острова Гили с прозрачной водой.</div>
+            <span class="city-tag">🏖 ПЛЯЖИ</span>
+          </div>
+        </div>
+      </div>
       </div>
       <div class="slider-nav">
         <button class="slider-btn" onclick="slideCity(-1)">←</button>

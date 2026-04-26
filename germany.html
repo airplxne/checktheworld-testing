@@ -793,35 +793,43 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="cities-outer reveal">
       <div class="cities-slider-wrap">
         <div class="cities-slider" id="citySlider">
-          <div class="city-slide" onclick="openCity('bangkok')">
-            <img class="city-photo loaded" src="" data-query="Bangkok Thailand skyline night" alt="Бангкок" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">01 · СТОЛИЦА</div><div class="city-name">Бангкок</div><div class="city-desc">400+ храмов, небоскрёбы, метро BTS и лучшая уличная еда в мире.</div><span class="city-tag">🌆 Столица</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('phuket')">
-            <img class="city-photo loaded" src="" data-query="Phuket Thailand beach longtail boats" alt="Пхукет" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">02 · ОСТРОВ</div><div class="city-name">Пхукет</div><div class="city-desc">Главный курорт с белоснежными пляжами. Патонг — тусовки, Камала — спокойный отдых.</div><span class="city-tag">🌴 Курорт</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('chiangmai')">
-            <img class="city-photo loaded" src="" data-query="Chiang Mai Thailand Doi Suthep temple" alt="Чиангмай" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">03 · СЕВЕР</div><div class="city-name">Чиангмай</div><div class="city-desc">Культурная столица. Дешевле Бангкока, огромное сообщество цифровых кочевников.</div><span class="city-tag">💻 Для кочевников</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('pattaya')">
-            <img class="city-photo loaded" src="" data-query="Pattaya Thailand beach" alt="Паттайя" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">04 · ЗАЛИВ</div><div class="city-name">Паттайя</div><div class="city-desc">2 часа от Бангкока. Плавучие рынки, парки развлечений и активная ночная жизнь.</div><span class="city-tag">🎡 Развлечения</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('samui')">
-            <img class="city-photo loaded" src="" data-query="Ko Samui Thailand tropical beach" alt="Ко Самуи" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">05 · ОСТРОВ</div><div class="city-name">Ко Самуи</div><div class="city-desc">Роскошный остров в Сиамском заливе. Виллы, яхты и спокойные бухты.</div><span class="city-tag">🏝 Роскошь</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('krabi')">
-            <img class="city-photo loaded" src="" data-query="Krabi Thailand limestone cliffs sea" alt="Краби" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">06 · ЮГО-ЗАПАД</div><div class="city-name">Краби</div><div class="city-desc">Известняковые скалы, острова Пхи-Пхи и бирюзовое море. Рай для дайверов.</div><span class="city-tag">⛰ Природа</span></div>
-          </div>
-          <div class="city-slide" onclick="openCity('kophangan')">
-            <img class="city-photo loaded" src="" data-query="Ko Phangan Thailand beach sunset" alt="Ко Панган" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
-            <div class="city-body"><div class="city-num">07 · ОСТРОВ</div><div class="city-name">Ко Панган</div><div class="city-desc">Full Moon Party — крупнейшая пляжная вечеринка в мире (10–30 тыс. чел.).</div><span class="city-tag">🌙 Вечеринки</span></div>
+        <div class="city-slide" onclick="openCity('berlin')" style="cursor:pointer">
+          <img class="city-photo loading" src="" data-query="Berlin Germany Brandenburg Gate night" alt="Берлин" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+          <div class="city-body">
+            <div class="city-num">01 · СТОЛИЦА</div>
+            <div class="city-name">Берлин</div>
+            <div class="city-desc">Искусство, история, стартапы и клубы. Берлин — самый крутой и дешёвый для Европы.</div>
+            <span class="city-tag">🎨 СТОЛИЦА</span>
           </div>
         </div>
+        <div class="city-slide" onclick="openCity('munich')" style="cursor:pointer">
+          <img class="city-photo loading" src="" data-query="Munich Germany Marienplatz Oktoberfest" alt="Мюнхен" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+          <div class="city-body">
+            <div class="city-num">02 · БАВАРИЯ</div>
+            <div class="city-name">Мюнхен</div>
+            <div class="city-desc">Октоберфест, замки Нойшванштайн, BMW-музей и лучшее пиво в Германии.</div>
+            <span class="city-tag">🍺 БАВАРИЯ</span>
+          </div>
+        </div>
+        <div class="city-slide" onclick="openCity('hamburg')" style="cursor:pointer">
+          <img class="city-photo loading" src="" data-query="Hamburg Germany harbour Speicherstadt" alt="Гамбург" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+          <div class="city-body">
+            <div class="city-num">03 · ПОРТ</div>
+            <div class="city-name">Гамбург</div>
+            <div class="city-desc">Крупнейший порт Германии, Шпайхерштадт и культурный квартал Хафенсити.</div>
+            <span class="city-tag">⚓ ПОРТ</span>
+          </div>
+        </div>
+        <div class="city-slide" onclick="openCity('frankfurt')" style="cursor:pointer">
+          <img class="city-photo loading" src="" data-query="Frankfurt Germany skyline Main river" alt="Франкфурт" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+          <div class="city-body">
+            <div class="city-num">04 · ФИНАНСЫ</div>
+            <div class="city-name">Франкфурт</div>
+            <div class="city-desc">Финансовый центр Европы. Небоскрёбы рядом со средневековым Рёмером.</div>
+            <span class="city-tag">🏦 ФИНАНСЫ</span>
+          </div>
+        </div>
+      </div>
       </div>
       <div class="slider-nav">
         <button class="slider-btn" onclick="slideCity(-1)">←</button>
