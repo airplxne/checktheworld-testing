@@ -1,383 +1,607 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="dark">
 <head>
 <meta charset="utf-8">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
+<meta name="referrer" content="no-referrer-when-downgrade">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Вьетнам — визы, цены, жильё | CheckTheWorld</title>
-<meta name="description" content="Всё о Вьетнаме — визовый режим, стоимость жизни, цены на жильё и авиабилеты.">
+<meta name="description" content="Всё о Вьетнам — визовый режим, стоимость жизни, цены на жильё, авиабилеты. Актуальные данные для путешественников.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://tp-em.com/NTE1NTI2.js?t=515526';
-      document.head.appendChild(script);
-  })();
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script nowprocket data-noptimize="1" data-cfasync="false">
+(function(){var s=document.createElement("script");s.async=1;s.src='https://tp-em.com/NTE1NTI2.js?t=515526';document.head.appendChild(s);})();
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#faf8f2;--white:#ffffff;--black:#1a1a18;
-  --g500:#484842;--g300:#848480;--g100:#e6e2d8;--g50:#f0ece2;
-  --green:#1c7a54;--green-mid:#30b278;--green-light:#d8f2e6;--green-pale:#edf8f3;
-  --amber:#e08c2a;--amber-light:#fef3e2;
+  --bg:#131310;--bg2:#1b1b17;--paper:#1f1f1b;--paper2:#252521;
+  --ink:#f4f1e8;--ink2:#d4d1c6;--muted:#9e9a8f;--faint:#6f6c63;
+  --line:#2c2c26;--line2:#232320;
+  --green:#3fbb89;--green-d:#2fa474;--green-l:rgba(63,187,137,.14);--green-p:rgba(63,187,137,.07);
+  --amber:#f0a54a;--amber-d:#d8893a;--amber-l:rgba(240,165,74,.14);
+  --red:#e47060;--red-l:rgba(228,112,96,.14);
+  --shadow:0 8px 32px rgba(0,0,0,.4);
+  --r:16px;--r2:12px;
 }
-body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden}
+html.light{
+  --bg:#faf8f2;--bg2:#f3efe3;--paper:#ffffff;--paper2:#f0ece2;
+  --ink:#1a1a18;--ink2:#3d3d37;--muted:#6e6e66;--faint:#9a9a90;
+  --line:#e6e2d8;--line2:#efeadf;
+  --green:#1c7a54;--green-d:#13563a;--green-l:#d8f2e6;--green-p:#edf8f3;
+  --amber:#e08c2a;--amber-d:#b96d15;--amber-l:#fef3e2;
+  --red:#c0392b;--red-l:#fce8e8;
+  --shadow:0 8px 28px rgba(20,20,15,.08);
+}
+html{background:var(--bg);color:var(--ink)}
+body{background:var(--bg);color:var(--ink);overflow-x:hidden}
+body{font-family:'Manrope',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh}
 a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
+
+/* HERO BG */
+.hero{position:relative}
+.hero-bg-wrap{
+  position:absolute;inset:0;z-index:0;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;top:-20px;left:-20px;right:-20px;bottom:-20px;
+  filter:blur(6px) brightness(.28) saturate(.6);
+  transition:opacity 1s ease;
+}
+/* Тёмная тема — фото чуть светлее, overlay лёгкий */
+html.dark .hero-bg{filter:blur(6px) brightness(.5) saturate(.7)}
+/* Светлая тема — фото темнее, overlay сильнее */
+html.light .hero-bg{filter:blur(6px) brightness(.35) saturate(.5)}
+.hero-bg-wrap::after{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+}
+html.dark .hero-bg-wrap::after{
+  background:linear-gradient(to bottom,
+    rgba(19,19,16,.3) 0%,
+    rgba(19,19,16,.1) 50%,
+    rgba(19,19,16,.8) 100%);
+}
+html.light .hero-bg-wrap::after{
+  background:linear-gradient(to bottom,
+    rgba(0,0,0,.5) 0%,
+    rgba(0,0,0,.3) 50%,
+    rgba(250,248,242,.9) 100%);
+}
+/* Текст в hero всегда светлый поверх фото */
+.hero .hero-overline,.hero .breadcrumb,.hero .breadcrumb a,
+.hero h1,.hero .hero-chip,.hero .stat-lbl,.hero .stat-val,.hero .stat-sub{
+  color:#f4f1e8 !important;
+}
+.hero .hero-chip{border-color:rgba(255,255,255,.25) !important}
+.hero .hero-stats{background:rgba(0,0,0,.35);border-color:rgba(255,255,255,.1)}
+.hero .hero-stat{background:rgba(0,0,0,.2)}
+.hero-bg img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 40%;
+  display:block;
+  opacity:0;transition:opacity .8s ease;
+}
+.hero-bg img.loaded{opacity:1}
+.hero > *:not(.hero-bg-wrap){position:relative;z-index:1}
+/* Плавный переход в основной контент */
+.hero::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:120px;
+  background:linear-gradient(to bottom,transparent,var(--bg));
+  z-index:2;pointer-events:none;
+}
 /* BLOBS */
 .blobs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.22}
-.b1{width:500px;height:500px;background:#30b278;top:-100px;right:-60px;animation:bf 13s ease-in-out infinite}
-.b2{width:400px;height:400px;background:#e08c2a;bottom:10%;left:-100px;animation:bf 16s ease-in-out infinite reverse}
-@keyframes bf{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-14px) scale(1.04)}}
+.blob{position:absolute;border-radius:50%;filter:blur(100px)}
+html.dark .blob{opacity:.18;mix-blend-mode:screen}
+html.light .blob{opacity:.2;mix-blend-mode:multiply}
+.b1{width:600px;height:600px;background:#30b278;top:-150px;right:-100px;animation:bf 17s ease-in-out infinite}
+.b2{width:480px;height:480px;background:#e08c2a;bottom:-100px;left:-150px;animation:bf 21s ease-in-out infinite reverse}
+@keyframes bf{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(24px,-16px) scale(1.05)}}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:200;background:rgba(250,248,242,0.95);
-  backdrop-filter:blur(16px);border-bottom:2px solid var(--amber)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:16px 44px;
-  display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif;font-size:21px;color:var(--black)}
-.logo span{color:var(--green)}.logo .dot{color:var(--amber)}
-.nav-links{display:flex;gap:26px}
-.nav-links a{font-size:14px;color:var(--g500);font-weight:500;transition:color .15s}
-.nav-links a:hover{color:var(--black)}
-.back-btn{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--g500);
-  font-weight:500;transition:color .15s;cursor:pointer}
-.back-btn:hover{color:var(--black)}
+nav{position:sticky;top:0;z-index:200;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:14px 44px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:'Playfair Display',serif;font-size:21px;font-weight:800;
+  display:inline-flex;align-items:baseline;gap:1px}
+.logo em{font-style:italic;font-weight:500;color:var(--green);margin:0 1px}
+.logo .dot{color:var(--amber)}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-size:13.5px;color:var(--muted);font-weight:500;padding:7px 13px;
+  border-radius:100px;transition:all .15s}
+.nav-links a:hover{color:var(--ink);background:var(--bg2)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.theme-btn{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line);
+  color:var(--muted);display:inline-flex;align-items:center;justify-content:center;
+  transition:all .15s;flex-shrink:0}
+.theme-btn:hover{border-color:var(--ink);color:var(--ink)}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;
+  color:var(--muted);font-weight:500;padding:7px 14px;border-radius:100px;
+  border:1.5px solid var(--line);transition:all .15s}
+.back-btn:hover{border-color:var(--green);color:var(--green)}
 
 /* HERO */
-.country-hero{position:relative;z-index:1;padding:52px 44px 44px;max-width:1200px;margin:0 auto}
-.breadcrumb{font-size:13px;color:var(--g300);margin-bottom:20px;display:flex;align-items:center;gap:6px}
-.breadcrumb a{color:var(--g300);transition:color .15s}.breadcrumb a:hover{color:var(--green)}
-.breadcrumb-sep{opacity:.5}
-.hero-grid{display:grid;grid-template-columns:1fr 400px;gap:48px;align-items:start}
-.hero-left{}
-.country-flag{font-size:48px;margin-bottom:12px;display:block}
-.country-name{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,64px);
-  line-height:1.05;letter-spacing:-.5px;margin-bottom:8px}
-.country-region{font-size:15px;color:var(--g300);font-weight:500;margin-bottom:20px}
-.visa-badge-big{display:inline-flex;align-items:center;gap:8px;
-  background:var(--green-light);color:var(--green);
-  font-size:14px;font-weight:700;padding:9px 18px;border-radius:100px;margin-bottom:28px}
-.visa-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green-mid)}
-.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:0}
-.hero-stat{background:var(--white);border:1.5px solid var(--g100);border-radius:14px;padding:14px 16px}
-.hero-stat-lbl{font-size:10px;color:var(--g300);font-weight:700;letter-spacing:.05em;margin-bottom:4px}
-.hero-stat-val{font-size:20px;font-weight:700}
+.hero{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:40px 44px 0}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:28px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--faint)}
+.breadcrumb a{color:var(--faint);transition:color .15s}
+.breadcrumb a:hover{color:var(--green)}
+.breadcrumb-sep{opacity:.4;font-size:9px}
+.hero-overline{display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);
+  letter-spacing:.12em;text-transform:uppercase}
+.hero-overline::before{content:'';display:block;width:24px;height:1.5px;background:var(--green)}
+.hero-title-wrap{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start;min-width:0}
+.hero-left{min-width:0}
+h1.country-title{
+  font-family:'Playfair Display',serif;
+  font-weight:800;font-size:clamp(56px,8vw,108px);
+  line-height:.92;letter-spacing:-.03em;
+  margin-bottom:0;
+  word-break:break-word;
+  overflow-wrap:break-word;
+  max-width:100%;
+}
+h1.country-title em{font-style:italic;font-weight:500;color:var(--green)}
+.hero-meta-row{display:flex;align-items:center;gap:10px;margin:20px 0 16px;flex-wrap:wrap}
+.hero-chip{display:inline-flex;align-items:center;gap:6px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
+  padding:5px 11px;border:1px solid var(--line);border-radius:100px;
+  color:var(--muted);letter-spacing:.04em}
+.hero-chip .dot{width:5px;height:5px;border-radius:50%;background:var(--muted)}
+.visa-badge{display:inline-flex;align-items:center;gap:7px;
+  background:var(--green-l);border:1px solid rgba(63,187,137,.3);
+  color:var(--green);border-radius:100px;padding:6px 14px;
+  font-size:13px;font-weight:600;margin-bottom:20px}
+.visa-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green);
+  animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;margin-top:4px}
+.hero-stat{background:var(--paper);padding:16px 18px}
+.stat-lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:6px;font-weight:500}
+.stat-val{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;
+  color:var(--ink);letter-spacing:-.01em}
+.stat-sub{font-size:11px;color:var(--muted);margin-top:3px;font-weight:500}
 
-/* QUICK INFO CARD */
-.quick-card{background:var(--white);border:1.5px solid var(--g100);border-radius:20px;
-  padding:22px;box-shadow:0 4px 32px rgba(0,0,0,.06);position:sticky;top:80px}
-.qc-title{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:16px}
-.qc-rows{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
-.qc-row{display:flex;justify-content:space-between;align-items:center;
-  padding:10px 13px;background:var(--bg);border-radius:10px}
-.qc-label{font-size:13px;color:var(--g500)}
-.qc-val{font-size:13px;font-weight:700}
-.qc-divider{height:1px;background:var(--g100);margin-bottom:14px}
-.qc-btn{width:100%;background:var(--green);color:var(--white);border:none;
-  border-radius:14px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;
-  font-family:'Manrope',sans-serif;transition:background .15s;margin-bottom:10px}
-.qc-btn:hover{background:#166644}
-.qc-btn-secondary{width:100%;background:transparent;color:var(--green);
-  border:1.5px solid var(--green-light);border-radius:14px;padding:11px;
-  font-size:14px;font-weight:600;cursor:pointer;font-family:'Manrope',sans-serif;
-  transition:all .15s}
-.qc-btn-secondary:hover{background:var(--green-pale)}
+/* QUICK CARD */
+.quick-card{
+  width:280px;max-width:280px;flex-shrink:0;
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--r);padding:20px;
+  position:sticky;top:80px;align-self:start;
+  box-shadow:var(--shadow);
+}
+.qc-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;
+  padding-bottom:12px;border-bottom:1px solid var(--line)}
+.qc-title{font-family:'Playfair Display',serif;font-style:italic;font-size:17px;font-weight:700}
+.qc-badge{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--green);background:var(--green-l);
+  padding:3px 8px;border-radius:100px;font-weight:600}
+.qc-row{display:flex;justify-content:space-between;align-items:baseline;
+  padding:7px 0;border-bottom:1px solid var(--line2);gap:10px}
+.qc-row:last-of-type{border-bottom:none}
+.qc-label{font-size:12px;color:var(--muted);font-weight:500}
+.qc-val{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+  color:var(--ink);white-space:nowrap}
+.qc-btns{margin-top:14px;display:flex;flex-direction:column;gap:7px}
+.qc-btn{width:100%;padding:10px;border-radius:10px;font-size:13px;font-weight:600;
+  background:var(--green);color:#fff;transition:all .15s}
+.qc-btn:hover{background:var(--green-d)}
+.qc-btn-sec{width:100%;padding:10px;border-radius:10px;font-size:13px;font-weight:600;
+  border:1.5px solid var(--line);color:var(--ink2);transition:all .15s}
+.qc-btn-sec:hover{border-color:var(--green);color:var(--green)}
 
-/* CONTENT */
-.content{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 44px 80px}
-.section{margin-bottom:48px}
-.section-title{font-family:'Playfair Display',serif;font-size:28px;
-  margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.section-emoji{font-size:24px}
+/* MOBILE TABS */
+.mob-tabs{display:none;position:sticky;top:57px;z-index:100;
+  background:color-mix(in srgb,var(--bg) 95%,transparent);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+  overflow-x:auto;scrollbar-width:none}
+.mob-tabs::-webkit-scrollbar{display:none}
+.mob-tabs-inner{display:flex;padding:8px 20px;gap:6px;white-space:nowrap}
+.mob-tab{font-size:12px;font-weight:600;padding:6px 12px;border-radius:100px;
+  border:1px solid var(--line);color:var(--muted);transition:all .15s}
+.mob-tab.active{background:var(--green);color:#fff;border-color:var(--green)}
 
-/* VISA BLOCK */
-.visa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.visa-card{background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;transition:border-color .15s,transform .15s,box-shadow .15s}
-.visa-card:hover{border-color:var(--green-mid);transform:translateY(-2px);box-shadow:0 6px 24px rgba(28,122,84,.1);cursor:pointer}
-.visa-card.featured{border-color:var(--green);background:var(--green-pale)}
-.vc-type{font-size:11px;font-weight:700;color:var(--g300);letter-spacing:.06em;
-  text-transform:uppercase;margin-bottom:8px}
-.vc-name{font-size:16px;font-weight:700;margin-bottom:6px}
-.vc-desc{font-size:13px;color:var(--g500);line-height:1.6;margin-bottom:12px}
+/* LAYOUT */
+.main-wrap{position:relative;z-index:1;max-width:1280px;margin:0 auto;
+  padding:48px 44px 80px 44px;display:block}
+
+/* SECTION HEADER */
+.sec-header{display:flex;align-items:baseline;gap:16px;margin-bottom:32px;
+  padding-top:60px}
+.sec-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint);
+  letter-spacing:.1em;flex-shrink:0}
+.sec-dash{width:20px;height:1.5px;background:var(--line);flex-shrink:0;margin-bottom:3px}
+h2.sec-title{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,52px);
+  font-weight:700;letter-spacing:-.02em;line-height:1}
+h2.sec-title em{font-style:italic;font-weight:500;color:var(--green)}
+.sec-desc{margin-left:auto;text-align:right;font-size:13px;color:var(--muted);
+  max-width:200px;line-height:1.5;flex-shrink:0}
+
+/* VISA GRID */
+.visa-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.visa-card{background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r);
+  padding:20px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.visa-card::after{content:'→';position:absolute;right:18px;top:18px;
+  font-size:16px;color:var(--faint);transition:all .2s}
+.visa-card:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:var(--shadow)}
+.visa-card:hover::after{color:var(--green);transform:translateX(4px)}
+.visa-card.featured{border-color:var(--green);background:linear-gradient(135deg,var(--green-p),var(--paper))}
+.vc-type{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--green);margin-bottom:8px;font-weight:600}
+.visa-card:not(.featured) .vc-type{color:var(--muted)}
+.vc-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;
+  margin-bottom:8px;line-height:1.1}
+.vc-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px}
 .vc-tags{display:flex;flex-wrap:wrap;gap:6px}
-.vc-tag{font-size:12px;font-weight:600;padding:4px 10px;border-radius:100px;
-  background:var(--bg);color:var(--g500)}
-.vc-tag.green{background:var(--green-light);color:var(--green)}
-.vc-tag.amber{background:var(--amber-light);color:var(--amber)}
+.vc-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;
+  padding:4px 9px;border-radius:100px;background:var(--bg2);color:var(--muted);letter-spacing:.03em}
+.vc-tag.green{background:var(--green-l);color:var(--green)}
+.vc-tag.amber{background:var(--amber-l);color:var(--amber)}
 
 /* PRICES */
+.currency-switcher{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
+.cur-btn{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+  padding:7px 16px;border-radius:100px;border:1.5px solid var(--line);
+  color:var(--muted);transition:all .15s;letter-spacing:.04em}
+.cur-btn:hover{border-color:var(--ink);color:var(--ink)}
+.cur-btn.active{background:var(--green);border-color:var(--green);color:#fff}
+.cur-rate{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);
+  margin-left:auto;align-self:center}
 .prices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.price-card{background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:18px}
+.price-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r2);
+  padding:18px;transition:border-color .15s}
+.price-card:hover{border-color:var(--green)}
 .pc-icon{font-size:22px;margin-bottom:10px}
-.pc-cat{font-size:12px;color:var(--g300);font-weight:600;margin-bottom:4px}
-.pc-val{font-size:18px;font-weight:700;margin-bottom:4px}
-.pc-note{font-size:12px;color:var(--g300)}
-
-/* CITIES */
-.cities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.city-card{background:var(--white);border:1.5px solid var(--g100);border-radius:16px;padding:20px;
-  transition:all .2s;cursor:pointer}
-.city-card:hover{border-color:var(--green-mid);transform:translateY(-2px)}
-.city-emoji{font-size:28px;margin-bottom:10px}
-.city-name{font-size:16px;font-weight:700;margin-bottom:6px}
-.city-desc{font-size:13px;color:var(--g500);line-height:1.6}
-.city-tag{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;
-  padding:3px 10px;border-radius:100px;background:var(--bg);color:var(--g500)}
-
-/* TIPS */
-.tips-list{display:flex;flex-direction:column;gap:10px}
-.tip-item{display:flex;gap:14px;background:var(--white);border:1.5px solid var(--g100);
-  border-radius:14px;padding:16px}
-.tip-icon{font-size:20px;flex-shrink:0;margin-top:2px}
-.tip-text{font-size:14px;color:var(--g500);line-height:1.6}
-.tip-text strong{color:var(--black);font-weight:600}
+.pc-cat{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:6px;font-weight:500}
+.pc-val{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;
+  color:var(--ink);margin-bottom:4px}
+.pc-note{font-size:11.5px;color:var(--muted);font-weight:500}
 
 /* PARTNER BLOCKS */
-.partner-block{background:var(--white);border:1.5px solid var(--g100);border-radius:20px;
-  padding:24px;margin-bottom:12px}
-.pb-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.partner-block{background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--r);padding:22px;margin-bottom:12px}
+.pb-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .pb-title{font-size:16px;font-weight:700}
-.pb-badge{font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;
-  background:var(--green-light);color:var(--green)}
-.pb-desc{font-size:13px;color:var(--g500);margin-bottom:16px}
-.pb-btn{background:var(--green);color:var(--white);border:none;border-radius:12px;
-  padding:11px 22px;font-size:14px;font-weight:600;cursor:pointer;
-  font-family:'Manrope',sans-serif;transition:background .15s}
-.pb-btn:hover{background:#166644}
-.pb-placeholder{background:var(--bg);border-radius:12px;padding:32px;
-  text-align:center;font-size:13px;color:var(--g300);margin-top:12px}
+.pb-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;padding:4px 10px;border-radius:100px;
+  background:var(--green-l);color:var(--green);font-weight:600}
+.pb-badge.amber{background:var(--amber-l);color:var(--amber)}
+.pb-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:12px}
+.pb-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;
+  background:var(--green);color:#fff;border-radius:100px;font-size:13px;font-weight:600;
+  transition:background .15s}
+.pb-btn:hover{background:var(--green-d)}
 
-/* NAVIGATION BETWEEN COUNTRIES */
-.country-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px}
-.cnav-card{background:var(--white);border:1.5px solid var(--g100);border-radius:16px;
-  padding:18px;display:flex;align-items:center;gap:14px;cursor:pointer;
-  transition:all .15s}
-.cnav-card:hover{border-color:var(--green-mid)}
-.cnav-flag{font-size:28px}
-.cnav-label{font-size:11px;color:var(--g300);font-weight:600;margin-bottom:2px}
-.cnav-name{font-size:15px;font-weight:700}
-.cnav-arrow{margin-left:auto;font-size:18px;color:var(--green);opacity:.6}
-
-/* CURRENCY SWITCHER */
-.currency-switcher{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.cur-btn{background:var(--white);border:1.5px solid var(--g100);border-radius:100px;
-  padding:6px 14px;font-size:13px;font-weight:600;color:var(--g500);cursor:pointer;
-  transition:all .15s;font-family:'Manrope',sans-serif}
-.cur-btn.active{background:var(--green);border-color:var(--green);color:var(--white)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
-.reveal.visible{opacity:1;transform:none}
-.delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
-.reveal.from-hidden.visible{opacity:1;transform:none}
-
-/* FOOTER */
-footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
-  padding:26px 44px;display:flex;justify-content:space-between;
-  align-items:center;flex-wrap:wrap;gap:12px}
-.flogo{font-family:'Playfair Display',serif;font-size:18px}
-.flogo span{color:var(--green)}.flogo .dot{color:var(--amber)}
-.flinks{display:flex;gap:18px}
-.flinks a{font-size:13px;color:var(--g300);cursor:pointer;font-weight:500;transition:color .15s}
-.flinks a:hover{color:var(--black)}
-.fcopy{font-size:13px;color:var(--g300)}
-
-@media(max-width:900px){
-  .nav-inner{padding:14px 20px}.nav-links{display:none}
-  .country-hero{padding:36px 20px 32px}
-  .hero-grid{grid-template-columns:1fr}.quick-card{position:static;margin-top:24px}
-  .content{padding:0 20px 60px}
-  .visa-grid{grid-template-columns:1fr}
-  .prices-grid{grid-template-columns:repeat(2,1fr)}
-  .cities-grid{grid-template-columns:1fr}
-  .country-nav{grid-template-columns:1fr}
-  footer{padding:20px;justify-content:center;text-align:center}
-  .flinks{flex-wrap:wrap;justify-content:center}
-}
-@media(max-width:480px){
-  .prices-grid{grid-template-columns:1fr}
-  .hero-stats{grid-template-columns:1fr 1fr}
-  .city-slide{min-width:200px}
-  .city-photo,.city-photo-placeholder{height:110px}
-  .city-photo-placeholder{font-size:32px}
-  .city-slide-body{padding:12px}
-  .city-slide-name{font-size:14px}
-  .city-slide-desc{font-size:12px;margin-bottom:8px}
-  .section-title{font-size:22px}
-}
-
-/* VISA MODAL */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);
-  z-index:1000;align-items:flex-end;justify-content:center;padding:0}
-.modal-overlay.open{display:flex}
-@media(min-width:600px){.modal-overlay{align-items:center;padding:20px}}
-.modal-box{background:var(--white);border-radius:24px 24px 0 0;padding:28px 24px 36px;
-  width:100%;max-width:520px;position:relative;animation:slideUp .22s ease;
-  max-height:90vh;overflow-y:auto}
-@media(min-width:600px){.modal-box{border-radius:24px;padding:32px;max-height:85vh}}
-@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
-.modal-close{position:absolute;top:16px;right:16px;background:var(--bg);border:none;
-  border-radius:50%;width:32px;height:32px;font-size:20px;cursor:pointer;
-  color:var(--g500);display:flex;align-items:center;justify-content:center;font-weight:700}
-.modal-close:hover{background:var(--g100)}
-.modal-title{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:6px}
-.modal-subtitle{font-size:13px;color:var(--g300);font-weight:600;
-  text-transform:uppercase;letter-spacing:.05em;margin-bottom:18px}
-.modal-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
-.modal-tag{font-size:12px;font-weight:700;padding:5px 12px;border-radius:100px}
-.modal-tag.green{background:var(--green-light);color:var(--green)}
-.modal-tag.amber{background:var(--amber-light);color:var(--amber)}
-.modal-tag.gray{background:var(--bg);color:var(--g500)}
-.modal-section{font-size:13px;font-weight:700;color:var(--black);margin:16px 0 8px}
-.modal-text{font-size:14px;color:var(--g500);line-height:1.65;margin-bottom:12px}
-.modal-steps{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
-.modal-step{display:flex;gap:12px;padding:11px 14px;background:var(--bg);border-radius:10px}
-.modal-step-num{font-size:13px;font-weight:700;color:var(--green);flex-shrink:0;min-width:20px}
-.modal-step-text{font-size:13px;color:var(--g500);line-height:1.55}
-.modal-warn{background:var(--amber-light);border-radius:12px;padding:13px 15px;
-  font-size:13px;color:var(--amber);line-height:1.55;margin-bottom:16px}
-.modal-warn strong{color:#c06010}
-.modal-btn{width:100%;background:var(--green);color:var(--white);border:none;
-  border-radius:14px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;
-  font-family:'Manrope',sans-serif;transition:background .15s}
-.modal-btn:hover{background:#166644}
-
-/* CITY PHOTO */
-.city-photo{width:100%;height:140px;object-fit:cover;border-radius:12px;
-  margin-bottom:10px;background:var(--bg)}
-.city-photo-placeholder{width:100%;height:140px;border-radius:12px;
-  margin-bottom:10px;background:linear-gradient(135deg,var(--green-light),var(--g50));
-  display:flex;align-items:center;justify-content:center;font-size:40px}
-
-/* CITY SLIDER */
-.cities-slider-wrap{position:relative}
+/* CITIES */
+.cities-outer{position:relative}
+.cities-slider-wrap{overflow:hidden;border-radius:var(--r);margin-bottom:8px}
 .cities-slider{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;padding-bottom:4px;cursor:grab}
+  scrollbar-width:none;padding-bottom:4px;cursor:grab}
 .cities-slider::-webkit-scrollbar{display:none}
 .cities-slider:active{cursor:grabbing}
-.city-slide{min-width:240px;scroll-snap-align:start;background:var(--white);
-  border:1.5px solid var(--g100);border-radius:16px;overflow:hidden;
-  cursor:pointer;transition:border-color .2s;flex-shrink:0}
-.city-slide:hover{border-color:var(--green-mid)}
-.city-slide-body{padding:16px}
-.city-slide-name{font-size:16px;font-weight:700;margin-bottom:5px}
-.city-slide-desc{font-size:13px;color:var(--g500);line-height:1.55;margin-bottom:10px}
-.city-slide-tag{display:inline-block;font-size:11px;font-weight:700;
-  padding:3px 10px;border-radius:100px;background:var(--bg);color:var(--g500)}
-.slider-nav{display:flex;gap:8px;margin-top:14px}
-.slider-arrow{width:36px;height:36px;border-radius:50%;background:var(--white);
-  border:1.5px solid var(--g100);display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-size:16px;transition:all .15s;-webkit-tap-highlight-color:transparent}
-.slider-arrow:hover{border-color:var(--green);color:var(--green)}
+.city-slide{flex:0 0 280px;scroll-snap-align:start;background:var(--paper);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.city-slide:hover{border-color:var(--green);box-shadow:var(--shadow)}
+.city-photo{width:100%;height:160px;object-fit:cover;display:block}
+.city-body{padding:14px 16px 16px}
+.city-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);
+  letter-spacing:.1em;margin-bottom:4px}
+.city-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:5px}
+.city-desc{font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:10px}
+.city-tag{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--bg2);color:var(--muted);padding:4px 9px;border-radius:100px;font-weight:500}
+.slider-nav{display:flex;justify-content:flex-end;gap:8px;margin-top:10px}
+.slider-btn{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);
+  color:var(--muted);display:inline-flex;align-items:center;justify-content:center;
+  font-size:16px;transition:all .15s}
+.slider-btn:hover{border-color:var(--green);color:var(--green)}
+
+/* TIPS */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tip-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r2);
+  padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.tip-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint);
+  flex-shrink:0;font-weight:600;margin-top:1px}
+.tip-title{font-size:14px;font-weight:700;margin-bottom:4px}
+.tip-text{font-size:12.5px;color:var(--muted);line-height:1.55}
+
+/* BUDGET */
+.budget-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.budget-card{background:var(--paper);border:1.5px solid var(--line);
+  border-radius:var(--r);padding:20px}
+.budget-card.highlight{border-color:var(--green);background:var(--green-p)}
+.budget-card.warm{border-color:var(--amber);background:color-mix(in srgb,var(--amber-l) 50%,var(--paper))}
+.bc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:8px;font-weight:600}
+.budget-card.highlight .bc-label{color:var(--green)}
+.budget-card.warm .bc-label{color:var(--amber)}
+.bc-total{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;
+  margin-bottom:3px}
+.bc-usd{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);
+  margin-bottom:16px}
+.bc-row{display:flex;justify-content:space-between;font-size:12.5px;
+  padding:5px 0;border-bottom:1px solid var(--line2)}
+.bc-row:last-of-type{border-bottom:none}
+.bc-row span:first-child{color:var(--muted)}
+.bc-row span:last-child{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:12px}
+.bc-note{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);
+  font-size:11px;color:var(--faint);font-style:italic}
+
+/* INFO BLOCKS */
+.info-block{background:var(--paper);border:1.5px solid var(--line);
+  border-radius:var(--r);padding:20px;margin-bottom:12px}
+.info-block-title{font-size:15px;font-weight:700;margin-bottom:14px}
+.info-row{display:flex;gap:12px;padding:11px 14px;background:var(--bg2);
+  border-radius:10px;margin-bottom:8px}
+.info-row:last-child{margin-bottom:0}
+.info-row-icon{font-size:17px;flex-shrink:0}
+.info-row-title{font-size:13.5px;font-weight:700;margin-bottom:3px}
+.info-row-text{font-size:12.5px;color:var(--muted);line-height:1.55}
+.info-row.green{background:var(--green-p);border:1px solid rgba(63,187,137,.2)}
+.info-row.amber{background:var(--amber-l);border:1px solid rgba(240,165,74,.2)}
+.info-row.red{background:var(--red-l)}
+.alert{border-radius:10px;padding:12px 15px;font-size:13px;line-height:1.6;margin-bottom:12px}
+.alert.amber{background:var(--amber-l);color:var(--amber)}
+.alert.green{background:var(--green-l);color:var(--green)}
+.alert strong{font-weight:700}
+
+/* TAX TABLE */
+.tax-table{width:100%;border-collapse:collapse}
+.tax-table tr{border-bottom:1px solid var(--line)}
+.tax-table tr:last-child{border-bottom:none}
+.tax-table td{padding:8px 0;font-size:13px}
+.tax-table td:last-child{font-family:'JetBrains Mono',monospace;font-weight:600;
+  text-align:right;color:var(--green)}
+
+/* CLIMATE */
+.climate-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:20px}
+.climate-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;
+  padding:12px 8px;text-align:center}
+.climate-month{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:6px;font-weight:500}
+.climate-temp{font-size:16px;font-weight:700;margin-bottom:3px}
+.climate-icon{font-size:16px;margin-bottom:3px}
+.climate-note{font-size:10px;color:var(--muted)}
+
+/* SIDENAV */
+.sidenav{position:fixed;right:16px;top:50%;transform:translateY(-50%);
+  z-index:9999;display:flex;flex-direction:column;gap:0;
+  opacity:0;pointer-events:none;transition:opacity .3s;background:transparent}
+.sidenav.visible{opacity:1;pointer-events:all}
+.sn-item{display:flex;align-items:center;gap:8px;cursor:pointer;
+  justify-content:flex-end;padding:4px 0;min-width:120px;
+  transition:all .15s;user-select:none}
+.sn-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.25);
+  transition:all .2s;flex-shrink:0;border:1px solid rgba(255,255,255,.15)}
+.sn-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.07em;
+  color:rgba(255,255,255,.35);white-space:nowrap;text-transform:uppercase;
+  transition:all .2s;font-weight:500}
+.sn-item:hover .sn-label{color:rgba(255,255,255,.8)}
+.sn-item:hover .sn-dot{background:rgba(255,255,255,.6);border-color:transparent}
+.sn-item.active .sn-dot{background:var(--green);border-color:var(--green);width:7px;height:7px}
+.sn-item.active .sn-label{color:var(--green);font-weight:700}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .2s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:var(--paper);border:1px solid var(--line);border-radius:20px;
+  max-width:560px;width:100%;max-height:88vh;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+  transform:scale(.96);transition:transform .2s}
+.modal-overlay.open .modal-box{transform:scale(1)}
+.modal-box-scroll{overflow-y:auto;padding:20px 24px 32px;flex:1}
+.modal-close{position:absolute;right:14px;top:14px;
+  width:32px;height:32px;
+  border-radius:50%;background:var(--paper2);color:var(--muted);
+  font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;
+  transition:all .15s;z-index:20;cursor:pointer;
+  border:1.5px solid var(--line)}
+.modal-close:hover{background:var(--line);color:var(--ink)}
+.modal-overline{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--green);margin-bottom:8px;font-weight:600}
+.modal-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;
+  margin-bottom:16px;line-height:1.2}
+.modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.modal-tag{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
+  padding:4px 10px;border-radius:100px;background:var(--bg2);color:var(--muted)}
+.modal-tag.green{background:var(--green-l);color:var(--green)}
+.modal-tag.amber{background:var(--amber-l);color:var(--amber)}
+.modal-section{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:20px 0 10px;padding-top:4px;border-top:1px solid var(--line)}
+.modal-text{font-size:13.5px;color:var(--muted);line-height:1.7}
+.modal-steps{display:flex;flex-direction:column;gap:0}
+.modal-step{display:flex;gap:12px;font-size:13.5px;color:var(--muted);line-height:1.6;padding:8px 0;border-bottom:1px solid var(--line2)}
+.modal-step-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;
+  color:var(--green);flex-shrink:0;width:18px}
+.modal-warn{background:var(--amber-l);border-radius:10px;padding:14px 16px;
+  font-size:13px;color:var(--amber);line-height:1.6;margin-top:20px}
+.modal-btn{margin-top:16px;padding:11px 22px;background:var(--green);color:#fff;
+  border-radius:100px;font-size:13.5px;font-weight:600}
 
 
-/* MOBILE NAV TABS */
-.mobile-tabs{display:none}
-@media(max-width:900px){
-  .mobile-tabs{
-    display:flex;overflow-x:auto;gap:6px;padding:10px 16px;
-    background:rgba(250,248,242,0.97);backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--g100);position:sticky;top:53px;z-index:150;
-    scrollbar-width:none;-webkit-overflow-scrolling:touch;
-  }
-  .mobile-tabs::-webkit-scrollbar{display:none}
-  .mob-tab{flex-shrink:0;font-size:12px;font-weight:700;padding:6px 14px;
-    border-radius:100px;border:1.5px solid var(--g100);background:var(--white);
-    color:var(--g500);cursor:pointer;white-space:nowrap;transition:all .15s;
-    -webkit-tap-highlight-color:transparent}
-  .mob-tab:hover,.mob-tab.active{background:var(--green);color:var(--white);border-color:var(--green)}
-}
+/* CITY PHOTO SLIDER */
+.city-modal-photos{position:relative;overflow:hidden;height:220px;width:100%;margin-bottom:16px}
+.city-modal-photos-track{display:flex;height:100%;transition:transform .35s ease}
+.city-modal-photo{flex:0 0 100%;height:200px;object-fit:cover;display:block}
+.city-modal-photo.loading{opacity:0;transition:opacity .4s}
+.city-modal-photo.loaded{opacity:1}
+.cmp-prev,.cmp-next{position:absolute;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(0,0,0,.5);color:#fff;font-size:16px;z-index:10;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;border:none;transition:background .15s}
+.cmp-prev{left:8px}.cmp-next{right:8px}
+.cmp-prev:hover,.cmp-next:hover{background:rgba(0,0,0,.8)}
+.cmp-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
+  display:flex;gap:5px}
+.cmp-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer}
+.cmp-dot.active{background:#fff}
+
+/* CITY MODAL */
+.city-modal-img{width:100%;height:200px;object-fit:cover;border-radius:12px;
+  margin-bottom:14px;display:block}
+.city-modal-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.city-modal-header{display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:10px}
+.city-modal-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700}
+.city-modal-budget{font-family:'JetBrains Mono',monospace;font-size:12px;
+  background:var(--green-l);color:var(--green);padding:4px 11px;border-radius:100px;font-weight:600}
+.city-modal-desc{font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.city-modal-section{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:10px}
+.place-item{display:flex;gap:10px;margin-bottom:9px}
+.place-pin{font-size:14px;flex-shrink:0;margin-top:1px}
+.place-name{font-size:13.5px;font-weight:700;margin-bottom:2px}
+.place-desc{font-size:12.5px;color:var(--muted);line-height:1.5}
+.fact-item{display:flex;gap:10px;padding:9px 12px;background:var(--bg2);
+  border-radius:8px;margin-bottom:6px}
+.fact-text{font-size:12.5px;color:var(--muted);line-height:1.5}
+
+/* COUNTRY NAV */
+.country-nav{display:flex;justify-content:space-between;gap:20px;
+  margin-top:60px;padding-top:32px;border-top:1px solid var(--line)}
+.cnav-card{display:flex;align-items:center;gap:12px;padding:16px 20px;
+  background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r);
+  transition:all .2s;flex:1;max-width:260px}
+.cnav-card:hover{border-color:var(--green)}
+.cnav-flag{font-size:28px}
+.cnav-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:3px}
+.cnav-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700}
+.cnav-arrow{font-size:20px;color:var(--muted);margin-left:auto}
+
+/* FOOTER */
+footer{position:relative;z-index:1;border-top:1px solid var(--line);
+  padding:24px 44px;max-width:1280px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.flogo{font-family:'Playfair Display',serif;font-size:17px;font-weight:800}
+.flogo em{font-style:italic;font-weight:500;color:var(--green);margin:0 1px}
+.flogo .dot{color:var(--amber)}
+.flinks{display:flex;gap:20px}
+.flinks a{font-size:13px;color:var(--muted);font-weight:500;transition:color .15s}
+.flinks a:hover{color:var(--ink)}
+.fcopy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
+
+
+.city-photo{background:#1f1f1b}
+.city-photo.loading{opacity:0;transition:opacity .4s}
+.city-photo.loaded{opacity:1}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
 
 /* BACK TO TOP */
-.back-to-top{position:fixed;bottom:24px;right:18px;z-index:500;
-  width:40px;height:40px;border-radius:50%;background:var(--green);
-  color:#fff;border:none;font-size:18px;cursor:pointer;
+.btt{position:fixed;right:20px;bottom:20px;z-index:100;
+  width:40px;height:40px;border-radius:50%;
+  background:var(--green);color:#fff;font-size:16px;
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 16px rgba(28,122,84,.35);
-  opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;
-  transform:translateY(8px);-webkit-tap-highlight-color:transparent}
-.back-to-top.visible{opacity:1;pointer-events:auto;transform:none}
+  opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:var(--shadow)}
+.btt.visible{opacity:1;pointer-events:all}
 
-/* CITIES GRID on mobile */
-@media(max-width:900px){
-  .cities-slider-wrap{display:none}
-  .cities-mobile-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .city-mini{background:var(--white);border:1.5px solid var(--g100);border-radius:14px;
-    overflow:hidden;cursor:pointer;transition:border-color .2s;-webkit-tap-highlight-color:transparent}
-  .city-mini:hover{border-color:var(--green-mid)}
-  .city-mini-img{width:100%;height:80px;object-fit:cover;background:linear-gradient(135deg,var(--green-light),var(--g50));
-    display:flex;align-items:center;justify-content:center;font-size:28px}
-  .city-mini-body{padding:10px}
-  .city-mini-name{font-size:13px;font-weight:700;margin-bottom:3px}
-  .city-mini-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;
-    background:var(--bg);color:var(--g500);display:inline-block}
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .sidenav{display:none}
+  .hero-title-wrap{grid-template-columns:1fr 280px}
 }
-@media(min-width:901px){
-  .cities-mobile-grid{display:none}
+@media(max-width:1000px){
+  .hero-title-wrap{grid-template-columns:1fr}
+  .quick-card{width:100%;position:static;max-width:480px}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .visa-grid{grid-template-columns:1fr}
+  .prices-grid{grid-template-columns:repeat(2,1fr)}
+  .budget-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr}
+  .climate-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:640px){
+  .nav-inner{padding:12px 20px}
+  .nav-links{display:none}
+  .hero{padding:24px 20px 0}
+  .main-wrap{padding:0 20px 60px}
+  .mob-tabs{display:block}
+  footer{padding:20px}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .climate-grid{grid-template-columns:repeat(3,1fr)}
+  .country-nav{flex-direction:column}
+  .cnav-card{max-width:100%}
+  .sec-desc{display:none}
+  .sec-header{flex-wrap:wrap}
+  h2.sec-title{font-size:clamp(32px,8vw,48px)}
 }
 
-/* AUTH NAV BUTTONS */
-.auth-login-btn{
-  display:inline-block;padding:9px 20px;
-  background:var(--green);color:#fff !important;
-  border-radius:100px;font-size:14px;font-weight:600;
-  text-decoration:none;transition:background .15s;
-  font-family:'Manrope',sans-serif;
-}
-.auth-login-btn:hover{background:#155a3e}
-.auth-user-btn{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:8px 18px;
-  background:var(--green-light);color:var(--green) !important;
-  border-radius:100px;font-size:14px;font-weight:600;
-  text-decoration:none;transition:background .15s;
-  border:1px solid rgba(28,122,84,.25);
-  font-family:'Manrope',sans-serif;
-}
-.auth-user-btn:hover{background:#c5eadb}
-  .esim-tabs{display:flex;gap:8px;margin-bottom:0}
-  .esim-tab{padding:8px 18px;border-radius:10px;border:1.5px solid var(--g100);background:var(--white);font-size:13px;font-weight:600;color:var(--g300);cursor:pointer;transition:all .15s}
-  .esim-tab.active{border-color:var(--green);background:var(--green-light);color:var(--green)}
-  .esim-pane{display:none}.esim-pane.active{display:block}
+.esim-tabs{display:flex;gap:8px;margin-bottom:0;flex-wrap:wrap}
+.esim-tab{padding:8px 18px;border-radius:10px;border:1.5px solid var(--line);
+  background:var(--paper);font-size:13px;font-weight:600;color:var(--muted);
+  cursor:pointer;transition:all .15s}
+.esim-tab.active{border-color:var(--green);background:var(--green-l);color:var(--green)}
+.esim-pane{display:none}.esim-pane.active{display:block}
 </style>
 </head>
 <body>
 
-<div class="blobs">
+<div class="blobs" aria-hidden="true">
   <div class="blob b1"></div>
   <div class="blob b2"></div>
 </div>
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="index.html">Check<span>The</span>World<span class="dot">.</span></a>
+    <a class="logo" href="index.html">Check<em>The</em>World<span class="dot">.</span></a>
     <div class="nav-links">
       <a href="index.html">Страны</a>
       <a href="#">Сравнить</a>
       <a href="#">Визы</a>
       <a href="#">О проекте</a>
     </div>
-    <div style="display:flex;align-items:center;gap:12px"><div id="nav-auth-btn"></div><a class="back-btn" href="index.html">← Все страны</a></div>
+    <div class="nav-right">
+      <button class="theme-btn" id="theme-btn" title="Переключить тему"></button>
+      <a class="back-btn" href="index.html">← Все страны</a>
+    </div>
   </div>
 </nav>
 
 <!-- MOBILE TABS -->
-<div class="mobile-tabs">
-  <div class="mob-tab" onclick="scrollToSection('visas',this)">🛂 Визы</div>
-  <div class="mob-tab" onclick="scrollToSection('prices',this)">💰 Цены</div>
-  <div class="mob-tab" onclick="scrollToSection('flights',this)">✈️ Билеты</div>
-  <div class="mob-tab" onclick="scrollToSection('cities',this)">🏙 Города</div>
-  <div class="mob-tab" onclick="scrollToSection('tips',this)">💡 Советы</div>
+<div class="mob-tabs">
+  <div class="mob-tabs-inner">
+    <button class="mob-tab active" onclick="scrollToSection('visas',this)">🛂 Визы</button>
+    <button class="mob-tab" onclick="scrollToSection('prices',this)">💰 Цены</button>
+    <button class="mob-tab" onclick="scrollToSection('flights',this)">✈️ Билеты</button>
+    <button class="mob-tab" onclick="scrollToSection('cities',this)">🏙 Города</button>
+    <button class="mob-tab" onclick="scrollToSection('tips',this)">💡 Советы</button>
+    <button class="mob-tab" onclick="scrollToSection('budget',this)">🧮 Бюджет</button>
+    <button class="mob-tab" onclick="scrollToSection('money',this)">💳 Деньги</button>
+    <button class="mob-tab" onclick="scrollToSection('taxes',this)">📊 Налоги</button>
+    <button class="mob-tab" onclick="scrollToSection('transport',this)">🚇 Транспорт</button>
+    <button class="mob-tab" onclick="scrollToSection('internet',this)">📶 Связь</button>
+    <button class="mob-tab" onclick="scrollToSection('medicine',this)">🏥 Медицина</button>
+    <button class="mob-tab" onclick="scrollToSection('rental',this)">🏠 Аренда</button>
+    <button class="mob-tab" onclick="scrollToSection('visarun',this)">🚌 Визаран</button>
+    <button class="mob-tab" onclick="scrollToSection('climate',this)">🌤 Климат</button>
+    <button class="mob-tab" onclick="scrollToSection('safety',this)">🛡 Безопасность</button>
+    <button class="mob-tab" onclick="scrollToSection('coworking',this)">💻 Коворкинги</button>
+    <button class="mob-tab" onclick="scrollToSection('checklist',this)">✅ Чеклист</button>
+  </div>
 </div>
 
 <!-- HERO -->
-<section class="country-hero">
+<section class="hero"><div class="hero-bg-wrap"><div class="hero-bg"><img src="" data-query="Bangkok Thailand aerial night skyline" alt="" referrerpolicy="no-referrer" loading="eager"></div></div>
   <div class="breadcrumb">
     <a href="index.html">Страны</a>
     <span class="breadcrumb-sep">/</span>
@@ -386,277 +610,656 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
     <span>Вьетнам</span>
   </div>
 
-  <div class="hero-grid">
+  <div class="hero-overline">Юго-Восточная Азия · Досье</div>
+
+  <div class="hero-title-wrap">
     <div class="hero-left reveal">
-      <span class="country-flag">🇻🇳</span>
-      <h1 class="country-name">Вьетнам</h1>
-      <div class="country-region">Юго-Восточная Азия · GMT+7 · Донг (VND)</div>
-      <div class="visa-badge-big"><div class="visa-badge-dot"></div>Без визы — 45 дней</div>
+      <h1 class="country-title">Вьет<em>нам</em></h1>
+      <div class="hero-meta-row">
+        <span class="hero-chip"><span class="dot"></span>Вьетнам</span>
+        <span class="hero-chip"><span class="dot"></span>GMT+7</span>
+        <span class="hero-chip"><span class="dot"></span>Донг · VND</span>
+        <span class="hero-chip"><span class="dot"></span>98 млн чел.</span>
+      </div>
+      <div class="visa-badge"><div class="visa-badge-dot"></div>Без визы · 45 дней</div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-lbl">БЮДЖЕТ / ДЕНЬ</div>
-          <div class="hero-stat-val" id="stat-day">~1 900 ₽</div>
+          <div class="stat-lbl">Бюджет / день</div>
+          <div class="stat-val">~1 900 ₽</div>
+          <div class="stat-sub">комфорт</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-lbl">АРЕНДА / МЕС</div>
-          <div class="hero-stat-val" id="stat-rent">~22 000 ₽</div>
+          <div class="stat-lbl">Аренда / мес</div>
+          <div class="stat-val">~28K ₽</div>
+          <div class="stat-sub">1 комн.</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-lbl">КЛИМАТ</div>
-          <div class="hero-stat-val">+30°C</div>
+          <div class="stat-lbl">Климат</div>
+          <div class="stat-val">+28°</div>
+          <div class="stat-sub">средний год</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-lbl">ИНТЕРНЕТ</div>
-          <div class="hero-stat-val">30 Мбит</div>
+          <div class="stat-lbl">Интернет</div>
+          <div class="stat-val">60</div>
+          <div class="stat-sub">Мбит · 4G</div>
         </div>
       </div>
     </div>
 
-    <div class="quick-card reveal delay-1">
-      <div class="qc-title">Быстрые цифры</div>
-      <div class="qc-rows">
-        <div class="qc-row"><span class="qc-label">✈️ Авиабилет из Москвы</span><span class="qc-val">от 42 000 ₽</span></div>
-        <div class="qc-row"><span class="qc-label">🛏 Хостел / ночь</span><span class="qc-val">300–800 ₽</span></div>
-        <div class="qc-row"><span class="qc-label">🏨 Отель 3★ / ночь</span><span class="qc-val">1 500–3 500 ₽</span></div>
-        <div class="qc-row"><span class="qc-label">🏠 Аренда 1 комн. / мес</span><span class="qc-val">14 000–30 000 ₽</span></div>
-        <div class="qc-row"><span class="qc-label">🍜 Обед в кафе</span><span class="qc-val">120–350 ₽</span></div>
-        <div class="qc-row"><span class="qc-label">🚕 Grab по городу</span><span class="qc-val">60–200 ₽</span></div>
+    <div class="quick-card reveal">
+      <div class="qc-header">
+        <div class="qc-title">Быстрые цифры</div>
+        <div class="qc-badge">LIVE · АПР '26</div>
       </div>
-      <div class="qc-divider"></div>
-      <button class="qc-btn" onclick="document.getElementById('flights').scrollIntoView({behavior:'smooth'})">✈️ Найти авиабилеты</button>
-      <button class="qc-btn-secondary" onclick="document.getElementById('housing').scrollIntoView({behavior:'smooth'})">🏠 Найти жильё</button>
+      <div class="qc-row"><span class="qc-label">✈️ Авиабилет из Москвы</span><span class="qc-val">от 28 000 ₽</span></div>
+      <div class="qc-row"><span class="qc-label">🛏 Хостел / ночь</span><span class="qc-val">400–900 ₽</span></div>
+      <div class="qc-row"><span class="qc-label">🏨 Отель 3★ / ночь</span><span class="qc-val">1 500–4 000 ₽</span></div>
+      <div class="qc-row"><span class="qc-label">🏠 Аренда 1 комн. / мес</span><span class="qc-val">15–35К ₽</span></div>
+      <div class="qc-row"><span class="qc-label">🍜 Обед в кафе</span><span class="qc-val">90–300 ₽</span></div>
+      <div class="qc-row"><span class="qc-label">🚕 Такси по городу</span><span class="qc-val">50–200 ₽</span></div>
+      <div class="qc-btns">
+        <button class="qc-btn" onclick="document.getElementById('flights').scrollIntoView({behavior:'smooth'})">✈️ Найти авиабилеты</button>
+        <button class="qc-btn-sec" onclick="document.getElementById('rental').scrollIntoView({behavior:'smooth'})">🏠 Найти жильё</button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTENT -->
-<div class="content">
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
 
-  <!-- VISA -->
-  <div class="section reveal" id="visas">
-    <div class="section-title"><span class="section-emoji">🛂</span> Визовый режим</div>
-    <div class="visa-grid">
-      <div class="visa-card featured" onclick="openVisa('free')" style="cursor:pointer">
-        <div class="vc-type">Рекомендуется · нажми для подробностей</div>
+  <!-- 01 VISAS -->
+  <div id="visas">
+    <div class="sec-header reveal">
+      <span class="sec-num">01</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Визовый <em>режим</em></h2>
+      <span class="sec-desc">Четыре пути въезда. Для большинства — хватит паспорта и TDAC.</span>
+    </div>
+    <div class="visa-grid reveal">
+      <div class="visa-card featured" onclick="openVisa('free')">
+        <div class="vc-type">▶ Рекомендуется</div>
         <div class="vc-name">Безвизовый въезд</div>
-        <div class="vc-desc">С августа 2023 граждане РФ могут находиться до 45 дней. Можно въезжать неограниченное количество раз.</div>
+        <div class="vc-desc">Граждане РФ могут находиться до 60 дней без визы. Никаких документов кроме паспорта и TDAC.</div>
         <div class="vc-tags">
-          <span class="vc-tag green">45 дней</span>
+          <span class="vc-tag green">60 дней</span>
           <span class="vc-tag green">Бесплатно</span>
-          <span class="vc-tag green">Загранпаспорт 6+ мес</span>
+          <span class="vc-tag green">Паспорт РФ</span>
+          <span class="vc-tag amber">TDAC за 3 дня</span>
         </div>
       </div>
-      <div class="visa-card" onclick="openVisa('evisa')" style="cursor:pointer">
-        <div class="vc-type">Электронная виза · нажми для подробностей</div>
-        <div class="vc-name">E-Visa (90 дней)</div>
-        <div class="vc-desc">Оформляется на сайте evisa.xuatnhapcanh.gov.vn за 3 рабочих дня. Однократная или многократная.</div>
+      <div class="visa-card" onclick="openVisa('tr')">
+        <div class="vc-type">Туристическая</div>
+        <div class="vc-name">Tourist Visa (TR)</div>
+        <div class="vc-desc">Оформляется в консульстве. 60 дней с возможностью продления ещё на 30 дней.</div>
         <div class="vc-tags">
-          <span class="vc-tag">90 дней</span>
-          <span class="vc-tag amber">$25</span>
-          <span class="vc-tag green">Онлайн 3 дня</span>
+          <span class="vc-tag">60 дней</span>
+          <span class="vc-tag amber">~$40</span>
+          <span class="vc-tag">+30 за $60</span>
         </div>
       </div>
-      <div class="visa-card" onclick="openVisa('biz')" style="cursor:pointer">
-        <div class="vc-type">Долгосрочно · нажми для подробностей</div>
-        <div class="vc-name">Рабочая виза</div>
-        <div class="vc-desc">Для официального трудоустройства. Работодатель оформляет Work Permit, затем рабочая виза на 2 года.</div>
+      <div class="visa-card" onclick="openVisa('nonimm')">
+        <div class="vc-type">Долгосрочная</div>
+        <div class="vc-name">Non-Immigrant (O)</div>
+        <div class="vc-desc">Для тех кто планирует жить в Тайланде — пенсионеры, работающие, владельцы бизнеса.</div>
         <div class="vc-tags">
-          <span class="vc-tag">1–2 года</span>
-          <span class="vc-tag">Через компанию</span>
+          <span class="vc-tag">1 год</span>
+          <span class="vc-tag amber">~$80</span>
           <span class="vc-tag">Продлевается</span>
         </div>
       </div>
-      <div class="visa-card" onclick="openVisa('money')" style="cursor:pointer">
-        <div class="vc-type">Деньги · нажми для подробностей</div>
-        <div class="vc-name">Карты и наличные</div>
-        <div class="vc-desc">Карты «Мир» принимаются частично. Лучший курс обмена долларов — в ювелирных магазинах (tiệm vàng).</div>
+      <div class="visa-card" onclick="openVisa('ltr')">
+        <div class="vc-type">Для состоятельных</div>
+        <div class="vc-name">Thailand Privilege</div>
+        <div class="vc-desc">Специальная виза на 5–20 лет для обеспеченных пенсионеров, специалистов и инвесторов.</div>
         <div class="vc-tags">
-          <span class="vc-tag amber">«Мир» частично</span>
-          <span class="vc-tag">Наличные рекомендованы</span>
-          <span class="vc-tag green">Ювелирка = курс</span>
+          <span class="vc-tag">5–20 лет</span>
+          <span class="vc-tag amber">от $10 000</span>
+          <span class="vc-tag green">Налоговые льготы</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PRICES -->
-  <div class="section reveal" id="prices">
-    <div class="section-title"><span class="section-emoji">💰</span> Стоимость жизни</div>
-    <div class="currency-switcher">
-      <button class="cur-btn active" onclick="setCurrency('rub',this)">₽ Рубли</button>
-      <button class="cur-btn" onclick="setCurrency('usd',this)">$ Доллары</button>
-      <button class="cur-btn" onclick="setCurrency('eur',this)">€ Евро</button>
-      <button class="cur-btn" onclick="setCurrency('local',this)">🇻🇳 Донги</button>
+  <!-- 02 PRICES -->
+  <div id="prices">
+    <div class="sec-header reveal">
+      <span class="sec-num">02</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Стоимость <em>жизни</em></h2>
+      <span class="sec-desc">Реальные цены в рублях, долларах, евро и батах.</span>
     </div>
-    <div class="prices-grid">
-      <div class="price-card"><div class="pc-icon">🛏</div><div class="pc-cat">Хостел / ночь</div><div class="pc-val" data-rub="300–800 ₽" data-usd="$3–9" data-eur="€3–8" data-local="690–1 840 тыс. VND">300–800 ₽</div><div class="pc-note">Ханой, Хошимин</div></div>
-      <div class="price-card"><div class="pc-icon">🏨</div><div class="pc-cat">Отель 3★ / ночь</div><div class="pc-val" data-rub="1 500–3 500 ₽" data-usd="$16–38" data-eur="€15–35" data-local="3 450–8 050 тыс. VND">1 500–3 500 ₽</div><div class="pc-note">Центр</div></div>
-      <div class="price-card"><div class="pc-icon">🏠</div><div class="pc-cat">Аренда 1 комн. / мес</div><div class="pc-val" data-rub="14 000–30 000 ₽" data-usd="$154–330" data-eur="€141–303" data-local="32 200 тыс. VND+">14 000–30 000 ₽</div><div class="pc-note">Долгосрочная</div></div>
-      <div class="price-card"><div class="pc-icon">🍜</div><div class="pc-cat">Обед в кафе</div><div class="pc-val" data-rub="120–350 ₽" data-usd="$1–4" data-eur="€1–3.5" data-local="276–805 тыс. VND">120–350 ₽</div><div class="pc-note">Фо, бань ми</div></div>
-      <div class="price-card"><div class="pc-icon">🚕</div><div class="pc-cat">Grab по городу</div><div class="pc-val" data-rub="60–200 ₽" data-usd="$0.7–2.2" data-eur="€0.6–2" data-local="138–460 тыс. VND">60–200 ₽</div><div class="pc-note">По городу</div></div>
-      <div class="price-card"><div class="pc-icon">🛵</div><div class="pc-cat">Аренда байка / день</div><div class="pc-val" data-rub="300–600 ₽" data-usd="$3–7" data-eur="€3–6" data-local="690–1 380 тыс. VND">300–600 ₽</div><div class="pc-note">По всей стране</div></div>
-      <div class="price-card"><div class="pc-icon">☕</div><div class="pc-cat">Кофе яичный</div><div class="pc-val" data-rub="60–150 ₽" data-usd="$0.7–1.6" data-eur="€0.6–1.5" data-local="138–345 тыс. VND">60–150 ₽</div><div class="pc-note">Ca phe trung</div></div>
-      <div class="price-card"><div class="pc-icon">🏖</div><div class="pc-cat">Тур на острова</div><div class="pc-val" data-rub="1 500–3 500 ₽" data-usd="$16–38" data-eur="€15–35" data-local="3 450–8 050 тыс. VND">1 500–3 500 ₽</div><div class="pc-note">Халонг, Фукуок</div></div>
-      <div class="price-card"><div class="pc-icon">✈️</div><div class="pc-cat">Авиабилет МСК → Ханой</div><div class="pc-val" data-rub="от 42 000 ₽" data-usd="от $462" data-eur="от €424" data-local="от 96 600 тыс. VND">от 42 000 ₽</div><div class="pc-note">С пересадкой</div></div>
+    <div class="reveal" style="display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
+      <div class="currency-switcher">
+        <button class="cur-btn active" onclick="setCurrency('rub',this)">₽ RUB</button>
+        <button class="cur-btn" onclick="setCurrency('usd',this)">$ USD</button>
+        <button class="cur-btn" onclick="setCurrency('eur',this)">€ EUR</button>
+        <button class="cur-btn" onclick="setCurrency('local',this)">₫ VND</button>
+      </div>
+      <span class="cur-rate">курс: 1 ₽ ≈ 230 VND · апр 2026</span>
+    </div>
+    <div class="prices-grid reveal">
+      <div class="price-card"><div class="pc-icon">🛏</div><div class="pc-cat">Хостел / ночь</div><div class="pc-val" data-rub="730–1 400 ₽" data-usd="$8–$15" data-eur="€7–€14" data-local="300–580 ฿">730–1 400 ₽</div><div class="pc-note">Бангкок, Чиангмай</div></div>
+      <div class="price-card"><div class="pc-icon">🏨</div><div class="pc-cat">Отель 3★ / ночь</div><div class="pc-val" data-rub="2 700–5 500 ₽" data-usd="$29–$60" data-eur="€27–€55" data-local="1 100–2 300 ฿">2 700–5 500 ₽</div><div class="pc-note">Центр города</div></div>
+      <div class="price-card"><div class="pc-icon">🏠</div><div class="pc-cat">Аренда 1 комн. / мес</div><div class="pc-val" data-rub="27 000–55 000 ₽" data-usd="$296–$604" data-eur="€272–€555" data-local="11 000–22 000 ฿">27 000–55 000 ₽</div><div class="pc-note">Долгосрочная аренда</div></div>
+      <div class="price-card"><div class="pc-icon">🍜</div><div class="pc-cat">Обед в кафе</div><div class="pc-val" data-rub="180–450 ₽" data-usd="$1–$4" data-eur="€1–€4" data-local="75–185 ฿">180–450 ₽</div><div class="pc-note">Местная кухня</div></div>
+      <div class="price-card"><div class="pc-icon">🚕</div><div class="pc-cat">Такси / Grab</div><div class="pc-val" data-rub="90–450 ₽" data-usd="$1–$5" data-eur="€1–€4" data-local="37–185 ฿">90–450 ₽</div><div class="pc-note">По городу</div></div>
+      <div class="price-card"><div class="pc-icon">🛵</div><div class="pc-cat">Аренда байка / день</div><div class="pc-val" data-rub="450–900 ₽" data-usd="$4–$9" data-eur="€4–€9" data-local="185–370 ฿">450–900 ₽</div><div class="pc-note">Мотобайк 125cc</div></div>
+      <div class="price-card"><div class="pc-icon">🍺</div><div class="pc-cat">Пиво в баре</div><div class="pc-val" data-rub="180–360 ₽" data-usd="$1–$3" data-eur="€1–€3" data-local="75–148 ฿">180–360 ₽</div><div class="pc-note">Chang, Singha</div></div>
+      <div class="price-card"><div class="pc-icon">💆</div><div class="pc-cat">Тайский массаж / час</div><div class="pc-val" data-rub="360–720 ₽" data-usd="$3–$7" data-eur="€3–€7" data-local="148–296 ฿">360–720 ₽</div><div class="pc-note">Традиционный массаж</div></div>
+      <div class="price-card"><div class="pc-icon">✈️</div><div class="pc-cat">Перелёт внутри страны</div><div class="pc-val" data-rub="2 700–7 200 ₽" data-usd="$29–$79" data-eur="€27–€72" data-local="1 100–2 963 ฿">2 700–7 200 ₽</div><div class="pc-note">AirAsia, Nok Air</div></div>
     </div>
   </div>
 
-  <!-- FLIGHTS -->
-  <div class="section reveal" id="flights">
-    <div class="section-title"><span class="section-emoji">✈️</span> Авиабилеты</div>
-    <div class="partner-block">
+  <!-- 03 FLIGHTS -->
+  <div id="flights">
+    <div class="sec-header reveal">
+      <span class="sec-num">03</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Авиа<em>билеты</em></h2>
+      <span class="sec-desc">Поиск рейсов в реальном времени + компенсация за задержки.</span>
+    </div>
+    <div class="partner-block reveal">
       <div class="pb-header">
-        <div class="pb-title">Найти рейсы во Вьетнам</div>
-        <div class="pb-badge">Реальные цены · Aviasales</div>
+        <div class="pb-title">Найти рейсы в Тайланд</div>
+        <div class="pb-badge">AVIASALES · KIWI</div>
       </div>
       <div class="pb-desc">Актуальные цены на билеты из вашего города — обновляются в реальном времени.</div>
-      <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=BKK&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%231c7a54&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%231c7a54&promo_id=4041&campaign_id=100" charset="utf-8"></script>
-    </div>
-  </div>
-
-  <!-- HOUSING -->
-  <div class="section reveal" id="housing">
-    <div class="section-title"><span class="section-emoji">🏠</span> Жильё</div>
-    <div class="partner-block">
-      <div class="pb-header">
-        <div class="pb-title">Отели и апартаменты в Вьетнаме</div>
-        <div class="pb-badge">Островок</div>
+      <div style="display:flex;gap:8px;margin-bottom:14px">
+        <button class="cur-btn active" onclick="switchFlights('avia',this)">Aviasales</button>
+        <button class="cur-btn" onclick="switchFlights('kiwi',this)">Kiwi.com</button>
       </div>
-      <div class="pb-desc">Более 2,9 млн вариантов размещения по всему миру — отели, хостелы и апартаменты.</div>
-      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%231c7a54&color_button=%231c7a54&color_icons=%231c7a54&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
+      <div id="fl-avia">
+        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=HAN&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%233fbb89&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%233fbb89&promo_id=4041&campaign_id=100" charset="utf-8"></script>
+      </div>
+      <div id="fl-kiwi" style="display:none">
+        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&locale=ru&stops=any&show_hotels=true&powered_by=true&border_radius=15&plain=true&color_button=%233fbb89&color_button_text=%23ffffff&promo_id=3414&campaign_id=111" charset="utf-8"></script>
+      </div>
+    </div>
+    <div class="partner-block reveal">
+      <div class="pb-header">
+        <div class="pb-title">Рейс задержали?</div>
+        <div class="pb-badge amber">До €600 · AIRHELP</div>
+      </div>
+      <div class="pb-desc">Авиакомпания обязана выплатить компенсацию за задержку от 3 часов. AirHelp берёт на себя всю переписку — платишь только если выиграли.</div>
+      <div style="margin-top:14px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&lang=ru&powered_by=true&campaign_id=120&promo_id=8679" charset="utf-8"></script></div>
     </div>
   </div>
 
-  <!-- CITIES -->
-  <div class="section reveal" id="cities">
-    <div class="section-title"><span class="section-emoji">🏙</span> Города и курорты</div>
-    <div class="cities-slider-wrap">
-      <div class="cities-slider" id="citySlider">
-        <div class="city-slide" onclick="openCity('hanoi')">
-          <div class="city-photo-placeholder">🏛</div>
-          <div class="city-slide-body">
-            <div class="city-slide-name">Ханой</div>
-            <div class="city-slide-desc">Тысячелетняя столица с французской архитектурой и лучшим стрит-фудом в стране. Спокойнее Хошимина.</div>
-            <span class="city-slide-tag">🏛 Столица</span>
+  <!-- 04 CITIES -->
+  <div id="cities">
+    <div class="sec-header reveal">
+      <span class="sec-num">04</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Города <em>и курорты</em></h2>
+      <span class="sec-desc">Семь направлений от столицы до тропических островов.</span>
+    </div>
+    <div class="cities-outer reveal">
+      <div class="cities-slider-wrap">
+        <div class="cities-slider" id="citySlider">
+          <div class="city-slide" onclick="openCity('bangkok')">
+            <img class="city-photo loaded" src="" data-query="Bangkok Thailand skyline night" alt="Бангкок" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <div class="city-body"><div class="city-num">01 · СТОЛИЦА</div><div class="city-name">Бангкок</div><div class="city-desc">400+ храмов, небоскрёбы, метро BTS и лучшая уличная еда в мире.</div><span class="city-tag">🌆 Столица</span></div>
           </div>
-        </div>
-        <div class="city-slide" onclick="openCity('hcmc')">
-          <div class="city-photo-placeholder">🌆</div>
-          <div class="city-slide-body">
-            <div class="city-slide-name">Хошимин</div>
-            <div class="city-slide-desc">Самый динамичный город. Небоскрёбы, ночная жизнь и международные компании. Прежнее название — Сайгон.</div>
-            <span class="city-slide-tag">🌆 Сайгон</span>
+          <div class="city-slide" onclick="openCity('phuket')">
+            <img class="city-photo loaded" src="" data-query="Phuket Thailand beach longtail boats" alt="Пхукет" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <div class="city-body"><div class="city-num">02 · ОСТРОВ</div><div class="city-name">Пхукет</div><div class="city-desc">Главный курорт с белоснежными пляжами. Патонг — тусовки, Камала — спокойный отдых.</div><span class="city-tag">🌴 Курорт</span></div>
           </div>
-        </div>
-        <div class="city-slide" onclick="openCity('danang')">
-          <div class="city-photo-placeholder">🌊</div>
-          <div class="city-slide-body">
-            <div class="city-slide-name">Дананг</div>
-            <div class="city-slide-desc">Современный пляжный город. Пляж Ми Кхе — один из лучших в Азии. База для поездок в Хой Ан.</div>
-            <span class="city-slide-tag">🌊 Пляж</span>
+          <div class="city-slide" onclick="openCity('chiangmai')">
+            <img class="city-photo loaded" src="" data-query="Chiang Mai Thailand Doi Suthep temple" alt="Чиангмай" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <div class="city-body"><div class="city-num">03 · СЕВЕР</div><div class="city-name">Чиангмай</div><div class="city-desc">Культурная столица. Дешевле Бангкока, огромное сообщество цифровых кочевников.</div><span class="city-tag">💻 Для кочевников</span></div>
           </div>
-        </div>
-        <div class="city-slide" onclick="openCity('halong')">
-          <div class="city-photo-placeholder">⛵</div>
-          <div class="city-slide-body">
-            <div class="city-slide-name">Халонг</div>
-            <div class="city-slide-desc">1 600+ известняковых островов — объект ЮНЕСКО. Круиз на джонке — must-do во Вьетнаме.</div>
-            <span class="city-slide-tag">⛵ Острова</span>
+          <div class="city-slide" onclick="openCity('pattaya')">
+            <img class="city-photo loaded" src="" data-query="Pattaya Thailand beach" alt="Паттайя" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <div class="city-body"><div class="city-num">04 · ЗАЛИВ</div><div class="city-name">Паттайя</div><div class="city-desc">2 часа от Бангкока. Плавучие рынки, парки развлечений и активная ночная жизнь.</div><span class="city-tag">🎡 Развлечения</span></div>
+          </div>
+          <div class="city-slide" onclick="openCity('samui')">
+            <img class="city-photo loaded" src="" data-query="Ko Samui Thailand tropical beach" alt="Ко Самуи" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <div class="city-body"><div class="city-num">05 · ОСТРОВ</div><div class="city-name">Ко Самуи</div><div class="city-desc">Роскошный остров в Сиамском заливе. Виллы, яхты и спокойные бухты.</div><span class="city-tag">🏝 Роскошь</span></div>
+          </div>
+          <div class="city-slide" onclick="openCity('krabi')">
+            <img class="city-photo loaded" src="" data-query="Krabi Thailand limestone cliffs sea" alt="Краби" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <div class="city-body"><div class="city-num">06 · ЮГО-ЗАПАД</div><div class="city-name">Краби</div><div class="city-desc">Известняковые скалы, острова Пхи-Пхи и бирюзовое море. Рай для дайверов.</div><span class="city-tag">⛰ Природа</span></div>
+          </div>
+          <div class="city-slide" onclick="openCity('kophangan')">
+            <img class="city-photo loaded" src="" data-query="Ko Phangan Thailand beach sunset" alt="Ко Панган" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
+            <div class="city-body"><div class="city-num">07 · ОСТРОВ</div><div class="city-name">Ко Панган</div><div class="city-desc">Full Moon Party — крупнейшая пляжная вечеринка в мире (10–30 тыс. чел.).</div><span class="city-tag">🌙 Вечеринки</span></div>
           </div>
         </div>
       </div>
       <div class="slider-nav">
-        <div class="slider-arrow" onclick="slideCity(-1)">←</div>
-        <div class="slider-arrow" onclick="slideCity(1)">→</div>
+        <button class="slider-btn" onclick="slideCity(-1)">←</button>
+        <button class="slider-btn" onclick="slideCity(1)">→</button>
       </div>
     </div>
   </div>
 
-  <!-- TIPS -->
-  <div class="section reveal" id="tips">
-    <div class="section-title"><span class="section-emoji">💡</span> Полезные советы</div>
-    <div class="tips-list">
-      <div class="tip-item">
-        <span class="tip-icon">🛵</span>
-        <div class="tip-text"><strong>Байк — главный транспорт</strong>. Аренда скутера 300–600 ₽ в день. Grab удобнее в городах — цены видны сразу, дешевле такси и безопаснее мотобайков незнакомцев.</div>
-      </div>
-      <div class="tip-item">
-        <span class="tip-icon">💰</span>
-        <div class="tip-text"><strong>Донги везде</strong> — наличная экономика. 1 000 000 VND ≈ 3 700 ₽. Лучший курс обмена долларов — в ювелирных магазинах (tiệm vàng). Не меняй в аэропорту.</div>
-      </div>
-      <div class="tip-item">
-        <span class="tip-icon">🌡</span>
-        <div class="tip-text"><strong>Климат разный</strong>: север (Ханой) холодный зимой (+15°C), юг (Хошимин) тёплый круглый год. Да Нанг хорош почти весь год — и пляж, и экскурсии рядом.</div>
-      </div>
-      <div class="tip-item">
-        <span class="tip-icon">🍜</span>
-        <div class="tip-text"><strong>Обязательно попробовать</strong> — фо бо (говяжий суп), бань ми (сэндвич), ком там, яичный кофе ca phe trung в Ханое. Уличная еда стоит 60–150 ₽ за блюдо.</div>
-      </div>
-      <div class="tip-item">
-        <span class="tip-icon">📱</span>
-        <div class="tip-text"><strong>SIM-карта</strong> — Viettel, Mobifone или Vietnamobile в аэропорту. Стоит ~200–300 ₽ на 30 дней с безлимитным интернетом. Grab работает через локальный номер.</div>
-      </div>
-      <div class="tip-item">
-        <span class="tip-icon">🌏</span>
-        <div class="tip-text"><strong>Визаран</strong> — после 45 дней выедь в Камбоджу, Лаос или Таиланд (минимум на 1 день) и вернись. Счётчик обнуляется. Популярный маршрут — Хошимин → Пномпень → обратно.</div>
-      </div>
+    <!-- 05 TIPS -->
+  <div id="tips">
+    <div class="sec-header reveal">
+      <span class="sec-num">05</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Полезные <em>советы</em></h2>
+      <span class="sec-desc">8 вещей о которых никто не расскажет в турагентстве.</span>
+    </div>
+    <div class="tips-grid reveal">
+      <div class="tip-card"><span class="tip-num">01</span><div><div class="tip-title">TDAC — заполнить за 3 дня до вылета</div><div class="tip-text">С 1 мая 2025 года обязательная электронная карта прибытия для всех въезжающих. Сайт: tdac.immigration.go.th. Занимает 5 минут, бесплатно. Бумажные карточки TM6 больше не выдают. Без TDAC могут не посадить на самолёт.</div></div></div>
+      <div class="tip-card"><span class="tip-num">02</span><div><div class="tip-title">Страховка с лимитом от $50 000</div><div class="tip-text">Медицина платная и дорогая. Обычный лимит $30 000 заканчивается за неделю при серьёзной травме. Посольство РФ рекомендует $100 000. Проверьте что страховка покрывает мотоцикл — большинство дешёвых полисов это исключают.</div></div></div>
+      <div class="tip-card"><span class="tip-num">03</span><div><div class="tip-title">Везите доллары, не рубли</div><div class="tip-text">Рубли меняют с потерей до 25%. Доллары и евро — везде по нормальному курсу. Лучшие обменники: SuperRich (зелёный, не оранжевый), Vasu Exchange в торговых центрах. Снимайте в банкоматах крупными суммами — комиссия 220 бат за операцию.</div></div></div>
+      <div class="tip-card"><span class="tip-num">04</span><div><div class="tip-title">Сезоны важны и различаются по регионам</div><div class="tip-text">Пхукет (запад): лучшее время ноябрь–апрель, дожди май–октябрь. Паттайя и Самуи (восток): сухой сезон наоборот — апрель–октябрь. В сезон дождей отели дешевле на 30–50%, но бывают ливни.</div></div></div>
+      <div class="tip-card"><span class="tip-num">05</span><div><div class="tip-title">Байк — только с правами и в шлеме</div><div class="tip-text">Без прав категории А вы не застрахованы при ДТП. Полиция периодически проводит рейды особенно на Пхукете. Штраф — 500 бат, но при ДТП без прав все расходы на лечение ложатся на вас лично.</div></div></div>
+      <div class="tip-card"><span class="tip-num">06</span><div><div class="tip-title">Дресс-код в храмах</div><div class="tip-text">Закрытые плечи и колени обязательны в любом буддийском храме. У входа в крупные храмы (Большой Дворец, Ват Пхо) всегда есть прокат саронгов. В шортах или майке не пустят.</div></div></div>
+      <div class="tip-card"><span class="tip-num">07</span><div><div class="tip-title">Приложения которые нужны</div><div class="tip-text">Grab (такси, еда), Bolt (альтернатива Grab), Google Maps, Bangkok MRT/BTS (расписание метро), XE Currency (курс валют), Airbnb/Booking. В Grab российскую карту не привяжешь — платите наличными.</div></div></div>
+      <div class="tip-card"><span class="tip-num">08</span><div><div class="tip-title">Не превышайте 179 дней</div><div class="tip-text">180+ дней в году = налоговое резидентство Тайланда + обязанность декларировать иностранные доходы. Для зимовщиков оптимально: приехать в ноябре, уехать до конца апреля — это ~180 дней, можно чуть сократить.</div></div></div>
     </div>
   </div>
 
-  <!-- SIM AND INSURANCE -->
-  <div class="section reveal">
-    <div class="section-title"><span class="section-emoji">📱</span> SIM-карта и страховка</div>
-    <div class="partner-block">
+<!-- 06 BUDGET -->
+  <div id="budget">
+    <div class="sec-header reveal">
+      <span class="sec-num">06</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Реальный <em>бюджет</em> на месяц</h2>
+      <span class="sec-desc">Три уровня жизни — от эконом до комфорт+.</span>
+    </div>
+    <div class="budget-grid reveal">
+      <div class="budget-card">
+        <div class="bc-label">≈ Эконом</div>
+        <div class="bc-total">~50 000 ₽</div>
+        <div class="bc-usd">$600 · 16 000 ฿</div>
+        <div class="bc-row"><span>Жильё (комн./хостел)</span><span>8–12K ฿</span></div>
+        <div class="bc-row"><span>Еда (рынки, стрит-фуд)</span><span>5–7K ฿</span></div>
+        <div class="bc-row"><span>Транспорт (авт./байк)</span><span>2–3K ฿</span></div>
+        <div class="bc-row"><span>Связь (SIM)</span><span>300–500 ฿</span></div>
+        <div class="bc-row"><span>Развлечения</span><span>1–2K ฿</span></div>
+        <div class="bc-note">Чиангмай, без алкоголя, своя готовка</div>
+      </div>
+      <div class="budget-card highlight">
+        <div class="bc-label">★ Комфорт</div>
+        <div class="bc-total">~100 000 ₽</div>
+        <div class="bc-usd">$1 100 · 33 000 ฿</div>
+        <div class="bc-row"><span>Жильё (студия/апарт)</span><span>15–22K ฿</span></div>
+        <div class="bc-row"><span>Еда (кафе + готовка)</span><span>8–12K ฿</span></div>
+        <div class="bc-row"><span>Транспорт (Grab + байк)</span><span>3–5K ฿</span></div>
+        <div class="bc-row"><span>Коворкинг</span><span>2.5–4K ฿</span></div>
+        <div class="bc-row"><span>Развлечения + misc</span><span>3–5K ฿</span></div>
+        <div class="bc-note">Бангкок или Чиангмай, средний образ жизни</div>
+      </div>
+      <div class="budget-card warm">
+        <div class="bc-label">★★ Комфорт+</div>
+        <div class="bc-total">~180 000 ₽</div>
+        <div class="bc-usd">$2 000 · 60 000 ฿</div>
+        <div class="bc-row"><span>Жильё (1 комн. у моря)</span><span>25–50K ฿</span></div>
+        <div class="bc-row"><span>Еда (рестораны)</span><span>12–18K ฿</span></div>
+        <div class="bc-row"><span>Транспорт (авто/Grab)</span><span>5–10K ฿</span></div>
+        <div class="bc-row"><span>Спорт, здоровье, спа</span><span>3–6K ฿</span></div>
+        <div class="bc-row"><span>Экскурсии, поездки</span><span>5–10K ฿</span></div>
+        <div class="bc-note">Пхукет или Самуи, активный образ жизни</div>
+      </div>
+    </div>
+    <div class="alert amber reveal" style="margin-top:12px">
+      <strong>Актуальный курс (апрель 2026):</strong> 1 бат ≈ 2.43 ₽. Обменники в торговых центрах дают курс лучше аэропортового на 15–20%. Рубли меняют по невыгодному курсу — лучше везти доллары или евро.
+    </div>
+  </div>
+
+  <!-- 07 MONEY -->
+  <div id="money">
+    <div class="sec-header reveal">
+      <span class="sec-num">07</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Деньги, <em>карты</em> и банки</h2>
+      <span class="sec-desc">Как платить в Тайланде россиянам в 2026 году — без фантазий.</span>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Как платить в Тайланде россиянам</div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">UnionPay (лучший вариант)</div><div class="info-row-text">Карты UnionPay от российских банков (Газпромбанк, Россельхозбанк, МКБ) работают в большинстве банкоматов — SCB, Bangkok Bank, Kasikorn, LH Bank. Снятие: комиссия 220 бат (~540 ₽) — снимайте сразу крупную сумму.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Наличные доллары / евро</div><div class="info-row-text">Самый надёжный способ. Меняйте в обменниках торговых центров (SuperRich, Vasu, Max Money) — курс лучше аэропортового на 10–20%. Никогда не меняйте в аэропорту.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Рубли — не везите</div><div class="info-row-text">Обменять рубли на баты можно, но теряешь до 25% на курсе. Везите доллары или евро — это стандартная валюта для обмена.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💡</span><div><div class="info-row-title">Переводы из России</div><div class="info-row-text">SWIFT через нейтральные банки (армянские, казахские, грузинские), криптовалюта (USDT → обменник), Western Union через Казахстан. Прямые SWIFT из РФ работают только через незаблокированные банки.</div></div></div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Открытие банковского счёта</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px">Нужен для долгосрочного проживания — платить аренду, коммуналку, получать переводы. Открыть счёт с безвизовым штампом сложно, большинство банков требует долгосрочную визу.</div>
+      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Bangkok Bank <span style="color:var(--amber);font-size:11px;margin-left:6px">ЛОЯЛЬНЫЙ</span></div><div class="info-row-text">Единственный банк который <strong>иногда</strong> открывает счёт без долгосрочной визы — зависит от отделения. Минимальный депозит — 500 бат.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Kasikorn Bank (KBank) <span style="color:var(--green);font-size:11px;margin-left:6px">НАДЁЖНО</span></div><div class="info-row-text">Требует долгосрочную визу + депозит ~$400 (возвращают). Удобное мобильное приложение.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Krungthai Bank</div><div class="info-row-text">Государственный банк, разветвлённая сеть банкоматов. Требует паспорт, иногда адрес в Тайланде.</div></div></div>
+      <div class="alert amber" style="margin-top:12px"><strong>Совет:</strong> если в одном отделении отказали — идите в другое. Возьмите: загранпаспорт, деньги на депозит, тайскую SIM-карту и контракт аренды.</div>
+    </div>
+  </div>
+
+  <!-- 08 TAXES -->
+  <div id="taxes">
+    <div class="sec-header reveal">
+      <span class="sec-num">08</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Налоговое <em>резидентство</em></h2>
+      <span class="sec-desc">Одна из важнейших тем для долгосрочников.</span>
+    </div>
+    <div class="info-block reveal">
+      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">С 2024 года правила изменились — теперь они касаются практически всех кто проводит в стране больше полугода.</div>
+      <div class="alert amber"><strong>⚠️ 180 дней = налоговый резидент</strong><br>Если провёл в Тайланде 180+ дней в календарном году — ты налоговый резидент. Счётчик обнуляется 1 января каждого года.</div>
+      <div class="info-block-title" style="margin-top:16px">Что изменилось с 2024 года</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px">До 2024: иностранный доход облагался налогом только если переводился в тот же год. После 2024: любой иностранный доход, переведённый в Тайланд, потенциально облагается налогом. Льготный период на 2 года для доходов 2024–2025.</div>
+      <div class="info-block-title">Ставки подоходного налога (PIT)</div>
+      <table class="tax-table">
+        <tr><td>до 150 000 ฿/год</td><td>0%</td></tr>
+        <tr><td>150 001 — 300 000 ฿</td><td>5%</td></tr>
+        <tr><td>300 001 — 500 000 ฿</td><td>10%</td></tr>
+        <tr><td>500 001 — 750 000 ฿</td><td>15%</td></tr>
+        <tr><td>свыше 5 000 000 ฿</td><td>35%</td></tr>
+      </table>
+      <div class="alert green" style="margin-top:14px"><strong>✅ Если ты нерезидент:</strong> проводишь меньше 180 дней — тайские налоги тебя не касаются. Оптимальная стратегия для зимовщиков — не превышать 179 дней.</div>
+      <div style="margin-top:12px;font-size:11.5px;color:var(--faint);font-style:italic">Налоговое законодательство меняется. Перед принятием решений проконсультируйтесь с налоговым консультантом.</div>
+    </div>
+  </div>
+
+    <!-- 09 TRANSPORT -->
+  <div id="transport">
+    <div class="sec-header reveal">
+      <span class="sec-num">09</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Транс<em>порт</em></h2>
+      <span class="sec-desc">От метро до байка — как передвигаться по стране.</span>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-row"><span class="info-row-icon">🚇</span><div><div class="info-row-title">Метро в Бангкоке — BTS Skytrain + MRT</div><div class="info-row-text">Самый быстрый способ передвижения по столице. BTS (надземное) + MRT (подземное) вместе покрывают большинство туристических и деловых районов. Стоимость: 15–60 бат в зависимости от расстояния. Дневной проездной BTS — 140 бат. Работает 06:00–00:00. Пробки в Бангкоке жуткие — в часы пик метро экономит 30–60 минут.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Grab — главное приложение такси</div><div class="info-row-text">Аналог Яндекс.Такси для ЮВА. Фиксированная цена до посадки. GrabCar по центру Бангкока — 80–120 бат, из аэропорта Суварнабхуми в центр — 350–450 бат. GrabBike (мотоцикл) — 40–70 бат по городу.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Привязать российскую карту к Grab нельзя</div><div class="info-row-text">Даже UnionPay. Платите наличными или попросите водителя принять перевод.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🛵</span><div><div class="info-row-title">Аренда байка — главный транспорт на островах</div><div class="info-row-text">На Пхукете, Самуи, Краби и в Паттайе байк — основной транспорт. Аренда: 250–350 бат в день, 5 000–8 000 бат в месяц. Нужны права категории А. Без прав — технически незаконно и не покрывается страховкой при ДТП. Лёгкое падение с байка обходится в $3 000–7 000 без страховки. Всегда надевайте шлем.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Перелёты внутри страны</div><div class="info-row-text">AirAsia и Nok Air — основные лоукостеры. Бангкок→Пхукет: от 800–2 000 бат при заблаговременной покупке. Бангкок→Чиангмай: от 700 бат. Паром Сурат Тани→Самуи: ~300 бат + автобус из Бангкока ~500 бат. Часто паром + автобус дешевле прямого рейса на Самуи (Bangkok Airways там монополист и цены высокие).</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚍</span><div><div class="info-row-title">Автобусы и поезда между городами</div><div class="info-row-text">Бангкок→Паттайя: автобус от Восточного автовокзала, ~130 бат, 2–3 часа. Бангкок→Чиангмай: поезд 2-й класс с кондиционером — 331–531 бат, ночной вагон со спальными местами. Ночной поезд удобен — экономит на отеле и ночной перелёт не нужен.</div></div></div>
+    </div>
+  </div>
+
+  <!-- 10 INTERNET -->
+  <div id="internet">
+    <div class="sec-header reveal">
+      <span class="sec-num">10</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Интернет <em>и связь</em></h2>
+      <span class="sec-desc">4G/5G везде в городах. Три способа оставаться онлайн.</span>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">eSIM — лучший вариант <span style="background:var(--green-l);color:var(--green);font-size:10px;padding:2px 8px;border-radius:100px;margin-left:6px">Рекомендуем</span></div><div class="info-row-text">Покупаешь онлайн до вылета (Yesim, Airalo), активируешь по QR-коду — интернет работает с момента приземления. Yesim принимает карту МИР. Цена: ~$7–15 на 30 дней безлимит.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💳</span><div><div class="info-row-title">Местная SIM-карта</div><div class="info-row-text">Покупается в аэропорту или 7-Eleven. Нужен паспорт.<br><br>
+        <strong>AIS</strong> — лучшее покрытие 4G/5G · от 299 ฿/30 дней<br>
+        <strong>True-dtac</strong> — AIS + DTAC объединились · от 199 ฿/30 дней<br><br>
+        ⚠️ True-dtac SIM через 60–90 дней может отключиться — нужно продлевать через приложение.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">Домашний интернет (для долгосрочных)</div><div class="info-row-text">Проводной интернет FTTB от 580 бат/мес (~1 400 ₽). Коворкинги в Чиангмае: 80–150 бат/день, скорость 100–200 Мбит/с. Бангкок: крупные коворкинги типа WeWork — от 400 бат/день.</div></div></div>
+    </div>
+    <div class="partner-block reveal">
       <div class="pb-header">
-        <div class="pb-title">eSIM для Вьетнама</div>
+        <div class="pb-title">eSIM для Тайланда</div>
         <div class="pb-badge">Yesim · Airalo</div>
       </div>
-      <div class="pb-desc">Купи eSIM заранее — интернет заработает сразу после приземления. Не нужно искать SIM-карту в аэропорту.</div>
+      <div class="pb-desc">Купи до вылета — интернет заработает сразу после приземления. Yesim принимает карту МИР.</div>
       <div class="esim-tabs" style="margin-top:16px">
-        <button class="esim-tab active" onclick="switchEsim('vietnam','yesim',this)">Yesim — 18% кэшбэк</button>
-        <button class="esim-tab" onclick="switchEsim('vietnam','airalo',this)">Airalo</button>
+        <button class="esim-tab active" onclick="switchEsim('thailand','yesim',this)">Yesim — 18% кэшбэк</button>
+        <button class="esim-tab" onclick="switchEsim('thailand','airalo',this)">Airalo</button>
       </div>
-      <div id="esim-yesim-vietnam" class="esim-pane active">
+      <div id="esim-yesim-thailand" class="esim-pane active" style="margin-top:12px">
         <button class="pb-btn" onclick="window.open('https://yesim.tpm.li/QvCwa9aD?erid=2Vtzqx3rbkr&sub_id=vietnam','_blank')">Купить eSIM на Yesim →</button>
       </div>
-      <div id="esim-airalo-vietnam" class="esim-pane">
-        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&color_button=%231c7a54&color_focused=%231c7a54&secondary=%23FAF8F2&dark=%2311100f&light=%23FFFFFFff&special=%231c7a54&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
+      <div id="esim-airalo-thailand" class="esim-pane" style="margin-top:12px">
+        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&color_button=%233fbb89&color_focused=%233fbb89&secondary=%23FAF8F2&dark=%2311100f&light=%23FFFFFFff&special=%233fbb89&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
       </div>
-    </div>
-    <div class="partner-block">
-      <div class="pb-header">
-        <div class="pb-title">Туристическая страховка</div>
-        <div class="pb-badge">Cherehapa</div>
-      </div>
-      <div class="pb-desc">Сравни страховки от 15+ компаний и выбери лучшую. Оформление за 5 минут онлайн.</div>
-      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&countryGroups=all-world&medicine=30000&powered_by=true&promo_id=2458&campaign_id=24" charset="utf-8" async></script></div>
     </div>
   </div>
 
-  <!-- COUNTRY NAVIGATION -->
-  <div class="country-nav reveal">
-        <a class="cnav-card" href="armenia.html">
-      <span class="cnav-flag">🇦🇲</span>
-      <div>
-        <div class="cnav-label">Предыдущая страна</div>
-        <div class="cnav-name">Армения</div>
+  <!-- 11 MEDICINE -->
+  <div id="medicine">
+    <div class="sec-header reveal">
+      <span class="sec-num">11</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Меди<em>цина</em></h2>
+      <span class="sec-desc">Страховка обязательна. Без неё одна госпитализация — сотни тысяч рублей.</span>
+    </div>
+    <div class="info-block reveal">
+      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">Медицина в Тайланде для иностранцев — платная и одна из самых дорогих в ЮВА. Качество в частных госпиталях высокое — часто лучше, чем в России. Без страховки одна госпитализация может стоить сотни тысяч рублей.</div>
+      <div class="info-block-title">Реальные цены без страховки</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
+        <div class="price-card"><div class="pc-cat">Приём врача (частная клиника)</div><div class="pc-val">800–2 000 ฿</div></div>
+        <div class="price-card"><div class="pc-cat">Сутки в палате госпиталя</div><div class="pc-val">3 000–8 000 ฿</div></div>
+        <div class="price-card"><div class="pc-cat">Сутки в реанимации</div><div class="pc-val">от $2 000–3 000</div></div>
+        <div class="price-card"><div class="pc-cat">Лёгкое ДТП на байке</div><div class="pc-val">$3 000–7 000</div></div>
       </div>
+      <div class="info-block-title">Лучшие частные госпитали</div>
+      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Bumrungrad (Бангкок)</div><div class="info-row-text">Международный уровень, русскоязычные врачи, принимают российские страховки. Топовый выбор для сложных случаев.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Bangkok Hospital (сеть по всей стране)</div><div class="info-row-text">Разветвлённая сеть на Пхукете, Самуи, Паттайе, Чиангмае. Надёжно везде.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Samitivej</div><div class="info-row-text">Сильная педиатрия, популярен у семей с детьми.</div></div></div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Что нужно знать про страховку</div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Минимум $100 000 покрытия</div><div class="info-row-text">Посольство РФ рекомендует именно этот лимит. Стандартный $30 000 может закончиться за неделю при серьёзной травме. Cherehapa позволяет сравнить 15+ компаний и выбрать с покрытием $50 000–100 000 за разумные деньги (~$40–80/месяц).</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Страховка должна покрывать мотоцикл</div><div class="info-row-text">Многие дешёвые полисы исключают занятия на мотоцикле. Проверьте этот пункт отдельно перед покупкой.</div></div></div>
+      <div style="margin-top:14px">
+        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&countryGroups=all-world&medicine=30000&powered_by=true&promo_id=2458&campaign_id=24" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12 RENTAL -->
+  <div id="rental">
+    <div class="sec-header reveal">
+      <span class="sec-num">12</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Аренда <em>жилья</em></h2>
+      <span class="sec-desc">Реальный алгоритм без рекламы агентств.</span>
+    </div>
+    <div class="info-block reveal">
+      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">Самый больной вопрос для всех кто едет надолго. Здесь — не реклама агентств, а реальный алгоритм как снять квартиру без переплаты и не потерять депозит.</div>
+      <div class="info-block-title">Где искать жильё</div>
+      <div class="info-row green"><span class="info-row-icon">🏆</span><div><div class="info-row-title">DDproperty.com <span style="background:var(--green-l);color:var(--green);font-size:10px;padding:2px 8px;border-radius:100px;margin-left:6px">Лучший</span></div><div class="info-row-text">Главный сайт аренды в Тайланде. Большая база, фото, карта, цены без посредников. Есть фильтр по районам, бюджету, типу жилья. Много объявлений от собственников напрямую.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">FazWaz.ru / FazWaz.com</div><div class="info-row-text">Русскоязычный интерфейс. Большая база по всем регионам Тайланда. Есть агентская поддержка на русском языке — полезно если не хочешь разбираться самостоятельно.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">👥</span><div><div class="info-row-title">Facebook-группы</div><div class="info-row-text">«Аренда Пхукет русские», «Bangkok expats housing», «Chiang Mai rentals». Там часто сдают сами хозяева без комиссии агентства. Можно найти жильё на 20–30% дешевле чем на сайтах.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💬</span><div><div class="info-row-title">Telegram-чаты русскоязычных</div><div class="info-row-text">«Русские на Пхукете», «Бангкок наши» и аналогичные — там регулярно пишут «сдам/ищу жильё». Часто самые живые предложения именно там.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Airbnb / Booking — для первых 2–4 недель</div><div class="info-row-text">Дороже чем долгосрочная аренда, но удобно на старте пока ищешь постоянное жильё. Краткосрочная аренда стоит в 2–3 раза дороже долгосрочного контракта за то же место.</div></div></div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Кондо vs апартаменты — в чём разница</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px">
+        <div class="budget-card">
+          <div class="bc-label">Кондоминиум (кондо)</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.6">Жилой комплекс с бассейном, фитнесом, охраной. Каждая квартира — отдельный собственник. Лучше отделка, выше цена. Стандарт для экспатов.</div>
+        </div>
+        <div class="budget-card">
+          <div class="bc-label">Апартаменты</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.6">Один владелец — весь дом. Проще, дешевле, меньше инфраструктуры. Подходит для бюджетного варианта. Часто без бассейна.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Алгоритм аренды — шаг за шагом</div>
+      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">1</span><div><div class="info-row-title">Первые 2 недели живи в отеле/Airbnb</div><div class="info-row-text">Не торопись снимать долгосрочно до приезда. Посмотри район вживую, почувствуй расстояния.</div></div></div>
+      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">2</span><div><div class="info-row-title">Найди 5–10 вариантов, запроси цену за 3, 6 и 12 месяцев</div><div class="info-row-text">Долгосрочный контракт обычно на 20–30% дешевле.</div></div></div>
+      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">3</span><div><div class="info-row-title">Осмотри лично — не бронируй по фотографиям</div><div class="info-row-text">Проверь: работает ли кондиционер, давление воды, скорость интернета (попроси включить Wi-Fi).</div></div></div>
+      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">4</span><div><div class="info-row-title">Уточни что включено в цену</div><div class="info-row-text">Электричество, вода, интернет, уборка. Электричество в Тайланде дорогое (5–6 бат/кВт·ч), кондиционер добавляет 1 500–3 000 бат/мес к счёту.</div></div></div>
+      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">5</span><div><div class="info-row-title">Подпиши договор на английском</div><div class="info-row-text">Стандарт: депозит 1–2 месяца + первый месяц вперёд. В договоре: условия возврата депозита, кто платит за ремонт, условия досрочного расторжения.</div></div></div>
+      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">6</span><div><div class="info-row-title">Сфотографируй всё при заезде</div><div class="info-row-text">Каждую царапину, каждый дефект. Отправь фото арендодателю в мессенджер — это твоя защита при выезде когда будут говорить «это ты сломал».</div></div></div>
+      <div class="alert amber" style="margin-top:12px">
+        <strong>⚠️ Типичные ошибки которые стоят денег:</strong><br>
+        🚫 Платить без договора — самый прямой путь к потере депозита.<br>
+        🚫 Не проверять тариф на электричество — некоторые выставляют 8–10 бат/кВт·ч вместо государственных 5–6 бат.<br>
+        🚫 Снимать на Пхукете в сезон дождей долгосрочно — если уедешь раньше срока, депозит не вернут.<br>
+        🚫 Переводить предоплату незнакомым людям без договора — мошенничество с арендой существует.
+      </div>
+    </div>
+    <div class="partner-block reveal" style="margin-top:12px">
+      <div class="pb-header">
+        <div class="pb-title">Найти жильё на Островок</div>
+        <div class="pb-badge">2.9 млн вариантов</div>
+      </div>
+      <div class="pb-desc">Отели, хостелы и апартаменты в Тайланде — для первых недель пока ищешь долгосрочную аренду.</div>
+      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%233fbb89&color_button=%233fbb89&color_icons=%233fbb89&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
+    </div>
+  </div>
+
+<!-- 13 VISARUN -->
+  <div id="visarun">
+    <div class="sec-header reveal">
+      <span class="sec-num">13</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Визаран <em>и бордерран</em></h2>
+      <span class="sec-desc">Актуальные правила 2026.</span>
+    </div>
+    <div class="alert amber reveal"><strong>Важно:</strong> правила ужесточились с ноября 2025 года. Тайская иммиграция всерьёз взялась за тех кто живёт годами по штампам. Читай внимательно.</div>
+
+    <div class="info-block reveal" style="margin-top:12px">
+      <div class="info-block-title">Бордерран vs Визаран — в чём разница</div>
+      <div class="info-row green"><span class="info-row-icon">🚶</span><div><div class="info-row-title">Бордерран (border run)</div><div class="info-row-text">Выехал из Таиланда → побыл 5 минут в соседней стране → вернулся. Получаешь новый 60-дневный штамп. Виза не нужна. Занимает 1 день.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🛂</span><div><div class="info-row-title">Визаран (visa run)</div><div class="info-row-text">Едешь в соседнюю страну чтобы подать заявку на тайскую Tourist Visa (TR) в консульстве. Занимает 2–3 дня. Нужен при третьем въезде за год.</div></div></div>
+    </div>
+
+    <div class="info-block reveal">
+      <div class="info-block-title">Новые ограничения с ноября 2025</div>
+      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Лимит 2 бордеррана в год через наземную границу</div><div class="info-row-text">Через наземные КПП разрешено не более 2 безвизовых въездов в год. После двух — иммиграция может отказать во въезде.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Штамп с наземной границы — без продления</div><div class="info-row-text">Нельзя продлить на 30 дней в иммиграционном офисе. Сколько дали на границе — столько и живёшь.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Авиаперелёт — без ограничений</div><div class="info-row-text">Въезд через аэропорт не ограничен. Штамп можно продлить на 30 дней за 1 900 бат.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">👁</span><div><div class="info-row-title">Усиленные проверки при частых въездах</div><div class="info-row-text">Могут попросить обратный билет, подтверждение жилья и 20 000 бат наличными на человека.</div></div></div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Популярные маршруты бордеррана</div>
+      <div class="info-row"><span class="info-row-icon">🇲🇾</span><div><div class="info-row-title">С Пхукета → Малайзия (Сатун/Хат Яй) · 6–8 ч</div><div class="info-row-text">Самый популярный маршрут с юга. Организованные туры от 1 500–2 500 бат. Малайзия лояльна к транзитным визитам. Граница Садао–Паданг Бесар надёжнее Пенанга.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🇲🇾</span><div><div class="info-row-title">С Бангкока → Малайзия (Хат Яй) · ночной поезд</div><div class="info-row-text">Поезд из Бангкока, ночь в пути, выезд–въезд через Садао. Удобно совместить с небольшим путешествием по Малайзии.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🇱🇦</span><div><div class="info-row-title">С Чиангмая → Лаос (Хуайсай/Вьентьян)</div><div class="info-row-text">Популярен для севера Тайланда. Поезд или автобус до Нонгкхая, паром через Меконг. Можно совместить с поездкой в Луанг Прабанг.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🇰🇭</span><div><div class="info-row-title">С Бангкока → Камбоджа (Аранья-Пратет/Пойпет)</div><div class="info-row-text">3–4 часа от Бангкока. Самый близкий вариант. Ходит много организованных туров. Репутация пограничного посёлка Пойпет — специфическая.</div></div></div>
+    </div>
+  </div>
+
+  <!-- 14 CLIMATE -->
+  <div id="climate">
+    <div class="sec-header reveal">
+      <span class="sec-num">14</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Климат <em>и сезоны</em></h2>
+      <span class="sec-desc">Запад и восток живут в разных сезонах.</span>
+    </div>
+
+    <div class="alert green reveal" style="margin-bottom:20px">
+      Главное что нужно знать: западное и восточное побережья живут в <strong>разных сезонах</strong>. Когда на Пхукете дожди — на Самуи и Паттайе солнце, и наоборот.
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="reveal">
+      <div class="info-block">
+        <div class="info-block-title">🌊 Пхукет, Краби, Ко Пхи-Пхи <span style="font-size:11px;color:var(--muted);font-weight:400">Андаманское море (запад)</span></div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь — апрель. Пик: декабрь — январь.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май — октябрь. Морские экскурсии часто отменяют, острова Симилан закрыты.</div></div></div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-title">🏝 Самуи, Ко Панган, Ко Тао <span style="font-size:11px;color:var(--muted);font-weight:400">Сиамский залив (восток)</span></div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Январь — сентябрь. Full Moon Party — раз в месяц.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Октябрь — декабрь. Когда на Пхукете дожди (июнь–октябрь) — здесь солнечно.</div></div></div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-title">🌆 Паттайя, Бангкок <span style="font-size:11px;color:var(--muted);font-weight:400">Центр и восток</span></div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь — апрель. Паттайя — самый комфортный вариант летом: дожди короткие.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май — октябрь. Дожди обычно вечером, не весь день.</div></div></div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-title">🏔 Чиангмай и север <span style="font-size:11px;color:var(--muted);font-weight:400">Горный регион</span></div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Лучшее время</div><div class="info-row-text">Декабрь — февраль. Прохладно (+18–24°), идеально для треков.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Июнь — октябрь.</div></div></div>
+        <div class="info-row red"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Дымный сезон (март–апрель)</div><div class="info-row-text">Горят леса — дым, смог, плохой воздух. Избегать.</div></div></div>
+      </div>
+    </div>
+
+    <div class="climate-grid reveal" style="margin-top:16px">
+      <div class="climate-card"><div class="climate-month">ЯНВ</div><div class="climate-icon">☀️</div><div class="climate-temp">+28°</div><div class="climate-note">Лучший сезон</div></div>
+      <div class="climate-card"><div class="climate-month">ФЕВ</div><div class="climate-icon">☀️</div><div class="climate-temp">+29°</div><div class="climate-note">Отлично</div></div>
+      <div class="climate-card"><div class="climate-month">МАР</div><div class="climate-icon">🌤</div><div class="climate-temp">+30°</div><div class="climate-note">Жарко · дым на севере</div></div>
+      <div class="climate-card"><div class="climate-month">АПР</div><div class="climate-icon">🌤</div><div class="climate-temp">+32°</div><div class="climate-note">Сонгкран 🎉</div></div>
+      <div class="climate-card"><div class="climate-month">МАЙ</div><div class="climate-icon">🌧</div><div class="climate-temp">+31°</div><div class="climate-note">Дожди (запад)</div></div>
+      <div class="climate-card"><div class="climate-month">ИЮН</div><div class="climate-icon">🌧</div><div class="climate-temp">+30°</div><div class="climate-note">Сезон дождей</div></div>
+      <div class="climate-card"><div class="climate-month">ИЮЛ</div><div class="climate-icon">⛈</div><div class="climate-temp">+29°</div><div class="climate-note">Ливни (Пхукет)</div></div>
+      <div class="climate-card"><div class="climate-month">АВГ</div><div class="climate-icon">⛈</div><div class="climate-temp">+29°</div><div class="climate-note">Ливни (Пхукет)</div></div>
+      <div class="climate-card"><div class="climate-month">СЕН</div><div class="climate-icon">🌧</div><div class="climate-temp">+29°</div><div class="climate-note">Дождливо</div></div>
+      <div class="climate-card"><div class="climate-month">ОКТ</div><div class="climate-icon">🌦</div><div class="climate-temp">+29°</div><div class="climate-note">Переходный</div></div>
+      <div class="climate-card"><div class="climate-month">НОЯ</div><div class="climate-icon">⛅</div><div class="climate-temp">+28°</div><div class="climate-note">Начало сезона</div></div>
+      <div class="climate-card"><div class="climate-month">ДЕК</div><div class="climate-icon">☀️</div><div class="climate-temp">+27°</div><div class="climate-note">Пик · цены +30%</div></div>
+    </div>
+
+    <div class="alert amber reveal" style="margin-top:16px">
+      <strong>Лайфхак для зимовщиков:</strong> ноябрь–апрель — универсальное время когда хорошая погода одновременно на Пхукете и Паттайе. Декабрь–январь — пик сезона, цены на 30–50% выше чем в марте. Самый бюджетный месяц при хорошей погоде — <strong>март</strong>.
+    </div>
+  </div>
+
+
+  <!-- 15 SAFETY -->
+  <div id="safety">
+    <div class="sec-header reveal">
+      <span class="sec-num">15</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Безопас<em>ность</em></h2>
+      <span class="sec-desc">Тайланд безопасен — но туристов разводят по классическим схемам.</span>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Типичные разводы туристов</div>
+      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Temple scam («храм закрыт»)</div><div class="info-row-text">Незнакомец говорит что храм сегодня закрыт и предлагает отвезти на тук-туке в «другой храм» или к «ювелиру». Храм открыт. Просто идите мимо.</div></div></div>
+      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Tuk-tuk scam</div><div class="info-row-text">Водитель предлагает бесплатный или дешёвый тур, везёт по магазинам где получает комиссию. Используйте Grab с фиксированной ценой.</div></div></div>
+      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Карточный развод</div><div class="info-row-text">«Дружелюбный» местный приглашает поиграть в карты. Всегда выигрывает. Потери — от $500.</div></div></div>
+      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Gem scam</div><div class="info-row-text">Продают «ценные» камни по «специальной цене» — в реальности дешёвые стекляшки. Никогда не покупайте украшения у незнакомцев.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Такси в аэропорту</div><div class="info-row-text">Нелегальные таксисты в аэропорту Суварнабхуми предлагают фиксированные цены в 2–3 раза дороже официального такси. Используйте Grab или официальные стойки.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Скимминг банкоматов</div><div class="info-row-text">Случается особенно на туристических островах. Используйте банкоматы в отделениях банков, а не уличные. Проверяйте картоприёмник.</div></div></div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Как вести себя с полицией</div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Всегда вежливо и спокойно</div><div class="info-row-text">Тайская полиция реагирует на агрессию плохо. Улыбка и спокойный тон решают большинство ситуаций.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📋</span><div><div class="info-row-title">Всегда имейте документы</div><div class="info-row-text">Паспорт или копию с собой. При проверке без документов могут задержать до выяснения.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">«Штраф на месте»</div><div class="info-row-text">Полицейский предлагает заплатить штраф наличными на месте — это взятка. Можно вежливо отказаться и попросить официальный протокол. Официальный штраф за нарушение ПДД — 500 бат.</div></div></div>
+      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Наркотики — нулевая толерантность</div><div class="info-row-text">Хранение наркотиков — тюрьма от 1 года. За сбыт — пожизненное или смертная казнь. Марихуана легализована в 2022, но употребление в публичных местах запрещено.</div></div></div>
+    </div>
+  </div>
+
+  <!-- 16 COWORKING -->
+  <div id="coworking">
+    <div class="sec-header reveal">
+      <span class="sec-num">16</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Ковор<em>кинги</em></h2>
+      <span class="sec-desc">Тайланд — мировая столица цифровых кочевников.</span>
+    </div>
+    <div class="tips-grid reveal">
+      <div class="tip-card"><span class="tip-num">🏔</span><div><div class="tip-title">Чиангмай — лучший город для работы</div><div class="tip-text"><strong>CAMP (Maya Mall)</strong> — легендарный коворкинг в торговом центре, работает 24/7. Стоимость: 1 кофе (~100 бат) = целый день. Скорость Wi-Fi: 100+ Мбит/с.<br><br><strong>MANA Fast & Slow Bar</strong> — модное место с отличным кофе. 80 бат/день.<br><strong>Think Park</strong> — на открытом воздухе, от 50 бат/день.<br><strong>Punspace</strong> — профессиональный коворкинг, 250 бат/день, 3 500 бат/мес.</div></div></div>
+      <div class="tip-card"><span class="tip-num">🌆</span><div><div class="tip-title">Бангкок</div><div class="tip-text"><strong>The Hive</strong> — сеть коворкингов в Thonglor и Ekkamai. От 300 бат/день, 3 500 бат/мес. Скорость: 200+ Мбит/с.<br><br><strong>WeWork</strong> — международная сеть, дорого (от 500 бат/день), но надёжно.<br><strong>Hubba-TO</strong> — популярен у стартапов, 250 бат/день.<br><strong>Coffee shops</strong> — True Coffee в любом 7-Eleven, стол + Wi-Fi весь день за цену кофе.</div></div></div>
+      <div class="tip-card"><span class="tip-num">🌴</span><div><div class="tip-title">Пхукет</div><div class="tip-text"><strong>Garage Society</strong> — лучший коворкинг на острове в Чалонге. 350 бат/день.<br><br><strong>Phuket Smart City</strong> — государственный коворкинг с хорошим интернетом. Часто бесплатно или 100 бат/день.<br><strong>Kaffa</strong> — кофейня-коворкинг в Пхукет-тауне, 80 бат/день.<br><br>На Патонге и Камале — сеть кафе Starbucks и True Coffee с рабочими местами.</div></div></div>
+      <div class="tip-card"><span class="tip-num">🏝</span><div><div class="tip-title">Ko Samui / Ko Phangan</div><div class="tip-text"><strong>Samui</strong>: Chaweng имеет несколько кафе-коворкингов. Скорость интернета хуже континента — обычно 30–50 Мбит/с.<br><br><strong>Ko Phangan</strong>: WorknPlay — небольшой коворкинг в Tong Sala. Haad Yao имеет несколько кафе с рабочим интернетом. Если важна работа — выбирай континент, острова для отдыха.</div></div></div>
+    </div>
+    <div class="alert green reveal" style="margin-top:12px">
+      <strong>Лайфхак:</strong> в Чиангмае сформировалось огромное русскоязычное сообщество цифровых кочевников. Telegram-чаты «Чиангмай наши» и «Digital Nomads Chiang Mai» — живые обсуждения жилья, коворкингов и событий.
+    </div>
+  </div>
+
+  <!-- 17 CHECKLIST -->
+  <div id="checklist">
+    <div class="sec-header reveal">
+      <span class="sec-num">17</span><span class="sec-dash"></span>
+      <h2 class="sec-title">Чеклист <em>перед вылетом</em></h2>
+      <span class="sec-desc">Всё что нужно сделать до посадки в самолёт.</span>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">За 2 недели до вылета</div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Проверить срок паспорта</div><div class="info-row-text">Нужно минимум 6 месяцев действия после даты въезда. При меньшем сроке — откажут на границе.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить страховку</div><div class="info-row-text">Минимум $100 000 покрытия. Покрытие мотоцикла — обязательно если планируешь арендовать байк. Cherehapa или Черехапа — сравни цены.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить eSIM или проверить роуминг</div><div class="info-row-text">eSIM через Yesim или Airalo до вылета — интернет заработает сразу после приземления. Или купить SIM в аэропорту.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Снять наличные / конвертировать</div><div class="info-row-text">Везите доллары или евро. Рубли меняют по невыгодному курсу. Возьмите минимум $500–1 000 наличными на первые дни.</div></div></div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">За 3 дня до вылета</div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Заполнить TDAC — обязательно!</div><div class="info-row-text">tdac.immigration.go.th — электронная карта прибытия. Без неё могут не пустить на борт. 5 минут, бесплатно. Заполняется не ранее чем за 3 дня до прилёта.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Установить приложения</div><div class="info-row-text">Grab, Google Maps (скачать карту офлайн), Bangkok MRT/BTS, XE Currency, Booking/Airbnb. В России скачать заранее — могут быть проблемы с App Store в Тайланде.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏠</span><div><div class="info-row-title">Забронировать первые ночи</div><div class="info-row-text">Минимум 2–3 ночи. На паспортном контроле могут попросить подтверждение проживания.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Обратный билет или маршрут выезда</div><div class="info-row-text">На паспортном контроле могут попросить обратный билет или подтверждение что ты покинешь страну. Бронь на автобус до Малайзии тоже считается.</div></div></div>
+    </div>
+    <div class="info-block reveal">
+      <div class="info-block-title">Рекомендуемые маршруты</div>
+      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">1 неделя — Классика</div><div class="info-row-text">Дни 1–3: Бангкок (Большой Дворец, Чатучак, ночные рынки) → Дни 4–7: Пхукет или Краби (пляжи, острова Пхи-Пхи).</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">2 недели — Разнообразие</div><div class="info-row-text">Дни 1–3: Бангкок → Дни 4–6: Чиангмай (храмы, рынки, слоны) → Дни 7–14: Острова юга (Пхукет + Краби или Самуи + Ко Панган).</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Месяц — Зимовка</div><div class="info-row-text">Неделя в Бангкоке (обустройство, банк, SIM) → 2 недели в Чиангмае (работа, жизнь, коворкинги) → Финальные 1–2 недели на островах перед отлётом.</div></div></div>
+    </div>
+  </div>
+
+  <!-- COUNTRY NAV -->
+  <div class="country-nav reveal">
+    <a class="cnav-card" href="armenia.html">
+      <span class="cnav-flag">🇦🇲</span>
+      <div><div class="cnav-label">Предыдущая</div><div class="cnav-name">Армения</div></div>
       <span class="cnav-arrow">←</span>
     </a>
     <a class="cnav-card" href="china.html">
       <span class="cnav-flag">🇨🇳</span>
-      <div>
-        <div class="cnav-label">Следующая страна</div>
-        <div class="cnav-name">Китай</div>
-      </div>
+      <div><div class="cnav-label">Следующая страна</div><div class="cnav-name">Китай</div></div>
       <span class="cnav-arrow">→</span>
     </a>
   </div>
 
-</div>
+</div><!-- /main-wrap -->
 
 <footer>
-  <a class="flogo" href="index.html">Check<span>The</span>World<span class="dot">.</span></a>
+  <a class="flogo" href="index.html">Check<em>The</em>World<span class="dot">.</span></a>
   <div class="flinks">
     <a href="index.html">Страны</a>
     <a href="#">Сравнить</a>
@@ -666,281 +1269,283 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,0,0,.07);
   <div class="fcopy">© 2026 · CheckTheWorld</div>
 </footer>
 
-<script>
-// Currency switcher
-const rates = {rub:1, usd:91, eur:99, local:2.3};
-function setCurrency(cur, btn) {
-  document.querySelectorAll('.cur-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.pc-val').forEach(el => {
-    el.textContent = el.dataset[cur];
-  });
-}
+<!-- SIDENAV -->
+<nav class="sidenav" id="sidenav" style="z-index:9999">
+  <div class="sn-item" data-t="visas"><span class="sn-label">Визы</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="prices"><span class="sn-label">Цены</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="flights"><span class="sn-label">Билеты</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="cities"><span class="sn-label">Города</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="tips"><span class="sn-label">Советы</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="budget"><span class="sn-label">Бюджет</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="money"><span class="sn-label">Деньги</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="taxes"><span class="sn-label">Налоги</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="transport"><span class="sn-label">Транспорт</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="internet"><span class="sn-label">Связь</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="medicine"><span class="sn-label">Медицина</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="rental"><span class="sn-label">Аренда</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="visarun"><span class="sn-label">Визаран</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="climate"><span class="sn-label">Климат</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="safety"><span class="sn-label">Безопасность</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="coworking"><span class="sn-label">Коворкинги</span><div class="sn-dot"></div></div>
+  <div class="sn-item" data-t="checklist"><span class="sn-label">Чеклист</span><div class="sn-dot"></div></div>
+</nav>
 
-// Scroll reveal
-const obs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-  });
-}, {threshold:0, rootMargin:'0px 0px -40px 0px'});
-// Small delay so browser paints first
-setTimeout(function() {
-  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
-}, 100);
-
-// ── VISA DATA ──
-const VISAS = {
-  free:{title:'Безвизовый въезд',subtitle:'До 45 дней · без ограничения въездов',
-    tags:[{t:'45 дней',c:'green'},{t:'Бесплатно',c:'green'},{t:'Загранпаспорт 6+ мес',c:'green'}],
-    sections:[
-      {title:'Условия',text:'С августа 2023 до 45 дней без визы. Въезжать можно неограниченное количество раз — счётчик обнуляется при каждом въезде.'},
-      {title:'Порядок',steps:['Рейс в Ханой или Хошимин от 42 000 ₽','Загранпаспорт от 6 месяцев','Заполни миграционную карту на паспортном контроле','Храни карту до выезда']},
-      {title:'Визаран',text:'После 45 дней выедь в Камбоджу или Таиланд на 1 день. Маршрут Хошимин–Пномпень автобусом ~$10, 6 часов.'}
-    ],
-    warn:'<strong>Важно:</strong> миграционная карта обязательна при каждом въезде. Храни её.',btn:null},
-  evisa:{title:'E-Visa (электронная виза)',subtitle:'До 90 дней · онлайн за 3 дня',
-    tags:[{t:'90 дней',c:''},{t:'$25',c:'amber'},{t:'Онлайн',c:'green'}],
-    sections:[
-      {title:'Когда нужна',text:'Если планируешь больше 45 дней или хочешь избежать визаранов.'},
-      {title:'Оформление',steps:['evisa.xuatnhapcanh.gov.vn — официальный сайт','Анкета + фото паспорта','Оплата $25','Одобрение за 3 рабочих дня','Распечатай или сохрани на телефоне']},
-      {title:'Важно',text:'Убедись что твой аэропорт в списке разрешённых КПП. Все международные аэропорты включены.'}
-    ],
-    warn:'<strong>Совет:</strong> для поездки до 45 дней e-Visa не нужна.',btn:null},
-  biz:{title:'Долгосрочное проживание',subtitle:'Рабочая виза и цифровые кочевники',
-    tags:[{t:'1–2 года',c:''},{t:'Через компанию',c:''},{t:'Визаран практикуется',c:''}],
-    sections:[
-      {title:'Рабочая виза',text:'Работодатель оформляет Work Permit, затем рабочая виза на 2 года.'},
-      {title:'Цифровой кочевник',text:'Официальной визы нет. Большинство живут по схеме: 45 дней безвиз + визаран в Камбоджу.'},
-      {title:'Практика',steps:['45 дней → визаран в Камбоджу (~$10, 1 день)','Повторить несколько раз','e-Visa на 90 дней — для более длительного пребывания']}
-    ],
-    warn:null,btn:null},
-  money:{title:'Деньги и карты во Вьетнаме',subtitle:'Наличные важны',
-    tags:[{t:'«Мир» частично',c:'amber'},{t:'Наличные рекомендованы',c:''},{t:'Ювелирка = курс',c:'green'}],
-    sections:[
-      {title:'Наличные',text:'Вьетнам — наличная экономика. Меняй доллары в ювелирных магазинах (tiệm vàng) — лучший курс.'},
-      {title:'Карты «Мир»',text:'Принимаются в Agribank и VietinBank. Не везде. Не делай на них ставку.'},
-      {title:'Банкоматы',steps:['Agribank — минимальная комиссия','VietinBank — принимает «Мир»','Лимит ~3 000 000 VND (~11 000 ₽) за раз','1 000 000 VND ≈ 3 700 ₽ — не запутайся!']}
-    ],
-    warn:'<strong>Важно:</strong> миллионы донгов — это нормально. 1 000 000 VND ≈ 3 700 ₽.',btn:null}
-};
-
-const CITIES = {
-  hanoi:{name:'Ханой',emoji:'🏛',tag:'Столица · 8 млн жителей',budget:'от 1 500 ₽/день',
-    desc:'Тысячелетняя столица с французской архитектурой и лучшим стрит-фудом в стране. Более аутентичная и спокойная чем Хошимин.',
-    places:[{n:'Озеро Хоан Кием',d:'Священное озеро в центре города. Утром здесь йога и тайчи у воды — лучшая атмосфера.'},{n:'Старый квартал',d:'36 улиц ремёсел — лабиринт переулков, уличная еда и восточный колорит.'},{n:'Мавзолей Хо Ши Мина',d:'Мавзолей основателя государства. Бесплатно. Закрыт пн и пт.'},{n:'Bia Hoi Corner',d:'Угол с самым дешёвым пивом в мире (~15 ₽ за кружку). Вечером — сотни людей на маленьких стульях.'}],
-    facts:['Уличная еда Ханоя официально признана культурным наследием','По выходным старый квартал пешеходный — без машин','Здесь изобрели яичный кофе ca phe trung — густой и незабываемый']},
-  hcmc:{name:'Хошимин (Сайгон)',emoji:'🌆',tag:'Деловой центр · 13 млн жителей',budget:'от 1 800 ₽/день',
-    desc:'Самый большой и динамичный город страны. Небоскрёбы рядом с храмами, рестораны мирового уровня с уличными тележками.',
-    places:[{n:'Дворец Независимости',d:'Дворец где закончилась война 30 апреля 1975 года. Музей с аутентичной обстановкой. Вход ~40 000 VND.'},{n:'Тоннели Кути',d:'200 км подземных тоннелей партизан. В 40 км от города. Экскурсия ~$10–15.'},{n:'Рынок Бинь Тэй',d:'Огромный рынок в Чайнатауне — специи, ткани, морепродукты.'},{n:'Крыша бара Bitexco',d:'Вид на Хошимин с 49 этажа. Лучший закат над городом.'}],
-    facts:['Большинство жителей до сих пор называют город Сайгоном','4 миллиона мотоциклов — 1 на каждые 3 жителей','Зарплаты в Хошимине на 30–40% выше чем в Ханое']},
-  danang:{name:'Дананг',emoji:'🌊',tag:'Пляжный центр · 1.3 млн жителей',budget:'от 1 800 ₽/день',
-    desc:'Современный удобный город с одним из лучших пляжей в Азии. Идеальная база для поездок в Хой Ан.',
-    places:[{n:'Пляж Ми Кхе',d:'27 км белого песка. Forbes включил в список лучших пляжей планеты.'},{n:'Хой Ан',d:'Древний торговый порт в 30 км — объект ЮНЕСКО. Жёлтые домики и лучшая еда во Вьетнаме.'},{n:'Горы Балана',d:'Пять мраморных гор с пещерами и буддийскими храмами. Лифт на смотровую.'},{n:'Мост Золотые Руки',d:'Мост который держат каменные руки — одно из самых фотографируемых мест Азии.'}],
-    facts:['Самый быстро развивающийся город Вьетнама по Forbes','Зимой на севере дожди, но в Дананге сухой сезон','Хой Ан — 30 км, идеально для дневной поездки']},
-  halong:{name:'Халонг',emoji:'⛵',tag:'Бухта ЮНЕСКО · 1 969 островов',budget:'от 3 000 ₽/день',
-    desc:'Объект ЮНЕСКО с более чем 1 600 известняковыми островами. Круиз на деревянной джонке — самый романтичный пейзаж Азии.',
-    places:[{n:'Круиз на джонке',d:'Must-do. 1 день ~$50–80, 2 дня/1 ночь — лучший вариант. Бронируй заранее.'},{n:'Пещера Тиен Кунг',d:'Красивейшая пещера с гигантскими сталактитами. Вход ~150 000 VND.'},{n:'Деревни на воде',d:'Плавучие рыбацкие деревни прямо в бухте. Закажи лодку и прокатись между домами.'},{n:'Пещера Hang Trong',d:'Самая большая пещера бухты. Свет проникает сверху — фантастическое зрелище.'}],
-    facts:['«Халонг» — место где дракон спустился в море','Около 1 600 рыбаков живут в плавучих деревнях','Лучшее время: октябрь–апрель. Летом бывают тайфуны']}
-};
-
-function openVisa(key) {
-  const v = VISAS[key];
-  if (!v) return;
-  let html = '<div class="modal-subtitle">'+v.subtitle+'</div><div class="modal-title">'+v.title+'</div>';
-  html += '<div class="modal-tags">'+v.tags.map(t=>'<span class="modal-tag '+t.c+'">'+t.t+'</span>').join('')+'</div>';
-  v.sections.forEach(function(s) {
-    html += '<div class="modal-section">'+s.title+'</div>';
-    if (s.text) html += '<div class="modal-text">'+s.text+'</div>';
-    if (s.steps) html += '<div class="modal-steps">'+s.steps.map(function(st,i){return '<div class="modal-step"><span class="modal-step-num">'+(i+1)+'</span><span class="modal-step-text">'+st+'</span></div>';}).join('')+'</div>';
-  });
-  if (v.warn) html += '<div class="modal-warn">'+v.warn+'</div>';
-  if (v.btn) html += '<button class="modal-btn" onclick="window.open(\'' + v.btn + '\',\'_blank\')">Узнать подробнее →</button>';
-  document.getElementById('visaModalContent').innerHTML = html;
-  document.getElementById('visaModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function openCity(key) {
-  const c = CITIES[key];
-  if (!c) return;
-  let html = '<div class="modal-subtitle">'+c.tag+'</div><div class="modal-title">'+c.emoji+' '+c.name+'</div>';
-  html += '<div class="modal-tags"><span class="modal-tag gray">'+c.budget+'</span></div>';
-  html += '<div class="modal-text">'+c.desc+'</div>';
-  html += '<div class="modal-section">Что посмотреть</div>';
-  html += '<div class="modal-steps">'+c.places.map(function(p){return '<div class="modal-step"><span class="modal-step-num">📍</span><span class="modal-step-text"><strong>'+p.n+'</strong> — '+p.d+'</span></div>';}).join('')+'</div>';
-  html += '<div class="modal-section">Полезные факты</div>';
-  html += '<div class="modal-steps">'+c.facts.map(function(f){return '<div class="modal-step"><span class="modal-step-num">💡</span><span class="modal-step-text">'+f+'</span></div>';}).join('')+'</div>';
-  document.getElementById('cityModalContent').innerHTML = html;
-  document.getElementById('cityModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal(id, e) {
-  if (e.target === document.getElementById(id)) closeModalDirect(id);
-}
-function closeModalDirect(id) {
-  document.getElementById(id).classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') { closeModalDirect('visaModal'); closeModalDirect('cityModal'); }
-});
-
-function slideCity(dir) {
-  var slider = document.getElementById('citySlider');
-  slider.scrollBy({left: dir * 300, behavior: 'smooth'});
-}
-(function(){
-  var s = document.getElementById('citySlider');
-  if (!s) return;
-  var isDragging=false, startX=0, scrollStart=0;
-  s.addEventListener('mousedown',function(e){isDragging=true;startX=e.clientX;scrollStart=s.scrollLeft;s.style.cursor='grabbing';});
-  window.addEventListener('mouseup',function(){isDragging=false;s.style.cursor='grab';});
-  window.addEventListener('mousemove',function(e){if(!isDragging)return;s.scrollLeft=scrollStart-(e.clientX-startX);});
-})();
-
-
-// Mobile tabs scroll
-function scrollToSection(id, el){
-  var target=document.getElementById(id);
-  if(!target)return;
-  var offset=110;
-  var top=target.getBoundingClientRect().top+window.pageYOffset-offset;
-  window.scrollTo({top:top,behavior:'smooth'});
-  document.querySelectorAll('.mob-tab').forEach(function(t){t.classList.remove('active')});
-  if(el)el.classList.add('active');
-}
-// Back to top
-window.addEventListener('scroll',function(){
-  var btt=document.getElementById('backToTop');
-  if(!btt)return;
-  if(window.pageYOffset>300){btt.classList.add('visible')}else{btt.classList.remove('visible')}
-});
-// Highlight active tab on scroll
-var sections=['visas','prices','flights','cities','tips'];
-window.addEventListener('scroll',function(){
-  var offset=130;
-  sections.forEach(function(id){
-    var el=document.getElementById(id);
-    if(!el)return;
-    var top=el.getBoundingClientRect().top;
-    if(top<offset && top>-300){
-      var tabs=document.querySelectorAll('.mob-tab');
-      if(tabs.length===0)return;
-      tabs.forEach(function(t){t.classList.remove('active')});
-      var active=document.querySelector('.mob-tab[onclick*="'+id+'"]');
-      if(active)active.classList.add('active');
-    }
-  });
-});
-
-// Build mobile cities grid from slider
-(function(){
-  var slider = document.getElementById('citySlider');
-  var wrap = slider ? slider.closest('.cities-slider-wrap') : null;
-  if(!wrap) return;
-  var grid = document.createElement('div');
-  grid.className = 'cities-mobile-grid';
-  var slides = slider.querySelectorAll('.city-slide');
-  slides.forEach(function(slide){
-    var mini = document.createElement('div');
-    mini.className = 'city-mini';
-    mini.onclick = slide.onclick;
-    var img = slide.querySelector('.city-photo');
-    var ph = slide.querySelector('.city-photo-placeholder');
-    var imgEl;
-    if(img){
-      imgEl = document.createElement('img');
-      imgEl.src = img.src;
-      imgEl.className = 'city-mini-img';
-      imgEl.style = 'width:100%;height:80px;object-fit:cover';
-      imgEl.onerror = function(){
-        var d=document.createElement('div');
-        d.className='city-mini-img';
-        d.textContent=(slide.querySelector('.city-slide-name')||{}).textContent||'🏙';
-        this.parentNode.replaceChild(d,this);
-      };
-    } else {
-      imgEl = document.createElement('div');
-      imgEl.className = 'city-mini-img';
-      if(ph) imgEl.textContent = ph.textContent.trim();
-    }
-    var body = document.createElement('div');
-    body.className = 'city-mini-body';
-    var name = document.createElement('div');
-    name.className = 'city-mini-name';
-    var nameEl = slide.querySelector('.city-slide-name');
-    name.textContent = nameEl ? nameEl.textContent : '';
-    var tag = document.createElement('div');
-    tag.className = 'city-mini-tag';
-    var tagEl = slide.querySelector('.city-slide-tag');
-    tag.textContent = tagEl ? tagEl.textContent : '';
-    body.appendChild(name);
-    body.appendChild(tag);
-    mini.appendChild(imgEl);
-    mini.appendChild(body);
-    grid.appendChild(mini);
-  });
-  wrap.parentNode.insertBefore(grid, wrap.nextSibling);
-})();
-</script>
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <!-- VISA MODAL -->
-<div class="modal-overlay" id="visaModal" onclick="closeModal('visaModal',event)">
+<div class="modal-overlay" id="visaModal" onclick="if(event.target===this)closeModal('visaModal')">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModalDirect('visaModal')">×</button>
-    <div id="visaModalContent"></div>
+    <button class="modal-close" onclick="closeModal('visaModal')">×</button>
+    <div class="modal-box-scroll">
+      <div id="visaModalContent"></div>
+    </div>
   </div>
 </div>
 
 <!-- CITY MODAL -->
-<div class="modal-overlay" id="cityModal" onclick="closeModal('cityModal',event)">
+<div class="modal-overlay" id="cityModal" onclick="if(event.target===this)closeModal('cityModal')">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModalDirect('cityModal')">×</button>
-    <div id="cityModalContent"></div>
+    <button class="modal-close" onclick="closeModal('cityModal')">×</button>
+    <div class="modal-box-scroll">
+      <div id="cityModalContent"></div>
+    </div>
   </div>
 </div>
 
+<script>
+// ── DATA ──
 
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getAuth, onAuthStateChanged, signOut }
-    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  // ⚠️ VISAS и CITIES для Вьетнам — заполнить вручную!
+  // Скопировать структуру из thailand.html и адаптировать
+  // ── CURRENCY ──
+const rates = {rub:1, usd:91, eur:99, local:33};
+function setCurrency(cur, btn){
+  document.querySelectorAll('.cur-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pc-val').forEach(el=>{
+    if(el.dataset[cur]) el.textContent = el.dataset[cur];
+  });
+}
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyC_erJyfCASKgjMaMXTF4ovqfwfC4-5GmU",
-    authDomain: "checktheworld-a631d.firebaseapp.com",
-    projectId: "checktheworld-a631d",
-    storageBucket: "checktheworld-a631d.firebasestorage.app",
-    messagingSenderId: "1006756841439",
-    appId: "1:1006756841439:web:ab81d8f3f469ea3d07666a"
-  };
+// ── FLIGHTS SWITCH ──
+function switchFlights(tab, btn){
+  document.querySelectorAll('#flights .cur-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('fl-avia').style.display = tab==='avia'?'block':'none';
+  document.getElementById('fl-kiwi').style.display = tab==='kiwi'?'block':'none';
+}
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+// ── VISA MODAL ──
+function openVisa(key){
+  const v = VISAS[key];
+  if(!v) return;
+  let h = '<div class="modal-overline">'+v.subtitle+'</div>';
+  h += '<div class="modal-title">'+v.title+'</div>';
+  h += '<div class="modal-tags">'+v.tags.map(t=>'<span class="modal-tag '+t.c+'">'+t.t+'</span>').join('')+'</div>';
+  v.sections.forEach(s=>{
+    h += '<div class="modal-section">'+s.title+'</div>';
+    if(s.text) h += '<div class="modal-text">'+s.text+'</div>';
+    if(s.steps) h += '<div class="modal-steps">'+s.steps.map((st,i)=>'<div class="modal-step"><span class="modal-step-num">'+(i+1)+'</span><span>'+st+'</span></div>').join('')+'</div>';
+  });
+  if(v.warn) h += '<div class="modal-warn">'+v.warn+'</div>';
+  if(v.btn) h += '<button class="modal-btn" onclick="window.open(\''+v.btn+'\',\'_blank\')">Узнать подробнее →</button>';
+  document.getElementById('visaModalContent').innerHTML = h;
+  document.getElementById('visaModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
 
-  onAuthStateChanged(auth, user => {
-    const btn = document.getElementById('nav-auth-btn');
-    if (!btn) return;
-    if (user) {
-      const name = user.displayName || user.email.split('@')[0];
-      btn.innerHTML = `<a href="dashboard.html" class="auth-user-btn">
-        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-          <circle cx="8" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M3 13.5c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        ${name}
-      </a>`;
-    } else {
-      btn.innerHTML = `<a href="login.html" class="auth-login-btn">Войти</a>`;
+// ── CITY MODAL ──
+async function openCity(key){
+  const c = CITIES[key];
+  if(!c) return;
+  cmpIdx = 0;
+  // Открываем модал сразу
+  let h = '<div id="cmpSliderPlaceholder" style="height:220px;background:var(--bg2);display:flex;align-items:center;justify-content:center;"><span style=\"color:var(--faint);font-size:13px\">Загрузка фото...</span></div><div class=\"city-modal-body\">';
+  h += '<div class="city-modal-tag">'+c.tag+'</div>';
+  h += '<div class="city-modal-header"><div class="city-modal-name">'+c.emoji+' '+c.name+'</div><div class="city-modal-budget">'+c.budget+'</div></div>';
+  h += '<div class="city-modal-desc">'+c.desc+'</div>';
+  h += '<div class="city-modal-section">Что посмотреть</div>';
+  h += c.places.map(p=>'<div class="place-item"><span class="place-pin">📍</span><div><div class="place-name">'+p.n+'</div><div class="place-desc">'+p.d+'</div></div></div>').join('');
+  h += '<div class="city-modal-section" style="margin-top:14px">Полезные факты</div>';
+  h += c.facts.map(f=>'<div class="fact-item"><span>💡</span><div class="fact-text">'+f+'</div></div>').join('');
+  h += '</div>'; // close city-modal-body
+  document.getElementById('cityModalContent').innerHTML = h;
+  document.getElementById('cityModal').classList.add('open');
+  document.body.style.overflow='hidden';
+  // Загружаем фото асинхронно
+  const query = (c.name_en || c.name) + ' Thailand';
+  loadCityModalPhotos(key, query).then(urls => {
+    const placeholder = document.getElementById('cmpSliderPlaceholder');
+    if (placeholder && urls.length) {
+      placeholder.outerHTML = buildPhotoSlider(urls);
+    } else if (placeholder) {
+      placeholder.style.display = 'none';
     }
   });
+}
 
-  window.ctw_logout = () => signOut(auth).then(() => window.location.href = 'login.html');
-</script>
-<script>
-function switchEsim(slug, tab, btn) {
+function closeModal(id){
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal('visaModal');closeModal('cityModal');}});
+
+// ── SLIDER ──
+function slideCity(d){
+  const s=document.getElementById('citySlider');
+  s.scrollBy({left:d*300,behavior:'smooth'});
+}
+(function(){
+  const s=document.getElementById('citySlider');
+  if(!s)return;
+  let dragging=false,sx=0,sl=0;
+  s.addEventListener('mousedown',e=>{dragging=true;sx=e.clientX;sl=s.scrollLeft;s.style.cursor='grabbing'});
+  window.addEventListener('mouseup',()=>{dragging=false;s.style.cursor='grab'});
+  window.addEventListener('mousemove',e=>{if(!dragging)return;s.scrollLeft=sl-(e.clientX-sx)});
+})();
+
+// ── MOBILE SCROLL ──
+function scrollToSection(id, el){
+  const t=document.getElementById(id);
+  if(!t)return;
+  window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-100,behavior:'smooth'});
+  document.querySelectorAll('.mob-tab').forEach(b=>b.classList.remove('active'));
+  if(el)el.classList.add('active');
+}
+
+// ── SIDENAV ──
+(function(){
+  const nav=document.getElementById('sidenav');
+  if(!nav)return;
+  const items=Array.from(nav.querySelectorAll('.sn-item'));
+  const secs=items.map(i=>document.getElementById(i.dataset.t));
+  items.forEach((item,i)=>{
+    item.addEventListener('click',()=>{
+      const el=secs[i];
+      if(el){
+        const top = el.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({top:top,behavior:'smooth'});
+      }
+    });
+  });
+  function upd(){
+    const sy=window.pageYOffset;
+    nav.classList.toggle('visible',sy>300);
+    let ai=-1;
+    secs.forEach((el,i)=>{if(el&&el.getBoundingClientRect().top<140)ai=i;});
+    items.forEach((item,i)=>item.classList.toggle('active',i===ai));
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  upd();
+})();
+
+// ── REVEAL ──
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
+},{threshold:0,rootMargin:'0px 0px -40px 0px'});
+setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>ro.observe(el)),100);
+
+// ── BACK TO TOP ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('btt').classList.toggle('visible',window.pageYOffset>400);
+},{passive:true});
+
+// ── THEME ──
+(function(){
+  const root=document.documentElement;
+  const saved=localStorage.getItem('ctw-theme');
+  if(saved==='light') root.classList.replace('dark','light');
+  else root.classList.add('dark');
+
+  function updIcon(){
+    const btn=document.getElementById('theme-btn');
+    if(!btn)return;
+    const dark=root.classList.contains('dark');
+    btn.innerHTML=dark
+      ?'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>'
+      :'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+
+  document.getElementById('theme-btn').addEventListener('click',()=>{
+    const dark=root.classList.contains('dark');
+    root.classList.toggle('dark',!dark);
+    root.classList.toggle('light',dark);
+    localStorage.setItem('ctw-theme',dark?'light':'dark');
+    updIcon();
+  });
+  updIcon();
+})();
+
+
+
+// ── PEXELS PHOTOS ──
+const WORKER = 'https://pexelsapiworker.nikromashin07.workers.dev';
+
+async function fetchPexels(query, count) {
+  try {
+    const url = count
+      ? `${WORKER}?query=${encodeURIComponent(query)}&count=${count}`
+      : `${WORKER}?query=${encodeURIComponent(query)}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    return data.photos || [];
+  } catch(e) { console.warn('Pexels error:', e); return []; }
+}
+
+async function loadCityPhoto(imgEl, query) {
+  const photos = await fetchPexels(query);
+  if (photos[0]) {
+    const url = photos[0].src.large2x || photos[0].src.large;
+    imgEl.onload = () => imgEl.classList.add('loaded');
+    imgEl.src = url;
+  }
+}
+
+const cityPhotoCache = {};
+async function loadCityModalPhotos(cityId, query) {
+  if (cityPhotoCache[cityId]) return cityPhotoCache[cityId];
+  const photos = await fetchPexels(query, 4);
+  cityPhotoCache[cityId] = photos.map(p => p.src.large2x || p.src.large);
+  return cityPhotoCache[cityId];
+}
+
+function buildPhotoSlider(urls) {
+  if (!urls.length) return '<div style="height:16px"></div>';
+  const imgs = urls.map(u =>
+    `<img class="city-modal-photo loaded" src="${u}" alt="" loading="lazy">`
+  ).join('');
+  const dots = urls.length > 1 ? '<div class="cmp-dots" id="cmpDots">' +
+    urls.map((_,i) => `<div class="cmp-dot${i===0?' active':''}" onclick="goSlide(${i})"></div>`).join('') +
+    '</div>' : '';
+  const arrows = urls.length > 1 ?
+    '<button class="cmp-prev" onclick="goSlide(-1,true)">&#8249;</button><button class="cmp-next" onclick="goSlide(1,true)">&#8250;</button>' : '';
+  return `<div class="city-modal-photos" id="cmpWrap">
+    <div class="city-modal-photos-track" id="cmpTrack">${imgs}</div>
+    ${arrows}${dots}
+  </div>`;
+}
+
+let cmpIdx = 0;
+function goSlide(n, rel) {
+  const track = document.getElementById('cmpTrack');
+  if (!track) return;
+  const total = track.children.length;
+  cmpIdx = rel ? (cmpIdx + n + total) % total : n;
+  track.style.transform = `translateX(-${cmpIdx*100}%)`;
+  document.querySelectorAll('.cmp-dot').forEach((d,i) => d.classList.toggle('active', i===cmpIdx));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.city-photo[data-query]').forEach(img => {
+    loadCityPhoto(img, img.dataset.query);
+  });
+  const heroBg = document.querySelector('.hero-bg img');
+  if (heroBg) loadCityPhoto(heroBg, 'Bangkok Thailand skyline night aerial');
+});
+
+// ── ESIM SWITCH ──
+function switchEsim(slug, tab, btn){
   document.querySelectorAll('#esim-yesim-' + slug + ', #esim-airalo-' + slug).forEach(p => p.classList.remove('active'));
   btn.closest('.esim-tabs').querySelectorAll('.esim-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('esim-' + tab + '-' + slug).classList.add('active');
