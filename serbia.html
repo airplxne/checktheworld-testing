@@ -395,7 +395,7 @@ h2.sec-title em{font-style:italic;font-weight:500;color:var(--green)}
 .sn-item.active .sn-label{color:var(--green);font-weight:700}
 
 /* MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:10000;
   display:flex;align-items:center;justify-content:center;padding:20px;
   opacity:0;pointer-events:none;transition:opacity .2s}
 .modal-overlay.open{opacity:1;pointer-events:all}
@@ -1610,25 +1610,34 @@ async function fetchPexels(query, count) {
       ? `${WORKER}?query=${encodeURIComponent(query)}&count=${count}`
       : `${WORKER}?query=${encodeURIComponent(query)}`;
     const res = await fetch(url);
+    if (!res.ok) throw new Error('worker ' + res.status);
     const data = await res.json();
     return data.photos || [];
   } catch(e) { console.warn('Pexels error:', e); return []; }
 }
 
+function extractPhotoUrl(photo) {
+  // Берём src.large2x или src.large — НЕ photo.url (это страница Pexels)
+  const direct = photo?.src?.large2x || photo?.src?.large || photo?.src?.medium;
+  if (!direct) return null;
+  // Проксируем через воркер чтобы обойти CORS блокировку Pexels
+  return `${WORKER}?proxy=${encodeURIComponent(direct)}`;
+}
+
 async function loadCityPhoto(imgEl, query) {
   const photos = await fetchPexels(query);
-  if (photos[0]) {
-    const url = photos[0].url || photos[0].src?.large2x || photos[0].src?.large;
-    imgEl.onload = () => imgEl.classList.add('loaded');
-    imgEl.src = url;
-  }
+  const url = extractPhotoUrl(photos[0]);
+  if (!url) return;
+  imgEl.onload = () => imgEl.classList.add('loaded');
+  imgEl.src = url;
 }
 
 const cityPhotoCache = {};
 async function loadCityModalPhotos(cityId, query) {
   if (cityPhotoCache[cityId]) return cityPhotoCache[cityId];
   const photos = await fetchPexels(query, 4);
-  cityPhotoCache[cityId] = photos.map(p => p.url || p.src?.large2x || p.src?.large);
+  const urls = photos.map(p => extractPhotoUrl(p)).filter(Boolean);
+  cityPhotoCache[cityId] = urls;
   return cityPhotoCache[cityId];
 }
 
