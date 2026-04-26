@@ -1585,7 +1585,7 @@ async function fetchPexels(query, count) {
 async function loadCityPhoto(imgEl, query) {
   const photos = await fetchPexels(query);
   if (photos[0]) {
-    const url = photos[0].src.large2x || photos[0].src.large;
+    const url = photos[0].url || photos[0].src?.large2x || photos[0].src?.large;
     imgEl.onload = () => imgEl.classList.add('loaded');
     imgEl.src = url;
   }
@@ -1595,7 +1595,7 @@ const cityPhotoCache = {};
 async function loadCityModalPhotos(cityId, query) {
   if (cityPhotoCache[cityId]) return cityPhotoCache[cityId];
   const photos = await fetchPexels(query, 4);
-  cityPhotoCache[cityId] = photos.map(p => p.src.large2x || p.src.large);
+  cityPhotoCache[cityId] = photos.map(p => p.url || p.src?.large2x || p.src?.large);
   return cityPhotoCache[cityId];
 }
 
