@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика конфиденциальности — CheckTheWorld</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf8f2;--bg-2:#f3efe3;--paper:#ffffff;
+  --ink:#1a1a18;--ink-2:#3d3d37;--muted:#6e6e66;--faint:#9a9a90;
+  --line:#e6e2d8;--line-2:#efeadf;
+  --green:#1c7a54;--green-deep:#13563a;--green-light:#d8f2e6;--green-pale:#edf8f3;
+  --amber:#e08c2a;--amber-light:#fef3e2;
+  --shadow:0 8px 28px rgba(20,20,15,.07),0 2px 6px rgba(20,20,15,.04);
+  --radius:18px;--radius-lg:24px;
+}
+html.dark{
+  --bg:#131310;--bg-2:#1b1b17;--paper:#1f1f1b;
+  --ink:#f4f1e8;--ink-2:#d4d1c6;--muted:#9e9a8f;--faint:#6f6c63;
+  --line:#2c2c26;--line-2:#252521;
+  --green:#3fbb89;--green-deep:#2fa474;--green-light:rgba(63,187,137,.14);--green-pale:rgba(63,187,137,.07);
+  --amber:#f0a54a;--amber-light:rgba(240,165,74,.14);
+  --shadow:0 8px 28px rgba(0,0,0,.35);
+}
+html,body{background:var(--bg);color:var(--ink)}
+body{font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(18px);border-bottom:1px solid var(--line);
+}
+.nav-inner{max-width:900px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.5px}
+.logo em{color:var(--green);font-style:italic}
+.logo .dot{color:var(--amber)}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-back:hover{color:var(--ink);text-decoration:none}
+.nav-back svg{width:14px;height:14px}
+
+/* BLOBS */
+.blobs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.12;mix-blend-mode:multiply}
+html.dark .blob{opacity:.15;mix-blend-mode:screen}
+.b1{width:500px;height:500px;background:#30b278;top:-150px;right:-100px;animation:bf 17s ease-in-out infinite}
+.b2{width:400px;height:400px;background:#e08c2a;bottom:-100px;left:-120px;animation:bf 21s ease-in-out infinite reverse}
+@keyframes bf{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-14px) scale(1.04)}}
+
+/* CONTENT */
+.wrap{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:60px 44px 100px}
+
+.page-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--green);margin-bottom:20px;
+}
+.page-label::before{content:'';display:block;width:24px;height:1.5px;background:var(--green)}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.2;
+  color:var(--ink);margin-bottom:10px;
+}
+.updated{font-size:13px;color:var(--faint);margin-bottom:48px;font-family:'JetBrains Mono',monospace}
+
+/* Секции */
+.section{margin-bottom:40px}
+.section h2{
+  font-size:16px;font-weight:700;color:var(--ink);
+  margin-bottom:12px;display:flex;align-items:center;gap:10px;
+}
+.section h2::before{
+  content:'';display:block;width:3px;height:18px;
+  background:var(--green);border-radius:2px;flex-shrink:0;
+}
+.section p{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:10px}
+.section ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.section ul li{
+  font-size:15px;color:var(--muted);line-height:1.7;
+  padding-left:20px;position:relative;
+}
+.section ul li::before{
+  content:'—';position:absolute;left:0;color:var(--faint);font-size:13px;
+}
+
+/* Контакт блок */
+.contact-box{
+  background:var(--green-pale);border:1px solid var(--green-light);
+  border-radius:var(--radius);padding:24px 28px;margin-top:48px;
+}
+.contact-box p{font-size:15px;color:var(--ink-2);line-height:1.7;margin-bottom:8px}
+.contact-box p:last-child{margin-bottom:0}
+.contact-box strong{color:var(--ink)}
+
+/* FOOTER */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid var(--line);
+  padding:20px 44px;
+  max-width:900px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:13px;color:var(--faint);
+}
+@media(max-width:768px){
+  .nav-inner{padding:14px 20px}
+  .wrap{padding:40px 20px 80px}
+  footer{padding:20px;flex-direction:column;gap:10px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="blobs">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Check<em>The</em>World<span class="dot">.</span></a>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button id="theme-toggle" aria-label="Тема" style="
+        width:36px;height:36px;border-radius:50%;border:1px solid var(--line);
+        background:transparent;color:var(--muted);cursor:pointer;
+        display:flex;align-items:center;justify-content:center;transition:all .15s;
+        font-family:inherit;
+      ">
+        <svg class="t-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="t-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <a class="nav-back" href="index.html">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        На главную
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="page-label">Документ</div>
+  <h1>Политика<br>конфиденциальности</h1>
+  <div class="updated">Последнее обновление: апрель 2026</div>
+
+  <div class="section">
+    <h2>Кто мы</h2>
+    <p>CheckTheWorld — сервис для путешественников и эмигрантов, который собирает актуальную информацию о визах, стоимости жизни и переезде по 180+ странам. Сайт находится в стадии разработки.</p>
+    <p>Контакт: <a href="mailto:checktheworld2026@gmail.com">checktheworld2026@gmail.com</a></p>
+  </div>
+
+  <div class="section">
+    <h2>Какие данные мы собираем</h2>
+    <p>Единственные персональные данные, которые мы собираем — это email-адрес, оставленный в форме листа ожидания.</p>
+    <ul>
+      <li>Email-адрес, добровольно введённый в форму</li>
+      <li>Дата и время подачи заявки (автоматически, через EmailJS)</li>
+    </ul>
+    <p>Мы не собираем имена, телефоны, геолокацию, куки отслеживания или любые другие персональные данные.</p>
+  </div>
+
+  <div class="section">
+    <h2>Зачем нам email</h2>
+    <p>Только для одного: отправить тебе письмо в момент запуска сервиса. Больше никаких рассылок, никакого маркетинга без твоего согласия.</p>
+    <ul>
+      <li>Одно уведомление о запуске CheckTheWorld</li>
+      <li>Информация о бесплатном доступе для участников листа ожидания</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Передача данных третьим лицам</h2>
+    <p>Мы не продаём, не передаём и не обмениваем твой email с кем-либо. Единственный технический сервис, через который проходит email — <strong>EmailJS</strong>, используемый для отправки писем.</p>
+    <p>EmailJS обрабатывает данные согласно <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener">своей политике конфиденциальности</a>.</p>
+  </div>
+
+  <div class="section">
+    <h2>Хранение данных</h2>
+    <p>Данные хранятся в сервисе EmailJS до момента запуска CheckTheWorld. После запуска список ожидания будет удалён.</p>
+  </div>
+
+  <div class="section">
+    <h2>Твои права</h2>
+    <p>Ты можешь в любой момент:</p>
+    <ul>
+      <li>Запросить удаление своего email из листа ожидания</li>
+      <li>Узнать, какие данные о тебе хранятся</li>
+      <li>Отозвать согласие на обработку данных</li>
+    </ul>
+    <p>Для этого просто напиши нам на email ниже.</p>
+  </div>
+
+  <div class="section">
+    <h2>Файлы cookie</h2>
+    <p>Сайт не использует аналитические или маркетинговые cookies. Технические cookies браузера (например, для работы Firebase Auth) используются исключительно для функционирования сервиса.</p>
+  </div>
+
+  <div class="section">
+    <h2>Изменения политики</h2>
+    <p>Если политика существенно изменится, мы обновим дату вверху страницы. При наличии твоего email — уведомим напрямую.</p>
+  </div>
+
+  <div class="contact-box">
+    <p><strong>Вопросы по конфиденциальности</strong></p>
+    <p>Если у тебя есть вопросы или ты хочешь удалить свои данные — напиши нам:</p>
+    <p><a href="mailto:checktheworld2026@gmail.com">checktheworld2026@gmail.com</a></p>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 · CheckTheWorld</span>
+  <a href="index.html" style="color:var(--faint)">← На главную</a>
+</footer>
+
+<script>
+const root = document.documentElement;
+
+function applyTheme(dark) {
+  root.classList.toggle('dark', !!dark);
+  const sun = document.querySelector('.t-sun');
+  const moon = document.querySelector('.t-moon');
+  if (sun) sun.style.display = dark ? 'none' : 'block';
+  if (moon) moon.style.display = dark ? 'block' : 'none';
+  try { localStorage.setItem('ctw-dark', dark ? 'true' : 'false'); } catch(e){}
+}
+
+// Читаем сохранённую тему
+let dark = true; // дефолт как на главной
+try {
+  const saved = localStorage.getItem('ctw-dark');
+  if (saved !== null) dark = saved === 'true';
+} catch(e){}
+applyTheme(dark);
+
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  dark = !root.classList.contains('dark');
+  applyTheme(dark);
+});
+</script>
+</body></html>
