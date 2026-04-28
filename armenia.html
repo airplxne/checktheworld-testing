@@ -1345,6 +1345,47 @@ function switchFlights(tab, btn){
 }
 
 // ── VISA MODAL ──
+const VISAS = {
+  free: {
+    title: 'Безвизовый въезд',
+    subtitle: '',
+    tags: [{t:'180 дней',c:'green'},{t:'Паспорт РФ',c:'green'}],
+    sections: [
+      {title:'Кому подходит', text:''},
+      {title:'Порядок действий', steps:['','','']},
+    ],
+    warn: '',
+    btn: null
+  },
+};
+
+const CITIES = {
+  yerevan: {name_en:'Ереван',
+    name:'Ереван', emoji:'🌆', tag:'', budget:'',
+    desc:'',
+    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
+    facts:['','','']
+  },
+  gyumri: {name_en:'Гюмри',
+    name:'Гюмри', emoji:'🏛', tag:'', budget:'',
+    desc:'',
+    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
+    facts:['','','']
+  },
+  dilijan: {name_en:'Дилижан',
+    name:'Дилижан', emoji:'🌲', tag:'', budget:'',
+    desc:'',
+    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
+    facts:['','','']
+  },
+  tatev: {name_en:'Татев',
+    name:'Татев', emoji:'⛪', tag:'', budget:'',
+    desc:'',
+    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
+    facts:['','','']
+  },
+};
+
 function openVisa(key){
   const v = VISAS[key];
   if(!v) return;
@@ -1501,20 +1542,28 @@ async function fetchPexels(query, count) {
   } catch(e) { console.warn('Pexels error:', e); return []; }
 }
 
+
+function extractPhotoUrl(photo) {
+  const direct = photo?.src?.large2x || photo?.src?.large || photo?.src?.medium;
+  if (!direct) return null;
+  return `${WORKER}?proxy=${encodeURIComponent(direct)}`;
+}
+function unsplashFallback(query) {
+  return `https://source.unsplash.com/800x600/?${encodeURIComponent(query)}`;
+}
 async function loadCityPhoto(imgEl, query) {
   const photos = await fetchPexels(query);
-  if (photos[0]) {
-    const url = photos[0].url || photos[0].src?.large2x || photos[0].src?.large;
-    imgEl.onload = () => imgEl.classList.add('loaded');
-    imgEl.src = url;
-  }
+  const url = extractPhotoUrl(photos[0]);
+  if (!url) return;
+  imgEl.onload = () => imgEl.classList.add('loaded');
+  imgEl.src = url;
 }
 
 const cityPhotoCache = {};
 async function loadCityModalPhotos(cityId, query) {
   if (cityPhotoCache[cityId]) return cityPhotoCache[cityId];
   const photos = await fetchPexels(query, 4);
-  cityPhotoCache[cityId] = photos.map(p => p.url || p.src?.large2x || p.src?.large);
+  cityPhotoCache[cityId] = photos.map(p => extractPhotoUrl(p)).filter(Boolean);
   return cityPhotoCache[cityId];
 }
 

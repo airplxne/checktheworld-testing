@@ -767,7 +767,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
         <button class="cur-btn" onclick="switchFlights('kiwi',this)">Kiwi.com</button>
       </div>
       <div id="fl-avia">
-        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=BUE&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%233fbb89&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%233fbb89&promo_id=4041&campaign_id=100" charset="utf-8"></script>
+        <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=EZE&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%233fbb89&color_background=%23ffffff&dark=%23262626&light=%23FFFFFF&achieve=%233fbb89&promo_id=4041&campaign_id=100" charset="utf-8"></script>
       </div>
       <div id="fl-kiwi" style="display:none">
         <script async src="https://tpemd.com/content?currency=rub&trs=515526&shmarker=716729&locale=ru&stops=any&show_hotels=true&powered_by=true&border_radius=15&plain=true&color_button=%233fbb89&color_button_text=%23ffffff&promo_id=3414&campaign_id=111" charset="utf-8"></script>
@@ -1345,6 +1345,47 @@ function switchFlights(tab, btn){
 }
 
 // ── VISA MODAL ──
+const VISAS = {
+  tourist: {
+    title: 'Безвизовый въезд',
+    subtitle: '',
+    tags: [{t:'90 дней',c:'green'},{t:'Паспорт РФ',c:'green'}],
+    sections: [
+      {title:'Кому подходит', text:''},
+      {title:'Порядок действий', steps:['','','']},
+    ],
+    warn: '',
+    btn: null
+  },
+};
+
+const CITIES = {
+  buenosaires: {name_en:'Буэнос-Айрес',
+    name:'Буэнос-Айрес', emoji:'🏙', tag:'', budget:'',
+    desc:'',
+    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
+    facts:['','','']
+  },
+  cordoba: {name_en:'Кордова',
+    name:'Кордова', emoji:'🏛', tag:'', budget:'',
+    desc:'',
+    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
+    facts:['','','']
+  },
+  mendoza: {name_en:'Мендоса',
+    name:'Мендоса', emoji:'🍷', tag:'', budget:'',
+    desc:'',
+    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
+    facts:['','','']
+  },
+  bariloche: {name_en:'Барилоче',
+    name:'Барилоче', emoji:'⛷', tag:'', budget:'',
+    desc:'',
+    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
+    facts:['','','']
+  },
+};
+
 function openVisa(key){
   const v = VISAS[key];
   if(!v) return;
@@ -1501,20 +1542,28 @@ async function fetchPexels(query, count) {
   } catch(e) { console.warn('Pexels error:', e); return []; }
 }
 
+
+function extractPhotoUrl(photo) {
+  const direct = photo?.src?.large2x || photo?.src?.large || photo?.src?.medium;
+  if (!direct) return null;
+  return `${WORKER}?proxy=${encodeURIComponent(direct)}`;
+}
+function unsplashFallback(query) {
+  return `https://source.unsplash.com/800x600/?${encodeURIComponent(query)}`;
+}
 async function loadCityPhoto(imgEl, query) {
   const photos = await fetchPexels(query);
-  if (photos[0]) {
-    const url = photos[0].url || photos[0].src?.large2x || photos[0].src?.large;
-    imgEl.onload = () => imgEl.classList.add('loaded');
-    imgEl.src = url;
-  }
+  const url = extractPhotoUrl(photos[0]);
+  if (!url) return;
+  imgEl.onload = () => imgEl.classList.add('loaded');
+  imgEl.src = url;
 }
 
 const cityPhotoCache = {};
 async function loadCityModalPhotos(cityId, query) {
   if (cityPhotoCache[cityId]) return cityPhotoCache[cityId];
   const photos = await fetchPexels(query, 4);
-  cityPhotoCache[cityId] = photos.map(p => p.url || p.src?.large2x || p.src?.large);
+  cityPhotoCache[cityId] = photos.map(p => extractPhotoUrl(p)).filter(Boolean);
   return cityPhotoCache[cityId];
 }
 
