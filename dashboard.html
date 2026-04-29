@@ -1115,6 +1115,28 @@ ul { list-style: none; padding: 0; margin: 0; }
   font-family: var(--sans) !important;
 }
 
+
+/* ── Toast ── */
+.toast-container{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.toast-msg{background:rgba(20,20,17,.97);border:1px solid #3a3a32;color:#ece9df;padding:11px 20px;border-radius:12px;font-size:13px;font-weight:500;backdrop-filter:blur(10px);white-space:nowrap;animation:toastIn .22s cubic-bezier(.2,.8,.2,1)}
+@keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+/* ── Loading overlay ── */
+#fb-loading{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9000;flex-direction:column;gap:14px}
+#fb-loading .ll{font-family:var(--serif);font-size:26px;color:var(--text)}
+#fb-loading .ls{width:20px;height:20px;border:2.5px solid #2c2c26;border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* ── Search modal ── */
+.search-input-wrap{position:relative;margin-bottom:14px}
+.search-input-wrap input{width:100%;padding:11px 14px 11px 38px;background:#1a1a17;border:1.5px solid #2c2c26;border-radius:10px;color:#ece9df;font-family:var(--sans);font-size:14px;outline:none}
+.search-input-wrap input:focus{border-color:var(--accent)}
+.search-input-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#7d786c}
+.search-results{max-height:320px;overflow-y:auto}
+.search-result-row{display:flex;align-items:center;gap:12px;padding:10px 8px;border-radius:8px;cursor:pointer;transition:background .12s}
+.search-result-row:hover{background:rgba(255,255,255,.04)}
+.sr-name{font-size:14px;color:#ece9df}
+.sr-status{font-size:11px;color:#7d786c;margin-top:2px}
+
+
 </style>
 <script src="7d83def5-a3c2-4510-88f0-a451a9ee9ef5"></script>
 <script src="8a488872-e705-42af-a0c1-d1c7fdbfea3f"></script>
@@ -1148,9 +1170,12 @@ window.NUM_TO_ISO = {
 };
 
 </script>
-<script src="bf08a90b-123a-4de3-8f49-d6a670119949" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="c1466ce1-7095-464e-a9ba-7fa50c99e7e0" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="880e80c6-78d4-4438-ae60-52e1d8b8fe30" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.24.7/babel.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js" crossorigin="anonymous"></script>
+<script>window.topojson = window.topojsonClient || topojson;</script>
 <script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-app-compat.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-auth-compat.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-firestore-compat.min.js"></script>
@@ -1400,28 +1425,7 @@ function TweaksPanel({ title = 'Tweaks', children }) {
   if (!open) return null;
   return (
     <>
-      <style>{__TWEAKS_STYLE}
-/* ── Toast ── */
-.toast-container{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
-.toast-msg{background:rgba(20,20,17,.97);border:1px solid #3a3a32;color:#ece9df;padding:11px 20px;border-radius:12px;font-size:13px;font-weight:500;backdrop-filter:blur(10px);white-space:nowrap;animation:toastIn .22s cubic-bezier(.2,.8,.2,1)}
-@keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-/* ── Loading overlay ── */
-#fb-loading{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9000;flex-direction:column;gap:14px}
-#fb-loading .ll{font-family:var(--serif);font-size:26px;color:var(--text)}
-#fb-loading .ls{width:20px;height:20px;border:2.5px solid #2c2c26;border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-/* ── Search modal ── */
-.search-input-wrap{position:relative;margin-bottom:14px}
-.search-input-wrap input{width:100%;padding:11px 14px 11px 38px;background:#1a1a17;border:1.5px solid #2c2c26;border-radius:10px;color:#ece9df;font-family:var(--sans);font-size:14px;outline:none}
-.search-input-wrap input:focus{border-color:var(--accent)}
-.search-input-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#7d786c}
-.search-results{max-height:320px;overflow-y:auto}
-.search-result-row{display:flex;align-items:center;gap:12px;padding:10px 8px;border-radius:8px;cursor:pointer;transition:background .12s}
-.search-result-row:hover{background:rgba(255,255,255,.04)}
-.sr-name{font-size:14px;color:#ece9df}
-.sr-status{font-size:11px;color:#7d786c;margin-top:2px}
-
-</style>
+      <style>{__TWEAKS_STYLE}</style>
       <div ref={dragRef} className="twk-panel" data-noncommentable=""
            style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
         <div className="twk-hd" onMouseDown={onDragStart}>
