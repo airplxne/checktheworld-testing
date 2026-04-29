@@ -2,8 +2,6 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Войти — CheckTheWorld</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,123 +9,96 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#faf8f2;--white:#ffffff;--black:#1a1a18;
-  --g500:#484842;--g300:#848480;--g100:#e6e2d8;
-  --green:#1c7a54;--green-mid:#30b278;--green-light:#d8f2e6;
-  --amber:#e08c2a;--amber-light:#fef3e2;
+  --bg:#131310;--bg2:#1b1b17;--paper:#1f1f1b;--paper2:#252521;
+  --ink:#f4f1e8;--ink2:#d4d1c6;--muted:#9e9a8f;--faint:#6f6c63;
+  --line:#2c2c26;
+  --green:#3fbb89;--green-d:#2fa474;--green-l:rgba(63,187,137,.14);
+  --amber:#f0a54a;
+  --red:#e47060;--red-l:rgba(228,112,96,.12);
+  --shadow:0 20px 60px rgba(0,0,0,.5);
 }
-body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--black);
-  min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+html.light{
+  --bg:#faf8f2;--bg2:#f3efe3;--paper:#ffffff;--paper2:#f0ece2;
+  --ink:#1a1a18;--ink2:#3d3d37;--muted:#6e6e66;--faint:#9a9a90;
+  --line:#e6e2d8;
+  --green:#1c7a54;--green-d:#13563a;--green-l:#d8f2e6;
+  --amber:#e08c2a;
+  --red:#c0392b;--red-l:#fce8e8;
+  --shadow:0 20px 50px rgba(20,20,15,.12);
+}
+html{background:var(--bg);color:var(--ink)}
+body{font-family:'Manrope',sans-serif;background:var(--bg);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;-webkit-font-smoothing:antialiased}
 
 /* BLOBS */
-.blobs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.18}
-.b1{width:500px;height:500px;background:#30b278;top:-120px;right:-60px;animation:bf 13s ease-in-out infinite}
-.b2{width:400px;height:400px;background:#e08c2a;bottom:-80px;left:-100px;animation:bf 16s ease-in-out infinite reverse}
-@keyframes bf{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-14px) scale(1.04)}}
+.blobs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.25;animation:bf 15s ease-in-out infinite}
+html.light .blob{opacity:.18}
+.b1{width:500px;height:500px;background:#3fbb89;top:-150px;left:-150px;animation-duration:17s}
+.b2{width:400px;height:400px;background:#f0a54a;bottom:-100px;right:-100px;animation-duration:21s;animation-delay:-8s}
+@keyframes bf{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.05)}66%{transform:translate(-20px,30px) scale(.95)}}
 
-/* NAV */
-nav{position:relative;z-index:10;border-bottom:2px solid var(--amber);
-  background:rgba(250,248,242,0.95);backdrop-filter:blur(16px)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:16px 44px;
-  display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif;font-size:21px;text-decoration:none;color:var(--black)}
+.wrap{position:relative;z-index:1;width:100%;max-width:420px}
+
+/* THEME TOGGLE — вверху */
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.logo{font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);text-decoration:none}
 .logo span{color:var(--green)}.logo .dot{color:var(--amber)}
-.nav-back{font-size:14px;color:var(--g300);text-decoration:none;font-weight:500;
-  transition:color .15s;display:flex;align-items:center;gap:6px}
-.nav-back:hover{color:var(--black)}
-.nav-back svg{width:16px;height:16px}
+.theme-btn{padding:6px 12px;background:var(--paper);border:1px solid var(--line);border-radius:20px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;font-family:'Manrope',sans-serif;transition:all .2s}
+.theme-btn:hover{border-color:var(--green);color:var(--green)}
 
-/* MAIN */
-.main{flex:1;display:flex;align-items:center;justify-content:center;
-  padding:48px 20px;position:relative;z-index:1}
-
-/* CARD */
-.card{background:var(--white);border:1px solid var(--g100);border-radius:20px;
-  padding:40px;width:100%;max-width:420px;box-shadow:0 4px 40px rgba(0,0,0,.06)}
-
-.card-logo{font-family:'Playfair Display',serif;font-size:26px;text-align:center;
-  margin-bottom:6px;color:var(--black)}
-.card-logo span{color:var(--green)}.card-logo .dot{color:var(--amber)}
-.card-sub{text-align:center;font-size:14px;color:var(--g300);margin-bottom:28px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:36px;box-shadow:var(--shadow)}
+.card-sub{font-size:13px;color:var(--muted);margin-bottom:28px;margin-top:4px}
 
 /* TABS */
-.tabs{display:flex;background:var(--bg);border-radius:10px;padding:4px;margin-bottom:28px}
-.tab{flex:1;padding:9px;font-size:14px;font-weight:600;text-align:center;
-  border-radius:8px;cursor:pointer;transition:all .2s;color:var(--g300);
-  font-family:'Manrope',sans-serif;border:none;background:none}
-.tab.active{background:var(--white);color:var(--black);
-  box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.tabs{display:flex;gap:4px;background:var(--bg2);border-radius:12px;padding:4px;margin-bottom:20px}
+.tab{flex:1;padding:8px;border-radius:9px;border:none;background:none;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;font-family:'Manrope',sans-serif;transition:all .15s}
+.tab.active{background:var(--paper);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.2)}
+html.light .tab.active{box-shadow:0 1px 6px rgba(0,0,0,.1)}
+
+/* ALERT */
+.alert{display:none;padding:11px 14px;border-radius:10px;font-size:13px;margin-bottom:14px;font-weight:500}
+.alert.show{display:block}
+.alert-error{background:var(--red-l);color:var(--red)}
+.alert-success{background:var(--green-l);color:var(--green)}
 
 /* FORM */
-.form-group{margin-bottom:16px}
-.form-label{display:block;font-size:13px;font-weight:600;color:var(--g500);margin-bottom:6px}
-.form-input{width:100%;padding:12px 14px;border:1.5px solid var(--g100);border-radius:10px;
-  font-size:15px;font-family:'Manrope',sans-serif;background:var(--white);color:var(--black);
-  transition:border-color .15s,box-shadow .15s;outline:none}
-.form-input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(28,122,84,.1)}
-.form-input.error{border-color:#e24b4a}
-.form-input::placeholder{color:var(--g300)}
+.form-group{margin-bottom:14px}
+.form-label{font-size:11px;font-weight:700;color:var(--muted);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.07em}
+.form-input{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:14px;font-family:'Manrope',sans-serif;background:var(--bg2);color:var(--ink);outline:none;transition:border-color .15s}
+.form-input:focus{border-color:var(--green)}
+.form-input::placeholder{color:var(--faint)}
 
-/* BUTTONS */
-.btn-primary{width:100%;padding:14px;background:var(--green);color:var(--white);
-  border:none;border-radius:10px;font-size:15px;font-weight:600;
-  font-family:'Manrope',sans-serif;cursor:pointer;transition:background .15s,transform .1s;
-  margin-top:4px}
-.btn-primary:hover{background:#165f41}
-.btn-primary:active{transform:scale(.98)}
-.btn-primary:disabled{background:var(--g300);cursor:not-allowed;transform:none}
+/* STRENGTH */
+.strength-bar{height:3px;border-radius:2px;background:var(--line);margin-top:7px;overflow:hidden;position:relative}
+.strength-bar::after{content:'';position:absolute;left:0;top:0;height:100%;border-radius:2px;transition:width .3s,background .3s}
+.strength-weak::after{width:33%;background:var(--red)}
+.strength-medium::after{width:66%;background:var(--amber)}
+.strength-strong::after{width:100%;background:var(--green)}
+.strength-label{font-size:11px;color:var(--muted);margin-top:5px}
+.match-hint{font-size:11px;margin-top:5px}
+.match-ok{color:var(--green)}.match-no{color:var(--red)}
 
-.divider{display:flex;align-items:center;gap:12px;margin:20px 0}
-.divider-line{flex:1;height:1px;background:var(--g100)}
-.divider-text{font-size:13px;color:var(--g300);white-space:nowrap}
-
-.btn-google{width:100%;padding:13px;background:var(--white);color:var(--black);
-  border:1.5px solid var(--g100);border-radius:10px;font-size:15px;font-weight:600;
-  font-family:'Manrope',sans-serif;cursor:pointer;transition:all .15s;
-  display:flex;align-items:center;justify-content:center;gap:10px}
-.btn-google:hover{border-color:var(--g300);background:var(--bg)}
-.btn-google:active{transform:scale(.98)}
-.google-icon{width:20px;height:20px;flex-shrink:0}
-
-/* ERROR / SUCCESS */
-.alert{padding:12px 14px;border-radius:10px;font-size:14px;margin-bottom:16px;display:none}
-.alert.show{display:block}
-.alert-error{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
-.alert-success{background:var(--green-light);border:1px solid #6ee7b7;color:#065f46}
-
-/* FOOTER LINK */
-.switch-mode{text-align:center;margin-top:20px;font-size:14px;color:var(--g300)}
-.switch-mode a{color:var(--green);font-weight:600;cursor:pointer;text-decoration:none}
-.switch-mode a:hover{text-decoration:underline}
-
-/* FORGOT */
-.forgot{text-align:right;margin-top:-8px;margin-bottom:16px}
-.forgot a{font-size:13px;color:var(--g300);cursor:pointer;text-decoration:none;
-  font-weight:500;transition:color .15s}
+.forgot{text-align:right;margin-bottom:14px}
+.forgot a{font-size:12px;color:var(--muted);cursor:pointer;transition:color .15s}
 .forgot a:hover{color:var(--green)}
 
-/* PASSWORD STRENGTH */
-.strength-bar{display:flex;gap:4px;margin-top:10px;margin-bottom:2px}
-.strength-bar span{flex:1;height:5px;border-radius:3px;background:var(--g100);transition:background .3s}
-.strength-label{font-size:12px;color:var(--g300);margin-top:5px;min-height:16px;transition:color .25s}
-.strength-weak span:nth-child(1){background:#e24b4a !important}
-.strength-medium span:nth-child(1),.strength-medium span:nth-child(2){background:var(--amber) !important}
-.strength-strong span{background:var(--green) !important}
-.match-hint{font-size:12px;margin-top:5px;min-height:16px}
-.match-ok{color:var(--green)}
-.match-no{color:#e24b4a}
+.btn-primary{width:100%;padding:12px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;transition:background .15s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-primary:hover{background:var(--green-d)}
+.btn-primary:disabled{opacity:.6;cursor:not-allowed}
 
-/* LOADING */
-.spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.3);
-  border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;
-  display:inline-block;vertical-align:middle;margin-right:8px}
+.divider{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--faint);font-size:12px;font-weight:500}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--line)}
+
+.btn-google{width:100%;padding:11px;background:none;color:var(--ink2);border:1.5px solid var(--line);border-radius:10px;font-size:13px;font-weight:600;font-family:'Manrope',sans-serif;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:10px}
+.btn-google:hover{border-color:var(--green);color:var(--ink)}
+.btn-google svg{width:18px;height:18px;flex-shrink:0}
+
+.switch-text{text-align:center;font-size:12px;color:var(--muted);margin-top:18px}
+.switch-text a{color:var(--green);cursor:pointer;font-weight:600}
+
+/* SPINNER */
 @keyframes spin{to{transform:rotate(360deg)}}
-
-@media(max-width:480px){
-  .nav-inner{padding:14px 20px}
-  .card{padding:28px 20px;border-radius:16px}
-}
+.spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;display:inline-block;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -137,19 +108,13 @@ nav{position:relative;z-index:10;border-bottom:2px solid var(--amber);
   <div class="blob b2"></div>
 </div>
 
-<nav>
-  <div class="nav-inner">
+<div class="wrap">
+  <div class="top-bar">
     <a class="logo" href="index.html">Check<span>The</span>World<span class="dot">.</span></a>
-    <a class="nav-back" href="index.html">
-      <svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      На главную
-    </a>
+    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn">☀ Светлая</button>
   </div>
-</nav>
 
-<div class="main">
   <div class="card">
-    <div class="card-logo">Check<span>The</span>World<span class="dot">.</span></div>
     <div class="card-sub">Личный кабинет путешественника</div>
 
     <div class="tabs">
@@ -159,7 +124,7 @@ nav{position:relative;z-index:10;border-bottom:2px solid var(--amber);
 
     <div id="alert" class="alert"></div>
 
-    <!-- LOGIN FORM -->
+    <!-- LOGIN -->
     <div id="form-login">
       <div class="form-group">
         <label class="form-label">Email</label>
@@ -173,11 +138,11 @@ nav{position:relative;z-index:10;border-bottom:2px solid var(--amber);
       <button class="btn-primary" id="btn-login" onclick="loginEmail()">Войти</button>
     </div>
 
-    <!-- REGISTER FORM -->
+    <!-- REGISTER -->
     <div id="form-register" style="display:none">
       <div class="form-group">
         <label class="form-label">Имя</label>
-        <input class="form-input" type="text" id="reg-name" placeholder="Как тебя зовут?" autocomplete="name">
+        <input class="form-input" type="text" id="reg-name" placeholder="Как тебя зовут?">
       </div>
       <div class="form-group">
         <label class="form-label">Email</label>
@@ -185,224 +150,149 @@ nav{position:relative;z-index:10;border-bottom:2px solid var(--amber);
       </div>
       <div class="form-group">
         <label class="form-label">Пароль</label>
-        <input class="form-input" type="password" id="reg-password" placeholder="Латиница, цифры, спецсимволы" autocomplete="new-password" oninput="blockCyrillic(this); checkStrength()">
-        <div class="strength-bar" id="strength-bar">
-          <span></span><span></span><span></span>
-        </div>
+        <input class="form-input" type="password" id="reg-password" placeholder="Минимум 8 символов" autocomplete="new-password" oninput="checkStrength()" onkeyup="blockCyrillic(this)">
+        <div class="strength-bar" id="strength-bar"></div>
         <div class="strength-label" id="strength-label"></div>
       </div>
       <div class="form-group">
         <label class="form-label">Повтори пароль</label>
-        <input class="form-input" type="password" id="reg-password2" placeholder="••••••••" autocomplete="new-password" oninput="blockCyrillic(this); checkMatch()">
-        <div class="match-hint" id="match-hint"></div>
+        <input class="form-input" type="password" id="reg-password2" placeholder="••••••••" autocomplete="new-password" oninput="checkMatch()">
+        <div id="match-hint" class="match-hint"></div>
       </div>
       <button class="btn-primary" id="btn-register" onclick="registerEmail()">Создать аккаунт</button>
     </div>
 
-    <div class="divider">
-      <div class="divider-line"></div>
-      <div class="divider-text">или</div>
-      <div class="divider-line"></div>
-    </div>
+    <div class="divider">или</div>
 
     <button class="btn-google" onclick="loginGoogle()">
-      <svg class="google-icon" viewBox="0 0 24 24">
-        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
-        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
       Войти через Google
     </button>
 
-    <div class="switch-mode" id="switch-text">
+    <div class="switch-text" id="switch-text">
       Нет аккаунта? <a onclick="switchTab('register')">Зарегистрироваться</a>
     </div>
   </div>
 </div>
 
-<!-- Firebase SDK -->
 <script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-app-compat.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-auth-compat.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-firestore-compat.min.js"></script>
-
 <script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyC_erJyfCASKgjMaMXTF4ovqfwfC4-5GmU",
-    authDomain: "checktheworld-a631d.firebaseapp.com",
-    projectId: "checktheworld-a631d",
-    storageBucket: "checktheworld-a631d.firebasestorage.app",
-    messagingSenderId: "1006756841439",
-    appId: "1:1006756841439:web:ab81d8f3f469ea3d07666a"
-  };
+// THEME
+(function(){
+  const t=localStorage.getItem('ctw-theme')||'dark';
+  if(t==='light'){document.documentElement.classList.add('light');}
+  updateThemeBtn();
+})();
+function toggleTheme(){
+  const isLight=document.documentElement.classList.contains('light');
+  document.documentElement.classList.toggle('light',!isLight);
+  localStorage.setItem('ctw-theme',isLight?'dark':'light');
+  updateThemeBtn();
+}
+function updateThemeBtn(){
+  const btn=document.getElementById('theme-btn');
+  if(!btn)return;
+  const isLight=document.documentElement.classList.contains('light');
+  btn.textContent=isLight?'🌙 Тёмная':'☀ Светлая';
+}
 
-  firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
-  const db = firebase.firestore();
+firebase.initializeApp({apiKey:"AIzaSyC_erJyfCASKgjMaMXTF4ovqfwfC4-5GmU",authDomain:"checktheworld-a631d.firebaseapp.com",projectId:"checktheworld-a631d",storageBucket:"checktheworld-a631d.firebasestorage.app",messagingSenderId:"1006756841439",appId:"1:1006756841439:web:ab81d8f3f469ea3d07666a"});
+const auth=firebase.auth(),db=firebase.firestore();
 
-  // Если уже залогинен — редирект
-  auth.onAuthStateChanged(user => {
-    if (user) window.location.href = 'dashboard.html';
-  });
+auth.onAuthStateChanged(user=>{if(user)window.location.href='dashboard.html';});
 
-  async function ensureUserProfile(user, name) {
-    const ref = db.collection('users').doc(user.uid);
-    const snap = await ref.get();
-    if (!snap.exists) {
-      await ref.set({
-        name: name || user.displayName || user.email.split('@')[0],
-        email: user.email,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        favorites: [],
-        visited: [],
-        currency: 'rub'
-      });
-    }
+async function ensureUserProfile(user,name){
+  const ref=db.collection('users').doc(user.uid);
+  const snap=await ref.get();
+  if(!snap.exists){await ref.set({name:name||user.displayName||user.email.split('@')[0],email:user.email,createdAt:firebase.firestore.FieldValue.serverTimestamp(),favorites:[],visited:[],currency:'rub'});}
+}
+function showAlert(msg,type='error'){const el=document.getElementById('alert');el.textContent=msg;el.className=`alert show alert-${type}`;}
+function hideAlert(){document.getElementById('alert').className='alert';}
+function setLoading(btnId,loading){
+  const btn=document.getElementById(btnId);
+  if(loading){btn.disabled=true;btn.innerHTML='<span class="spinner"></span>Подождите...';}
+  else{btn.disabled=false;btn.textContent=btnId==='btn-login'?'Войти':'Создать аккаунт';}
+}
+function firebaseError(code){
+  const map={'auth/user-not-found':'Пользователь с таким email не найден','auth/wrong-password':'Неверный пароль','auth/email-already-in-use':'Этот email уже зарегистрирован','auth/weak-password':'Пароль слишком короткий — минимум 6 символов','auth/invalid-email':'Некорректный email адрес','auth/too-many-requests':'Слишком много попыток — подождите немного','auth/popup-closed-by-user':'Окно входа было закрыто','auth/invalid-credential':'Неверный email или пароль'};
+  return map[code]||'Что-то пошло не так — попробуй ещё раз';
+}
+function getPasswordStrength(p){
+  if(p.length<8||!(/[a-z]/.test(p)&&/[A-Z]/.test(p))||!/[0-9]/.test(p))return'weak';
+  if(/[^a-zA-Z0-9]/.test(p)||p.length>=12)return'strong';
+  return'medium';
+}
+function blockCyrillic(input){
+  if(/[а-яёА-ЯЁ]/.test(input.value)){
+    document.getElementById('strength-bar').className='strength-bar strength-weak';
+    const lbl=document.getElementById('strength-label');lbl.textContent='Кириллица не допускается — используй латинские буквы';lbl.style.color='var(--red)';
   }
-
-  function showAlert(msg, type = 'error') {
-    const el = document.getElementById('alert');
-    el.textContent = msg;
-    el.className = `alert show alert-${type}`;
-  }
-  function hideAlert() {
-    document.getElementById('alert').className = 'alert';
-  }
-  function setLoading(btnId, loading) {
-    const btn = document.getElementById(btnId);
-    if (loading) {
-      btn.disabled = true;
-      btn.innerHTML = '<span class="spinner"></span>Подождите...';
-    } else {
-      btn.disabled = false;
-      btn.textContent = btnId === 'btn-login' ? 'Войти' : 'Создать аккаунт';
-    }
-  }
-
-  function firebaseError(code) {
-    const map = {
-      'auth/user-not-found': 'Пользователь с таким email не найден',
-      'auth/wrong-password': 'Неверный пароль',
-      'auth/email-already-in-use': 'Этот email уже зарегистрирован',
-      'auth/weak-password': 'Пароль слишком короткий — минимум 6 символов',
-      'auth/invalid-email': 'Некорректный email адрес',
-      'auth/too-many-requests': 'Слишком много попыток — подождите немного',
-      'auth/popup-closed-by-user': 'Окно входа было закрыто',
-      'auth/invalid-credential': 'Неверный email или пароль',
-    };
-    return map[code] || 'Что-то пошло не так — попробуй ещё раз';
-  }
-
-  function getPasswordStrength(p) {
-    const hasLower = /[a-z]/.test(p);
-    const hasUpper = /[A-Z]/.test(p);
-    const hasDigit = /[0-9]/.test(p);
-    const hasSpecial = /[^a-zA-Z0-9]/.test(p);
-    if (p.length < 8 || !(hasLower && hasUpper) || !hasDigit) return 'weak';
-    if (hasSpecial || p.length >= 12) return 'strong';
-    return 'medium';
-  }
-
-  function blockCyrillic(input) {
-    const hasCyrillic = /[а-яёА-ЯЁ]/.test(input.value);
-    if (hasCyrillic) {
-      const bar = document.getElementById('strength-bar');
-      const label = document.getElementById('strength-label');
-      bar.className = 'strength-bar strength-weak';
-      label.textContent = 'Кириллица не допускается — используй латинские буквы';
-      label.style.color = '#e24b4a';
-    }
-  }
-
-  function checkStrength() {
-    const p = document.getElementById('reg-password').value;
-    const bar = document.getElementById('strength-bar');
-    const label = document.getElementById('strength-label');
-    if (!p) { bar.className = 'strength-bar'; label.textContent = ''; label.style.color = ''; return; }
-    if (/[а-яёА-ЯЁ]/.test(p)) {
-      bar.className = 'strength-bar strength-weak';
-      label.textContent = 'Кириллица не допускается — используй латинские буквы';
-      label.style.color = '#e24b4a';
-      return;
-    }
-    const s = getPasswordStrength(p);
-    bar.className = 'strength-bar strength-' + s;
-    label.style.color = '';
-    label.textContent = s === 'weak' ? 'Слабый — добавь заглавные буквы и цифры'
-      : s === 'medium' ? 'Средний — добавь спецсимвол (!, @, #, $...)'
-      : 'Надёжный пароль ✓';
-    checkMatch();
-  }
-
-  function checkMatch() {
-    const p1 = document.getElementById('reg-password').value;
-    const p2 = document.getElementById('reg-password2').value;
-    const hint = document.getElementById('match-hint');
-    if (!p2) { hint.textContent = ''; return; }
-    if (p1 === p2) { hint.textContent = 'Пароли совпадают ✓'; hint.className = 'match-hint match-ok'; }
-    else { hint.textContent = 'Пароли не совпадают'; hint.className = 'match-hint match-no'; }
-  }
-
-  function loginEmail() {
-    hideAlert();
-    const email = document.getElementById('login-email').value.trim();
-    const password = document.getElementById('login-password').value;
-    if (!email || !password) { showAlert('Заполни все поля'); return; }
-    setLoading('btn-login', true);
-    auth.signInWithEmailAndPassword(email, password)
-      .catch(e => { showAlert(firebaseError(e.code)); setLoading('btn-login', false); });
-  }
-
-  function registerEmail() {
-    hideAlert();
-    const name = document.getElementById('reg-name').value.trim();
-    const email = document.getElementById('reg-email').value.trim();
-    const password = document.getElementById('reg-password').value;
-    const password2 = document.getElementById('reg-password2').value;
-    if (!name || !email || !password || !password2) { showAlert('Заполни все поля'); return; }
-    if (/[а-яёА-ЯЁ]/.test(password)) { showAlert('Пароль содержит кириллицу — используй латинские буквы'); return; }
-    if (password !== password2) { showAlert('Пароли не совпадают'); return; }
-    if (getPasswordStrength(password) === 'weak') { showAlert('Пароль слишком простой — нужны заглавные буквы и цифра'); return; }
-    setLoading('btn-register', true);
-    auth.createUserWithEmailAndPassword(email, password)
-      .then(cred => cred.user.updateProfile({ displayName: name }).then(() => ensureUserProfile(cred.user, name)))
-      .catch(e => { showAlert(firebaseError(e.code)); setLoading('btn-register', false); });
-  }
-
-  function loginGoogle() {
-    hideAlert();
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider)
-      .then(cred => ensureUserProfile(cred.user, null))
-      .catch(e => { if (e.code !== 'auth/popup-closed-by-user') showAlert(firebaseError(e.code)); });
-  }
-
-  function forgotPassword() {
-    const email = document.getElementById('login-email').value.trim();
-    if (!email) { showAlert('Введи email выше, чтобы сбросить пароль'); return; }
-    auth.sendPasswordResetEmail(email)
-      .then(() => showAlert('Письмо отправлено — проверь почту', 'success'))
-      .catch(e => showAlert(firebaseError(e.code)));
-  }
-
-  function switchTab(tab) {
-    const isLogin = tab === 'login';
-    document.getElementById('form-login').style.display = isLogin ? 'block' : 'none';
-    document.getElementById('form-register').style.display = isLogin ? 'none' : 'block';
-    document.getElementById('tab-login').classList.toggle('active', isLogin);
-    document.getElementById('tab-register').classList.toggle('active', !isLogin);
-    document.getElementById('switch-text').innerHTML = isLogin
-      ? 'Нет аккаунта? <a onclick="switchTab(\'register\')">Зарегистрироваться</a>'
-      : 'Уже есть аккаунт? <a onclick="switchTab(\'login\')">Войти</a>';
-    document.getElementById('alert').className = 'alert';
-  }
-
-  document.addEventListener('keydown', e => {
-    if (e.key !== 'Enter') return;
-    const loginVisible = document.getElementById('form-login').style.display !== 'none';
-    if (loginVisible) loginEmail();
-    else registerEmail();
-  });
+}
+function checkStrength(){
+  const p=document.getElementById('reg-password').value;
+  const bar=document.getElementById('strength-bar');const label=document.getElementById('strength-label');
+  if(!p){bar.className='strength-bar';label.textContent='';return;}
+  if(/[а-яёА-ЯЁ]/.test(p)){bar.className='strength-bar strength-weak';label.textContent='Кириллица не допускается';label.style.color='var(--red)';return;}
+  const s=getPasswordStrength(p);bar.className='strength-bar strength-'+s;label.style.color='';
+  label.textContent=s==='weak'?'Слабый — добавь заглавные буквы и цифры':s==='medium'?'Средний — добавь спецсимвол (!, @, #, $...)':'Надёжный пароль ✓';
+  checkMatch();
+}
+function checkMatch(){
+  const p1=document.getElementById('reg-password').value;const p2=document.getElementById('reg-password2').value;
+  const hint=document.getElementById('match-hint');if(!p2){hint.textContent='';return;}
+  if(p1===p2){hint.textContent='Пароли совпадают ✓';hint.className='match-hint match-ok';}
+  else{hint.textContent='Пароли не совпадают';hint.className='match-hint match-no';}
+}
+function loginEmail(){
+  hideAlert();
+  const email=document.getElementById('login-email').value.trim();
+  const password=document.getElementById('login-password').value;
+  if(!email||!password){showAlert('Заполни все поля');return;}
+  setLoading('btn-login',true);
+  auth.signInWithEmailAndPassword(email,password).catch(e=>{showAlert(firebaseError(e.code));setLoading('btn-login',false);});
+}
+function registerEmail(){
+  hideAlert();
+  const name=document.getElementById('reg-name').value.trim();
+  const email=document.getElementById('reg-email').value.trim();
+  const password=document.getElementById('reg-password').value;
+  const password2=document.getElementById('reg-password2').value;
+  if(!name||!email||!password||!password2){showAlert('Заполни все поля');return;}
+  if(/[а-яёА-ЯЁ]/.test(password)){showAlert('Пароль содержит кириллицу — используй латинские буквы');return;}
+  if(password!==password2){showAlert('Пароли не совпадают');return;}
+  if(getPasswordStrength(password)==='weak'){showAlert('Пароль слишком простой — нужны заглавные буквы и цифра');return;}
+  setLoading('btn-register',true);
+  auth.createUserWithEmailAndPassword(email,password)
+    .then(cred=>cred.user.updateProfile({displayName:name}).then(()=>ensureUserProfile(cred.user,name)))
+    .catch(e=>{showAlert(firebaseError(e.code));setLoading('btn-register',false);});
+}
+function loginGoogle(){
+  hideAlert();
+  const provider=new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider).then(cred=>ensureUserProfile(cred.user,null))
+    .catch(e=>{if(e.code!=='auth/popup-closed-by-user')showAlert(firebaseError(e.code));});
+}
+function forgotPassword(){
+  const email=document.getElementById('login-email').value.trim();
+  if(!email){showAlert('Введи email выше, чтобы сбросить пароль');return;}
+  auth.sendPasswordResetEmail(email).then(()=>showAlert('Письмо отправлено — проверь почту','success')).catch(e=>showAlert(firebaseError(e.code)));
+}
+function switchTab(tab){
+  const isLogin=tab==='login';
+  document.getElementById('form-login').style.display=isLogin?'block':'none';
+  document.getElementById('form-register').style.display=isLogin?'none':'block';
+  document.getElementById('tab-login').classList.toggle('active',isLogin);
+  document.getElementById('tab-register').classList.toggle('active',!isLogin);
+  document.getElementById('switch-text').innerHTML=isLogin?'Нет аккаунта? <a onclick="switchTab(\'register\')">Зарегистрироваться</a>':'Уже есть аккаунт? <a onclick="switchTab(\'login\')">Войти</a>';
+  document.getElementById('alert').className='alert';
+}
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Enter')return;
+  const loginVisible=document.getElementById('form-login').style.display!=='none';
+  if(loginVisible)loginEmail();else registerEmail();
+});
 </script>
 </body>
 </html>
