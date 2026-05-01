@@ -1,2465 +1,916 @@
 <!DOCTYPE html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CheckTheWorld · Главная</title>
+<title>Личный кабинет — CheckTheWorld</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<style>/* cyrillic-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("8c25a3bd-2566-4e32-8f7c-16e8ed2236e4") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("b2a7c8fb-6218-4ece-a304-7dae6d9ff6f1") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("3c86a5d6-f6b9-46e5-830f-aeee6536221b") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("d1a0acdf-29d7-4e86-a5af-396a0106caa5") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("ce94b5cd-e970-4663-add8-99cb83e2730c") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("e201a65d-1d6a-476d-953d-49e35fc82181") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("8c25a3bd-2566-4e32-8f7c-16e8ed2236e4") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("b2a7c8fb-6218-4ece-a304-7dae6d9ff6f1") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("3c86a5d6-f6b9-46e5-830f-aeee6536221b") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("d1a0acdf-29d7-4e86-a5af-396a0106caa5") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("ce94b5cd-e970-4663-add8-99cb83e2730c") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("e201a65d-1d6a-476d-953d-49e35fc82181") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("8c25a3bd-2566-4e32-8f7c-16e8ed2236e4") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("b2a7c8fb-6218-4ece-a304-7dae6d9ff6f1") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("3c86a5d6-f6b9-46e5-830f-aeee6536221b") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("d1a0acdf-29d7-4e86-a5af-396a0106caa5") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("ce94b5cd-e970-4663-add8-99cb83e2730c") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("e201a65d-1d6a-476d-953d-49e35fc82181") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("8c25a3bd-2566-4e32-8f7c-16e8ed2236e4") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("b2a7c8fb-6218-4ece-a304-7dae6d9ff6f1") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("3c86a5d6-f6b9-46e5-830f-aeee6536221b") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("d1a0acdf-29d7-4e86-a5af-396a0106caa5") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("ce94b5cd-e970-4663-add8-99cb83e2730c") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("e201a65d-1d6a-476d-953d-49e35fc82181") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("6fbb9b3d-5614-44b5-a5d3-4e65c241c7d9") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("1f43afcd-f15d-43ce-a865-0896d4ed5947") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("d33695ff-e130-4f75-800f-b8dba3ab3973") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("bee8087a-d42a-47cd-9d63-4590555fc479") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("f03be59c-8fed-499a-81ec-4734fe461b08") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("8a461875-c6e6-42cf-a392-5c2377d4f414") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("92992813-ad03-4323-baf7-2b554a62f346") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("70ddb2a5-f75b-44d9-a475-85fcfb470206") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("f03be59c-8fed-499a-81ec-4734fe461b08") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("8a461875-c6e6-42cf-a392-5c2377d4f414") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("92992813-ad03-4323-baf7-2b554a62f346") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("70ddb2a5-f75b-44d9-a475-85fcfb470206") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-</style>
-
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ──────────────────────────────────────────────────────────────────────────
-   CheckTheWorld · editorial dark dashboard
-   ────────────────────────────────────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#131310;--bg2:#1b1b17;--card:#1f1f1b;--card2:#252521;
+  --ink:#f4f1e8;--ink2:#d4d1c6;--muted:#9e9a8f;--faint:#6f6c63;
+  --line:#2c2c26;--line2:#1f1f1b;
+  --green:#3fbb89;--green-l:rgba(63,187,137,.14);--green-p:rgba(63,187,137,.07);
+  --amber:#f0a54a;--amber-l:rgba(240,165,74,.14);
+  --red:#e47060;--red-l:rgba(228,112,96,.14);
+  --r:14px;--gap:20px;
+}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);height:100vh;overflow:hidden;display:flex;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
-:root {
-  --bg: #131310;
-  --card: #1f1f1b;
-  --card-2: #1a1a17;
-  --border: #2c2c26;
-  --border-soft: #25251f;
-  --text: #ece9df;
-  --text-2: #b6b1a3;
-  --text-3: #7d786c;
-  --accent: #3fbb89;
-  --amber: #f0a54a;
-  --gap: 24px;
-  --graticule: 0.6;
-  --glow: 1;
-  --serif: "Playfair Display", "Times New Roman", serif;
-  --sans: "Manrope", system-ui, sans-serif;
-}
+.sidebar{width:220px;flex-shrink:0;background:var(--card);border-right:1px solid var(--line);display:flex;flex-direction:column;height:100vh}
+.sb-brand{padding:22px 18px 18px;border-bottom:1px solid var(--line)}
+.sb-logo{font-family:'Playfair Display',Georgia,serif;font-size:17px;font-weight:700;color:var(--ink)}
+.sb-logo-sub{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint);margin-top:3px}
+.sb-nav{padding:10px 8px;flex:1;display:flex;flex-direction:column;gap:2px}
+.sb-item{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .15s;position:relative;width:100%;text-align:left}
+.sb-item:hover{background:var(--bg2);color:var(--ink)}
+.sb-item.active{background:var(--green-l);color:var(--green);font-weight:600}
+.sb-item.active::after{content:'';position:absolute;right:10px;top:50%;transform:translateY(-50%);width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+.sb-item svg{width:16px;height:16px;flex-shrink:0;opacity:.7}
+.sb-item.active svg{opacity:1}
+.sb-div{height:1px;background:var(--line);margin:6px 8px}
+.sb-foot{padding:14px;border-top:1px solid var(--line)}
+.sb-user{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.sb-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#3fbb89,#2a7a5a);color:#0d1f17;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.sb-uname{font-size:12px;font-weight:600;color:var(--ink)}
+.sb-umeta{font-size:10px;color:var(--muted);margin-top:1px}
+.sb-logout{width:100%;padding:7px;background:none;border:1px solid var(--line);border-radius:8px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit;transition:all .15s}
+.sb-logout:hover{border-color:var(--red);color:var(--red)}
 
-* { box-sizing: border-box; }
+.main{flex:1;overflow-y:auto;background:var(--bg);height:100vh}
+.inner{max-width:1060px;margin:0 auto;padding:32px 36px 48px}
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 14px;
-  font-feature-settings: "ss01", "cv11";
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+.topbar{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--line2)}
+.eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.page-title{font-family:'Playfair Display',Georgia,serif;font-size:36px;font-weight:500;line-height:1.05;letter-spacing:-.015em}
+.title-dot{display:inline-block;width:7px;height:7px;background:var(--amber);border-radius:50%;margin-left:8px;transform:translateY(-14px)}
+.topbar-btn{display:flex;align-items:center;gap:8px;padding:10px 18px;background:var(--green);color:#0c1f17;border-radius:10px;font-size:13px;font-weight:700;border:none;cursor:pointer;transition:filter .15s;font-family:inherit}
+.topbar-btn:hover{filter:brightness(1.1)}
+.topbar-btn svg{width:15px;height:15px}
 
-button {
-  font-family: inherit;
-  color: inherit;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-bottom:var(--gap)}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;position:relative;overflow:hidden;transition:border-color .2s}
+.stat:hover{border-color:#34342c}
+.stat::before{content:'';position:absolute;inset:0;background:radial-gradient(300px 60px at 100% 0,rgba(63,187,137,.05),transparent 60%);pointer-events:none}
+.stat-l{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.stat-row{display:flex;align-items:baseline;gap:10px;margin-top:12px}
+.stat-v{font-family:'Playfair Display',Georgia,serif;font-size:36px;font-weight:600;line-height:1;letter-spacing:-.02em}
+.badge{font-size:10px;font-weight:600;padding:3px 8px;border-radius:999px;border:1px solid currentColor;letter-spacing:.02em}
+.badge-green{color:var(--green);background:var(--green-l);border-color:rgba(63,187,137,.35)}
+.badge-amber{color:var(--amber);background:var(--amber-l);border-color:rgba(240,165,74,.35)}
+.stat-foot{margin-top:12px;font-size:11px;color:var(--faint)}
 
-ul { list-style: none; padding: 0; margin: 0; }
+.halves{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);margin-bottom:var(--gap)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;transition:border-color .2s,box-shadow .2s}
+.card:hover{border-color:#34342c;box-shadow:0 0 0 1px rgba(63,187,137,.1),0 8px 28px -10px rgba(63,187,137,.12)}
+.card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px}
+.card-ey{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:5px}
+.card-title{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:500;letter-spacing:-.01em}
+.ghost-btn{font-size:11px;color:var(--muted);padding:5px 9px;border-radius:7px;border:1px solid transparent;transition:all .15s;cursor:pointer;font-family:inherit}
+.ghost-btn:hover{border-color:var(--line);color:var(--ink)}
 
-/* ────────── App shell ────────── */
+.fav-list{display:flex;flex-direction:column}
+.fav-row{display:grid;grid-template-columns:26px 34px 1fr auto;align-items:center;gap:12px;padding:10px 2px;border-top:1px solid var(--line2);cursor:pointer;transition:background .12s}
+.fav-row:first-child{border-top:none}
+.fav-row:hover{background:rgba(255,255,255,.015)}
+.fav-rank{font-family:'Playfair Display',Georgia,serif;font-size:13px;color:var(--faint)}
+.flag-chip{width:34px;height:24px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;letter-spacing:.04em;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.06)}
+.fav-name{font-size:13px;color:var(--ink)}
+.star-icon{color:var(--faint);width:13px;height:13px;flex-shrink:0;transition:color .12s}
+.fav-row:hover .star-icon{color:var(--amber)}
 
-.app {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  min-height: 100vh;
-  background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(63,187,137,0.045), transparent 60%),
-    radial-gradient(900px 500px at -10% 110%, rgba(240,165,74,0.035), transparent 60%),
-    var(--bg);
-}
+.visa-list{display:flex;flex-direction:column}
+.visa-row{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px;padding:12px 2px;border-top:1px solid var(--line2)}
+.visa-row:first-child{border-top:none}
+.visa-bar{height:3px;background:#252521;border-radius:2px;overflow:hidden;margin-top:8px}
+.visa-fill{height:100%;border-radius:2px}
+.visa-days b{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:600;display:block;line-height:1}
+.visa-days span{font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.1em}
 
-/* ────────── Sidebar ────────── */
+.map-card{padding:20px 22px 18px;margin-bottom:var(--gap)}
+.map-legend{display:flex;gap:14px;font-size:11px;color:var(--ink2)}
+.leg-dot{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:5px;vertical-align:middle}
+.map-wrap{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line2);background:#0d0d0b;margin-top:14px;margin-bottom:16px}
+.map-grid{position:absolute;inset:0;pointer-events:none;z-index:1}
+.map-grid line{stroke:#222220;stroke-width:0.5;opacity:0.5}
+#world-svg{display:block;width:100%}
+.map-tip{position:absolute;background:rgba(20,20,17,.96);border:1px solid var(--line);padding:7px 11px;border-radius:8px;font-size:12px;pointer-events:none;display:none;white-space:nowrap;z-index:10}
+.tip-name{font-weight:600}
+.tip-status{font-size:10px;margin-top:2px;color:var(--faint)}
+.map-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-top:16px;border-top:1px solid var(--line2)}
+.map-stat b{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:600;display:block}
+.map-stat span{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint)}
 
-.sidebar {
-  width: 220px;
-  border-right: 1px solid var(--border);
-  padding: 28px 16px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  background: rgba(15,15,13,0.6);
-  backdrop-filter: blur(8px);
-}
+.achv-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:14px}
+.achv{border:1px solid var(--line);border-radius:11px;padding:13px 10px;display:flex;flex-direction:column;gap:10px;background:var(--card2);position:relative;overflow:hidden;transition:all .2s}
+.achv.on::before{content:'';position:absolute;inset:0;background:radial-gradient(60px 50px at 50% 0,rgba(63,187,137,.18),transparent 60%);pointer-events:none}
+.achv.off{opacity:.5}
+.achv-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:rgba(63,187,137,.08);color:var(--green);border:1px solid rgba(63,187,137,.2)}
+.achv.off .achv-icon{background:rgba(255,255,255,.02);color:var(--faint);border-color:var(--line)}
+.achv-title{font-size:12px;font-weight:600;color:var(--ink)}
+.achv-sub{font-size:10px;color:var(--faint);margin-top:2px}
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 0 8px;
-}
-.brand-mark {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  background: #181814;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-}
-.brand-name {
-  font-family: var(--serif);
-  font-size: 17px;
-  letter-spacing: -0.01em;
-  color: var(--text);
-}
-.brand-sub {
-  font-size: 10.5px;
-  color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-top: 2px;
-}
+.modal-bg{position:fixed;inset:0;background:rgba(8,8,7,.75);display:flex;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(5px)}
+.modal{width:420px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 26px 20px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(63,187,137,.12)}
+.modal-close{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--faint);border:1px solid transparent;cursor:pointer;font-size:14px}
+.modal-close:hover{border-color:var(--line);color:var(--ink)}
+.modal-ey{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.modal-title{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:500;margin:5px 0 10px;letter-spacing:-.015em}
+.modal-actions{display:flex;flex-direction:column;gap:7px;margin:14px 0}
+.modal-btn{display:grid;grid-template-columns:28px 1fr;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:var(--card2);text-align:left;cursor:pointer;transition:all .15s;color:var(--ink);font-family:inherit;width:100%}
+.modal-btn:hover{border-color:#3a3a32;background:#1c1c19}
+.modal-btn.green:hover{border-color:rgba(63,187,137,.4)}
+.modal-btn.amber:hover{border-color:rgba(240,165,74,.4)}
+.ma-title{font-size:13px;font-weight:500}
+.ma-sub{font-size:11px;color:var(--faint);margin-top:1px}
+.modal-btn svg{width:15px;height:15px}
+.modal-btn.green svg{color:var(--green)}
+.modal-btn.amber svg{color:var(--amber)}
+.modal-btn.ghost svg{color:var(--faint)}
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  border-radius: 10px;
-  font-size: 13.5px;
-  color: var(--text-2);
-  text-align: left;
-  transition: all 160ms ease;
-  position: relative;
-}
-.nav-item:hover {
-  background: #1a1a17;
-  color: var(--text);
-}
-.nav-item.active {
-  background: linear-gradient(180deg, rgba(63,187,137,0.10), rgba(63,187,137,0.04));
-  color: var(--text);
-  box-shadow: inset 0 0 0 1px rgba(63,187,137,0.18);
-}
-.nav-item.active svg { color: var(--accent); }
-.nav-dot {
-  position: absolute;
-  right: 10px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 8px var(--accent);
-}
+.search-wrap{position:relative;margin:14px 0 12px}
+.search-wrap input{width:100%;padding:10px 12px 10px 36px;background:var(--bg2);border:1.5px solid var(--line);border-radius:9px;color:var(--ink);font-size:13px;font-family:inherit;outline:none}
+.search-wrap input:focus{border-color:var(--green)}
+.search-wrap svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--faint);width:14px;height:14px;pointer-events:none}
+.search-results{max-height:280px;overflow-y:auto}
+.sr-row{display:flex;align-items:center;gap:11px;padding:9px 6px;border-radius:8px;cursor:pointer;transition:background .12s}
+.sr-row:hover{background:rgba(255,255,255,.04)}
 
-.sidebar-foot { margin-top: auto; }
-.user {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--card);
-}
-.avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #3fbb89, #2a7a5a);
-  color: #0d1f17;
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-}
-.user-name { font-size: 12.5px; color: var(--text); }
-.user-meta { font-size: 10.5px; color: var(--text-3); margin-top: 1px; }
-
-/* ────────── Main ────────── */
-
-.main {
-  min-width: 0;
-}
-.main-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 36px 40px 60px;
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-}
-
-.topbar {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--border-soft);
-  margin-bottom: 6px;
-}
-.eyebrow {
-  font-size: 10.5px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  margin-bottom: 8px;
-}
-.page-title {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 38px;
-  line-height: 1.05;
-  margin: 0;
-  letter-spacing: -0.015em;
-  color: var(--text);
-}
-.page-title::after {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background: var(--amber);
-  border-radius: 50%;
-  margin-left: 8px;
-  transform: translateY(-12px);
-}
-
-.topbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.icon-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text-2);
-  display: grid;
-  place-items: center;
-  position: relative;
-  transition: all 160ms ease;
-}
-.icon-btn:hover {
-  color: var(--text);
-  border-color: #3a3a32;
-}
-.bell-dot {
-  position: absolute;
-  top: 9px;
-  right: 10px;
-  width: 6px;
-  height: 6px;
-  background: var(--amber);
-  border-radius: 50%;
-  border: 1.5px solid var(--card);
-}
-.primary-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: 10px;
-  background: var(--accent);
-  color: #0c1f17;
-  font-weight: 600;
-  font-size: 13px;
-  border: 1px solid rgba(63,187,137,0.6);
-  transition: all 160ms ease;
-}
-.primary-btn:hover {
-  filter: brightness(1.08);
-  box-shadow: 0 0 0 4px rgba(63,187,137,0.12);
-}
-
-/* ────────── Cards ────────── */
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 22px 24px;
-  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
-}
-.card:hover {
-  border-color: #34342c;
-  box-shadow: 0 0 0 calc(1px * var(--glow)) rgba(63,187,137,0.18),
-              0 8px 30px -12px rgba(63,187,137,calc(0.15 * var(--glow)));
-}
-
-.card-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 18px;
-}
-.card-eyebrow {
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  margin-bottom: 6px;
-}
-.card-title {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 1.1;
-  margin: 0;
-  letter-spacing: -0.01em;
-}
-
-.ghost-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--text-2);
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  transition: all 160ms ease;
-}
-.ghost-btn:hover {
-  border-color: var(--border);
-  color: var(--text);
-}
-
-/* ────────── Stats row ────────── */
-
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--gap);
-}
-.stat-card {
-  padding: 22px 22px 20px;
-  position: relative;
-  overflow: hidden;
-}
-.stat-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(400px 80px at 100% 0%, rgba(63,187,137,0.06), transparent 60%);
-  pointer-events: none;
-}
-.stat-label {
-  font-size: 10.5px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
-.stat-value-row {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-top: 14px;
-}
-.stat-value {
-  font-family: var(--serif);
-  font-size: 38px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  font-feature-settings: "lnum", "tnum";
-}
-.stat-delta {
-  font-size: 11px;
-  font-weight: 500;
-  padding: 3px 8px;
-  border-radius: 999px;
-  border: 1px solid currentColor;
-  letter-spacing: 0.02em;
-}
-.stat-delta.green { color: var(--accent); border-color: rgba(63,187,137,0.4); background: rgba(63,187,137,0.08); }
-.stat-delta.amber { color: var(--amber); border-color: rgba(240,165,74,0.4); background: rgba(240,165,74,0.08); }
-.stat-foot {
-  margin-top: 14px;
-  font-size: 11.5px;
-  color: var(--text-3);
-}
-
-/* ────────── Half cards ────────── */
-
-.halves {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--gap);
-}
-.half-card { padding: 22px 24px 14px; }
-
-.fav-list, .visa-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.fav-row {
-  display: grid;
-  grid-template-columns: 28px 36px 1fr auto;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 4px;
-  border-top: 1px solid var(--border-soft);
-  cursor: pointer;
-  transition: all 160ms ease;
-  color: var(--text);
-}
-.fav-row:first-child { border-top: none; }
-.fav-row:hover { background: rgba(255,255,255,0.015); }
-.fav-row:hover svg { color: var(--amber); }
-.fav-rank {
-  font-family: var(--serif);
-  font-size: 14px;
-  color: var(--text-3);
-  letter-spacing: 0.02em;
-}
-.fav-name {
-  font-size: 14px;
-  color: var(--text);
-}
-.fav-note {
-  font-size: 11.5px;
-  color: var(--text-3);
-  margin-top: 1px;
-}
-.fav-row svg { color: var(--text-3); }
-
-.flag-dot {
-  width: 36px;
-  height: 26px;
-  border-radius: 4px;
-  display: grid;
-  place-items: center;
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-/* Visa list */
-.visa-row {
-  display: grid;
-  grid-template-columns: 38px 1fr auto;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 4px;
-  border-top: 1px solid var(--border-soft);
-}
-.visa-row:first-child { border-top: none; }
-.visa-top {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 4px;
-}
-.visa-name { font-size: 14px; color: var(--text); }
-.visa-meta { font-size: 11.5px; color: var(--text-3); margin-bottom: 8px; }
-.visa-bar {
-  height: 3px;
-  background: #2a2a23;
-  border-radius: 2px;
-  overflow: hidden;
-}
-.visa-bar-fill { height: 100%; border-radius: 2px; }
-.visa-bar-fill.green { background: var(--accent); }
-.visa-bar-fill.amber { background: var(--amber); }
-.visa-bar-fill.muted { background: #4a4a40; }
-.visa-days {
-  text-align: right;
-  font-family: var(--serif);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1px;
-}
-.visa-days b {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--text);
-  letter-spacing: -0.01em;
-  font-feature-settings: "lnum", "tnum";
-}
-.visa-days span {
-  font-family: var(--sans);
-  font-size: 10px;
-  color: var(--text-3);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.pill {
-  font-size: 10px;
-  font-weight: 500;
-  padding: 2px 8px;
-  border-radius: 999px;
-  letter-spacing: 0.04em;
-  border: 1px solid currentColor;
-}
-.pill.green { color: var(--accent); background: rgba(63,187,137,0.08); border-color: rgba(63,187,137,0.35); }
-.pill.amber { color: var(--amber); background: rgba(240,165,74,0.08); border-color: rgba(240,165,74,0.35); }
-.pill.muted { color: var(--text-3); background: rgba(255,255,255,0.02); border-color: var(--border); }
-.dim { color: var(--text-3); }
-
-/* ────────── Map ────────── */
-
-.map-card { padding: 22px 24px 18px; }
-.map-head { margin-bottom: 14px; }
-.legend {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 11.5px;
-  color: var(--text-2);
-}
-.legend-item { display: inline-flex; align-items: center; gap: 6px; }
-.sw {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
-}
-.sw.green { background: var(--accent); }
-.sw.amber { background: var(--amber); }
-.sw.gray { background: #3a3a32; }
-
-.map-wrap {
-  position: relative;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--border-soft);
-  background: linear-gradient(180deg, #161614, #0f0f0d);
-}
-.map-loading {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: var(--text-3);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-}
-.map-loading.err { color: var(--amber); }
-.world-svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1000 / 500;
-}
-.world-svg .graticule { opacity: var(--graticule); }
-.country {
-  fill: #2a2a24;
-  stroke: #131310;
-  stroke-width: 0.5;
-  transition: fill 160ms ease, filter 160ms ease;
-  cursor: pointer;
-}
-.country.visited {
-  fill: var(--accent);
-  fill-opacity: 0.8;
-}
-.country.favorite {
-  fill: var(--amber);
-  fill-opacity: 0.78;
-}
-.country:hover {
-  fill: #fff;
-  filter: drop-shadow(0 0 6px rgba(63,187,137,calc(0.55 * var(--glow))));
-}
-.country.visited:hover { fill: #5fd8a3; }
-.country.favorite:hover { fill: #ffc070; }
-
-.map-tip {
-  position: absolute;
-  pointer-events: none;
-  background: rgba(20,20,17,0.96);
-  border: 1px solid var(--border);
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 12px;
-  color: var(--text);
-  white-space: nowrap;
-  backdrop-filter: blur(6px);
-  z-index: 10;
-}
-.tip-name { font-weight: 600; }
-.tip-status { font-size: 10.5px; margin-top: 3px; color: var(--text-3); }
-.tip-status.visited { color: var(--accent); }
-.tip-status.favorite { color: var(--amber); }
-
-.map-foot {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-top: 18px;
-  padding-top: 18px;
-  border-top: 1px solid var(--border-soft);
-}
-.map-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.map-stat b {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--text);
-}
-.map-stat span {
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--text-3);
-}
-
-/* ────────── Achievements ────────── */
-
-.achv-card { padding: 22px 24px 20px; }
-.achv-progress { display: flex; align-items: center; gap: 10px; font-size: 11.5px; color: var(--text-3); }
-.achv-bar { width: 100px; height: 3px; background: #2a2a23; border-radius: 2px; overflow: hidden; }
-.achv-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; }
-
-.achv-row {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-}
-.achv {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 14px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: var(--card-2);
-  transition: all 200ms ease;
-  position: relative;
-  overflow: hidden;
-}
-.achv.on::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(80px 60px at 50% 0%, rgba(63,187,137,0.18), transparent 60%);
-  pointer-events: none;
-}
-.achv.off { opacity: 0.55; }
-.achv-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  background: rgba(63,187,137,0.08);
-  color: var(--accent);
-  border: 1px solid rgba(63,187,137,0.2);
-}
-.achv.off .achv-icon {
-  background: rgba(255,255,255,0.02);
-  color: var(--text-3);
-  border-color: var(--border);
-}
-.achv-title { font-size: 13.5px; color: var(--text); font-weight: 500; }
-.achv-sub { font-size: 11px; color: var(--text-3); margin-top: 2px; }
-
-/* ────────── Modal ────────── */
-
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(8,8,7,0.7);
-  backdrop-filter: blur(6px);
-  display: grid;
-  place-items: center;
-  z-index: 100;
-  animation: fade 200ms ease;
-}
-.modal {
-  width: 440px;
-  max-width: calc(100vw - 32px);
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 28px 28px 22px;
-  position: relative;
-  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6),
-              0 0 0 1px rgba(63,187,137,0.12);
-  animation: slideUp 240ms cubic-bezier(.2,.8,.2,1);
-}
-.modal-close {
-  position: absolute;
-  top: 14px; right: 14px;
-  width: 30px; height: 30px;
-  border-radius: 8px;
-  display: grid; place-items: center;
-  color: var(--text-3);
-  border: 1px solid transparent;
-}
-.modal-close:hover { color: var(--text); border-color: var(--border); }
-.modal-eyebrow {
-  font-size: 10.5px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
-.modal-title {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 30px;
-  margin: 6px 0 12px;
-  letter-spacing: -0.015em;
-}
-.modal-meta { font-size: 12px; color: var(--text-2); margin-bottom: 18px; }
-
-.modal-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-.modal-btn {
-  display: grid;
-  grid-template-columns: 32px 1fr;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 16px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card-2);
-  text-align: left;
-  transition: all 160ms ease;
-  color: var(--text);
-}
-.modal-btn:hover { border-color: #3a3a32; background: #1c1c19; }
-.modal-btn.green:hover { border-color: rgba(63,187,137,0.4); }
-.modal-btn.amber:hover { border-color: rgba(240,165,74,0.4); }
-.modal-btn .ma-title { font-size: 13.5px; font-weight: 500; }
-.modal-btn .ma-sub { font-size: 11.5px; color: var(--text-3); margin-top: 2px; }
-.modal-btn.green > svg:first-child { color: var(--accent); }
-.modal-btn.amber > svg:first-child { color: var(--amber); }
-.modal-btn.ghost > svg:first-child { color: var(--text-3); }
-
-.modal-foot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11.5px;
-  color: var(--text-2);
-  padding-top: 14px;
-  border-top: 1px solid var(--border-soft);
-}
-
-/* ────────── Footer ────────── */
-
-.foot {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  color: var(--text-3);
-  letter-spacing: 0.04em;
-  padding-top: 12px;
-  border-top: 1px solid var(--border-soft);
-  margin-top: 8px;
-}
-
-/* ────────── Animations ────────── */
-
-@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ────────── Scrollbar ────────── */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #2a2a23; border-radius: 10px; border: 2px solid var(--bg); }
-::-webkit-scrollbar-thumb:hover { background: #3a3a32; }
-
-/* ────────── Tweaks panel overrides (accept theme) ────────── */
-.tweaks-panel {
-  background: var(--card) !important;
-  border-color: var(--border) !important;
-  color: var(--text) !important;
-  font-family: var(--sans) !important;
-}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(70px);background:rgba(20,20,17,.97);border:1px solid #3a3a32;color:var(--ink);padding:11px 20px;border-radius:11px;font-size:13px;font-weight:500;z-index:999;transition:transform .22s;white-space:nowrap;pointer-events:none}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.map-controls{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:4px;z-index:20}
+.map-btn{width:28px;height:28px;background:rgba(20,20,17,.9);border:1px solid var(--line);border-radius:7px;color:var(--ink2);font-size:16px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;line-height:1}
+.map-btn:hover{background:rgba(40,40,34,.95);color:var(--ink);border-color:#3a3a32}
+.map-btn svg{width:13px;height:13px}
 
 
-/* ── Toast ── */
-.toast-container{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
-.toast-msg{background:rgba(20,20,17,.97);border:1px solid #3a3a32;color:#ece9df;padding:11px 20px;border-radius:12px;font-size:13px;font-weight:500;backdrop-filter:blur(10px);white-space:nowrap;animation:toastIn .22s cubic-bezier(.2,.8,.2,1)}
-@keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-/* ── Loading overlay ── */
-#fb-loading{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9000;flex-direction:column;gap:14px}
-#fb-loading .ll{font-family:var(--serif);font-size:26px;color:var(--text)}
-#fb-loading .ls{width:20px;height:20px;border:2.5px solid #2c2c26;border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-/* ── Search modal ── */
-.search-input-wrap{position:relative;margin-bottom:14px}
-.search-input-wrap input{width:100%;padding:11px 14px 11px 38px;background:#1a1a17;border:1.5px solid #2c2c26;border-radius:10px;color:#ece9df;font-family:var(--sans);font-size:14px;outline:none}
-.search-input-wrap input:focus{border-color:var(--accent)}
-.search-input-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#7d786c}
-.search-results{max-height:320px;overflow-y:auto}
-.search-result-row{display:flex;align-items:center;gap:12px;padding:10px 8px;border-radius:8px;cursor:pointer;transition:background .12s}
-.search-result-row:hover{background:rgba(255,255,255,.04)}
-.sr-name{font-size:14px;color:#ece9df}
-.sr-status{font-size:11px;color:#7d786c;margin-top:2px}
-
-
+input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.5)}
+.cur-s{padding:8px 16px;border-radius:9px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid var(--line);background:none;color:var(--muted);font-family:inherit;transition:all .15s}
+.cur-s:hover{border-color:var(--green);color:var(--green)}
+.cur-s.active{background:var(--green);color:#0c1f17;border-color:var(--green)}
+.status-s{padding:10px 14px;border-radius:9px;font-size:13px;font-weight:500;cursor:pointer;border:1px solid var(--line);background:none;color:var(--muted);font-family:inherit;transition:all .15s;text-align:left}
+.status-s:hover{background:var(--bg2);color:var(--ink)}
+.status-s.active{background:var(--green-l);color:var(--green);border-color:rgba(63,187,137,.35);font-weight:600}
+select option{background:var(--card2);color:var(--ink)}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
 </style>
-<script src="7d83def5-a3c2-4510-88f0-a451a9ee9ef5"></script>
-<script src="8a488872-e705-42af-a0c1-d1c7fdbfea3f"></script>
-<script src="d16dae69-72d5-42c3-8ae5-fcda6f305a21"></script>
-<script>window.topojson = window.topojson || window.topojsonClient;</script>
-<script>
-// M49 numeric country code → ISO 3166-1 alpha-3
-// Used to map world-atlas (countries-110m) numeric IDs to ISO-A3 codes.
-window.NUM_TO_ISO = {
-  "004":"AFG","008":"ALB","010":"ATA","012":"DZA","016":"ASM","020":"AND","024":"AGO","028":"ATG","031":"AZE","032":"ARG","036":"AUS","040":"AUT",
-  "044":"BHS","048":"BHR","050":"BGD","051":"ARM","052":"BRB","056":"BEL","060":"BMU","064":"BTN","068":"BOL","070":"BIH","072":"BWA","074":"BVT",
-  "076":"BRA","084":"BLZ","086":"IOT","090":"SLB","092":"VGB","096":"BRN","100":"BGR","104":"MMR","108":"BDI","112":"BLR","116":"KHM","120":"CMR",
-  "124":"CAN","132":"CPV","136":"CYM","140":"CAF","144":"LKA","148":"TCD","152":"CHL","156":"CHN","158":"TWN","162":"CXR","166":"CCK","170":"COL",
-  "174":"COM","175":"MYT","178":"COG","180":"COD","184":"COK","188":"CRI","191":"HRV","192":"CUB","196":"CYP","203":"CZE","204":"BEN","208":"DNK",
-  "212":"DMA","214":"DOM","218":"ECU","222":"SLV","226":"GNQ","231":"ETH","232":"ERI","233":"EST","234":"FRO","238":"FLK","239":"SGS","242":"FJI",
-  "246":"FIN","248":"ALA","250":"FRA","254":"GUF","258":"PYF","260":"ATF","262":"DJI","266":"GAB","268":"GEO","270":"GMB","275":"PSE","276":"DEU",
-  "288":"GHA","292":"GIB","296":"KIR","300":"GRC","304":"GRL","308":"GRD","312":"GLP","316":"GUM","320":"GTM","324":"GIN","328":"GUY","332":"HTI",
-  "334":"HMD","336":"VAT","340":"HND","344":"HKG","348":"HUN","352":"ISL","356":"IND","360":"IDN","364":"IRN","368":"IRQ","372":"IRL","376":"ISR",
-  "380":"ITA","384":"CIV","388":"JAM","392":"JPN","398":"KAZ","400":"JOR","404":"KEN","408":"PRK","410":"KOR","414":"KWT","417":"KGZ","418":"LAO",
-  "422":"LBN","426":"LSO","428":"LVA","430":"LBR","434":"LBY","438":"LIE","440":"LTU","442":"LUX","446":"MAC","450":"MDG","454":"MWI","458":"MYS",
-  "462":"MDV","466":"MLI","470":"MLT","474":"MTQ","478":"MRT","480":"MUS","484":"MEX","492":"MCO","496":"MNG","498":"MDA","499":"MNE","500":"MSR",
-  "504":"MAR","508":"MOZ","512":"OMN","516":"NAM","520":"NRU","524":"NPL","528":"NLD","531":"CUW","533":"ABW","534":"SXM","535":"BES","540":"NCL",
-  "548":"VUT","554":"NZL","558":"NIC","562":"NER","566":"NGA","570":"NIU","574":"NFK","578":"NOR","580":"MNP","581":"UMI","583":"FSM","584":"MHL",
-  "585":"PLW","586":"PAK","591":"PAN","598":"PNG","600":"PRY","604":"PER","608":"PHL","612":"PCN","616":"POL","620":"PRT","624":"GNB","626":"TLS",
-  "630":"PRI","634":"QAT","638":"REU","642":"ROU","643":"RUS","646":"RWA","652":"BLM","654":"SHN","659":"KNA","660":"AIA","662":"LCA","663":"MAF",
-  "666":"SPM","670":"VCT","674":"SMR","678":"STP","682":"SAU","686":"SEN","688":"SRB","690":"SYC","694":"SLE","702":"SGP","703":"SVK","704":"VNM",
-  "705":"SVN","706":"SOM","710":"ZAF","716":"ZWE","724":"ESP","728":"SSD","729":"SDN","732":"ESH","740":"SUR","744":"SJM","748":"SWZ","752":"SWE",
-  "756":"CHE","760":"SYR","762":"TJK","764":"THA","768":"TGO","772":"TKL","776":"TON","780":"TTO","784":"ARE","788":"TUN","792":"TUR","795":"TKM",
-  "796":"TCA","798":"TUV","800":"UGA","804":"UKR","807":"MKD","818":"EGY","826":"GBR","831":"GGY","832":"JEY","833":"IMN","834":"TZA","840":"USA",
-  "850":"VIR","854":"BFA","858":"URY","860":"UZB","862":"VEN","876":"WLF","882":"WSM","887":"YEM","894":"ZMB"
-};
-
-</script>
-<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.24.7/babel.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js" crossorigin="anonymous"></script>
-<script>window.topojson = window.topojsonClient || topojson;</script>
-<script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-app-compat.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-auth-compat.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/firebase@9.23.0/firebase-firestore-compat.min.js"></script>
-<script>
-// ── Firebase init ──────────────────────────────────────────────
-firebase.initializeApp({
-  apiKey:"AIzaSyC_erJyfCASKgjMaMXTF4ovqfwfC4-5GmU",
-  authDomain:"checktheworld-a631d.firebaseapp.com",
-  projectId:"checktheworld-a631d",
-  storageBucket:"checktheworld-a631d.firebasestorage.app",
-  messagingSenderId:"1006756841439",
-  appId:"1:1006756841439:web:ab81d8f3f469ea3d07666a"
-});
-window.__fbAuth = firebase.auth();
-window.__fbDb  = firebase.firestore();
-</script>
-<script type="text/babel" data-presets="react">
-
-// tweaks-panel.jsx
-// Reusable Tweaks shell + form-control helpers.
-//
-// Owns the host protocol (listens for __activate_edit_mode / __deactivate_edit_mode,
-// posts __edit_mode_available / __edit_mode_set_keys / __edit_mode_dismissed) so
-// individual prototypes don't re-roll it. Ships a consistent set of controls so you
-// don't hand-draw <input type="range">, segmented radios, steppers, etc.
-//
-// Usage (in an HTML file that loads React + Babel):
-//
-//   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-//     "primaryColor": "#D97757",
-//     "fontSize": 16,
-//     "density": "regular",
-//     "dark": false
-//   }/*EDITMODE-END*/;
-//
-//   function App() {
-//     const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-//     return (
-//       <div style={{ fontSize: t.fontSize, color: t.primaryColor }}>
-//         Hello
-//         <TweaksPanel>
-//           <TweakSection label="Typography" />
-//           <TweakSlider label="Font size" value={t.fontSize} min={10} max={32} unit="px"
-//                        onChange={(v) => setTweak('fontSize', v)} />
-//           <TweakRadio  label="Density" value={t.density}
-//                        options={['compact', 'regular', 'comfy']}
-//                        onChange={(v) => setTweak('density', v)} />
-//           <TweakSection label="Theme" />
-//           <TweakColor  label="Primary" value={t.primaryColor}
-//                        onChange={(v) => setTweak('primaryColor', v)} />
-//           <TweakToggle label="Dark mode" value={t.dark}
-//                        onChange={(v) => setTweak('dark', v)} />
-//         </TweaksPanel>
-//       </div>
-//     );
-//   }
-//
-// ─────────────────────────────────────────────────────────────────────────────
-
-const __TWEAKS_STYLE = `
-  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
-    max-height:calc(100vh - 32px);display:flex;flex-direction:column;
-    background:rgba(250,249,247,.78);color:#29261b;
-    -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
-    border:.5px solid rgba(255,255,255,.6);border-radius:14px;
-    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);
-    font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
-  .twk-hd{display:flex;align-items:center;justify-content:space-between;
-    padding:10px 8px 10px 14px;cursor:move;user-select:none}
-  .twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
-  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);
-    width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
-  .twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
-  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;
-    overflow-y:auto;overflow-x:hidden;min-height:0;
-    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
-  .twk-body::-webkit-scrollbar{width:8px}
-  .twk-body::-webkit-scrollbar-track{background:transparent;margin:2px}
-  .twk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:4px;
-    border:2px solid transparent;background-clip:content-box}
-  .twk-body::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.25);
-    border:2px solid transparent;background-clip:content-box}
-  .twk-row{display:flex;flex-direction:column;gap:5px}
-  .twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
-  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;
-    color:rgba(41,38,27,.72)}
-  .twk-lbl>span:first-child{font-weight:500}
-  .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
-
-  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-    color:rgba(41,38,27,.45);padding:10px 0 0}
-  .twk-sect:first-child{padding-top:0}
-
-  .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;
-    border:.5px solid rgba(0,0,0,.1);border-radius:7px;
-    background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
-  .twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
-  select.twk-field{padding-right:22px;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
-    background-repeat:no-repeat;background-position:right 8px center}
-
-  .twk-slider{appearance:none;-webkit-appearance:none;width:100%;height:4px;margin:6px 0;
-    border-radius:999px;background:rgba(0,0,0,.12);outline:none}
-  .twk-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
-    width:14px;height:14px;border-radius:50%;background:#fff;
-    border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
-  .twk-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;
-    background:#fff;border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
-
-  .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;
-    background:rgba(0,0,0,.06);user-select:none}
-  .twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;
-    background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);
-    transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}
-  .twk-seg.dragging .twk-seg-thumb{transition:none}
-  .twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;
-    background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;
-    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;
-    overflow-wrap:anywhere}
-
-  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
-    background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
-  .twk-toggle[data-on="1"]{background:#34c759}
-  .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
-    background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
-  .twk-toggle[data-on="1"] i{transform:translateX(14px)}
-
-  .twk-num{display:flex;align-items:center;height:26px;padding:0 0 0 8px;
-    border:.5px solid rgba(0,0,0,.1);border-radius:7px;background:rgba(255,255,255,.6)}
-  .twk-num-lbl{font-weight:500;color:rgba(41,38,27,.6);cursor:ew-resize;
-    user-select:none;padding-right:8px}
-  .twk-num input{flex:1;min-width:0;height:100%;border:0;background:transparent;
-    font:inherit;font-variant-numeric:tabular-nums;text-align:right;padding:0 8px 0 0;
-    outline:none;color:inherit;-moz-appearance:textfield}
-  .twk-num input::-webkit-inner-spin-button,.twk-num input::-webkit-outer-spin-button{
-    -webkit-appearance:none;margin:0}
-  .twk-num-unit{padding-right:8px;color:rgba(41,38,27,.45)}
-
-  .twk-btn{appearance:none;height:26px;padding:0 12px;border:0;border-radius:7px;
-    background:rgba(0,0,0,.78);color:#fff;font:inherit;font-weight:500;cursor:default}
-  .twk-btn:hover{background:rgba(0,0,0,.88)}
-  .twk-btn.secondary{background:rgba(0,0,0,.06);color:inherit}
-  .twk-btn.secondary:hover{background:rgba(0,0,0,.1)}
-
-  .twk-swatch{appearance:none;-webkit-appearance:none;width:56px;height:22px;
-    border:.5px solid rgba(0,0,0,.1);border-radius:6px;padding:0;cursor:default;
-    background:transparent;flex-shrink:0}
-  .twk-swatch::-webkit-color-swatch-wrapper{padding:0}
-  .twk-swatch::-webkit-color-swatch{border:0;border-radius:5.5px}
-  .twk-swatch::-moz-color-swatch{border:0;border-radius:5.5px}
-`;
-
-// ── useTweaks ───────────────────────────────────────────────────────────────
-// Single source of truth for tweak values. setTweak persists via the host
-// (__edit_mode_set_keys → host rewrites the EDITMODE block on disk).
-function useTweaks(defaults) {
-  const [values, setValues] = React.useState(defaults);
-  // Accepts either setTweak('key', value) or setTweak({ key: value, ... }) so a
-  // useState-style call doesn't write a "[object Object]" key into the persisted
-  // JSON block.
-  const setTweak = React.useCallback((keyOrEdits, val) => {
-    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null
-      ? keyOrEdits : { [keyOrEdits]: val };
-    setValues((prev) => ({ ...prev, ...edits }));
-    window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*');
-  }, []);
-  return [values, setTweak];
-}
-
-// ── TweaksPanel ─────────────────────────────────────────────────────────────
-// Floating shell. Registers the protocol listener BEFORE announcing
-// availability — if the announce ran first, the host's activate could land
-// before our handler exists and the toolbar toggle would silently no-op.
-// The close button posts __edit_mode_dismissed so the host's toolbar toggle
-// flips off in lockstep; the host echoes __deactivate_edit_mode back which
-// is what actually hides the panel.
-function TweaksPanel({ title = 'Tweaks', children }) {
-  const [open, setOpen] = React.useState(false);
-  const dragRef = React.useRef(null);
-  const offsetRef = React.useRef({ x: 16, y: 16 });
-  const PAD = 16;
-
-  const clampToViewport = React.useCallback(() => {
-    const panel = dragRef.current;
-    if (!panel) return;
-    const w = panel.offsetWidth, h = panel.offsetHeight;
-    const maxRight = Math.max(PAD, window.innerWidth - w - PAD);
-    const maxBottom = Math.max(PAD, window.innerHeight - h - PAD);
-    offsetRef.current = {
-      x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)),
-      y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y)),
-    };
-    panel.style.right = offsetRef.current.x + 'px';
-    panel.style.bottom = offsetRef.current.y + 'px';
-  }, []);
-
-  React.useEffect(() => {
-    if (!open) return;
-    clampToViewport();
-    if (typeof ResizeObserver === 'undefined') {
-      window.addEventListener('resize', clampToViewport);
-      return () => window.removeEventListener('resize', clampToViewport);
-    }
-    const ro = new ResizeObserver(clampToViewport);
-    ro.observe(document.documentElement);
-    return () => ro.disconnect();
-  }, [open, clampToViewport]);
-
-  React.useEffect(() => {
-    const onMsg = (e) => {
-      const t = e?.data?.type;
-      if (t === '__activate_edit_mode') setOpen(true);
-      else if (t === '__deactivate_edit_mode') setOpen(false);
-    };
-    window.addEventListener('message', onMsg);
-    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
-    return () => window.removeEventListener('message', onMsg);
-  }, []);
-
-  const dismiss = () => {
-    setOpen(false);
-    window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
-  };
-
-  const onDragStart = (e) => {
-    const panel = dragRef.current;
-    if (!panel) return;
-    const r = panel.getBoundingClientRect();
-    const sx = e.clientX, sy = e.clientY;
-    const startRight = window.innerWidth - r.right;
-    const startBottom = window.innerHeight - r.bottom;
-    const move = (ev) => {
-      offsetRef.current = {
-        x: startRight - (ev.clientX - sx),
-        y: startBottom - (ev.clientY - sy),
-      };
-      clampToViewport();
-    };
-    const up = () => {
-      window.removeEventListener('mousemove', move);
-      window.removeEventListener('mouseup', up);
-    };
-    window.addEventListener('mousemove', move);
-    window.addEventListener('mouseup', up);
-  };
-
-  if (!open) return null;
-  return (
-    <>
-      <style>{__TWEAKS_STYLE}</style>
-      <div ref={dragRef} className="twk-panel" data-noncommentable=""
-           style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
-        <div className="twk-hd" onMouseDown={onDragStart}>
-          <b>{title}</b>
-          <button className="twk-x" aria-label="Close tweaks"
-                  onMouseDown={(e) => e.stopPropagation()}
-                  onClick={dismiss}>✕</button>
-        </div>
-        <div className="twk-body">{children}</div>
-      </div>
-    </>
-  );
-}
-
-// ── Layout helpers ──────────────────────────────────────────────────────────
-
-function TweakSection({ label, children }) {
-  return (
-    <>
-      <div className="twk-sect">{label}</div>
-      {children}
-    </>
-  );
-}
-
-function TweakRow({ label, value, children, inline = false }) {
-  return (
-    <div className={inline ? 'twk-row twk-row-h' : 'twk-row'}>
-      <div className="twk-lbl">
-        <span>{label}</span>
-        {value != null && <span className="twk-val">{value}</span>}
-      </div>
-      {children}
-    </div>
-  );
-}
-
-// ── Controls ────────────────────────────────────────────────────────────────
-
-function TweakSlider({ label, value, min = 0, max = 100, step = 1, unit = '', onChange }) {
-  return (
-    <TweakRow label={label} value={`${value}${unit}`}>
-      <input type="range" className="twk-slider" min={min} max={max} step={step}
-             value={value} onChange={(e) => onChange(Number(e.target.value))} />
-    </TweakRow>
-  );
-}
-
-function TweakToggle({ label, value, onChange }) {
-  return (
-    <div className="twk-row twk-row-h">
-      <div className="twk-lbl"><span>{label}</span></div>
-      <button type="button" className="twk-toggle" data-on={value ? '1' : '0'}
-              role="switch" aria-checked={!!value}
-              onClick={() => onChange(!value)}><i /></button>
-    </div>
-  );
-}
-
-function TweakRadio({ label, value, options, onChange }) {
-  const trackRef = React.useRef(null);
-  const [dragging, setDragging] = React.useState(false);
-  const opts = options.map((o) => (typeof o === 'object' ? o : { value: o, label: o }));
-  const idx = Math.max(0, opts.findIndex((o) => o.value === value));
-  const n = opts.length;
-
-  // The active value is read by pointer-move handlers attached for the lifetime
-  // of a drag — ref it so a stale closure doesn't fire onChange for every move.
-  const valueRef = React.useRef(value);
-  valueRef.current = value;
-
-  const segAt = (clientX) => {
-    const r = trackRef.current.getBoundingClientRect();
-    const inner = r.width - 4;
-    const i = Math.floor(((clientX - r.left - 2) / inner) * n);
-    return opts[Math.max(0, Math.min(n - 1, i))].value;
-  };
-
-  const onPointerDown = (e) => {
-    setDragging(true);
-    const v0 = segAt(e.clientX);
-    if (v0 !== valueRef.current) onChange(v0);
-    const move = (ev) => {
-      if (!trackRef.current) return;
-      const v = segAt(ev.clientX);
-      if (v !== valueRef.current) onChange(v);
-    };
-    const up = () => {
-      setDragging(false);
-      window.removeEventListener('pointermove', move);
-      window.removeEventListener('pointerup', up);
-    };
-    window.addEventListener('pointermove', move);
-    window.addEventListener('pointerup', up);
-  };
-
-  return (
-    <TweakRow label={label}>
-      <div ref={trackRef} role="radiogroup" onPointerDown={onPointerDown}
-           className={dragging ? 'twk-seg dragging' : 'twk-seg'}>
-        <div className="twk-seg-thumb"
-             style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
-                      width: `calc((100% - 4px) / ${n})` }} />
-        {opts.map((o) => (
-          <button key={o.value} type="button" role="radio" aria-checked={o.value === value}>
-            {o.label}
-          </button>
-        ))}
-      </div>
-    </TweakRow>
-  );
-}
-
-function TweakSelect({ label, value, options, onChange }) {
-  return (
-    <TweakRow label={label}>
-      <select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>
-        {options.map((o) => {
-          const v = typeof o === 'object' ? o.value : o;
-          const l = typeof o === 'object' ? o.label : o;
-          return <option key={v} value={v}>{l}</option>;
-        })}
-      </select>
-    </TweakRow>
-  );
-}
-
-function TweakText({ label, value, placeholder, onChange }) {
-  return (
-    <TweakRow label={label}>
-      <input className="twk-field" type="text" value={value} placeholder={placeholder}
-             onChange={(e) => onChange(e.target.value)} />
-    </TweakRow>
-  );
-}
-
-function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) {
-  const clamp = (n) => {
-    if (min != null && n < min) return min;
-    if (max != null && n > max) return max;
-    return n;
-  };
-  const startRef = React.useRef({ x: 0, val: 0 });
-  const onScrubStart = (e) => {
-    e.preventDefault();
-    startRef.current = { x: e.clientX, val: value };
-    const decimals = (String(step).split('.')[1] || '').length;
-    const move = (ev) => {
-      const dx = ev.clientX - startRef.current.x;
-      const raw = startRef.current.val + dx * step;
-      const snapped = Math.round(raw / step) * step;
-      onChange(clamp(Number(snapped.toFixed(decimals))));
-    };
-    const up = () => {
-      window.removeEventListener('pointermove', move);
-      window.removeEventListener('pointerup', up);
-    };
-    window.addEventListener('pointermove', move);
-    window.addEventListener('pointerup', up);
-  };
-  return (
-    <div className="twk-num">
-      <span className="twk-num-lbl" onPointerDown={onScrubStart}>{label}</span>
-      <input type="number" value={value} min={min} max={max} step={step}
-             onChange={(e) => onChange(clamp(Number(e.target.value)))} />
-      {unit && <span className="twk-num-unit">{unit}</span>}
-    </div>
-  );
-}
-
-function TweakColor({ label, value, onChange }) {
-  return (
-    <div className="twk-row twk-row-h">
-      <div className="twk-lbl"><span>{label}</span></div>
-      <input type="color" className="twk-swatch" value={value}
-             onChange={(e) => onChange(e.target.value)} />
-    </div>
-  );
-}
-
-function TweakButton({ label, onClick, secondary = false }) {
-  return (
-    <button type="button" className={secondary ? 'twk-btn secondary' : 'twk-btn'}
-            onClick={onClick}>{label}</button>
-  );
-}
-
-Object.assign(window, {
-  useTweaks, TweaksPanel, TweakSection, TweakRow,
-  TweakSlider, TweakToggle, TweakRadio, TweakSelect,
-  TweakText, TweakNumber, TweakColor, TweakButton,
-});
-
-</script>
-<script type="text/babel" data-presets="react">
-/* global React, ReactDOM, useTweaks, TweaksPanel, TweakSection, TweakRadio, TweakToggle, TweakColor */
-const { useState, useEffect, useMemo, useRef } = React;
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Data
-// ─────────────────────────────────────────────────────────────────────────────
-
-// ISO-A3 codes. Mix of "visited" and "favorite" plus visa-tracking countries.
-const INITIAL_VISITED = new Set([]);
-const INITIAL_FAVORITES = new Set([]);
-
-const COUNTRY_NAMES_RU = {
-  RUS: "Россия", GEO: "Грузия", ARM: "Армения", TUR: "Турция", GRC: "Греция",
-  ITA: "Италия", ESP: "Испания", PRT: "Португалия", FRA: "Франция", DEU: "Германия",
-  CZE: "Чехия", AUT: "Австрия", HUN: "Венгрия", MNE: "Черногория", HRV: "Хорватия",
-  THA: "Таиланд", VNM: "Вьетнам", IDN: "Индонезия", ARE: "ОАЭ", EGY: "Египет",
-  MAR: "Марокко", ISR: "Израиль", CYP: "Кипр", MEX: "Мексика", USA: "США",
-  JPN: "Япония", ISL: "Исландия", PER: "Перу", NZL: "Новая Зеландия", ARG: "Аргентина",
-  NOR: "Норвегия", CHL: "Чили", GBR: "Великобритания", CAN: "Канада", BRA: "Бразилия",
-  CHN: "Китай", IND: "Индия", AUS: "Австралия", ZAF: "ЮАР", KEN: "Кения",
-  KOR: "Южная Корея", SAU: "Саудовская Аравия", LKA: "Шри-Ланка", NPL: "Непал",
-  KAZ: "Казахстан", UZB: "Узбекистан", KGZ: "Киргизия", AZE: "Азербайджан",
-  BLR: "Беларусь", UKR: "Украина", POL: "Польша", FIN: "Финляндия", SWE: "Швеция",
-  CHE: "Швейцария", NLD: "Нидерланды", BEL: "Бельгия", IRL: "Ирландия", DNK: "Дания",
-  MDA: "Молдова", ROU: "Румыния", BGR: "Болгария", SRB: "Сербия", ALB: "Албания",
-  MAC: "Макао", TWN: "Тайвань", PHL: "Филиппины", MYS: "Малайзия", SGP: "Сингапур",
-  KHM: "Камбоджа", LAO: "Лаос", MMR: "Мьянма", BGD: "Бангладеш", PAK: "Пакистан",
-  IRN: "Иран", IRQ: "Ирак", SYR: "Сирия", JOR: "Иордания", LBN: "Ливан",
-  TUN: "Тунис", DZA: "Алжир", LBY: "Ливия", SDN: "Судан", ETH: "Эфиопия",
-  NGA: "Нигерия", GHA: "Гана", TZA: "Танзания", UGA: "Уганда", MOZ: "Мозамбик",
-  MDG: "Мадагаскар", AGO: "Ангола", COD: "ДР Конго", CMR: "Камерун", SEN: "Сенегал",
-  CIV: "Кот-д'Ивуар", COL: "Колумбия", VEN: "Венесуэла", BOL: "Боливия", URY: "Уругвай",
-  PRY: "Парагвай", ECU: "Эквадор", CUB: "Куба", DOM: "Доминикана", JAM: "Ямайка",
-  CRI: "Коста-Рика", PAN: "Панама", GTM: "Гватемала", HND: "Гондурас", NIC: "Никарагуа",
-  SLV: "Сальвадор", BLZ: "Белиз", PRI: "Пуэрто-Рико", HTI: "Гаити", BHS: "Багамы",
-  TTO: "Тринидад и Тобаго", FJI: "Фиджи", PNG: "Папуа Новая Гвинея",
-  SVK: "Словакия", SVN: "Словения", BIH: "Босния и Герцеговина", MKD: "Македония",
-  KOS: "Косово", LTU: "Литва", LVA: "Латвия", EST: "Эстония", LUX: "Люксембург",
-  ISR_: "Израиль", PSE: "Палестина", YEM: "Йемен", OMN: "Оман", QAT: "Катар",
-  BHR: "Бахрейн", KWT: "Кувейт", AFG: "Афганистан", TKM: "Туркменистан",
-  TJK: "Таджикистан", MNG: "Монголия", PRK: "Северная Корея", BTN: "Бутан",
-  MLT: "Мальта", ISL_: "Исландия", GRL: "Гренландия", NCL: "Новая Каледония",
-  SLB: "Соломоновы острова", VUT: "Вануату", WSM: "Самоа", BRN: "Бруней",
-  TLS: "Тимор-Лешти", MWI: "Малави", ZMB: "Замбия", ZWE: "Зимбабве",
-  BWA: "Ботсвана", NAM: "Намибия", SWZ: "Эсватини", LSO: "Лесото", RWA: "Руанда",
-  BDI: "Бурунди", SSD: "Южный Судан", SOM: "Сомали", ERI: "Эритрея", DJI: "Джибути",
-  GAB: "Габон", GNQ: "Экваториальная Гвинея", COG: "Конго", CAF: "ЦАР", TCD: "Чад",
-  NER: "Нигер", MLI: "Мали", BFA: "Буркина-Фасо", BEN: "Бенин", TGO: "Того",
-  GIN: "Гвинея", GMB: "Гамбия", GNB: "Гвинея-Бисау", SLE: "Сьерра-Леоне",
-  LBR: "Либерия", MRT: "Мавритания", ESH: "Западная Сахара", FLK: "Фолкленды",
-  GUF: "Французская Гвиана", SUR: "Суринам", GUY: "Гайана"
-};
-
-const FAVORITE_LIST = [
-  { iso: "JPN", note: "Сакура и онсэн", trips: 0 },
-  { iso: "ISL", note: "Северное сияние", trips: 0 },
-  { iso: "PER", note: "Мачу-Пикчу", trips: 0 },
-  { iso: "NZL", note: "Хайкинг по Южному острову", trips: 0 },
-  { iso: "ARG", note: "Патагония", trips: 0 },
-  { iso: "NOR", note: "Фьорды и Лофотены", trips: 0 },
-  { iso: "CHL", note: "Атакама", trips: 0 },
-];
-
-const VISAS = [
-  { iso: "JPN", type: "Туристическая", status: "active", expires: "2026-11-04", days: 188 },
-  { iso: "USA", type: "B1/B2", status: "active", expires: "2029-03-12", days: 1042 },
-  { iso: "GBR", type: "Standard Visitor", status: "expiring", expires: "2026-06-22", days: 53 },
-  { iso: "CHN", type: "L (туристическая)", status: "pending", expires: "—", days: null },
-  { iso: "ARE", type: "On-arrival", status: "active", expires: "2026-08-18", days: 110 },
-];
-
-const ACHIEVEMENTS = [
-  { id: "explorer", title: "Исследователь", sub: "10+ стран", icon: "compass", unlocked: true },
-  { id: "globetrotter", title: "Глобтроттер", sub: "25+ стран", icon: "globe", unlocked: true },
-  { id: "arctic", title: "Полярник", sub: "За полярным кругом", icon: "snow", unlocked: true },
-  { id: "equator", title: "Экватор", sub: "Пересёк экватор", icon: "sun", unlocked: false },
-  { id: "continents", title: "5 континентов", sub: "Осталось 2", icon: "layers", unlocked: false },
-  { id: "stamps", title: "Коллекционер", sub: "50 виз", icon: "stamp", unlocked: false },
-];
-
-const NAV = [
-  { id: "overview", label: "Главная", icon: "home" },
-  { id: "favorites", label: "Избранное", icon: "heart" },
-  { id: "visas", label: "Визы", icon: "passport" },
-  { id: "routes", label: "Маршруты", icon: "route" },
-  { id: "journal", label: "Журнал", icon: "book" },
-  { id: "achievements", label: "Достижения", icon: "medal" },
-  { id: "settings", label: "Настройки", icon: "gear" },
-];
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Icons (line, 1.5px stroke, currentColor)
-// ─────────────────────────────────────────────────────────────────────────────
-function Icon({ name, size = 18 }) {
-  const common = { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" };
-  const paths = {
-    home: <><path d="M3 11l9-7 9 7v9a2 2 0 0 1-2 2h-4v-7h-6v7H5a2 2 0 0 1-2-2z"/></>,
-    heart: <><path d="M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></>,
-    passport: <><rect x="5" y="3" width="14" height="18" rx="1.5"/><circle cx="12" cy="11" r="3"/><path d="M9 17h6"/></>,
-    route: <><circle cx="6" cy="5" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 7v4a4 4 0 0 0 4 4h4a4 4 0 0 1 4 4"/></>,
-    book: <><path d="M4 4h10a4 4 0 0 1 4 4v13H8a4 4 0 0 1-4-4z"/><path d="M4 17a4 4 0 0 1 4-4h10"/></>,
-    medal: <><circle cx="12" cy="14" r="6"/><path d="M8.5 9L6 3h12l-2.5 6"/></>,
-    gear: <><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></>,
-    star: <><path d="M12 3l2.6 5.6 6 .7-4.5 4.2 1.2 6.1L12 16.8 6.7 19.6l1.2-6.1L3.4 9.3l6-.7z"/></>,
-    plus: <><path d="M12 5v14M5 12h14"/></>,
-    search: <><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></>,
-    bell: <><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.5 21a1.7 1.7 0 0 0 3 0"/></>,
-    arrowRight: <><path d="M5 12h14M13 5l7 7-7 7"/></>,
-    close: <><path d="M18 6L6 18M6 6l12 12"/></>,
-    check: <><path d="M5 12l4 4L19 7"/></>,
-    compass: <><circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6z"/></>,
-    globe: <><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></>,
-    snow: <><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></>,
-    sun: <><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></>,
-    layers: <><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5M3 18l9 5 9-5"/></>,
-    stamp: <><path d="M9 3h6l-1 6h2a3 3 0 0 1 3 3v3H5v-3a3 3 0 0 1 3-3h2z"/><path d="M4 21h16"/></>,
-  };
-  return <svg {...common}>{paths[name] || null}</svg>;
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Sidebar
-// ─────────────────────────────────────────────────────────────────────────────
-function Sidebar({ active, onNav, user, userDoc, visited, onLogout }) {
-  const name = userDoc?.name || user?.displayName || user?.email?.split("@")[0] || "...";
-  const ini  = name.split(" ").map(w => w[0]).join("").toUpperCase().slice(0,2) || "?";
-  return (
-    <aside className="sidebar">
-      <div className="brand">
-        <div className="brand-mark">
-          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
-            <circle cx="16" cy="16" r="13" stroke="#3fbb89" strokeWidth="1.5"/>
-            <path d="M3 16h26M16 3a18 18 0 0 1 0 26M16 3a18 18 0 0 0 0 26" stroke="#3fbb89" strokeWidth="1" opacity="0.6"/>
-            <circle cx="22" cy="11" r="2" fill="#f0a54a"/>
-          </svg>
-        </div>
-        <div className="brand-text">
-          <div className="brand-name">CheckTheWorld</div>
-          <div className="brand-sub">Журнал путешественника</div>
-        </div>
-      </div>
-
-      <nav className="nav">
-        {NAV.map((n) => (
-          <button
-            key={n.id}
-            className={`nav-item ${active === n.id ? "active" : ""}`}
-            onClick={() => onNav(n.id)}
-          >
-            <Icon name={n.icon} size={18}/>
-            <span>{n.label}</span>
-            {active === n.id && <span className="nav-dot"/>}
-          </button>
-        ))}
-      </nav>
-
-      <div className="sidebar-foot">
-        <div className="user" style={{flexDirection:"column",alignItems:"stretch",gap:8}}>
-          <div style={{display:"flex",alignItems:"center",gap:10}}>
-            <div className="avatar">{ini}</div>
-            <div className="user-text">
-              <div className="user-name">{name}</div>
-              <div className="user-meta">{visited?.size || 0} стран посещено</div>
-            </div>
-          </div>
-          <button onClick={onLogout} style={{width:"100%",padding:"6px",background:"none",border:"1px solid #2c2c26",borderRadius:8,fontSize:11,fontWeight:600,color:"#7d786c",cursor:"pointer",fontFamily:"var(--sans)",transition:"all .15s"}}
-            onMouseEnter={e => { e.target.style.borderColor="#e47060"; e.target.style.color="#e47060"; }}
-            onMouseLeave={e => { e.target.style.borderColor="#2c2c26"; e.target.style.color="#7d786c"; }}>
-            Выйти
-          </button>
-        </div>
-      </div>
-    </aside>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Top bar
-// ─────────────────────────────────────────────────────────────────────────────
-function Topbar({ onNewTrip }) {
-  return (
-    <div className="topbar">
-      <div>
-        <div className="eyebrow">Главная</div>
-        <h1 className="page-title">Мир, отмеченный галочками</h1>
-      </div>
-      <div className="topbar-actions">
-        <button className="primary-btn" onClick={onNewTrip}>
-          <Icon name="plus" size={16}/>
-          <span>Новая поездка</span>
-        </button>
-      </div>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Stat cards
-// ─────────────────────────────────────────────────────────────────────────────
-function StatCard({ label, value, delta, accent, foot }) {
-  return (
-    <div className="stat-card card">
-      <div className="stat-label">{label}</div>
-      <div className="stat-value-row">
-        <div className="stat-value">{value}</div>
-        {delta && <div className={`stat-delta ${accent}`}>{delta}</div>}
-      </div>
-      <div className="stat-foot">{foot}</div>
-    </div>
-  );
-}
-
-function StatsRow({ visitedCount, favCount, visas }) {
-  const now = Date.now();
-  const dl = v => Math.ceil((new Date(v.entry).getTime() + v.allowed*86400000 - now)/86400000);
-  const activeVisas = (visas||[]).filter(v => dl(v) > 0);
-  const expiringVisa = activeVisas.sort((a,b) => dl(a)-dl(b))[0];
-  const activeCount = activeVisas.length;
-  const vizaFoot = activeCount === 0 ? "нет активных"
-    : expiringVisa ? `ближайшая — ${dl(expiringVisa)} дн.` : "всё в порядке";
-  const vizaDelta = activeVisas.filter(v => dl(v) <= 30).length > 0 ? `${activeVisas.filter(v => dl(v) <= 30).length} истекает` : null;
-  return (
-    <div className="stats-row">
-      <StatCard label="Избранное" value={favCount} delta={favCount > 0 ? null : null} accent="amber" foot="мест в списке желаний"/>
-      <StatCard label="Посещено стран" value={visitedCount} accent="green" foot={`из 195 · ${Math.round(visitedCount / 195 * 100)}% мира`}/>
-      <StatCard label="Активных виз" value={activeCount} delta={vizaDelta} accent={vizaDelta ? "amber" : "green"} foot={vizaFoot}/>
-      <StatCard label="Маршруты" value="—" foot="скоро"/>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Half cards: Favorites + Visa tracker
-// ─────────────────────────────────────────────────────────────────────────────
-function FavoritesCard({ favorites, onOpen }) {
-  return (
-    <div className="card half-card">
-      <div className="card-head">
-        <div>
-          <div className="card-eyebrow">Список желаний</div>
-          <h3 className="card-title">Любимые направления</h3>
-        </div>
-        <button className="ghost-btn">Все <Icon name="arrowRight" size={14}/></button>
-      </div>
-      <ul className="fav-list">
-        {[...favorites].map((iso, i) => (
-          <li key={iso} className="fav-row" onClick={() => onOpen(iso)}>
-            <div className="fav-rank">{String(i + 1).padStart(2, "0")}</div>
-            <div className="fav-flag" aria-hidden>
-              <FlagDot iso={iso}/>
-            </div>
-            <div className="fav-text">
-              <div className="fav-name">{COUNTRY_NAMES_RU[iso] || iso}</div>
-              <div className="fav-note" style={{color:"var(--text-3)",fontSize:11.5}}>нажмите чтобы изменить</div>
-            </div>
-            <Icon name="star" size={14}/>
-          </li>
-        ))}
-        {favorites.size === 0 && <li style={{padding:"20px 0",textAlign:"center",color:"var(--text-3)",fontSize:13}}>Нет избранных стран · кликайте по карте</li>}
-      </ul>
-    </div>
-  );
-}
-
-function FlagDot({ iso }) {
-  // Tiny generated chip — just a colored square keyed off the ISO so it's stable.
-  let h = 0;
-  for (let i = 0; i < iso.length; i++) h = (h * 31 + iso.charCodeAt(i)) % 360;
-  return (
-    <div className="flag-dot" style={{
-      background: `linear-gradient(135deg, hsl(${h} 35% 30%), hsl(${(h + 40) % 360} 30% 22%))`
-    }}>
-      <span>{iso}</span>
-    </div>
-  );
-}
-
-function VisaCard({ visas, onAdd, onDelete }) {
-  const [showForm, setShowForm] = React.useState(false);
-  const [vCountry, setVCountry] = React.useState("");
-  const [vEntry, setVEntry] = React.useState("");
-  const [vAllowed, setVAllowed] = React.useState("90");
-  const now = Date.now();
-  const dl = v => Math.ceil((new Date(v.entry).getTime() + v.allowed*86400000 - now)/86400000);
-
-  const getStatus = (v) => {
-    const left = dl(v);
-    if (left <= 0) return { label: "Истекла", cls: "amber" };
-    if (left <= 30) return { label: "Истекает", cls: "amber" };
-    return { label: "Активна", cls: "green" };
-  };
-
-  const handleAdd = async () => {
-    if (!vCountry || !vEntry || !vAllowed) return;
-    await onAdd(vCountry, vEntry, vAllowed);
-    setShowForm(false); setVCountry(""); setVEntry(""); setVAllowed("90");
-  };
-
-  return (
-    <div className="card half-card">
-      <div className="card-head">
-        <div>
-          <div className="card-eyebrow">Документы</div>
-          <h3 className="card-title">Трекер виз</h3>
-        </div>
-        <button className="ghost-btn" onClick={() => setShowForm(!showForm)}>
-          {showForm ? "Отмена" : "+ Добавить"}
-        </button>
-      </div>
-
-      {showForm && (
-        <div style={{background:"#1a1a17",borderRadius:10,padding:"12px 14px",marginBottom:14,display:"flex",flexDirection:"column",gap:8}}>
-          <select value={vCountry} onChange={e=>setVCountry(e.target.value)}
-            style={{padding:"8px 10px",background:"#252521",border:"1.5px solid #2c2c26",borderRadius:8,color:"#ece9df",fontFamily:"var(--sans)",fontSize:13,outline:"none"}}>
-            <option value="">Выбери страну</option>
-            {Object.entries(COUNTRY_NAMES_RU).sort((a,b)=>a[1].localeCompare(b[1])).map(([iso,name])=>(
-              <option key={iso} value={iso}>{name} ({iso})</option>
-            ))}
-          </select>
-          <div style={{display:"flex",gap:8}}>
-            <input type="date" value={vEntry} onChange={e=>setVEntry(e.target.value)}
-              style={{flex:1,padding:"8px 10px",background:"#252521",border:"1.5px solid #2c2c26",borderRadius:8,color:"#ece9df",fontFamily:"var(--sans)",fontSize:13,outline:"none"}}/>
-            <input type="number" placeholder="Дней" value={vAllowed} onChange={e=>setVAllowed(e.target.value)} min="1" max="365"
-              style={{width:80,padding:"8px 10px",background:"#252521",border:"1.5px solid #2c2c26",borderRadius:8,color:"#ece9df",fontFamily:"var(--sans)",fontSize:13,outline:"none"}}/>
-          </div>
-          <button onClick={handleAdd}
-            style={{padding:"8px",background:"var(--accent)",border:"none",borderRadius:8,color:"#0c1f17",fontWeight:700,fontSize:13,fontFamily:"var(--sans)",cursor:"pointer"}}>
-            Добавить
-          </button>
-        </div>
-      )}
-
-      <ul className="visa-list">
-        {(visas||[]).map((v, idx) => {
-          const m = getStatus(v);
-          const left = dl(v);
-          const pct = Math.max(4, Math.min(100, (left / v.allowed) * 100));
-          const iso = v.country || v.iso || "???";
-          return (
-            <li key={idx} className="visa-row" style={{position:"relative"}}>
-              <div className="visa-iso">
-                <FlagDot iso={iso}/>
-              </div>
-              <div className="visa-text">
-                <div className="visa-top">
-                  <span className="visa-name">{COUNTRY_NAMES_RU[iso] || iso}</span>
-                  <span className={`pill ${m.cls}`}>{m.label}</span>
-                </div>
-                <div className="visa-meta">Въезд: {v.entry} · {v.allowed} дн.</div>
-                <div className="visa-bar">
-                  <div className={`visa-bar-fill ${m.cls}`} style={{ width: `${pct}%` }}/>
-                </div>
-              </div>
-              <div className="visa-days" style={{display:"flex",flexDirection:"column",alignItems:"flex-end",gap:2}}>
-                <b style={{fontFamily:"var(--serif)",fontSize:22,fontWeight:600,color:left<=30?"var(--amber)":"var(--text)"}}>{Math.max(0,left)}</b>
-                <span style={{fontFamily:"var(--sans)",fontSize:10,color:"var(--text-3)",textTransform:"uppercase",letterSpacing:"0.1em"}}>дн.</span>
-                <button onClick={()=>onDelete(idx)} style={{fontSize:10,color:"var(--text-3)",background:"none",border:"none",cursor:"pointer",marginTop:2,fontFamily:"var(--sans)"}}>удалить</button>
-              </div>
-            </li>
-          );
-        })}
-        {(!visas || visas.length===0) && <li style={{padding:"20px 0",textAlign:"center",color:"var(--text-3)",fontSize:13}}>Нет виз · нажмите "+ Добавить"</li>}
-      </ul>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// World map
-// ─────────────────────────────────────────────────────────────────────────────
-function WorldMap({ visited, favorites, onPick }) {
-  const [topo, setTopo] = useState(null);
-  const [hover, setHover] = useState(null); // {iso, name, x, y}
-  const [error, setError] = useState(null);
-  const wrapRef = useRef(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    // Topology, fetched at runtime. Antarctica filtered, no labels.
-    const url = (window.__resources && window.__resources.worldAtlas) || "https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json";
-    fetch(url)
-      .then((r) => r.json())
-      .then((data) => {
-        if (!cancelled) setTopo(data);
-      })
-      .catch((e) => !cancelled && setError(String(e)));
-    return () => { cancelled = true; };
-  }, []);
-
-  const paths = useMemo(() => {
-    if (!topo || !window.topojson || !window.d3) return null;
-    const countries = window.topojson.feature(topo, topo.objects.countries);
-    // Robinson-ish via geoNaturalEarth1
-    const projection = window.d3.geoNaturalEarth1()
-      .scale(180)
-      .translate([500, 250]);
-    const pathGen = window.d3.geoPath(projection);
-
-    // numeric-id → ISO-A3 lookup. world-atlas uses numeric M49 codes.
-    const ID_TO_ISO = window.NUM_TO_ISO || {};
-
-    return countries.features
-      .filter((f) => f.properties.name !== "Antarctica" && String(f.id) !== "010")
-      .map((f, i) => {
-        const iso = ID_TO_ISO[String(f.id).padStart(3, "0")] || null;
-        return {
-          id: f.id,
-          key: `${f.id ?? "x"}-${iso ?? "x"}-${i}`,
-          iso,
-          name: f.properties.name,
-          d: pathGen(f),
-        };
-      });
-  }, [topo]);
-
-  function classify(iso) {
-    if (!iso) return "none";
-    if (visited.has(iso)) return "visited";
-    if (favorites.has(iso)) return "favorite";
-    return "none";
-  }
-
-  function handleEnter(e, p) {
-    const rect = wrapRef.current.getBoundingClientRect();
-    setHover({
-      iso: p.iso,
-      name: COUNTRY_NAMES_RU[p.iso] || p.name,
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-      status: classify(p.iso),
-    });
-  }
-
-  return (
-    <div className="card map-card" ref={wrapRef}>
-      <div className="card-head map-head">
-        <div>
-          <div className="card-eyebrow">Карта мира</div>
-          <h3 className="card-title">Где я был</h3>
-        </div>
-        <div className="legend">
-          <span className="legend-item"><i className="sw green"/> Посещено</span>
-          <span className="legend-item"><i className="sw amber"/> Избранное</span>
-          <span className="legend-item"><i className="sw gray"/> Не посещено</span>
-        </div>
-      </div>
-
-      <div className="map-wrap">
-        {!paths && !error && <div className="map-loading">Загружаем карту мира…</div>}
-        {error && <div className="map-loading err">Не удалось загрузить карту: {error}</div>}
-        {paths && (
-          <svg viewBox="0 0 1000 500" className="world-svg" preserveAspectRatio="xMidYMid meet">
-            <defs>
-              <radialGradient id="oceanGrad" cx="50%" cy="50%" r="70%">
-                <stop offset="0%" stopColor="#191917"/>
-                <stop offset="100%" stopColor="#0e0e0c"/>
-              </radialGradient>
-              <filter id="glowGreen" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <rect width="1000" height="500" fill="url(#oceanGrad)"/>
-            {/* graticule */}
-            <g className="graticule" stroke="#23231f" strokeWidth="0.4" fill="none" opacity="0.6">
-              {Array.from({ length: 11 }).map((_, i) => (
-                <line key={`v${i}`} x1={i * 100} y1="0" x2={i * 100} y2="500"/>
-              ))}
-              {Array.from({ length: 6 }).map((_, i) => (
-                <line key={`h${i}`} x1="0" y1={i * 100} x2="1000" y2={i * 100}/>
-              ))}
-            </g>
-            <g className="countries">
-              {paths.map((p) => {
-                const status = classify(p.iso);
-                return (
-                  <path
-                    key={p.key}
-                    d={p.d}
-                    className={`country ${status}`}
-                    onMouseEnter={(e) => handleEnter(e, p)}
-                    onMouseMove={(e) => handleEnter(e, p)}
-                    onMouseLeave={() => setHover(null)}
-                    onClick={() => p.iso && onPick(p.iso, COUNTRY_NAMES_RU[p.iso] || p.name)}
-                  />
-                );
-              })}
-            </g>
-          </svg>
-        )}
-
-        {hover && (
-          <div className="map-tip" style={{ left: hover.x + 12, top: hover.y + 12 }}>
-            <div className="tip-name">{hover.name}</div>
-            <div className={`tip-status ${hover.status}`}>
-              {hover.status === "visited" && "Посещено"}
-              {hover.status === "favorite" && "В избранном"}
-              {hover.status === "none" && "Не посещено · нажмите, чтобы отметить"}
-            </div>
-          </div>
-        )}
-      </div>
-
-      <div className="map-foot">
-        <div className="map-stat"><b>{visited.size}</b><span>стран посещено</span></div>
-        <div className="map-stat"><b>{favorites.size}</b><span>в избранном</span></div>
-        <div className="map-stat"><b>5</b><span>континентов</span></div>
-        <div className="map-stat"><b>164k</b><span>км пройдено</span></div>
-      </div>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Achievements row
-// ─────────────────────────────────────────────────────────────────────────────
-function Achievements({ visited }) {
-  const n = visited ? visited.size : 0;
-  const achvList = [
-    { id:"first", title:"Первая поездка", sub:"1+ страна", icon:"compass", unlocked: n>=1 },
-    { id:"explorer", title:"Исследователь", sub:"10+ стран", icon:"globe", unlocked: n>=10 },
-    { id:"globetrotter", title:"Глобтроттер", sub:"25+ стран", icon:"medal", unlocked: n>=25 },
-    { id:"arctic", title:"Полярник", sub:"50+ стран", icon:"snow", unlocked: n>=50 },
-    { id:"continents", title:"5 континентов", sub:"Все регионы", icon:"layers", unlocked: n>=75 },
-    { id:"stamps", title:"Коллекционер", sub:"100+ стран", icon:"stamp", unlocked: n>=100 },
-  ];
-  const unlocked = achvList.filter(a => a.unlocked).length;
-  return (
-    <div className="card achv-card">
-      <div className="card-head">
-        <div>
-          <div className="card-eyebrow">Прогресс</div>
-          <h3 className="card-title">Достижения</h3>
-        </div>
-        <div className="achv-progress">
-          <span>{unlocked} / {achvList.length}</span>
-          <div className="achv-bar"><div className="achv-bar-fill" style={{ width: `${unlocked/achvList.length*100}%` }}/></div>
-        </div>
-      </div>
-      <div className="achv-row">
-        {achvList.map((a) => (
-          <div key={a.id} className={`achv ${a.unlocked ? "on" : "off"}`}>
-            <div className="achv-icon"><Icon name={a.icon} size={22}/></div>
-            <div className="achv-text">
-              <div className="achv-title">{a.title}</div>
-              <div className="achv-sub">{a.sub}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Modal
-// ─────────────────────────────────────────────────────────────────────────────
-function MarkModal({ open, country, currentStatus, onClose, onMark }) {
-  if (!open) return null;
-  return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}><Icon name="close" size={16}/></button>
-        <div className="modal-eyebrow">Страна</div>
-        <h2 className="modal-title">{country?.name}</h2>
-        <div className="modal-meta">Текущий статус:&nbsp;
-          <span className={`pill ${currentStatus === "visited" ? "green" : currentStatus === "favorite" ? "amber" : "muted"}`}>
-            {currentStatus === "visited" ? "Посещено" : currentStatus === "favorite" ? "В избранном" : "Не отмечено"}
-          </span>
-        </div>
-
-        <div className="modal-actions">
-          <button className="modal-btn green" onClick={() => onMark("visited")}>
-            <Icon name="check" size={16}/>
-            <div>
-              <div className="ma-title">Отметить как посещённую</div>
-              <div className="ma-sub">Добавить в журнал поездок</div>
-            </div>
-          </button>
-          <button className="modal-btn amber" onClick={() => onMark("favorite")}>
-            <Icon name="heart" size={16}/>
-            <div>
-              <div className="ma-title">В избранное</div>
-              <div className="ma-sub">Список желаний</div>
-            </div>
-          </button>
-          <button className="modal-btn ghost" onClick={() => onMark("none")}>
-            <Icon name="close" size={16}/>
-            <div>
-              <div className="ma-title">Снять отметку</div>
-              <div className="ma-sub">Убрать из всех списков</div>
-            </div>
-          </button>
-        </div>
-
-        <div className="modal-foot">
-          <span>Соседние посещены:</span>
-          <span className="dim">3 из 8</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Tweaks
-// ─────────────────────────────────────────────────────────────────────────────
-const DEFAULT_TWEAKS = /*EDITMODE-BEGIN*/{
-  "accent": "#3fbb89",
-  "amber": "#f0a54a",
-  "bg": "#131310",
-  "card": "#1f1f1b",
-  "border": "#2c2c26",
-  "density": "comfy",
-  "showGraticule": true,
-  "glowOnHover": true
-}/*EDITMODE-END*/;
-
-// ─────────────────────────────────────────────────────────────────────────────
-// App
-// ─────────────────────────────────────────────────────────────────────────────
-// ── Toast helper ──────────────────────────────────────────────
-function showToast(msg) {
-  let c = document.getElementById("toast-container");
-  if (!c) {
-    c = document.createElement("div");
-    c.id = "toast-container";
-    c.className = "toast-container";
-    document.body.appendChild(c);
-  }
-  const t = document.createElement("div");
-  t.className = "toast-msg";
-  t.textContent = msg;
-  c.appendChild(t);
-  setTimeout(() => { t.style.opacity = "0"; t.style.transform = "translateY(10px)"; t.style.transition = "all .2s"; setTimeout(() => t.remove(), 200); }, 2200);
-}
-
-function App() {
-  const [tweaks, setTweak] = useTweaks(DEFAULT_TWEAKS);
-  const [active, setActive] = useState("overview");
-  const [visited, setVisited] = useState(new Set());
-  const [favorites, setFavorites] = useState(new Set());
-  const [visas, setVisas] = useState([]);
-  const [modal, setModal] = useState(null);
-  const [user, setUser] = useState(null);
-  const [userDoc, setUserDoc] = useState({});
-  const [fbReady, setFbReady] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQ, setSearchQ] = useState("");
-
-  const auth = window.__fbAuth;
-  const db   = window.__fbDb;
-
-  // ── Firebase auth ──────────────────────────────────────────
-  useEffect(() => {
-    if (!auth) return;
-    const unsub = auth.onAuthStateChanged(async (u) => {
-      if (!u) { window.location.href = "login.html"; return; }
-      setUser(u);
-      const snap = await db.collection("users").doc(u.uid).get();
-      const d = snap.exists ? snap.data() : {};
-      d.visited   = d.visited   || [];
-      d.favorites = d.favorites || [];
-      d.visas     = d.visas     || [];
-      d.name      = d.name      || u.displayName || u.email.split("@")[0];
-      setUserDoc(d);
-      setVisited(new Set(d.visited));
-      setFavorites(new Set(d.favorites));
-      setVisas(d.visas);
-      setFbReady(true);
-      // Hide loading
-      const ld = document.getElementById("fb-loading");
-      if (ld) { ld.style.opacity = "0"; ld.style.transition = "opacity .3s"; setTimeout(() => ld.remove(), 300); }
-    });
-    return unsub;
-  }, []);
-
-  const save = async (patch) => {
-    if (!user) return;
-    await db.collection("users").doc(user.uid).set(patch, { merge: true });
-  };
-
-  // Apply CSS vars from tweaks
-  useEffect(() => {
-    const r = document.documentElement;
-    r.style.setProperty("--accent", tweaks.accent);
-    r.style.setProperty("--amber", tweaks.amber);
-    r.style.setProperty("--bg", tweaks.bg);
-    r.style.setProperty("--card", tweaks.card);
-    r.style.setProperty("--border", tweaks.border);
-    r.style.setProperty("--gap", tweaks.density === "tight" ? "16px" : tweaks.density === "loose" ? "32px" : "24px");
-    r.style.setProperty("--graticule", tweaks.showGraticule ? "0.6" : "0");
-    r.style.setProperty("--glow", tweaks.glowOnHover ? "1" : "0");
-  }, [tweaks]);
-
-  function classify(iso) {
-    if (visited.has(iso)) return "visited";
-    if (favorites.has(iso)) return "favorite";
-    return "none";
-  }
-
-  function pickCountry(iso, name) {
-    setModal({ iso, name });
-  }
-
-  async function applyMark(status) {
-    const iso = modal.iso;
-    const v = new Set(visited);
-    const f = new Set(favorites);
-    v.delete(iso); f.delete(iso);
-    if (status === "visited")  { v.add(iso); showToast("✓ Добавлено в посещённые"); }
-    if (status === "favorite") { f.add(iso); showToast("♥ Добавлено в избранное"); }
-    if (status === "none")     { showToast("Отметка снята"); }
-    setVisited(v); setFavorites(f);
-    await save({ visited: [...v], favorites: [...f] });
-    setModal(null);
-  }
-
-  async function addVisa(country, entry, allowed) {
-    const newVisa = { country, entry, allowed: parseInt(allowed) };
-    const updated = [...visas, newVisa];
-    setVisas(updated);
-    await save({ visas: updated });
-    showToast("Виза добавлена ✓");
-  }
-
-  async function deleteVisa(idx) {
-    const updated = visas.filter((_, i) => i !== idx);
-    setVisas(updated);
-    await save({ visas: updated });
-    showToast("Виза удалена");
-  }
-
-  function handleLogout() {
-    auth.signOut().then(() => window.location.href = "login.html");
-  }
-
-  // Search countries helper
-  const allCountries = Object.entries(COUNTRY_NAMES_RU).map(([iso, name]) => ({ iso, name }));
-  const filteredCountries = searchQ.length > 0
-    ? allCountries.filter(c => c.name.toLowerCase().includes(searchQ.toLowerCase()) || c.iso.toLowerCase().includes(searchQ.toLowerCase())).slice(0, 30)
-    : allCountries.slice(0, 20);
-
-  if (!fbReady) return null;
-
-  return (
-    <div className="app">
-      <Sidebar active={active} onNav={setActive} user={user} userDoc={userDoc} visited={visited} onLogout={handleLogout}/>
-      <main className="main">
-        <div className="main-inner">
-          <Topbar onNewTrip={() => setSearchOpen(true)}/>
-          <StatsRow visitedCount={visited.size} favCount={favorites.size} visas={visas}/>
-          <div className="halves">
-            <FavoritesCard favorites={favorites} onOpen={(iso) => pickCountry(iso, COUNTRY_NAMES_RU[iso] || iso)}/>
-            <VisaCard visas={visas} onAdd={addVisa} onDelete={deleteVisa}/>
-          </div>
-          <WorldMap visited={visited} favorites={favorites} onPick={pickCountry}/>
-          <Achievements visited={visited}/>
-          <footer className="foot">
-            <span>CheckTheWorld · версия 4.2</span>
-            <span className="dim">Последняя поездка: Япония, март 2026</span>
-          </footer>
-        </div>
-      </main>
-
-      <MarkModal
-        open={!!modal}
-        country={modal}
-        currentStatus={modal ? classify(modal.iso) : "none"}
-        onClose={() => setModal(null)}
-        onMark={applyMark}
-      />
-
-      {searchOpen && (
-        <div className="modal-backdrop" onClick={() => setSearchOpen(false)}>
-          <div className="modal" onClick={e => e.stopPropagation()} style={{width:520}}>
-            <button className="modal-close" onClick={() => setSearchOpen(false)}><Icon name="close" size={16}/></button>
-            <div className="modal-eyebrow">Добавить поездку</div>
-            <h2 className="modal-title">Новая поездка</h2>
-            <div className="search-input-wrap">
-              <Icon name="search" size={16}/>
-              <input autoFocus placeholder="Страна — Таиланд, Франция, Япония..." value={searchQ} onChange={e => setSearchQ(e.target.value)}/>
-            </div>
-            <div className="search-results">
-              {filteredCountries.map(c => {
-                const st = classify(c.iso);
-                return (
-                  <div key={c.iso} className="search-result-row" onClick={async () => {
-                    const v = new Set(visited); v.add(c.iso);
-                    setVisited(v);
-                    await save({ visited: [...v] });
-                    showToast(`✓ ${c.name} добавлена в посещённые`);
-                    setSearchOpen(false); setSearchQ("");
-                  }}>
-                    <FlagDot iso={c.iso}/>
-                    <div>
-                      <div className="sr-name">{c.name}</div>
-                      <div className="sr-status">{st === "visited" ? "✓ Уже посещено" : st === "favorite" ? "♥ В избранном" : "Не посещено · нажмите чтобы отметить"}</div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      )}
-
-      <TweaksPanel title="Tweaks">
-        <TweakSection title="Палитра">
-          <TweakColor label="Фон" value={tweaks.bg} onChange={(v) => setTweak("bg", v)}/>
-          <TweakColor label="Карточка" value={tweaks.card} onChange={(v) => setTweak("card", v)}/>
-          <TweakColor label="Граница" value={tweaks.border} onChange={(v) => setTweak("border", v)}/>
-          <TweakColor label="Зелёный" value={tweaks.accent} onChange={(v) => setTweak("accent", v)}/>
-          <TweakColor label="Янтарный" value={tweaks.amber} onChange={(v) => setTweak("amber", v)}/>
-        </TweakSection>
-        <TweakSection title="Раскладка">
-          <TweakRadio
-            label="Плотность"
-            value={tweaks.density}
-            options={[{label: "Компактно", value: "tight"}, {label: "Удобно", value: "comfy"}, {label: "Просторно", value: "loose"}]}
-            onChange={(v) => setTweak("density", v)}
-          />
-          <TweakToggle label="Сетка на карте" value={tweaks.showGraticule} onChange={(v) => setTweak("showGraticule", v)}/>
-          <TweakToggle label="Свечение при наведении" value={tweaks.glowOnHover} onChange={(v) => setTweak("glowOnHover", v)}/>
-        </TweakSection>
-      </TweaksPanel>
-    </div>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
-
-</script>
 </head>
 <body>
-<div id="fb-loading">
-  <div class="ll">CheckTheWorld.</div>
-  <div class="ls"></div>
-</div>
-<div id="root"></div>
 
-</body></html>
+<aside class="sidebar">
+  <div class="sb-brand">
+    <div class="sb-logo">Check<em style="font-style:italic;color:var(--green)">The</em>World<span style="color:var(--amber)">.</span></div>
+    
+  </div>
+  <nav class="sb-nav">
+    <button class="sb-item active" onclick="setPage('overview')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 11l9-7 9 7v9a2 2 0 0 1-2 2h-4v-7h-6v7H5a2 2 0 0 1-2-2z"/></svg>
+      Главная
+    </button>
+    <button class="sb-item" onclick="setPage('favorites')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>
+      Избранное
+    </button>
+    <button class="sb-item" onclick="setPage('visas')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="1.5"/><circle cx="12" cy="11" r="3"/><path d="M9 17h6"/></svg>
+      Визы
+    </button>
+    <button class="sb-item" onclick="setPage('map')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+      Карта
+    </button>
+    <div class="sb-div"></div>
+    <button class="sb-item" onclick="setPage('achievements')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="14" r="6"/><path d="M8.5 9L6 3h12l-2.5 6"/></svg>
+      Достижения
+    </button>
+    <button class="sb-item" onclick="setPage('settings')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+      Настройки
+    </button>
+  </nav>
+  <div class="sb-foot">
+    <div class="sb-user">
+      <div class="sb-av" id="sb-av">НП</div>
+      <div>
+        <div class="sb-uname" id="sb-name">Никита П.</div>
+        <div class="sb-umeta" id="sb-meta">0 стран</div>
+      </div>
+    </div>
+    <button class="sb-logout" id="btn-logout">Выйти</button>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="inner">
+
+    <!-- OVERVIEW -->
+    <div id="page-overview">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">Главная</div>
+          <h1 class="page-title">Мир, отмеченный галочками<span class="title-dot"></span></h1>
+        </div>
+        <button class="topbar-btn" onclick="openSearch()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          Новая поездка
+        </button>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-l">Избранное</div><div class="stat-row"><span class="stat-v" id="st-fav">0</span></div><div class="stat-foot">мест в списке желаний</div></div>
+        <div class="stat"><div class="stat-l">Посещено стран</div><div class="stat-row"><span class="stat-v" id="st-vis">0</span><span class="badge badge-green" id="st-vis-pct">0% мира</span></div><div class="stat-foot">из 195</div></div>
+        <div class="stat"><div class="stat-l">Активных виз</div><div class="stat-row"><span class="stat-v" id="st-vz">0</span><span class="badge badge-amber" id="st-vz-b" style="display:none"></span></div><div class="stat-foot" id="st-vz-foot">нет активных</div></div>
+        <div class="stat"><div class="stat-l">Маршруты</div><div class="stat-row"><span class="stat-v">—</span></div><div class="stat-foot">скоро</div></div>
+      </div>
+      <div class="halves">
+        <div class="card">
+          <div class="card-head">
+            <div><div class="card-ey">Список желаний</div><div class="card-title">Любимые направления</div></div>
+            <button class="ghost-btn" onclick="setPage('favorites')">Все →</button>
+          </div>
+          <div class="fav-list" id="ov-fav"></div>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <div><div class="card-ey">Документы</div><div class="card-title">Трекер виз</div></div>
+            <button class="ghost-btn" onclick="setPage('visas')">Управление →</button>
+          </div>
+          <div class="visa-list" id="ov-vz"></div>
+        </div>
+      </div>
+      <div class="card map-card">
+        <div class="card-head">
+          <div><div class="card-ey">Карта мира</div><div class="card-title">Где я был</div></div>
+          <div class="map-legend">
+            <span><i class="leg-dot" style="background:var(--green)"></i>Посещено</span>
+            <span><i class="leg-dot" style="background:var(--amber)"></i>Избранное</span>
+            <span><i class="leg-dot" style="background:#3a3a32"></i>Не посещено</span>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <svg id="world-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" style="position:relative;z-index:2"></svg>
+          <svg class="map-grid" viewBox="0 0 1000 500" preserveAspectRatio="none">
+            <!-- вертикальные линии -->
+            <line x1="111" y1="0" x2="111" y2="500"/>
+            <line x1="222" y1="0" x2="222" y2="500"/>
+            <line x1="333" y1="0" x2="333" y2="500"/>
+            <line x1="444" y1="0" x2="444" y2="500"/>
+            <line x1="555" y1="0" x2="555" y2="500"/>
+            <line x1="666" y1="0" x2="666" y2="500"/>
+            <line x1="777" y1="0" x2="777" y2="500"/>
+            <line x1="888" y1="0" x2="888" y2="500"/>
+            <!-- горизонтальные линии -->
+            <line x1="0" y1="100" x2="1000" y2="100"/>
+            <line x1="0" y1="200" x2="1000" y2="200"/>
+            <line x1="0" y1="300" x2="1000" y2="300"/>
+            <line x1="0" y1="400" x2="1000" y2="400"/>
+          </svg>
+          <div class="map-controls">
+            <button class="map-btn" onclick="mapZoom('world-svg',1.3)" title="Приблизить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <button class="map-btn" onclick="mapZoom('world-svg',0.77)" title="Отдалить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg>
+            </button>
+            <button class="map-btn" onclick="mapReset('world-svg')" title="Сбросить" style="font-size:11px;font-family:inherit;font-weight:600">⊙</button>
+          </div>
+          <div class="map-tip" id="map-tip"><div class="tip-name" id="tip-name"></div><div class="tip-status" id="tip-status"></div></div>
+        </div>
+        <div class="map-stats">
+          <div class="map-stat"><b id="ms-vis">0</b><span>стран посещено</span></div>
+          <div class="map-stat"><b id="ms-fav">0</b><span>в избранном</span></div>
+          <div class="map-stat"><b id="ms-pct">0%</b><span>мира охвачено</span></div>
+          <div class="map-stat"><b id="ms-vz">0</b><span>активных виз</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAVORITES -->
+    <div id="page-favorites" style="display:none">
+      <div class="topbar"><div><div class="eyebrow">Избранное</div><h1 class="page-title">Список желаний</h1></div></div>
+      <div id="fav-full-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px"></div>
+    </div>
+
+    <!-- VISAS -->
+    <div id="page-visas" style="display:none">
+      <div class="topbar">
+        <div><div class="eyebrow">Документы</div><h1 class="page-title">Визовый трекер</h1></div>
+        <button class="topbar-btn" onclick="toggleAddVisa()">+ Добавить визу</button>
+      </div>
+      <div id="add-visa-form" style="display:none;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:16px">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;align-items:end">
+          <div>
+            <label style="font-size:11px;font-weight:700;color:var(--muted);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em">Страна</label>
+            <select id="v-country" style="width:100%;padding:9px 11px;background:var(--bg2);border:1.5px solid var(--line);border-radius:9px;color:var(--ink);font-family:inherit;font-size:13px;outline:none"><option value="">Выбери страну</option></select>
+          </div>
+          <div>
+            <label style="font-size:11px;font-weight:700;color:var(--muted);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em">Дата въезда</label>
+            <input type="date" id="v-entry" style="width:100%;padding:9px 11px;background:var(--bg2);border:1.5px solid var(--line);border-radius:9px;color:var(--ink);font-family:inherit;font-size:13px;outline:none">
+          </div>
+          <div>
+            <label style="font-size:11px;font-weight:700;color:var(--muted);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em">Дней разрешено</label>
+            <input type="number" id="v-allowed" placeholder="90" min="1" max="365" style="width:100%;padding:9px 11px;background:var(--bg2);border:1.5px solid var(--line);border-radius:9px;color:var(--ink);font-family:inherit;font-size:13px;outline:none">
+          </div>
+          <button onclick="addVisa()" style="padding:9px 18px;background:var(--green);border:none;border-radius:9px;color:#0c1f17;font-weight:700;font-size:13px;font-family:inherit;cursor:pointer">Добавить</button>
+        </div>
+      </div>
+      <div id="visa-full-list" style="display:flex;flex-direction:column;gap:10px"></div>
+    </div>
+
+    <!-- MAP -->
+    <div id="page-map" style="display:none">
+      <div class="topbar"><div><div class="eyebrow">Карта мира</div><h1 class="page-title">Где я был</h1></div></div>
+      <div class="card map-card" style="margin-bottom:0">
+        <div class="map-legend" style="margin-bottom:14px">
+          <span><i class="leg-dot" style="background:var(--green)"></i>Посещено</span>
+          <span><i class="leg-dot" style="background:var(--amber)"></i>Избранное</span>
+          <span><i class="leg-dot" style="background:#3a3a32"></i>Не посещено</span>
+        </div>
+        <div class="map-wrap" style="margin-top:0">
+          <svg id="world-svg-2" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" style="position:relative;z-index:2"></svg>
+          <svg class="map-grid" viewBox="0 0 1000 500" preserveAspectRatio="none">
+            <!-- вертикальные линии -->
+            <line x1="111" y1="0" x2="111" y2="500"/>
+            <line x1="222" y1="0" x2="222" y2="500"/>
+            <line x1="333" y1="0" x2="333" y2="500"/>
+            <line x1="444" y1="0" x2="444" y2="500"/>
+            <line x1="555" y1="0" x2="555" y2="500"/>
+            <line x1="666" y1="0" x2="666" y2="500"/>
+            <line x1="777" y1="0" x2="777" y2="500"/>
+            <line x1="888" y1="0" x2="888" y2="500"/>
+            <!-- горизонтальные линии -->
+            <line x1="0" y1="100" x2="1000" y2="100"/>
+            <line x1="0" y1="200" x2="1000" y2="200"/>
+            <line x1="0" y1="300" x2="1000" y2="300"/>
+            <line x1="0" y1="400" x2="1000" y2="400"/>
+          </svg>
+          <div class="map-controls">
+            <button class="map-btn" onclick="mapZoom('world-svg-2',1.3)" title="Приблизить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <button class="map-btn" onclick="mapZoom('world-svg-2',0.77)" title="Отдалить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg>
+            </button>
+            <button class="map-btn" onclick="mapReset('world-svg-2')" title="Сбросить" style="font-size:11px;font-family:inherit;font-weight:600">⊙</button>
+          </div>
+          <div class="map-tip" id="map-tip-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <div id="page-achievements" style="display:none">
+      <div class="topbar"><div><div class="eyebrow">Прогресс</div><h1 class="page-title">Достижения</h1></div></div>
+      <div class="card" style="padding:20px 22px"><div class="achv-grid" id="achv-grid"></div></div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div id="page-settings" style="display:none">
+      <div class="topbar"><div><div class="eyebrow">Аккаунт</div><h1 class="page-title">Настройки</h1></div></div>
+      <div style="max-width:560px;display:flex;flex-direction:column;gap:12px">
+
+        <div class="card">
+          <div class="card-ey" style="margin-bottom:5px">Профиль</div>
+          <div class="card-title" style="margin-bottom:16px">Личные данные</div>
+          <label style="font-size:11px;font-weight:700;color:var(--muted);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em">Отображаемое имя</label>
+          <input id="s-name" type="text" placeholder="Твоё имя" style="width:100%;padding:9px 11px;background:var(--bg2);border:1.5px solid var(--line);border-radius:9px;color:var(--ink);font-family:inherit;font-size:13px;outline:none;margin-bottom:12px">
+          <button onclick="saveName()" style="padding:9px 20px;background:var(--green);border:none;border-radius:9px;color:#0c1f17;font-weight:700;font-size:13px;font-family:inherit;cursor:pointer">Сохранить</button>
+        </div>
+
+        <div class="card">
+          <div class="card-ey" style="margin-bottom:5px">Внешний вид</div>
+          <div class="card-title" style="margin-bottom:16px">Тема и язык</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line2)">
+            <div>
+              <div style="font-size:13px;font-weight:600">Тёмная тема</div>
+              <div style="font-size:11px;color:var(--faint);margin-top:2px">Сохраняется в браузере</div>
+            </div>
+            <div id="theme-toggle" onclick="toggleTheme()" style="width:40px;height:22px;background:var(--green);border-radius:11px;position:relative;cursor:pointer;transition:background .2s;flex-shrink:0">
+              <div id="theme-knob" style="position:absolute;top:3px;right:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:right .2s"></div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0">
+            <div>
+              <div style="font-size:13px;font-weight:600">Язык интерфейса</div>
+              <div style="font-size:11px;color:var(--faint);margin-top:2px">Русский</div>
+            </div>
+            <span style="font-size:12px;color:var(--faint)">скоро →</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-ey" style="margin-bottom:5px">Валюта</div>
+          <div class="card-title" style="margin-bottom:16px">Отображение цен</div>
+          <div style="display:flex;gap:8px">
+            <button class="cur-s active" data-cur="rub" onclick="setCurS(this)">₽ Рубли</button>
+            <button class="cur-s" data-cur="usd" onclick="setCurS(this)">$ Доллары</button>
+            <button class="cur-s" data-cur="eur" onclick="setCurS(this)">€ Евро</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-ey" style="margin-bottom:5px">Статус</div>
+          <div class="card-title" style="margin-bottom:16px">Тип путешественника</div>
+          <div style="display:flex;flex-direction:column;gap:6px" id="status-btns">
+            <button class="status-s" data-s="planning" onclick="setStatusS(this)">🗺 Планирую поездку</button>
+            <button class="status-s" data-s="moving" onclick="setStatusS(this)">📦 Переезжаю</button>
+            <button class="status-s" data-s="living" onclick="setStatusS(this)">🏠 Уже живу за рубежом</button>
+            <button class="status-s" data-s="traveling" onclick="setStatusS(this)">✈️ Путешествую</button>
+            <button class="status-s" data-s="returned" onclick="setStatusS(this)">🔄 Вернулся домой</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-ey" style="margin-bottom:5px">Уведомления</div>
+          <div class="card-title" style="margin-bottom:16px">Напоминания</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line2)">
+            <div>
+              <div style="font-size:13px;font-weight:600">Истечение виз</div>
+              <div style="font-size:11px;color:var(--faint);margin-top:2px">За 30 дней до окончания</div>
+            </div>
+            <span style="font-size:12px;color:var(--faint)">скоро →</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0">
+            <div>
+              <div style="font-size:13px;font-weight:600">Новые страны</div>
+              <div style="font-size:11px;color:var(--faint);margin-top:2px">Обновления визовых правил</div>
+            </div>
+            <span style="font-size:12px;color:var(--faint)">скоро →</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <div style="font-size:13px;font-weight:600">Выйти из аккаунта</div>
+              <div style="font-size:11px;color:var(--faint);margin-top:2px">На этом устройстве</div>
+            </div>
+            <button id="btn-logout2" style="padding:8px 18px;background:none;border:1.5px solid var(--red);border-radius:9px;color:var(--red);font-weight:700;font-size:12px;font-family:inherit;cursor:pointer">Выйти</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- MARK MODAL -->
+<div id="modal" style="display:none" class="modal-bg" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-ey">Страна</div>
+    <div class="modal-title" id="modal-country-name">—</div>
+    <div style="font-size:12px;color:var(--ink2);margin-bottom:2px">Текущий статус: <span id="modal-status-pill"></span></div>
+    <div class="modal-actions">
+      <button class="modal-btn green" onclick="markCountry('visited')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12l4 4L19 7"/></svg>
+        <div><div class="ma-title">Отметить посещённой</div><div class="ma-sub">Добавить в журнал поездок</div></div>
+      </button>
+      <button class="modal-btn amber" onclick="markCountry('favorite')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>
+        <div><div class="ma-title">В избранное</div><div class="ma-sub">Список желаний</div></div>
+      </button>
+      <button class="modal-btn ghost" onclick="markCountry('none')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        <div><div class="ma-title">Снять отметку</div><div class="ma-sub">Убрать из всех списков</div></div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH MODAL -->
+<div id="search-modal" style="display:none" class="modal-bg" onclick="closeSearch()">
+  <div class="modal" onclick="event.stopPropagation()" style="width:480px">
+    <button class="modal-close" onclick="closeSearch()">✕</button>
+    <div class="modal-ey">Добавить поездку</div>
+    <div class="modal-title">Новая поездка</div>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="search-input" type="text" placeholder="Таиланд, Франция, Япония..." oninput="filterSearch(this.value)" autocomplete="off">
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+const NUM_TO_ISO={"004":"AFG","008":"ALB","012":"DZA","016":"ASM","020":"AND","024":"AGO","028":"ATG","031":"AZE","032":"ARG","036":"AUS","040":"AUT","044":"BHS","048":"BHR","050":"BGD","051":"ARM","052":"BRB","056":"BEL","060":"BMU","064":"BTN","068":"BOL","070":"BIH","072":"BWA","076":"BRA","084":"BLZ","090":"SLB","096":"BRN","100":"BGR","104":"MMR","108":"BDI","112":"BLR","116":"KHM","120":"CMR","124":"CAN","132":"CPV","140":"CAF","144":"LKA","148":"TCD","152":"CHL","156":"CHN","170":"COL","174":"COM","178":"COG","180":"COD","184":"COK","188":"CRI","191":"HRV","192":"CUB","196":"CYP","203":"CZE","204":"BEN","208":"DNK","212":"DMA","214":"DOM","218":"ECU","222":"SLV","226":"GNQ","231":"ETH","232":"ERI","233":"EST","238":"FLK","242":"FJI","246":"FIN","250":"FRA","266":"GAB","268":"GEO","270":"GMB","275":"PSE","276":"DEU","288":"GHA","292":"GIB","296":"KIR","300":"GRC","304":"GRL","308":"GRD","320":"GTM","324":"GIN","328":"GUY","332":"HTI","336":"VAT","340":"HND","344":"HKG","348":"HUN","356":"IND","360":"IDN","364":"IRN","368":"IRQ","372":"IRL","376":"ISR","380":"ITA","384":"CIV","388":"JAM","392":"JPN","398":"KAZ","400":"JOR","404":"KEN","408":"PRK","410":"KOR","414":"KWT","418":"LAO","422":"LBN","426":"LSO","428":"LVA","430":"LBR","434":"LBY","438":"LIE","440":"LTU","442":"LUX","450":"MDG","454":"MWI","458":"MYS","462":"MDV","466":"MLI","470":"MLT","478":"MRT","480":"MUS","484":"MEX","492":"MCO","496":"MNG","498":"MDA","499":"MNE","504":"MAR","508":"MOZ","512":"OMN","516":"NAM","520":"NRU","524":"NPL","528":"NLD","540":"NCL","548":"VUT","554":"NZL","558":"NIC","562":"NER","566":"NGA","578":"NOR","580":"MNP","583":"FSM","584":"MHL","586":"PAK","591":"PAN","598":"PNG","600":"PRY","604":"PER","608":"PHL","616":"POL","620":"PRT","624":"GNB","626":"TLS","630":"PRI","634":"QAT","642":"ROU","643":"RUS","646":"RWA","659":"KNA","662":"LCA","670":"VCT","678":"STP","682":"SAU","686":"SEN","688":"SRB","690":"SYC","694":"SLE","702":"SGP","703":"SVK","704":"VNM","705":"SVN","706":"SOM","710":"ZAF","716":"ZWE","724":"ESP","728":"SSD","729":"SDN","740":"SUR","748":"SWZ","752":"SWE","756":"CHE","760":"SYR","762":"TJK","764":"THA","768":"TGO","776":"TON","780":"TTO","784":"ARE","788":"TUN","792":"TUR","795":"TKM","798":"TUV","800":"UGA","804":"UKR","807":"MKD","818":"EGY","826":"GBR","831":"GGY","832":"JEY","834":"TZA","840":"USA","854":"BFA","858":"URY","860":"UZB","862":"VEN","887":"YEM","894":"ZMB","051":"ARM","031":"AZE","112":"BLR","268":"GEO","398":"KAZ","417":"KGZ","498":"MDA","762":"TJK","795":"TKM","804":"UKR","860":"UZB","036":"AUS","554":"NZL","598":"PNG","090":"SLB","548":"VUT","242":"FJI","520":"NRU","316":"GUM","581":"UMI"};
+
+const NAMES={"AFG":"Афганистан","ALB":"Албания","DZA":"Алжир","AGO":"Ангола","AZE":"Азербайджан","ARG":"Аргентина","AUS":"Австралия","AUT":"Австрия","BGD":"Бангладеш","ARM":"Армения","BEL":"Бельгия","BTN":"Бутан","BOL":"Боливия","BRA":"Бразилия","BGR":"Болгария","MMR":"Мьянма","BDI":"Бурунди","BLR":"Беларусь","KHM":"Камбоджа","CMR":"Камерун","CAN":"Канада","LKA":"Шри-Ланка","TCD":"Чад","CHL":"Чили","CHN":"Китай","COL":"Колумбия","CRI":"Коста-Рика","HRV":"Хорватия","CUB":"Куба","CYP":"Кипр","CZE":"Чехия","DNK":"Дания","ECU":"Эквадор","ETH":"Эфиопия","EST":"Эстония","FIN":"Финляндия","FRA":"Франция","GEO":"Грузия","DEU":"Германия","GHA":"Гана","GRC":"Греция","GTM":"Гватемала","HTI":"Гаити","HND":"Гондурас","HUN":"Венгрия","IND":"Индия","IDN":"Индонезия","IRN":"Иран","IRQ":"Ирак","IRL":"Ирландия","ISR":"Израиль","ITA":"Италия","JAM":"Ямайка","JPN":"Япония","KAZ":"Казахстан","JOR":"Иордания","KEN":"Кения","PRK":"Северная Корея","KOR":"Южная Корея","KWT":"Кувейт","LAO":"Лаос","LBN":"Ливан","LVA":"Латвия","LBY":"Ливия","LTU":"Литва","MYS":"Малайзия","MDV":"Мальдивы","MLT":"Мальта","MEX":"Мексика","MNG":"Монголия","MDA":"Молдова","MNE":"Черногория","MAR":"Марокко","MOZ":"Мозамбик","OMN":"Оман","NAM":"Намибия","NPL":"Непал","NLD":"Нидерланды","NZL":"Новая Зеландия","NIC":"Никарагуа","NGA":"Нигерия","NOR":"Норвегия","PAK":"Пакистан","PAN":"Панама","PER":"Перу","PHL":"Филиппины","POL":"Польша","PRT":"Португалия","QAT":"Катар","ROU":"Румыния","RUS":"Россия","SAU":"Саудовская Аравия","SEN":"Сенегал","SRB":"Сербия","SGP":"Сингапур","SVK":"Словакия","VNM":"Вьетнам","SVN":"Словения","SOM":"Сомали","ZAF":"ЮАР","ZWE":"Зимбабве","ESP":"Испания","SDN":"Судан","SWE":"Швеция","CHE":"Швейцария","SYR":"Сирия","TJK":"Таджикистан","THA":"Таиланд","ARE":"ОАЭ","TUN":"Тунис","TUR":"Турция","UGA":"Уганда","UKR":"Украина","MKD":"Северная Македония","EGY":"Египет","GBR":"Великобритания","TZA":"Танзания","USA":"США","URY":"Уругвай","UZB":"Узбекистан","VEN":"Венесуэла","YEM":"Йемен","ZMB":"Замбия","ISL":"Исландия","DOM":"Доминикана","PRI":"Пуэрто-Рико","CIV":"Кот-д'Ивуар","MLI":"Мали","NER":"Нигер","BFA":"Буркина-Фасо","GIN":"Гвинея","SLE":"Сьерра-Леоне","LBR":"Либерия","GNB":"Гвинея-Бисау","GMB":"Гамбия","MRT":"Мавритания","CPV":"Кабо-Верде","STP":"Сан-Томе и Принсипи","GNQ":"Экваториальная Гвинея","GAB":"Габон","COG":"Конго","COD":"ДР Конго","CAF":"ЦАР","CMR":"Камерун","TGO":"Того","BEN":"Бенин","RWA":"Руанда","BDI":"Бурунди","COM":"Коморы","MDG":"Мадагаскар","MUS":"Маврикий","SYC":"Сейшелы","SSD":"Южный Судан","ERI":"Эритрея","DJI":"Джибути","KIR":"Кирибати","FSM":"Микронезия","MHL":"Маршалловы о-ва","NRU":"Науру","PLW":"Палау","PNG":"Папуа — Новая Гвинея","SLB":"Соломоновы о-ва","TUV":"Тувалу","VUT":"Вануату","FJI":"Фиджи","TON":"Тонга","WSM":"Самоа","TKM":"Туркменистан","KGZ":"Киргизия","TLS":"Тимор-Лесте","MWI":"Малави","ZWE":"Зимбабве","BWA":"Ботсвана","SWZ":"Эсватини","LSO":"Лесото","NAM":"Намибия","AGO":"Ангола","LUX":"Люксембург","AND":"Андорра","MCO":"Монако","LIE":"Лихтенштейн","SMR":"Сан-Марино","VAT":"Ватикан","BIH":"Босния и Герцеговина","ALB":"Албания","MNE":"Черногория","MKD":"Северная Македония","GRL":"Гренландия","FLK":"Фолклендские о-ва","ATG":"Антигуа и Барбуда","BHS":"Багамы","BRB":"Барбадос","BLZ":"Белиз","CUB":"Куба","DMA":"Доминика","GRD":"Гренада","GUY":"Гайана","HTI":"Гаити","JAM":"Ямайка","KNA":"Сент-Китс и Невис","LCA":"Сент-Люсия","VCT":"Сент-Винсент","SUR":"Суринам","TTO":"Тринидад и Тобаго","PRY":"Парагвай","BOL":"Боливия","PSE":"Палестина","BHR":"Бахрейн","IRQ":"Ирак","KWT":"Кувейт","LBN":"Ливан","OMN":"Оман","QAT":"Катар","SYR":"Сирия","YEM":"Йемен"};
+
+// MOCK DATA (заменить на Firebase)
+const D = {
+  name: "Никита П.",
+  visited: new Set(["RUS","GEO","ARM","TUR","THA","SRB"]),
+  favorites: new Set(["JPN","ISL","PER","NZL"]),
+  visas: [
+    {country:"JPN",entry:"2026-03-01",allowed:90,type:"Туристическая"},
+    {country:"USA",entry:"2025-10-15",allowed:365,type:"B1/B2"},
+    {country:"GBR",entry:"2026-04-10",allowed:60,type:"Standard Visitor"},
+    {country:"CHN",entry:"",allowed:0,type:"L (туристическая)",status:"pending"},
+    {country:"ARE",entry:"2026-05-15",allowed:90,type:"On-arrival"}
+  ]
+};
+
+const save = () => {};
+
+function daysLeft(v){return Math.ceil((new Date(v.entry).getTime()+v.allowed*86400000-Date.now())/86400000);}
+
+function flagChip(iso){
+  let h=0;for(let i=0;i<iso.length;i++)h=(h*31+iso.charCodeAt(i))%360;
+  return `<div class="flag-chip" style="background:linear-gradient(135deg,hsl(${h},35%,28%),hsl(${(h+40)%360},28%,20%))">${iso}</div>`;
+}
+
+function g(id){return document.getElementById(id);}
+function s(id,prop,val){const e=g(id);if(e)e[prop]=val;}
+function renderAll(){
+  const vc=D.visited.size, fc=D.favorites.size;
+  const activeVz=D.visas.filter(v=>!(v.status==='pending')&&v.entry&&v.allowed&&daysLeft(v)>0);
+  s('st-fav','textContent',fc);
+  s('st-vis','textContent',vc);
+  s('st-vis-pct','textContent',Math.round(vc/195*100)+'% мира');
+  s('st-vz','textContent',activeVz.length);
+  s('ms-vis','textContent',vc);
+  s('ms-fav','textContent',fc);
+  s('ms-pct','textContent',Math.round(vc/195*100)+'%');
+  s('ms-vz','textContent',activeVz.length);
+  s('sb-name','textContent',D.name);
+  s('sb-meta','textContent',vc+' стран');
+  s('sb-av','textContent',D.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2));
+  s('s-name','value',D.name);
+  const exp=activeVz.filter(v=>daysLeft(v)<=30);
+  const b=g('st-vz-b');
+  if(b){if(exp.length){b.textContent=exp.length+' истекает';b.style.display='inline';}else b.style.display='none';}
+  const near=[...activeVz].sort((a,x)=>daysLeft(a)-daysLeft(x))[0];
+  s('st-vz-foot','textContent',near?'ближайшая — '+daysLeft(near)+' дн.':'нет активных');
+  renderOvFav();renderOvVz();renderFavFull();renderVisaFull();renderAchv();
+  updateMap('world-svg');updateMap('world-svg-2');
+}
+
+function renderOvFav(){
+  const el=document.getElementById('ov-fav');
+  const favs=[...D.favorites].slice(0,5);
+  if(!favs.length){el.innerHTML='<div style="padding:16px 0;text-align:center;font-size:13px;color:var(--faint)">Нет избранных · кликни по карте</div>';return;}
+  el.innerHTML=favs.map((iso,i)=>`<div class="fav-row" onclick="openModal('${iso}')">
+    <div class="fav-rank">${String(i+1).padStart(2,'0')}</div>${flagChip(iso)}
+    <div><div class="fav-name">${NAMES[iso]||iso}</div></div>
+    <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.2 1.2 6.1L12 16.8 6.7 19.6l1.2-6.1L3.4 9.3l6-.7z"/></svg>
+  </div>`).join('');
+}
+
+function renderOvVz(){
+  const el=document.getElementById('ov-vz');
+  if(!D.visas.length){el.innerHTML='<div style="padding:16px 0;text-align:center;font-size:13px;color:var(--faint)">Нет виз · добавьте в трекере</div>';return;}
+  el.innerHTML=D.visas.slice(0,4).map(v=>{
+    const isPending=v.status==='pending'||!v.entry||!v.allowed;
+    const left=isPending?null:daysLeft(v);
+    const pct=isPending?5:Math.max(4,Math.min(100,left/v.allowed*100));
+    const col=isPending?'var(--muted)':left<=7?'var(--red)':left<=30?'var(--amber)':'var(--green)';
+    const label=isPending?'В обработке':left<=0?'Истекла':left<=30?'Истекает':'Активна';
+    return`<div class="visa-row">${flagChip(v.country)}
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="font-size:13px;color:var(--ink)">${NAMES[v.country]||v.country}</div>
+          <span style="font-size:9px;font-weight:600;padding:1px 6px;border-radius:999px;color:${col};background:${col}22;border:1px solid ${col}44;white-space:nowrap">${label}</span>
+        </div>
+        <div style="font-size:10px;color:var(--faint);margin-top:2px">${v.type||''}</div>
+        <div class="visa-bar" style="margin-top:6px"><div class="visa-fill" style="width:${pct}%;background:${col}"></div></div>
+      </div>
+      <div class="visa-days">
+        ${isPending?'<span style="font-size:16px;color:var(--faint)">—</span>':`<b style="color:${col}">${Math.max(0,left)}</b><span>дн.</span>`}
+      </div></div>`;
+  }).join('');
+}
+
+function renderFavFull(){
+  const el=document.getElementById('fav-full-grid');
+  const favs=[...D.favorites];
+  if(!favs.length){el.innerHTML='<div style="color:var(--faint);font-size:13px;padding:20px 0">Нет избранных. Кликайте по карте или кнопке "Новая поездка".</div>';return;}
+  el.innerHTML=favs.map(iso=>`<div class="card" style="cursor:pointer" onclick="openModal('${iso}')">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">${flagChip(iso)}
+    <div><div style="font-size:15px;font-weight:700">${NAMES[iso]||iso}</div>
+    <div style="font-size:11px;color:var(--faint);margin-top:2px">${D.visited.has(iso)?'✓ Посещено':'Не посещено'}</div></div></div>
+    <button onclick="event.stopPropagation();removeFav('${iso}')" style="font-size:11px;color:var(--red);border:1px solid var(--red);background:none;padding:4px 10px;border-radius:7px;cursor:pointer;font-family:inherit">Убрать</button>
+  </div>`).join('');
+}
+
+function renderVisaFull(){
+  const el=document.getElementById('visa-full-list');
+  const sel=document.getElementById('v-country');
+  if(sel.options.length<=1){
+    Object.entries(NAMES).sort((a,b)=>a[1].localeCompare(b[1])).forEach(([iso,name])=>{
+      const o=document.createElement('option');o.value=iso;o.textContent=name+' ('+iso+')';sel.appendChild(o);
+    });
+  }
+  if(!D.visas.length){el.innerHTML='<div style="color:var(--faint);font-size:13px;padding:20px 0">Нет виз. Нажмите "+ Добавить визу".</div>';return;}
+  el.innerHTML=D.visas.map((v,i)=>{
+    const isPending=v.status==='pending'||!v.entry||!v.allowed;
+    const left=isPending?null:daysLeft(v);
+    const pct=isPending?5:Math.max(4,Math.min(100,left/v.allowed*100));
+    const col=isPending?'var(--muted)':left<=0?'var(--red)':left<=30?'var(--amber)':'var(--green)';
+    const bgCol=isPending?'rgba(158,154,143,.12)':left<=0?'var(--red-l)':left<=30?'var(--amber-l)':'var(--green-l)';
+    const label=isPending?'В обработке':left<=0?'Истекла':left<=30?'Истекает':'Активна';
+    const expires=isPending?'до —':(v.entry?'до '+new Date(new Date(v.entry).getTime()+v.allowed*86400000).toISOString().split('T')[0]:'');
+    const daysHtml = isPending
+      ? '<span style="font-size:22px;color:var(--faint)">—</span>'
+      : '<div style="font-family:\'Playfair Display\',serif;font-size:28px;font-weight:600;color:'+col+';line-height:1">'+Math.max(0,left)+'</div><div style="font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.1em;margin-top:1px">дн.</div>';
+    return '<div class="card" style="display:flex;align-items:center;gap:16px;padding:18px 20px">'
+      +flagChip(v.country)
+      +'<div style="flex:1;min-width:0">'
+        +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">'
+          +'<span style="font-size:15px;font-weight:700">'+(NAMES[v.country]||v.country)+'</span>'
+          +'<span style="font-size:10px;font-weight:600;padding:2px 9px;border-radius:999px;color:'+col+';background:'+bgCol+';border:1px solid '+col+'44">'+label+'</span>'
+        +'</div>'
+        +'<div style="font-size:11.5px;color:var(--faint);margin-bottom:9px">'+(v.type||'Туристическая')+' · '+expires+'</div>'
+        +'<div class="visa-bar"><div class="visa-fill" style="width:'+pct+'%;background:'+col+'"></div></div>'
+      +'</div>'
+      +'<div style="text-align:right;flex-shrink:0;min-width:64px">'
+        +daysHtml
+        +'<button onclick="deleteVisa('+i+')" style="font-size:11px;color:var(--faint);border:none;background:none;cursor:pointer;font-family:inherit;margin-top:5px;display:block;width:100%">удалить</button>'
+      +'</div>'
+    +'</div>';
+  }).join('');
+}
+
+function renderAchv(){
+  const n=D.visited.size;
+  const list=[
+    {t:'Первая поездка',s:'1 страна',on:n>=1,p:'M12 3l2.6 5.6 6 .7-4.5 4.2 1.2 6.1L12 16.8 6.7 19.6l1.2-6.1L3.4 9.3l6-.7z'},
+    {t:'Исследователь',s:'10+ стран',on:n>=10,p:'M12 3a9 9 0 1 0 0 18A9 9 0 0 0 12 3zM3 12h18'},
+    {t:'Глобтроттер',s:'25+ стран',on:n>=25,p:'M8.5 9L6 3h12l-2.5 6M6 20a6 6 0 1 0 12 0 6 6 0 0 0-12 0'},
+    {t:'50 стран',s:'Полсотни',on:n>=50,p:'M12 3v18M3 12h18'},
+    {t:'100 стран',s:'Настоящий путешественник',on:n>=100,p:'M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 18l9 5 9-5'},
+    {t:'Коллекционер',s:'150+ стран',on:n>=150,p:'M9 3h6l-1 6h2a3 3 0 0 1 3 3v3H5v-3a3 3 0 0 1 3-3h2zM4 21h16'},
+  ];
+  document.getElementById('achv-grid').innerHTML=list.map(a=>`<div class="achv ${a.on?'on':'off'}">
+    <div class="achv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="${a.p}"/></svg></div>
+    <div><div class="achv-title">${a.t}</div><div class="achv-sub">${a.s}</div></div>
+  </div>`).join('');
+}
+
+// MAP
+let modalISO=null;
+const mapState={};
+
+const MAP_W=1000, MAP_H=500;
+const DEF_SCALE=153, DEF_TX=500, DEF_TY=260;
+const MIN_SCALE=80, MAX_SCALE=1000;
+
+function makeProj(scale,tx,ty){
+  return d3.geoNaturalEarth1().scale(scale).translate([tx,ty]);
+}
+
+function clampState(st){
+  // NaturalEarth: карта занимает примерно scale*6.28 x scale*3.14
+  // tx/ty — это где находится центр (0,0) в пикселях SVG
+  const r=st.scale/DEF_SCALE;
+  // Ширина и высота отрисованной карты в пикселях
+  const mapW=st.scale*6.5;
+  const mapH=st.scale*3.5;
+  // Левый край карты = tx - mapW/2, правый = tx + mapW/2
+  // Не даём левому краю уйти дальше правой части экрана и наоборот
+  const minTx=MAP_W*0.1-(mapW/2);
+  const maxTx=MAP_W*0.9+(mapW/2);
+  const minTy=MAP_H*0.1-(mapH/2);
+  const maxTy=MAP_H*0.9+(mapH/2);
+  st.tx=Math.max(minTx, Math.min(maxTx, st.tx));
+  st.ty=Math.max(minTy, Math.min(maxTy, st.ty));
+}
+
+function buildMap(svgId){
+  if(mapState[svgId]&&mapState[svgId].built) return;
+  const svg=document.getElementById(svgId);
+  if(!svg) return;
+  const tipId=svgId==='world-svg'?'map-tip':'map-tip-2';
+  const tip=document.getElementById(tipId);
+  mapState[svgId]={built:false,scale:DEF_SCALE,tx:DEF_TX,ty:DEF_TY,topo:null,features:null};
+
+  fetch('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json')
+    .then(r=>r.json()).then(topo=>{
+      const st=mapState[svgId];
+      st.topo=topo;
+      const countries=topojson.feature(topo,topo.objects.countries);
+      st.features=countries.features.filter(f=>String(f.id)!=='010');
+      st.built=true;
+      const s=d3.select(svg);
+      s.selectAll('*').remove();
+
+      // Фон
+      s.append('rect').attr('class','map-bg')
+        .attr('width',MAP_W).attr('height',MAP_H).attr('fill','#0d0d0b');
+
+      // Outline континентов
+      s.append('path').datum(topojson.mesh(topo,topo.objects.countries,()=>true))
+        .attr('class','map-outline').attr('fill','none')
+        .attr('stroke','#0d0d0b').attr('stroke-width','0.4');
+
+      // Страны
+      s.selectAll('path.cty').data(st.features)
+        .enter().append('path').attr('class','cty')
+        .attr('fill',f=>{const iso=NUM_TO_ISO[String(f.id).padStart(3,'0')];return D.visited.has(iso)?'#3fbb89':D.favorites.has(iso)?'#f0a54a':'#2a2a24';})
+        .attr('stroke','#0d0d0b').attr('stroke-width','0.35')
+        .style('cursor','pointer')
+        .on('mouseover',function(e,f){
+          const iso=NUM_TO_ISO[String(f.id).padStart(3,'0')];
+          const name=NAMES[iso]||'?';
+          const status=D.visited.has(iso)?'Посещено ✓':D.favorites.has(iso)?'В избранном ♥':'Нажмите чтобы отметить';
+          if(tip){const r=svg.getBoundingClientRect();tip.style.display='block';tip.innerHTML='<div class="tip-name">'+name+'</div><div class="tip-status">'+status+'</div>';tip.style.left=(e.clientX-r.left+14)+'px';tip.style.top=(e.clientY-r.top+14)+'px';}
+          d3.select(this).attr('fill','rgba(255,255,255,.72)');
+        })
+        .on('mousemove',function(e){if(tip){const r=svg.getBoundingClientRect();tip.style.left=(e.clientX-r.left+14)+'px';tip.style.top=(e.clientY-r.top+14)+'px';}})
+        .on('mouseout',function(e,f){if(tip)tip.style.display='none';const iso=NUM_TO_ISO[String(f.id).padStart(3,'0')];d3.select(this).attr('fill',D.visited.has(iso)?'#3fbb89':D.favorites.has(iso)?'#f0a54a':'#2a2a24');})
+        .on('click',function(e,f){const iso=NUM_TO_ISO[String(f.id).padStart(3,'0')];if(iso)openModal(iso);});
+
+      redrawMap(svgId);
+
+      // Drag с ограничением
+      let dragStart={tx:0,ty:0};
+      const drag=d3.drag()
+        .on('start',function(e){
+          dragStart={tx:st.tx,ty:st.ty};
+          d3.select(svg).style('cursor','grabbing');
+        })
+        .on('drag',function(e){
+          st.tx=dragStart.tx+e.x-e.subject.x;
+          st.ty=dragStart.ty+e.y-e.subject.y;
+          clampState(st);
+          redrawMap(svgId);
+        })
+        .on('end',function(){d3.select(svg).style('cursor','default');});
+      d3.select(svg).call(drag);
+
+      // Scroll zoom к курсору
+      d3.select(svg).on('wheel',function(e){
+        e.preventDefault();
+        const factor=e.deltaY<0?1.15:0.87;
+        const newScale=Math.min(MAX_SCALE,Math.max(MIN_SCALE,st.scale*factor));
+        if(newScale===st.scale) return;
+        const r=svg.getBoundingClientRect();
+        const mx=(e.clientX-r.left)/r.width*MAP_W;
+        const my=(e.clientY-r.top)/r.height*MAP_H;
+        st.tx=mx-(mx-st.tx)*(newScale/st.scale);
+        st.ty=my-(my-st.ty)*(newScale/st.scale);
+        st.scale=newScale;
+        clampState(st);
+        redrawMap(svgId);
+      },{passive:false});
+    });
+}
+
+function updateMap(svgId){
+  const svg=document.getElementById(svgId);
+  if(!svg) return;
+  const st=mapState[svgId];
+  if(!st||!st.built){buildMap(svgId);return;}
+  d3.select(svg).selectAll('path.cty').attr('fill',function(f){
+    const iso=NUM_TO_ISO[String(f.id).padStart(3,'0')];
+    return D.visited.has(iso)?'#3fbb89':D.favorites.has(iso)?'#f0a54a':'#2a2a24';
+  });
+}
+
+// ZOOM кнопки
+function mapZoom(svgId,factor){
+  const st=mapState[svgId];
+  if(!st||!st.built) return;
+  const newScale=Math.min(MAX_SCALE,Math.max(MIN_SCALE,st.scale*factor));
+  st.tx=MAP_W/2-(MAP_W/2-st.tx)*(newScale/st.scale);
+  st.ty=MAP_H/2-(MAP_H/2-st.ty)*(newScale/st.scale);
+  st.scale=newScale;
+  clampState(st);
+  redrawMap(svgId);
+}
+function mapReset(svgId){
+  const st=mapState[svgId];
+  if(!st) return;
+  st.scale=DEF_SCALE;st.tx=DEF_TX;st.ty=DEF_TY;
+  redrawMap(svgId);
+}
+function redrawMap(svgId){
+  const svg=document.getElementById(svgId);
+  const st=mapState[svgId];
+  if(!svg||!st||!st.built) return;
+  const proj=makeProj(st.scale,st.tx,st.ty);
+  const path=d3.geoPath(proj);
+  const graticule=d3.geoGraticule().step([20,20]);
+  if(st.topo) d3.select(svg).select('path.map-outline').attr('d',path(topojson.mesh(st.topo,st.topo.objects.countries,()=>true)));
+  d3.select(svg).selectAll('path.cty').attr('d',d=>path(d));
+}
+
+// MODAL
+function openModal(iso){
+  modalISO=iso;
+  const el=document.getElementById('modal-country-name');
+  if(el)el.textContent=NAMES[iso]||iso;
+  const st=D.visited.has(iso)?'Посещено':D.favorites.has(iso)?'В избранном':'Не отмечено';
+  const col=D.visited.has(iso)?'var(--green)':D.favorites.has(iso)?'var(--amber)':'var(--faint)';
+  const pill=document.getElementById('modal-status-pill');
+  if(pill)pill.innerHTML='<span style="color:'+col+'">'+st+'</span>';
+  const m=document.getElementById('modal');
+  if(m)m.style.display='flex';
+}
+function closeModal(){
+  const m=document.getElementById('modal');
+  if(m)m.style.display='none';
+  modalISO=null;
+}
+function markCountry(status){
+  if(!modalISO)return;
+  const n=NAMES[modalISO]||modalISO;
+  D.visited.delete(modalISO);D.favorites.delete(modalISO);
+  if(status==='visited'){D.visited.add(modalISO);showToast('✓ '+n+' добавлена в посещённые');}
+  if(status==='favorite'){D.favorites.add(modalISO);showToast('♥ '+n+' добавлена в избранное');}
+  if(status==='none')showToast('Отметка снята');
+  save();closeModal();renderAll();
+}
+function removeFav(iso){D.favorites.delete(iso);save();renderAll();showToast('Убрано из избранного');}
+
+// VISA
+function toggleAddVisa(){const f=document.getElementById('add-visa-form');if(!f)return;f.style.display=f.style.display==='none'?'block':'none';if(f.style.display==='block'){const e=document.getElementById('v-entry');if(e)e.value=new Date().toISOString().split('T')[0];}}
+function addVisa(){
+  const c=document.getElementById('v-country').value;
+  const e=document.getElementById('v-entry').value;
+  const a=document.getElementById('v-allowed').value;
+  if(!c||!e||!a){showToast('Заполни все поля');return;}
+  D.visas.push({country:c,entry:e,allowed:parseInt(a)});
+  save();renderAll();toggleAddVisa();showToast('Виза добавлена ✓');
+}
+function deleteVisa(i){D.visas.splice(i,1);save();renderAll();showToast('Виза удалена');}
+
+// SEARCH
+function openSearch(){const m=document.getElementById('search-modal');if(m)m.style.display='flex';filterSearch('');setTimeout(()=>{const i=document.getElementById('search-input');if(i)i.focus();},50);}
+function closeSearch(){const m=document.getElementById('search-modal');if(m)m.style.display='none';const i=document.getElementById('search-input');if(i)i.value='';}
+function filterSearch(q){
+  const res=document.getElementById('search-results');
+  if(!res)return;
+  const all=Object.entries(NAMES).sort((a,b)=>a[1].localeCompare(b[1]));
+  const filtered=q?all.filter(([iso,n])=>n.toLowerCase().includes(q.toLowerCase())||iso.toLowerCase().includes(q.toLowerCase())):all.slice(0,25);
+  res.innerHTML='';
+  filtered.slice(0,30).forEach(function([iso,name]){
+    const st=D.visited.has(iso)?'✓ Посещено':D.favorites.has(iso)?'♥ В избранном':'Не посещено';
+    const col=D.visited.has(iso)?'var(--green)':D.favorites.has(iso)?'var(--amber)':'var(--faint)';
+    const row=document.createElement('div');
+    row.className='sr-row';
+    row.innerHTML=flagChip(iso)+'<div><div style="font-size:13px">'+name+'</div><div style="font-size:10px;color:'+col+';margin-top:1px">'+st+'</div></div>';
+    row.onclick=function(){addVisited(iso);};
+    res.appendChild(row);
+  });
+}
+function addVisited(iso){D.visited.add(iso);save();renderAll();showToast('✓ '+(NAMES[iso]||iso)+' добавлена');closeSearch();}
+function saveName(){const n=document.getElementById('s-name');if(n&&n.value.trim()){D.name=n.value.trim();renderAll();showToast('Имя сохранено ✓');}}
+
+// SETTINGS helpers
+function setCurS(btn){document.querySelectorAll('.cur-s').forEach(b=>b.classList.remove('active'));btn.classList.add('active');D.currency=btn.dataset.cur;showToast('Валюта изменена');}
+function setStatusS(btn){document.querySelectorAll('.status-s').forEach(b=>b.classList.remove('active'));btn.classList.add('active');D.status=btn.dataset.s;showToast('Статус обновлён');}
+function toggleTheme(){
+  const knob=document.getElementById('theme-knob');
+  const tog=document.getElementById('theme-toggle');
+  const isDark=knob&&knob.style.right==='3px';
+  if(knob){knob.style.right=isDark?'calc(100% - 19px)':'3px';}
+  if(tog){tog.style.background=isDark?'var(--line)':'var(--green)';}
+}
+
+// PAGES
+const PAGES=['overview','favorites','visas','map','achievements','settings'];
+function setPage(p){
+  PAGES.forEach(id=>{
+    const el=document.getElementById('page-'+id);
+    if(el)el.style.display=id===p?'block':'none';
+  });
+  document.querySelectorAll('.sb-item').forEach(el=>el.classList.remove('active'));
+  const idx={overview:0,favorites:1,visas:2,map:3,achievements:4,settings:5};
+  const items=document.querySelectorAll('.sb-item');
+  const target=idx[p]!==undefined?items[idx[p]]:null;
+  if(target)target.classList.add('active');
+  const main=document.querySelector('.main');
+  if(main)main.scrollTop=0;
+  if(p==='map')setTimeout(()=>{buildMap('world-svg-2');updateMap('world-svg-2');},50);
+}
+
+// TOAST
+let tTimer;
+function showToast(msg){
+  const el=document.getElementById('toast');
+  if(!el)return;
+  el.textContent=msg;
+  el.classList.add('show');
+  clearTimeout(tTimer);
+  tTimer=setTimeout(()=>el.classList.remove('show'),2400);
+}
+
+// INIT
+window.addEventListener('load',()=>{
+  renderAll();
+  buildMap('world-svg');
+});
+</script>
+</body>
+</html>
