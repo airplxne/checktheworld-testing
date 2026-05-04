@@ -673,48 +673,45 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">01</span><span class="sec-dash"></span>
       <h2 class="sec-title">Визовый <em>режим</em></h2>
-      <span class="sec-desc">Четыре пути въезда. Для большинства — хватит паспорта и TDAC.</span>
+      <span class="sec-desc">До 45 дней без визы. До 90 — e-Visa за $25.</span>
     </div>
     <div class="visa-grid reveal">
       <div class="visa-card featured" onclick="openVisa('free')">
         <div class="vc-type">▶ Рекомендуется</div>
         <div class="vc-name">Безвизовый въезд</div>
-        <div class="vc-desc">Граждане РФ могут находиться до 60 дней без визы. Никаких документов кроме паспорта и TDAC.</div>
+        <div class="vc-desc">Граждане РФ — до 45 дней без визы. Только загранпаспорт и обратный билет.</div>
         <div class="vc-tags">
-          <span class="vc-tag green">60 дней</span>
+          <span class="vc-tag green">45 дней</span>
           <span class="vc-tag green">Бесплатно</span>
-          <span class="vc-tag green">Паспорт РФ</span>
-          <span class="vc-tag amber">TDAC за 3 дня</span>
+          <span class="vc-tag green">Загранпаспорт</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('tr')">
-        <div class="vc-type">Туристическая</div>
-        <div class="vc-name">Tourist Visa (TR)</div>
-        <div class="vc-desc">Оформляется в консульстве. 60 дней с возможностью продления ещё на 30 дней.</div>
+        <div class="vc-type">Электронная виза</div>
+        <div class="vc-name">E-Visa (90 дней)</div>
+        <div class="vc-desc">До 90 дней. Оформляется онлайн на evisa.gov.vn. Однократная $25, многократная $50.</div>
         <div class="vc-tags">
-          <span class="vc-tag">60 дней</span>
-          <span class="vc-tag amber">~$40</span>
-          <span class="vc-tag">+30 за $60</span>
+          <span class="vc-tag">90 дней</span>
+          <span class="vc-tag amber">$25 / $50</span>
+          <span class="vc-tag green">Онлайн</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('nonimm')">
-        <div class="vc-type">Долгосрочная</div>
-        <div class="vc-name">Non-Immigrant (O)</div>
-        <div class="vc-desc">Для тех кто планирует жить в Тайланде — пенсионеры, работающие, владельцы бизнеса.</div>
+        <div class="vc-type">Бизнес</div>
+        <div class="vc-name">Рабочая виза DN</div>
+        <div class="vc-desc">Для официального трудоустройства. Через работодателя, нужен work permit.</div>
         <div class="vc-tags">
-          <span class="vc-tag">1 год</span>
-          <span class="vc-tag amber">~$80</span>
-          <span class="vc-tag">Продлевается</span>
+          <span class="vc-tag">До 1 года</span>
+          <span class="vc-tag amber">Work permit</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('ltr')">
-        <div class="vc-type">Для состоятельных</div>
-        <div class="vc-name">Thailand Privilege</div>
-        <div class="vc-desc">Специальная виза на 5–20 лет для обеспеченных пенсионеров, специалистов и инвесторов.</div>
+        <div class="vc-type">Долгосрочная</div>
+        <div class="vc-name">Туристическая DL</div>
+        <div class="vc-desc">Через посольство Вьетнама. Альтернатива e-Visa если нет иностранной карты.</div>
         <div class="vc-tags">
-          <span class="vc-tag">5–20 лет</span>
-          <span class="vc-tag amber">от $10 000</span>
-          <span class="vc-tag green">Налоговые льготы</span>
+          <span class="vc-tag">1–3 месяца</span>
+          <span class="vc-tag amber">~$50–80</span>
         </div>
       </div>
     </div>
@@ -725,7 +722,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">02</span><span class="sec-dash"></span>
       <h2 class="sec-title">Стоимость <em>жизни</em></h2>
-      <span class="sec-desc">Реальные цены в рублях, долларах, евро и батах.</span>
+      <span class="sec-desc">Реальные цены 2026 — в рублях, долларах, евро и донгах.</span>
     </div>
     <div class="reveal" style="display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
       <div class="currency-switcher">
@@ -734,18 +731,18 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
         <button class="cur-btn" onclick="setCurrency('eur',this)">€ EUR</button>
         <button class="cur-btn" onclick="setCurrency('local',this)">₫ VND</button>
       </div>
-      <span class="cur-rate">курс: 1 ₽ ≈ 230 VND · апр 2026</span>
+      <span class="cur-rate">курс: 1 ₽ ≈ 270 VND · май 2026</span>
     </div>
     <div class="prices-grid reveal">
-      <div class="price-card"><div class="pc-icon">🛏</div><div class="pc-cat">Хостел / ночь</div><div class="pc-val" data-rub="730–1 400 ₽" data-usd="$8–$15" data-eur="€7–€14" data-local="300–580 ฿">730–1 400 ₽</div><div class="pc-note">Бангкок, Чиангмай</div></div>
-      <div class="price-card"><div class="pc-icon">🏨</div><div class="pc-cat">Отель 3★ / ночь</div><div class="pc-val" data-rub="2 700–5 500 ₽" data-usd="$29–$60" data-eur="€27–€55" data-local="1 100–2 300 ฿">2 700–5 500 ₽</div><div class="pc-note">Центр города</div></div>
-      <div class="price-card"><div class="pc-icon">🏠</div><div class="pc-cat">Аренда 1 комн. / мес</div><div class="pc-val" data-rub="27 000–55 000 ₽" data-usd="$296–$604" data-eur="€272–€555" data-local="11 000–22 000 ฿">27 000–55 000 ₽</div><div class="pc-note">Долгосрочная аренда</div></div>
-      <div class="price-card"><div class="pc-icon">🍜</div><div class="pc-cat">Обед в кафе</div><div class="pc-val" data-rub="180–450 ₽" data-usd="$1–$4" data-eur="€1–€4" data-local="75–185 ฿">180–450 ₽</div><div class="pc-note">Местная кухня</div></div>
-      <div class="price-card"><div class="pc-icon">🚕</div><div class="pc-cat">Такси / Grab</div><div class="pc-val" data-rub="90–450 ₽" data-usd="$1–$5" data-eur="€1–€4" data-local="37–185 ฿">90–450 ₽</div><div class="pc-note">По городу</div></div>
-      <div class="price-card"><div class="pc-icon">🛵</div><div class="pc-cat">Аренда байка / день</div><div class="pc-val" data-rub="450–900 ₽" data-usd="$4–$9" data-eur="€4–€9" data-local="185–370 ฿">450–900 ₽</div><div class="pc-note">Мотобайк 125cc</div></div>
-      <div class="price-card"><div class="pc-icon">🍺</div><div class="pc-cat">Пиво в баре</div><div class="pc-val" data-rub="180–360 ₽" data-usd="$1–$3" data-eur="€1–€3" data-local="75–148 ฿">180–360 ₽</div><div class="pc-note">Chang, Singha</div></div>
-      <div class="price-card"><div class="pc-icon">💆</div><div class="pc-cat">Тайский массаж / час</div><div class="pc-val" data-rub="360–720 ₽" data-usd="$3–$7" data-eur="€3–€7" data-local="148–296 ฿">360–720 ₽</div><div class="pc-note">Традиционный массаж</div></div>
-      <div class="price-card"><div class="pc-icon">✈️</div><div class="pc-cat">Перелёт внутри страны</div><div class="pc-val" data-rub="2 700–7 200 ₽" data-usd="$29–$79" data-eur="€27–€72" data-local="1 100–2 963 ฿">2 700–7 200 ₽</div><div class="pc-note">AirAsia, Nok Air</div></div>
+      <div class="price-card"><div class="pc-icon">🛏</div><div class="pc-cat">Хостел / ночь</div><div class="pc-val" data-rub="350–900 ₽" data-usd="$4–$10" data-eur="€3.5–€9" data-local="94–243К ₫">350–900 ₽</div><div class="pc-note">Ханой, Хошимин</div></div>
+      <div class="price-card"><div class="pc-icon">🏨</div><div class="pc-cat">Отель 3★ / ночь</div><div class="pc-val" data-rub="1 500–4 500 ₽" data-usd="$17–$50" data-eur="€15–€46" data-local="405К–1.2М ₫">1 500–4 500 ₽</div><div class="pc-note">Центр города</div></div>
+      <div class="price-card"><div class="pc-icon">🏠</div><div class="pc-cat">Аренда 1 комн. / мес</div><div class="pc-val" data-rub="12–35К ₽" data-usd="$133–$388" data-eur="€122–€357" data-local="3.2–9.4М ₫">12–35К ₽</div><div class="pc-note">Долгосрочная аренда</div></div>
+      <div class="price-card"><div class="pc-icon">🍜</div><div class="pc-cat">Обед в кафе</div><div class="pc-val" data-rub="80–350 ₽" data-usd="$0.9–$3.9" data-eur="€0.8–€3.6" data-local="21–94К ₫">80–350 ₽</div><div class="pc-note">Фо, бун бо хюэ</div></div>
+      <div class="price-card"><div class="pc-icon">🛵</div><div class="pc-cat">Grab мото / поездка</div><div class="pc-val" data-rub="50–200 ₽" data-usd="$0.6–$2.2" data-eur="€0.5–€2" data-local="13–54К ₫">50–200 ₽</div><div class="pc-note">GrabBike</div></div>
+      <div class="price-card"><div class="pc-icon">🚕</div><div class="pc-cat">Такси Grab / поездка</div><div class="pc-val" data-rub="100–400 ₽" data-usd="$1.1–$4.4" data-eur="€1–€4" data-local="27–108К ₫">100–400 ₽</div><div class="pc-note">GrabCar</div></div>
+      <div class="price-card"><div class="pc-icon">🍺</div><div class="pc-cat">Пиво Bia Hoi</div><div class="pc-val" data-rub="40–150 ₽" data-usd="$0.5–$1.7" data-eur="€0.4–€1.5" data-local="10–40К ₫">40–150 ₽</div><div class="pc-note">Разливное уличное пиво</div></div>
+      <div class="price-card"><div class="pc-icon">🏍</div><div class="pc-cat">Аренда байка / день</div><div class="pc-val" data-rub="370–740 ₽" data-usd="$4–$8" data-eur="€3.7–€7.4" data-local="100–200К ₫">370–740 ₽</div><div class="pc-note">Автомат 110cc</div></div>
+      <div class="price-card"><div class="pc-icon">✈️</div><div class="pc-cat">Перелёт внутри страны</div><div class="pc-val" data-rub="1 800–7 000 ₽" data-usd="$20–$78" data-eur="€18–€72" data-local="486К–1.9М ₫">1 800–7 000 ₽</div><div class="pc-note">VietJet, Bamboo Airways</div></div>
     </div>
   </div>
 
@@ -758,7 +755,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     </div>
     <div class="partner-block reveal">
       <div class="pb-header">
-        <div class="pb-title">Найти рейсы в Тайланд</div>
+        <div class="pb-title">Найти рейсы во Вьетнам</div>
         <div class="pb-badge">AVIASALES · KIWI</div>
       </div>
       <div class="pb-desc">Актуальные цены на билеты из вашего города — обновляются в реальном времени.</div>
@@ -843,64 +840,64 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">05</span><span class="sec-dash"></span>
       <h2 class="sec-title">Полезные <em>советы</em></h2>
-      <span class="sec-desc">8 вещей о которых никто не расскажет в турагентстве.</span>
+      <span class="sec-desc">8 вещей о которых надо знать до вылета во Вьетнам.</span>
     </div>
     <div class="tips-grid reveal">
-      <div class="tip-card"><span class="tip-num">01</span><div><div class="tip-title">TDAC — заполнить за 3 дня до вылета</div><div class="tip-text">С 1 мая 2025 года обязательная электронная карта прибытия для всех въезжающих. Сайт: tdac.immigration.go.th. Занимает 5 минут, бесплатно. Бумажные карточки TM6 больше не выдают. Без TDAC могут не посадить на самолёт.</div></div></div>
-      <div class="tip-card"><span class="tip-num">02</span><div><div class="tip-title">Страховка с лимитом от $50 000</div><div class="tip-text">Медицина платная и дорогая. Обычный лимит $30 000 заканчивается за неделю при серьёзной травме. Посольство РФ рекомендует $100 000. Проверьте что страховка покрывает мотоцикл — большинство дешёвых полисов это исключают.</div></div></div>
-      <div class="tip-card"><span class="tip-num">03</span><div><div class="tip-title">Везите доллары, не рубли</div><div class="tip-text">Рубли меняют с потерей до 25%. Доллары и евро — везде по нормальному курсу. Лучшие обменники: SuperRich (зелёный, не оранжевый), Vasu Exchange в торговых центрах. Снимайте в банкоматах крупными суммами — комиссия 220 бат за операцию.</div></div></div>
-      <div class="tip-card"><span class="tip-num">04</span><div><div class="tip-title">Сезоны важны и различаются по регионам</div><div class="tip-text">Пхукет (запад): лучшее время ноябрь–апрель, дожди май–октябрь. Паттайя и Самуи (восток): сухой сезон наоборот — апрель–октябрь. В сезон дождей отели дешевле на 30–50%, но бывают ливни.</div></div></div>
-      <div class="tip-card"><span class="tip-num">05</span><div><div class="tip-title">Байк — только с правами и в шлеме</div><div class="tip-text">Без прав категории А вы не застрахованы при ДТП. Полиция периодически проводит рейды особенно на Пхукете. Штраф — 500 бат, но при ДТП без прав все расходы на лечение ложатся на вас лично.</div></div></div>
-      <div class="tip-card"><span class="tip-num">06</span><div><div class="tip-title">Дресс-код в храмах</div><div class="tip-text">Закрытые плечи и колени обязательны в любом буддийском храме. У входа в крупные храмы (Большой Дворец, Ват Пхо) всегда есть прокат саронгов. В шортах или майке не пустят.</div></div></div>
-      <div class="tip-card"><span class="tip-num">07</span><div><div class="tip-title">Приложения которые нужны</div><div class="tip-text">Grab (такси, еда), Bolt (альтернатива Grab), Google Maps, Bangkok MRT/BTS (расписание метро), XE Currency (курс валют), Airbnb/Booking. В Grab российскую карту не привяжешь — платите наличными.</div></div></div>
-      <div class="tip-card"><span class="tip-num">08</span><div><div class="tip-title">Не превышайте 179 дней</div><div class="tip-text">180+ дней в году = налоговое резидентство Тайланда + обязанность декларировать иностранные доходы. Для зимовщиков оптимально: приехать в ноябре, уехать до конца апреля — это ~180 дней, можно чуть сократить.</div></div></div>
+      <div class="tip-card"><span class="tip-num">01</span><div><div class="tip-title">Grab — главный транспорт, но МИР не привязать</div><div class="tip-text">Grab работает во всех крупных городах. GrabBike (мотобайк) — быстрее в пробках. Карту МИР к Grab привязать нельзя. Платите наличными VND или картой Visa/MC. Альтернатива в Хошимине — Gojek.</div></div></div>
+      <div class="tip-card"><span class="tip-num">02</span><div><div class="tip-title">Наличные донги — всегда иметь при себе</div><div class="tip-text">Рынки, уличная еда, мелкие кафе — только наличные. Снимайте в банкоматах Vietcombank или VPBank — меньше комиссия. Лучший обмен: не в банке, а в ювелирных магазинах (tiệm vàng). Везите доллары — курс лучше чем у рублей.</div></div></div>
+      <div class="tip-card"><span class="tip-num">03</span><div><div class="tip-title">Байк — обязательно на курортах</div><div class="tip-text">На Фукуоке, в Хой Ане, Далате без байка никуда. Аренда 100–200K VND (~37–74 ₽) в день. Формально нужны международные права категории A. На практике почти не проверяют — но шлем обязателен, штраф 200K VND.</div></div></div>
+      <div class="tip-card"><span class="tip-num">04</span><div><div class="tip-title">Торгуйтесь — это норма</div><div class="tip-text">На рынках и у уличных торговцев начальная цена для иностранца завышена в 2–5 раз. Называйте 30–50% от первой цены и торгуйтесь спокойно. В кафе с меню и супермаркетах — цены фиксированные.</div></div></div>
+      <div class="tip-card"><span class="tip-num">05</span><div><div class="tip-title">Уличная еда — самое вкусное и дешёвое</div><div class="tip-text">Фо бо (говяжий суп) от 30–50K VND (~11–18 ₽). Бань ми (багет с начинкой) — 25–40K VND. Смотрите на загруженность заведения: если местные едят — безопасно. Пейте только воду из бутылки.</div></div></div>
+      <div class="tip-card"><span class="tip-num">06</span><div><div class="tip-title">Интернет работает — Telegram, YouTube без VPN</div><div class="tip-text">В отличие от Китая, во Вьетнаме Telegram, YouTube, Facebook, Google работают свободно. VPN не нужен. Местные SIM Viettel или Vinaphone — дешёвые и быстрые. eSIM от Yesim работает с первого момента.</div></div></div>
+      <div class="tip-card"><span class="tip-num">07</span><div><div class="tip-title">Климат разный на севере и юге</div><div class="tip-text">Страна вытянута на 1 650 км. Когда в Ханое +15° — в Хошимине +32°. Дананг (центр) — дожди октябрь–декабрь. Фукуок: лучший сезон ноябрь–апрель. Проверяйте погоду отдельно для нужного региона.</div></div></div>
+      <div class="tip-card"><span class="tip-num">08</span><div><div class="tip-title">Переезды между городами</div><div class="tip-text">Sleeper bus (ночной автобус с лежачими местами) — Ханой↔Хошимин 35–40 часов, от 300–500K VND. Внутренние рейсы VietJet — от $10–20 при раннем бронировании. Поезд Reunification Express вдоль берега — живописно и недорого.</div></div></div>
     </div>
   </div>
 
-<!-- 06 BUDGET -->
+  <!-- 06 BUDGET -->
   <div id="budget">
     <div class="sec-header reveal">
       <span class="sec-num">06</span><span class="sec-dash"></span>
       <h2 class="sec-title">Реальный <em>бюджет</em> на месяц</h2>
-      <span class="sec-desc">Три уровня жизни — от эконом до комфорт+.</span>
+      <span class="sec-desc">Один из самых дешёвых вариантов в Азии. Май 2026.</span>
     </div>
     <div class="budget-grid reveal">
       <div class="budget-card">
         <div class="bc-label">≈ Эконом</div>
-        <div class="bc-total">~50 000 ₽</div>
-        <div class="bc-usd">$600 · 16 000 ฿</div>
-        <div class="bc-row"><span>Жильё (комн./хостел)</span><span>8–12K ฿</span></div>
-        <div class="bc-row"><span>Еда (рынки, стрит-фуд)</span><span>5–7K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (авт./байк)</span><span>2–3K ฿</span></div>
-        <div class="bc-row"><span>Связь (SIM)</span><span>300–500 ฿</span></div>
-        <div class="bc-row"><span>Развлечения</span><span>1–2K ฿</span></div>
-        <div class="bc-note">Чиангмай, без алкоголя, своя готовка</div>
+        <div class="bc-total">~15 000 ₽</div>
+        <div class="bc-usd">$167 · 4.5М ₫</div>
+        <div class="bc-row"><span>Жильё (хостел/комн.)</span><span>1.0–1.5М ₫</span></div>
+        <div class="bc-row"><span>Еда (уличная кухня)</span><span>1.5–2.0М ₫</span></div>
+        <div class="bc-row"><span>Транспорт (Grab мото)</span><span>500–700К ₫</span></div>
+        <div class="bc-row"><span>Связь (SIM)</span><span>150–200К ₫</span></div>
+        <div class="bc-row"><span>Прочее</span><span>500К ₫</span></div>
+        <div class="bc-note">Хошимин или Далат, хостел, уличная еда</div>
       </div>
       <div class="budget-card highlight">
         <div class="bc-label">★ Комфорт</div>
-        <div class="bc-total">~100 000 ₽</div>
-        <div class="bc-usd">$1 100 · 33 000 ฿</div>
-        <div class="bc-row"><span>Жильё (студия/апарт)</span><span>15–22K ฿</span></div>
-        <div class="bc-row"><span>Еда (кафе + готовка)</span><span>8–12K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (Grab + байк)</span><span>3–5K ฿</span></div>
-        <div class="bc-row"><span>Коворкинг</span><span>2.5–4K ฿</span></div>
-        <div class="bc-row"><span>Развлечения + misc</span><span>3–5K ฿</span></div>
-        <div class="bc-note">Бангкок или Чиангмай, средний образ жизни</div>
+        <div class="bc-total">~30 000 ₽</div>
+        <div class="bc-usd">$333 · 9М ₫</div>
+        <div class="bc-row"><span>Жильё (1 комн. апарт.)</span><span>3.5–5М ₫</span></div>
+        <div class="bc-row"><span>Еда (кафе + готовка)</span><span>2–3М ₫</span></div>
+        <div class="bc-row"><span>Транспорт (Grab + байк)</span><span>1–1.5М ₫</span></div>
+        <div class="bc-row"><span>Связь + eSIM</span><span>300–500К ₫</span></div>
+        <div class="bc-row"><span>Развлечения, misc</span><span>1.5–2.5М ₫</span></div>
+        <div class="bc-note">Ханой или Хошимин, квартира, нормальные кафе</div>
       </div>
       <div class="budget-card warm">
         <div class="bc-label">★★ Комфорт+</div>
-        <div class="bc-total">~180 000 ₽</div>
-        <div class="bc-usd">$2 000 · 60 000 ฿</div>
-        <div class="bc-row"><span>Жильё (1 комн. у моря)</span><span>25–50K ฿</span></div>
-        <div class="bc-row"><span>Еда (рестораны)</span><span>12–18K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (авто/Grab)</span><span>5–10K ฿</span></div>
-        <div class="bc-row"><span>Спорт, здоровье, спа</span><span>3–6K ฿</span></div>
-        <div class="bc-row"><span>Экскурсии, поездки</span><span>5–10K ฿</span></div>
-        <div class="bc-note">Пхукет или Самуи, активный образ жизни</div>
+        <div class="bc-total">~60 000 ₽</div>
+        <div class="bc-usd">$667 · 18М ₫</div>
+        <div class="bc-row"><span>Жильё (сервис. апарт.)</span><span>8–15М ₫</span></div>
+        <div class="bc-row"><span>Рестораны, доставка</span><span>3–5М ₫</span></div>
+        <div class="bc-row"><span>Транспорт (такси, авто)</span><span>2–3М ₫</span></div>
+        <div class="bc-row"><span>Спорт, здоровье</span><span>1–2М ₫</span></div>
+        <div class="bc-row"><span>Поездки по стране</span><span>2–4М ₫</span></div>
+        <div class="bc-note">Сервисный апартамент, рестораны, поездки</div>
       </div>
     </div>
     <div class="alert amber reveal" style="margin-top:12px">
-      <strong>Актуальный курс (апрель 2026):</strong> 1 бат ≈ 2.43 ₽. Обменники в торговых центрах дают курс лучше аэропортового на 15–20%. Рубли меняют по невыгодному курсу — лучше везти доллары или евро.
+      <strong>Актуальный курс (май 2026):</strong> 1 донг ≈ 0.0037 ₽. Карту МИР к Grab привязать нельзя. Наличные доллары → меняйте в ювелирных магазинах (tiệm vàng), а не в банках.
     </div>
   </div>
 
@@ -908,23 +905,14 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
   <div id="money">
     <div class="sec-header reveal">
       <span class="sec-num">07</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Деньги, <em>карты</em> и банки</h2>
-      <span class="sec-desc">Как платить в Тайланде россиянам в 2026 году — без фантазий.</span>
+      <h2 class="sec-title">Деньги <em>и платежи</em></h2>
+      <span class="sec-desc">Наличные донги важны. МИР — нестабильно.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Как платить в Тайланде россиянам</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">UnionPay (лучший вариант)</div><div class="info-row-text">Карты UnionPay от российских банков (Газпромбанк, Россельхозбанк, МКБ) работают в большинстве банкоматов — SCB, Bangkok Bank, Kasikorn, LH Bank. Снятие: комиссия 220 бат (~540 ₽) — снимайте сразу крупную сумму.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Наличные доллары / евро</div><div class="info-row-text">Самый надёжный способ. Меняйте в обменниках торговых центров (SuperRich, Vasu, Max Money) — курс лучше аэропортового на 10–20%. Никогда не меняйте в аэропорту.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Рубли — не везите</div><div class="info-row-text">Обменять рубли на баты можно, но теряешь до 25% на курсе. Везите доллары или евро — это стандартная валюта для обмена.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💡</span><div><div class="info-row-title">Переводы из России</div><div class="info-row-text">SWIFT через нейтральные банки (армянские, казахские, грузинские), криптовалюта (USDT → обменник), Western Union через Казахстан. Прямые SWIFT из РФ работают только через незаблокированные банки.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Открытие банковского счёта</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px">Нужен для долгосрочного проживания — платить аренду, коммуналку, получать переводы. Открыть счёт с безвизовым штампом сложно, большинство банков требует долгосрочную визу.</div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Bangkok Bank <span style="color:var(--amber);font-size:11px;margin-left:6px">ЛОЯЛЬНЫЙ</span></div><div class="info-row-text">Единственный банк который <strong>иногда</strong> открывает счёт без долгосрочной визы — зависит от отделения. Минимальный депозит — 500 бат.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Kasikorn Bank (KBank) <span style="color:var(--green);font-size:11px;margin-left:6px">НАДЁЖНО</span></div><div class="info-row-text">Требует долгосрочную визу + депозит ~$400 (возвращают). Удобное мобильное приложение.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Krungthai Bank</div><div class="info-row-text">Государственный банк, разветвлённая сеть банкоматов. Требует паспорт, иногда адрес в Тайланде.</div></div></div>
-      <div class="alert amber" style="margin-top:12px"><strong>Совет:</strong> если в одном отделении отказали — идите в другое. Возьмите: загранпаспорт, деньги на депозит, тайскую SIM-карту и контракт аренды.</div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Карты МИР — нестабильно</div><div class="info-row-text">МИР принимают отдельные банкоматы Vietcombank и Agribank, но непостоянно. К Grab и большинству сервисов МИР не привязать. Надёжнее: наличные доллары + карта Visa/MC иностранного банка.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💵</span><div><div class="info-row-title">Доллары — лучший вариант для обмена</div><div class="info-row-text">Меняйте в ювелирных магазинах (tiệm vàng) — курс лучше банков на 1–3%. В Ханое: улица Hang Bac. В Хошимине: район Бинь Тай. В аэропорту курс хуже — меняйте минимум для такси.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏧</span><div><div class="info-row-title">Банкоматы</div><div class="info-row-text">Vietcombank (зелёные) и VPBank — лучше работают с иностранными картами. Комиссия: 50 000–85 000 VND за операцию. Лимит снятия: 2–5М VND за раз. Снимайте в торговых центрах — надёжнее.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">💡</span><div><div class="info-row-title">Стратегия для россиян</div><div class="info-row-text">Везите $200–300 наличными, меняйте на донги в городе. Grab и Airbnb оплачивайте картой Visa/MC онлайн. Наличные VND — для рынков, уличной еды и такси.</div></div></div>
     </div>
   </div>
 
@@ -932,41 +920,29 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
   <div id="taxes">
     <div class="sec-header reveal">
       <span class="sec-num">08</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Налоговое <em>резидентство</em></h2>
-      <span class="sec-desc">Одна из важнейших тем для долгосрочников.</span>
+      <h2 class="sec-title">Налоги <em>и резидентство</em></h2>
+      <span class="sec-desc">Правило 183 дней. Для цифровых кочевников — серая зона.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">С 2024 года правила изменились — теперь они касаются практически всех кто проводит в стране больше полугода.</div>
-      <div class="alert amber"><strong>⚠️ 180 дней = налоговый резидент</strong><br>Если провёл в Тайланде 180+ дней в календарном году — ты налоговый резидент. Счётчик обнуляется 1 января каждого года.</div>
-      <div class="info-block-title" style="margin-top:16px">Что изменилось с 2024 года</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px">До 2024: иностранный доход облагался налогом только если переводился в тот же год. После 2024: любой иностранный доход, переведённый в Тайланд, потенциально облагается налогом. Льготный период на 2 года для доходов 2024–2025.</div>
-      <div class="info-block-title">Ставки подоходного налога (PIT)</div>
-      <table class="tax-table">
-        <tr><td>до 150 000 ฿/год</td><td>0%</td></tr>
-        <tr><td>150 001 — 300 000 ฿</td><td>5%</td></tr>
-        <tr><td>300 001 — 500 000 ฿</td><td>10%</td></tr>
-        <tr><td>500 001 — 750 000 ฿</td><td>15%</td></tr>
-        <tr><td>свыше 5 000 000 ฿</td><td>35%</td></tr>
-      </table>
-      <div class="alert green" style="margin-top:14px"><strong>✅ Если ты нерезидент:</strong> проводишь меньше 180 дней — тайские налоги тебя не касаются. Оптимальная стратегия для зимовщиков — не превышать 179 дней.</div>
-      <div style="margin-top:12px;font-size:11.5px;color:var(--faint);font-style:italic">Налоговое законодательство меняется. Перед принятием решений проконсультируйтесь с налоговым консультантом.</div>
+      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Правило 183 дней</div><div class="info-row-text">При пребывании 183+ дней в году становитесь налоговым резидентом Вьетнама. Ставка PIT: прогрессивная 5–35%. Иностранные доходы облагаются только если переводятся во Вьетнам.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Удалённая работа — серая зона</div><div class="info-row-text">Специальной визы для цифровых кочевников нет. Большинство удалёнщиков работают на безвизе (45 дней) или e-Visa (90 дней), периодически делая визаран. Официальная работа требует рабочей визы DN и work permit.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏢</span><div><div class="info-row-title">Без work permit — штраф и депортация</div><div class="info-row-text">Работа в вьетнамской компании без разрешения на работу: штраф до $5 000 и депортация. Фрилансеры де-юре также должны иметь соответствующую визу, но на практике работают на туристической.</div></div></div>
     </div>
   </div>
 
-    <!-- 09 TRANSPORT -->
+  <!-- 09 TRANSPORT -->
   <div id="transport">
     <div class="sec-header reveal">
       <span class="sec-num">09</span><span class="sec-dash"></span>
       <h2 class="sec-title">Транс<em>порт</em></h2>
-      <span class="sec-desc">От метро до байка — как передвигаться по стране.</span>
+      <span class="sec-desc">Grab и байки в городах. Sleeper bus и VietJet между городами.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-row"><span class="info-row-icon">🚇</span><div><div class="info-row-title">Метро в Бангкоке — BTS Skytrain + MRT</div><div class="info-row-text">Самый быстрый способ передвижения по столице. BTS (надземное) + MRT (подземное) вместе покрывают большинство туристических и деловых районов. Стоимость: 15–60 бат в зависимости от расстояния. Дневной проездной BTS — 140 бат. Работает 06:00–00:00. Пробки в Бангкоке жуткие — в часы пик метро экономит 30–60 минут.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Grab — главное приложение такси</div><div class="info-row-text">Аналог Яндекс.Такси для ЮВА. Фиксированная цена до посадки. GrabCar по центру Бангкока — 80–120 бат, из аэропорта Суварнабхуми в центр — 350–450 бат. GrabBike (мотоцикл) — 40–70 бат по городу.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Привязать российскую карту к Grab нельзя</div><div class="info-row-text">Даже UnionPay. Платите наличными или попросите водителя принять перевод.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🛵</span><div><div class="info-row-title">Аренда байка — главный транспорт на островах</div><div class="info-row-text">На Пхукете, Самуи, Краби и в Паттайе байк — основной транспорт. Аренда: 250–350 бат в день, 5 000–8 000 бат в месяц. Нужны права категории А. Без прав — технически незаконно и не покрывается страховкой при ДТП. Лёгкое падение с байка обходится в $3 000–7 000 без страховки. Всегда надевайте шлем.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Перелёты внутри страны</div><div class="info-row-text">AirAsia и Nok Air — основные лоукостеры. Бангкок→Пхукет: от 800–2 000 бат при заблаговременной покупке. Бангкок→Чиангмай: от 700 бат. Паром Сурат Тани→Самуи: ~300 бат + автобус из Бангкока ~500 бат. Часто паром + автобус дешевле прямого рейса на Самуи (Bangkok Airways там монополист и цены высокие).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🚍</span><div><div class="info-row-title">Автобусы и поезда между городами</div><div class="info-row-text">Бангкок→Паттайя: автобус от Восточного автовокзала, ~130 бат, 2–3 часа. Бангкок→Чиангмай: поезд 2-й класс с кондиционером — 331–531 бат, ночной вагон со спальными местами. Ночной поезд удобен — экономит на отеле и ночной перелёт не нужен.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">Grab — главное такси-приложение</div><div class="info-row-text">GrabBike (мотобайк): 14–54K VND по городу — быстро и дёшево. GrabCar: 27–108K VND. МИР не привязать — платите наличными или картой Visa/MC. В Хошимине также работает Gojek.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏍</span><div><div class="info-row-title">Аренда байка — на курортах обязательно</div><div class="info-row-text">Фукуок, Хой Ан, Далат, Нинь Бинь — байк единственный нормальный транспорт. 100–200K VND/день (~37–74 ₽). Шлем обязателен: штраф 200K VND. Проверяйте байк перед арендой — фотографируйте царапины.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚌</span><div><div class="info-row-title">Sleeper Bus — между городами</div><div class="info-row-text">Ночные автобусы с лежачими местами. Ханой↔Хошимин: ~35 часов, 300–500K VND. Ханой↔Дананг: ~14 часов, 250–350K VND. Бронирование: vexere.com или в офисе. Операторы: Phuong Trang (FUTA), The Sinh Tourist.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Внутренние рейсы</div><div class="info-row-text">VietJet Air и Bamboo Airways — лоукостеры. Ханой↔Хошимин: от 500K VND (~185 ₽) при раннем бронировании. Ханой↔Дананг: от 300K VND. Бронируйте на Trip.com или сайте авиакомпании.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚂</span><div><div class="info-row-title">Поезд Reunification Express</div><div class="info-row-text">Вдоль побережья от Ханоя до Хошимина. Самый живописный участок: Дананг↔Хюэ через перевал Хай Ван. Ханой↔Дананг: ~14 часов, от 270K VND в плацкарте. Бронирование: dsvn.vn.</div></div></div>
     </div>
   </div>
 
@@ -975,31 +951,28 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">10</span><span class="sec-dash"></span>
       <h2 class="sec-title">Интернет <em>и связь</em></h2>
-      <span class="sec-desc">4G/5G везде в городах. Три способа оставаться онлайн.</span>
+      <span class="sec-desc">4G везде в городах. Telegram и YouTube работают без VPN.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">eSIM — лучший вариант <span style="background:var(--green-l);color:var(--green);font-size:10px;padding:2px 8px;border-radius:100px;margin-left:6px">Рекомендуем</span></div><div class="info-row-text">Покупаешь онлайн до вылета (Yesim, Airalo), активируешь по QR-коду — интернет работает с момента приземления. Yesim принимает карту МИР. Цена: ~$7–15 на 30 дней безлимит.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💳</span><div><div class="info-row-title">Местная SIM-карта</div><div class="info-row-text">Покупается в аэропорту или 7-Eleven. Нужен паспорт.<br><br>
-        <strong>AIS</strong> — лучшее покрытие 4G/5G · от 299 ฿/30 дней<br>
-        <strong>True-dtac</strong> — AIS + DTAC объединились · от 199 ฿/30 дней<br><br>
-        ⚠️ True-dtac SIM через 60–90 дней может отключиться — нужно продлевать через приложение.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">Домашний интернет (для долгосрочных)</div><div class="info-row-text">Проводной интернет FTTB от 580 бат/мес (~1 400 ₽). Коворкинги в Чиангмае: 80–150 бат/день, скорость 100–200 Мбит/с. Бангкок: крупные коворкинги типа WeWork — от 400 бат/день.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Без файрвола — всё работает</div><div class="info-row-text">Telegram, YouTube, Google, Instagram — работают свободно. VPN не нужен. Facebook особенно популярен среди вьетнамцев. В отличие от Китая — никаких блокировок для туристов.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">eSIM — купи до вылета</div><div class="info-row-text">Yesim или Airalo — купите онлайн до вылета. Активируется по QR-коду, интернет заработает с момента приземления. Yesim принимает карту МИР. Цена: ~$6–10 на 30 дней.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💳</span><div><div class="info-row-title">Местная SIM-карта</div><div class="info-row-text"><strong>Viettel</strong> — лучшее покрытие по всей стране · от 100K VND/мес<br><strong>Vinaphone</strong> — хорошо в городах, дешевле<br><strong>Mobifone</strong> — удобные пакеты для туристов<br><br>Покупка в аэропорту или в любом магазине по паспорту. Пакет 5–10 ГБ: 150–300K VND/мес.</div></div></div>
     </div>
     <div class="partner-block reveal">
       <div class="pb-header">
-        <div class="pb-title">eSIM для Тайланда</div>
+        <div class="pb-title">eSIM для Вьетнама</div>
         <div class="pb-badge">Yesim · Airalo</div>
       </div>
-      <div class="pb-desc">Купи до вылета — интернет заработает сразу после приземления. Yesim принимает карту МИР.</div>
-      <div class="esim-tabs" style="margin-top:16px">
-        <button class="esim-tab active" onclick="switchEsim('thailand','yesim',this)">Yesim — 18% кэшбэк</button>
-        <button class="esim-tab" onclick="switchEsim('thailand','airalo',this)">Airalo</button>
+      <div class="pb-desc">Купи до вылета — интернет с первой минуты. Yesim принимает МИР.</div>
+      <div class="esim-tabs">
+        <button class="esim-tab active" onclick="switchEsim('vietnam','yesim',this)">Yesim</button>
+        <button class="esim-tab" onclick="switchEsim('vietnam','airalo',this)">Airalo</button>
       </div>
-      <div id="esim-yesim-thailand" class="esim-pane active" style="margin-top:12px">
-        <button class="pb-btn" onclick="window.open('https://yesim.tpm.li/QvCwa9aD?erid=2Vtzqx3rbkr&sub_id=vietnam','_blank')">Купить eSIM на Yesim →</button>
+      <div id="esim-yesim-vietnam" class="esim-pane active">
+        <a href="https://yesim.app/?sub_id=vietnam" target="_blank" rel="noopener" class="pb-btn">Купить eSIM Yesim →</a>
       </div>
-      <div id="esim-airalo-thailand" class="esim-pane" style="margin-top:12px">
-        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&color_button=%233fbb89&color_focused=%233fbb89&secondary=%23FAF8F2&dark=%2311100f&light=%23FFFFFFff&special=%233fbb89&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
+      <div id="esim-airalo-vietnam" class="esim-pane" style="display:none">
+        <a href="https://www.airalo.com/vietnam-esim" target="_blank" rel="noopener" class="pb-btn">Купить eSIM Airalo →</a>
       </div>
     </div>
   </div>
@@ -1009,29 +982,20 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">11</span><span class="sec-dash"></span>
       <h2 class="sec-title">Меди<em>цина</em></h2>
-      <span class="sec-desc">Страховка обязательна. Без неё одна госпитализация — сотни тысяч рублей.</span>
+      <span class="sec-desc">В крупных городах — нормально. На островах — слабо. Страховка нужна.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">Медицина в Тайланде для иностранцев — платная и одна из самых дорогих в ЮВА. Качество в частных госпиталях высокое — часто лучше, чем в России. Без страховки одна госпитализация может стоить сотни тысяч рублей.</div>
-      <div class="info-block-title">Реальные цены без страховки</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
-        <div class="price-card"><div class="pc-cat">Приём врача (частная клиника)</div><div class="pc-val">800–2 000 ฿</div></div>
-        <div class="price-card"><div class="pc-cat">Сутки в палате госпиталя</div><div class="pc-val">3 000–8 000 ฿</div></div>
-        <div class="price-card"><div class="pc-cat">Сутки в реанимации</div><div class="pc-val">от $2 000–3 000</div></div>
-        <div class="price-card"><div class="pc-cat">Лёгкое ДТП на байке</div><div class="pc-val">$3 000–7 000</div></div>
-      </div>
-      <div class="info-block-title">Лучшие частные госпитали</div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Bumrungrad (Бангкок)</div><div class="info-row-text">Международный уровень, русскоязычные врачи, принимают российские страховки. Топовый выбор для сложных случаев.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Bangkok Hospital (сеть по всей стране)</div><div class="info-row-text">Разветвлённая сеть на Пхукете, Самуи, Паттайе, Чиангмае. Надёжно везде.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Samitivej</div><div class="info-row-text">Сильная педиатрия, популярен у семей с детьми.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Международные клиники в Ханое и Хошимине</div><div class="info-row-text"><strong>Ханой:</strong> Vinmec International, Hanoi French Hospital — международный уровень, врачи говорят по-английски. Приём: $50–150.<br><strong>Хошимин:</strong> FV Hospital, City International Hospital. Приём: $60–180. Страховку принимают.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💊</span><div><div class="info-row-title">Аптеки — на каждом углу</div><div class="info-row-text">Аптеки (nhà thuốc) с зелёным крестом везде. Большинство лекарств без рецепта и дёшево. Персонал — только на вьетнамском. Показывайте МНН (международное непатентованное название) латиницей.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">На островах и в провинции — плохо</div><div class="info-row-text">На Фукуоке и в провинциальных городах медицина слабая. При серьёзных проблемах — эвакуация в Ханой или Хошимин. Страховка с медэвакуацией обязательна для поездок на острова.</div></div></div>
     </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Что нужно знать про страховку</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Минимум $100 000 покрытия</div><div class="info-row-text">Посольство РФ рекомендует именно этот лимит. Стандартный $30 000 может закончиться за неделю при серьёзной травме. Cherehapa позволяет сравнить 15+ компаний и выбрать с покрытием $50 000–100 000 за разумные деньги (~$40–80/месяц).</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Страховка должна покрывать мотоцикл</div><div class="info-row-text">Многие дешёвые полисы исключают занятия на мотоцикле. Проверьте этот пункт отдельно перед покупкой.</div></div></div>
-      <div style="margin-top:14px">
-        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&countryGroups=all-world&medicine=30000&powered_by=true&promo_id=2458&campaign_id=24" charset="utf-8"></script>
+    <div class="partner-block reveal">
+      <div class="pb-header">
+        <div class="pb-title">Страховка для Вьетнама</div>
+        <div class="pb-badge">Cherehapa</div>
       </div>
+      <div class="pb-desc">Оформите онлайн за 5 минут. Покрытие от $30 000, включая медэвакуацию.</div>
+      <a href="https://cherehapa.ru/?marker=271684" target="_blank" rel="noopener" class="pb-btn">Оформить страховку →</a>
     </div>
   </div>
 
@@ -1040,84 +1004,28 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">12</span><span class="sec-dash"></span>
       <h2 class="sec-title">Аренда <em>жилья</em></h2>
-      <span class="sec-desc">Реальный алгоритм без рекламы агентств.</span>
+      <span class="sec-desc">Легко и дёшево. Масса вариантов для краткосрочников и долгосрочников.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">Самый больной вопрос для всех кто едет надолго. Здесь — не реклама агентств, а реальный алгоритм как снять квартиру без переплаты и не потерять депозит.</div>
-      <div class="info-block-title">Где искать жильё</div>
-      <div class="info-row green"><span class="info-row-icon">🏆</span><div><div class="info-row-title">DDproperty.com <span style="background:var(--green-l);color:var(--green);font-size:10px;padding:2px 8px;border-radius:100px;margin-left:6px">Лучший</span></div><div class="info-row-text">Главный сайт аренды в Тайланде. Большая база, фото, карта, цены без посредников. Есть фильтр по районам, бюджету, типу жилья. Много объявлений от собственников напрямую.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">FazWaz.ru / FazWaz.com</div><div class="info-row-text">Русскоязычный интерфейс. Большая база по всем регионам Тайланда. Есть агентская поддержка на русском языке — полезно если не хочешь разбираться самостоятельно.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">👥</span><div><div class="info-row-title">Facebook-группы</div><div class="info-row-text">«Аренда Пхукет русские», «Bangkok expats housing», «Chiang Mai rentals». Там часто сдают сами хозяева без комиссии агентства. Можно найти жильё на 20–30% дешевле чем на сайтах.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💬</span><div><div class="info-row-title">Telegram-чаты русскоязычных</div><div class="info-row-text">«Русские на Пхукете», «Бангкок наши» и аналогичные — там регулярно пишут «сдам/ищу жильё». Часто самые живые предложения именно там.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Airbnb / Booking — для первых 2–4 недель</div><div class="info-row-text">Дороже чем долгосрочная аренда, но удобно на старте пока ищешь постоянное жильё. Краткосрочная аренда стоит в 2–3 раза дороже долгосрочного контракта за то же место.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Кондо vs апартаменты — в чём разница</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px">
-        <div class="budget-card">
-          <div class="bc-label">Кондоминиум (кондо)</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.6">Жилой комплекс с бассейном, фитнесом, охраной. Каждая квартира — отдельный собственник. Лучше отделка, выше цена. Стандарт для экспатов.</div>
-        </div>
-        <div class="budget-card">
-          <div class="bc-label">Апартаменты</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.6">Один владелец — весь дом. Проще, дешевле, меньше инфраструктуры. Подходит для бюджетного варианта. Часто без бассейна.</div>
-        </div>
-      </div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Алгоритм аренды — шаг за шагом</div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">1</span><div><div class="info-row-title">Первые 2 недели живи в отеле/Airbnb</div><div class="info-row-text">Не торопись снимать долгосрочно до приезда. Посмотри район вживую, почувствуй расстояния.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">2</span><div><div class="info-row-title">Найди 5–10 вариантов, запроси цену за 3, 6 и 12 месяцев</div><div class="info-row-text">Долгосрочный контракт обычно на 20–30% дешевле.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">3</span><div><div class="info-row-title">Осмотри лично — не бронируй по фотографиям</div><div class="info-row-text">Проверь: работает ли кондиционер, давление воды, скорость интернета (попроси включить Wi-Fi).</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">4</span><div><div class="info-row-title">Уточни что включено в цену</div><div class="info-row-text">Электричество, вода, интернет, уборка. Электричество в Тайланде дорогое (5–6 бат/кВт·ч), кондиционер добавляет 1 500–3 000 бат/мес к счёту.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">5</span><div><div class="info-row-title">Подпиши договор на английском</div><div class="info-row-text">Стандарт: депозит 1–2 месяца + первый месяц вперёд. В договоре: условия возврата депозита, кто платит за ремонт, условия досрочного расторжения.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">6</span><div><div class="info-row-title">Сфотографируй всё при заезде</div><div class="info-row-text">Каждую царапину, каждый дефект. Отправь фото арендодателю в мессенджер — это твоя защита при выезде когда будут говорить «это ты сломал».</div></div></div>
-      <div class="alert amber" style="margin-top:12px">
-        <strong>⚠️ Типичные ошибки которые стоят денег:</strong><br>
-        🚫 Платить без договора — самый прямой путь к потере депозита.<br>
-        🚫 Не проверять тариф на электричество — некоторые выставляют 8–10 бат/кВт·ч вместо государственных 5–6 бат.<br>
-        🚫 Снимать на Пхукете в сезон дождей долгосрочно — если уедешь раньше срока, депозит не вернут.<br>
-        🚫 Переводить предоплату незнакомым людям без договора — мошенничество с арендой существует.
-      </div>
-    </div>
-    <div class="partner-block reveal" style="margin-top:12px">
-      <div class="pb-header">
-        <div class="pb-title">Найти жильё на Островок</div>
-        <div class="pb-badge">2.9 млн вариантов</div>
-      </div>
-      <div class="pb-desc">Отели, хостелы и апартаменты в Тайланде — для первых недель пока ищешь долгосрочную аренду.</div>
-      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%233fbb89&color_button=%233fbb89&color_icons=%233fbb89&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
+      <div class="info-row green"><span class="info-row-icon">🔍</span><div><div class="info-row-title">Где искать</div><div class="info-row-text"><strong>Airbnb</strong> — удобно для первых 2 недель.<br><strong>batdongsan.com.vn</strong> — местный аналог ЦИАН.<br><strong>Facebook Groups</strong> «Expats in Hanoi», «Hoi An Expats» — самые выгодные предложения напрямую от хозяев.<br><strong>Telegram</strong> «Русские во Вьетнаме» — объявления от соотечественников.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💰</span><div><div class="info-row-title">Цены по городам</div><div class="info-row-text"><strong>Ханой, Хошимин центр:</strong> 5–12М VND/мес (~1 850–4 440 ₽).<br><strong>Хой Ан:</strong> 3–8М VND/мес.<br><strong>Дананг:</strong> 4–10М VND/мес.<br><strong>Фукуок:</strong> 6–15М VND/мес — дороже из-за туризма.<br>Депозит: 1–2 месяца. Меблировано — как правило.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Регистрация</div><div class="info-row-text">При долгосрочной аренде арендодатель обязан зарегистрировать вас в местном участке полиции (tạm trú) в течение 48 часов. На практике многие этого не делают — уточняйте при заключении договора.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">💡</span><div><div class="info-row-title">Совет</div><div class="info-row-text">Первые 1–2 недели живите в гестхаусе или дешёвом отеле пока ищете долгосрочное жильё. Цены при личном присутствии на 20–40% ниже чем через интернет.</div></div></div>
     </div>
   </div>
 
-<!-- 13 VISARUN -->
+  <!-- 13 VISARUN -->
   <div id="visarun">
     <div class="sec-header reveal">
       <span class="sec-num">13</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Визаран <em>и бордерран</em></h2>
-      <span class="sec-desc">Актуальные правила 2026.</span>
-    </div>
-    <div class="alert amber reveal"><strong>Важно:</strong> правила ужесточились с ноября 2025 года. Тайская иммиграция всерьёз взялась за тех кто живёт годами по штампам. Читай внимательно.</div>
-
-    <div class="info-block reveal" style="margin-top:12px">
-      <div class="info-block-title">Бордерран vs Визаран — в чём разница</div>
-      <div class="info-row green"><span class="info-row-icon">🚶</span><div><div class="info-row-title">Бордерран (border run)</div><div class="info-row-text">Выехал из Таиланда → побыл 5 минут в соседней стране → вернулся. Получаешь новый 60-дневный штамп. Виза не нужна. Занимает 1 день.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🛂</span><div><div class="info-row-title">Визаран (visa run)</div><div class="info-row-text">Едешь в соседнюю страну чтобы подать заявку на тайскую Tourist Visa (TR) в консульстве. Занимает 2–3 дня. Нужен при третьем въезде за год.</div></div></div>
-    </div>
-
-    <div class="info-block reveal">
-      <div class="info-block-title">Новые ограничения с ноября 2025</div>
-      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Лимит 2 бордеррана в год через наземную границу</div><div class="info-row-text">Через наземные КПП разрешено не более 2 безвизовых въездов в год. После двух — иммиграция может отказать во въезде.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Штамп с наземной границы — без продления</div><div class="info-row-text">Нельзя продлить на 30 дней в иммиграционном офисе. Сколько дали на границе — столько и живёшь.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Авиаперелёт — без ограничений</div><div class="info-row-text">Въезд через аэропорт не ограничен. Штамп можно продлить на 30 дней за 1 900 бат.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">👁</span><div><div class="info-row-title">Усиленные проверки при частых въездах</div><div class="info-row-text">Могут попросить обратный билет, подтверждение жилья и 20 000 бат наличными на человека.</div></div></div>
+      <h2 class="sec-title">Визаран <em>и e-Visa</em></h2>
+      <span class="sec-desc">e-Visa $25 на 90 дней — лучший вариант для долгого пребывания.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Популярные маршруты бордеррана</div>
-      <div class="info-row"><span class="info-row-icon">🇲🇾</span><div><div class="info-row-title">С Пхукета → Малайзия (Сатун/Хат Яй) · 6–8 ч</div><div class="info-row-text">Самый популярный маршрут с юга. Организованные туры от 1 500–2 500 бат. Малайзия лояльна к транзитным визитам. Граница Садао–Паданг Бесар надёжнее Пенанга.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇲🇾</span><div><div class="info-row-title">С Бангкока → Малайзия (Хат Яй) · ночной поезд</div><div class="info-row-text">Поезд из Бангкока, ночь в пути, выезд–въезд через Садао. Удобно совместить с небольшим путешествием по Малайзии.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇱🇦</span><div><div class="info-row-title">С Чиангмая → Лаос (Хуайсай/Вьентьян)</div><div class="info-row-text">Популярен для севера Тайланда. Поезд или автобус до Нонгкхая, паром через Меконг. Можно совместить с поездкой в Луанг Прабанг.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇰🇭</span><div><div class="info-row-title">С Бангкока → Камбоджа (Аранья-Пратет/Пойпет)</div><div class="info-row-text">3–4 часа от Бангкока. Самый близкий вариант. Ходит много организованных туров. Репутация пограничного посёлка Пойпет — специфическая.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">💻</span><div><div class="info-row-title">E-Visa — лучший вариант</div><div class="info-row-text">evisa.gov.vn. Однократная: $25, многократная: $50. Срок: 3–7 рабочих дней. До 90 дней пребывания. Оплата — картой иностранного банка (МИР не принимают). Если нет карты — через посредников за рубли.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚌</span><div><div class="info-row-title">Визаран из Ханоя</div><div class="info-row-text"><strong>Ханой → Вьентьян (Лаос):</strong> ночной автобус ~12 часов, от $20. Популярный маршрут для получения новой отметки.<br><strong>Ханой → Пномпень (Камбоджа):</strong> автобус или самолёт.<br>После визарана въезжаете снова — с новым безвизом на 45 дней или e-Visa.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚌</span><div><div class="info-row-title">Визаран из Хошимина</div><div class="info-row-text"><strong>Хошимин → Пномпень (Камбоджа):</strong> автобус 6 часов, $10–15. Самый быстрый визаран: граница Мок Бай — туда и обратно за 1 день.<br><strong>Хошимин → Бангкок:</strong> самолёт от $50 (AirAsia).</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Ограничений на визаран нет, но...</div><div class="info-row-text">Официально ограничений на количество въездов нет. Однако пограничники вправе отказать при частых «визаранах» без явной туристической цели. На практике проблем обычно не бывает если между въездами проходит хотя бы 1–2 дня.</div></div></div>
     </div>
   </div>
 
@@ -1126,80 +1034,47 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">14</span><span class="sec-dash"></span>
       <h2 class="sec-title">Климат <em>и сезоны</em></h2>
-      <span class="sec-desc">Запад и восток живут в разных сезонах.</span>
+      <span class="sec-desc">Страна вытянута на 1 650 км — север и юг живут в разных сезонах.</span>
     </div>
-
     <div class="alert green reveal" style="margin-bottom:20px">
-      Главное что нужно знать: западное и восточное побережья живут в <strong>разных сезонах</strong>. Когда на Пхукете дожди — на Самуи и Паттайе солнце, и наоборот.
+      Главное: когда в Ханое прохладно и дождливо — на Фукуоке солнечно. Выбирайте регион под нужный месяц.
     </div>
-
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="reveal">
       <div class="info-block">
-        <div class="info-block-title">🌊 Пхукет, Краби, Ко Пхи-Пхи <span style="font-size:11px;color:var(--muted);font-weight:400">Андаманское море (запад)</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь — апрель. Пик: декабрь — январь.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май — октябрь. Морские экскурсии часто отменяют, острова Симилан закрыты.</div></div></div>
+        <div class="info-block-title">🏛 Ханой и север</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Лучшее время</div><div class="info-row-text">Октябрь–ноябрь и март–апрель. Тепло +22–28°, мало дождей, хорошая видимость.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Избегать</div><div class="info-row-text">Декабрь–февраль: +15–17°, пасмурно. Июль–август: +35°, влажность 90%+.</div></div></div>
       </div>
       <div class="info-block">
-        <div class="info-block-title">🏝 Самуи, Ко Панган, Ко Тао <span style="font-size:11px;color:var(--muted);font-weight:400">Сиамский залив (восток)</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Январь — сентябрь. Full Moon Party — раз в месяц.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Октябрь — декабрь. Когда на Пхукете дожди (июнь–октябрь) — здесь солнечно.</div></div></div>
+        <div class="info-block-title">🌊 Дананг и центр</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Пляжный сезон</div><div class="info-row-text">Март–август: +28–33°, море спокойное, солнечно. Лучший пляжный сезон всего Вьетнама.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Октябрь–декабрь: сильные дожди и тайфуны. Хой Ан в октябре часто затапливает.</div></div></div>
       </div>
       <div class="info-block">
-        <div class="info-block-title">🌆 Паттайя, Бангкок <span style="font-size:11px;color:var(--muted);font-weight:400">Центр и восток</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь — апрель. Паттайя — самый комфортный вариант летом: дожди короткие.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май — октябрь. Дожди обычно вечером, не весь день.</div></div></div>
+        <div class="info-block-title">🏙 Хошимин и юг</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь–апрель: +28–34°, почти без дождей. Круглый год тепло — минимум +26°.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май–октябрь: короткие интенсивные ливни 1–2 часа в день. Не критично для туризма.</div></div></div>
       </div>
       <div class="info-block">
-        <div class="info-block-title">🏔 Чиангмай и север <span style="font-size:11px;color:var(--muted);font-weight:400">Горный регион</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Лучшее время</div><div class="info-row-text">Декабрь — февраль. Прохладно (+18–24°), идеально для треков.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Июнь — октябрь.</div></div></div>
-        <div class="info-row red"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Дымный сезон (март–апрель)</div><div class="info-row-text">Горят леса — дым, смог, плохой воздух. Избегать.</div></div></div>
+        <div class="info-block-title">🏝 Фукуок</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Лучший сезон</div><div class="info-row-text">Ноябрь–апрель: +28–30°, море спокойное, видимость отличная. Пик — декабрь–январь.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Муссоны</div><div class="info-row-text">Июнь–октябрь: штормы, сильные волны, часть отелей закрыта. Ехать не стоит.</div></div></div>
       </div>
-    </div>
-
-    <div class="climate-grid reveal" style="margin-top:16px">
-      <div class="climate-card"><div class="climate-month">ЯНВ</div><div class="climate-icon">☀️</div><div class="climate-temp">+28°</div><div class="climate-note">Лучший сезон</div></div>
-      <div class="climate-card"><div class="climate-month">ФЕВ</div><div class="climate-icon">☀️</div><div class="climate-temp">+29°</div><div class="climate-note">Отлично</div></div>
-      <div class="climate-card"><div class="climate-month">МАР</div><div class="climate-icon">🌤</div><div class="climate-temp">+30°</div><div class="climate-note">Жарко · дым на севере</div></div>
-      <div class="climate-card"><div class="climate-month">АПР</div><div class="climate-icon">🌤</div><div class="climate-temp">+32°</div><div class="climate-note">Сонгкран 🎉</div></div>
-      <div class="climate-card"><div class="climate-month">МАЙ</div><div class="climate-icon">🌧</div><div class="climate-temp">+31°</div><div class="climate-note">Дожди (запад)</div></div>
-      <div class="climate-card"><div class="climate-month">ИЮН</div><div class="climate-icon">🌧</div><div class="climate-temp">+30°</div><div class="climate-note">Сезон дождей</div></div>
-      <div class="climate-card"><div class="climate-month">ИЮЛ</div><div class="climate-icon">⛈</div><div class="climate-temp">+29°</div><div class="climate-note">Ливни (Пхукет)</div></div>
-      <div class="climate-card"><div class="climate-month">АВГ</div><div class="climate-icon">⛈</div><div class="climate-temp">+29°</div><div class="climate-note">Ливни (Пхукет)</div></div>
-      <div class="climate-card"><div class="climate-month">СЕН</div><div class="climate-icon">🌧</div><div class="climate-temp">+29°</div><div class="climate-note">Дождливо</div></div>
-      <div class="climate-card"><div class="climate-month">ОКТ</div><div class="climate-icon">🌦</div><div class="climate-temp">+29°</div><div class="climate-note">Переходный</div></div>
-      <div class="climate-card"><div class="climate-month">НОЯ</div><div class="climate-icon">⛅</div><div class="climate-temp">+28°</div><div class="climate-note">Начало сезона</div></div>
-      <div class="climate-card"><div class="climate-month">ДЕК</div><div class="climate-icon">☀️</div><div class="climate-temp">+27°</div><div class="climate-note">Пик · цены +30%</div></div>
-    </div>
-
-    <div class="alert amber reveal" style="margin-top:16px">
-      <strong>Лайфхак для зимовщиков:</strong> ноябрь–апрель — универсальное время когда хорошая погода одновременно на Пхукете и Паттайе. Декабрь–январь — пик сезона, цены на 30–50% выше чем в марте. Самый бюджетный месяц при хорошей погоде — <strong>март</strong>.
     </div>
   </div>
-
 
   <!-- 15 SAFETY -->
   <div id="safety">
     <div class="sec-header reveal">
       <span class="sec-num">15</span><span class="sec-dash"></span>
       <h2 class="sec-title">Безопас<em>ность</em></h2>
-      <span class="sec-desc">Тайланд безопасен — но туристов разводят по классическим схемам.</span>
+      <span class="sec-desc">Безопасная страна. Основные риски — кражи и разводы туристов.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Типичные разводы туристов</div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Temple scam («храм закрыт»)</div><div class="info-row-text">Незнакомец говорит что храм сегодня закрыт и предлагает отвезти на тук-туке в «другой храм» или к «ювелиру». Храм открыт. Просто идите мимо.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Tuk-tuk scam</div><div class="info-row-text">Водитель предлагает бесплатный или дешёвый тур, везёт по магазинам где получает комиссию. Используйте Grab с фиксированной ценой.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Карточный развод</div><div class="info-row-text">«Дружелюбный» местный приглашает поиграть в карты. Всегда выигрывает. Потери — от $500.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Gem scam</div><div class="info-row-text">Продают «ценные» камни по «специальной цене» — в реальности дешёвые стекляшки. Никогда не покупайте украшения у незнакомцев.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Такси в аэропорту</div><div class="info-row-text">Нелегальные таксисты в аэропорту Суварнабхуми предлагают фиксированные цены в 2–3 раза дороже официального такси. Используйте Grab или официальные стойки.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Скимминг банкоматов</div><div class="info-row-text">Случается особенно на туристических островах. Используйте банкоматы в отделениях банков, а не уличные. Проверяйте картоприёмник.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Как вести себя с полицией</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Всегда вежливо и спокойно</div><div class="info-row-text">Тайская полиция реагирует на агрессию плохо. Улыбка и спокойный тон решают большинство ситуаций.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📋</span><div><div class="info-row-title">Всегда имейте документы</div><div class="info-row-text">Паспорт или копию с собой. При проверке без документов могут задержать до выяснения.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">«Штраф на месте»</div><div class="info-row-text">Полицейский предлагает заплатить штраф наличными на месте — это взятка. Можно вежливо отказаться и попросить официальный протокол. Официальный штраф за нарушение ПДД — 500 бат.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Наркотики — нулевая толерантность</div><div class="info-row-text">Хранение наркотиков — тюрьма от 1 года. За сбыт — пожизненное или смертная казнь. Марихуана легализована в 2022, но употребление в публичных местах запрещено.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">В целом безопасно</div><div class="info-row-text">Насильственная преступность против туристов редка. Вьетнамцы относятся к иностранцам доброжелательно. Туристические районы патрулируются. Ночью ходить в центре — безопасно.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">🛵</span><div><div class="info-row-title">Кражи на ходу — главный риск</div><div class="info-row-text">В Хошимине распространены кражи телефонов и сумок — мотоциклисты вырывают из рук на ходу. Не держите телефон на виду идя по улице. Носите сумку через тело, застёгнутую. В Ханое реже.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Типичные разводы</div><div class="info-row-text"><strong>Такси без счётчика</strong> — всегда требуйте включить или используйте Grab.<br><strong>Рикши и тукпалки</strong> — договаривайтесь о цене ДО поездки.<br><strong>Завышенные цены</strong> на рынках — торгуйтесь.<br><strong>«Помощь с картой»</strong> у банкоматов — уходите.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚔</span><div><div class="info-row-title">Законы и правила</div><div class="info-row-text">Наркотики: очень строго, возможна смертная казнь за крупные партии. Критика правительства в вьетнамских соцсетях — незаконна. Фотографировать военные объекты нельзя. Для туристов на практике строго только по наркотикам.</div></div></div>
     </div>
   </div>
 
@@ -1208,16 +1083,12 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">16</span><span class="sec-dash"></span>
       <h2 class="sec-title">Ковор<em>кинги</em></h2>
-      <span class="sec-desc">Тайланд — мировая столица цифровых кочевников.</span>
+      <span class="sec-desc">Развитая экосистема в Ханое и Хошимине. Хой Ан — мекка номадов.</span>
     </div>
-    <div class="tips-grid reveal">
-      <div class="tip-card"><span class="tip-num">🏔</span><div><div class="tip-title">Чиангмай — лучший город для работы</div><div class="tip-text"><strong>CAMP (Maya Mall)</strong> — легендарный коворкинг в торговом центре, работает 24/7. Стоимость: 1 кофе (~100 бат) = целый день. Скорость Wi-Fi: 100+ Мбит/с.<br><br><strong>MANA Fast & Slow Bar</strong> — модное место с отличным кофе. 80 бат/день.<br><strong>Think Park</strong> — на открытом воздухе, от 50 бат/день.<br><strong>Punspace</strong> — профессиональный коворкинг, 250 бат/день, 3 500 бат/мес.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🌆</span><div><div class="tip-title">Бангкок</div><div class="tip-text"><strong>The Hive</strong> — сеть коворкингов в Thonglor и Ekkamai. От 300 бат/день, 3 500 бат/мес. Скорость: 200+ Мбит/с.<br><br><strong>WeWork</strong> — международная сеть, дорого (от 500 бат/день), но надёжно.<br><strong>Hubba-TO</strong> — популярен у стартапов, 250 бат/день.<br><strong>Coffee shops</strong> — True Coffee в любом 7-Eleven, стол + Wi-Fi весь день за цену кофе.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🌴</span><div><div class="tip-title">Пхукет</div><div class="tip-text"><strong>Garage Society</strong> — лучший коворкинг на острове в Чалонге. 350 бат/день.<br><br><strong>Phuket Smart City</strong> — государственный коворкинг с хорошим интернетом. Часто бесплатно или 100 бат/день.<br><strong>Kaffa</strong> — кофейня-коворкинг в Пхукет-тауне, 80 бат/день.<br><br>На Патонге и Камале — сеть кафе Starbucks и True Coffee с рабочими местами.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🏝</span><div><div class="tip-title">Ko Samui / Ko Phangan</div><div class="tip-text"><strong>Samui</strong>: Chaweng имеет несколько кафе-коворкингов. Скорость интернета хуже континента — обычно 30–50 Мбит/с.<br><br><strong>Ko Phangan</strong>: WorknPlay — небольшой коворкинг в Tong Sala. Haad Yao имеет несколько кафе с рабочим интернетом. Если важна работа — выбирай континент, острова для отдыха.</div></div></div>
-    </div>
-    <div class="alert green reveal" style="margin-top:12px">
-      <strong>Лайфхак:</strong> в Чиангмае сформировалось огромное русскоязычное сообщество цифровых кочевников. Telegram-чаты «Чиангмай наши» и «Digital Nomads Chiang Mai» — живые обсуждения жилья, коворкингов и событий.
+    <div class="info-block reveal">
+      <div class="info-row"><span class="info-row-icon">🏢</span><div><div class="info-row-title">Ханой</div><div class="info-row-text"><strong>Toong</strong> — крупнейшая вьетнамская сеть, день от 100K VND (~37 ₽).<br><strong>Up CoWorking</strong> — быстрый интернет 100+ Мбит, день от 80K VND.<br><strong>Cogo Hub</strong> — популярен у экспатов, месяц от 1.8М VND.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏙</span><div><div class="info-row-title">Хошимин</div><div class="info-row-text"><strong>Dreamplex</strong> — премиум, 3 локации, день от 200K VND.<br><strong>Toong</strong> — 5 локаций по городу.<br><strong>WeWork</strong> — 2 локации в District 1, день от $15.<br><strong>The Lab</strong> — популярен у стартапов, месяц от $150.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏮</span><div><div class="info-row-title">Хой Ан — мекка цифровых кочевников</div><div class="info-row-text"><strong>Coco Box</strong> — в Старом городе, день от 60K VND.<br><strong>Nomad Work & Coffee</strong> — для удалёнщиков, день от 50K VND.<br>Кафе с хорошим Wi-Fi на пляже Ан Банг — популярная альтернатива.</div></div></div>
     </div>
   </div>
 
@@ -1226,58 +1097,31 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">17</span><span class="sec-dash"></span>
       <h2 class="sec-title">Чеклист <em>перед вылетом</em></h2>
-      <span class="sec-desc">Всё что нужно сделать до посадки в самолёт.</span>
+      <span class="sec-desc">Вьетнам — одна из самых простых стран для первой поездки в Азии.</span>
     </div>
     <div class="info-block reveal">
       <div class="info-block-title">За 2 недели до вылета</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Проверить срок паспорта</div><div class="info-row-text">Нужно минимум 6 месяцев действия после даты въезда. При меньшем сроке — откажут на границе.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить страховку</div><div class="info-row-text">Минимум $100 000 покрытия. Покрытие мотоцикла — обязательно если планируешь арендовать байк. Cherehapa или Черехапа — сравни цены.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить eSIM или проверить роуминг</div><div class="info-row-text">eSIM через Yesim или Airalo до вылета — интернет заработает сразу после приземления. Или купить SIM в аэропорту.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Снять наличные / конвертировать</div><div class="info-row-text">Везите доллары или евро. Рубли меняют по невыгодному курсу. Возьмите минимум $500–1 000 наличными на первые дни.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить eSIM на Yesim или Airalo</div><div class="info-row-text">Активируется по QR, интернет работает с момента посадки. Yesim принимает МИР. ~$6–10 на 30 дней.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Оформить страховку</div><div class="info-row-text">Cherehapa — онлайн за 5 минут. Обязательно покрытие медэвакуации если едете на острова.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Скачать Grab и зарегистрироваться</div><div class="info-row-text">Зарегистрируйтесь заранее с российским номером. Привяжите карту Visa/MC — МИР не работает.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💻</span><div><div class="info-row-title">Купить e-Visa ($25) если нужно дольше 45 дней</div><div class="info-row-text">evisa.gov.vn. Однократная $25, многократная $50. Нужна карта иностранного банка. Срок: 3–7 рабочих дней.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💵</span><div><div class="info-row-title">Подготовить наличные доллары</div><div class="info-row-text">$100–200 на первое время. Меняйте в городе в ювелирных магазинах — курс лучше аэропорта.</div></div></div>
     </div>
     <div class="info-block reveal">
       <div class="info-block-title">За 3 дня до вылета</div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Заполнить TDAC — обязательно!</div><div class="info-row-text">tdac.immigration.go.th — электронная карта прибытия. Без неё могут не пустить на борт. 5 минут, бесплатно. Заполняется не ранее чем за 3 дня до прилёта.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Установить приложения</div><div class="info-row-text">Grab, Google Maps (скачать карту офлайн), Bangkok MRT/BTS, XE Currency, Booking/Airbnb. В России скачать заранее — могут быть проблемы с App Store в Тайланде.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏠</span><div><div class="info-row-title">Забронировать первые ночи</div><div class="info-row-text">Минимум 2–3 ночи. На паспортном контроле могут попросить подтверждение проживания.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Обратный билет или маршрут выезда</div><div class="info-row-text">На паспортном контроле могут попросить обратный билет или подтверждение что ты покинешь страну. Бронь на автобус до Малайзии тоже считается.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🗺</span><div><div class="info-row-title">Скачать maps.me с офлайн-картой Вьетнама</div><div class="info-row-text">Полезно в зонах без интернета. Google Maps тоже скачайте офлайн.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏨</span><div><div class="info-row-title">Забронировать первые 2 ночи</div><div class="info-row-text">На паспортном контроле могут спросить подтверждение проживания.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚌</span><div><div class="info-row-title">Скачать Vexere.com для автобусов и поездов</div><div class="info-row-text">Удобный агрегатор sleeper bus и ж/д билетов по всему Вьетнаму.</div></div></div>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Рекомендуемые маршруты</div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">1 неделя — Классика</div><div class="info-row-text">Дни 1–3: Бангкок (Большой Дворец, Чатучак, ночные рынки) → Дни 4–7: Пхукет или Краби (пляжи, острова Пхи-Пхи).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">2 недели — Разнообразие</div><div class="info-row-text">Дни 1–3: Бангкок → Дни 4–6: Чиангмай (храмы, рынки, слоны) → Дни 7–14: Острова юга (Пхукет + Краби или Самуи + Ко Панган).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Месяц — Зимовка</div><div class="info-row-text">Неделя в Бангкоке (обустройство, банк, SIM) → 2 недели в Чиангмае (работа, жизнь, коворкинги) → Финальные 1–2 недели на островах перед отлётом.</div></div></div>
+      <div class="info-block-title">По прилёту</div>
+      <div class="info-row"><span class="info-row-icon">💱</span><div><div class="info-row-title">Поменять $30–50 в аэропорту</div><div class="info-row-text">На такси и первые расходы. Остальное менять в городе в ювелирных магазинах.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📶</span><div><div class="info-row-title">Активировать eSIM или купить SIM Viettel</div><div class="info-row-text">SIM продаётся в аэропорту. Viettel — лучшее покрытие по всей стране.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🛵</span><div><div class="info-row-title">Вызвать Grab до отеля</div><div class="info-row-text">Не садитесь к «таксистам» у выхода — завысят цену в 3–5 раз. Только Grab.</div></div></div>
     </div>
   </div>
 
-  <!-- COUNTRY NAV -->
-  <div class="country-nav reveal">
-    <a class="cnav-card" href="armenia.html">
-      <span class="cnav-flag">🇦🇲</span>
-      <div><div class="cnav-label">Предыдущая</div><div class="cnav-name">Армения</div></div>
-      <span class="cnav-arrow">←</span>
-    </a>
-    <a class="cnav-card" href="china.html">
-      <span class="cnav-flag">🇨🇳</span>
-      <div><div class="cnav-label">Следующая страна</div><div class="cnav-name">Китай</div></div>
-      <span class="cnav-arrow">→</span>
-    </a>
-  </div>
-
-</div><!-- /main-wrap -->
-
-<footer>
-  <a class="flogo" href="../index.html">Check<em>The</em>World<span class="dot">.</span></a>
-  <div class="flinks">
-    <a href="../index.html">Страны</a>
-    <a href="#">Сравнить</a>
-    <a href="#">Визы</a>
-    <a href="#">Контакты</a>
-  </div>
-  <div class="fcopy">© 2026 · CheckTheWorld</div>
-</footer>
-
-<!-- SIDENAV -->
+  <!-- SIDENAV -->
 <nav class="sidenav" id="sidenav" style="z-index:9999">
   <div class="sn-item" data-t="visas"><span class="sn-label">Визы</span><div class="sn-dot"></div></div>
   <div class="sn-item" data-t="prices"><span class="sn-label">Цены</span><div class="sn-dot"></div></div>
@@ -1324,8 +1168,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
 <script>
 // ── DATA ──
 
-  // ⚠️ VISAS и CITIES для Вьетнам — заполнить вручную!
-  // Скопировать структуру из thailand.html и адаптировать
   // ── CURRENCY ──
 const rates = {rub:1, usd:91, eur:99, local:33};
 function setCurrency(cur, btn){
@@ -1346,62 +1188,134 @@ function switchFlights(tab, btn){
 
 // ── VISA MODAL ──
 const VISAS = {
-  evisa: {
-    title: 'Электронная виза',
-    subtitle: '',
-    tags: [{t:'90 дней',c:'green'},{t:'Паспорт РФ',c:'green'}],
+  free: {
+    title: 'Безвизовый въезд для граждан РФ',
+    subtitle: 'До 45 дней · Только загранпаспорт · 2026',
+    tags: [{t:'45 дней',c:'green'},{t:'Бесплатно',c:'green'},{t:'Загранпаспорт',c:'green'}],
     sections: [
-      {title:'Кому подходит', text:''},
-      {title:'Порядок действий', steps:['','','']},
+      {title:'УСЛОВИЯ ВЪЕЗДА', steps:[
+        'Гражданам РФ — до 45 дней без визы',
+        'Загранпаспорт со сроком действия минимум 6 месяцев',
+        'Обратный билет или билет в третью страну — обязательно',
+        'Дети до 14 лет — по паспорту родителя',
+      ]},
+      {title:'ВАЖНО', steps:[
+        'Ровно 45 дней — продление внутри страны невозможно',
+        'Визаран (выезд–въезд) обнуляет счётчик',
+        'Для 90+ дней — оформите e-Visa до вылета',
+      ]},
     ],
-    warn: '',
+    warn: null, btn: null
+  },
+  tr: {
+    title: 'E-Visa — 90 дней онлайн',
+    subtitle: '$25 однократная · $50 многократная · evisa.gov.vn',
+    tags: [{t:'90 дней',c:'green'},{t:'$25/$50',c:'amber'},{t:'Онлайн',c:'green'}],
+    sections: [
+      {title:'КАК ОФОРМИТЬ', steps:[
+        'Зайти на evisa.gov.vn',
+        'Заполнить анкету, загрузить фото и скан паспорта',
+        'Оплатить $25 (однократная) или $50 (многократная) картой иностранного банка',
+        'Получить PDF-визу на email через 3–7 рабочих дней',
+        'Распечатать и предъявить на границе',
+      ]},
+      {title:'ОСОБЕННОСТИ', steps:[
+        'Однократная: при выезде виза «сгорает»',
+        'Многократная: въезд-выезд сколько угодно в течение 90 дней',
+        'МИР не принимают — нужна карта иностранного банка или посредник',
+      ]},
+    ],
+    warn: null, btn: 'https://evisa.gov.vn'
+  },
+  nonimm: {
+    title: 'Рабочая виза DN',
+    subtitle: 'Официальное трудоустройство во Вьетнаме',
+    tags: [{t:'До 1 года',c:''},{t:'Work permit',c:'amber'},{t:'Через работодателя',c:''}],
+    sections: [
+      {title:'УСЛОВИЯ', steps:[
+        'Нужен официальный работодатель во Вьетнаме',
+        'Работодатель подаёт заявку в Министерство труда',
+        'Отдельно оформляется разрешение на работу (work permit)',
+        'Диплом о высшем образовании, справка о несудимости',
+      ]},
+      {title:'ПРЕДУПРЕЖДЕНИЕ', steps:[
+        'Без work permit — штраф до $5 000 и депортация',
+        'Фрилансеры де-юре работают в серой зоне на туристической визе',
+      ]},
+    ],
+    warn: '<strong>Важно:</strong> работа без разрешения — серьёзное нарушение. Штраф и депортация.',
     btn: null
   },
-};
+  ltr: {
+    title: 'Туристическая виза DL',
+    subtitle: 'Через посольство — если нет иностранной карты',
+    tags: [{t:'1–3 месяца',c:''},{t:'~$50–80',c:'amber'},{t:'Посольство',c:''}],
+    sections: [
+      {title:'КОГДА НУЖНА', steps:[
+        'Если нет иностранной карты для оплаты e-Visa',
+        'Если нужен специфический тип въезда',
+        'Посольство Вьетнама в Москве: ул. Большая Пироговская, 13',
+      ]},
+      {title:'ДОКУМЕНТЫ', steps:[
+        'Загранпаспорт с 6+ месяцами действия',
+        'Анкета на английском',
+        'Фото 3.5×4.5 см на белом фоне',
+        'Обратный авиабилет и бронь отеля',
+      ]},
+    ],
+    warn: null, btn: null
+  },
+}
 
 const CITIES = {
-  hanoi: {name_en:'Ханой',
-    name:'Ханой', emoji:'🏛', tag:'', budget:'',
-    desc:'',
-    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
-    facts:['','','']
+  hanoi: {
+    name: 'Ханой', emoji: '🏛', tag: 'Столица · 8 млн жителей', budget: 'от 3.5М VND/мес аренда',
+    desc: 'Столица с 1000-летней историей. Старый квартал (36 улиц), французская архитектура, озеро Хоан Кием. Прохладная зима, жаркое лето. Лучший старт для знакомства с Вьетнамом.',
+    places: [
+      {n:'Старый квартал (Phố cổ)',d:'36 исторических улиц — каждая своя торговля. Пешком вечером.'},
+      {n:'Озеро Хоан Кием',d:'Символ Ханоя. Черепаший остров, пагода Нгок Сон. Пешеходная зона по выходным.'},
+      {n:'Храм Литературы',d:'Первый университет Вьетнама XI века. Вход 30K VND.'},
+      {n:'Музей истории Вьетнама',d:'Лучший музей страны. 2–3 часа. Вход 40K VND.'},
+      {n:'Мавзолей Хо Ши Мина',d:'Тело Хо Ши Мина. Очередь, строгий дресс-код. Бесплатно.'},
+    ],
+    facts:['Аэропорт NOI BAI, 40 км от центра','Grab или автобус 86 от аэропорта (35K VND)','Прохладно зимой: январь +17°','Лучшее время: октябрь–ноябрь, март–апрель','Метро: 1 линия, 13 станций'],
   },
-  hochi: {name_en:'Хошимин',
-    name:'Хошимин', emoji:'🏙', tag:'', budget:'',
-    desc:'',
-    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
-    facts:['','','']
+  hochiminh: {
+    name: 'Хошимин', emoji: '🏙', tag: 'Бизнес-столица · 13 млн', budget: 'от 5М VND/мес аренда',
+    desc: 'Крупнейший город страны, бывший Сайгон. Динамичный, современный, дороже Ханоя. Бизнес-центр, лучшая ночная жизнь, большое экспат-сообщество.',
+    places: [
+      {n:'Президентский дворец',d:'Кабинеты в оригинальном виде 1975 года. Вход 40K VND.'},
+      {n:'Военный музей',d:'Техника и артефакты Вьетнамской войны. Вход 40K VND.'},
+      {n:'Пагода нефритового императора',d:'Действующий даосский храм. Атмосферно, бесплатно.'},
+      {n:'Рынок Бинь Тай',d:'Главный рынок Чайнатауна — опт и розница.'},
+      {n:'Bui Vien Walking Street',d:'Ночная жизнь. Работает после 18:00 до 2–3 ночи.'},
+    ],
+    facts:['Аэропорт SGN, 7 км от центра','Круглый год +28–35°','Сезон дождей май–октябрь','Grab до аэропорта 100–150K VND','Лучший коворкинг-хаб страны'],
   },
-  danang: {name_en:'Дананг',
-    name:'Дананг', emoji:'🌊', tag:'', budget:'',
-    desc:'',
-    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
-    facts:['','','']
+  danang: {
+    name: 'Дананг', emoji: '🌊', tag: 'Пляжи · Центральный Вьетнам', budget: 'от 4М VND/мес аренда',
+    desc: 'Современный пляжный город между Ханоем и Хошимином. Длинные пляжи, Мраморные горы, рядом Хой Ан. Хороший баланс цены, удобства и природы.',
+    places: [
+      {n:'My Khe Beach',d:'10 км белого песка, пляжный сезон апрель–август.'},
+      {n:'Мраморные горы',d:'5 известняковых холмов с пещерами и пагодами. Вход 40K VND.'},
+      {n:'Хой Ан (30 км)',d:'ЮНЕСКО. Ночные фонари, портные, рестораны.'},
+      {n:'Золотой мост (Cầu Vàng)',d:'Мост на руках — вид с горы Ба На. 90 мин от Дананга.'},
+      {n:'Полуостров Сонтра',d:'Природный заказник, храм Линьынг с 67-метровым Буддой.'},
+    ],
+    facts:['Аэропорт DAD в центре (10 мин)','Пляжный сезон: март–август','Октябрь–декабрь — дожди и тайфуны','Дешевле Хошимина на 20–30%','База для однодневных поездок в Хой Ан и Хюэ'],
   },
-  hoian: {name_en:'Хойан',
-    name:'Хойан', emoji:'🏮', tag:'', budget:'',
-    desc:'',
-    places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
-    facts:['','','']
+  hoian: {
+    name: 'Хой Ан', emoji: '🏮', tag: 'ЮНЕСКО · Номады', budget: 'от 3М VND/мес аренда',
+    desc: 'Старинный торговый город XV века, объект ЮНЕСКО. Фонарики, велосипеды, лучшие портные Вьетнама. Популярная база для цифровых кочевников.',
+    places: [
+      {n:'Старый город (Phố Cổ)',d:'Пешеходная зона с фонариками. Вход 120K VND.'},
+      {n:'Японский крытый мост',d:'Символ города — мост XVI века с крытой пагодой.'},
+      {n:'Пляж Ан Банг',d:'5 км от центра, тихий, с кафе. Лучше чем Куа Дай.'},
+      {n:'Портные',d:'Костюм или платье за 1–3 дня от $30–150. Хой Ан — столица портных.'},
+      {n:'Кулинарные туры',d:'Уроки вьетнамской кухни от 300K VND. Обязательно попробуйте.'},
+    ],
+    facts:['30 км от аэропорта Дананга','Велосипед — основной транспорт','Много коворкингов и кафе','Сезон дождей: октябрь–декабрь','Активное русскоязычное сообщество'],
   },
-};
-
-function openVisa(key){
-  const v = VISAS[key];
-  if(!v) return;
-  let h = '<div class="modal-overline">'+v.subtitle+'</div>';
-  h += '<div class="modal-title">'+v.title+'</div>';
-  h += '<div class="modal-tags">'+v.tags.map(t=>'<span class="modal-tag '+t.c+'">'+t.t+'</span>').join('')+'</div>';
-  v.sections.forEach(s=>{
-    h += '<div class="modal-section">'+s.title+'</div>';
-    if(s.text) h += '<div class="modal-text">'+s.text+'</div>';
-    if(s.steps) h += '<div class="modal-steps">'+s.steps.map((st,i)=>'<div class="modal-step"><span class="modal-step-num">'+(i+1)+'</span><span>'+st+'</span></div>').join('')+'</div>';
-  });
-  if(v.warn) h += '<div class="modal-warn">'+v.warn+'</div>';
-  if(v.btn) h += '<button class="modal-btn" onclick="window.open(\''+v.btn+'\',\'_blank\')">Узнать подробнее →</button>';
-  document.getElementById('visaModalContent').innerHTML = h;
-  document.getElementById('visaModal').classList.add('open');
-  document.body.style.overflow='hidden';
 }
 
 // ── CITY MODAL ──
