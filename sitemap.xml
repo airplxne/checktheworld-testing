@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://checktheworld.ru/</loc><priority>1.0</priority><changefreq>weekly</changefreq><lastmod>2026-04-11</lastmod></url>
-  <url><loc>https://checktheworld.ru/thailand.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
-  <url><loc>https://checktheworld.ru/georgia.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
-  <url><loc>https://checktheworld.ru/serbia.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
-  <url><loc>https://checktheworld.ru/turkey.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
-  <url><loc>https://checktheworld.ru/armenia.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
-  <url><loc>https://checktheworld.ru/vietnam.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
-  <url><loc>https://checktheworld.ru/china.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
-  <url><loc>https://checktheworld.ru/belarus.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
-  <url><loc>https://checktheworld.ru/kazakhstan.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
+  <url><loc>https://checktheworld.ru/countries/thailand.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
+  <url><loc>https://checktheworld.ru/countries/georgia.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
+  <url><loc>https://checktheworld.ru/countries/serbia.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
+  <url><loc>https://checktheworld.ru/countries/turkey.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
+  <url><loc>https://checktheworld.ru/countries/armenia.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
+  <url><loc>https://checktheworld.ru/countries/vietnam.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
+  <url><loc>https://checktheworld.ru/countries/china.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
+  <url><loc>https://checktheworld.ru/countries/belarus.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
+  <url><loc>https://checktheworld.ru/countries/kazakhstan.html</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-04-11</lastmod></url>
 </urlset>

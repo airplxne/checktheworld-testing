@@ -3,3 +3,25 @@
 http://checktheworld.ru/* https://checktheworld.ru/:splat 301
 http://www.checktheworld.ru/* https://checktheworld.ru/:splat 301
 https://www.checktheworld.ru/* https://checktheworld.ru/:splat 301
+
+# Редиректы страниц стран (переезд в /countries/)
+/argentina.html  /countries/argentina.html  301
+/armenia.html  /countries/armenia.html  301
+/belarus.html  /countries/belarus.html  301
+/china.html  /countries/china.html  301
+/cyprus.html  /countries/cyprus.html  301
+/egypt.html  /countries/egypt.html  301
+/georgia.html  /countries/georgia.html  301
+/germany.html  /countries/germany.html  301
+/indonesia.html  /countries/indonesia.html  301
+/kazakhstan.html  /countries/kazakhstan.html  301
+/malaysia.html  /countries/malaysia.html  301
+/mexico.html  /countries/mexico.html  301
+/montenegro.html  /countries/montenegro.html  301
+/morocco.html  /countries/morocco.html  301
+/portugal.html  /countries/portugal.html  301
+/serbia.html  /countries/serbia.html  301
+/thailand.html  /countries/thailand.html  301
+/turkey.html  /countries/turkey.html  301
+/uae.html  /countries/uae.html  301
+/vietnam.html  /countries/vietnam.html  301
