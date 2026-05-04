@@ -931,13 +931,16 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
       <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">С 2024 года правила изменились — теперь они касаются практически всех кто проводит в стране больше полугода.</div>
       <div class="alert amber"><strong>⚠️ 180 дней = налоговый резидент</strong><br>Если провёл в Тайланде 180+ дней в календарном году — ты налоговый резидент. Счётчик обнуляется 1 января каждого года.</div>
       <div class="info-block-title" style="margin-top:16px">Что изменилось с 2024 года</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px">До 2024: иностранный доход облагался налогом только если переводился в тот же год. После 2024: любой иностранный доход, переведённый в Тайланд, потенциально облагается налогом. Льготный период на 2 года для доходов 2024–2025.</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px">До 2024: иностранный доход облагался налогом только если переводился в тот же год. После 2024: любой иностранный доход, переведённый в Тайланд, потенциально облагается налогом. Предлагавшийся льготный период (освобождение доходов переведённых в течение 2 лет) — не принят. Законопроект заморожен из-за роспуска парламента. По состоянию на май 2026 действуют полные правила 2024 года.</div>
       <div class="info-block-title">Ставки подоходного налога (PIT)</div>
       <table class="tax-table">
         <tr><td>до 150 000 ฿/год</td><td>0%</td></tr>
         <tr><td>150 001 — 300 000 ฿</td><td>5%</td></tr>
         <tr><td>300 001 — 500 000 ฿</td><td>10%</td></tr>
         <tr><td>500 001 — 750 000 ฿</td><td>15%</td></tr>
+        <tr><td>750 001 — 1 000 000 ฿</td><td>20%</td></tr>
+        <tr><td>1 000 001 — 2 000 000 ฿</td><td>25%</td></tr>
+        <tr><td>2 000 001 — 5 000 000 ฿</td><td>30%</td></tr>
         <tr><td>свыше 5 000 000 ฿</td><td>35%</td></tr>
       </table>
       <div class="alert green" style="margin-top:14px"><strong>✅ Если ты нерезидент:</strong> проводишь меньше 180 дней — тайские налоги тебя не касаются. Оптимальная стратегия для зимовщиков — не превышать 179 дней.</div>
@@ -1100,8 +1103,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="info-block reveal">
       <div class="info-block-title">Новые ограничения с ноября 2025</div>
       <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Лимит 2 бордеррана в год через наземную границу</div><div class="info-row-text">Через наземные КПП разрешено не более 2 безвизовых въездов в год. После двух — иммиграция может отказать во въезде.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Штамп с наземной границы — без продления</div><div class="info-row-text">Нельзя продлить на 30 дней в иммиграционном офисе. Сколько дали на границе — столько и живёшь.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Авиаперелёт — без ограничений</div><div class="info-row-text">Въезд через аэропорт не ограничен. Штамп можно продлить на 30 дней за 1 900 бат.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Штамп с наземной границы — без продления</div><div class="info-row-text">Нельзя продлить в иммиграционном офисе совсем — ни на 30, ни на 7 дней. Сколько дали на границе — столько и живёшь. Продление доступно только тем кто въехал через аэропорт.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Авиаперелёт — без ограничений</div><div class="info-row-text">Въезд через аэропорт не ограничен. Штамп можно продлить на 30 дней за 1 900 бат. Второе продление (в том же году) — только 7 дней, не 30.</div></div></div>
       <div class="info-row"><span class="info-row-icon">👁</span><div><div class="info-row-title">Усиленные проверки при частых въездах</div><div class="info-row-text">Могут попросить обратный билет, подтверждение жилья и 20 000 бат наличными на человека.</div></div></div>
     </div>
     <div class="info-block reveal">
@@ -1361,6 +1364,7 @@ const VISAS = {
     warn: '<strong>Важно:</strong> виза не даёт права на работу. Для работы нужен отдельный Work Permit.',
     btn: 'https://www.thaiprivilege.com'
   }
+
 };
 
 const CITIES = {
