@@ -673,48 +673,44 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">01</span><span class="sec-dash"></span>
       <h2 class="sec-title">Визовый <em>режим</em></h2>
-      <span class="sec-desc">Четыре пути въезда. Для большинства — хватит паспорта и TDAC.</span>
+      <span class="sec-desc">До 90 дней без визы. Продление без выезда — отменено с 2022 года.</span>
     </div>
     <div class="visa-grid reveal">
       <div class="visa-card featured" onclick="openVisa('free')">
         <div class="vc-type">▶ Рекомендуется</div>
         <div class="vc-name">Безвизовый въезд</div>
-        <div class="vc-desc">Граждане РФ могут находиться до 60 дней без визы. Никаких документов кроме паспорта и TDAC.</div>
+        <div class="vc-desc">До 90 дней в течение любых 180 дней. Штамп ставят при прилёте автоматически.</div>
         <div class="vc-tags">
-          <span class="vc-tag green">60 дней</span>
+          <span class="vc-tag green">90 дней</span>
           <span class="vc-tag green">Бесплатно</span>
-          <span class="vc-tag green">Паспорт РФ</span>
-          <span class="vc-tag amber">TDAC за 3 дня</span>
+          <span class="vc-tag amber">90/180 суммарно</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('tr')">
-        <div class="vc-type">Туристическая</div>
-        <div class="vc-name">Tourist Visa (TR)</div>
-        <div class="vc-desc">Оформляется в консульстве. 60 дней с возможностью продления ещё на 30 дней.</div>
+        <div class="vc-type">Долгосрочная</div>
+        <div class="vc-name">Туристическая виза</div>
+        <div class="vc-desc">Для пребывания дольше 90 дней. Через авиакомпанию или местного спонсора.</div>
         <div class="vc-tags">
-          <span class="vc-tag">60 дней</span>
-          <span class="vc-tag amber">~$40</span>
-          <span class="vc-tag">+30 за $60</span>
+          <span class="vc-tag">30–90 дней</span>
+          <span class="vc-tag amber">~$100–200</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('nonimm')">
-        <div class="vc-type">Долгосрочная</div>
-        <div class="vc-name">Non-Immigrant (O)</div>
-        <div class="vc-desc">Для тех кто планирует жить в Тайланде — пенсионеры, работающие, владельцы бизнеса.</div>
+        <div class="vc-type">Резидентство</div>
+        <div class="vc-name">Резидентская виза</div>
+        <div class="vc-desc">Через работу, бизнес, Golden Visa или недвижимость от $545 000.</div>
         <div class="vc-tags">
-          <span class="vc-tag">1 год</span>
-          <span class="vc-tag amber">~$80</span>
-          <span class="vc-tag">Продлевается</span>
+          <span class="vc-tag">2–10 лет</span>
+          <span class="vc-tag amber">Через спонсора</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('ltr')">
-        <div class="vc-type">Для состоятельных</div>
-        <div class="vc-name">Thailand Privilege</div>
-        <div class="vc-desc">Специальная виза на 5–20 лет для обеспеченных пенсионеров, специалистов и инвесторов.</div>
+        <div class="vc-type">Премиум</div>
+        <div class="vc-name">Golden Visa</div>
+        <div class="vc-desc">10-летняя виза для инвесторов, специалистов и учёных. Без привязки к работодателю.</div>
         <div class="vc-tags">
-          <span class="vc-tag">5–20 лет</span>
-          <span class="vc-tag amber">от $10 000</span>
-          <span class="vc-tag green">Налоговые льготы</span>
+          <span class="vc-tag green">10 лет</span>
+          <span class="vc-tag amber">Инвестиции</span>
         </div>
       </div>
     </div>
@@ -725,27 +721,27 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">02</span><span class="sec-dash"></span>
       <h2 class="sec-title">Стоимость <em>жизни</em></h2>
-      <span class="sec-desc">Реальные цены в рублях, долларах, евро и батах.</span>
+      <span class="sec-desc">Реальные цены 2026 — в рублях, долларах, евро и дирхамах.</span>
     </div>
     <div class="reveal" style="display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
       <div class="currency-switcher">
         <button class="cur-btn active" onclick="setCurrency('rub',this)">₽ RUB</button>
         <button class="cur-btn" onclick="setCurrency('usd',this)">$ USD</button>
         <button class="cur-btn" onclick="setCurrency('eur',this)">€ EUR</button>
-        <button class="cur-btn" onclick="setCurrency('local',this)">AED AED</button>
+        <button class="cur-btn" onclick="setCurrency('local',this)">د.إ AED</button>
       </div>
-      <span class="cur-rate">курс: 1 ₽ ≈ 0.040 AED · апр 2026</span>
+      <span class="cur-rate">курс: 1 AED ≈ 24.8 ₽ · май 2026</span>
     </div>
     <div class="prices-grid reveal">
-      <div class="price-card"><div class="pc-icon">🛏</div><div class="pc-cat">Хостел / ночь</div><div class="pc-val" data-rub="730–1 400 ₽" data-usd="$8–$15" data-eur="€7–€14" data-local="300–580 ฿">730–1 400 ₽</div><div class="pc-note">Бангкок, Чиангмай</div></div>
-      <div class="price-card"><div class="pc-icon">🏨</div><div class="pc-cat">Отель 3★ / ночь</div><div class="pc-val" data-rub="2 700–5 500 ₽" data-usd="$29–$60" data-eur="€27–€55" data-local="1 100–2 300 ฿">2 700–5 500 ₽</div><div class="pc-note">Центр города</div></div>
-      <div class="price-card"><div class="pc-icon">🏠</div><div class="pc-cat">Аренда 1 комн. / мес</div><div class="pc-val" data-rub="27 000–55 000 ₽" data-usd="$296–$604" data-eur="€272–€555" data-local="11 000–22 000 ฿">27 000–55 000 ₽</div><div class="pc-note">Долгосрочная аренда</div></div>
-      <div class="price-card"><div class="pc-icon">🍜</div><div class="pc-cat">Обед в кафе</div><div class="pc-val" data-rub="180–450 ₽" data-usd="$1–$4" data-eur="€1–€4" data-local="75–185 ฿">180–450 ₽</div><div class="pc-note">Местная кухня</div></div>
-      <div class="price-card"><div class="pc-icon">🚕</div><div class="pc-cat">Такси / Grab</div><div class="pc-val" data-rub="90–450 ₽" data-usd="$1–$5" data-eur="€1–€4" data-local="37–185 ฿">90–450 ₽</div><div class="pc-note">По городу</div></div>
-      <div class="price-card"><div class="pc-icon">🛵</div><div class="pc-cat">Аренда байка / день</div><div class="pc-val" data-rub="450–900 ₽" data-usd="$4–$9" data-eur="€4–€9" data-local="185–370 ฿">450–900 ₽</div><div class="pc-note">Мотобайк 125cc</div></div>
-      <div class="price-card"><div class="pc-icon">🍺</div><div class="pc-cat">Пиво в баре</div><div class="pc-val" data-rub="180–360 ₽" data-usd="$1–$3" data-eur="€1–€3" data-local="75–148 ฿">180–360 ₽</div><div class="pc-note">Chang, Singha</div></div>
-      <div class="price-card"><div class="pc-icon">💆</div><div class="pc-cat">Тайский массаж / час</div><div class="pc-val" data-rub="360–720 ₽" data-usd="$3–$7" data-eur="€3–€7" data-local="148–296 ฿">360–720 ₽</div><div class="pc-note">Традиционный массаж</div></div>
-      <div class="price-card"><div class="pc-icon">✈️</div><div class="pc-cat">Перелёт внутри страны</div><div class="pc-val" data-rub="2 700–7 200 ₽" data-usd="$29–$79" data-eur="€27–€72" data-local="1 100–2 963 ฿">2 700–7 200 ₽</div><div class="pc-note">AirAsia, Nok Air</div></div>
+      <div class="price-card"><div class="pc-icon">🛏</div><div class="pc-cat">Хостел / ночь</div><div class="pc-val" data-rub="1 500–3 500 ₽" data-usd="$17–$38" data-eur="€15–€35" data-local="60–140 AED">1 500–3 500 ₽</div><div class="pc-note">Дубай, Шарджа</div></div>
+      <div class="price-card"><div class="pc-icon">🏨</div><div class="pc-cat">Отель 3★ / ночь</div><div class="pc-val" data-rub="5 000–15 000 ₽" data-usd="$55–$165" data-eur="€50–€150" data-local="200–600 AED">5 000–15 000 ₽</div><div class="pc-note">Центр Дубая</div></div>
+      <div class="price-card"><div class="pc-icon">🏠</div><div class="pc-cat">Аренда студии / мес</div><div class="pc-val" data-rub="60–130К ₽" data-usd="$660–$1430" data-eur="€605–€1315" data-local="2 400–5 200 AED">60–130К ₽</div><div class="pc-note">Дубай долгосрочно</div></div>
+      <div class="price-card"><div class="pc-icon">🍽</div><div class="pc-cat">Обед в кафе</div><div class="pc-val" data-rub="750–2 200 ₽" data-usd="$8–$24" data-eur="€7–€22" data-local="30–90 AED">750–2 200 ₽</div><div class="pc-note">Местные рестораны</div></div>
+      <div class="price-card"><div class="pc-icon">🚇</div><div class="pc-cat">Метро / поездка</div><div class="pc-val" data-rub="75–175 ₽" data-usd="$0.8–$1.9" data-eur="€0.7–€1.8" data-local="3–7 AED">75–175 ₽</div><div class="pc-note">Дубай Метро</div></div>
+      <div class="price-card"><div class="pc-icon">🚕</div><div class="pc-cat">Такси / Careem</div><div class="pc-val" data-rub="500–1 500 ₽" data-usd="$5.5–$16.5" data-eur="€5–€15" data-local="20–60 AED">500–1 500 ₽</div><div class="pc-note">По городу</div></div>
+      <div class="price-card"><div class="pc-icon">🍺</div><div class="pc-cat">Пиво в баре</div><div class="pc-val" data-rub="1 200–2 500 ₽" data-usd="$13–$27" data-eur="€12–€25" data-local="50–100 AED">1 200–2 500 ₽</div><div class="pc-note">В лицензированных барах</div></div>
+      <div class="price-card"><div class="pc-icon">🛒</div><div class="pc-cat">Продукты / мес</div><div class="pc-val" data-rub="15–28К ₽" data-usd="$165–$308" data-eur="€152–€283" data-local="600–1 120 AED">15–28К ₽</div><div class="pc-note">Супермаркет Carrefour</div></div>
+      <div class="price-card"><div class="pc-icon">✈️</div><div class="pc-cat">Перелёт внутри ОАЭ</div><div class="pc-val" data-rub="2 000–5 000 ₽" data-usd="$22–$55" data-eur="€20–€50" data-local="80–200 AED">2 000–5 000 ₽</div><div class="pc-note">Дубай ↔ Абу-Даби автобус</div></div>
     </div>
   </div>
 
@@ -758,7 +754,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     </div>
     <div class="partner-block reveal">
       <div class="pb-header">
-        <div class="pb-title">Найти рейсы в Тайланд</div>
+        <div class="pb-title">Найти рейсы в ОАЭ</div>
         <div class="pb-badge">AVIASALES · KIWI</div>
       </div>
       <div class="pb-desc">Актуальные цены на билеты из вашего города — обновляются в реальном времени.</div>
@@ -843,64 +839,64 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">05</span><span class="sec-dash"></span>
       <h2 class="sec-title">Полезные <em>советы</em></h2>
-      <span class="sec-desc">8 вещей о которых никто не расскажет в турагентстве.</span>
+      <span class="sec-desc">8 вещей о которых надо знать до поездки в ОАЭ.</span>
     </div>
     <div class="tips-grid reveal">
-      <div class="tip-card"><span class="tip-num">01</span><div><div class="tip-title">TDAC — заполнить за 3 дня до вылета</div><div class="tip-text">С 1 мая 2025 года обязательная электронная карта прибытия для всех въезжающих. Сайт: tdac.immigration.go.th. Занимает 5 минут, бесплатно. Бумажные карточки TM6 больше не выдают. Без TDAC могут не посадить на самолёт.</div></div></div>
-      <div class="tip-card"><span class="tip-num">02</span><div><div class="tip-title">Страховка с лимитом от $50 000</div><div class="tip-text">Медицина платная и дорогая. Обычный лимит $30 000 заканчивается за неделю при серьёзной травме. Посольство РФ рекомендует $100 000. Проверьте что страховка покрывает мотоцикл — большинство дешёвых полисов это исключают.</div></div></div>
-      <div class="tip-card"><span class="tip-num">03</span><div><div class="tip-title">Везите доллары, не рубли</div><div class="tip-text">Рубли меняют с потерей до 25%. Доллары и евро — везде по нормальному курсу. Лучшие обменники: SuperRich (зелёный, не оранжевый), Vasu Exchange в торговых центрах. Снимайте в банкоматах крупными суммами — комиссия 220 бат за операцию.</div></div></div>
-      <div class="tip-card"><span class="tip-num">04</span><div><div class="tip-title">Сезоны важны и различаются по регионам</div><div class="tip-text">Пхукет (запад): лучшее время ноябрь–апрель, дожди май–октябрь. Паттайя и Самуи (восток): сухой сезон наоборот — апрель–октябрь. В сезон дождей отели дешевле на 30–50%, но бывают ливни.</div></div></div>
-      <div class="tip-card"><span class="tip-num">05</span><div><div class="tip-title">Байк — только с правами и в шлеме</div><div class="tip-text">Без прав категории А вы не застрахованы при ДТП. Полиция периодически проводит рейды особенно на Пхукете. Штраф — 500 бат, но при ДТП без прав все расходы на лечение ложатся на вас лично.</div></div></div>
-      <div class="tip-card"><span class="tip-num">06</span><div><div class="tip-title">Дресс-код в храмах</div><div class="tip-text">Закрытые плечи и колени обязательны в любом буддийском храме. У входа в крупные храмы (Большой Дворец, Ват Пхо) всегда есть прокат саронгов. В шортах или майке не пустят.</div></div></div>
-      <div class="tip-card"><span class="tip-num">07</span><div><div class="tip-title">Приложения которые нужны</div><div class="tip-text">Grab (такси, еда), Bolt (альтернатива Grab), Google Maps, Bangkok MRT/BTS (расписание метро), XE Currency (курс валют), Airbnb/Booking. В Grab российскую карту не привяжешь — платите наличными.</div></div></div>
-      <div class="tip-card"><span class="tip-num">08</span><div><div class="tip-title">Не превышайте 179 дней</div><div class="tip-text">180+ дней в году = налоговое резидентство Тайланда + обязанность декларировать иностранные доходы. Для зимовщиков оптимально: приехать в ноябре, уехать до конца апреля — это ~180 дней, можно чуть сократить.</div></div></div>
+      <div class="tip-card"><span class="tip-num">01</span><div><div class="tip-title">Российские карты не работают — только иностранные</div><div class="tip-text">МИР, российские Visa/MC и AmEx полностью заблокированы. UnionPay работает частично — нестабильно. Берите карты казахстанского, армянского или белорусского банка, либо наличные доллары/евро для обмена на дирхамы.</div></div></div>
+      <div class="tip-card"><span class="tip-num">02</span><div><div class="tip-title">90 дней без выезда — без продления</div><div class="tip-text">С декабря 2022 года продление туристического статуса без выезда из ОАЭ отменено. После 90 дней нужно покинуть страну. Для нового 90-дневного периода нужно дождаться, пока с первого въезда пройдёт 180 дней.</div></div></div>
+      <div class="tip-card"><span class="tip-num">03</span><div><div class="tip-title">Алкоголь — только в лицензированных местах</div><div class="tip-text">Алкоголь продаётся только в лицензированных барах, ресторанах и специализированных магазинах (MMI, African+Eastern). На улице пить нельзя — штраф. В Шардже алкоголь запрещён полностью.</div></div></div>
+      <div class="tip-card"><span class="tip-num">04</span><div><div class="tip-title">Careem и Uber — такси в городах</div><div class="tip-text">Careem (локальный) и Uber работают отлично. Такси с улицы — официальные жёлтые кэбы RTA в Дубае. К Careem и Uber российские карты не привязать — платите наличными или иностранной картой.</div></div></div>
+      <div class="tip-card"><span class="tip-num">05</span><div><div class="tip-title">Одежда и поведение — уважайте культуру</div><div class="tip-text">В торговых центрах и публичных местах — закрытая одежда. На пляже — купальники приемлемы. Демонстрация чувств на публике — штраф. В Рамадан: не есть и не пить публично в светлое время суток.</div></div></div>
+      <div class="tip-card"><span class="tip-num">06</span><div><div class="tip-title">Жара — главный фактор</div><div class="tip-text">Июнь–сентябрь: +40–48°, влажность до 90% у побережья. Всё время в помещениях с кондиционером. Лучший сезон: ноябрь–март (+20–28°). На улице практически невозможно находиться летом с 11 до 17.</div></div></div>
+      <div class="tip-card"><span class="tip-num">07</span><div><div class="tip-title">VPN — установите до приезда</div><div class="tip-text">В ОАЭ заблокированы VoIP-звонки (WhatsApp, Skype, FaceTime голосовые). Telegram работает. Некоторые VPN тоже заблокированы — установите и протестируйте дома. Использование VPN формально в серой зоне, но никто не преследует.</div></div></div>
+      <div class="tip-card"><span class="tip-num">08</span><div><div class="tip-title">Шарджа — дешевле Дубая на 40%</div><div class="tip-text">Шарджа — соседний эмират в 30 минутах от Дубая. Аренда и жизнь значительно дешевле. Многие живут в Шардже и работают в Дубае. Минус: строже по алкоголю и одежде.</div></div></div>
     </div>
   </div>
 
-<!-- 06 BUDGET -->
+  <!-- 06 BUDGET -->
   <div id="budget">
     <div class="sec-header reveal">
       <span class="sec-num">06</span><span class="sec-dash"></span>
       <h2 class="sec-title">Реальный <em>бюджет</em> на месяц</h2>
-      <span class="sec-desc">Три уровня жизни — от эконом до комфорт+.</span>
+      <span class="sec-desc">Один из самых дорогих городов мира. Май 2026.</span>
     </div>
     <div class="budget-grid reveal">
       <div class="budget-card">
         <div class="bc-label">≈ Эконом</div>
-        <div class="bc-total">~50 000 ₽</div>
-        <div class="bc-usd">$600 · 16 000 ฿</div>
-        <div class="bc-row"><span>Жильё (комн./хостел)</span><span>8–12K ฿</span></div>
-        <div class="bc-row"><span>Еда (рынки, стрит-фуд)</span><span>5–7K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (авт./байк)</span><span>2–3K ฿</span></div>
-        <div class="bc-row"><span>Связь (SIM)</span><span>300–500 ฿</span></div>
-        <div class="bc-row"><span>Развлечения</span><span>1–2K ฿</span></div>
-        <div class="bc-note">Чиангмай, без алкоголя, своя готовка</div>
+        <div class="bc-total">~80 000 ₽</div>
+        <div class="bc-usd">$879 · 3 200 AED</div>
+        <div class="bc-row"><span>Жильё (комната/шеринг)</span><span>1 000–1 500 AED</span></div>
+        <div class="bc-row"><span>Еда (готовка + дешёвые кафе)</span><span>600–900 AED</span></div>
+        <div class="bc-row"><span>Транспорт (метро)</span><span>200–300 AED</span></div>
+        <div class="bc-row"><span>Связь (SIM)</span><span>100–150 AED</span></div>
+        <div class="bc-row"><span>Прочее</span><span>300–500 AED</span></div>
+        <div class="bc-note">Шарджа или Дейра, комната в шеринге</div>
       </div>
       <div class="budget-card highlight">
         <div class="bc-label">★ Комфорт</div>
-        <div class="bc-total">~100 000 ₽</div>
-        <div class="bc-usd">$1 100 · 33 000 ฿</div>
-        <div class="bc-row"><span>Жильё (студия/апарт)</span><span>15–22K ฿</span></div>
-        <div class="bc-row"><span>Еда (кафе + готовка)</span><span>8–12K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (Grab + байк)</span><span>3–5K ฿</span></div>
-        <div class="bc-row"><span>Коворкинг</span><span>2.5–4K ฿</span></div>
-        <div class="bc-row"><span>Развлечения + misc</span><span>3–5K ฿</span></div>
-        <div class="bc-note">Бангкок или Чиангмай, средний образ жизни</div>
+        <div class="bc-total">~160 000 ₽</div>
+        <div class="bc-usd">$1 758 · 6 400 AED</div>
+        <div class="bc-row"><span>Жильё (студия)</span><span>3 000–4 500 AED</span></div>
+        <div class="bc-row"><span>Еда (рестораны + готовка)</span><span>1 200–1 800 AED</span></div>
+        <div class="bc-row"><span>Транспорт (метро + Careem)</span><span>500–800 AED</span></div>
+        <div class="bc-row"><span>Связь + интернет</span><span>200–300 AED</span></div>
+        <div class="bc-row"><span>Развлечения</span><span>500–800 AED</span></div>
+        <div class="bc-note">Дубай (Джумейра Лейк Тауэрс или Бур Дубай)</div>
       </div>
       <div class="budget-card warm">
         <div class="bc-label">★★ Комфорт+</div>
-        <div class="bc-total">~180 000 ₽</div>
-        <div class="bc-usd">$2 000 · 60 000 ฿</div>
-        <div class="bc-row"><span>Жильё (1 комн. у моря)</span><span>25–50K ฿</span></div>
-        <div class="bc-row"><span>Еда (рестораны)</span><span>12–18K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (авто/Grab)</span><span>5–10K ฿</span></div>
-        <div class="bc-row"><span>Спорт, здоровье, спа</span><span>3–6K ฿</span></div>
-        <div class="bc-row"><span>Экскурсии, поездки</span><span>5–10K ฿</span></div>
-        <div class="bc-note">Пхукет или Самуи, активный образ жизни</div>
+        <div class="bc-total">~330 000 ₽</div>
+        <div class="bc-usd">$3 626 · 13 200 AED</div>
+        <div class="bc-row"><span>Жильё (1 комн. центр)</span><span>7 000–10 000 AED</span></div>
+        <div class="bc-row"><span>Рестораны, доставка</span><span>2 500–4 000 AED</span></div>
+        <div class="bc-row"><span>Авто или такси</span><span>1 500–2 500 AED</span></div>
+        <div class="bc-row"><span>Развлечения, клубы</span><span>2 000–3 000 AED</span></div>
+        <div class="bc-row"><span>Прочее</span><span>1 000–1 500 AED</span></div>
+        <div class="bc-note">Dubai Marina или Downtown Dubai</div>
       </div>
     </div>
     <div class="alert amber reveal" style="margin-top:12px">
-      <strong>Актуальный курс (апрель 2026):</strong> 1 бат ≈ 2.43 ₽. Обменники в торговых центрах дают курс лучше аэропортового на 15–20%. Рубли меняют по невыгодному курсу — лучше везти доллары или евро.
+      <strong>Актуальный курс (май 2026):</strong> 1 AED ≈ 24.8 ₽. МИР и российские Visa/MC не работают. Берите карты иностранных банков или наличные доллары/евро.
     </div>
   </div>
 
@@ -908,23 +904,14 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
   <div id="money">
     <div class="sec-header reveal">
       <span class="sec-num">07</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Деньги, <em>карты</em> и банки</h2>
-      <span class="sec-desc">Как платить в Тайланде россиянам в 2026 году — без фантазий.</span>
+      <h2 class="sec-title">Деньги <em>и платежи</em></h2>
+      <span class="sec-desc">Российские карты не работают. Только иностранные или наличные.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Как платить в Тайланде россиянам</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">UnionPay (лучший вариант)</div><div class="info-row-text">Карты UnionPay от российских банков (Газпромбанк, Россельхозбанк, МКБ) работают в большинстве банкоматов — SCB, Bangkok Bank, Kasikorn, LH Bank. Снятие: комиссия 220 бат (~540 ₽) — снимайте сразу крупную сумму.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Наличные доллары / евро</div><div class="info-row-text">Самый надёжный способ. Меняйте в обменниках торговых центров (SuperRich, Vasu, Max Money) — курс лучше аэропортового на 10–20%. Никогда не меняйте в аэропорту.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Рубли — не везите</div><div class="info-row-text">Обменять рубли на баты можно, но теряешь до 25% на курсе. Везите доллары или евро — это стандартная валюта для обмена.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💡</span><div><div class="info-row-title">Переводы из России</div><div class="info-row-text">SWIFT через нейтральные банки (армянские, казахские, грузинские), криптовалюта (USDT → обменник), Western Union через Казахстан. Прямые SWIFT из РФ работают только через незаблокированные банки.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Открытие банковского счёта</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px">Нужен для долгосрочного проживания — платить аренду, коммуналку, получать переводы. Открыть счёт с безвизовым штампом сложно, большинство банков требует долгосрочную визу.</div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Bangkok Bank <span style="color:var(--amber);font-size:11px;margin-left:6px">ЛОЯЛЬНЫЙ</span></div><div class="info-row-text">Единственный банк который <strong>иногда</strong> открывает счёт без долгосрочной визы — зависит от отделения. Минимальный депозит — 500 бат.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Kasikorn Bank (KBank) <span style="color:var(--green);font-size:11px;margin-left:6px">НАДЁЖНО</span></div><div class="info-row-text">Требует долгосрочную визу + депозит ~$400 (возвращают). Удобное мобильное приложение.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Krungthai Bank</div><div class="info-row-text">Государственный банк, разветвлённая сеть банкоматов. Требует паспорт, иногда адрес в Тайланде.</div></div></div>
-      <div class="alert amber" style="margin-top:12px"><strong>Совет:</strong> если в одном отделении отказали — идите в другое. Возьмите: загранпаспорт, деньги на депозит, тайскую SIM-карту и контракт аренды.</div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Российские карты полностью заблокированы</div><div class="info-row-text">МИР, российские Visa/MC — нигде не принимаются. UnionPay работает частично и нестабильно — зависит от банка и терминала. Надёжные варианты: карты иностранных банков (Казахстан, Армения, Беларусь) или наличные.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💵</span><div><div class="info-row-title">Наличные доллары или евро</div><div class="info-row-text">Обменники в ОАЭ дают хороший курс — лучше банков. Gold Souk в Дубае и обменники в торговых центрах — проверенные места. Дирхам привязан к доллару: 1 USD = 3.67 AED фиксированно.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">💳</span><div><div class="info-row-title">Карты иностранных банков</div><div class="info-row-text">Visa/Mastercard казахстанских (Kaspi, Halyk), армянских и белорусских банков работают отлично. Бесконтактная оплата принимается везде. Оформите заранее — без неё в ОАЭ сложно.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏧</span><div><div class="info-row-title">Банкоматы</div><div class="info-row-text">Emirates NBD, ENBD, FAB принимают иностранные Visa/Mastercard. Комиссия: 15–25 AED за операцию. Банкоматы в каждом торговом центре и метростанции.</div></div></div>
     </div>
   </div>
 
@@ -932,41 +919,29 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
   <div id="taxes">
     <div class="sec-header reveal">
       <span class="sec-num">08</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Налоговое <em>резидентство</em></h2>
-      <span class="sec-desc">Одна из важнейших тем для долгосрочников.</span>
+      <h2 class="sec-title">Налоги <em>и резидентство</em></h2>
+      <span class="sec-desc">Нет подоходного налога. Но цены компенсируют это сполна.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">С 2024 года правила изменились — теперь они касаются практически всех кто проводит в стране больше полугода.</div>
-      <div class="alert amber"><strong>⚠️ 180 дней = налоговый резидент</strong><br>Если провёл в Тайланде 180+ дней в календарном году — ты налоговый резидент. Счётчик обнуляется 1 января каждого года.</div>
-      <div class="info-block-title" style="margin-top:16px">Что изменилось с 2024 года</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px">До 2024: иностранный доход облагался налогом только если переводился в тот же год. После 2024: любой иностранный доход, переведённый в Тайланд, потенциально облагается налогом. Льготный период на 2 года для доходов 2024–2025.</div>
-      <div class="info-block-title">Ставки подоходного налога (PIT)</div>
-      <table class="tax-table">
-        <tr><td>до 150 000 ฿/год</td><td>0%</td></tr>
-        <tr><td>150 001 — 300 000 ฿</td><td>5%</td></tr>
-        <tr><td>300 001 — 500 000 ฿</td><td>10%</td></tr>
-        <tr><td>500 001 — 750 000 ฿</td><td>15%</td></tr>
-        <tr><td>свыше 5 000 000 ฿</td><td>35%</td></tr>
-      </table>
-      <div class="alert green" style="margin-top:14px"><strong>✅ Если ты нерезидент:</strong> проводишь меньше 180 дней — тайские налоги тебя не касаются. Оптимальная стратегия для зимовщиков — не превышать 179 дней.</div>
-      <div style="margin-top:12px;font-size:11.5px;color:var(--faint);font-style:italic">Налоговое законодательство меняется. Перед принятием решений проконсультируйтесь с налоговым консультантом.</div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Нет подоходного налога для физлиц</div><div class="info-row-text">ОАЭ не облагают налогом личные доходы физических лиц. Это привлекает состоятельных резидентов со всего мира. Корпоративный налог с 2023 года — 9% для компаний с прибылью выше 375 000 AED.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏢</span><div><div class="info-row-title">Фриланс-виза и Freezone компании</div><div class="info-row-text">Фриланс-виза (Freelance Permit): через несколько фризон, ~$1 500–3 000/год. Компания в Freezone: нулевой налог, 100% иностранное владение, от ~$3 000/год. Популярны у IT и удалёнщиков.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏠</span><div><div class="info-row-title">Golden Visa через недвижимость</div><div class="info-row-text">Golden Visa на 10 лет — при покупке недвижимости от 2 млн AED (~$545 000). Даёт право жить и работать без привязки к работодателю, спонсировать членов семьи.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">НДС 5%</div><div class="info-row-text">С 2018 года в ОАЭ действует НДС 5% — один из самых низких в мире. Применяется к большинству товаров и услуг. Туристы могут получить возврат VAT при выезде через аэропорт.</div></div></div>
     </div>
   </div>
 
-    <!-- 09 TRANSPORT -->
+  <!-- 09 TRANSPORT -->
   <div id="transport">
     <div class="sec-header reveal">
       <span class="sec-num">09</span><span class="sec-dash"></span>
       <h2 class="sec-title">Транс<em>порт</em></h2>
-      <span class="sec-desc">От метро до байка — как передвигаться по стране.</span>
+      <span class="sec-desc">Метро в Дубае. Careem и Uber. Автобусы между эмиратами.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-row"><span class="info-row-icon">🚇</span><div><div class="info-row-title">Метро в Бангкоке — BTS Skytrain + MRT</div><div class="info-row-text">Самый быстрый способ передвижения по столице. BTS (надземное) + MRT (подземное) вместе покрывают большинство туристических и деловых районов. Стоимость: 15–60 бат в зависимости от расстояния. Дневной проездной BTS — 140 бат. Работает 06:00–00:00. Пробки в Бангкоке жуткие — в часы пик метро экономит 30–60 минут.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Grab — главное приложение такси</div><div class="info-row-text">Аналог Яндекс.Такси для ЮВА. Фиксированная цена до посадки. GrabCar по центру Бангкока — 80–120 бат, из аэропорта Суварнабхуми в центр — 350–450 бат. GrabBike (мотоцикл) — 40–70 бат по городу.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Привязать российскую карту к Grab нельзя</div><div class="info-row-text">Даже UnionPay. Платите наличными или попросите водителя принять перевод.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🛵</span><div><div class="info-row-title">Аренда байка — главный транспорт на островах</div><div class="info-row-text">На Пхукете, Самуи, Краби и в Паттайе байк — основной транспорт. Аренда: 250–350 бат в день, 5 000–8 000 бат в месяц. Нужны права категории А. Без прав — технически незаконно и не покрывается страховкой при ДТП. Лёгкое падение с байка обходится в $3 000–7 000 без страховки. Всегда надевайте шлем.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Перелёты внутри страны</div><div class="info-row-text">AirAsia и Nok Air — основные лоукостеры. Бангкок→Пхукет: от 800–2 000 бат при заблаговременной покупке. Бангкок→Чиангмай: от 700 бат. Паром Сурат Тани→Самуи: ~300 бат + автобус из Бангкока ~500 бат. Часто паром + автобус дешевле прямого рейса на Самуи (Bangkok Airways там монополист и цены высокие).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🚍</span><div><div class="info-row-title">Автобусы и поезда между городами</div><div class="info-row-text">Бангкок→Паттайя: автобус от Восточного автовокзала, ~130 бат, 2–3 часа. Бангкок→Чиангмай: поезд 2-й класс с кондиционером — 331–531 бат, ночной вагон со спальными местами. Ночной поезд удобен — экономит на отеле и ночной перелёт не нужен.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">🚇</span><div><div class="info-row-title">Дубайское метро</div><div class="info-row-text">2 линии (Red и Green), 53 станции. Покрывает от аэропорта DXB до Mall of Emirates и Dubai Marina. Карта Nol: разовый проезд 3–7 AED. Чисто, кондиционировано, работает 5:30–24:00 (пятница до 01:00).</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Careem и Uber</div><div class="info-row-text">Careem — локальный хаб для такси и доставки. Uber тоже работает. Нельзя привязать российские карты — платите наличными или иностранной картой. Поездка аэропорт↔центр: 50–80 AED.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚌</span><div><div class="info-row-title">Между эмиратами</div><div class="info-row-text">Дубай↔Абу-Даби: автобус 2 часа, 25 AED. Дубай↔Шарджа: 20–40 мин, 10–15 AED. Дубай↔Рас-эль-Хайма: ~2 часа, 25 AED. Между эмиратами нет метро — только автобус или такси.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Авиахаб</div><div class="info-row-text">DXB (Дубай) — один из крупнейших аэропортов мира. Прямые рейсы: Flydubai, Emirates из Москвы, Airbus, Air Arabia. AUH (Абу-Даби) — база Etihad Airways.</div></div></div>
     </div>
   </div>
 
@@ -975,31 +950,25 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">10</span><span class="sec-dash"></span>
       <h2 class="sec-title">Интернет <em>и связь</em></h2>
-      <span class="sec-desc">4G/5G везде в городах. Три способа оставаться онлайн.</span>
+      <span class="sec-desc">Отличные скорости. Но VoIP заблокирован — нужен VPN.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">eSIM — лучший вариант <span style="background:var(--green-l);color:var(--green);font-size:10px;padding:2px 8px;border-radius:100px;margin-left:6px">Рекомендуем</span></div><div class="info-row-text">Покупаешь онлайн до вылета (Yesim, Airalo), активируешь по QR-коду — интернет работает с момента приземления. Yesim принимает карту МИР. Цена: ~$7–15 на 30 дней безлимит.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💳</span><div><div class="info-row-title">Местная SIM-карта</div><div class="info-row-text">Покупается в аэропорту или 7-Eleven. Нужен паспорт.<br><br>
-        <strong>AIS</strong> — лучшее покрытие 4G/5G · от 299 ฿/30 дней<br>
-        <strong>True-dtac</strong> — AIS + DTAC объединились · от 199 ฿/30 дней<br><br>
-        ⚠️ True-dtac SIM через 60–90 дней может отключиться — нужно продлевать через приложение.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">Домашний интернет (для долгосрочных)</div><div class="info-row-text">Проводной интернет FTTB от 580 бат/мес (~1 400 ₽). Коворкинги в Чиангмае: 80–150 бат/день, скорость 100–200 Мбит/с. Бангкок: крупные коворкинги типа WeWork — от 400 бат/день.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">🔒</span><div><div class="info-row-title">VoIP заблокирован — WhatsApp звонки не работают</div><div class="info-row-text">В ОАЭ заблокированы VoIP-звонки: WhatsApp, FaceTime, Skype, Viber голосовые. Текстовые сообщения работают. Telegram работает полностью. VPN помогает — установите до приезда.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">Местные SIM-карты</div><div class="info-row-text"><strong>Etisalat (e&)</strong> — крупнейший оператор, отличное покрытие, пакет 10 ГБ от 100–150 AED/мес.<br><strong>du</strong> — второй оператор, чуть дешевле, пакет 10 ГБ от 80–120 AED/мес.<br>Покупка в аэропорту или в магазинах оператора. Паспорт обязателен.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">📶</span><div><div class="info-row-title">eSIM — купи до вылета</div><div class="info-row-text">Yesim или Airalo — активация по QR, интернет с первой минуты. Yesim принимает МИР. ~$8–12 на 30 дней. Но VoIP всё равно будет заблокирован — нужен VPN.</div></div></div>
     </div>
     <div class="partner-block reveal">
-      <div class="pb-header">
-        <div class="pb-title">eSIM для Тайланда</div>
-        <div class="pb-badge">Yesim · Airalo</div>
+      <div class="pb-header"><div class="pb-title">eSIM для ОАЭ</div><div class="pb-badge">Yesim · Airalo</div></div>
+      <div class="pb-desc">Купи до вылета — интернет с первой минуты. Yesim принимает МИР.</div>
+      <div class="esim-tabs">
+        <button class="esim-tab active" onclick="switchEsim('uae','yesim',this)">Yesim</button>
+        <button class="esim-tab" onclick="switchEsim('uae','airalo',this)">Airalo</button>
       </div>
-      <div class="pb-desc">Купи до вылета — интернет заработает сразу после приземления. Yesim принимает карту МИР.</div>
-      <div class="esim-tabs" style="margin-top:16px">
-        <button class="esim-tab active" onclick="switchEsim('thailand','yesim',this)">Yesim — 18% кэшбэк</button>
-        <button class="esim-tab" onclick="switchEsim('thailand','airalo',this)">Airalo</button>
+      <div id="esim-yesim-uae" class="esim-pane active">
+        <a href="https://yesim.app/?sub_id=uae" target="_blank" rel="noopener" class="pb-btn">Купить eSIM Yesim →</a>
       </div>
-      <div id="esim-yesim-thailand" class="esim-pane active" style="margin-top:12px">
-        <button class="pb-btn" onclick="window.open('https://yesim.tpm.li/QvCwa9aD?erid=2Vtzqx3rbkr&sub_id=uae','_blank')">Купить eSIM на Yesim →</button>
-      </div>
-      <div id="esim-airalo-thailand" class="esim-pane" style="margin-top:12px">
-        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&color_button=%233fbb89&color_focused=%233fbb89&secondary=%23FAF8F2&dark=%2311100f&light=%23FFFFFFff&special=%233fbb89&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
+      <div id="esim-airalo-uae" class="esim-pane" style="display:none">
+        <a href="https://www.airalo.com/uae-esim" target="_blank" rel="noopener" class="pb-btn">Купить eSIM Airalo →</a>
       </div>
     </div>
   </div>
@@ -1009,29 +978,17 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">11</span><span class="sec-dash"></span>
       <h2 class="sec-title">Меди<em>цина</em></h2>
-      <span class="sec-desc">Страховка обязательна. Без неё одна госпитализация — сотни тысяч рублей.</span>
+      <span class="sec-desc">Очень высокий уровень. Очень дорого без страховки.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">Медицина в Тайланде для иностранцев — платная и одна из самых дорогих в ЮВА. Качество в частных госпиталях высокое — часто лучше, чем в России. Без страховки одна госпитализация может стоить сотни тысяч рублей.</div>
-      <div class="info-block-title">Реальные цены без страховки</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
-        <div class="price-card"><div class="pc-cat">Приём врача (частная клиника)</div><div class="pc-val">800–2 000 ฿</div></div>
-        <div class="price-card"><div class="pc-cat">Сутки в палате госпиталя</div><div class="pc-val">3 000–8 000 ฿</div></div>
-        <div class="price-card"><div class="pc-cat">Сутки в реанимации</div><div class="pc-val">от $2 000–3 000</div></div>
-        <div class="price-card"><div class="pc-cat">Лёгкое ДТП на байке</div><div class="pc-val">$3 000–7 000</div></div>
-      </div>
-      <div class="info-block-title">Лучшие частные госпитали</div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Bumrungrad (Бангкок)</div><div class="info-row-text">Международный уровень, русскоязычные врачи, принимают российские страховки. Топовый выбор для сложных случаев.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Bangkok Hospital (сеть по всей стране)</div><div class="info-row-text">Разветвлённая сеть на Пхукете, Самуи, Паттайе, Чиангмае. Надёжно везде.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Samitivej</div><div class="info-row-text">Сильная педиатрия, популярен у семей с детьми.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Мировой уровень медицины</div><div class="info-row-text">Cleveland Clinic Abu Dhabi, American Hospital Dubai, Mediclinic — международный класс. Врачи из разных стран, персонал говорит по-английски и часто по-русски.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Без страховки — очень дорого</div><div class="info-row-text">Приём у специалиста: 300–800 AED (~7 500–20 000 ₽). Госпитализация: от 2 000 AED/день. Cherehapa — оформите страховку до вылета.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💊</span><div><div class="info-row-title">Аптеки</div><div class="info-row-text">Aster Pharmacy, Life Pharmacy, Boots — везде. Большинство лекарств доступны, часть строго по рецепту. Некоторые препараты (например, некоторые болеутоляющие) запрещены к ввозу — уточните заранее.</div></div></div>
     </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Что нужно знать про страховку</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Минимум $100 000 покрытия</div><div class="info-row-text">Посольство РФ рекомендует именно этот лимит. Стандартный $30 000 может закончиться за неделю при серьёзной травме. Cherehapa позволяет сравнить 15+ компаний и выбрать с покрытием $50 000–100 000 за разумные деньги (~$40–80/месяц).</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Страховка должна покрывать мотоцикл</div><div class="info-row-text">Многие дешёвые полисы исключают занятия на мотоцикле. Проверьте этот пункт отдельно перед покупкой.</div></div></div>
-      <div style="margin-top:14px">
-        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&countryGroups=all-world&medicine=30000&powered_by=true&promo_id=2458&campaign_id=24" charset="utf-8"></script>
-      </div>
+    <div class="partner-block reveal">
+      <div class="pb-header"><div class="pb-title">Страховка для ОАЭ</div><div class="pb-badge">Cherehapa</div></div>
+      <div class="pb-desc">Оформите онлайн за 5 минут. Покрытие от $30 000.</div>
+      <a href="https://cherehapa.ru/?marker=271684" target="_blank" rel="noopener" class="pb-btn">Оформить страховку →</a>
     </div>
   </div>
 
@@ -1040,84 +997,26 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">12</span><span class="sec-dash"></span>
       <h2 class="sec-title">Аренда <em>жилья</em></h2>
-      <span class="sec-desc">Реальный алгоритм без рекламы агентств.</span>
+      <span class="sec-desc">Дорого. Шарджа и Дейра — бюджетные альтернативы Дубаю.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">Самый больной вопрос для всех кто едет надолго. Здесь — не реклама агентств, а реальный алгоритм как снять квартиру без переплаты и не потерять депозит.</div>
-      <div class="info-block-title">Где искать жильё</div>
-      <div class="info-row green"><span class="info-row-icon">🏆</span><div><div class="info-row-title">DDproperty.com <span style="background:var(--green-l);color:var(--green);font-size:10px;padding:2px 8px;border-radius:100px;margin-left:6px">Лучший</span></div><div class="info-row-text">Главный сайт аренды в Тайланде. Большая база, фото, карта, цены без посредников. Есть фильтр по районам, бюджету, типу жилья. Много объявлений от собственников напрямую.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">FazWaz.ru / FazWaz.com</div><div class="info-row-text">Русскоязычный интерфейс. Большая база по всем регионам Тайланда. Есть агентская поддержка на русском языке — полезно если не хочешь разбираться самостоятельно.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">👥</span><div><div class="info-row-title">Facebook-группы</div><div class="info-row-text">«Аренда Пхукет русские», «Bangkok expats housing», «Chiang Mai rentals». Там часто сдают сами хозяева без комиссии агентства. Можно найти жильё на 20–30% дешевле чем на сайтах.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💬</span><div><div class="info-row-title">Telegram-чаты русскоязычных</div><div class="info-row-text">«Русские на Пхукете», «Бангкок наши» и аналогичные — там регулярно пишут «сдам/ищу жильё». Часто самые живые предложения именно там.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Airbnb / Booking — для первых 2–4 недель</div><div class="info-row-text">Дороже чем долгосрочная аренда, но удобно на старте пока ищешь постоянное жильё. Краткосрочная аренда стоит в 2–3 раза дороже долгосрочного контракта за то же место.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Кондо vs апартаменты — в чём разница</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px">
-        <div class="budget-card">
-          <div class="bc-label">Кондоминиум (кондо)</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.6">Жилой комплекс с бассейном, фитнесом, охраной. Каждая квартира — отдельный собственник. Лучше отделка, выше цена. Стандарт для экспатов.</div>
-        </div>
-        <div class="budget-card">
-          <div class="bc-label">Апартаменты</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.6">Один владелец — весь дом. Проще, дешевле, меньше инфраструктуры. Подходит для бюджетного варианта. Часто без бассейна.</div>
-        </div>
-      </div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Алгоритм аренды — шаг за шагом</div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">1</span><div><div class="info-row-title">Первые 2 недели живи в отеле/Airbnb</div><div class="info-row-text">Не торопись снимать долгосрочно до приезда. Посмотри район вживую, почувствуй расстояния.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">2</span><div><div class="info-row-title">Найди 5–10 вариантов, запроси цену за 3, 6 и 12 месяцев</div><div class="info-row-text">Долгосрочный контракт обычно на 20–30% дешевле.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">3</span><div><div class="info-row-title">Осмотри лично — не бронируй по фотографиям</div><div class="info-row-text">Проверь: работает ли кондиционер, давление воды, скорость интернета (попроси включить Wi-Fi).</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">4</span><div><div class="info-row-title">Уточни что включено в цену</div><div class="info-row-text">Электричество, вода, интернет, уборка. Электричество в Тайланде дорогое (5–6 бат/кВт·ч), кондиционер добавляет 1 500–3 000 бат/мес к счёту.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">5</span><div><div class="info-row-title">Подпиши договор на английском</div><div class="info-row-text">Стандарт: депозит 1–2 месяца + первый месяц вперёд. В договоре: условия возврата депозита, кто платит за ремонт, условия досрочного расторжения.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">6</span><div><div class="info-row-title">Сфотографируй всё при заезде</div><div class="info-row-text">Каждую царапину, каждый дефект. Отправь фото арендодателю в мессенджер — это твоя защита при выезде когда будут говорить «это ты сломал».</div></div></div>
-      <div class="alert amber" style="margin-top:12px">
-        <strong>⚠️ Типичные ошибки которые стоят денег:</strong><br>
-        🚫 Платить без договора — самый прямой путь к потере депозита.<br>
-        🚫 Не проверять тариф на электричество — некоторые выставляют 8–10 бат/кВт·ч вместо государственных 5–6 бат.<br>
-        🚫 Снимать на Пхукете в сезон дождей долгосрочно — если уедешь раньше срока, депозит не вернут.<br>
-        🚫 Переводить предоплату незнакомым людям без договора — мошенничество с арендой существует.
-      </div>
-    </div>
-    <div class="partner-block reveal" style="margin-top:12px">
-      <div class="pb-header">
-        <div class="pb-title">Найти жильё на Островок</div>
-        <div class="pb-badge">2.9 млн вариантов</div>
-      </div>
-      <div class="pb-desc">Отели, хостелы и апартаменты в Тайланде — для первых недель пока ищешь долгосрочную аренду.</div>
-      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%233fbb89&color_button=%233fbb89&color_icons=%233fbb89&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
+      <div class="info-row green"><span class="info-row-icon">🔍</span><div><div class="info-row-title">Где искать</div><div class="info-row-text"><strong>Bayut.com</strong> — главный сайт недвижимости ОАЭ.<br><strong>Property Finder</strong> — крупный агрегатор.<br><strong>Dubizzle</strong> — объявления от частных лиц.<br><strong>Facebook Groups</strong> «Русские в Дубае», «Dubai Expats».</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💰</span><div><div class="info-row-title">Цены по районам Дубая</div><div class="info-row-text"><strong>Downtown / Dubai Marina:</strong> 5 000–12 000 AED/мес студия (~125–300К ₽).<br><strong>JLT (Jumeirah Lake Towers):</strong> 3 500–7 000 AED/мес — дешевле центра.<br><strong>Дейра / Бур Дубай:</strong> 2 000–4 000 AED/мес — старый город, самый бюджетный.<br><strong>Шарджа:</strong> 1 500–3 000 AED/мес — в 30 мин от Дубая.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Аренда обычно годовая</div><div class="info-row-text">Традиционно в ОАЭ аренда оплачивается чеками на год вперёд (1–4 чека). Краткосрочная аренда дороже. Airbnb работает, но часть лендлордов сдаёт только годовые контракты.</div></div></div>
     </div>
   </div>
 
-<!-- 13 VISARUN -->
+  <!-- 13 VISARUN -->
   <div id="visarun">
     <div class="sec-header reveal">
       <span class="sec-num">13</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Визаран <em>и бордерран</em></h2>
-      <span class="sec-desc">Актуальные правила 2026.</span>
-    </div>
-    <div class="alert amber reveal"><strong>Важно:</strong> правила ужесточились с ноября 2025 года. Тайская иммиграция всерьёз взялась за тех кто живёт годами по штампам. Читай внимательно.</div>
-
-    <div class="info-block reveal" style="margin-top:12px">
-      <div class="info-block-title">Бордерран vs Визаран — в чём разница</div>
-      <div class="info-row green"><span class="info-row-icon">🚶</span><div><div class="info-row-title">Бордерран (border run)</div><div class="info-row-text">Выехал из Таиланда → побыл 5 минут в соседней стране → вернулся. Получаешь новый 60-дневный штамп. Виза не нужна. Занимает 1 день.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🛂</span><div><div class="info-row-title">Визаран (visa run)</div><div class="info-row-text">Едешь в соседнюю страну чтобы подать заявку на тайскую Tourist Visa (TR) в консульстве. Занимает 2–3 дня. Нужен при третьем въезде за год.</div></div></div>
-    </div>
-
-    <div class="info-block reveal">
-      <div class="info-block-title">Новые ограничения с ноября 2025</div>
-      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Лимит 2 бордеррана в год через наземную границу</div><div class="info-row-text">Через наземные КПП разрешено не более 2 безвизовых въездов в год. После двух — иммиграция может отказать во въезде.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Штамп с наземной границы — без продления</div><div class="info-row-text">Нельзя продлить на 30 дней в иммиграционном офисе. Сколько дали на границе — столько и живёшь.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Авиаперелёт — без ограничений</div><div class="info-row-text">Въезд через аэропорт не ограничен. Штамп можно продлить на 30 дней за 1 900 бат.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">👁</span><div><div class="info-row-title">Усиленные проверки при частых въездах</div><div class="info-row-text">Могут попросить обратный билет, подтверждение жилья и 20 000 бат наличными на человека.</div></div></div>
+      <h2 class="sec-title">Продление <em>пребывания</em></h2>
+      <span class="sec-desc">Выезд обязателен. Внутреннее продление отменено с 2022 года.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Популярные маршруты бордеррана</div>
-      <div class="info-row"><span class="info-row-icon">🇲🇾</span><div><div class="info-row-title">С Пхукета → Малайзия (Сатун/Хат Яй) · 6–8 ч</div><div class="info-row-text">Самый популярный маршрут с юга. Организованные туры от 1 500–2 500 бат. Малайзия лояльна к транзитным визитам. Граница Садао–Паданг Бесар надёжнее Пенанга.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇲🇾</span><div><div class="info-row-title">С Бангкока → Малайзия (Хат Яй) · ночной поезд</div><div class="info-row-text">Поезд из Бангкока, ночь в пути, выезд–въезд через Садао. Удобно совместить с небольшим путешествием по Малайзии.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇱🇦</span><div><div class="info-row-title">С Чиангмая → Лаос (Хуайсай/Вьентьян)</div><div class="info-row-text">Популярен для севера Тайланда. Поезд или автобус до Нонгкхая, паром через Меконг. Можно совместить с поездкой в Луанг Прабанг.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇰🇭</span><div><div class="info-row-title">С Бангкока → Камбоджа (Аранья-Пратет/Пойпет)</div><div class="info-row-text">3–4 часа от Бангкока. Самый близкий вариант. Ходит много организованных туров. Репутация пограничного посёлка Пойпет — специфическая.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Внутреннее продление отменено</div><div class="info-row-text">С декабря 2022 года продлить туристический статус без выезда нельзя. После 90 дней обязателен выезд за пределы ОАЭ. Переезд из Дубая в Абу-Даби не считается — нужен выезд в другую страну.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Популярные маршруты для выезда</div><div class="info-row-text"><strong>Оман (Маскат)</strong>: 1 час полёта, без визы для россиян 30 дней. Популярный визаран — выехать и вернуться.<br><strong>Бахрейн</strong>: 1 час, виза по прилёту.<br><strong>Катар (Доха)</strong>: 1.5 часа, без визы 90 дней.<br><strong>Грузия или Армения</strong>: через стыковку, если хочется на подольше.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📋</span><div><div class="info-row-title">Правило 90/180</div><div class="info-row-text">После выезда нужно дождаться, пока с первого въезда пройдёт 180 дней — только тогда открывается новый 90-дневный период. Иначе дни суммируются.</div></div></div>
     </div>
   </div>
 
@@ -1126,80 +1025,33 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">14</span><span class="sec-dash"></span>
       <h2 class="sec-title">Климат <em>и сезоны</em></h2>
-      <span class="sec-desc">Запад и восток живут в разных сезонах.</span>
+      <span class="sec-desc">Лучший сезон: ноябрь–март. Летом — жара +45°, почти невозможно.</span>
     </div>
-
-    <div class="alert green reveal" style="margin-bottom:20px">
-      Главное что нужно знать: западное и восточное побережья живут в <strong>разных сезонах</strong>. Когда на Пхукете дожди — на Самуи и Паттайе солнце, и наоборот.
-    </div>
-
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="reveal">
       <div class="info-block">
-        <div class="info-block-title">🌊 Пхукет, Краби, Ко Пхи-Пхи <span style="font-size:11px;color:var(--muted);font-weight:400">Андаманское море (запад)</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь — апрель. Пик: декабрь — январь.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май — октябрь. Морские экскурсии часто отменяют, острова Симилан закрыты.</div></div></div>
+        <div class="info-block-title">🌟 Лучший сезон (ноябрь–март)</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Идеальная погода</div><div class="info-row-text">+20–28°C, солнечно, низкая влажность. Море +22–25°. Все активности на открытом воздухе. Пик туристического сезона — декабрь–февраль.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Высокие цены</div><div class="info-row-text">Декабрь–январь — самые дорогие месяцы. Отели и аренда дороже на 50–100% vs летний период.</div></div></div>
       </div>
       <div class="info-block">
-        <div class="info-block-title">🏝 Самуи, Ко Панган, Ко Тао <span style="font-size:11px;color:var(--muted);font-weight:400">Сиамский залив (восток)</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Январь — сентябрь. Full Moon Party — раз в месяц.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Октябрь — декабрь. Когда на Пхукете дожди (июнь–октябрь) — здесь солнечно.</div></div></div>
+        <div class="info-block-title">🔥 Лето (июнь–сентябрь)</div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Экстремальная жара</div><div class="info-row-text">+40–48°C, влажность 80–95% у побережья. Ощущается как +55–60°. На улице практически невозможно. Всё время в кондиционированных помещениях.</div></div></div>
+        <div class="info-row green"><span class="info-row-icon">💡</span><div><div class="info-row-title">Плюс лета</div><div class="info-row-text">Цены минимальные — аренда, отели и рейсы дешевле на 30–50%. Меньше туристов, торговые центры свободны.</div></div></div>
       </div>
-      <div class="info-block">
-        <div class="info-block-title">🌆 Паттайя, Бангкок <span style="font-size:11px;color:var(--muted);font-weight:400">Центр и восток</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь — апрель. Паттайя — самый комфортный вариант летом: дожди короткие.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май — октябрь. Дожди обычно вечером, не весь день.</div></div></div>
-      </div>
-      <div class="info-block">
-        <div class="info-block-title">🏔 Чиангмай и север <span style="font-size:11px;color:var(--muted);font-weight:400">Горный регион</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Лучшее время</div><div class="info-row-text">Декабрь — февраль. Прохладно (+18–24°), идеально для треков.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Июнь — октябрь.</div></div></div>
-        <div class="info-row red"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Дымный сезон (март–апрель)</div><div class="info-row-text">Горят леса — дым, смог, плохой воздух. Избегать.</div></div></div>
-      </div>
-    </div>
-
-    <div class="climate-grid reveal" style="margin-top:16px">
-      <div class="climate-card"><div class="climate-month">ЯНВ</div><div class="climate-icon">☀️</div><div class="climate-temp">+28°</div><div class="climate-note">Лучший сезон</div></div>
-      <div class="climate-card"><div class="climate-month">ФЕВ</div><div class="climate-icon">☀️</div><div class="climate-temp">+29°</div><div class="climate-note">Отлично</div></div>
-      <div class="climate-card"><div class="climate-month">МАР</div><div class="climate-icon">🌤</div><div class="climate-temp">+30°</div><div class="climate-note">Жарко · дым на севере</div></div>
-      <div class="climate-card"><div class="climate-month">АПР</div><div class="climate-icon">🌤</div><div class="climate-temp">+32°</div><div class="climate-note">Сонгкран 🎉</div></div>
-      <div class="climate-card"><div class="climate-month">МАЙ</div><div class="climate-icon">🌧</div><div class="climate-temp">+31°</div><div class="climate-note">Дожди (запад)</div></div>
-      <div class="climate-card"><div class="climate-month">ИЮН</div><div class="climate-icon">🌧</div><div class="climate-temp">+30°</div><div class="climate-note">Сезон дождей</div></div>
-      <div class="climate-card"><div class="climate-month">ИЮЛ</div><div class="climate-icon">⛈</div><div class="climate-temp">+29°</div><div class="climate-note">Ливни (Пхукет)</div></div>
-      <div class="climate-card"><div class="climate-month">АВГ</div><div class="climate-icon">⛈</div><div class="climate-temp">+29°</div><div class="climate-note">Ливни (Пхукет)</div></div>
-      <div class="climate-card"><div class="climate-month">СЕН</div><div class="climate-icon">🌧</div><div class="climate-temp">+29°</div><div class="climate-note">Дождливо</div></div>
-      <div class="climate-card"><div class="climate-month">ОКТ</div><div class="climate-icon">🌦</div><div class="climate-temp">+29°</div><div class="climate-note">Переходный</div></div>
-      <div class="climate-card"><div class="climate-month">НОЯ</div><div class="climate-icon">⛅</div><div class="climate-temp">+28°</div><div class="climate-note">Начало сезона</div></div>
-      <div class="climate-card"><div class="climate-month">ДЕК</div><div class="climate-icon">☀️</div><div class="climate-temp">+27°</div><div class="climate-note">Пик · цены +30%</div></div>
-    </div>
-
-    <div class="alert amber reveal" style="margin-top:16px">
-      <strong>Лайфхак для зимовщиков:</strong> ноябрь–апрель — универсальное время когда хорошая погода одновременно на Пхукете и Паттайе. Декабрь–январь — пик сезона, цены на 30–50% выше чем в марте. Самый бюджетный месяц при хорошей погоде — <strong>март</strong>.
     </div>
   </div>
-
 
   <!-- 15 SAFETY -->
   <div id="safety">
     <div class="sec-header reveal">
       <span class="sec-num">15</span><span class="sec-dash"></span>
       <h2 class="sec-title">Безопас<em>ность</em></h2>
-      <span class="sec-desc">Тайланд безопасен — но туристов разводят по классическим схемам.</span>
+      <span class="sec-desc">Одна из самых безопасных стран мира. Но законы строгие.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Типичные разводы туристов</div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Temple scam («храм закрыт»)</div><div class="info-row-text">Незнакомец говорит что храм сегодня закрыт и предлагает отвезти на тук-туке в «другой храм» или к «ювелиру». Храм открыт. Просто идите мимо.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Tuk-tuk scam</div><div class="info-row-text">Водитель предлагает бесплатный или дешёвый тур, везёт по магазинам где получает комиссию. Используйте Grab с фиксированной ценой.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Карточный развод</div><div class="info-row-text">«Дружелюбный» местный приглашает поиграть в карты. Всегда выигрывает. Потери — от $500.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Gem scam</div><div class="info-row-text">Продают «ценные» камни по «специальной цене» — в реальности дешёвые стекляшки. Никогда не покупайте украшения у незнакомцев.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Такси в аэропорту</div><div class="info-row-text">Нелегальные таксисты в аэропорту Суварнабхуми предлагают фиксированные цены в 2–3 раза дороже официального такси. Используйте Grab или официальные стойки.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Скимминг банкоматов</div><div class="info-row-text">Случается особенно на туристических островах. Используйте банкоматы в отделениях банков, а не уличные. Проверяйте картоприёмник.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Как вести себя с полицией</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Всегда вежливо и спокойно</div><div class="info-row-text">Тайская полиция реагирует на агрессию плохо. Улыбка и спокойный тон решают большинство ситуаций.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📋</span><div><div class="info-row-title">Всегда имейте документы</div><div class="info-row-text">Паспорт или копию с собой. При проверке без документов могут задержать до выяснения.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">«Штраф на месте»</div><div class="info-row-text">Полицейский предлагает заплатить штраф наличными на месте — это взятка. Можно вежливо отказаться и попросить официальный протокол. Официальный штраф за нарушение ПДД — 500 бат.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Наркотики — нулевая толерантность</div><div class="info-row-text">Хранение наркотиков — тюрьма от 1 года. За сбыт — пожизненное или смертная казнь. Марихуана легализована в 2022, но употребление в публичных местах запрещено.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Физическая безопасность — исключительная</div><div class="info-row-text">ОАЭ — одна из самых безопасных стран мира. Преступность против туристов ничтожна. Тысячи камер видеонаблюдения. Ночью ходить безопасно везде.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Строгие законы — знайте их</div><div class="info-row-text"><strong>Публичное проявление чувств</strong> — штраф. <strong>Алкоголь на улице</strong> — штраф/арест. <strong>Критика властей в соцсетях</strong> — реальный тюремный срок. <strong>Некоторые лекарства</strong> (кодеин, некоторые антидепрессанты) — могут счесть наркотиками. Проверьте список на сайте посольства.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">🏖</span><div><div class="info-row-title">Дресс-код</div><div class="info-row-text">В торговых центрах и публичных местах: закрытые плечи и колени. На пляже купальник приемлем. В мечетях: одежда полностью закрывает тело.</div></div></div>
     </div>
   </div>
 
@@ -1208,16 +1060,12 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">16</span><span class="sec-dash"></span>
       <h2 class="sec-title">Ковор<em>кинги</em></h2>
-      <span class="sec-desc">Тайланд — мировая столица цифровых кочевников.</span>
+      <span class="sec-desc">Развитая экосистема. Дубай — международный бизнес-хаб.</span>
     </div>
-    <div class="tips-grid reveal">
-      <div class="tip-card"><span class="tip-num">🏔</span><div><div class="tip-title">Чиангмай — лучший город для работы</div><div class="tip-text"><strong>CAMP (Maya Mall)</strong> — легендарный коворкинг в торговом центре, работает 24/7. Стоимость: 1 кофе (~100 бат) = целый день. Скорость Wi-Fi: 100+ Мбит/с.<br><br><strong>MANA Fast & Slow Bar</strong> — модное место с отличным кофе. 80 бат/день.<br><strong>Think Park</strong> — на открытом воздухе, от 50 бат/день.<br><strong>Punspace</strong> — профессиональный коворкинг, 250 бат/день, 3 500 бат/мес.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🌆</span><div><div class="tip-title">Бангкок</div><div class="tip-text"><strong>The Hive</strong> — сеть коворкингов в Thonglor и Ekkamai. От 300 бат/день, 3 500 бат/мес. Скорость: 200+ Мбит/с.<br><br><strong>WeWork</strong> — международная сеть, дорого (от 500 бат/день), но надёжно.<br><strong>Hubba-TO</strong> — популярен у стартапов, 250 бат/день.<br><strong>Coffee shops</strong> — True Coffee в любом 7-Eleven, стол + Wi-Fi весь день за цену кофе.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🌴</span><div><div class="tip-title">Пхукет</div><div class="tip-text"><strong>Garage Society</strong> — лучший коворкинг на острове в Чалонге. 350 бат/день.<br><br><strong>Phuket Smart City</strong> — государственный коворкинг с хорошим интернетом. Часто бесплатно или 100 бат/день.<br><strong>Kaffa</strong> — кофейня-коворкинг в Пхукет-тауне, 80 бат/день.<br><br>На Патонге и Камале — сеть кафе Starbucks и True Coffee с рабочими местами.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🏝</span><div><div class="tip-title">Ko Samui / Ko Phangan</div><div class="tip-text"><strong>Samui</strong>: Chaweng имеет несколько кафе-коворкингов. Скорость интернета хуже континента — обычно 30–50 Мбит/с.<br><br><strong>Ko Phangan</strong>: WorknPlay — небольшой коворкинг в Tong Sala. Haad Yao имеет несколько кафе с рабочим интернетом. Если важна работа — выбирай континент, острова для отдыха.</div></div></div>
-    </div>
-    <div class="alert green reveal" style="margin-top:12px">
-      <strong>Лайфхак:</strong> в Чиангмае сформировалось огромное русскоязычное сообщество цифровых кочевников. Telegram-чаты «Чиангмай наши» и «Digital Nomads Chiang Mai» — живые обсуждения жилья, коворкингов и событий.
+    <div class="info-block reveal">
+      <div class="info-row"><span class="info-row-icon">🏢</span><div><div class="info-row-title">Дубай — TopCoWorking</div><div class="info-row-text"><strong>WeWork Dubai</strong> — 5+ локаций, день от 150 AED, месяц от 2 500 AED.<br><strong>Astrolabs</strong> — для стартапов и IT, день от 100 AED.<br><strong>The Cribb</strong> — JLT, популярен у фрилансеров, день от 80 AED.<br><strong>Regus / IWG</strong> — классика, везде в ОАЭ.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏙</span><div><div class="info-row-title">Абу-Даби</div><div class="info-row-text"><strong>Tribe Abu Dhabi</strong> — день от 120 AED.<br><strong>The Bureau</strong> — премиум, день от 200 AED.<br>Twofour54 Freelance Hub — для медиа и творческих профессий.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">💡</span><div><div class="info-row-title">Freezone = нулевой налог + офис</div><div class="info-row-text">Многие фризоны (DMCC, DIFC, Fujairah) включают офис или коворкинг в пакет компании. Если регистрируете фрилансерскую компанию — это может быть выгоднее отдельного коворкинга.</div></div></div>
     </div>
   </div>
 
@@ -1226,58 +1074,25 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">17</span><span class="sec-dash"></span>
       <h2 class="sec-title">Чеклист <em>перед вылетом</em></h2>
-      <span class="sec-desc">Всё что нужно сделать до посадки в самолёт.</span>
+      <span class="sec-desc">Главное — решить вопрос с картами. Без них в ОАЭ сложно.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">За 2 недели до вылета</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Проверить срок паспорта</div><div class="info-row-text">Нужно минимум 6 месяцев действия после даты въезда. При меньшем сроке — откажут на границе.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить страховку</div><div class="info-row-text">Минимум $100 000 покрытия. Покрытие мотоцикла — обязательно если планируешь арендовать байк. Cherehapa или Черехапа — сравни цены.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить eSIM или проверить роуминг</div><div class="info-row-text">eSIM через Yesim или Airalo до вылета — интернет заработает сразу после приземления. Или купить SIM в аэропорту.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Снять наличные / конвертировать</div><div class="info-row-text">Везите доллары или евро. Рубли меняют по невыгодному курсу. Возьмите минимум $500–1 000 наличными на первые дни.</div></div></div>
+      <div class="info-block-title">До вылета</div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Карта иностранного банка — обязательно</div><div class="info-row-text">Kaspi (Казахстан), Ameriabank (Армения), Беларусбанк — оформите заранее. Без неё в ОАЭ почти невозможно комфортно жить.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить eSIM на Yesim или Airalo</div><div class="info-row-text">Интернет с момента посадки. Yesim принимает МИР. ~$8–12 на 30 дней.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Оформить страховку (Cherehapa)</div><div class="info-row-text">Медицина в ОАЭ без страховки — одна из самых дорогих в мире.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🔒</span><div><div class="info-row-title">Установить VPN до вылета</div><div class="info-row-text">VoIP (WhatsApp звонки, FaceTime) заблокированы. VPN помогает — установите и проверьте дома.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Проверить лекарства</div><div class="info-row-text">Некоторые препараты запрещены к ввозу в ОАЭ. Сайт посольства ОАЭ — список запрещённых веществ.</div></div></div>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">За 3 дня до вылета</div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Заполнить TDAC — обязательно!</div><div class="info-row-text">tdac.immigration.go.th — электронная карта прибытия. Без неё могут не пустить на борт. 5 минут, бесплатно. Заполняется не ранее чем за 3 дня до прилёта.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Установить приложения</div><div class="info-row-text">Grab, Google Maps (скачать карту офлайн), Bangkok MRT/BTS, XE Currency, Booking/Airbnb. В России скачать заранее — могут быть проблемы с App Store в Тайланде.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏠</span><div><div class="info-row-title">Забронировать первые ночи</div><div class="info-row-text">Минимум 2–3 ночи. На паспортном контроле могут попросить подтверждение проживания.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Обратный билет или маршрут выезда</div><div class="info-row-text">На паспортном контроле могут попросить обратный билет или подтверждение что ты покинешь страну. Бронь на автобус до Малайзии тоже считается.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Рекомендуемые маршруты</div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">1 неделя — Классика</div><div class="info-row-text">Дни 1–3: Бангкок (Большой Дворец, Чатучак, ночные рынки) → Дни 4–7: Пхукет или Краби (пляжи, острова Пхи-Пхи).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">2 недели — Разнообразие</div><div class="info-row-text">Дни 1–3: Бангкок → Дни 4–6: Чиангмай (храмы, рынки, слоны) → Дни 7–14: Острова юга (Пхукет + Краби или Самуи + Ко Панган).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Месяц — Зимовка</div><div class="info-row-text">Неделя в Бангкоке (обустройство, банк, SIM) → 2 недели в Чиангмае (работа, жизнь, коворкинги) → Финальные 1–2 недели на островах перед отлётом.</div></div></div>
+      <div class="info-block-title">По прилёту</div>
+      <div class="info-row"><span class="info-row-icon">📶</span><div><div class="info-row-title">Купить SIM Etisalat или du</div><div class="info-row-text">В аэропорту DXB — нужен паспорт. Пакет 10 ГБ от 100 AED.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💱</span><div><div class="info-row-title">Поменять наличные в городе</div><div class="info-row-text">Не в аэропорту — курс хуже. Обменники в Gold Souk или торговых центрах.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Скачать Careem</div><div class="info-row-text">Основное такси-приложение. Привяжите иностранную карту.</div></div></div>
     </div>
   </div>
 
-  <!-- COUNTRY NAV -->
-  <div class="country-nav reveal">
-    <a class="cnav-card" href="malaysia.html">
-      <span class="cnav-flag">🇲🇾</span>
-      <div><div class="cnav-label">Предыдущая</div><div class="cnav-name">Малайзия</div></div>
-      <span class="cnav-arrow">←</span>
-    </a>
-    <a class="cnav-card" href="montenegro.html">
-      <span class="cnav-flag">🇲🇪</span>
-      <div><div class="cnav-label">Следующая страна</div><div class="cnav-name">Черногория</div></div>
-      <span class="cnav-arrow">→</span>
-    </a>
-  </div>
-
-</div><!-- /main-wrap -->
-
-<footer>
-  <a class="flogo" href="../index.html">Check<em>The</em>World<span class="dot">.</span></a>
-  <div class="flinks">
-    <a href="../index.html">Страны</a>
-    <a href="#">Сравнить</a>
-    <a href="#">Визы</a>
-    <a href="#">Контакты</a>
-  </div>
-  <div class="fcopy">© 2026 · CheckTheWorld</div>
-</footer>
-
-<!-- SIDENAV -->
+  <!-- SIDENAV -->
 <nav class="sidenav" id="sidenav" style="z-index:9999">
   <div class="sn-item" data-t="visas"><span class="sn-label">Визы</span><div class="sn-dot"></div></div>
   <div class="sn-item" data-t="prices"><span class="sn-label">Цены</span><div class="sn-dot"></div></div>
@@ -1325,7 +1140,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
 // ── DATA ──
 
   // ⚠️ VISAS и CITIES для ОАЭ — заполнить вручную!
-  // Скопировать структуру из thailand.html и адаптировать
   // ── CURRENCY ──
 const rates = {rub:1, usd:91, eur:99, local:33};
 function setCurrency(cur, btn){
@@ -1346,18 +1160,82 @@ function switchFlights(tab, btn){
 
 // ── VISA MODAL ──
 const VISAS = {
-  voa: {
-    title: 'Виза по прилёту',
-    subtitle: '',
-    tags: [{t:'30 дней',c:'green'},{t:'Паспорт РФ',c:'green'}],
+  free: {
+    title: 'Безвизовый въезд для граждан РФ',
+    subtitle: 'До 90 дней · 90/180 суммарно · Паспорт 6+ месяцев',
+    tags: [{t:'90 дней',c:'green'},{t:'Бесплатно',c:'green'},{t:'90/180 суммарно',c:'amber'}],
     sections: [
-      {title:'Кому подходит', text:''},
-      {title:'Порядок действий', steps:['','','']},
+      {title:'УСЛОВИЯ ВЪЕЗДА', steps:[
+        'До 90 дней в течение любых 180 дней',
+        'Загранпаспорт со сроком действия минимум 6 месяцев',
+        'Штамп ставят при прилёте автоматически',
+        'Могут попросить обратный билет и бронь отеля',
+      ]},
+      {title:'ВАЖНО', steps:[
+        'С декабря 2022 внутреннее продление без выезда отменено',
+        'После 90 дней — обязательный выезд за пределы ОАЭ',
+        'Переезд из Дубая в Абу-Даби — не считается выездом',
+        'VoIP-звонки (WhatsApp) заблокированы — нужен VPN',
+      ]},
     ],
-    warn: '',
-    btn: null
+    warn: '<strong>Внимание:</strong> российские карты (МИР, Visa/MC) не работают. Берите карты иностранных банков или наличные доллары/евро.',
+    btn: null,
   },
-};
+  tr: {
+    title: 'Туристическая виза',
+    subtitle: 'Через авиакомпанию или местного спонсора',
+    tags: [{t:'30–90 дней',c:''},{t:'~$100–200',c:'amber'},{t:'Через спонсора',c:''}],
+    sections: [
+      {title:'КАК ОФОРМИТЬ', steps:[
+        'Через авиакомпанию Emirates, Flydubai, Air Arabia',
+        'Или через местного спонсора (отель, компания)',
+        'Подать заявку онлайн через ICP Smart Services',
+      ]},
+    ],
+    warn: null, btn: null,
+  },
+  nonimm: {
+    title: 'Резидентская виза',
+    subtitle: 'Через работу, бизнес или недвижимость',
+    tags: [{t:'2–3 года',c:''},{t:'Через спонсора',c:'amber'},{t:'Продлевается',c:''}],
+    sections: [
+      {title:'ТИПЫ РЕЗИДЕНТСКОЙ ВИЗЫ', steps:[
+        'Рабочая — через работодателя в ОАЭ',
+        'Инвесторская — через компанию или недвижимость от 750К AED',
+        'Пенсионная (55+) — при наличии накоплений или пенсии',
+        'Студенческая — при обучении в вузе ОАЭ',
+      ]},
+      {title:'ПРОЦЕСС', steps:[
+        'Работодатель или спонсор подаёт документы в MOHRE',
+        'Медицинское обследование в ОАЭ',
+        'Биометрия и получение Emirates ID',
+        'Срок оформления: 2–4 недели',
+      ]},
+    ],
+    warn: null, btn: null,
+  },
+  ltr: {
+    title: 'Golden Visa — 10 лет',
+    subtitle: 'Для инвесторов, специалистов и учёных',
+    tags: [{t:'10 лет',c:'green'},{t:'Без работодателя',c:'green'},{t:'Инвестиции',c:'amber'}],
+    sections: [
+      {title:'КТО МОЖЕТ ПОЛУЧИТЬ', steps:[
+        'Инвесторы в недвижимость от 2 млн AED (~$545 000)',
+        'Предприниматели с действующим бизнесом',
+        'Специалисты высшей квалификации (врачи, инженеры, IT)',
+        'Учёные и исследователи',
+        'Выдающиеся студенты и выпускники',
+      ]},
+      {title:'ПРЕИМУЩЕСТВА', steps:[
+        'Не привязан к работодателю — можно менять работу свободно',
+        'Спонсировать членов семьи включая супруга и детей',
+        'Открыть банковский счёт и бизнес без местного партнёра',
+        'Въезд и выезд без ограничений',
+      ]},
+    ],
+    warn: null, btn: 'https://icp.gov.ae',
+  },
+}
 
 const CITIES = {
   dubai: {name_en:'Дубай',
@@ -1383,6 +1261,18 @@ const CITIES = {
     desc:'',
     places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
     facts:['','','']
+  },
+  rak: {
+    name: 'Рас-эль-Хайма', emoji: '🏔', tag: 'Природа · Горы · Дешевле Дубая', budget: 'от 1 500 AED/мес аренда',
+    desc: 'Самый северный эмират ОАЭ. Горы Хаджар, длинные пляжи, меньше туристов. В 1.5 часа от Дубая. Дешевле Дубая на 40–50%.',
+    places: [
+      {n:'Гора Джаис',d:'Высочайшая точка ОАЭ (1 934 м). Самый длинный зиплайн в мире (2.8 км). Вход 25 AED.'},
+      {n:'Al Hamra Village',d:'Исторический рыбацкий квартал — музей и рестораны на берегу залива.'},
+      {n:'Пляж Маардж',d:'Длинный тихий пляж — меньше туристов чем в Дубае.'},
+      {n:'Hajar Mountains',d:'Треккинг и кемпинг в горах — уникальный ландшафт ОАЭ.'},
+      {n:'Al Marjan Island',d:'Искусственный остров с отелями и казино — Wynn Al Marjan Island.'},
+    ],
+    facts:['2 часа автобусом от Дубая (~25 AED)','Дешевле Дубая на 40–50%','Меньше туристов и суеты','Казино Wynn открылось в 2025 году','Аэропорт RKT — небольшой, мало рейсов'],
   },
 };
 

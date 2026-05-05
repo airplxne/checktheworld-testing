@@ -673,48 +673,44 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">01</span><span class="sec-dash"></span>
       <h2 class="sec-title">Визовый <em>режим</em></h2>
-      <span class="sec-desc">Четыре пути въезда. Для большинства — хватит паспорта и TDAC.</span>
+      <span class="sec-desc">60 дней без визы за один въезд. Суммарно — 90 из 180 дней.</span>
     </div>
     <div class="visa-grid reveal">
       <div class="visa-card featured" onclick="openVisa('free')">
         <div class="vc-type">▶ Рекомендуется</div>
         <div class="vc-name">Безвизовый въезд</div>
-        <div class="vc-desc">Граждане РФ могут находиться до 60 дней без визы. Никаких документов кроме паспорта и TDAC.</div>
+        <div class="vc-desc">До 60 дней за один въезд. Паспорт действует минимум 120 дней. Обратный билет желателен.</div>
         <div class="vc-tags">
           <span class="vc-tag green">60 дней</span>
           <span class="vc-tag green">Бесплатно</span>
-          <span class="vc-tag green">Паспорт РФ</span>
-          <span class="vc-tag amber">TDAC за 3 дня</span>
+          <span class="vc-tag amber">90/180 суммарно</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('tr')">
-        <div class="vc-type">Туристическая</div>
-        <div class="vc-name">Tourist Visa (TR)</div>
-        <div class="vc-desc">Оформляется в консульстве. 60 дней с возможностью продления ещё на 30 дней.</div>
+        <div class="vc-type">Долгосрочная</div>
+        <div class="vc-name">Туристическая виза</div>
+        <div class="vc-desc">Для пребывания дольше 90 дней в полугодии. Через визовый центр Gateway International.</div>
         <div class="vc-tags">
-          <span class="vc-tag">60 дней</span>
-          <span class="vc-tag amber">~$40</span>
-          <span class="vc-tag">+30 за $60</span>
+          <span class="vc-tag">90+ дней</span>
+          <span class="vc-tag amber">Визовый центр</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('nonimm')">
-        <div class="vc-type">Долгосрочная</div>
-        <div class="vc-name">Non-Immigrant (O)</div>
-        <div class="vc-desc">Для тех кто планирует жить в Тайланде — пенсионеры, работающие, владельцы бизнеса.</div>
+        <div class="vc-type">Резидентство</div>
+        <div class="vc-name">Икамет (ВНЖ)</div>
+        <div class="vc-desc">Туристический икамет — для долгосрочного проживания без права на работу.</div>
         <div class="vc-tags">
-          <span class="vc-tag">1 год</span>
-          <span class="vc-tag amber">~$80</span>
-          <span class="vc-tag">Продлевается</span>
+          <span class="vc-tag">1 год+</span>
+          <span class="vc-tag amber">~$500–800</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('ltr')">
-        <div class="vc-type">Для состоятельных</div>
-        <div class="vc-name">Thailand Privilege</div>
-        <div class="vc-desc">Специальная виза на 5–20 лет для обеспеченных пенсионеров, специалистов и инвесторов.</div>
+        <div class="vc-type">Работа/бизнес</div>
+        <div class="vc-name">Рабочая виза</div>
+        <div class="vc-desc">Для трудоустройства в турецкой компании. Через работодателя.</div>
         <div class="vc-tags">
-          <span class="vc-tag">5–20 лет</span>
-          <span class="vc-tag amber">от $10 000</span>
-          <span class="vc-tag green">Налоговые льготы</span>
+          <span class="vc-tag">Через работодателя</span>
+          <span class="vc-tag amber">Work permit</span>
         </div>
       </div>
     </div>
@@ -725,7 +721,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">02</span><span class="sec-dash"></span>
       <h2 class="sec-title">Стоимость <em>жизни</em></h2>
-      <span class="sec-desc">Реальные цены в рублях, долларах, евро и батах.</span>
+      <span class="sec-desc">Реальные цены 2026 — в рублях, долларах, евро и лирах.</span>
     </div>
     <div class="reveal" style="display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
       <div class="currency-switcher">
@@ -734,18 +730,18 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
         <button class="cur-btn" onclick="setCurrency('eur',this)">€ EUR</button>
         <button class="cur-btn" onclick="setCurrency('local',this)">₺ TRY</button>
       </div>
-      <span class="cur-rate">курс: 1 ₽ ≈ 2.8 TRY · апр 2026</span>
+      <span class="cur-rate">курс: 1 ₺ ≈ 2.5 ₽ · май 2026</span>
     </div>
     <div class="prices-grid reveal">
-      <div class="price-card"><div class="pc-icon">🛏</div><div class="pc-cat">Хостел / ночь</div><div class="pc-val" data-rub="730–1 400 ₽" data-usd="$8–$15" data-eur="€7–€14" data-local="300–580 ฿">730–1 400 ₽</div><div class="pc-note">Бангкок, Чиангмай</div></div>
-      <div class="price-card"><div class="pc-icon">🏨</div><div class="pc-cat">Отель 3★ / ночь</div><div class="pc-val" data-rub="2 700–5 500 ₽" data-usd="$29–$60" data-eur="€27–€55" data-local="1 100–2 300 ฿">2 700–5 500 ₽</div><div class="pc-note">Центр города</div></div>
-      <div class="price-card"><div class="pc-icon">🏠</div><div class="pc-cat">Аренда 1 комн. / мес</div><div class="pc-val" data-rub="27 000–55 000 ₽" data-usd="$296–$604" data-eur="€272–€555" data-local="11 000–22 000 ฿">27 000–55 000 ₽</div><div class="pc-note">Долгосрочная аренда</div></div>
-      <div class="price-card"><div class="pc-icon">🍜</div><div class="pc-cat">Обед в кафе</div><div class="pc-val" data-rub="180–450 ₽" data-usd="$1–$4" data-eur="€1–€4" data-local="75–185 ฿">180–450 ₽</div><div class="pc-note">Местная кухня</div></div>
-      <div class="price-card"><div class="pc-icon">🚕</div><div class="pc-cat">Такси / Grab</div><div class="pc-val" data-rub="90–450 ₽" data-usd="$1–$5" data-eur="€1–€4" data-local="37–185 ฿">90–450 ₽</div><div class="pc-note">По городу</div></div>
-      <div class="price-card"><div class="pc-icon">🛵</div><div class="pc-cat">Аренда байка / день</div><div class="pc-val" data-rub="450–900 ₽" data-usd="$4–$9" data-eur="€4–€9" data-local="185–370 ฿">450–900 ₽</div><div class="pc-note">Мотобайк 125cc</div></div>
-      <div class="price-card"><div class="pc-icon">🍺</div><div class="pc-cat">Пиво в баре</div><div class="pc-val" data-rub="180–360 ₽" data-usd="$1–$3" data-eur="€1–€3" data-local="75–148 ฿">180–360 ₽</div><div class="pc-note">Chang, Singha</div></div>
-      <div class="price-card"><div class="pc-icon">💆</div><div class="pc-cat">Тайский массаж / час</div><div class="pc-val" data-rub="360–720 ₽" data-usd="$3–$7" data-eur="€3–€7" data-local="148–296 ฿">360–720 ₽</div><div class="pc-note">Традиционный массаж</div></div>
-      <div class="price-card"><div class="pc-icon">✈️</div><div class="pc-cat">Перелёт внутри страны</div><div class="pc-val" data-rub="2 700–7 200 ₽" data-usd="$29–$79" data-eur="€27–€72" data-local="1 100–2 963 ฿">2 700–7 200 ₽</div><div class="pc-note">AirAsia, Nok Air</div></div>
+      <div class="price-card"><div class="pc-icon">🛏</div><div class="pc-cat">Хостел / ночь</div><div class="pc-val" data-rub="500–1 200 ₽" data-usd="$5–$13" data-eur="€5–€12" data-local="200–480 ₺">500–1 200 ₽</div><div class="pc-note">Стамбул, Анталья</div></div>
+      <div class="price-card"><div class="pc-icon">🏨</div><div class="pc-cat">Отель 3★ / ночь</div><div class="pc-val" data-rub="2 500–7 000 ₽" data-usd="$27–$77" data-eur="€25–€70" data-local="1 000–2 800 ₺">2 500–7 000 ₽</div><div class="pc-note">Центр города</div></div>
+      <div class="price-card"><div class="pc-icon">🏠</div><div class="pc-cat">Аренда 1 комн. / мес</div><div class="pc-val" data-rub="25–60К ₽" data-usd="$275–$660" data-eur="€250–€600" data-local="10 000–24 000 ₺">25–60К ₽</div><div class="pc-note">Долгосрочная аренда</div></div>
+      <div class="price-card"><div class="pc-icon">🍽</div><div class="pc-cat">Обед в кафе</div><div class="pc-val" data-rub="200–600 ₽" data-usd="$2–$7" data-eur="€2–€6" data-local="80–240 ₺">200–600 ₽</div><div class="pc-note">Местная кухня</div></div>
+      <div class="price-card"><div class="pc-icon">🚕</div><div class="pc-cat">Такси / BiTaksi</div><div class="pc-val" data-rub="150–500 ₽" data-usd="$2–$6" data-eur="€1.5–€5" data-local="60–200 ₺">150–500 ₽</div><div class="pc-note">По городу</div></div>
+      <div class="price-card"><div class="pc-icon">🚇</div><div class="pc-cat">Метро / поездка</div><div class="pc-val" data-rub="25–50 ₽" data-usd="$0.3–$0.6" data-eur="€0.25–€0.5" data-local="10–20 ₺">25–50 ₽</div><div class="pc-note">Стамбул, Анкара</div></div>
+      <div class="price-card"><div class="pc-icon">🍺</div><div class="pc-cat">Пиво в баре</div><div class="pc-val" data-rub="400–900 ₽" data-usd="$4–$10" data-eur="€4–€9" data-local="160–360 ₺">400–900 ₽</div><div class="pc-note">Efes, Bomonti</div></div>
+      <div class="price-card"><div class="pc-icon">🛒</div><div class="pc-cat">Продукты / мес</div><div class="pc-val" data-rub="10–18К ₽" data-usd="$110–$198" data-eur="€100–€180" data-local="4 000–7 200 ₺">10–18К ₽</div><div class="pc-note">Супермаркет BIM, A101</div></div>
+      <div class="price-card"><div class="pc-icon">✈️</div><div class="pc-cat">Перелёт внутри страны</div><div class="pc-val" data-rub="2 000–7 000 ₽" data-usd="$22–$77" data-eur="€20–€70" data-local="800–2 800 ₺">2 000–7 000 ₽</div><div class="pc-note">Turkish Airlines, Pegasus</div></div>
     </div>
   </div>
 
@@ -758,7 +754,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     </div>
     <div class="partner-block reveal">
       <div class="pb-header">
-        <div class="pb-title">Найти рейсы в Тайланд</div>
+        <div class="pb-title">Найти рейсы в Турцию</div>
         <div class="pb-badge">AVIASALES · KIWI</div>
       </div>
       <div class="pb-desc">Актуальные цены на билеты из вашего города — обновляются в реальном времени.</div>
@@ -843,64 +839,64 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">05</span><span class="sec-dash"></span>
       <h2 class="sec-title">Полезные <em>советы</em></h2>
-      <span class="sec-desc">8 вещей о которых никто не расскажет в турагентстве.</span>
+      <span class="sec-desc">8 вещей о которых надо знать до поездки в Турцию.</span>
     </div>
     <div class="tips-grid reveal">
-      <div class="tip-card"><span class="tip-num">01</span><div><div class="tip-title">TDAC — заполнить за 3 дня до вылета</div><div class="tip-text">С 1 мая 2025 года обязательная электронная карта прибытия для всех въезжающих. Сайт: tdac.immigration.go.th. Занимает 5 минут, бесплатно. Бумажные карточки TM6 больше не выдают. Без TDAC могут не посадить на самолёт.</div></div></div>
-      <div class="tip-card"><span class="tip-num">02</span><div><div class="tip-title">Страховка с лимитом от $50 000</div><div class="tip-text">Медицина платная и дорогая. Обычный лимит $30 000 заканчивается за неделю при серьёзной травме. Посольство РФ рекомендует $100 000. Проверьте что страховка покрывает мотоцикл — большинство дешёвых полисов это исключают.</div></div></div>
-      <div class="tip-card"><span class="tip-num">03</span><div><div class="tip-title">Везите доллары, не рубли</div><div class="tip-text">Рубли меняют с потерей до 25%. Доллары и евро — везде по нормальному курсу. Лучшие обменники: SuperRich (зелёный, не оранжевый), Vasu Exchange в торговых центрах. Снимайте в банкоматах крупными суммами — комиссия 220 бат за операцию.</div></div></div>
-      <div class="tip-card"><span class="tip-num">04</span><div><div class="tip-title">Сезоны важны и различаются по регионам</div><div class="tip-text">Пхукет (запад): лучшее время ноябрь–апрель, дожди май–октябрь. Паттайя и Самуи (восток): сухой сезон наоборот — апрель–октябрь. В сезон дождей отели дешевле на 30–50%, но бывают ливни.</div></div></div>
-      <div class="tip-card"><span class="tip-num">05</span><div><div class="tip-title">Байк — только с правами и в шлеме</div><div class="tip-text">Без прав категории А вы не застрахованы при ДТП. Полиция периодически проводит рейды особенно на Пхукете. Штраф — 500 бат, но при ДТП без прав все расходы на лечение ложатся на вас лично.</div></div></div>
-      <div class="tip-card"><span class="tip-num">06</span><div><div class="tip-title">Дресс-код в храмах</div><div class="tip-text">Закрытые плечи и колени обязательны в любом буддийском храме. У входа в крупные храмы (Большой Дворец, Ват Пхо) всегда есть прокат саронгов. В шортах или майке не пустят.</div></div></div>
-      <div class="tip-card"><span class="tip-num">07</span><div><div class="tip-title">Приложения которые нужны</div><div class="tip-text">Grab (такси, еда), Bolt (альтернатива Grab), Google Maps, Bangkok MRT/BTS (расписание метро), XE Currency (курс валют), Airbnb/Booking. В Grab российскую карту не привяжешь — платите наличными.</div></div></div>
-      <div class="tip-card"><span class="tip-num">08</span><div><div class="tip-title">Не превышайте 179 дней</div><div class="tip-text">180+ дней в году = налоговое резидентство Тайланда + обязанность декларировать иностранные доходы. Для зимовщиков оптимально: приехать в ноябре, уехать до конца апреля — это ~180 дней, можно чуть сократить.</div></div></div>
+      <div class="tip-card"><span class="tip-num">01</span><div><div class="tip-title">Правило 90/180 — следите за датами</div><div class="tip-text">60 дней за один въезд — это максимум непрерывного пребывания. Но суммарно за любые 180 дней нельзя находиться более 90 дней. При превышении — штраф и запрет въезда. Считайте дни заранее.</div></div></div>
+      <div class="tip-card"><span class="tip-num">02</span><div><div class="tip-title">Российские карты — по-разному</div><div class="tip-text">С марта 2025 года в Турции заработала оплата по QR-коду от Сбера. Карты МИР принимают отдельные банкоматы и магазины — нестабильно. Надёжнее: наличные доллары или карта казахстанского/армянского банка.</div></div></div>
+      <div class="tip-card"><span class="tip-num">03</span><div><div class="tip-title">BiTaksi и Uber — такси в городах</div><div class="tip-text">BiTaksi — основное приложение такси в Турции. Uber также работает в Стамбуле и крупных городах. Таксисты у аэропорта часто завышают цены — используйте приложения.</div></div></div>
+      <div class="tip-card"><span class="tip-num">04</span><div><div class="tip-title">Икамет — для долгосрочного проживания</div><div class="tip-text">Туристический икамет (ВНЖ) даёт право жить в Турции дольше 90 дней. Подаётся онлайн на e-ikamet.goc.gov.tr. Стоимость: ~$500–800 на год. После COVID получить сложнее — отказы участились особенно в туристических провинциях.</div></div></div>
+      <div class="tip-card"><span class="tip-num">05</span><div><div class="tip-title">Стамбул — жить в азиатской части дешевле</div><div class="tip-text">Азиатская сторона Стамбула (Кадыкёй, Мода, Ускюдар) — тише и дешевле европейской на 20–30%. Паром через Босфор — самый живописный транспорт города, ~12 ₺. Метро и трамвай работают хорошо.</div></div></div>
+      <div class="tip-card"><span class="tip-num">06</span><div><div class="tip-title">Землетрясения — реальный риск</div><div class="tip-text">Турция — сейсмически активная зона. В 2023 году было разрушительное землетрясение на юго-востоке. Снимая жильё — уточняйте год постройки и наличие сейсмоустойчивости. Аварийный выход — знать заранее.</div></div></div>
+      <div class="tip-card"><span class="tip-num">07</span><div><div class="tip-title">Турецкая лира падает — храните в валюте</div><div class="tip-text">Инфляция в Турции остаётся высокой. Не держите крупные суммы в лирах — меняйте столько сколько нужно на ближайшие дни. Обменники (döviz) дают лучший курс чем банки и аэропорт.</div></div></div>
+      <div class="tip-card"><span class="tip-num">08</span><div><div class="tip-title">Прямые рейсы из России — много</div><div class="tip-text">Turkish Airlines, «Аэрофлот», Pegasus летят из Москвы в Стамбул и Анталью несколько раз в день. Из регионов — чартеры в сезон. Это одно из самых доступных международных направлений из России.</div></div></div>
     </div>
   </div>
 
-<!-- 06 BUDGET -->
+  <!-- 06 BUDGET -->
   <div id="budget">
     <div class="sec-header reveal">
       <span class="sec-num">06</span><span class="sec-dash"></span>
       <h2 class="sec-title">Реальный <em>бюджет</em> на месяц</h2>
-      <span class="sec-desc">Три уровня жизни — от эконом до комфорт+.</span>
+      <span class="sec-desc">Инфляция высокая — цены растут. Данные май 2026.</span>
     </div>
     <div class="budget-grid reveal">
       <div class="budget-card">
         <div class="bc-label">≈ Эконом</div>
-        <div class="bc-total">~50 000 ₽</div>
-        <div class="bc-usd">$600 · 16 000 ฿</div>
-        <div class="bc-row"><span>Жильё (комн./хостел)</span><span>8–12K ฿</span></div>
-        <div class="bc-row"><span>Еда (рынки, стрит-фуд)</span><span>5–7K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (авт./байк)</span><span>2–3K ฿</span></div>
-        <div class="bc-row"><span>Связь (SIM)</span><span>300–500 ฿</span></div>
-        <div class="bc-row"><span>Развлечения</span><span>1–2K ฿</span></div>
-        <div class="bc-note">Чиангмай, без алкоголя, своя готовка</div>
+        <div class="bc-total">~30 000 ₽</div>
+        <div class="bc-usd">$330 · 12 000 ₺</div>
+        <div class="bc-row"><span>Жильё (комн./гестхаус)</span><span>3 000–4 500 ₺</span></div>
+        <div class="bc-row"><span>Еда (рынки + готовка)</span><span>3 500–5 000 ₺</span></div>
+        <div class="bc-row"><span>Транспорт (метро/авт.)</span><span>500–800 ₺</span></div>
+        <div class="bc-row"><span>Связь (SIM)</span><span>300–500 ₺</span></div>
+        <div class="bc-row"><span>Прочее</span><span>1 000–1 500 ₺</span></div>
+        <div class="bc-note">Измир или Бурса, комната, рынки и кафе</div>
       </div>
       <div class="budget-card highlight">
         <div class="bc-label">★ Комфорт</div>
-        <div class="bc-total">~100 000 ₽</div>
-        <div class="bc-usd">$1 100 · 33 000 ฿</div>
-        <div class="bc-row"><span>Жильё (студия/апарт)</span><span>15–22K ฿</span></div>
-        <div class="bc-row"><span>Еда (кафе + готовка)</span><span>8–12K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (Grab + байк)</span><span>3–5K ฿</span></div>
-        <div class="bc-row"><span>Коворкинг</span><span>2.5–4K ฿</span></div>
-        <div class="bc-row"><span>Развлечения + misc</span><span>3–5K ฿</span></div>
-        <div class="bc-note">Бангкок или Чиангмай, средний образ жизни</div>
+        <div class="bc-total">~55 000 ₽</div>
+        <div class="bc-usd">$605 · 22 000 ₺</div>
+        <div class="bc-row"><span>Жильё (1 комн. апарт.)</span><span>10 000–15 000 ₺</span></div>
+        <div class="bc-row"><span>Еда (кафе + готовка)</span><span>5 000–7 000 ₺</span></div>
+        <div class="bc-row"><span>Транспорт (метро + такси)</span><span>1 500–2 500 ₺</span></div>
+        <div class="bc-row"><span>Связь + интернет</span><span>500–800 ₺</span></div>
+        <div class="bc-row"><span>Развлечения</span><span>2 000–3 000 ₺</span></div>
+        <div class="bc-note">Стамбул азиатский берег или Анталья</div>
       </div>
       <div class="budget-card warm">
         <div class="bc-label">★★ Комфорт+</div>
-        <div class="bc-total">~180 000 ₽</div>
-        <div class="bc-usd">$2 000 · 60 000 ฿</div>
-        <div class="bc-row"><span>Жильё (1 комн. у моря)</span><span>25–50K ฿</span></div>
-        <div class="bc-row"><span>Еда (рестораны)</span><span>12–18K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (авто/Grab)</span><span>5–10K ฿</span></div>
-        <div class="bc-row"><span>Спорт, здоровье, спа</span><span>3–6K ฿</span></div>
-        <div class="bc-row"><span>Экскурсии, поездки</span><span>5–10K ฿</span></div>
-        <div class="bc-note">Пхукет или Самуи, активный образ жизни</div>
+        <div class="bc-total">~100 000 ₽</div>
+        <div class="bc-usd">$1 100 · 40 000 ₺</div>
+        <div class="bc-row"><span>Жильё (центр Стамбула)</span><span>20 000–30 000 ₺</span></div>
+        <div class="bc-row"><span>Рестораны, доставка</span><span>8 000–12 000 ₺</span></div>
+        <div class="bc-row"><span>Такси + каршеринг</span><span>3 000–5 000 ₺</span></div>
+        <div class="bc-row"><span>Развлечения, поездки</span><span>3 000–5 000 ₺</span></div>
+        <div class="bc-row"><span>Прочее</span><span>2 000–3 000 ₺</span></div>
+        <div class="bc-note">Центр Стамбула или Бешикташ</div>
       </div>
     </div>
     <div class="alert amber reveal" style="margin-top:12px">
-      <strong>Актуальный курс (апрель 2026):</strong> 1 бат ≈ 2.43 ₽. Обменники в торговых центрах дают курс лучше аэропортового на 15–20%. Рубли меняют по невыгодному курсу — лучше везти доллары или евро.
+      <strong>Важно (май 2026):</strong> турецкая лира продолжает слабеть — цены в лирах растут быстро. Храните деньги в долларах или евро и меняйте постепенно. Курс: 1 ₺ ≈ 2.5 ₽.
     </div>
   </div>
 
@@ -908,23 +904,14 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
   <div id="money">
     <div class="sec-header reveal">
       <span class="sec-num">07</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Деньги, <em>карты</em> и банки</h2>
-      <span class="sec-desc">Как платить в Тайланде россиянам в 2026 году — без фантазий.</span>
+      <h2 class="sec-title">Деньги <em>и платежи</em></h2>
+      <span class="sec-desc">МИР нестабильно. QR от Сбера — новый вариант с 2025 года.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Как платить в Тайланде россиянам</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">UnionPay (лучший вариант)</div><div class="info-row-text">Карты UnionPay от российских банков (Газпромбанк, Россельхозбанк, МКБ) работают в большинстве банкоматов — SCB, Bangkok Bank, Kasikorn, LH Bank. Снятие: комиссия 220 бат (~540 ₽) — снимайте сразу крупную сумму.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Наличные доллары / евро</div><div class="info-row-text">Самый надёжный способ. Меняйте в обменниках торговых центров (SuperRich, Vasu, Max Money) — курс лучше аэропортового на 10–20%. Никогда не меняйте в аэропорту.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Рубли — не везите</div><div class="info-row-text">Обменять рубли на баты можно, но теряешь до 25% на курсе. Везите доллары или евро — это стандартная валюта для обмена.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💡</span><div><div class="info-row-title">Переводы из России</div><div class="info-row-text">SWIFT через нейтральные банки (армянские, казахские, грузинские), криптовалюта (USDT → обменник), Western Union через Казахстан. Прямые SWIFT из РФ работают только через незаблокированные банки.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Открытие банковского счёта</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px">Нужен для долгосрочного проживания — платить аренду, коммуналку, получать переводы. Открыть счёт с безвизовым штампом сложно, большинство банков требует долгосрочную визу.</div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Bangkok Bank <span style="color:var(--amber);font-size:11px;margin-left:6px">ЛОЯЛЬНЫЙ</span></div><div class="info-row-text">Единственный банк который <strong>иногда</strong> открывает счёт без долгосрочной визы — зависит от отделения. Минимальный депозит — 500 бат.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Kasikorn Bank (KBank) <span style="color:var(--green);font-size:11px;margin-left:6px">НАДЁЖНО</span></div><div class="info-row-text">Требует долгосрочную визу + депозит ~$400 (возвращают). Удобное мобильное приложение.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Krungthai Bank</div><div class="info-row-text">Государственный банк, разветвлённая сеть банкоматов. Требует паспорт, иногда адрес в Тайланде.</div></div></div>
-      <div class="alert amber" style="margin-top:12px"><strong>Совет:</strong> если в одном отделении отказали — идите в другое. Возьмите: загранпаспорт, деньги на депозит, тайскую SIM-карту и контракт аренды.</div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Российские карты — нестабильно</div><div class="info-row-text">Карты МИР принимают отдельные банкоматы и магазины, но непостоянно. Российские Visa/MC заблокированы полностью. С марта 2025 года работает оплата по QR через Сбер — в магазинах партнёрах. Надёжнее иметь карту иностранного банка.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">QR-оплата Сбер — новый вариант</div><div class="info-row-text">С марта 2025 года в Турции работает оплата по QR-коду через приложение Сбер. Принимают в партнёрских торговых точках — список расширяется. Альтернатива картам для тех у кого нет иностранного банка.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💵</span><div><div class="info-row-title">Наличные и обмен</div><div class="info-row-text">Везите доллары или евро — в Турции много обменников (döviz) с хорошим курсом. Аэропортовый обмен хуже на 3–5%. Лучший курс — в Grand Bazaar и районе Лалели в Стамбуле. Рубли меняют, но курс невыгодный.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏧</span><div><div class="info-row-title">Банкоматы</div><div class="info-row-text">Банкоматы İşbank, Ziraat, Garanti Bankası принимают иностранные карты Visa/MC. Комиссия: 30–80 ₺ за операцию. Снимайте крупными суммами реже. Лимит: обычно 2 000–5 000 ₺ за раз.</div></div></div>
     </div>
   </div>
 
@@ -932,41 +919,28 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
   <div id="taxes">
     <div class="sec-header reveal">
       <span class="sec-num">08</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Налоговое <em>резидентство</em></h2>
-      <span class="sec-desc">Одна из важнейших тем для долгосрочников.</span>
+      <h2 class="sec-title">Налоги <em>и резидентство</em></h2>
+      <span class="sec-desc">Правило 183 дней. Икамет — основание для налогового резидентства.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">С 2024 года правила изменились — теперь они касаются практически всех кто проводит в стране больше полугода.</div>
-      <div class="alert amber"><strong>⚠️ 180 дней = налоговый резидент</strong><br>Если провёл в Тайланде 180+ дней в календарном году — ты налоговый резидент. Счётчик обнуляется 1 января каждого года.</div>
-      <div class="info-block-title" style="margin-top:16px">Что изменилось с 2024 года</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px">До 2024: иностранный доход облагался налогом только если переводился в тот же год. После 2024: любой иностранный доход, переведённый в Тайланд, потенциально облагается налогом. Льготный период на 2 года для доходов 2024–2025.</div>
-      <div class="info-block-title">Ставки подоходного налога (PIT)</div>
-      <table class="tax-table">
-        <tr><td>до 150 000 ฿/год</td><td>0%</td></tr>
-        <tr><td>150 001 — 300 000 ฿</td><td>5%</td></tr>
-        <tr><td>300 001 — 500 000 ฿</td><td>10%</td></tr>
-        <tr><td>500 001 — 750 000 ฿</td><td>15%</td></tr>
-        <tr><td>свыше 5 000 000 ฿</td><td>35%</td></tr>
-      </table>
-      <div class="alert green" style="margin-top:14px"><strong>✅ Если ты нерезидент:</strong> проводишь меньше 180 дней — тайские налоги тебя не касаются. Оптимальная стратегия для зимовщиков — не превышать 179 дней.</div>
-      <div style="margin-top:12px;font-size:11.5px;color:var(--faint);font-style:italic">Налоговое законодательство меняется. Перед принятием решений проконсультируйтесь с налоговым консультантом.</div>
+      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Правило 183 дней</div><div class="info-row-text">Налоговым резидентом Турции становятся при пребывании 183+ дней в году. Ставка подоходного налога: прогрессивная 15–40%. Для нерезидентов облагается только доход из турецких источников.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏢</span><div><div class="info-row-title">ИП и компания в Турции</div><div class="info-row-text">Регистрация ИП (şahıs şirketi): относительно просто, налог 15–40% с прибыли. ООО (limited şirketi): минимальный капитал 10 000 ₺, корпоративный налог 25%. Популярен среди россиян для получения икамета.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Икамет становится сложнее</div><div class="info-row-text">С 2023 года власти Турции ужесточили выдачу туристического икамета в популярных провинциях (Стамбул, Анталья, Измир). Отказов стало больше. Альтернативы: студенческий икамет, семейный, через покупку недвижимости.</div></div></div>
     </div>
   </div>
 
-    <!-- 09 TRANSPORT -->
+  <!-- 09 TRANSPORT -->
   <div id="transport">
     <div class="sec-header reveal">
       <span class="sec-num">09</span><span class="sec-dash"></span>
       <h2 class="sec-title">Транс<em>порт</em></h2>
-      <span class="sec-desc">От метро до байка — как передвигаться по стране.</span>
+      <span class="sec-desc">Развитый авиахаб. Метро в городах. BiTaksi и Uber.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-row"><span class="info-row-icon">🚇</span><div><div class="info-row-title">Метро в Бангкоке — BTS Skytrain + MRT</div><div class="info-row-text">Самый быстрый способ передвижения по столице. BTS (надземное) + MRT (подземное) вместе покрывают большинство туристических и деловых районов. Стоимость: 15–60 бат в зависимости от расстояния. Дневной проездной BTS — 140 бат. Работает 06:00–00:00. Пробки в Бангкоке жуткие — в часы пик метро экономит 30–60 минут.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Grab — главное приложение такси</div><div class="info-row-text">Аналог Яндекс.Такси для ЮВА. Фиксированная цена до посадки. GrabCar по центру Бангкока — 80–120 бат, из аэропорта Суварнабхуми в центр — 350–450 бат. GrabBike (мотоцикл) — 40–70 бат по городу.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Привязать российскую карту к Grab нельзя</div><div class="info-row-text">Даже UnionPay. Платите наличными или попросите водителя принять перевод.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🛵</span><div><div class="info-row-title">Аренда байка — главный транспорт на островах</div><div class="info-row-text">На Пхукете, Самуи, Краби и в Паттайе байк — основной транспорт. Аренда: 250–350 бат в день, 5 000–8 000 бат в месяц. Нужны права категории А. Без прав — технически незаконно и не покрывается страховкой при ДТП. Лёгкое падение с байка обходится в $3 000–7 000 без страховки. Всегда надевайте шлем.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Перелёты внутри страны</div><div class="info-row-text">AirAsia и Nok Air — основные лоукостеры. Бангкок→Пхукет: от 800–2 000 бат при заблаговременной покупке. Бангкок→Чиангмай: от 700 бат. Паром Сурат Тани→Самуи: ~300 бат + автобус из Бангкока ~500 бат. Часто паром + автобус дешевле прямого рейса на Самуи (Bangkok Airways там монополист и цены высокие).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🚍</span><div><div class="info-row-title">Автобусы и поезда между городами</div><div class="info-row-text">Бангкок→Паттайя: автобус от Восточного автовокзала, ~130 бат, 2–3 часа. Бангкок→Чиангмай: поезд 2-й класс с кондиционером — 331–531 бат, ночной вагон со спальными местами. Ночной поезд удобен — экономит на отеле и ночной перелёт не нужен.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Внутренние рейсы</div><div class="info-row-text">Turkish Airlines и Pegasus покрывают все крупные города. Стамбул↔Анталья: от 800–2 000 ₺. Стамбул↔Анкара: от 600–1 500 ₺. Аэропорты: стамбульский IST (новый, 2022) и SAW (Сабиха). Бронируйте за 2–3 недели.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚇</span><div><div class="info-row-title">Метро и трамвай</div><div class="info-row-text">Стамбул — 12 линий метро + трамвай T1 (исторический центр). Карта Istanbul Kart: разовый проезд ~12 ₺. Анкара — метро Ankaray и M1–M4. Измир — metro İzmir, 3 линии.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Такси — BiTaksi и Uber</div><div class="info-row-text">BiTaksi — основное приложение такси в Турции. Uber также работает в Стамбуле. Яндекс.Такси работает в ряде городов. Стандартный счётчик: посадка ~30 ₺ + по километражу.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚌</span><div><div class="info-row-title">Автобусы между городами</div><div class="info-row-text">Развитая сеть комфортных автобусов — FlixBus, Pamukkale, Metro Turizm. Стамбул↔Анкара: ~5 часов, от 300 ₺. Анкара↔Каппадокия: ~4 часа, от 250 ₺. Бронирование: obilet.com.</div></div></div>
     </div>
   </div>
 
@@ -975,31 +949,25 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">10</span><span class="sec-dash"></span>
       <h2 class="sec-title">Интернет <em>и связь</em></h2>
-      <span class="sec-desc">4G/5G везде в городах. Три способа оставаться онлайн.</span>
+      <span class="sec-desc">Хорошее 4G в городах. Местная SIM или eSIM.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">eSIM — лучший вариант <span style="background:var(--green-l);color:var(--green);font-size:10px;padding:2px 8px;border-radius:100px;margin-left:6px">Рекомендуем</span></div><div class="info-row-text">Покупаешь онлайн до вылета (Yesim, Airalo), активируешь по QR-коду — интернет работает с момента приземления. Yesim принимает карту МИР. Цена: ~$7–15 на 30 дней безлимит.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💳</span><div><div class="info-row-title">Местная SIM-карта</div><div class="info-row-text">Покупается в аэропорту или 7-Eleven. Нужен паспорт.<br><br>
-        <strong>AIS</strong> — лучшее покрытие 4G/5G · от 299 ฿/30 дней<br>
-        <strong>True-dtac</strong> — AIS + DTAC объединились · от 199 ฿/30 дней<br><br>
-        ⚠️ True-dtac SIM через 60–90 дней может отключиться — нужно продлевать через приложение.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">Домашний интернет (для долгосрочных)</div><div class="info-row-text">Проводной интернет FTTB от 580 бат/мес (~1 400 ₽). Коворкинги в Чиангмае: 80–150 бат/день, скорость 100–200 Мбит/с. Бангкок: крупные коворкинги типа WeWork — от 400 бат/день.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">Местные SIM-карты</div><div class="info-row-text"><strong>Turkcell</strong> — лучшее покрытие, пакет 10 ГБ от 350–500 ₺/мес.<br><strong>Vodafone Turkey</strong> — хорошее покрытие в городах, пакет 10 ГБ от 300 ₺.<br><strong>Türk Telekom</strong> — дешевле, пакет 10 ГБ от 250 ₺.<br>Покупка: паспорт обязателен, регистрация SIM в течение 3 месяцев.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">📶</span><div><div class="info-row-title">eSIM — купи до вылета</div><div class="info-row-text">Yesim или Airalo — активация по QR, интернет с первой минуты. Yesim принимает МИР. Цена: ~$5–8 на 30 дней. Удобно если не хочется регистрировать физическую SIM.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Регистрация иностранного телефона</div><div class="info-row-text">Иностранный телефон без регистрации работает в турецких сетях ~3 месяца, потом блокируется. Регистрация IMEI: ~2 500 ₺ (госпошлина). При долгосрочном проживании — зарегистрируйте телефон.</div></div></div>
     </div>
     <div class="partner-block reveal">
-      <div class="pb-header">
-        <div class="pb-title">eSIM для Тайланда</div>
-        <div class="pb-badge">Yesim · Airalo</div>
+      <div class="pb-header"><div class="pb-title">eSIM для Турции</div><div class="pb-badge">Yesim · Airalo</div></div>
+      <div class="pb-desc">Купи до вылета — интернет с первой минуты. Yesim принимает МИР.</div>
+      <div class="esim-tabs">
+        <button class="esim-tab active" onclick="switchEsim('turkey','yesim',this)">Yesim</button>
+        <button class="esim-tab" onclick="switchEsim('turkey','airalo',this)">Airalo</button>
       </div>
-      <div class="pb-desc">Купи до вылета — интернет заработает сразу после приземления. Yesim принимает карту МИР.</div>
-      <div class="esim-tabs" style="margin-top:16px">
-        <button class="esim-tab active" onclick="switchEsim('thailand','yesim',this)">Yesim — 18% кэшбэк</button>
-        <button class="esim-tab" onclick="switchEsim('thailand','airalo',this)">Airalo</button>
+      <div id="esim-yesim-turkey" class="esim-pane active">
+        <a href="https://yesim.app/?sub_id=turkey" target="_blank" rel="noopener" class="pb-btn">Купить eSIM Yesim →</a>
       </div>
-      <div id="esim-yesim-thailand" class="esim-pane active" style="margin-top:12px">
-        <button class="pb-btn" onclick="window.open('https://yesim.tpm.li/QvCwa9aD?erid=2Vtzqx3rbkr&sub_id=turkey','_blank')">Купить eSIM на Yesim →</button>
-      </div>
-      <div id="esim-airalo-thailand" class="esim-pane" style="margin-top:12px">
-        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&color_button=%233fbb89&color_focused=%233fbb89&secondary=%23FAF8F2&dark=%2311100f&light=%23FFFFFFff&special=%233fbb89&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
+      <div id="esim-airalo-turkey" class="esim-pane" style="display:none">
+        <a href="https://www.airalo.com/turkey-esim" target="_blank" rel="noopener" class="pb-btn">Купить eSIM Airalo →</a>
       </div>
     </div>
   </div>
@@ -1009,29 +977,17 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">11</span><span class="sec-dash"></span>
       <h2 class="sec-title">Меди<em>цина</em></h2>
-      <span class="sec-desc">Страховка обязательна. Без неё одна госпитализация — сотни тысяч рублей.</span>
+      <span class="sec-desc">Хороший уровень в крупных городах. Страховка нужна.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">Медицина в Тайланде для иностранцев — платная и одна из самых дорогих в ЮВА. Качество в частных госпиталях высокое — часто лучше, чем в России. Без страховки одна госпитализация может стоить сотни тысяч рублей.</div>
-      <div class="info-block-title">Реальные цены без страховки</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
-        <div class="price-card"><div class="pc-cat">Приём врача (частная клиника)</div><div class="pc-val">800–2 000 ฿</div></div>
-        <div class="price-card"><div class="pc-cat">Сутки в палате госпиталя</div><div class="pc-val">3 000–8 000 ฿</div></div>
-        <div class="price-card"><div class="pc-cat">Сутки в реанимации</div><div class="pc-val">от $2 000–3 000</div></div>
-        <div class="price-card"><div class="pc-cat">Лёгкое ДТП на байке</div><div class="pc-val">$3 000–7 000</div></div>
-      </div>
-      <div class="info-block-title">Лучшие частные госпитали</div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Bumrungrad (Бангкок)</div><div class="info-row-text">Международный уровень, русскоязычные врачи, принимают российские страховки. Топовый выбор для сложных случаев.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Bangkok Hospital (сеть по всей стране)</div><div class="info-row-text">Разветвлённая сеть на Пхукете, Самуи, Паттайе, Чиангмае. Надёжно везде.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Samitivej</div><div class="info-row-text">Сильная педиатрия, популярен у семей с детьми.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Частные клиники — хороший уровень</div><div class="info-row-text">Türkiye Hastanesi, Anadolu Medical Center, Memorial Hospital — международный уровень в Стамбуле. Приём: $50–150. Персонал часто говорит по-английски и иногда по-русски. Принимают страховку.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💊</span><div><div class="info-row-title">Аптеки (Eczane)</div><div class="info-row-text">Аптеки с зелёным крестом везде. Многие европейские препараты доступны, часть — только по рецепту. Персонал в туристических районах часто говорит по-русски. Ночные аптеки (nöbetçi eczane) есть в каждом районе.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Страховка обязательна</div><div class="info-row-text">Государственные больницы для иностранцев без страховки — дорого и очереди. Cherehapa — оформить онлайн за 5 минут.</div></div></div>
     </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Что нужно знать про страховку</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Минимум $100 000 покрытия</div><div class="info-row-text">Посольство РФ рекомендует именно этот лимит. Стандартный $30 000 может закончиться за неделю при серьёзной травме. Cherehapa позволяет сравнить 15+ компаний и выбрать с покрытием $50 000–100 000 за разумные деньги (~$40–80/месяц).</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Страховка должна покрывать мотоцикл</div><div class="info-row-text">Многие дешёвые полисы исключают занятия на мотоцикле. Проверьте этот пункт отдельно перед покупкой.</div></div></div>
-      <div style="margin-top:14px">
-        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&countryGroups=all-world&medicine=30000&powered_by=true&promo_id=2458&campaign_id=24" charset="utf-8"></script>
-      </div>
+    <div class="partner-block reveal">
+      <div class="pb-header"><div class="pb-title">Страховка для Турции</div><div class="pb-badge">Cherehapa</div></div>
+      <div class="pb-desc">Оформите онлайн за 5 минут. Покрытие от $30 000.</div>
+      <a href="https://cherehapa.ru/?marker=271684" target="_blank" rel="noopener" class="pb-btn">Оформить страховку →</a>
     </div>
   </div>
 
@@ -1040,84 +996,26 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">12</span><span class="sec-dash"></span>
       <h2 class="sec-title">Аренда <em>жилья</em></h2>
-      <span class="sec-desc">Реальный алгоритм без рекламы агентств.</span>
+      <span class="sec-desc">Инфляция разгоняет цены. Долгосрочная аренда — торгуйтесь.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">Самый больной вопрос для всех кто едет надолго. Здесь — не реклама агентств, а реальный алгоритм как снять квартиру без переплаты и не потерять депозит.</div>
-      <div class="info-block-title">Где искать жильё</div>
-      <div class="info-row green"><span class="info-row-icon">🏆</span><div><div class="info-row-title">DDproperty.com <span style="background:var(--green-l);color:var(--green);font-size:10px;padding:2px 8px;border-radius:100px;margin-left:6px">Лучший</span></div><div class="info-row-text">Главный сайт аренды в Тайланде. Большая база, фото, карта, цены без посредников. Есть фильтр по районам, бюджету, типу жилья. Много объявлений от собственников напрямую.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">FazWaz.ru / FazWaz.com</div><div class="info-row-text">Русскоязычный интерфейс. Большая база по всем регионам Тайланда. Есть агентская поддержка на русском языке — полезно если не хочешь разбираться самостоятельно.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">👥</span><div><div class="info-row-title">Facebook-группы</div><div class="info-row-text">«Аренда Пхукет русские», «Bangkok expats housing», «Chiang Mai rentals». Там часто сдают сами хозяева без комиссии агентства. Можно найти жильё на 20–30% дешевле чем на сайтах.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💬</span><div><div class="info-row-title">Telegram-чаты русскоязычных</div><div class="info-row-text">«Русские на Пхукете», «Бангкок наши» и аналогичные — там регулярно пишут «сдам/ищу жильё». Часто самые живые предложения именно там.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Airbnb / Booking — для первых 2–4 недель</div><div class="info-row-text">Дороже чем долгосрочная аренда, но удобно на старте пока ищешь постоянное жильё. Краткосрочная аренда стоит в 2–3 раза дороже долгосрочного контракта за то же место.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Кондо vs апартаменты — в чём разница</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px">
-        <div class="budget-card">
-          <div class="bc-label">Кондоминиум (кондо)</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.6">Жилой комплекс с бассейном, фитнесом, охраной. Каждая квартира — отдельный собственник. Лучше отделка, выше цена. Стандарт для экспатов.</div>
-        </div>
-        <div class="budget-card">
-          <div class="bc-label">Апартаменты</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.6">Один владелец — весь дом. Проще, дешевле, меньше инфраструктуры. Подходит для бюджетного варианта. Часто без бассейна.</div>
-        </div>
-      </div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Алгоритм аренды — шаг за шагом</div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">1</span><div><div class="info-row-title">Первые 2 недели живи в отеле/Airbnb</div><div class="info-row-text">Не торопись снимать долгосрочно до приезда. Посмотри район вживую, почувствуй расстояния.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">2</span><div><div class="info-row-title">Найди 5–10 вариантов, запроси цену за 3, 6 и 12 месяцев</div><div class="info-row-text">Долгосрочный контракт обычно на 20–30% дешевле.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">3</span><div><div class="info-row-title">Осмотри лично — не бронируй по фотографиям</div><div class="info-row-text">Проверь: работает ли кондиционер, давление воды, скорость интернета (попроси включить Wi-Fi).</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">4</span><div><div class="info-row-title">Уточни что включено в цену</div><div class="info-row-text">Электричество, вода, интернет, уборка. Электричество в Тайланде дорогое (5–6 бат/кВт·ч), кондиционер добавляет 1 500–3 000 бат/мес к счёту.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">5</span><div><div class="info-row-title">Подпиши договор на английском</div><div class="info-row-text">Стандарт: депозит 1–2 месяца + первый месяц вперёд. В договоре: условия возврата депозита, кто платит за ремонт, условия досрочного расторжения.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">6</span><div><div class="info-row-title">Сфотографируй всё при заезде</div><div class="info-row-text">Каждую царапину, каждый дефект. Отправь фото арендодателю в мессенджер — это твоя защита при выезде когда будут говорить «это ты сломал».</div></div></div>
-      <div class="alert amber" style="margin-top:12px">
-        <strong>⚠️ Типичные ошибки которые стоят денег:</strong><br>
-        🚫 Платить без договора — самый прямой путь к потере депозита.<br>
-        🚫 Не проверять тариф на электричество — некоторые выставляют 8–10 бат/кВт·ч вместо государственных 5–6 бат.<br>
-        🚫 Снимать на Пхукете в сезон дождей долгосрочно — если уедешь раньше срока, депозит не вернут.<br>
-        🚫 Переводить предоплату незнакомым людям без договора — мошенничество с арендой существует.
-      </div>
-    </div>
-    <div class="partner-block reveal" style="margin-top:12px">
-      <div class="pb-header">
-        <div class="pb-title">Найти жильё на Островок</div>
-        <div class="pb-badge">2.9 млн вариантов</div>
-      </div>
-      <div class="pb-desc">Отели, хостелы и апартаменты в Тайланде — для первых недель пока ищешь долгосрочную аренду.</div>
-      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%233fbb89&color_button=%233fbb89&color_icons=%233fbb89&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
+      <div class="info-row green"><span class="info-row-icon">🔍</span><div><div class="info-row-title">Где искать</div><div class="info-row-text"><strong>sahibinden.com</strong> — главный сайт аренды в Турции.<br><strong>Airbnb</strong> — краткосрочная аренда.<br><strong>Facebook Groups</strong> «Русские в Стамбуле», «Аренда Анталья».<br><strong>Telegram</strong> — «Турция | Аренда», «Русские в Турции».</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💰</span><div><div class="info-row-title">Цены по городам (долгосрочная)</div><div class="info-row-text"><strong>Стамбул, европейский берег:</strong> 20 000–50 000 ₺/мес за 1 комн.<br><strong>Стамбул, азиатский берег:</strong> 15 000–35 000 ₺/мес — дешевле.<br><strong>Анталья:</strong> 12 000–25 000 ₺/мес.<br><strong>Измир:</strong> 10 000–22 000 ₺/мес.<br>Депозит: 1–3 месяца.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Инфляция и цены</div><div class="info-row-text">Цены на аренду в лирах росли на 80–100% в год. В долларовом эквиваленте всё равно дешевле чем раньше — из-за девальвации лиры. Фиксируйте цену в лирах надолго вперёд.</div></div></div>
     </div>
   </div>
 
-<!-- 13 VISARUN -->
+  <!-- 13 VISARUN -->
   <div id="visarun">
     <div class="sec-header reveal">
       <span class="sec-num">13</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Визаран <em>и бордерран</em></h2>
-      <span class="sec-desc">Актуальные правила 2026.</span>
-    </div>
-    <div class="alert amber reveal"><strong>Важно:</strong> правила ужесточились с ноября 2025 года. Тайская иммиграция всерьёз взялась за тех кто живёт годами по штампам. Читай внимательно.</div>
-
-    <div class="info-block reveal" style="margin-top:12px">
-      <div class="info-block-title">Бордерран vs Визаран — в чём разница</div>
-      <div class="info-row green"><span class="info-row-icon">🚶</span><div><div class="info-row-title">Бордерран (border run)</div><div class="info-row-text">Выехал из Таиланда → побыл 5 минут в соседней стране → вернулся. Получаешь новый 60-дневный штамп. Виза не нужна. Занимает 1 день.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🛂</span><div><div class="info-row-title">Визаран (visa run)</div><div class="info-row-text">Едешь в соседнюю страну чтобы подать заявку на тайскую Tourist Visa (TR) в консульстве. Занимает 2–3 дня. Нужен при третьем въезде за год.</div></div></div>
-    </div>
-
-    <div class="info-block reveal">
-      <div class="info-block-title">Новые ограничения с ноября 2025</div>
-      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Лимит 2 бордеррана в год через наземную границу</div><div class="info-row-text">Через наземные КПП разрешено не более 2 безвизовых въездов в год. После двух — иммиграция может отказать во въезде.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Штамп с наземной границы — без продления</div><div class="info-row-text">Нельзя продлить на 30 дней в иммиграционном офисе. Сколько дали на границе — столько и живёшь.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Авиаперелёт — без ограничений</div><div class="info-row-text">Въезд через аэропорт не ограничен. Штамп можно продлить на 30 дней за 1 900 бат.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">👁</span><div><div class="info-row-title">Усиленные проверки при частых въездах</div><div class="info-row-text">Могут попросить обратный билет, подтверждение жилья и 20 000 бат наличными на человека.</div></div></div>
+      <h2 class="sec-title">Визаран <em>и продление</em></h2>
+      <span class="sec-desc">Выезд обнуляет счётчик. Северный Кипр засчитывается.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Популярные маршруты бордеррана</div>
-      <div class="info-row"><span class="info-row-icon">🇲🇾</span><div><div class="info-row-title">С Пхукета → Малайзия (Сатун/Хат Яй) · 6–8 ч</div><div class="info-row-text">Самый популярный маршрут с юга. Организованные туры от 1 500–2 500 бат. Малайзия лояльна к транзитным визитам. Граница Садао–Паданг Бесар надёжнее Пенанга.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇲🇾</span><div><div class="info-row-title">С Бангкока → Малайзия (Хат Яй) · ночной поезд</div><div class="info-row-text">Поезд из Бангкока, ночь в пути, выезд–въезд через Садао. Удобно совместить с небольшим путешествием по Малайзии.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇱🇦</span><div><div class="info-row-title">С Чиангмая → Лаос (Хуайсай/Вьентьян)</div><div class="info-row-text">Популярен для севера Тайланда. Поезд или автобус до Нонгкхая, паром через Меконг. Можно совместить с поездкой в Луанг Прабанг.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇰🇭</span><div><div class="info-row-title">С Бангкока → Камбоджа (Аранья-Пратет/Пойпет)</div><div class="info-row-text">3–4 часа от Бангкока. Самый близкий вариант. Ходит много организованных туров. Репутация пограничного посёлка Пойпет — специфическая.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">🚢</span><div><div class="info-row-title">Северный Кипр — самый популярный визаран</div><div class="info-row-text">Паром из Мерсина или Алании на Северный Кипр. Туда-обратно за день: ~€30–50. Считается выездом из Турции — получаете новый штамп и новые 60 дней. Россиянам в Северный Кипр виза не нужна.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚌</span><div><div class="info-row-title">Грузия — второй популярный маршрут</div><div class="info-row-text">Автобус или самолёт до Тбилиси. Грузия — без визы для россиян 365 дней. Провести 1–3 дня и вернуться. Автобус из Трабзона до Батуми: ~5 часов, от €20.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Правило 90/180 — не забывайте</div><div class="info-row-text">Даже после визарана суммарный лимит 90 дней за 180 действует. Если вы уже были 60 дней, после визарана у вас осталось только 30 дней. Считайте аккуратно.</div></div></div>
     </div>
   </div>
 
@@ -1126,80 +1024,44 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">14</span><span class="sec-dash"></span>
       <h2 class="sec-title">Климат <em>и сезоны</em></h2>
-      <span class="sec-desc">Запад и восток живут в разных сезонах.</span>
+      <span class="sec-desc">Средиземноморье на юге, умеренный на севере. Лето жаркое везде.</span>
     </div>
-
-    <div class="alert green reveal" style="margin-bottom:20px">
-      Главное что нужно знать: западное и восточное побережья живут в <strong>разных сезонах</strong>. Когда на Пхукете дожди — на Самуи и Паттайе солнце, и наоборот.
-    </div>
-
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="reveal">
       <div class="info-block">
-        <div class="info-block-title">🌊 Пхукет, Краби, Ко Пхи-Пхи <span style="font-size:11px;color:var(--muted);font-weight:400">Андаманское море (запад)</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь — апрель. Пик: декабрь — январь.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май — октябрь. Морские экскурсии часто отменяют, острова Симилан закрыты.</div></div></div>
+        <div class="info-block-title">🌆 Стамбул</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Лучшее время</div><div class="info-row-text">Апрель–май и сентябрь–октябрь: +20–25°, мало туристов, всё работает.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Избегать</div><div class="info-row-text">Июль–август: +35°, толпы. Январь–февраль: +5°, дожди, редко снег.</div></div></div>
       </div>
       <div class="info-block">
-        <div class="info-block-title">🏝 Самуи, Ко Панган, Ко Тао <span style="font-size:11px;color:var(--muted);font-weight:400">Сиамский залив (восток)</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Январь — сентябрь. Full Moon Party — раз в месяц.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Октябрь — декабрь. Когда на Пхукете дожди (июнь–октябрь) — здесь солнечно.</div></div></div>
+        <div class="info-block-title">🏖 Анталья и побережье</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Пляжный сезон</div><div class="info-row-text">Май–октябрь: +28–38°, море +24–28°. Пик — июль–август. Ноябрь–апрель — тихо и недорого.</div></div></div>
+        <div class="info-row"><span class="info-row-icon">ℹ️</span><div><div class="info-row-title">Зима</div><div class="info-row-text">Декабрь–март: +15–18°, дождливо, море холодное. Зато цены вдвое ниже.</div></div></div>
       </div>
       <div class="info-block">
-        <div class="info-block-title">🌆 Паттайя, Бангкок <span style="font-size:11px;color:var(--muted);font-weight:400">Центр и восток</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь — апрель. Паттайя — самый комфортный вариант летом: дожди короткие.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май — октябрь. Дожди обычно вечером, не весь день.</div></div></div>
+        <div class="info-block-title">🏔 Каппадокия</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Лучшее время</div><div class="info-row-text">Апрель–июнь и сентябрь–ноябрь: комфортная температура, воздушные шары летают.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Зима</div><div class="info-row-text">Декабрь–март: снег, −5…−10°, часть шаров отменяется. Зато красиво.</div></div></div>
       </div>
       <div class="info-block">
-        <div class="info-block-title">🏔 Чиангмай и север <span style="font-size:11px;color:var(--muted);font-weight:400">Горный регион</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Лучшее время</div><div class="info-row-text">Декабрь — февраль. Прохладно (+18–24°), идеально для треков.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Июнь — октябрь.</div></div></div>
-        <div class="info-row red"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Дымный сезон (март–апрель)</div><div class="info-row-text">Горят леса — дым, смог, плохой воздух. Избегать.</div></div></div>
+        <div class="info-block-title">🏛 Анкара и центр</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Весна и осень</div><div class="info-row-text">Апрель–май и сентябрь–октябрь: +18–25°. Лето жаркое (+35°), зима холодная (−5°).</div></div></div>
+        <div class="info-row"><span class="info-row-icon">ℹ️</span><div><div class="info-row-title">Особенность</div><div class="info-row-text">Континентальный климат — сильнее контрасты чем на побережье.</div></div></div>
       </div>
-    </div>
-
-    <div class="climate-grid reveal" style="margin-top:16px">
-      <div class="climate-card"><div class="climate-month">ЯНВ</div><div class="climate-icon">☀️</div><div class="climate-temp">+28°</div><div class="climate-note">Лучший сезон</div></div>
-      <div class="climate-card"><div class="climate-month">ФЕВ</div><div class="climate-icon">☀️</div><div class="climate-temp">+29°</div><div class="climate-note">Отлично</div></div>
-      <div class="climate-card"><div class="climate-month">МАР</div><div class="climate-icon">🌤</div><div class="climate-temp">+30°</div><div class="climate-note">Жарко · дым на севере</div></div>
-      <div class="climate-card"><div class="climate-month">АПР</div><div class="climate-icon">🌤</div><div class="climate-temp">+32°</div><div class="climate-note">Сонгкран 🎉</div></div>
-      <div class="climate-card"><div class="climate-month">МАЙ</div><div class="climate-icon">🌧</div><div class="climate-temp">+31°</div><div class="climate-note">Дожди (запад)</div></div>
-      <div class="climate-card"><div class="climate-month">ИЮН</div><div class="climate-icon">🌧</div><div class="climate-temp">+30°</div><div class="climate-note">Сезон дождей</div></div>
-      <div class="climate-card"><div class="climate-month">ИЮЛ</div><div class="climate-icon">⛈</div><div class="climate-temp">+29°</div><div class="climate-note">Ливни (Пхукет)</div></div>
-      <div class="climate-card"><div class="climate-month">АВГ</div><div class="climate-icon">⛈</div><div class="climate-temp">+29°</div><div class="climate-note">Ливни (Пхукет)</div></div>
-      <div class="climate-card"><div class="climate-month">СЕН</div><div class="climate-icon">🌧</div><div class="climate-temp">+29°</div><div class="climate-note">Дождливо</div></div>
-      <div class="climate-card"><div class="climate-month">ОКТ</div><div class="climate-icon">🌦</div><div class="climate-temp">+29°</div><div class="climate-note">Переходный</div></div>
-      <div class="climate-card"><div class="climate-month">НОЯ</div><div class="climate-icon">⛅</div><div class="climate-temp">+28°</div><div class="climate-note">Начало сезона</div></div>
-      <div class="climate-card"><div class="climate-month">ДЕК</div><div class="climate-icon">☀️</div><div class="climate-temp">+27°</div><div class="climate-note">Пик · цены +30%</div></div>
-    </div>
-
-    <div class="alert amber reveal" style="margin-top:16px">
-      <strong>Лайфхак для зимовщиков:</strong> ноябрь–апрель — универсальное время когда хорошая погода одновременно на Пхукете и Паттайе. Декабрь–январь — пик сезона, цены на 30–50% выше чем в марте. Самый бюджетный месяц при хорошей погоде — <strong>март</strong>.
     </div>
   </div>
-
 
   <!-- 15 SAFETY -->
   <div id="safety">
     <div class="sec-header reveal">
       <span class="sec-num">15</span><span class="sec-dash"></span>
       <h2 class="sec-title">Безопас<em>ность</em></h2>
-      <span class="sec-desc">Тайланд безопасен — но туристов разводят по классическим схемам.</span>
+      <span class="sec-desc">В туристических зонах безопасно. Стандартные меры предосторожности.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Типичные разводы туристов</div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Temple scam («храм закрыт»)</div><div class="info-row-text">Незнакомец говорит что храм сегодня закрыт и предлагает отвезти на тук-туке в «другой храм» или к «ювелиру». Храм открыт. Просто идите мимо.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Tuk-tuk scam</div><div class="info-row-text">Водитель предлагает бесплатный или дешёвый тур, везёт по магазинам где получает комиссию. Используйте Grab с фиксированной ценой.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Карточный развод</div><div class="info-row-text">«Дружелюбный» местный приглашает поиграть в карты. Всегда выигрывает. Потери — от $500.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Gem scam</div><div class="info-row-text">Продают «ценные» камни по «специальной цене» — в реальности дешёвые стекляшки. Никогда не покупайте украшения у незнакомцев.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Такси в аэропорту</div><div class="info-row-text">Нелегальные таксисты в аэропорту Суварнабхуми предлагают фиксированные цены в 2–3 раза дороже официального такси. Используйте Grab или официальные стойки.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Скимминг банкоматов</div><div class="info-row-text">Случается особенно на туристических островах. Используйте банкоматы в отделениях банков, а не уличные. Проверяйте картоприёмник.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Как вести себя с полицией</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Всегда вежливо и спокойно</div><div class="info-row-text">Тайская полиция реагирует на агрессию плохо. Улыбка и спокойный тон решают большинство ситуаций.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📋</span><div><div class="info-row-title">Всегда имейте документы</div><div class="info-row-text">Паспорт или копию с собой. При проверке без документов могут задержать до выяснения.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">«Штраф на месте»</div><div class="info-row-text">Полицейский предлагает заплатить штраф наличными на месте — это взятка. Можно вежливо отказаться и попросить официальный протокол. Официальный штраф за нарушение ПДД — 500 бат.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Наркотики — нулевая толерантность</div><div class="info-row-text">Хранение наркотиков — тюрьма от 1 года. За сбыт — пожизненное или смертная казнь. Марихуана легализована в 2022, но употребление в публичных местах запрещено.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Туристические зоны — безопасно</div><div class="info-row-text">Анталья, Бодрум, Фетхие, туристический Стамбул — безопасны для иностранцев. Полиция активно присутствует в туристических районах.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Карманники и развод</div><div class="info-row-text">В Стамбуле (Гранд-базар, Таксим, Сиркеджи) — карманники и «дружелюбные» знакомства ведущие в дорогой бар или магазин. Стандартные городские меры: следите за сумками и телефонами.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">🌋</span><div><div class="info-row-title">Землетрясения</div><div class="info-row-text">Турция — сейсмоактивная зона. Крупное землетрясение в 2023 году на юго-востоке. При аренде уточняйте год постройки и сейсмостойкость здания.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🚔</span><div><div class="info-row-title">Законы и ограничения</div><div class="info-row-text">Критика президента и государства — незаконна. Фото военных объектов — нельзя. Наркотики — очень строго. Для туристов на практике строго только по этим пунктам.</div></div></div>
     </div>
   </div>
 
@@ -1208,16 +1070,12 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">16</span><span class="sec-dash"></span>
       <h2 class="sec-title">Ковор<em>кинги</em></h2>
-      <span class="sec-desc">Тайланд — мировая столица цифровых кочевников.</span>
+      <span class="sec-desc">Развитая экосистема в Стамбуле. Растущая в Анталье.</span>
     </div>
-    <div class="tips-grid reveal">
-      <div class="tip-card"><span class="tip-num">🏔</span><div><div class="tip-title">Чиангмай — лучший город для работы</div><div class="tip-text"><strong>CAMP (Maya Mall)</strong> — легендарный коворкинг в торговом центре, работает 24/7. Стоимость: 1 кофе (~100 бат) = целый день. Скорость Wi-Fi: 100+ Мбит/с.<br><br><strong>MANA Fast & Slow Bar</strong> — модное место с отличным кофе. 80 бат/день.<br><strong>Think Park</strong> — на открытом воздухе, от 50 бат/день.<br><strong>Punspace</strong> — профессиональный коворкинг, 250 бат/день, 3 500 бат/мес.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🌆</span><div><div class="tip-title">Бангкок</div><div class="tip-text"><strong>The Hive</strong> — сеть коворкингов в Thonglor и Ekkamai. От 300 бат/день, 3 500 бат/мес. Скорость: 200+ Мбит/с.<br><br><strong>WeWork</strong> — международная сеть, дорого (от 500 бат/день), но надёжно.<br><strong>Hubba-TO</strong> — популярен у стартапов, 250 бат/день.<br><strong>Coffee shops</strong> — True Coffee в любом 7-Eleven, стол + Wi-Fi весь день за цену кофе.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🌴</span><div><div class="tip-title">Пхукет</div><div class="tip-text"><strong>Garage Society</strong> — лучший коворкинг на острове в Чалонге. 350 бат/день.<br><br><strong>Phuket Smart City</strong> — государственный коворкинг с хорошим интернетом. Часто бесплатно или 100 бат/день.<br><strong>Kaffa</strong> — кофейня-коворкинг в Пхукет-тауне, 80 бат/день.<br><br>На Патонге и Камале — сеть кафе Starbucks и True Coffee с рабочими местами.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🏝</span><div><div class="tip-title">Ko Samui / Ko Phangan</div><div class="tip-text"><strong>Samui</strong>: Chaweng имеет несколько кафе-коворкингов. Скорость интернета хуже континента — обычно 30–50 Мбит/с.<br><br><strong>Ko Phangan</strong>: WorknPlay — небольшой коворкинг в Tong Sala. Haad Yao имеет несколько кафе с рабочим интернетом. Если важна работа — выбирай континент, острова для отдыха.</div></div></div>
-    </div>
-    <div class="alert green reveal" style="margin-top:12px">
-      <strong>Лайфхак:</strong> в Чиангмае сформировалось огромное русскоязычное сообщество цифровых кочевников. Telegram-чаты «Чиангмай наши» и «Digital Nomads Chiang Mai» — живые обсуждения жилья, коворкингов и событий.
+    <div class="info-block reveal">
+      <div class="info-row"><span class="info-row-icon">🏢</span><div><div class="info-row-title">Стамбул</div><div class="info-row-text"><strong>Kolektif House</strong> — крупнейшая сеть, день от 350 ₺, месяц от 6 000 ₺.<br><strong>Workinton</strong> — несколько локаций, день от 300 ₺.<br><strong>P47 Coworking</strong> — популярен в Бешикташе, день от 250 ₺.<br><strong>WeWork Istanbul</strong> — 2 локации в центре.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🌊</span><div><div class="info-row-title">Анталья — растущий номад-хаб</div><div class="info-row-text"><strong>Bant Mag HQ</strong> — популярен среди IT, день от 200 ₺.<br><strong>Antalya Coworking</strong> — базовый, день от 150 ₺.<br>Многие кафе с хорошим Wi-Fi в центре — альтернатива коворкингу.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">💡</span><div><div class="info-row-title">Русскоязычное сообщество</div><div class="info-row-text">Telegram-чаты «Русские в Стамбуле», «IT Турция», «Анталья для своих» — там найдёте актуальные рекомендации по коворкингам, аренде и жизни.</div></div></div>
     </div>
   </div>
 
@@ -1226,58 +1084,24 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">17</span><span class="sec-dash"></span>
       <h2 class="sec-title">Чеклист <em>перед вылетом</em></h2>
-      <span class="sec-desc">Всё что нужно сделать до посадки в самолёт.</span>
+      <span class="sec-desc">Турция — одно из самых простых направлений из России.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">За 2 недели до вылета</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Проверить срок паспорта</div><div class="info-row-text">Нужно минимум 6 месяцев действия после даты въезда. При меньшем сроке — откажут на границе.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить страховку</div><div class="info-row-text">Минимум $100 000 покрытия. Покрытие мотоцикла — обязательно если планируешь арендовать байк. Cherehapa или Черехапа — сравни цены.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить eSIM или проверить роуминг</div><div class="info-row-text">eSIM через Yesim или Airalo до вылета — интернет заработает сразу после приземления. Или купить SIM в аэропорту.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Снять наличные / конвертировать</div><div class="info-row-text">Везите доллары или евро. Рубли меняют по невыгодному курсу. Возьмите минимум $500–1 000 наличными на первые дни.</div></div></div>
+      <div class="info-block-title">До вылета</div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Проверить паспорт — минимум 120 дней действия</div><div class="info-row-text">Это жёсткое требование. Если осталось меньше — могут не пустить на борт или отказать на границе.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить eSIM или подготовить SIM</div><div class="info-row-text">Yesim до вылета — интернет с первой минуты. Или купить Turkcell в аэропорту Стамбула по паспорту.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Оформить страховку</div><div class="info-row-text">Cherehapa — онлайн за 5 минут. Некоторые авиакомпании проверяют наличие страховки.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💵</span><div><div class="info-row-title">Подготовить доллары или евро</div><div class="info-row-text">Обменяете на лиры в городе по хорошему курсу. Меняйте только сколько нужно — лира теряет стоимость.</div></div></div>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">За 3 дня до вылета</div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Заполнить TDAC — обязательно!</div><div class="info-row-text">tdac.immigration.go.th — электронная карта прибытия. Без неё могут не пустить на борт. 5 минут, бесплатно. Заполняется не ранее чем за 3 дня до прилёта.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Установить приложения</div><div class="info-row-text">Grab, Google Maps (скачать карту офлайн), Bangkok MRT/BTS, XE Currency, Booking/Airbnb. В России скачать заранее — могут быть проблемы с App Store в Тайланде.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏠</span><div><div class="info-row-title">Забронировать первые ночи</div><div class="info-row-text">Минимум 2–3 ночи. На паспортном контроле могут попросить подтверждение проживания.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Обратный билет или маршрут выезда</div><div class="info-row-text">На паспортном контроле могут попросить обратный билет или подтверждение что ты покинешь страну. Бронь на автобус до Малайзии тоже считается.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Рекомендуемые маршруты</div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">1 неделя — Классика</div><div class="info-row-text">Дни 1–3: Бангкок (Большой Дворец, Чатучак, ночные рынки) → Дни 4–7: Пхукет или Краби (пляжи, острова Пхи-Пхи).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">2 недели — Разнообразие</div><div class="info-row-text">Дни 1–3: Бангкок → Дни 4–6: Чиангмай (храмы, рынки, слоны) → Дни 7–14: Острова юга (Пхукет + Краби или Самуи + Ко Панган).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Месяц — Зимовка</div><div class="info-row-text">Неделя в Бангкоке (обустройство, банк, SIM) → 2 недели в Чиангмае (работа, жизнь, коворкинги) → Финальные 1–2 недели на островах перед отлётом.</div></div></div>
+      <div class="info-block-title">По прилёту</div>
+      <div class="info-row"><span class="info-row-icon">📶</span><div><div class="info-row-title">Активировать eSIM или купить SIM</div><div class="info-row-text">Turkcell в аэропорту — нужен паспорт. Пакет 10 ГБ + звонки от 350 ₺.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Скачать BiTaksi</div><div class="info-row-text">Основное такси-приложение. Зарегистрироваться с российским номером — работает.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💱</span><div><div class="info-row-title">Поменять валюту в городе</div><div class="info-row-text">Аэропортовый курс хуже. Ищите döviz в центре города — курс на 3–5% лучше.</div></div></div>
     </div>
   </div>
 
-  <!-- COUNTRY NAV -->
-  <div class="country-nav reveal">
-    <a class="cnav-card" href="serbia.html">
-      <span class="cnav-flag">🇷🇸</span>
-      <div><div class="cnav-label">Предыдущая</div><div class="cnav-name">Сербия</div></div>
-      <span class="cnav-arrow">←</span>
-    </a>
-    <a class="cnav-card" href="armenia.html">
-      <span class="cnav-flag">🇦🇲</span>
-      <div><div class="cnav-label">Следующая страна</div><div class="cnav-name">Армения</div></div>
-      <span class="cnav-arrow">→</span>
-    </a>
-  </div>
-
-</div><!-- /main-wrap -->
-
-<footer>
-  <a class="flogo" href="../index.html">Check<em>The</em>World<span class="dot">.</span></a>
-  <div class="flinks">
-    <a href="../index.html">Страны</a>
-    <a href="#">Сравнить</a>
-    <a href="#">Визы</a>
-    <a href="#">Контакты</a>
-  </div>
-  <div class="fcopy">© 2026 · CheckTheWorld</div>
-</footer>
-
-<!-- SIDENAV -->
+  <!-- SIDENAV -->
 <nav class="sidenav" id="sidenav" style="z-index:9999">
   <div class="sn-item" data-t="visas"><span class="sn-label">Визы</span><div class="sn-dot"></div></div>
   <div class="sn-item" data-t="prices"><span class="sn-label">Цены</span><div class="sn-dot"></div></div>
@@ -1325,7 +1149,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
 // ── DATA ──
 
   // ⚠️ VISAS и CITIES для Турция — заполнить вручную!
-  // Скопировать структуру из thailand.html и адаптировать
   // ── CURRENCY ──
 const rates = {rub:1, usd:91, eur:99, local:33};
 function setCurrency(cur, btn){
@@ -1347,17 +1170,81 @@ function switchFlights(tab, btn){
 // ── VISA MODAL ──
 const VISAS = {
   free: {
-    title: 'Безвизовый въезд',
-    subtitle: '',
-    tags: [{t:'60 дней',c:'green'},{t:'Паспорт РФ',c:'green'}],
+    title: 'Безвизовый въезд для граждан РФ',
+    subtitle: 'До 60 дней за въезд · 90/180 суммарно · Паспорт 120+ дней',
+    tags: [{t:'60 дней',c:'green'},{t:'Бесплатно',c:'green'},{t:'90/180 суммарно',c:'amber'}],
     sections: [
-      {title:'Кому подходит', text:''},
-      {title:'Порядок действий', steps:['','','']},
+      {title:'УСЛОВИЯ ВЪЕЗДА', steps:[
+        'До 60 дней непрерывного пребывания без визы',
+        'Суммарно не более 90 дней за любые 180 дней',
+        'Загранпаспорт действует минимум 120 дней с даты въезда',
+        'Обратный билет желателен — могут попросить',
+      ]},
+      {title:'ВАЖНО', steps:[
+        'Превышение 60 дней без выезда — штраф и запрет въезда',
+        'Северный Кипр считается выездом из Турции',
+        'Дни по действующему ВНЖ (икамет) не входят в лимит 90/180',
+        'Биометрия на границе — вводится поэтапно с 2025 года',
+      ]},
     ],
-    warn: '',
-    btn: null
+    warn: null, btn: null,
   },
-};
+  tr: {
+    title: 'Туристическая виза',
+    subtitle: 'Через визовый центр Gateway International',
+    tags: [{t:'90+ дней',c:''},{t:'~$100',c:'amber'},{t:'Визовый центр',c:''}],
+    sections: [
+      {title:'КОГДА НУЖНА', steps:[
+        'Если суммарно в году хотите пробыть более 90 дней',
+        'Если уже исчерпали лимит 90/180',
+        'Подаётся через Gateway International до въезда в Турцию',
+      ]},
+      {title:'ДОКУМЕНТЫ', steps:[
+        'Загранпаспорт с 120+ днями действия',
+        'Анкета, фото',
+        'Подтверждение финансовой состоятельности',
+        'Бронь отеля или договор аренды',
+        'Срок рассмотрения: до 1 месяца',
+      ]},
+    ],
+    warn: null, btn: null,
+  },
+  nonimm: {
+    title: 'Туристический икамет (ВНЖ)',
+    subtitle: 'Долгосрочное проживание без права на работу',
+    tags: [{t:'1 год',c:''},{t:'~$500–800',c:'amber'},{t:'Без права работы',c:''}],
+    sections: [
+      {title:'ЧТО ДАЁТ', steps:[
+        'Право жить в Турции без ограничений по срокам',
+        'Открытие банковского счёта и мобильного номера',
+        'Регистрация транспортного средства',
+        'Медицинская страховка по местным ценам',
+      ]},
+      {title:'КАК ПОЛУЧИТЬ', steps:[
+        'Подать заявку онлайн: e-ikamet.goc.gov.tr',
+        'Назначат дату визита в иммиграционное управление',
+        'Принести документы: паспорт, фото, страховку, аренду',
+        'Срок рассмотрения: 1–3 месяца',
+      ]},
+    ],
+    warn: '<strong>Важно:</strong> с 2023 года выдача туристического икамета в Стамбуле, Анталье и Измире ужесточена — отказов больше.',
+    btn: 'https://e-ikamet.goc.gov.tr',
+  },
+  ltr: {
+    title: 'Рабочая виза',
+    subtitle: 'Официальное трудоустройство в Турции',
+    tags: [{t:'Через работодателя',c:'amber'},{t:'Work permit',c:''}],
+    sections: [
+      {title:'УСЛОВИЯ', steps:[
+        'Нужен официальный работодатель в Турции',
+        'Работодатель подаёт заявку в Министерство труда',
+        'Разрешение на работу оформляется до въезда',
+        'После въезда — оформление рабочего икамета',
+      ]},
+    ],
+    warn: null, btn: null,
+  },
+}
 
 const CITIES = {
   istanbul: {name_en:'Стамбул',
@@ -1383,6 +1270,18 @@ const CITIES = {
     desc:'',
     places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
     facts:['','','']
+  },
+  ankara: {
+    name: 'Анкара', emoji: '🏛', tag: 'Столица · 5.8 млн жителей', budget: 'от 8 000 ₺/мес аренда',
+    desc: 'Политическая и административная столица Турции. Современный планированный город без туристической суеты. Дешевле Стамбула на 30–40%.',
+    places: [
+      {n:'Мавзолей Ататюрка (Аныткабир)',d:'Величественный мавзолей основателя Турецкой Республики. Вход бесплатный.'},
+      {n:'Анкарская крепость',d:'Хеттская крепость в районе Улус — исторический центр города.'},
+      {n:'Музей анатолийских цивилизаций',d:'Один из лучших археологических музеев мира. Вход ~100 ₺.'},
+      {n:'Квартал Хamamönü',d:'Отреставрированный исторический квартал с кафе и магазинами.'},
+      {n:'Торговый центр Ankamall',d:'Крупнейший ТЦ Турции — для шопинга.'},
+    ],
+    facts:['Аэропорт ESB (Этимесгут) — новый, 2019','Метро: линии M1–M4, Ankaray','Дешевле Стамбула на 30–40%','Меньше туристов — аутентичная жизнь','2.5 часа автобусом или 1.5 часа самолётом до Стамбула'],
   },
 };
 

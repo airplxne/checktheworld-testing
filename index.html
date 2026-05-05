@@ -740,6 +740,18 @@ footer{
   .cta-wrap{padding:0 20px 52px}
   .cta{grid-template-columns:1fr;padding:36px 24px;gap:28px}
 }
+
+.card-soon-badge{
+  position:absolute;top:12px;right:12px;
+  background:var(--amber);color:#fff;
+  font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  padding:3px 8px;border-radius:100px;
+  pointer-events:none;
+}
+.card.coming-soon{
+  opacity:.75;cursor:default;pointer-events:none;
+}
+.card.coming-soon:hover{transform:none;box-shadow:var(--shadow);}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>emailjs.init('EWJ_3i5lkBRcBkjMg');</script>
@@ -930,7 +942,7 @@ footer{
 
 <script>
 
-const URLS = {'kazakhstan':'countries/kazakhstan.html','turkey':'countries/turkey.html','serbia':'countries/serbia.html','belarus':'countries/belarus.html','thailand':'countries/thailand.html','china':'countries/china.html','armenia':'countries/armenia.html','vietnam':'countries/vietnam.html','georgia':'countries/georgia.html'};
+const URLS = {'thailand':'countries/thailand.html','georgia':'countries/georgia.html','portugal':'#','uae':'countries/uae.html','indonesia':'countries/indonesia.html','montenegro':'countries/montenegro.html','turkey':'countries/turkey.html','serbia':'countries/serbia.html','vietnam':'countries/vietnam.html','armenia':'countries/armenia.html','germany':'#','cyprus':'#','kazakhstan':'countries/kazakhstan.html','belarus':'countries/belarus.html','malaysia':'#','argentina':'#','mexico':'#','egypt':'#','morocco':'#','china':'countries/china.html','india':'#','brazil':'#','spain':'#','italy':'#','japan':'#','south_korea':'#','cambodia':'#','maldives':'#','cuba':'#','south_africa':'#','czechia':'#','hungary':'#','thailand_north':'#','nepal':'#','jordan':'#'};
 function getUrl(id){ return URLS[id] || '#'; }
 // ============ DATA ============
 const COUNTRIES = [
@@ -958,7 +970,7 @@ const COUNTRIES = [
    day:2800,rent:'~35 000 ₽',climate:28,climateStr:'+30°C',net:'25 Мбит',
    flight:55000,warm:true,budget:true},
   {id:'montenegro',name:'Черногория',flag:'🇲🇪',region:'Балканы',
-   visa:'visa-free',visaLabel:'60 дней · без визы',
+   visa:'visa-free',visaLabel:'30 дней · без визы',
    day:2200,rent:'~32 000 ₽',climate:24,climateStr:'+26°C',net:'30 Мбит',
    flight:22000,warm:true,budget:true,compact:true},
   {id:'turkey',name:'Турция',flag:'🇹🇷',region:'Передняя Азия',
@@ -1017,6 +1029,67 @@ const COUNTRIES = [
    visa:'visa-free',visaLabel:'Без визы · 30 дней',
    day:3500,rent:'~45 000 ₽',climate:15,climateStr:'+15°C',net:'100 Мбит',
    flight:20000,warm:false,budget:false,file:'countries/china.html'},
+  {id:'india',name:'Индия',flag:'🇮🇳',region:'Южная Азия',
+   visa:'visa-on-arrival',visaLabel:'e-Visa · 30 дней',
+   day:1400,rent:'~18 000 ₽',climate:28,climateStr:'+30°C',net:'30 Мбит',
+   flight:25000,warm:true,budget:true},
+  {id:'brazil',name:'Бразилия',flag:'🇧🇷',region:'Латинская Америка',
+   visa:'visa-free',visaLabel:'Без визы · 90 дней',
+   day:2600,rent:'~35 000 ₽',climate:26,climateStr:'+28°C',net:'50 Мбит',
+   flight:65000,warm:true,budget:true},
+  {id:'spain',name:'Испания',flag:'🇪🇸',region:'Западная Европа',
+   visa:'visa-required',visaLabel:'Шенген · 90 дней',
+   day:5500,rent:'~95 000 ₽',climate:22,climateStr:'+24°C',net:'70 Мбит',
+   flight:40000,warm:true,budget:false},
+  {id:'italy',name:'Италия',flag:'🇮🇹',region:'Западная Европа',
+   visa:'visa-required',visaLabel:'Шенген · 90 дней',
+   day:5800,rent:'~100 000 ₽',climate:20,climateStr:'+22°C',net:'65 Мбит',
+   flight:38000,warm:true,budget:false},
+  {id:'japan',name:'Япония',flag:'🇯🇵',region:'Восточная Азия',
+   visa:'visa-required',visaLabel:'Виза · 15–90 дней',
+   day:5000,rent:'~70 000 ₽',climate:16,climateStr:'+18°C',net:'100 Мбит',
+   flight:45000,warm:false,budget:false},
+  {id:'south_korea',name:'Южная Корея',flag:'🇰🇷',region:'Восточная Азия',
+   visa:'visa-free',visaLabel:'Без визы · 60 дней',
+   day:4200,rent:'~55 000 ₽',climate:14,climateStr:'+16°C',net:'100 Мбит',
+   flight:35000,warm:false,budget:false},
+  {id:'cambodia',name:'Камбоджа',flag:'🇰🇭',region:'Юго-Восточная Азия',
+   visa:'visa-on-arrival',visaLabel:'e-Visa · 30 дней',
+   day:1200,rent:'~15 000 ₽',climate:30,climateStr:'+32°C',net:'20 Мбит',
+   flight:50000,warm:true,budget:true},
+  {id:'maldives',name:'Мальдивы',flag:'🇲🇻',region:'Индийский океан',
+   visa:'visa-free',visaLabel:'Без визы · 30 дней',
+   day:8000,rent:'~120 000 ₽',climate:30,climateStr:'+30°C',net:'30 Мбит',
+   flight:38000,warm:true,budget:false},
+  {id:'cuba',name:'Куба',flag:'🇨🇺',region:'Карибы',
+   visa:'visa-on-arrival',visaLabel:'Туркарта · 30 дней',
+   day:2200,rent:'~25 000 ₽',climate:28,climateStr:'+30°C',net:'10 Мбит',
+   flight:55000,warm:true,budget:true},
+  {id:'south_africa',name:'ЮАР',flag:'🇿🇦',region:'Африка',
+   visa:'visa-free',visaLabel:'Без визы · 30 дней',
+   day:2800,rent:'~30 000 ₽',climate:20,climateStr:'+22°C',net:'40 Мбит',
+   flight:55000,warm:true,budget:true},
+  {id:'czechia',name:'Чехия',flag:'🇨🇿',region:'Центральная Европа',
+   visa:'visa-required',visaLabel:'Шенген · 90 дней',
+   day:4500,rent:'~75 000 ₽',climate:14,climateStr:'+16°C',net:'80 Мбит',
+   flight:32000,warm:false,budget:false},
+  {id:'hungary',name:'Венгрия',flag:'🇭🇺',region:'Центральная Европа',
+   visa:'visa-required',visaLabel:'Шенген · 90 дней',
+   day:3800,rent:'~55 000 ₽',climate:14,climateStr:'+16°C',net:'75 Мбит',
+   flight:28000,warm:false,budget:false},
+  {id:'thailand_north',name:'Таиланд (север)',flag:'🇹🇭',region:'Юго-Восточная Азия',
+   visa:'visa-free',visaLabel:'60 дней · без визы',
+   day:1800,rent:'~22 000 ₽',climate:26,climateStr:'+28°C',net:'40 Мбит',
+   flight:34500,warm:true,budget:true},
+  {id:'nepal',name:'Непал',flag:'🇳🇵',region:'Южная Азия',
+   visa:'visa-on-arrival',visaLabel:'Виза · 15–90 дней',
+   day:1000,rent:'~12 000 ₽',climate:18,climateStr:'+20°C',net:'15 Мбит',
+   flight:28000,warm:true,budget:true},
+  {id:'jordan',name:'Иордания',flag:'🇯🇴',region:'Ближний Восток',
+   visa:'visa-free',visaLabel:'Без визы · 30 дней',
+   day:2500,rent:'~30 000 ₽',climate:22,climateStr:'+24°C',net:'35 Мбит',
+   flight:22000,warm:true,budget:true},
+
 ];
 
 // ============ STATE ============
@@ -1040,6 +1113,10 @@ function cardClass(c, idx, forceNone){
 }
 
 function renderCard(c, idx, forceNone){
+  const isReady = getUrl(c.id) !== '#';
+  const soonBadge = isReady ? '' : '<span class="card-soon-badge">Скоро</span>';
+  const comingSoonCls = isReady ? '' : ' coming-soon';
+  const cardHref = isReady ? getUrl(c.id) : 'javascript:void(0)';
   const cls = cardClass(c, idx, forceNone);
   const warmCls = c.warm ? ' warm' : '';
   const isPoster = cls === 'poster';
@@ -1059,7 +1136,8 @@ function renderCard(c, idx, forceNone){
 
   // For poster: different layout (more editorial)
   if(isPoster){
-    return `<a class="card poster${warmCls}" href="${getUrl(c.id)}" data-id="${c.id}">
+    return `<a class="card poster${warmCls}${comingSoonCls}" href="${cardHref}" data-id="${c.id}">
+      ${soonBadge}
       <div class="flag">${c.flag}</div>
       <div class="card-top">
         <div style="max-width:70%">
@@ -1077,7 +1155,8 @@ function renderCard(c, idx, forceNone){
     </a>`;
   }
 
-  return `<a class="card ${cls}${warmCls}" href="${getUrl(c.id)}" data-id="${c.id}">
+  return `<a class="card ${cls}${warmCls}${comingSoonCls}" href="${cardHref}" data-id="${c.id}" style="position:relative">
+    ${soonBadge}
     <div class="card-top">
       <div class="flag">${c.flag}</div>
       <span class="visa ${visaClass(c.visa)}"><span class="d"></span>${c.visaLabel}</span>
