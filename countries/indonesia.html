@@ -673,48 +673,46 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">01</span><span class="sec-dash"></span>
       <h2 class="sec-title">Визовый <em>режим</em></h2>
-      <span class="sec-desc">Четыре пути въезда. Для большинства — хватит паспорта и TDAC.</span>
+      <span class="sec-desc">Виза нужна. VOA $35 в аэропорту — самый простой способ.</span>
     </div>
     <div class="visa-grid reveal">
       <div class="visa-card featured" onclick="openVisa('free')">
         <div class="vc-type">▶ Рекомендуется</div>
-        <div class="vc-name">Безвизовый въезд</div>
-        <div class="vc-desc">Граждане РФ могут находиться до 60 дней без визы. Никаких документов кроме паспорта и TDAC.</div>
+        <div class="vc-name">Виза по прилёту (VOA)</div>
+        <div class="vc-desc">$35 в аэропорту. 30 дней с возможностью продления ещё на 30. Всего до 60 дней.</div>
         <div class="vc-tags">
-          <span class="vc-tag green">60 дней</span>
-          <span class="vc-tag green">Бесплатно</span>
-          <span class="vc-tag green">Паспорт РФ</span>
-          <span class="vc-tag amber">TDAC за 3 дня</span>
+          <span class="vc-tag green">30 дней</span>
+          <span class="vc-tag amber">$35</span>
+          <span class="vc-tag green">+30 дней продление</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('tr')">
-        <div class="vc-type">Туристическая</div>
-        <div class="vc-name">Tourist Visa (TR)</div>
-        <div class="vc-desc">Оформляется в консульстве. 60 дней с возможностью продления ещё на 30 дней.</div>
+        <div class="vc-type">Онлайн</div>
+        <div class="vc-name">e-VOA (онлайн)</div>
+        <div class="vc-desc">Оформляется до вылета на сайте иммиграционной службы. Отдельное окно при прилёте.</div>
         <div class="vc-tags">
-          <span class="vc-tag">60 дней</span>
-          <span class="vc-tag amber">~$40</span>
-          <span class="vc-tag">+30 за $60</span>
+          <span class="vc-tag">30 дней</span>
+          <span class="vc-tag amber">$35</span>
+          <span class="vc-tag green">Без очереди</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('nonimm')">
         <div class="vc-type">Долгосрочная</div>
-        <div class="vc-name">Non-Immigrant (O)</div>
-        <div class="vc-desc">Для тех кто планирует жить в Тайланде — пенсионеры, работающие, владельцы бизнеса.</div>
+        <div class="vc-name">Виза C1/B211A</div>
+        <div class="vc-desc">До 60 дней. Оформляется онлайн или через агентство. Можно продлить 2 раза по 60 дней.</div>
         <div class="vc-tags">
-          <span class="vc-tag">1 год</span>
-          <span class="vc-tag amber">~$80</span>
-          <span class="vc-tag">Продлевается</span>
+          <span class="vc-tag">60 дней</span>
+          <span class="vc-tag amber">~$50–200</span>
+          <span class="vc-tag">+продление</span>
         </div>
       </div>
       <div class="visa-card" onclick="openVisa('ltr')">
-        <div class="vc-type">Для состоятельных</div>
-        <div class="vc-name">Thailand Privilege</div>
-        <div class="vc-desc">Специальная виза на 5–20 лет для обеспеченных пенсионеров, специалистов и инвесторов.</div>
+        <div class="vc-type">Резидентство</div>
+        <div class="vc-name">KITAS / KITAP</div>
+        <div class="vc-desc">ВНЖ на 1–2 года (KITAS) или постоянный (KITAP). Через работу, бизнес или пенсионный статус.</div>
         <div class="vc-tags">
-          <span class="vc-tag">5–20 лет</span>
-          <span class="vc-tag amber">от $10 000</span>
-          <span class="vc-tag green">Налоговые льготы</span>
+          <span class="vc-tag">1–2 года</span>
+          <span class="vc-tag amber">Через спонсора</span>
         </div>
       </div>
     </div>
@@ -725,7 +723,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">02</span><span class="sec-dash"></span>
       <h2 class="sec-title">Стоимость <em>жизни</em></h2>
-      <span class="sec-desc">Реальные цены в рублях, долларах, евро и батах.</span>
+      <span class="sec-desc">Реальные цены 2026 — в рублях, долларах, евро и рупиях.</span>
     </div>
     <div class="reveal" style="display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
       <div class="currency-switcher">
@@ -734,18 +732,18 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
         <button class="cur-btn" onclick="setCurrency('eur',this)">€ EUR</button>
         <button class="cur-btn" onclick="setCurrency('local',this)">Rp IDR</button>
       </div>
-      <span class="cur-rate">курс: 1 ₽ ≈ 145 IDR · апр 2026</span>
+      <span class="cur-rate">курс: 1 ₽ ≈ 145 IDR · май 2026</span>
     </div>
     <div class="prices-grid reveal">
-      <div class="price-card"><div class="pc-icon">🛏</div><div class="pc-cat">Хостел / ночь</div><div class="pc-val" data-rub="730–1 400 ₽" data-usd="$8–$15" data-eur="€7–€14" data-local="300–580 ฿">730–1 400 ₽</div><div class="pc-note">Бангкок, Чиангмай</div></div>
-      <div class="price-card"><div class="pc-icon">🏨</div><div class="pc-cat">Отель 3★ / ночь</div><div class="pc-val" data-rub="2 700–5 500 ₽" data-usd="$29–$60" data-eur="€27–€55" data-local="1 100–2 300 ฿">2 700–5 500 ₽</div><div class="pc-note">Центр города</div></div>
-      <div class="price-card"><div class="pc-icon">🏠</div><div class="pc-cat">Аренда 1 комн. / мес</div><div class="pc-val" data-rub="27 000–55 000 ₽" data-usd="$296–$604" data-eur="€272–€555" data-local="11 000–22 000 ฿">27 000–55 000 ₽</div><div class="pc-note">Долгосрочная аренда</div></div>
-      <div class="price-card"><div class="pc-icon">🍜</div><div class="pc-cat">Обед в кафе</div><div class="pc-val" data-rub="180–450 ₽" data-usd="$1–$4" data-eur="€1–€4" data-local="75–185 ฿">180–450 ₽</div><div class="pc-note">Местная кухня</div></div>
-      <div class="price-card"><div class="pc-icon">🚕</div><div class="pc-cat">Такси / Grab</div><div class="pc-val" data-rub="90–450 ₽" data-usd="$1–$5" data-eur="€1–€4" data-local="37–185 ฿">90–450 ₽</div><div class="pc-note">По городу</div></div>
-      <div class="price-card"><div class="pc-icon">🛵</div><div class="pc-cat">Аренда байка / день</div><div class="pc-val" data-rub="450–900 ₽" data-usd="$4–$9" data-eur="€4–€9" data-local="185–370 ฿">450–900 ₽</div><div class="pc-note">Мотобайк 125cc</div></div>
-      <div class="price-card"><div class="pc-icon">🍺</div><div class="pc-cat">Пиво в баре</div><div class="pc-val" data-rub="180–360 ₽" data-usd="$1–$3" data-eur="€1–€3" data-local="75–148 ฿">180–360 ₽</div><div class="pc-note">Chang, Singha</div></div>
-      <div class="price-card"><div class="pc-icon">💆</div><div class="pc-cat">Тайский массаж / час</div><div class="pc-val" data-rub="360–720 ₽" data-usd="$3–$7" data-eur="€3–€7" data-local="148–296 ฿">360–720 ₽</div><div class="pc-note">Традиционный массаж</div></div>
-      <div class="price-card"><div class="pc-icon">✈️</div><div class="pc-cat">Перелёт внутри страны</div><div class="pc-val" data-rub="2 700–7 200 ₽" data-usd="$29–$79" data-eur="€27–€72" data-local="1 100–2 963 ฿">2 700–7 200 ₽</div><div class="pc-note">AirAsia, Nok Air</div></div>
+      <div class="price-card"><div class="pc-icon">🛏</div><div class="pc-cat">Хостел / ночь</div><div class="pc-val" data-rub="350–900 ₽" data-usd="$4–$10" data-eur="€3.5–€9" data-local="50–130К Rp">350–900 ₽</div><div class="pc-note">Бали, Джогья</div></div>
+      <div class="price-card"><div class="pc-icon">🏨</div><div class="pc-cat">Отель 3★ / ночь</div><div class="pc-val" data-rub="2 000–6 000 ₽" data-usd="$22–$66" data-eur="€20–€60" data-local="290К–870К Rp">2 000–6 000 ₽</div><div class="pc-note">Центр города</div></div>
+      <div class="price-card"><div class="pc-icon">🏠</div><div class="pc-cat">Аренда вилла / мес</div><div class="pc-val" data-rub="50–150К ₽" data-usd="$549–$1648" data-eur="€505–€1515" data-local="7.2–21.7М Rp">50–150К ₽</div><div class="pc-note">Семиньяк, Чангу (Бали)</div></div>
+      <div class="price-card"><div class="pc-icon">🍜</div><div class="pc-cat">Обед в варунге</div><div class="pc-val" data-rub="100–300 ₽" data-usd="$1–$3.3" data-eur="€0.9–€3" data-local="14.5–43.5К Rp">100–300 ₽</div><div class="pc-note">Наси горенг, айям горенг</div></div>
+      <div class="price-card"><div class="pc-icon">🛵</div><div class="pc-cat">Аренда скутера / день</div><div class="pc-val" data-rub="500–900 ₽" data-usd="$5.5–$10" data-eur="€5–€9" data-local="72.5–130К Rp">500–900 ₽</div><div class="pc-note">На Бали</div></div>
+      <div class="price-card"><div class="pc-icon">🚕</div><div class="pc-cat">Такси Grab / поездка</div><div class="pc-val" data-rub="100–400 ₽" data-usd="$1–$4.4" data-eur="€1–€4" data-local="14.5–58К Rp">100–400 ₽</div><div class="pc-note">GrabCar</div></div>
+      <div class="price-card"><div class="pc-icon">🍺</div><div class="pc-cat">Пиво в баре</div><div class="pc-val" data-rub="350–700 ₽" data-usd="$4–$7.7" data-eur="€3.5–€7" data-local="50–100К Rp">350–700 ₽</div><div class="pc-note">Bintang, Bali Hai</div></div>
+      <div class="price-card"><div class="pc-icon">🌴</div><div class="pc-cat">Туристический налог Бали</div><div class="pc-val" data-rub="2 175 ₽" data-usd="$10" data-eur="€9.2" data-local="150К Rp">2 175 ₽</div><div class="pc-note">Разовый при въезде на Бали</div></div>
+      <div class="price-card"><div class="pc-icon">✈️</div><div class="pc-cat">Перелёт между островами</div><div class="pc-val" data-rub="1 800–7 000 ₽" data-usd="$20–$77" data-eur="€18–€70" data-local="261К–1015К Rp">1 800–7 000 ₽</div><div class="pc-note">Lion Air, Citilink</div></div>
     </div>
   </div>
 
@@ -758,7 +756,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     </div>
     <div class="partner-block reveal">
       <div class="pb-header">
-        <div class="pb-title">Найти рейсы в Тайланд</div>
+        <div class="pb-title">Найти рейсы в Индонезию</div>
         <div class="pb-badge">AVIASALES · KIWI</div>
       </div>
       <div class="pb-desc">Актуальные цены на билеты из вашего города — обновляются в реальном времени.</div>
@@ -843,64 +841,64 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">05</span><span class="sec-dash"></span>
       <h2 class="sec-title">Полезные <em>советы</em></h2>
-      <span class="sec-desc">8 вещей о которых никто не расскажет в турагентстве.</span>
+      <span class="sec-desc">8 вещей о которых надо знать до вылета в Индонезию.</span>
     </div>
     <div class="tips-grid reveal">
-      <div class="tip-card"><span class="tip-num">01</span><div><div class="tip-title">TDAC — заполнить за 3 дня до вылета</div><div class="tip-text">С 1 мая 2025 года обязательная электронная карта прибытия для всех въезжающих. Сайт: tdac.immigration.go.th. Занимает 5 минут, бесплатно. Бумажные карточки TM6 больше не выдают. Без TDAC могут не посадить на самолёт.</div></div></div>
-      <div class="tip-card"><span class="tip-num">02</span><div><div class="tip-title">Страховка с лимитом от $50 000</div><div class="tip-text">Медицина платная и дорогая. Обычный лимит $30 000 заканчивается за неделю при серьёзной травме. Посольство РФ рекомендует $100 000. Проверьте что страховка покрывает мотоцикл — большинство дешёвых полисов это исключают.</div></div></div>
-      <div class="tip-card"><span class="tip-num">03</span><div><div class="tip-title">Везите доллары, не рубли</div><div class="tip-text">Рубли меняют с потерей до 25%. Доллары и евро — везде по нормальному курсу. Лучшие обменники: SuperRich (зелёный, не оранжевый), Vasu Exchange в торговых центрах. Снимайте в банкоматах крупными суммами — комиссия 220 бат за операцию.</div></div></div>
-      <div class="tip-card"><span class="tip-num">04</span><div><div class="tip-title">Сезоны важны и различаются по регионам</div><div class="tip-text">Пхукет (запад): лучшее время ноябрь–апрель, дожди май–октябрь. Паттайя и Самуи (восток): сухой сезон наоборот — апрель–октябрь. В сезон дождей отели дешевле на 30–50%, но бывают ливни.</div></div></div>
-      <div class="tip-card"><span class="tip-num">05</span><div><div class="tip-title">Байк — только с правами и в шлеме</div><div class="tip-text">Без прав категории А вы не застрахованы при ДТП. Полиция периодически проводит рейды особенно на Пхукете. Штраф — 500 бат, но при ДТП без прав все расходы на лечение ложатся на вас лично.</div></div></div>
-      <div class="tip-card"><span class="tip-num">06</span><div><div class="tip-title">Дресс-код в храмах</div><div class="tip-text">Закрытые плечи и колени обязательны в любом буддийском храме. У входа в крупные храмы (Большой Дворец, Ват Пхо) всегда есть прокат саронгов. В шортах или майке не пустят.</div></div></div>
-      <div class="tip-card"><span class="tip-num">07</span><div><div class="tip-title">Приложения которые нужны</div><div class="tip-text">Grab (такси, еда), Bolt (альтернатива Grab), Google Maps, Bangkok MRT/BTS (расписание метро), XE Currency (курс валют), Airbnb/Booking. В Grab российскую карту не привяжешь — платите наличными.</div></div></div>
-      <div class="tip-card"><span class="tip-num">08</span><div><div class="tip-title">Не превышайте 179 дней</div><div class="tip-text">180+ дней в году = налоговое резидентство Тайланда + обязанность декларировать иностранные доходы. Для зимовщиков оптимально: приехать в ноябре, уехать до конца апреля — это ~180 дней, можно чуть сократить.</div></div></div>
+      <div class="tip-card"><span class="tip-num">01</span><div><div class="tip-title">All Indonesia — заполнить до прилёта</div><div class="tip-text">С августа 2025 года все въезжающие обязаны заполнить декларацию через приложение All Indonesia на allindonesia.imigrasi.go.id. Можно заполнить за 1–3 дня до прилёта. Объединяет таможенную и санитарную декларации в один QR-код.</div></div></div>
+      <div class="tip-card"><span class="tip-num">02</span><div><div class="tip-title">Туристический налог Бали — 150 000 Rp</div><div class="tip-text">С февраля 2024 года все туристы платят разовый сбор 150 000 IDR (~2 175 ₽) при въезде на Бали. Оплачивается онлайн на lovebali.baliprov.go.id или в аэропорту. Сохраните QR-код — могут проверить.</div></div></div>
+      <div class="tip-card"><span class="tip-num">03</span><div><div class="tip-title">Обратный билет — обязательно</div><div class="tip-text">На стойке регистрации в аэропорту вылета попросят показать обратный или транзитный билет. Без него могут не посадить на рейс. Бронь без оплаты теперь часто не принимают — нужен реальный билет.</div></div></div>
+      <div class="tip-card"><span class="tip-num">04</span><div><div class="tip-title">Grab работает, МИР не привязать</div><div class="tip-text">Grab — главный транспорт на Бали и в Джакарте. Карту МИР привязать нельзя. Платите наличными рупиями или картой Visa/MC иностранного банка. GrabBike в Убуде и туристических зонах может быть запрещён местными таксистами.</div></div></div>
+      <div class="tip-card"><span class="tip-num">05</span><div><div class="tip-title">Скутер — главный транспорт на Бали</div><div class="tip-text">Без скутера на Бали сложно. Аренда: 70 000–130 000 IDR/день (~500–900 ₽). Международные права категории A желательны, на практике редко проверяют. Шлем обязателен — штрафы реальны. Левостороннее движение.</div></div></div>
+      <div class="tip-card"><span class="tip-num">06</span><div><div class="tip-title">Уважайте балийскую культуру</div><div class="tip-text">Закрытая одежда при посещении храмов — саронг (повязка на поясе) обязателен, выдают при входе. Не садитесь выше голов людей. Не трогайте подношения (canang sari) на земле. Во время церемоний — не фотографируйте без разрешения.</div></div></div>
+      <div class="tip-card"><span class="tip-num">07</span><div><div class="tip-title">Вода — только из бутылки</div><div class="tip-text">Водопроводную воду пить нельзя. Бутылка 600 мл: 3 000–5 000 IDR (~20–35 ₽). В кафе и ресторанах вам принесут чай или воду — уточняйте что это за вода. Лёд в местных заведениях — осторожно.</div></div></div>
+      <div class="tip-card"><span class="tip-num">08</span><div><div class="tip-title">Сезон дождей — учитывайте при планировании</div><div class="tip-text">На Бали: сезон дождей ноябрь–март. Дожди короткие но интенсивные — обычно 1–2 часа в день. Лучший сезон: апрель–октябрь. Ломбок, острова Гили — сухо большую часть года.</div></div></div>
     </div>
   </div>
 
-<!-- 06 BUDGET -->
+  <!-- 06 BUDGET -->
   <div id="budget">
     <div class="sec-header reveal">
       <span class="sec-num">06</span><span class="sec-dash"></span>
       <h2 class="sec-title">Реальный <em>бюджет</em> на месяц</h2>
-      <span class="sec-desc">Три уровня жизни — от эконом до комфорт+.</span>
+      <span class="sec-desc">Бали — один из лучших вариантов для цифровых кочевников. Май 2026.</span>
     </div>
     <div class="budget-grid reveal">
       <div class="budget-card">
         <div class="bc-label">≈ Эконом</div>
-        <div class="bc-total">~50 000 ₽</div>
-        <div class="bc-usd">$600 · 16 000 ฿</div>
-        <div class="bc-row"><span>Жильё (комн./хостел)</span><span>8–12K ฿</span></div>
-        <div class="bc-row"><span>Еда (рынки, стрит-фуд)</span><span>5–7K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (авт./байк)</span><span>2–3K ฿</span></div>
-        <div class="bc-row"><span>Связь (SIM)</span><span>300–500 ฿</span></div>
-        <div class="bc-row"><span>Развлечения</span><span>1–2K ฿</span></div>
-        <div class="bc-note">Чиангмай, без алкоголя, своя готовка</div>
+        <div class="bc-total">~40 000 ₽</div>
+        <div class="bc-usd">$439 · 5.8М Rp</div>
+        <div class="bc-row"><span>Жильё (гестхаус/комн.)</span><span>1.5–2.5М Rp</span></div>
+        <div class="bc-row"><span>Еда (варунги, рынки)</span><span>1.5–2М Rp</span></div>
+        <div class="bc-row"><span>Скутер (аренда)</span><span>700К–1М Rp</span></div>
+        <div class="bc-row"><span>Связь (SIM)</span><span>100–150К Rp</span></div>
+        <div class="bc-row"><span>Прочее</span><span>500К Rp</span></div>
+        <div class="bc-note">Убуд или Чангу, гестхаус, варунги</div>
       </div>
       <div class="budget-card highlight">
         <div class="bc-label">★ Комфорт</div>
-        <div class="bc-total">~100 000 ₽</div>
-        <div class="bc-usd">$1 100 · 33 000 ฿</div>
-        <div class="bc-row"><span>Жильё (студия/апарт)</span><span>15–22K ฿</span></div>
-        <div class="bc-row"><span>Еда (кафе + готовка)</span><span>8–12K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (Grab + байк)</span><span>3–5K ฿</span></div>
-        <div class="bc-row"><span>Коворкинг</span><span>2.5–4K ฿</span></div>
-        <div class="bc-row"><span>Развлечения + misc</span><span>3–5K ฿</span></div>
-        <div class="bc-note">Бангкок или Чиангмай, средний образ жизни</div>
+        <div class="bc-total">~80 000 ₽</div>
+        <div class="bc-usd">$879 · 11.6М Rp</div>
+        <div class="bc-row"><span>Жильё (вилла 1 комн.)</span><span>5–8М Rp</span></div>
+        <div class="bc-row"><span>Еда (кафе + готовка)</span><span>2.5–3.5М Rp</span></div>
+        <div class="bc-row"><span>Скутер + Grab</span><span>1–1.5М Rp</span></div>
+        <div class="bc-row"><span>Связь + eSIM</span><span>200–300К Rp</span></div>
+        <div class="bc-row"><span>Развлечения, misc</span><span>1.5–2.5М Rp</span></div>
+        <div class="bc-note">Семиньяк или Убуд, своя вилла</div>
       </div>
       <div class="budget-card warm">
         <div class="bc-label">★★ Комфорт+</div>
-        <div class="bc-total">~180 000 ₽</div>
-        <div class="bc-usd">$2 000 · 60 000 ฿</div>
-        <div class="bc-row"><span>Жильё (1 комн. у моря)</span><span>25–50K ฿</span></div>
-        <div class="bc-row"><span>Еда (рестораны)</span><span>12–18K ฿</span></div>
-        <div class="bc-row"><span>Транспорт (авто/Grab)</span><span>5–10K ฿</span></div>
-        <div class="bc-row"><span>Спорт, здоровье, спа</span><span>3–6K ฿</span></div>
-        <div class="bc-row"><span>Экскурсии, поездки</span><span>5–10K ฿</span></div>
-        <div class="bc-note">Пхукет или Самуи, активный образ жизни</div>
+        <div class="bc-total">~150 000 ₽</div>
+        <div class="bc-usd">$1 648 · 21.7М Rp</div>
+        <div class="bc-row"><span>Вилла с бассейном</span><span>10–18М Rp</span></div>
+        <div class="bc-row"><span>Рестораны, доставка</span><span>4–6М Rp</span></div>
+        <div class="bc-row"><span>Авто + скутер</span><span>3–5М Rp</span></div>
+        <div class="bc-row"><span>Spa, спорт, поездки</span><span>2–4М Rp</span></div>
+        <div class="bc-row"><span>Прочее</span><span>1–2М Rp</span></div>
+        <div class="bc-note">Премиум вилла Семиньяк или Кута</div>
       </div>
     </div>
     <div class="alert amber reveal" style="margin-top:12px">
-      <strong>Актуальный курс (апрель 2026):</strong> 1 бат ≈ 2.43 ₽. Обменники в торговых центрах дают курс лучше аэропортового на 15–20%. Рубли меняют по невыгодному курсу — лучше везти доллары или евро.
+      <strong>Актуальный курс (май 2026):</strong> 1 рупия ≈ 0.0069 ₽. МИР к Grab не привязать. Наличные рупии снимайте в банкоматах BCA, BNI или Mandiri — они лучше работают с иностранными картами.
     </div>
   </div>
 
@@ -908,23 +906,14 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
   <div id="money">
     <div class="sec-header reveal">
       <span class="sec-num">07</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Деньги, <em>карты</em> и банки</h2>
-      <span class="sec-desc">Как платить в Тайланде россиянам в 2026 году — без фантазий.</span>
+      <h2 class="sec-title">Деньги <em>и платежи</em></h2>
+      <span class="sec-desc">Наличные рупии важны. МИР — нестабильно.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Как платить в Тайланде россиянам</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">UnionPay (лучший вариант)</div><div class="info-row-text">Карты UnionPay от российских банков (Газпромбанк, Россельхозбанк, МКБ) работают в большинстве банкоматов — SCB, Bangkok Bank, Kasikorn, LH Bank. Снятие: комиссия 220 бат (~540 ₽) — снимайте сразу крупную сумму.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Наличные доллары / евро</div><div class="info-row-text">Самый надёжный способ. Меняйте в обменниках торговых центров (SuperRich, Vasu, Max Money) — курс лучше аэропортового на 10–20%. Никогда не меняйте в аэропорту.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Рубли — не везите</div><div class="info-row-text">Обменять рубли на баты можно, но теряешь до 25% на курсе. Везите доллары или евро — это стандартная валюта для обмена.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💡</span><div><div class="info-row-title">Переводы из России</div><div class="info-row-text">SWIFT через нейтральные банки (армянские, казахские, грузинские), криптовалюта (USDT → обменник), Western Union через Казахстан. Прямые SWIFT из РФ работают только через незаблокированные банки.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Открытие банковского счёта</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px">Нужен для долгосрочного проживания — платить аренду, коммуналку, получать переводы. Открыть счёт с безвизовым штампом сложно, большинство банков требует долгосрочную визу.</div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Bangkok Bank <span style="color:var(--amber);font-size:11px;margin-left:6px">ЛОЯЛЬНЫЙ</span></div><div class="info-row-text">Единственный банк который <strong>иногда</strong> открывает счёт без долгосрочной визы — зависит от отделения. Минимальный депозит — 500 бат.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Kasikorn Bank (KBank) <span style="color:var(--green);font-size:11px;margin-left:6px">НАДЁЖНО</span></div><div class="info-row-text">Требует долгосрочную визу + депозит ~$400 (возвращают). Удобное мобильное приложение.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏦</span><div><div class="info-row-title">Krungthai Bank</div><div class="info-row-text">Государственный банк, разветвлённая сеть банкоматов. Требует паспорт, иногда адрес в Тайланде.</div></div></div>
-      <div class="alert amber" style="margin-top:12px"><strong>Совет:</strong> если в одном отделении отказали — идите в другое. Возьмите: загранпаспорт, деньги на депозит, тайскую SIM-карту и контракт аренды.</div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">МИР — нестабильно</div><div class="info-row-text">МИР принимают отдельные банкоматы, но непостоянно. К Grab и большинству сервисов МИР не привязать. Надёжнее: наличные доллары + карта Visa/MC иностранного банка.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💵</span><div><div class="info-row-title">Доллары — лучший вариант для обмена</div><div class="info-row-text">Меняйте в авторизованных обменниках (money changer) — курс лучше банков. На Бали: много обменников в Куте, Семиньяке, Убуде. Избегайте обменников у туристических мест — завышают курс. Везите доллары крупными купюрами ($100) — за них дают лучший курс.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏧</span><div><div class="info-row-title">Банкоматы</div><div class="info-row-text">BCA, BNI, Mandiri — лучше работают с иностранными картами. Комиссия: 30 000–50 000 IDR за операцию. Лимит: 1.5–3М IDR за раз. Снимайте в торговых центрах — надёжнее чем на улице.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">💡</span><div><div class="info-row-title">Стратегия для россиян</div><div class="info-row-text">Везите $200–300 наличными, меняйте в городе. Grab оплачивайте картой Visa/MC. Для варунгов и рынков — только наличные рупии. GoPay и OVO (местные платёжные системы) к иностранным картам привязать сложно.</div></div></div>
     </div>
   </div>
 
@@ -932,41 +921,28 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
   <div id="taxes">
     <div class="sec-header reveal">
       <span class="sec-num">08</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Налоговое <em>резидентство</em></h2>
-      <span class="sec-desc">Одна из важнейших тем для долгосрочников.</span>
+      <h2 class="sec-title">Налоги <em>и резидентство</em></h2>
+      <span class="sec-desc">Правило 183 дней. Для туристов неактуально.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">С 2024 года правила изменились — теперь они касаются практически всех кто проводит в стране больше полугода.</div>
-      <div class="alert amber"><strong>⚠️ 180 дней = налоговый резидент</strong><br>Если провёл в Тайланде 180+ дней в календарном году — ты налоговый резидент. Счётчик обнуляется 1 января каждого года.</div>
-      <div class="info-block-title" style="margin-top:16px">Что изменилось с 2024 года</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px">До 2024: иностранный доход облагался налогом только если переводился в тот же год. После 2024: любой иностранный доход, переведённый в Тайланд, потенциально облагается налогом. Льготный период на 2 года для доходов 2024–2025.</div>
-      <div class="info-block-title">Ставки подоходного налога (PIT)</div>
-      <table class="tax-table">
-        <tr><td>до 150 000 ฿/год</td><td>0%</td></tr>
-        <tr><td>150 001 — 300 000 ฿</td><td>5%</td></tr>
-        <tr><td>300 001 — 500 000 ฿</td><td>10%</td></tr>
-        <tr><td>500 001 — 750 000 ฿</td><td>15%</td></tr>
-        <tr><td>свыше 5 000 000 ฿</td><td>35%</td></tr>
-      </table>
-      <div class="alert green" style="margin-top:14px"><strong>✅ Если ты нерезидент:</strong> проводишь меньше 180 дней — тайские налоги тебя не касаются. Оптимальная стратегия для зимовщиков — не превышать 179 дней.</div>
-      <div style="margin-top:12px;font-size:11.5px;color:var(--faint);font-style:italic">Налоговое законодательство меняется. Перед принятием решений проконсультируйтесь с налоговым консультантом.</div>
+      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Правило 183 дней</div><div class="info-row-text">Налоговым резидентом Индонезии становитесь при пребывании 183+ дней в году. Ставка PPh: прогрессивная 5–35%. Мировой доход облагается только у резидентов.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Работа без рабочей визы — нарушение</div><div class="info-row-text">Официальная работа в индонезийской компании требует рабочего разрешения KITAS. Удалённая работа для иностранного работодателя — серая зона. Виза Digital Nomad (Second Home Visa) существует, но сложна в оформлении.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏠</span><div><div class="info-row-title">Second Home Visa — для долгосрочников</div><div class="info-row-text">Виза на 5–10 лет для состоятельных иностранцев. Требует размещения $130 000 на индонезийском банковском счету или покупки недвижимости. Правило не менялось с 2022 года — уточняйте актуальные требования.</div></div></div>
     </div>
   </div>
 
-    <!-- 09 TRANSPORT -->
+  <!-- 09 TRANSPORT -->
   <div id="transport">
     <div class="sec-header reveal">
       <span class="sec-num">09</span><span class="sec-dash"></span>
       <h2 class="sec-title">Транс<em>порт</em></h2>
-      <span class="sec-desc">От метро до байка — как передвигаться по стране.</span>
+      <span class="sec-desc">Скутер на Бали. Самолёт между островами. Grab в городах.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-row"><span class="info-row-icon">🚇</span><div><div class="info-row-title">Метро в Бангкоке — BTS Skytrain + MRT</div><div class="info-row-text">Самый быстрый способ передвижения по столице. BTS (надземное) + MRT (подземное) вместе покрывают большинство туристических и деловых районов. Стоимость: 15–60 бат в зависимости от расстояния. Дневной проездной BTS — 140 бат. Работает 06:00–00:00. Пробки в Бангкоке жуткие — в часы пик метро экономит 30–60 минут.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Grab — главное приложение такси</div><div class="info-row-text">Аналог Яндекс.Такси для ЮВА. Фиксированная цена до посадки. GrabCar по центру Бангкока — 80–120 бат, из аэропорта Суварнабхуми в центр — 350–450 бат. GrabBike (мотоцикл) — 40–70 бат по городу.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Привязать российскую карту к Grab нельзя</div><div class="info-row-text">Даже UnionPay. Платите наличными или попросите водителя принять перевод.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🛵</span><div><div class="info-row-title">Аренда байка — главный транспорт на островах</div><div class="info-row-text">На Пхукете, Самуи, Краби и в Паттайе байк — основной транспорт. Аренда: 250–350 бат в день, 5 000–8 000 бат в месяц. Нужны права категории А. Без прав — технически незаконно и не покрывается страховкой при ДТП. Лёгкое падение с байка обходится в $3 000–7 000 без страховки. Всегда надевайте шлем.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Перелёты внутри страны</div><div class="info-row-text">AirAsia и Nok Air — основные лоукостеры. Бангкок→Пхукет: от 800–2 000 бат при заблаговременной покупке. Бангкок→Чиангмай: от 700 бат. Паром Сурат Тани→Самуи: ~300 бат + автобус из Бангкока ~500 бат. Часто паром + автобус дешевле прямого рейса на Самуи (Bangkok Airways там монополист и цены высокие).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🚍</span><div><div class="info-row-title">Автобусы и поезда между городами</div><div class="info-row-text">Бангкок→Паттайя: автобус от Восточного автовокзала, ~130 бат, 2–3 часа. Бангкок→Чиангмай: поезд 2-й класс с кондиционером — 331–531 бат, ночной вагон со спальными местами. Ночной поезд удобен — экономит на отеле и ночной перелёт не нужен.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">🛵</span><div><div class="info-row-title">Скутер — главный транспорт на Бали</div><div class="info-row-text">70 000–130 000 IDR/день (~500–900 ₽). Международные права категории A — желательно. Левостороннее движение. Шлем обязателен. Не ездите по пляжным грунтовым дорогам после дождя. Бензин на Бали: SPBU (Pertamina) или Pertamax.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Grab и Gojek</div><div class="info-row-text">Grab — работает в Джакарте, Бали (ограниченно), Медане. GrabBike в туристических зонах Бали запрещён договорённостями с местными таксистами — используйте GrabCar. Gojek — аналог, популярнее в Джакарте.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Перелёты между островами</div><div class="info-row-text">Lion Air, Citilink (лоукостеры) — Бали↔Джакарта от 300 000–700 000 IDR. Бали↔Ломбок: паром (35 000 IDR, 4.5 часа) или самолёт 30 мин. Бронирование: tiket.com или traveloka.com.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">⛵</span><div><div class="info-row-title">Паромы и быстрые лодки</div><div class="info-row-text">Бали↔Гили-острова: быстрая лодка ~2 часа, от 250 000 IDR. Бали↔Нуса-Пенида: быстрая лодка 30 мин, 75 000–150 000 IDR. Бали↔Ломбок: паром ASDP из Падангбай, 4 часа, 55 000 IDR.</div></div></div>
     </div>
   </div>
 
@@ -975,31 +951,28 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">10</span><span class="sec-dash"></span>
       <h2 class="sec-title">Интернет <em>и связь</em></h2>
-      <span class="sec-desc">4G/5G везде в городах. Три способа оставаться онлайн.</span>
+      <span class="sec-desc">4G хорошее на Бали и в городах. На островах Гили — слабее.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">eSIM — лучший вариант <span style="background:var(--green-l);color:var(--green);font-size:10px;padding:2px 8px;border-radius:100px;margin-left:6px">Рекомендуем</span></div><div class="info-row-text">Покупаешь онлайн до вылета (Yesim, Airalo), активируешь по QR-коду — интернет работает с момента приземления. Yesim принимает карту МИР. Цена: ~$7–15 на 30 дней безлимит.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💳</span><div><div class="info-row-title">Местная SIM-карта</div><div class="info-row-text">Покупается в аэропорту или 7-Eleven. Нужен паспорт.<br><br>
-        <strong>AIS</strong> — лучшее покрытие 4G/5G · от 299 ฿/30 дней<br>
-        <strong>True-dtac</strong> — AIS + DTAC объединились · от 199 ฿/30 дней<br><br>
-        ⚠️ True-dtac SIM через 60–90 дней может отключиться — нужно продлевать через приложение.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">Домашний интернет (для долгосрочных)</div><div class="info-row-text">Проводной интернет FTTB от 580 бат/мес (~1 400 ₽). Коворкинги в Чиангмае: 80–150 бат/день, скорость 100–200 Мбит/с. Бангкок: крупные коворкинги типа WeWork — от 400 бат/день.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">📱</span><div><div class="info-row-title">Местные SIM-карты</div><div class="info-row-text"><strong>Telkomsel</strong> — лучшее покрытие по всей стране, пакет 10 ГБ от 50 000 IDR.<br><strong>XL Axiata</strong> — хорошо на Бали и Яве, дешевле.<br><strong>Indosat Ooredoo</strong> — популярен в Джакарте.<br>Покупка в аэропорту или в магазинах Indomaret/Alfamart. Нужен паспорт.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">📶</span><div><div class="info-row-title">eSIM — купи до вылета</div><div class="info-row-text">Yesim или Airalo — активация по QR. Интернет работает с момента посадки. Yesim принимает карту МИР. Цена: ~$8–12 на 30 дней. Удобно если не хочется вставлять физическую SIM.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">На островах — хуже</div><div class="info-row-text">Острова Гили, Нуса-Пенида, отдалённые части Ломбока — 3G или слабый 4G. Telkomsel работает лучше остальных в отдалённых местах. Для работы в коворкингах — используйте Wi-Fi.</div></div></div>
     </div>
     <div class="partner-block reveal">
       <div class="pb-header">
-        <div class="pb-title">eSIM для Тайланда</div>
+        <div class="pb-title">eSIM для Индонезии</div>
         <div class="pb-badge">Yesim · Airalo</div>
       </div>
-      <div class="pb-desc">Купи до вылета — интернет заработает сразу после приземления. Yesim принимает карту МИР.</div>
-      <div class="esim-tabs" style="margin-top:16px">
-        <button class="esim-tab active" onclick="switchEsim('thailand','yesim',this)">Yesim — 18% кэшбэк</button>
-        <button class="esim-tab" onclick="switchEsim('thailand','airalo',this)">Airalo</button>
+      <div class="pb-desc">Купи до вылета — интернет с первой минуты. Yesim принимает МИР.</div>
+      <div class="esim-tabs">
+        <button class="esim-tab active" onclick="switchEsim('indonesia','yesim',this)">Yesim</button>
+        <button class="esim-tab" onclick="switchEsim('indonesia','airalo',this)">Airalo</button>
       </div>
-      <div id="esim-yesim-thailand" class="esim-pane active" style="margin-top:12px">
-        <button class="pb-btn" onclick="window.open('https://yesim.tpm.li/QvCwa9aD?erid=2Vtzqx3rbkr&sub_id=indonesia','_blank')">Купить eSIM на Yesim →</button>
+      <div id="esim-yesim-indonesia" class="esim-pane active">
+        <a href="https://yesim.app/?sub_id=indonesia" target="_blank" rel="noopener" class="pb-btn">Купить eSIM Yesim →</a>
       </div>
-      <div id="esim-airalo-thailand" class="esim-pane" style="margin-top:12px">
-        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&color_button=%233fbb89&color_focused=%233fbb89&secondary=%23FAF8F2&dark=%2311100f&light=%23FFFFFFff&special=%233fbb89&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
+      <div id="esim-airalo-indonesia" class="esim-pane" style="display:none">
+        <a href="https://www.airalo.com/indonesia-esim" target="_blank" rel="noopener" class="pb-btn">Купить eSIM Airalo →</a>
       </div>
     </div>
   </div>
@@ -1009,29 +982,20 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">11</span><span class="sec-dash"></span>
       <h2 class="sec-title">Меди<em>цина</em></h2>
-      <span class="sec-desc">Страховка обязательна. Без неё одна госпитализация — сотни тысяч рублей.</span>
+      <span class="sec-desc">На Бали — международные клиники. На отдалённых островах — слабо.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">Медицина в Тайланде для иностранцев — платная и одна из самых дорогих в ЮВА. Качество в частных госпиталях высокое — часто лучше, чем в России. Без страховки одна госпитализация может стоить сотни тысяч рублей.</div>
-      <div class="info-block-title">Реальные цены без страховки</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
-        <div class="price-card"><div class="pc-cat">Приём врача (частная клиника)</div><div class="pc-val">800–2 000 ฿</div></div>
-        <div class="price-card"><div class="pc-cat">Сутки в палате госпиталя</div><div class="pc-val">3 000–8 000 ฿</div></div>
-        <div class="price-card"><div class="pc-cat">Сутки в реанимации</div><div class="pc-val">от $2 000–3 000</div></div>
-        <div class="price-card"><div class="pc-cat">Лёгкое ДТП на байке</div><div class="pc-val">$3 000–7 000</div></div>
-      </div>
-      <div class="info-block-title">Лучшие частные госпитали</div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Bumrungrad (Бангкок)</div><div class="info-row-text">Международный уровень, русскоязычные врачи, принимают российские страховки. Топовый выбор для сложных случаев.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Bangkok Hospital (сеть по всей стране)</div><div class="info-row-text">Разветвлённая сеть на Пхукете, Самуи, Паттайе, Чиангмае. Надёжно везде.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Samitivej</div><div class="info-row-text">Сильная педиатрия, популярен у семей с детьми.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">🏥</span><div><div class="info-row-title">Международные клиники на Бали</div><div class="info-row-text"><strong>BIMC Hospital</strong> (Кута и Нуса-Дуа) — лучшая на Бали, принимают страховку, врачи говорят по-английски. Приём: $80–200.<br><strong>Kasih Ibu Hospital</strong> (Денпасар) — хороший уровень, дешевле BIMC.<br><strong>International SOS Bali</strong> — для экстренных случаев.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💊</span><div><div class="info-row-title">Аптеки</div><div class="info-row-text">Аптеки (Apotek) повсюду. Крупные сети: Guardian, Century Pharma, K-24. Большинство лекарств без рецепта. Персонал обычно говорит по-английски в туристических зонах.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Страховка с медэвакуацией — обязательна</div><div class="info-row-text">На отдалённых островах медицины нет совсем. Эвакуация на Бали или в Сингапур — тысячи долларов. Страховка с медэвакуацией обязательна если едете на Гили, Комодо, Раджа Ампат.</div></div></div>
     </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Что нужно знать про страховку</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Минимум $100 000 покрытия</div><div class="info-row-text">Посольство РФ рекомендует именно этот лимит. Стандартный $30 000 может закончиться за неделю при серьёзной травме. Cherehapa позволяет сравнить 15+ компаний и выбрать с покрытием $50 000–100 000 за разумные деньги (~$40–80/месяц).</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Страховка должна покрывать мотоцикл</div><div class="info-row-text">Многие дешёвые полисы исключают занятия на мотоцикле. Проверьте этот пункт отдельно перед покупкой.</div></div></div>
-      <div style="margin-top:14px">
-        <script async src="https://tpemd.com/content?trs=515526&shmarker=716729&countryGroups=all-world&medicine=30000&powered_by=true&promo_id=2458&campaign_id=24" charset="utf-8"></script>
+    <div class="partner-block reveal">
+      <div class="pb-header">
+        <div class="pb-title">Страховка для Индонезии</div>
+        <div class="pb-badge">Cherehapa</div>
       </div>
+      <div class="pb-desc">Оформите онлайн за 5 минут. Покрытие от $30 000, включая медэвакуацию.</div>
+      <a href="https://cherehapa.ru/?marker=271684" target="_blank" rel="noopener" class="pb-btn">Оформить страховку →</a>
     </div>
   </div>
 
@@ -1040,84 +1004,28 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">12</span><span class="sec-dash"></span>
       <h2 class="sec-title">Аренда <em>жилья</em></h2>
-      <span class="sec-desc">Реальный алгоритм без рекламы агентств.</span>
+      <span class="sec-desc">Виллы с бассейном — хит. Цены зависят от района и сезона.</span>
     </div>
     <div class="info-block reveal">
-      <div style="font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:16px">Самый больной вопрос для всех кто едет надолго. Здесь — не реклама агентств, а реальный алгоритм как снять квартиру без переплаты и не потерять депозит.</div>
-      <div class="info-block-title">Где искать жильё</div>
-      <div class="info-row green"><span class="info-row-icon">🏆</span><div><div class="info-row-title">DDproperty.com <span style="background:var(--green-l);color:var(--green);font-size:10px;padding:2px 8px;border-radius:100px;margin-left:6px">Лучший</span></div><div class="info-row-text">Главный сайт аренды в Тайланде. Большая база, фото, карта, цены без посредников. Есть фильтр по районам, бюджету, типу жилья. Много объявлений от собственников напрямую.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🌐</span><div><div class="info-row-title">FazWaz.ru / FazWaz.com</div><div class="info-row-text">Русскоязычный интерфейс. Большая база по всем регионам Тайланда. Есть агентская поддержка на русском языке — полезно если не хочешь разбираться самостоятельно.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">👥</span><div><div class="info-row-title">Facebook-группы</div><div class="info-row-text">«Аренда Пхукет русские», «Bangkok expats housing», «Chiang Mai rentals». Там часто сдают сами хозяева без комиссии агентства. Можно найти жильё на 20–30% дешевле чем на сайтах.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">💬</span><div><div class="info-row-title">Telegram-чаты русскоязычных</div><div class="info-row-text">«Русские на Пхукете», «Бангкок наши» и аналогичные — там регулярно пишут «сдам/ищу жильё». Часто самые живые предложения именно там.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Airbnb / Booking — для первых 2–4 недель</div><div class="info-row-text">Дороже чем долгосрочная аренда, но удобно на старте пока ищешь постоянное жильё. Краткосрочная аренда стоит в 2–3 раза дороже долгосрочного контракта за то же место.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Кондо vs апартаменты — в чём разница</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px">
-        <div class="budget-card">
-          <div class="bc-label">Кондоминиум (кондо)</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.6">Жилой комплекс с бассейном, фитнесом, охраной. Каждая квартира — отдельный собственник. Лучше отделка, выше цена. Стандарт для экспатов.</div>
-        </div>
-        <div class="budget-card">
-          <div class="bc-label">Апартаменты</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.6">Один владелец — весь дом. Проще, дешевле, меньше инфраструктуры. Подходит для бюджетного варианта. Часто без бассейна.</div>
-        </div>
-      </div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Алгоритм аренды — шаг за шагом</div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">1</span><div><div class="info-row-title">Первые 2 недели живи в отеле/Airbnb</div><div class="info-row-text">Не торопись снимать долгосрочно до приезда. Посмотри район вживую, почувствуй расстояния.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">2</span><div><div class="info-row-title">Найди 5–10 вариантов, запроси цену за 3, 6 и 12 месяцев</div><div class="info-row-text">Долгосрочный контракт обычно на 20–30% дешевле.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">3</span><div><div class="info-row-title">Осмотри лично — не бронируй по фотографиям</div><div class="info-row-text">Проверь: работает ли кондиционер, давление воды, скорость интернета (попроси включить Wi-Fi).</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">4</span><div><div class="info-row-title">Уточни что включено в цену</div><div class="info-row-text">Электричество, вода, интернет, уборка. Электричество в Тайланде дорогое (5–6 бат/кВт·ч), кондиционер добавляет 1 500–3 000 бат/мес к счёту.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">5</span><div><div class="info-row-title">Подпиши договор на английском</div><div class="info-row-text">Стандарт: депозит 1–2 месяца + первый месяц вперёд. В договоре: условия возврата депозита, кто платит за ремонт, условия досрочного расторжения.</div></div></div>
-      <div class="info-row"><span class="info-row-icon" style="color:var(--green);font-family:JetBrains Mono,monospace;font-weight:700">6</span><div><div class="info-row-title">Сфотографируй всё при заезде</div><div class="info-row-text">Каждую царапину, каждый дефект. Отправь фото арендодателю в мессенджер — это твоя защита при выезде когда будут говорить «это ты сломал».</div></div></div>
-      <div class="alert amber" style="margin-top:12px">
-        <strong>⚠️ Типичные ошибки которые стоят денег:</strong><br>
-        🚫 Платить без договора — самый прямой путь к потере депозита.<br>
-        🚫 Не проверять тариф на электричество — некоторые выставляют 8–10 бат/кВт·ч вместо государственных 5–6 бат.<br>
-        🚫 Снимать на Пхукете в сезон дождей долгосрочно — если уедешь раньше срока, депозит не вернут.<br>
-        🚫 Переводить предоплату незнакомым людям без договора — мошенничество с арендой существует.
-      </div>
-    </div>
-    <div class="partner-block reveal" style="margin-top:12px">
-      <div class="pb-header">
-        <div class="pb-title">Найти жильё на Островок</div>
-        <div class="pb-badge">2.9 млн вариантов</div>
-      </div>
-      <div class="pb-desc">Отели, хостелы и апартаменты в Тайланде — для первых недель пока ищешь долгосрочную аренду.</div>
-      <div style="margin-top:16px"><script async src="https://tpemd.com/content?trs=515526&shmarker=716729&locale=ru&powered_by=true&border_radius=15&plain=false&color_background=%23faf8f2&color_border=%233fbb89&color_button=%233fbb89&color_icons=%233fbb89&promo_id=7257&campaign_id=459" charset="utf-8"></script></div>
+      <div class="info-row green"><span class="info-row-icon">🔍</span><div><div class="info-row-title">Где искать</div><div class="info-row-text"><strong>Airbnb</strong> — большой выбор вилл и апартаментов.<br><strong>Flokq</strong> — co-living для номадов в Джакарте.<br><strong>Facebook Groups</strong> «Bali Expats», «Rent Bali», «Русские на Бали».<br><strong>Telegram</strong> — «Бали | Аренда», «Россияне на Бали».</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💰</span><div><div class="info-row-title">Цены по районам Бали (долгосрочная)</div><div class="info-row-text"><strong>Семиньяк/Кута:</strong> €500–1 500/мес вилла с бассейном.<br><strong>Убуд:</strong> €300–800/мес — рисовые поля, природа, тише.<br><strong>Чангу:</strong> €400–1 000/мес — номад-hub, серфинг.<br><strong>Улувату:</strong> €300–700/мес — серфинг, скалы, менее туристично.<br>Депозит: 1–2 месяца.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Иностранцы не могут владеть землёй</div><div class="info-row-text">Закон запрещает иностранцам покупать землю напрямую. Популярная схема: leasehold (аренда на 25–50 лет). Внимательно проверяйте документы на недвижимость.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">💡</span><div><div class="info-row-title">Первые 2 недели</div><div class="info-row-text">Первую неделю-две живите в гестхаусе или Airbnb — осмотритесь и найдите район который вам подходит. Цены при личном торге значительно ниже интернет-прайсов.</div></div></div>
     </div>
   </div>
 
-<!-- 13 VISARUN -->
+  <!-- 13 VISARUN -->
   <div id="visarun">
     <div class="sec-header reveal">
       <span class="sec-num">13</span><span class="sec-dash"></span>
-      <h2 class="sec-title">Визаран <em>и бордерран</em></h2>
-      <span class="sec-desc">Актуальные правила 2026.</span>
-    </div>
-    <div class="alert amber reveal"><strong>Важно:</strong> правила ужесточились с ноября 2025 года. Тайская иммиграция всерьёз взялась за тех кто живёт годами по штампам. Читай внимательно.</div>
-
-    <div class="info-block reveal" style="margin-top:12px">
-      <div class="info-block-title">Бордерран vs Визаран — в чём разница</div>
-      <div class="info-row green"><span class="info-row-icon">🚶</span><div><div class="info-row-title">Бордерран (border run)</div><div class="info-row-text">Выехал из Таиланда → побыл 5 минут в соседней стране → вернулся. Получаешь новый 60-дневный штамп. Виза не нужна. Занимает 1 день.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🛂</span><div><div class="info-row-title">Визаран (visa run)</div><div class="info-row-text">Едешь в соседнюю страну чтобы подать заявку на тайскую Tourist Visa (TR) в консульстве. Занимает 2–3 дня. Нужен при третьем въезде за год.</div></div></div>
-    </div>
-
-    <div class="info-block reveal">
-      <div class="info-block-title">Новые ограничения с ноября 2025</div>
-      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Лимит 2 бордеррана в год через наземную границу</div><div class="info-row-text">Через наземные КПП разрешено не более 2 безвизовых въездов в год. После двух — иммиграция может отказать во въезде.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Штамп с наземной границы — без продления</div><div class="info-row-text">Нельзя продлить на 30 дней в иммиграционном офисе. Сколько дали на границе — столько и живёшь.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Авиаперелёт — без ограничений</div><div class="info-row-text">Въезд через аэропорт не ограничен. Штамп можно продлить на 30 дней за 1 900 бат.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">👁</span><div><div class="info-row-title">Усиленные проверки при частых въездах</div><div class="info-row-text">Могут попросить обратный билет, подтверждение жилья и 20 000 бат наличными на человека.</div></div></div>
+      <h2 class="sec-title">Продление <em>и визаран</em></h2>
+      <span class="sec-desc">VOA продлевается 1 раз на 30 дней. Потом — визаран.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Популярные маршруты бордеррана</div>
-      <div class="info-row"><span class="info-row-icon">🇲🇾</span><div><div class="info-row-title">С Пхукета → Малайзия (Сатун/Хат Яй) · 6–8 ч</div><div class="info-row-text">Самый популярный маршрут с юга. Организованные туры от 1 500–2 500 бат. Малайзия лояльна к транзитным визитам. Граница Садао–Паданг Бесар надёжнее Пенанга.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇲🇾</span><div><div class="info-row-title">С Бангкока → Малайзия (Хат Яй) · ночной поезд</div><div class="info-row-text">Поезд из Бангкока, ночь в пути, выезд–въезд через Садао. Удобно совместить с небольшим путешествием по Малайзии.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇱🇦</span><div><div class="info-row-title">С Чиангмая → Лаос (Хуайсай/Вьентьян)</div><div class="info-row-text">Популярен для севера Тайланда. Поезд или автобус до Нонгкхая, паром через Меконг. Можно совместить с поездкой в Луанг Прабанг.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🇰🇭</span><div><div class="info-row-title">С Бангкока → Камбоджа (Аранья-Пратет/Пойпет)</div><div class="info-row-text">3–4 часа от Бангкока. Самый близкий вариант. Ходит много организованных туров. Репутация пограничного посёлка Пойпет — специфическая.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">📋</span><div><div class="info-row-title">Продление VOA — 1 раз на 30 дней</div><div class="info-row-text">До истечения первых 30 дней подать заявку в иммиграционный офис. Стоимость: 500 000 IDR (~3 450 ₽). Нужно лично прийти — сфотографируют и проведут собеседование. Через агентства: ~800 000 IDR, один визит вместо двух.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Визаран — выехать и въехать снова</div><div class="info-row-text">После 60 дней (VOA + продление) нужно покинуть Индонезию. Популярные маршруты: Бали→Сингапур (1–2 часа), Бали→Куала-Лумпур, Бали→Тимор-Лесте. Авиабилет от $50. Возвращаетесь — снова VOA $35, новые 30+30 дней.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📝</span><div><div class="info-row-title">Виза C1/B211A — для 60 дней без продления</div><div class="info-row-text">Оформляется онлайн на evisa.imigrasi.go.id. Стоимость: 1 000 000 IDR (~6 900 ₽). Продление 2 раза по 60 дней. Подходит для тех кто хочет провести в Индонезии 6 месяцев без визаранов.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Overstay — очень дорого</div><div class="info-row-text">Штраф за просрочку визы: 1 000 000 IDR (~6 900 ₽) за каждый день. Максимум 60 дней overstay, после — депортация и запрет на въезд. Следите за датой в штампе строго.</div></div></div>
     </div>
   </div>
 
@@ -1126,80 +1034,47 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">14</span><span class="sec-dash"></span>
       <h2 class="sec-title">Климат <em>и сезоны</em></h2>
-      <span class="sec-desc">Запад и восток живут в разных сезонах.</span>
+      <span class="sec-desc">Тропики круглый год. Два сезона: сухой и дождливый.</span>
     </div>
-
     <div class="alert green reveal" style="margin-bottom:20px">
-      Главное что нужно знать: западное и восточное побережья живут в <strong>разных сезонах</strong>. Когда на Пхукете дожди — на Самуи и Паттайе солнце, и наоборот.
+      Лучшее время для Бали и большинства островов: апрель–октябрь (сухой сезон). Ноябрь–март — дожди, но цены ниже на 30–40%.
     </div>
-
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="reveal">
       <div class="info-block">
-        <div class="info-block-title">🌊 Пхукет, Краби, Ко Пхи-Пхи <span style="font-size:11px;color:var(--muted);font-weight:400">Андаманское море (запад)</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь — апрель. Пик: декабрь — январь.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май — октябрь. Морские экскурсии часто отменяют, острова Симилан закрыты.</div></div></div>
+        <div class="info-block-title">🌴 Бали</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Апрель–октябрь: +28–32°, солнечно, море спокойное. Лучшее время для пляжа и серфинга.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Ноябрь–март: ежедневные дожди 1–2 часа. +27–30°, влажно. Серфинг на западном побережье лучше.</div></div></div>
       </div>
       <div class="info-block">
-        <div class="info-block-title">🏝 Самуи, Ко Панган, Ко Тао <span style="font-size:11px;color:var(--muted);font-weight:400">Сиамский залив (восток)</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Январь — сентябрь. Full Moon Party — раз в месяц.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Октябрь — декабрь. Когда на Пхукете дожди (июнь–октябрь) — здесь солнечно.</div></div></div>
+        <div class="info-block-title">🏝 Острова Гили / Ломбок</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Почти всегда хорошо</div><div class="info-row-text">Май–сентябрь: идеально, +28°, прозрачная вода для дайвинга и снорклинга.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Сезон волн</div><div class="info-row-text">Октябрь–март: волнение на Ломбокском проливе. Переправа может отменяться.</div></div></div>
       </div>
       <div class="info-block">
-        <div class="info-block-title">🌆 Паттайя, Бангкок <span style="font-size:11px;color:var(--muted);font-weight:400">Центр и восток</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Сухой сезон</div><div class="info-row-text">Ноябрь — апрель. Паттайя — самый комфортный вариант летом: дожди короткие.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Май — октябрь. Дожди обычно вечером, не весь день.</div></div></div>
+        <div class="info-block-title">🌆 Джакарта</div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Жарко и влажно</div><div class="info-row-text">+28–33° круглый год. Сезон дождей октябрь–апрель — наводнения в низинах. Смог от трафика.</div></div></div>
+        <div class="info-row"><span class="info-row-icon">ℹ️</span><div><div class="info-row-title">Лучшее время</div><div class="info-row-text">Май–сентябрь — наименее дождливый период. Но в любое время года жарко.</div></div></div>
       </div>
       <div class="info-block">
-        <div class="info-block-title">🏔 Чиангмай и север <span style="font-size:11px;color:var(--muted);font-weight:400">Горный регион</span></div>
-        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Лучшее время</div><div class="info-row-text">Декабрь — февраль. Прохладно (+18–24°), идеально для треков.</div></div></div>
-        <div class="info-row amber"><span class="info-row-icon">⛈</span><div><div class="info-row-title">Сезон дождей</div><div class="info-row-text">Июнь — октябрь.</div></div></div>
-        <div class="info-row red"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Дымный сезон (март–апрель)</div><div class="info-row-text">Горят леса — дым, смог, плохой воздух. Избегать.</div></div></div>
+        <div class="info-block-title">🏛 Джогьякарта</div>
+        <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Лучшее время</div><div class="info-row-text">Апрель–октябрь: сухо, +27–30°. Боробудур и Прамбанан — посещать утром до жары.</div></div></div>
+        <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Вулканическая активность</div><div class="info-row-text">Вулкан Мерапи активен. Следите за уровнем предупреждений — иногда закрывают подъём.</div></div></div>
       </div>
-    </div>
-
-    <div class="climate-grid reveal" style="margin-top:16px">
-      <div class="climate-card"><div class="climate-month">ЯНВ</div><div class="climate-icon">☀️</div><div class="climate-temp">+28°</div><div class="climate-note">Лучший сезон</div></div>
-      <div class="climate-card"><div class="climate-month">ФЕВ</div><div class="climate-icon">☀️</div><div class="climate-temp">+29°</div><div class="climate-note">Отлично</div></div>
-      <div class="climate-card"><div class="climate-month">МАР</div><div class="climate-icon">🌤</div><div class="climate-temp">+30°</div><div class="climate-note">Жарко · дым на севере</div></div>
-      <div class="climate-card"><div class="climate-month">АПР</div><div class="climate-icon">🌤</div><div class="climate-temp">+32°</div><div class="climate-note">Сонгкран 🎉</div></div>
-      <div class="climate-card"><div class="climate-month">МАЙ</div><div class="climate-icon">🌧</div><div class="climate-temp">+31°</div><div class="climate-note">Дожди (запад)</div></div>
-      <div class="climate-card"><div class="climate-month">ИЮН</div><div class="climate-icon">🌧</div><div class="climate-temp">+30°</div><div class="climate-note">Сезон дождей</div></div>
-      <div class="climate-card"><div class="climate-month">ИЮЛ</div><div class="climate-icon">⛈</div><div class="climate-temp">+29°</div><div class="climate-note">Ливни (Пхукет)</div></div>
-      <div class="climate-card"><div class="climate-month">АВГ</div><div class="climate-icon">⛈</div><div class="climate-temp">+29°</div><div class="climate-note">Ливни (Пхукет)</div></div>
-      <div class="climate-card"><div class="climate-month">СЕН</div><div class="climate-icon">🌧</div><div class="climate-temp">+29°</div><div class="climate-note">Дождливо</div></div>
-      <div class="climate-card"><div class="climate-month">ОКТ</div><div class="climate-icon">🌦</div><div class="climate-temp">+29°</div><div class="climate-note">Переходный</div></div>
-      <div class="climate-card"><div class="climate-month">НОЯ</div><div class="climate-icon">⛅</div><div class="climate-temp">+28°</div><div class="climate-note">Начало сезона</div></div>
-      <div class="climate-card"><div class="climate-month">ДЕК</div><div class="climate-icon">☀️</div><div class="climate-temp">+27°</div><div class="climate-note">Пик · цены +30%</div></div>
-    </div>
-
-    <div class="alert amber reveal" style="margin-top:16px">
-      <strong>Лайфхак для зимовщиков:</strong> ноябрь–апрель — универсальное время когда хорошая погода одновременно на Пхукете и Паттайе. Декабрь–январь — пик сезона, цены на 30–50% выше чем в марте. Самый бюджетный месяц при хорошей погоде — <strong>март</strong>.
     </div>
   </div>
-
 
   <!-- 15 SAFETY -->
   <div id="safety">
     <div class="sec-header reveal">
       <span class="sec-num">15</span><span class="sec-dash"></span>
       <h2 class="sec-title">Безопас<em>ность</em></h2>
-      <span class="sec-desc">Тайланд безопасен — но туристов разводят по классическим схемам.</span>
+      <span class="sec-desc">Бали — безопасно. Основные риски: мелкие кражи и скутеры.</span>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Типичные разводы туристов</div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Temple scam («храм закрыт»)</div><div class="info-row-text">Незнакомец говорит что храм сегодня закрыт и предлагает отвезти на тук-туке в «другой храм» или к «ювелиру». Храм открыт. Просто идите мимо.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Tuk-tuk scam</div><div class="info-row-text">Водитель предлагает бесплатный или дешёвый тур, везёт по магазинам где получает комиссию. Используйте Grab с фиксированной ценой.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Карточный развод</div><div class="info-row-text">«Дружелюбный» местный приглашает поиграть в карты. Всегда выигрывает. Потери — от $500.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Gem scam</div><div class="info-row-text">Продают «ценные» камни по «специальной цене» — в реальности дешёвые стекляшки. Никогда не покупайте украшения у незнакомцев.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Такси в аэропорту</div><div class="info-row-text">Нелегальные таксисты в аэропорту Суварнабхуми предлагают фиксированные цены в 2–3 раза дороже официального такси. Используйте Grab или официальные стойки.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Скимминг банкоматов</div><div class="info-row-text">Случается особенно на туристических островах. Используйте банкоматы в отделениях банков, а не уличные. Проверяйте картоприёмник.</div></div></div>
-    </div>
-    <div class="info-block reveal">
-      <div class="info-block-title">Как вести себя с полицией</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Всегда вежливо и спокойно</div><div class="info-row-text">Тайская полиция реагирует на агрессию плохо. Улыбка и спокойный тон решают большинство ситуаций.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📋</span><div><div class="info-row-title">Всегда имейте документы</div><div class="info-row-text">Паспорт или копию с собой. При проверке без документов могут задержать до выяснения.</div></div></div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">«Штраф на месте»</div><div class="info-row-text">Полицейский предлагает заплатить штраф наличными на месте — это взятка. Можно вежливо отказаться и попросить официальный протокол. Официальный штраф за нарушение ПДД — 500 бат.</div></div></div>
-      <div class="info-row red"><span class="info-row-icon">🚫</span><div><div class="info-row-title">Наркотики — нулевая толерантность</div><div class="info-row-text">Хранение наркотиков — тюрьма от 1 года. За сбыт — пожизненное или смертная казнь. Марихуана легализована в 2022, но употребление в публичных местах запрещено.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Бали — относительно безопасно</div><div class="info-row-text">Насильственная преступность против туристов редка. Местные жители к иностранцам доброжелательны. Туристические зоны патрулируются. Ночью ходить в центре Куты и Семиньяка — безопасно.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">🛵</span><div><div class="info-row-title">ДТП — главная опасность</div><div class="info-row-text">Большинство серьёзных инцидентов с туристами на Бали — ДТП на скутерах. Левостороннее движение непривычно. Не ездите ночью и после алкоголя. Всегда надевайте шлем.</div></div></div>
+      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Типичные разводы</div><div class="info-row-text"><strong>Taxi Bali</strong> у аэропорта — сильно завышают цены (используйте Grab или Blue Bird).<br><strong>Поддельные обменники</strong> — обменивайте только в авторизованных.<br><strong>«Бесплатная экскурсия»</strong> в магазин с навязчивой продажей.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🌋</span><div><div class="info-row-title">Природные риски</div><div class="info-row-text">Вулканическая активность (Агунг, Мерапи). Землетрясения. Цунами-предупреждения — следите за знаками на побережье. Течения в океане — купайтесь только в отмеченных местах.</div></div></div>
     </div>
   </div>
 
@@ -1208,16 +1083,12 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">16</span><span class="sec-dash"></span>
       <h2 class="sec-title">Ковор<em>кинги</em></h2>
-      <span class="sec-desc">Тайланд — мировая столица цифровых кочевников.</span>
+      <span class="sec-desc">Бали — один из лучших номад-хабов в мире. Чангу в центре.</span>
     </div>
-    <div class="tips-grid reveal">
-      <div class="tip-card"><span class="tip-num">🏔</span><div><div class="tip-title">Чиангмай — лучший город для работы</div><div class="tip-text"><strong>CAMP (Maya Mall)</strong> — легендарный коворкинг в торговом центре, работает 24/7. Стоимость: 1 кофе (~100 бат) = целый день. Скорость Wi-Fi: 100+ Мбит/с.<br><br><strong>MANA Fast & Slow Bar</strong> — модное место с отличным кофе. 80 бат/день.<br><strong>Think Park</strong> — на открытом воздухе, от 50 бат/день.<br><strong>Punspace</strong> — профессиональный коворкинг, 250 бат/день, 3 500 бат/мес.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🌆</span><div><div class="tip-title">Бангкок</div><div class="tip-text"><strong>The Hive</strong> — сеть коворкингов в Thonglor и Ekkamai. От 300 бат/день, 3 500 бат/мес. Скорость: 200+ Мбит/с.<br><br><strong>WeWork</strong> — международная сеть, дорого (от 500 бат/день), но надёжно.<br><strong>Hubba-TO</strong> — популярен у стартапов, 250 бат/день.<br><strong>Coffee shops</strong> — True Coffee в любом 7-Eleven, стол + Wi-Fi весь день за цену кофе.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🌴</span><div><div class="tip-title">Пхукет</div><div class="tip-text"><strong>Garage Society</strong> — лучший коворкинг на острове в Чалонге. 350 бат/день.<br><br><strong>Phuket Smart City</strong> — государственный коворкинг с хорошим интернетом. Часто бесплатно или 100 бат/день.<br><strong>Kaffa</strong> — кофейня-коворкинг в Пхукет-тауне, 80 бат/день.<br><br>На Патонге и Камале — сеть кафе Starbucks и True Coffee с рабочими местами.</div></div></div>
-      <div class="tip-card"><span class="tip-num">🏝</span><div><div class="tip-title">Ko Samui / Ko Phangan</div><div class="tip-text"><strong>Samui</strong>: Chaweng имеет несколько кафе-коворкингов. Скорость интернета хуже континента — обычно 30–50 Мбит/с.<br><br><strong>Ko Phangan</strong>: WorknPlay — небольшой коворкинг в Tong Sala. Haad Yao имеет несколько кафе с рабочим интернетом. Если важна работа — выбирай континент, острова для отдыха.</div></div></div>
-    </div>
-    <div class="alert green reveal" style="margin-top:12px">
-      <strong>Лайфхак:</strong> в Чиангмае сформировалось огромное русскоязычное сообщество цифровых кочевников. Telegram-чаты «Чиангмай наши» и «Digital Nomads Chiang Mai» — живые обсуждения жилья, коворкингов и событий.
+    <div class="info-block reveal">
+      <div class="info-row"><span class="info-row-icon">🏢</span><div><div class="info-row-title">Чангу — номад-столица</div><div class="info-row-text"><strong>Dojo Bali</strong> — крупнейший на острове, день от 150 000 IDR (~1 035 ₽), 24/7.<br><strong>Outpost Canggu</strong> — популярный среди IT, день от 120 000 IDR.<br><strong>Bali Buda</strong> — кафе с хорошим Wi-Fi, атмосфера работы.<br><strong>Hubud</strong> (Убуд) — в рисовых полях, день от 100 000 IDR.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🏙</span><div><div class="info-row-title">Джакарта</div><div class="info-row-text"><strong>GoWork</strong> — крупнейшая сеть в стране, 10+ локаций, день от 100 000 IDR.<br><strong>WeWork</strong> — 3 локации в Джакарте.<br><strong>Cocowork</strong> — популярен среди стартапов.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">🌴</span><div><div class="info-row-title">Кафе как альтернатива</div><div class="info-row-text">На Бали сотни кафе с быстрым Wi-Fi и розетками специально для номадов. Seminyak, Canggu, Ubud — лучшие районы. Закажите что-нибудь на сумму от 30 000–50 000 IDR и работайте хоть целый день.</div></div></div>
     </div>
   </div>
 
@@ -1226,58 +1097,29 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
     <div class="sec-header reveal">
       <span class="sec-num">17</span><span class="sec-dash"></span>
       <h2 class="sec-title">Чеклист <em>перед вылетом</em></h2>
-      <span class="sec-desc">Всё что нужно сделать до посадки в самолёт.</span>
+      <span class="sec-desc">Несколько обязательных шагов — некоторых нет в других странах.</span>
     </div>
     <div class="info-block reveal">
       <div class="info-block-title">За 2 недели до вылета</div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Проверить срок паспорта</div><div class="info-row-text">Нужно минимум 6 месяцев действия после даты въезда. При меньшем сроке — откажут на границе.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить страховку</div><div class="info-row-text">Минимум $100 000 покрытия. Покрытие мотоцикла — обязательно если планируешь арендовать байк. Cherehapa или Черехапа — сравни цены.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить eSIM или проверить роуминг</div><div class="info-row-text">eSIM через Yesim или Airalo до вылета — интернет заработает сразу после приземления. Или купить SIM в аэропорту.</div></div></div>
-      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Снять наличные / конвертировать</div><div class="info-row-text">Везите доллары или евро. Рубли меняют по невыгодному курсу. Возьмите минимум $500–1 000 наличными на первые дни.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить eSIM на Yesim или Airalo</div><div class="info-row-text">Интернет работает с момента посадки. Yesim принимает МИР. ~$8–12 на 30 дней.</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Оформить страховку с медэвакуацией</div><div class="info-row-text">Cherehapa. Медэвакуация критична если едете на отдалённые острова (Гили, Комодо, Раджа Ампат).</div></div></div>
+      <div class="info-row green"><span class="info-row-icon">✅</span><div><div class="info-row-title">Купить обратный или транзитный билет</div><div class="info-row-text">Обязателен при регистрации на рейс и при въезде. Бронь без оплаты теперь часто не принимают.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🌴</span><div><div class="info-row-title">Оплатить туристический налог Бали ($10)</div><div class="info-row-text">lovebali.baliprov.go.id — можно оплатить заранее или в аэропорту Денпасара. Сохраните QR-код.</div></div></div>
     </div>
     <div class="info-block reveal">
       <div class="info-block-title">За 3 дня до вылета</div>
-      <div class="info-row amber"><span class="info-row-icon">⚠️</span><div><div class="info-row-title">Заполнить TDAC — обязательно!</div><div class="info-row-text">tdac.immigration.go.th — электронная карта прибытия. Без неё могут не пустить на борт. 5 минут, бесплатно. Заполняется не ранее чем за 3 дня до прилёта.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📱</span><div><div class="info-row-title">Установить приложения</div><div class="info-row-text">Grab, Google Maps (скачать карту офлайн), Bangkok MRT/BTS, XE Currency, Booking/Airbnb. В России скачать заранее — могут быть проблемы с App Store в Тайланде.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">🏠</span><div><div class="info-row-title">Забронировать первые ночи</div><div class="info-row-text">Минимум 2–3 ночи. На паспортном контроле могут попросить подтверждение проживания.</div></div></div>
-      <div class="info-row"><span class="info-row-icon">✈️</span><div><div class="info-row-title">Обратный билет или маршрут выезда</div><div class="info-row-text">На паспортном контроле могут попросить обратный билет или подтверждение что ты покинешь страну. Бронь на автобус до Малайзии тоже считается.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">📋</span><div><div class="info-row-title">Заполнить декларацию All Indonesia</div><div class="info-row-text">allindonesia.imigrasi.go.id — обязательно с августа 2025. Заполняется за 1–3 дня до прилёта. QR-код предъявляют на таможне.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💵</span><div><div class="info-row-title">Подготовить $35 наличными для VOA</div><div class="info-row-text">Оплата VOA в аэропорту — только наличными или иностранной картой. МИР не принимают.</div></div></div>
     </div>
     <div class="info-block reveal">
-      <div class="info-block-title">Рекомендуемые маршруты</div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">1 неделя — Классика</div><div class="info-row-text">Дни 1–3: Бангкок (Большой Дворец, Чатучак, ночные рынки) → Дни 4–7: Пхукет или Краби (пляжи, острова Пхи-Пхи).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">2 недели — Разнообразие</div><div class="info-row-text">Дни 1–3: Бангкок → Дни 4–6: Чиангмай (храмы, рынки, слоны) → Дни 7–14: Острова юга (Пхукет + Краби или Самуи + Ко Панган).</div></div></div>
-      <div class="info-row"><span class="info-row-icon">📅</span><div><div class="info-row-title">Месяц — Зимовка</div><div class="info-row-text">Неделя в Бангкоке (обустройство, банк, SIM) → 2 недели в Чиангмае (работа, жизнь, коворкинги) → Финальные 1–2 недели на островах перед отлётом.</div></div></div>
+      <div class="info-block-title">По прилёту</div>
+      <div class="info-row"><span class="info-row-icon">🛂</span><div><div class="info-row-title">Оплатить VOA перед паспортным контролем</div><div class="info-row-text">Специальное окно перед паспортным контролем. $35 наличными или картой. Вам вклеят визу в паспорт.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">💱</span><div><div class="info-row-title">Поменять $50–100 в аэропорту</div><div class="info-row-text">На такси и первые расходы. Остальное менять в городе в авторизованных обменниках.</div></div></div>
+      <div class="info-row"><span class="info-row-icon">🛵</span><div><div class="info-row-title">Grab или Blue Bird до отеля</div><div class="info-row-text">Не садитесь к «таксистам» у выхода — сильно завышают. Grab работает из аэропорта Денпасара.</div></div></div>
     </div>
   </div>
 
-  <!-- COUNTRY NAV -->
-  <div class="country-nav reveal">
-    <a class="cnav-card" href="belarus.html">
-      <span class="cnav-flag">🇧🇾</span>
-      <div><div class="cnav-label">Предыдущая</div><div class="cnav-name">Беларусь</div></div>
-      <span class="cnav-arrow">←</span>
-    </a>
-    <a class="cnav-card" href="malaysia.html">
-      <span class="cnav-flag">🇲🇾</span>
-      <div><div class="cnav-label">Следующая страна</div><div class="cnav-name">Малайзия</div></div>
-      <span class="cnav-arrow">→</span>
-    </a>
-  </div>
-
-</div><!-- /main-wrap -->
-
-<footer>
-  <a class="flogo" href="../index.html">Check<em>The</em>World<span class="dot">.</span></a>
-  <div class="flinks">
-    <a href="../index.html">Страны</a>
-    <a href="#">Сравнить</a>
-    <a href="#">Визы</a>
-    <a href="#">Контакты</a>
-  </div>
-  <div class="fcopy">© 2026 · CheckTheWorld</div>
-</footer>
-
-<!-- SIDENAV -->
+  <!-- SIDENAV -->
 <nav class="sidenav" id="sidenav" style="z-index:9999">
   <div class="sn-item" data-t="visas"><span class="sn-label">Визы</span><div class="sn-dot"></div></div>
   <div class="sn-item" data-t="prices"><span class="sn-label">Цены</span><div class="sn-dot"></div></div>
@@ -1325,7 +1167,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);
 // ── DATA ──
 
   // ⚠️ VISAS и CITIES для Индонезия — заполнить вручную!
-  // Скопировать структуру из thailand.html и адаптировать
   // ── CURRENCY ──
 const rates = {rub:1, usd:91, eur:99, local:33};
 function setCurrency(cur, btn){
@@ -1346,18 +1187,91 @@ function switchFlights(tab, btn){
 
 // ── VISA MODAL ──
 const VISAS = {
-  voa: {
-    title: 'Виза по прилёту',
-    subtitle: '',
-    tags: [{t:'30 дней',c:'green'},{t:'Паспорт РФ',c:'green'}],
+  free: {
+    title: 'Виза по прилёту (VOA)',
+    subtitle: '$35 · 30 дней · Аэропорт Денпасар, Сукарно-Хатта',
+    tags: [{t:'30 дней',c:'green'},{t:'$35',c:'amber'},{t:'+30 продление',c:'green'}],
     sections: [
-      {title:'Кому подходит', text:''},
-      {title:'Порядок действий', steps:['','','']},
+      {title:'КАК ПОЛУЧИТЬ', steps:[
+        'Перед паспортным контролем — специальное окно VOA',
+        'Оплата $35 наличными или иностранной картой',
+        'Офицер вклеивает визу в паспорт',
+        'Загранпаспорт с 6+ месяцами действия',
+        'Обратный билет — обязательно иметь при себе',
+      ]},
+      {title:'ВАЖНО', steps:[
+        'Туристический налог Бали $10 — оплатить отдельно на lovebali.baliprov.go.id',
+        'Декларация All Indonesia — заполнить за 1–3 дня до прилёта',
+        'МИР в аэропортах Индонезии не принимают',
+        'Продление VOA: 500 000 IDR, лично в иммиграционном офисе',
+      ]},
     ],
-    warn: '',
+    warn: null, btn: null
+  },
+  tr: {
+    title: 'e-VOA (электронная виза)',
+    subtitle: 'Онлайн до вылета · Отдельное окно в аэропорту',
+    tags: [{t:'30 дней',c:'green'},{t:'$35',c:'amber'},{t:'Без очереди',c:'green'}],
+    sections: [
+      {title:'ПРЕИМУЩЕСТВА', steps:[
+        'Меньше очередь при прилёте — отдельное окно e-VOA',
+        'Оформляется онлайн на evisa.imigrasi.go.id',
+        'Не нужна наличка для оплаты на границе',
+        'Подавать не ранее чем за 14 дней и не позднее чем за 48 часов до въезда',
+      ]},
+      {title:'КАК ОФОРМИТЬ', steps:[
+        'Зарегистрироваться на evisa.imigrasi.go.id',
+        'Заполнить анкету и загрузить фото паспорта',
+        'Оплатить $35 картой иностранного банка',
+        'Скачать одобрение e-VOA и сохранить QR-код',
+        'При прилёте — в окно e-VOA, визу вклеят в паспорт',
+      ]},
+    ],
+    warn: '<strong>Важно:</strong> карты российских банков (МИР, Visa/MC) при оплате e-VOA онлайн не работают. Нужна карта иностранного банка.',
+    btn: 'https://evisa.imigrasi.go.id'
+  },
+  nonimm: {
+    title: 'Виза C1/B211A',
+    subtitle: 'До 60 дней · Онлайн или через агентство',
+    tags: [{t:'60 дней',c:'green'},{t:'~1М IDR',c:'amber'},{t:'Продление ×2',c:''}],
+    sections: [
+      {title:'ДЛЯ КОГО', steps:[
+        'Кто хочет провести в Индонезии 60+ дней без визарана',
+        'Кто планирует продлевать — до 6 месяцев суммарно',
+        'Удалённые работники и цифровые кочевники',
+      ]},
+      {title:'КАК ОФОРМИТЬ', steps:[
+        'Онлайн на evisa.imigrasi.go.id — выбрать "Tourism C1"',
+        'Стоимость: 1 000 000 IDR (~6 900 ₽)',
+        'Карта иностранного банка для оплаты',
+        'Срок рассмотрения: 3–5 рабочих дней',
+        'Продление: 2 раза по 60 дней, 2 000 000 IDR каждое',
+      ]},
+    ],
+    warn: null, btn: 'https://evisa.imigrasi.go.id'
+  },
+  ltr: {
+    title: 'KITAS / KITAP — ВНЖ',
+    subtitle: 'Долгосрочное резидентство в Индонезии',
+    tags: [{t:'1–2 года',c:''},{t:'Через спонсора',c:'amber'},{t:'Продлевается',c:''}],
+    sections: [
+      {title:'ТИПЫ ВНЖ', steps:[
+        'KITAS — временный ВНЖ на 1–2 года (работа, бизнес, учёба)',
+        'KITAP — постоянный ВНЖ (после 5 лет KITAS)',
+        'Second Home Visa — на 5–10 лет для состоятельных ($130 000 на счету)',
+        'Retirement Visa (Pensiun) — для пенсионеров 55+',
+      ]},
+      {title:'ПРОЦЕСС', steps:[
+        'Нужен спонсор (работодатель, собственная компания или агент)',
+        'Подача через Direktorat Jenderal Imigrasi',
+        'Срок: 1–3 месяца',
+        'Стоимость: $500–2 000 через агентство',
+      ]},
+    ],
+    warn: '<strong>Важно:</strong> самостоятельно оформить KITAS крайне сложно. Используйте авторизованных агентов.',
     btn: null
   },
-};
+}
 
 const CITIES = {
   bali: {name_en:'Бали',
@@ -1372,7 +1286,7 @@ const CITIES = {
     places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
     facts:['','','']
   },
-  yogyakarta: {name_en:'Джокьякарта',
+  yogya: {name_en:'Джокьякарта',
     name:'Джокьякарта', emoji:'🏛', tag:'', budget:'',
     desc:'',
     places:[{n:'',d:''},{n:'',d:''},{n:'',d:''}],
